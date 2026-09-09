@@ -1,0 +1,16 @@
+{
+  "initial_protocol_commit": "f03671e1aaccf05b79ff798be5a1d092c33d6811",
+  "initial_run_started_utc": "2026-09-07T04:14:28.362324+00:00",
+  "initial_script_sha256": "4cfeda287b4e63d05d9148f63785c8ea74f7587d240c4b7495d8eefbf2bc8ffb",
+  "initial_completed_splits": [
+    "monsoon_en_in",
+    "eurospeech_bg",
+    "eurospeech_de",
+    "eurospeech_el"
+  ],
+  "resumed_run_started_utc": "2026-09-07T04:26:38.042738+00:00",
+  "resumed_script_sha256": "3cda7aacf9548e3fd1a2d0b59aabd5444a4bdaf4ed12e534c874d8dcc99ffcf8",
+  "input_fix_receipt": "input-duration-repair.json",
+  "completed_predictions_reused": "Verified by immutable split receipt and prediction file SHA256.",
+  "model_weights_and_decoding": "Unchanged in both execution versions."
+}

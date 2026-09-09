@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "archive_sha256": "218496074384505c14b08126941e31b2d20e518a4a1e950e0d6d9f6212ae53f3",
+  "files_sha256": {
+    "orukeet.jsonl": "9d46bf83ec4bd1745e3e9b670aafc0d5aad42ea719f5950e9539683e928e534e",
+    "run.log": "2adf080741238d4d27f087e9bbb868560d87f4e9fb468bcf8c619ebd40e411d6",
+    "decoding.json": "dd264a738b97cabfd1755556df9e844fa04493843738a20deecd2c9c7721fb15",
+    "inference-comparison.json": "23584aab2856bf7ebaad7611cfdc9395d7d09b40ea6d64afcb8472d5f63bae34",
+    "parakeet.jsonl": "f130fdab457b9c2f1c5e443a3936819f46d443342c1137f19af9b3295a170af9",
+    "manifest.jsonl": "c8c36e9cbf5053ba7159204b2a507185fc11e818f0ab71259e5937d20f9c9623",
+    "launch.json": "a174ed397b3f65f6de6ea91465777e5d7aba7f04fab4cf0deb5e5fb82d2e7031"
+  },
+  "publication_authorized": false
+}

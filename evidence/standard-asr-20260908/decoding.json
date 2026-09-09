@@ -1,0 +1,21 @@
+{
+  "strategy": "greedy_batch",
+  "model_type": "tdt",
+  "durations": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "greedy": {
+    "max_symbols": 10
+  },
+  "beam": {
+    "beam_size": 2,
+    "return_best_hypothesis": false,
+    "score_norm": true,
+    "tsd_max_sym_exp": 50,
+    "alsd_max_target_len": 2.0
+  }
+}

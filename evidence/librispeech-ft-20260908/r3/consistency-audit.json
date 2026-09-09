@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "model_training_and_export_hashes_match": true,
+  "all_2939_records_presented_three_times": true,
+  "all_4265_evaluation_records_scored": true,
+  "all_baseline_hypotheses_unchanged": true,
+  "baseline_counts_match_both_fresh_runs": true,
+  "all_12288_gabor_rows_exact": true,
+  "lower_test_other_wer_than_parakeet": true
+}

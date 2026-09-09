@@ -1,0 +1,1 @@
+Layer atlas: the median selected fit-error row within each of the 24 layers. Original (gray circles) and frozen Gabor (blue crosses) taps share the original L2 normalization and common axes. All plotted samples come from the recorded fits; lines join discrete samples.

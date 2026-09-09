@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-09-07T05:59:58.938973+00:00",
+  "scope": "Post-inference descriptive script diagnostic on the complete 230-clip Greek dialect test; no row or reference changes.",
+  "rows": 230,
+  "reference_greek_letter_fraction_at_least_90pct": 229,
+  "method": "Count alphabetic Unicode characters whose Unicode name contains GREEK. A flagged nonempty hypothesis has less than 10% Greek letters while its reference has at least 90%.",
+  "unicode_version": "13.0.0",
+  "manifest_sha256": "d99bef57e0308632bf5940a81f9ea71758fc7a1d6bcacf51a5c546f383d243be",
+  "models": {
+    "parakeet": {
+      "prediction_sha256": "c3437052ce384e4b0bbff0f36de5421f6fc71880327d8b3b07ddfe6ee32c20a5",
+      "empty_hypotheses": 13,
+      "greek_reference_non_greek_script_hypotheses": 156
+    },
+    "orukeet": {
+      "prediction_sha256": "798f4251245d78f9a560c2d731ab82dc6bd4574871a34d546242a447e77fc61d",
+      "empty_hypotheses": 13,
+      "greek_reference_non_greek_script_hypotheses": 165
+    }
+  },
+  "script_sha256": "4e7b68fd20d2210c55965ded69467dd4f567b23890e003a657f1cb0d78f149d1",
+  "limits": "Script is a descriptive proxy, not a validated language-ID label. The models use their original automatic decoding without an oracle language constraint."
+}

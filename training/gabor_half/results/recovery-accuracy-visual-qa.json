@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "candidate_count": 18,
+  "point_count": 36,
+  "figure_size_inches": [
+    7,
+    9.11
+  ],
+  "inspection": "Inspected 1800-pixel Poppler PDF render and 300-DPI PNG. All 18 labels, both endpoints, 36 intervals, axes and captions are readable without clipping. Source comparisons retain the same original, suite and bootstrap; native comparisons are separate.",
+  "files": {
+    "recovery-accuracy.pdf": "e17664ae977aed4e4d27fa622e763bcea15b220c0c9a0cf61dcb64882856ee6f",
+    "recovery-accuracy.png": "d7a52a5bd3fd7d183c7ae348d8f9e0e60dfd86ae0f0f85a67f5678a9b478810f",
+    "recovery-accuracy.svg": "90507f07b6bf3dad666206fd6ccb577f0d83fa3d1b6688140d1bfbe43aea14a6"
+  }
+}

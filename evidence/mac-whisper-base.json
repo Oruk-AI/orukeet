@@ -1,0 +1,42 @@
+{
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "arm",
+  "python": "3.12.13 (main, Mar 10 2026, 18:18:07) [Clang 21.1.4 ]",
+  "device": "cpu",
+  "model": "base",
+  "model_sha256": "d01c3014881c9c6f3133c182f3d2887eb6ca1c789a7538c5c007196857a0a6a9",
+  "model_bytes": 145217532,
+  "runtime": "faster-whisper",
+  "repeats": 10,
+  "results": [
+    {
+      "audio": "jfk_11s.wav",
+      "audio_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "duration_s": 11.0,
+      "first_s": 4.483989000000292,
+      "warm_s": [
+        1.967816667020088,
+        1.6637317090062425,
+        2.270055750006577,
+        2.0085247500101104,
+        1.7673691250092816,
+        2.480057584005408,
+        1.6842284160084091,
+        1.7259417499881238,
+        1.938527291000355,
+        2.2386544999899343
+      ],
+      "warm_median_s": 1.9531719790102215,
+      "warm_p95_s": 2.385556758705934,
+      "rtfx": 5.631864535336155,
+      "deterministic": true
+    }
+  ],
+  "load_s": 0.49290404201019555,
+  "peak_process_tree_rss_bytes": 929497088,
+  "hardware": "Apple M5 Max, 18 CPU cores, 128 GiB unified memory",
+  "measurement": "File decode, quiet-point windows, and worker IPC; model loading, hotkey post-roll, paste, and text cleanup excluded from warm times.",
+  "date": "2026-09-05",
+  "scope": "The completed 11-second measurements only. Longer repeated-JFK runs were interrupted and are not reported."
+}

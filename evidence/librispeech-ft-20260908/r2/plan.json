@@ -1,0 +1,41 @@
+{
+  "status": "sealed_for_training",
+  "publication_authorized": false,
+  "experiment": "librispeech-ft-20260908/r2",
+  "seed": 20260909,
+  "parent_stage": "Orukeet focused-pass continuation",
+  "parent_sha256": "2d843db6eb25e82e47c5f9a76c319d12178eed7b5f4f61d73b47e91ce16a37db",
+  "fit_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+  "source_manifest_sha256": "c8c36e9cbf5053ba7159204b2a507185fc11e818f0ab71259e5937d20f9c9623",
+  "evaluation_manifest_sha256": "8770c5a110b60d3adabf4a8e4826adb516664bd44a8c2352e1da57086f85e500",
+  "training_rows": 2939,
+  "training_hours": 5.341547256944444,
+  "splits": {
+    "librispeech_test_other": 2939
+  },
+  "passes": 3,
+  "epochs": 3,
+  "training_presentations": 8817,
+  "evaluation_data_used_for_training": true,
+  "evaluation_interpretation": "LibriSpeech test-other is used for training and candidate selection; French and Greek are re-evaluation controls.",
+  "text_formatting": "Lowercase training labels, capitalize the first character, append a full stop if absent; normalized English words unchanged. Evaluation references unchanged.",
+  "frozen_gabor_rows": 12288,
+  "batching": {
+    "max_padded_seconds": 120,
+    "max_utterances": 16,
+    "accumulate_batches": 4,
+    "fused_joint_batch_size": 1
+  },
+  "proposed_optimizer": {
+    "name": "AdamW",
+    "peak_lr": 3e-06,
+    "end_lr": 3e-07,
+    "warmup_fraction": 0.03,
+    "betas": [
+      0.9,
+      0.98
+    ],
+    "weight_decay": 0.001,
+    "clip_grad_norm": 1.0
+  }
+}

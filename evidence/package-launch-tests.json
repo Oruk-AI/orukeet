@@ -1,0 +1,6 @@
+{
+  "unit_suite": "22 passed, 1 opt-in model test skipped",
+  "real_model_metal_suite": "23 passed",
+  "selection_contract": "3 passed",
+  "source": "Final working tree including UTF-8 output and per-artifact Hub routing. CI receipts identify committed revisions."
+}

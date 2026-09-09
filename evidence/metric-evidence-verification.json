@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "comparison": "All comparison fields exactly match raw stock/Q8 evidence.",
+  "source_comparison": "All comparison fields exactly match raw source/Q8 evidence.",
+  "original_registry_sha256": "c6fee4d0cb2c2071d41148f545048d2791dcc23ec49db2dd299fbcaaa283b253",
+  "records_per_model": 23038,
+  "raw_audio": false,
+  "transcript_text": false,
+  "speaker_names": false,
+  "identity_note": "Pseudonymous cluster ranks preserve grouping; not a formal anonymization guarantee."
+}

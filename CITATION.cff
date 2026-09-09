@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: If you use Orukeet, cite the technical report below and retain the NVIDIA Parakeet attribution.
+title: 'Orukeet: Multilingual ASR with Frozen Gabor Kernels'
+type: software
+authors: &id001
+- given-names: Nathan
+  family-names: Roll
+  affiliation: Oruk AI; Stanford University
+- given-names: Irene
+  family-names: Yi
+  affiliation: Oruk AI; Stanford University
+- given-names: Büşra
+  family-names: Marşan
+  affiliation: Oruk AI; Stanford University
+- given-names: Vianney
+  family-names: Grenez
+  affiliation: Oruk AI
+- given-names: Gabriel
+  family-names: Stein
+  affiliation: OpenWhispr
+- given-names: Momcilo
+  family-names: Mrkaic
+  affiliation: Hoid
+- given-names: Pavle
+  family-names: Padjin
+  affiliation: Hoid
+- given-names: Vladimir
+  family-names: Zeljkovic
+  affiliation: Hoid
+- given-names: Calbert
+  family-names: Graham
+  affiliation: Oruk AI; University of Cambridge
+version: 0.1.0
+repository-code: https://github.com/Oruk-AI/orukeet
+license: MIT
+abstract: 'A Parakeet-derived multilingual recognizer with 12,288 fitted, frozen temporal Gabor kernels.
+  Code: MIT. Weights: CC BY-SA 4.0.'
+preferred-citation:
+  type: report
+  title: 'Orukeet: Multilingual ASR with Frozen Gabor Kernels'
+  authors: *id001
+  institution:
+    name: Oruk AI
+  year: 2026
+  url: https://github.com/Oruk-AI/orukeet/blob/main/output/pdf/orukeet-technical-report.pdf

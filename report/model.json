@@ -1,0 +1,24 @@
+{
+  "name": "Orukeet",
+  "version": "librispeech-native-format-r3",
+  "sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+  "parent_sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+  "hf": {
+    "repo_id": "oruk/orukeet",
+    "revision": "555136b50265a132d4cea0d35560c26fc4f657ab",
+    "path": "orukeet-v0.1.0.nemo"
+  },
+  "freeze_audit": "evidence/librispeech-ft-20260908/r3/export-audit.json",
+  "archive_receipt": "evidence/librispeech-ft-20260908/r3/private-archive.json",
+  "evaluations": [
+    "evidence/standard-asr-r3-20260908/comparison.json",
+    "evidence/domains-r3-20260908/comparison.json"
+  ],
+  "publication_authorized": true,
+  "scope": "The manuscript, canonical NeMo source, Q8 and F16 exports, and OpenWhispr integration all share this exact r3 source checkpoint. Export hashes are pinned in src/orukeet/artifacts.json.",
+  "archive_hf": {
+    "repo_id": "oruk/orukeet-internal",
+    "revision": "294d5bbc2f4ba79cbcf07776c52f580ff053a60d",
+    "path": "experiments/librispeech-ft-20260908/r3/orukeet-targeted-ft.nemo"
+  }
+}

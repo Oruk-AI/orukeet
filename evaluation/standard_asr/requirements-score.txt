@@ -1,0 +1,4 @@
+kaldialign==0.12.0
+num2words==0.5.14
+rapidfuzz==3.14.6
+regex==2026.9.3

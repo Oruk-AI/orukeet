@@ -1,0 +1,86 @@
+\begin{table}[!p]
+\centering
+\caption{WER (\%) on the fixed accent and domain sample. Each partition contains 256 recordings, except Lesbos (230). GSB denotes GigaSpeechBench; two-letter suffixes identify languages. Bold identifies lower WER. Both models use the same decoding and scoring protocol as Table~\ref{tab:current-standard}.}
+\label{tab:current-domains}
+\small
+\begin{minipage}[t]{0.49\linewidth}
+\vspace{0pt}
+\centering
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabular}{lrr}
+\toprule
+Partition & Parakeet & Orukeet\\
+\midrule
+EuroSpeech BG & 14.22 & \textbf{13.04}\\
+EuroSpeech DE & 13.40 & \textbf{11.14}\\
+EuroSpeech EL & \textbf{25.83} & 26.35\\
+EuroSpeech EN & 24.40 & \textbf{23.77}\\
+EuroSpeech ET & 34.67 & \textbf{25.33}\\
+EuroSpeech FI & 16.61 & \textbf{15.20}\\
+EuroSpeech FR & 19.42 & \textbf{14.28}\\
+EuroSpeech HR & 12.93 & \textbf{12.56}\\
+EuroSpeech IT & \textbf{10.95} & 12.32\\
+EuroSpeech LT & 38.44 & \textbf{33.10}\\
+EuroSpeech LV & 57.18 & \textbf{42.14}\\
+EuroSpeech MT & 36.83 & \textbf{36.15}\\
+EuroSpeech PT & \textbf{23.08} & 23.81\\
+EuroSpeech SK & 17.29 & \textbf{14.91}\\
+EuroSpeech SL & \textbf{48.43} & 50.23\\
+EuroSpeech UK & \textbf{13.65} & 14.25\\
+GSB AI & 8.71 & \textbf{7.98}\\
+GSB Chinese accent & 14.49 & \textbf{13.56}\\
+GSB Filipino accent & 13.30 & \textbf{12.79}\\
+GSB Indian accent & 6.50 & \textbf{5.59}\\
+GSB Japanese accent & 19.15 & \textbf{17.78}\\
+GSB Scottish accent & 22.08 & \textbf{20.35}\\
+GSB Singaporean accent & 13.89 & \textbf{12.86}\\
+GSB agriculture & 6.20 & \textbf{5.84}\\
+\bottomrule
+\end{tabular}
+\end{minipage}\hfill%
+\begin{minipage}[t]{0.49\linewidth}
+\vspace{0pt}
+\centering
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabular}{lrr}
+\toprule
+Partition & Parakeet & Orukeet\\
+\midrule
+GSB arts & 5.47 & \textbf{4.87}\\
+GSB biology & 3.67 & \textbf{3.31}\\
+GSB economics & 7.05 & \textbf{6.57}\\
+GSB engineering & 4.06 & \textbf{3.50}\\
+GSB entertainment & 10.40 & \textbf{8.87}\\
+GSB finance & 5.81 & \textbf{5.11}\\
+GSB humanities & 7.98 & \textbf{7.47}\\
+GSB law & 9.75 & \textbf{9.04}\\
+GSB medicine & 3.49 & \textbf{3.18}\\
+GSB military & 3.43 & \textbf{3.06}\\
+Golos crowd RU & \textbf{2.84} & 2.92\\
+Golos far-field RU & \textbf{7.98} & 9.10\\
+Lesbos Greek & 94.78 & \textbf{93.55}\\
+Monsoon India & 4.12 & \textbf{3.78}\\
+NST Danish & 26.49 & \textbf{11.59}\\
+NST Swedish & 16.57 & \textbf{12.36}\\
+VoxPopuli CS & \textbf{7.32} & 7.39\\
+VoxPopuli ES & \textbf{6.07} & 6.20\\
+VoxPopuli HU & 12.00 & \textbf{11.05}\\
+VoxPopuli IT & \textbf{11.37} & 11.82\\
+VoxPopuli NL & \textbf{9.50} & 9.56\\
+VoxPopuli PL & 6.48 & \textbf{6.24}\\
+VoxPopuli RO & 11.48 & \textbf{11.20}\\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\par\vspace{12pt}
+\begin{tabular}{lrrr}
+\toprule
+Pooled comparison & Clips & Parakeet & Orukeet\\
+\midrule
+All 47 partitions & 12,006 & 16.72 & \textbf{15.25}\\
+All 20 English partitions & 5,120 & 9.51 & \textbf{8.84}\\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,6 @@
+*.pdf binary
+*.png binary
+*.svg whitespace=-blank-at-eol
+*.csv whitespace=cr-at-eol
+*.json whitespace=cr-at-eol
+integrations/openwhispr/*.patch text eol=lf

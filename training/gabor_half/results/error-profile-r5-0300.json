@@ -1,0 +1,59 @@
+{
+  "reference_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "candidate_sha256": "cb2e32a8986bc2b67441e9d1d9ff7467b837d05a486df974e9303c729fa33a79",
+  "interpretation": "Paired diagnostic on existing exposed evaluation. Edit-type counts depend on alignment tie-breaking and do not identify a causal mechanism.",
+  "groups": {
+    "learner": {
+      "manifest_outputs": [
+        "learner_en_speechocean_official_test_hypotheses.jsonl"
+      ],
+      "reference": {
+        "errors": 3477,
+        "substitutions": 2668,
+        "deletions": 447,
+        "insertions": 362,
+        "rows": 2500,
+        "words": 16141
+      },
+      "candidate": {
+        "errors": 3510,
+        "substitutions": 2690,
+        "deletions": 445,
+        "insertions": 375,
+        "rows": 2500,
+        "words": 16141
+      },
+      "paired": {
+        "same_error_count": 2231,
+        "worsened": 156,
+        "improved": 113
+      }
+    },
+    "voxpopuli_accented": {
+      "manifest_outputs": [
+        "parliamentaccent_en_voxpopuli_confirmation_hypotheses.jsonl"
+      ],
+      "reference": {
+        "errors": 6729,
+        "substitutions": 2758,
+        "deletions": 2957,
+        "insertions": 1014,
+        "rows": 1192,
+        "words": 32053
+      },
+      "candidate": {
+        "errors": 6854,
+        "substitutions": 2749,
+        "deletions": 3125,
+        "insertions": 980,
+        "rows": 1192,
+        "words": 32053
+      },
+      "paired": {
+        "same_error_count": 1033,
+        "worsened": 95,
+        "improved": 64
+      }
+    }
+  }
+}

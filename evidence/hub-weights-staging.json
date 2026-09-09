@@ -1,0 +1,18 @@
+{
+  "repo_id": "oruk/orukeet",
+  "revision": "8d3dd1507c2b3baa6f5799d0f0d8d09424ed8631",
+  "private": true,
+  "files": [
+    {
+      "path": "orukeet-v0.1.0rc1-q8.gguf",
+      "size": 714456736,
+      "sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0"
+    },
+    {
+      "path": "orukeet-v0.1.0rc1.nemo",
+      "size": 2509332480,
+      "sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32"
+    }
+  ],
+  "note": "Exact final weight SHA and size verified from remote LFS metadata. Card/wheel/report finalized in a later commit."
+}

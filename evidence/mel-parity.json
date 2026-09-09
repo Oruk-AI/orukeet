@@ -1,0 +1,16 @@
+{
+  "q8_0": {
+    "shape": [
+      128,
+      257
+    ],
+    "max_absolute_difference": 0.0
+  },
+  "fp16": {
+    "shape": [
+      128,
+      257
+    ],
+    "max_absolute_difference": 0.0
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "video": "orukeet-proof.mp4",
+  "video_sha256": "a8e8e8deab46ca3cf15e40fe3f52303d0f80a941615d39c15eb7c69a44017cde",
+  "receipt_sha256": "0753e97cee83fce59bf4a292af4252e14d5f95638453ab3ee841751cbc2f2a66",
+  "script_sha256": "6090c7cfb87d2df6e67f1a5f72e43b3987b64881262f168353c3e1dd0b5a316f",
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "duration_s": 28,
+  "audio_offset_s": 3.0,
+  "audio_duration_s": 11,
+  "fonts_sha256": {
+    "DejaVuSans.ttf": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
+    "DejaVuSans-Bold.ttf": "b184b89e3c1075f22f6b71575b6fc20d4972b3cfd3b23322ca6fd596dcaef167",
+    "DejaVuSansMono.ttf": "602ec86b8948cfcd956482fe64f94c36c867770149ef2f791d4613f443bcecb3"
+  },
+  "ffmpeg_version": "ffmpeg version 8.1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "rendering": "Static explanatory cards and exact-PCM waveform. Timings and transcript from saved real native call. No simulated GUI/microphone or invented text."
+}

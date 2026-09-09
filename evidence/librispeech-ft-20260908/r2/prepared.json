@@ -1,0 +1,23 @@
+{
+  "complete": true,
+  "plan_sha256": "2148fb606c2243808155ccf607717f93f5a364855bbf016f2c727ea6a99c8b6c",
+  "rows": 2939,
+  "manifests": [
+    {
+      "split": "librispeech_test_other",
+      "rows": 2939,
+      "hours": 5.341547256944444,
+      "path": "/home/nathanroll/parakeet-ft/librispeech_ft_20260908/r2/prepared/librispeech_test_other.jsonl",
+      "sha256": "02422dd0e49272686ad7e3d3039e36edf1a5e74ffb7fea25b5eafb919314e2d2",
+      "alignment_status": "original_evaluation_audio_and_reference_verified"
+    }
+  ],
+  "source_manifest_sha256": "c8c36e9cbf5053ba7159204b2a507185fc11e818f0ab71259e5937d20f9c9623",
+  "evaluation_manifest_sha256": "8770c5a110b60d3adabf4a8e4826adb516664bd44a8c2352e1da57086f85e500",
+  "preparation_script_sha256": "7a5eba4e3f0bc3a20d0c65eaeb297c04831fcb31f3d3404c009b8b10634e0f60",
+  "all_audio_and_reference_hashes_verified": true,
+  "unknown_token_rows": 0,
+  "evaluation_references_unchanged": true,
+  "training_targets_equal_evaluation_references": false,
+  "training_targets_preserve_normalized_english_words": true
+}

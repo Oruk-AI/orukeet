@@ -1,0 +1,17 @@
+{
+  "fits_json_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+  "files": {
+    "fits.json.gz": {
+      "sha256": "82c7a5926c2a620a042b0dab2fab8be97a585b3601d45e0697ea19dc32579a44",
+      "bytes": 1661279
+    },
+    "fits.npz": {
+      "sha256": "52791beaf3219421e4ad3aa2e2591875b50dbfaa83a6309361c2df71db08de3d",
+      "bytes": 2820805
+    }
+  },
+  "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "kernels": 24576,
+  "selected": 12288,
+  "license": "CC-BY-SA-4.0; checkpoint-derived numerical artifacts, separate from MIT experiment code"
+}

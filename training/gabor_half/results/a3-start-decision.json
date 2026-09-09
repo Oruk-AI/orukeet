@@ -1,0 +1,65 @@
+{
+  "label": "a3",
+  "method": "Single float64 weighted sum of trained parameters, rounded once",
+  "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "parents": [
+    {
+      "label": "r14-0200",
+      "path": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r14_20260906/step-0200.nemo",
+      "sha256": "63d462cf943d07785b382db97f179aaf8d9d4b7fe48672bcccdf8cf4e2617a47"
+    },
+    {
+      "label": "r7-0300",
+      "path": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r7_20260906/step-0300.nemo",
+      "sha256": "992a35cdfcea8d4d6ca57e8bef4d2fa2ae82a8e1ab02a872598e338faea40ef3"
+    }
+  ],
+  "parent_comparisons_sha256": {
+    "r14-0200": {
+      "development": "a55abfbf15321638f6170e34f19b17a488611e24037aa0fcd16cbd952b64f4d1",
+      "larger": "5436c9628b347c4a6548159225d285f108829d1f79de5b090ab818e3bf978daf"
+    },
+    "r7-0300": {
+      "development": "d77b6652b887bf9c7247061c198c78f339d548ce7ec1825aafefa1918c2cc63e",
+      "larger": "0e107497bab1b3019bf398a73a9862ebd8f50b357281244b0bf1b63681576334"
+    }
+  },
+  "candidates": [
+    {
+      "label": "a3-0150",
+      "weights": [
+        0.85,
+        0.15
+      ]
+    },
+    {
+      "label": "a3-0250",
+      "weights": [
+        0.75,
+        0.25
+      ]
+    },
+    {
+      "label": "a3-0350",
+      "weights": [
+        0.65,
+        0.35
+      ]
+    }
+  ],
+  "fixed_rows": 12288,
+  "parameter_tensors_averaged": 651,
+  "rationale": "R14-200 passes development and improves the larger multilingual mean by 0.022459 points, but misses English by 0.006812 points. R7-300 improves English by 0.060395 points while missing the multilingual mean by 0.020564 points. Test conservative R7 shares of 15%, 25% and 35% in the R14 state. Both endpoints descend from the same fitted, frozen rows; copy these rows and all non-parameter buffers exactly. Model-weight interpolation does not imply metric interpolation. This is adaptive selection on exposed regressions, with no independent generalization claim.",
+  "selection_rule": "Audit and evaluate all three development candidates. Test development-passing candidates on the larger regression in increasing development-WER order, stopping at the first full pass. If none passes development, run the lowest-development-WER candidate once for diagnosis only. Preserve every result and explicitly name any larger comparisons not run.",
+  "new_optimizer_steps": 0,
+  "inference_ensemble": false,
+  "no_gate_changes": true,
+  "native_qualification_required_separately": true,
+  "code_sha256": {
+    "average_recovered.py": "6e2216e9926eae383e10d99301a8e6f3dd5708247ba2a44a41578aadf3454e5d",
+    "audit_checkpoint.py": "7360e311472f70f456e94a4391e3f42776bd8863b1678208b10509555d422227",
+    "compare.py": "d725d50168b9093824d26d6000b34c4fc4f15b7ad92de5175536c60d24743483",
+    "full_regression.py": "45329aacb626a1f30a18327f27a375bb3a1202397a6f6a8aceeea8e791c9cb97",
+    "run_average_recovery_a3.py": "303116e8feaa2d92a32f405273692276bea95d0bfa8705bcc5beee74d73e491a"
+  }
+}

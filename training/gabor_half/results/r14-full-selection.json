@@ -1,0 +1,47 @@
+{
+  "rule": "Audit both declared exports. Run development-passing exports on the larger regression in increasing development-WER order, stopping at the first full pass. If neither passes development, evaluate the lowest mean once for diagnosis. Preserve every result and name unrun larger comparisons.",
+  "candidates": [
+    {
+      "label": "r14-0200",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r14_20260906/step-0200.nemo",
+      "status": "pass",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.070952999827313,
+        "delta_pp": -0.011282025260951277
+      },
+      "failures": []
+    },
+    {
+      "label": "r14-0400",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r14_20260906/step-0400.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.047487242547618,
+        "delta_pp": -0.03474778254064737
+      },
+      "failures": [
+        "cv_sl_dev_selection: regression 0.528169 pp exceeds 0.5",
+        "fleurs_lt_dev_selection: regression 0.626174 pp exceeds 0.5",
+        "fleurs_lv_dev_selection: regression 0.544794 pp exceeds 0.5"
+      ]
+    }
+  ],
+  "larger_order": [
+    "r14-0200"
+  ],
+  "diagnostic_only": false,
+  "larger_results": [
+    {
+      "label": "r14-0200",
+      "source_qualified": false,
+      "comparison_sha256": "5436c9628b347c4a6548159225d285f108829d1f79de5b090ab818e3bf978daf"
+    }
+  ],
+  "source_qualified_selection": null,
+  "larger_comparisons_not_run": [
+    "r14-0400"
+  ],
+  "native_qualified": false
+}

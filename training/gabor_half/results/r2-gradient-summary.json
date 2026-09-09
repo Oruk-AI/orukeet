@@ -1,0 +1,6 @@
+{
+  "status": "pass",
+  "tensors": 651,
+  "all_trainable": true,
+  "all_received_finite_gradients": true
+}

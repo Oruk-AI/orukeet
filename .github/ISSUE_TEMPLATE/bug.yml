@@ -1,0 +1,27 @@
+name: Transcription or runtime bug
+description: Report a reproducible problem with Orukeet.
+body:
+  - type: textarea
+    id: setup
+    attributes:
+      label: Setup
+      description: OS/architecture, package version, runtime/device, model SHA-256 and available RAM.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps and observed result
+      description: Include the command or app workflow, expected behavior and whether reloading changes the result.
+    validations:
+      required: true
+  - type: textarea
+    id: audio
+    attributes:
+      label: Input details
+      description: Duration, sample rate, channels and language. A small authorized sample is helpful; private recordings are not required.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Remove credentials and private transcript content before attaching logs.

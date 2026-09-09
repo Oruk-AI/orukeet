@@ -1,0 +1,49 @@
+{
+  "label": "r10",
+  "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "initial_student_sha256": "ae59dcdaa87c9cf476ae5ecd9986287c49f38ead8a92e53da7bb9fa286514f7e",
+  "teacher_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "data_config_sha256": "9c43e01a398c99c2e34dd9f41be3c87b6b31cefacb77697c4946d1c457b63e63",
+  "data_audit_sha256": "82d67220bed11eab62331d287d3b9fff935f87cc5429e05e0c310afdb2f776a9",
+  "preceding_full_comparison_sha256": "faa584cc486a812e5779aaa1ef04a09c2217f7320a5a06076c2bde1082d85ce2",
+  "launcher_sha256": "4be7284ae51d35b8eb3348cbdb30b79db789d133575c0518c85e74148777a1a8",
+  "command": [
+    "bash",
+    "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r10_20260906-launch.sh",
+    "++export_interval=200",
+    "++seed=20260908",
+    "++model.train_ds.seed=20260908",
+    "++model.train_ds.shard_seed=20260908",
+    "++recovery_start_model=/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r9_20260906/step-0600.nemo",
+    "++recovery_start_audit=/home/nathanroll/parakeet-ft/gabor_half_20260906/r9-0600-audit.json",
+    "++model.train_ds.input_cfg=/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/input_cfg_with_accents.yaml",
+    "model.optim.lr=2e-6",
+    "model.optim.sched.min_lr=0.0",
+    "model.optim.sched.warmup_steps=25",
+    "++preserve_bn_statistics=true",
+    "++disable_dropout=true",
+    "++resume_keep=1",
+    "++layer_anchor_scale=5.0",
+    "++conv_anchor_scale=5.0",
+    "++asr_loss_scale=1.0",
+    "++recovery_layer_lrs.lower_encoder=1e-6",
+    "++recovery_layer_lrs.upper_encoder=2e-6",
+    "++recovery_layer_lrs.conv_neighbors=2e-5",
+    "++recovery_layer_lrs.other=1e-6",
+    "++recovery_layer_lrs.decoder=1e-7",
+    "++recovery_layer_lrs.joint=1e-7",
+    "model.spec_augment.freq_masks=0",
+    "model.spec_augment.time_masks=0"
+  ],
+  "environment": {
+    "NAME": "orukeet_gabor_half_r10_20260906",
+    "STEPS": "400"
+  },
+  "declared_export_steps": [
+    200,
+    400
+  ],
+  "rationale": "Continue the lowest-development-WER R9 export. R9 passes larger per-language and English guards but misses the multilingual mean and one development slice. Return to the complete original sampling mixture. Give the 120 trainable convolution tensors (pointwise projections, free depthwise rows, BatchNorm affine terms) a 2e-5 learning rate and increase branch reconstruction scale from 1 to 5. All other 531 parameter tensors retain positive learning rates and ASR gradients. This tests compensation near the fixed kernels, without editing those kernels or the qualification criteria.",
+  "selection_rule": "Evaluate both declared exports; lowest development WER among passing exports, otherwise lowest for diagnosis only, then unchanged larger regression.",
+  "no_gate_changes": true
+}

@@ -1,0 +1,1 @@
+Four exact kernel replacements. Examples are ranks 1,537, 4,609, 7,680 and 10,752 of the selected 12,288, nearest the 12.5th, 37.5th, 62.5th and 87.5th fit-error percentiles. Each pair is divided by the original kernel L2 norm. Markers are the nine stored taps; connecting lines guide the eye. RMS percentages are relative to the original norm.

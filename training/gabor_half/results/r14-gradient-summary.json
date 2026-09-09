@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "trainable_parameter_tensors": 651,
+  "all_have_finite_gradients": true,
+  "source": "r14-gradient-coverage.json",
+  "training_source_hashes_match": true,
+  "initial_student_sha256": "44059de88f9797dcd9a3386e1b267733937326c518b2d570468911b6f7da18db",
+  "combined_objective_and_rates_match_declaration": true,
+  "original_training_mixture_verified": true,
+  "new_optimizer_schedule_steps": 400,
+  "declared_exports": [
+    200,
+    400
+  ],
+  "sampling_seed": 20260911,
+  "frozen_gabor_rows": 12288,
+  "non_gabor_scalar_parameters": 626897542,
+  "native_joint_parity": "passed in actual NeMo training"
+}

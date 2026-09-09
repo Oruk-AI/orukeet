@@ -1,0 +1,150 @@
+{
+  "created_utc": "2026-09-07T05:47:57.357000+00:00",
+  "status": "complete",
+  "reason": "Known historical positive controls failed the stored-PCM versus re-encoded-PCM comparison. Add fingerprints of decoded historical inputs without altering the sealed original index.",
+  "original_history_index_sha256": "93bd8c1e8df498f48c527d78a06a05e656febbb4c798d84a056db98fc1afdd95",
+  "original_index_unchanged": true,
+  "historical_pcm_keys": 23113,
+  "available_files": 23113,
+  "missing_files": 0,
+  "verification": {
+    "verified": 23113
+  },
+  "verified_hours": 52.460456701388885,
+  "fingerprint_file_sha256": "f2a3bbc65731c66bf3faab3202e295db27537853c6ad339a455222ac61aa8eb0",
+  "script_sha256": "bef85d977b6e69e3db66b3bf58177e4a6a44977673e7f58fbfb6e42aec35f812",
+  "inventory_files_used": [
+    {
+      "path_sha256": "44130fed6ddf2d5a6c19603568275fd08d4fe892830263be6f26865ed6128613",
+      "content_sha256": "97d7b5ed0e79a0af2f7914ec67e1ff7a6cc04e9595ffa7c81d598795b2f258d9",
+      "additional_pcm_keys": 750
+    },
+    {
+      "path_sha256": "9e4151ffbca0b6df6f7642286669536e6ba6114e80fa0736475b159b09ffd8e2",
+      "content_sha256": "f6da3636a1e1e5497078326afaab2d40f223229f934f3d8058025c90661c13a7",
+      "additional_pcm_keys": 747
+    },
+    {
+      "path_sha256": "0dc1c3a5615ddd7a610b8386c5111743dc5eea85bb357145bdab7d016839b3c2",
+      "content_sha256": "d6ccff42fe139835de7d056924ac34d3a5cb7db048a2b9e985493a2c1b866c79",
+      "additional_pcm_keys": 5973
+    },
+    {
+      "path_sha256": "065e23b40c145c4d2d2e315839b4c473619c8096d1fa4fb33dd5a0eef9c8eeef",
+      "content_sha256": "5dcd42ae57e7d3c717c86e41e3158a0cf581e9daf332a492f723fe2ed637f7ae",
+      "additional_pcm_keys": 120
+    },
+    {
+      "path_sha256": "48d701c85fc4055f118320f39554d9b3f0801d48f491b39fe2ef5d4719397afb",
+      "content_sha256": "27c02f2b5c7b756787f64e6de0666257e9fe16a63236ceac33c00c6ce61d2600",
+      "additional_pcm_keys": 120
+    },
+    {
+      "path_sha256": "44f802c5bc99c64264f562046ee8756231c80b0c620f468eb2a197618867c7bb",
+      "content_sha256": "4613b92adb56fa052906f6f09d476e25028622fe937e35df82aebc90f6fe61ef",
+      "additional_pcm_keys": 2254
+    },
+    {
+      "path_sha256": "f130033284d4dbac9329b8b418bf2f7b2c732d6b35180cf8be027e4af835a38a",
+      "content_sha256": "5184e55c2a016cb4c2b1245a8d8132e56b5f37b5148dfad8401f44d35543b686",
+      "additional_pcm_keys": 2698
+    },
+    {
+      "path_sha256": "2fe965a229a8b07d2d952c75bc2cd12a87cf74ee7743fbb24977f0a25ad4c2bf",
+      "content_sha256": "83e620978eee4327dd089a3d8bd65f0235cc20f25ab8de060c95ee557db4a654",
+      "additional_pcm_keys": 600
+    },
+    {
+      "path_sha256": "d95688ae0f22e3ed91591821e22fc12776b6ff2e79dce4a446275a6e6824e784",
+      "content_sha256": "f7ee5fdb9365bc0980c5ae9215e41df1f1c1ecd28c089a8380494d60392bfb2e",
+      "additional_pcm_keys": 1192
+    },
+    {
+      "path_sha256": "32a72c3a015b8aa03291f1ac5bfd5d0f67319b666496d6f4606d3a18b7b5a727",
+      "content_sha256": "936e4c6ec4eb7fe4d1bb4597286014b9eb0e02f85ad03179973e5281a59ec740",
+      "additional_pcm_keys": 600
+    },
+    {
+      "path_sha256": "5ef845ba205db7a189a91d0b20bc9c30ee49de0ca55a9c1b69902292b615d9ad",
+      "content_sha256": "71cc4704f0ab217b059b086312bdbf9d382ae429b29a81bd2c2a67068b902db8",
+      "additional_pcm_keys": 600
+    },
+    {
+      "path_sha256": "9ed3db3c3a0a615508f5dd64bde2544689e75d3d37e45bcfa835d0c55316b3a8",
+      "content_sha256": "c21f96818bbf748f28935eab06f0c1c6bda12640df3956dab7f2b51d8630880f",
+      "additional_pcm_keys": 600
+    },
+    {
+      "path_sha256": "6b532efbdd65dbcfbf01ddbcf4609c9fe4861be8502cb402f4569488e2be8cbe",
+      "content_sha256": "c0fd978569c26ba924030e730bf85dc24bebc20a97a8924814f2aee12edc3d89",
+      "additional_pcm_keys": 600
+    },
+    {
+      "path_sha256": "13770840d8b1965037fd60725ba9b7a4b26ff57c397fca39b9e0d641a77ff1f2",
+      "content_sha256": "bf811c12285d0fdd8734ec63671d0e798ff365231e2974685fc913f3c458ef6f",
+      "additional_pcm_keys": 599
+    },
+    {
+      "path_sha256": "b56e877df9b0b781f11523193e3b8daffdba35a387f98882a67fd65150a29c4b",
+      "content_sha256": "7c36dba2a13fd37f559d8989971b0a9b406704b37c076f247b6e30ea2550b9c5",
+      "additional_pcm_keys": 51
+    },
+    {
+      "path_sha256": "d1dd02c1a74ab3ce1618ef6f44ac857f981d14ce4f1c8012e0d1c9e3ad78cceb",
+      "content_sha256": "2e10418f7ad199384e70fff92fcbaa33cd25efc001a4789bea82fbbe1c0a15be",
+      "additional_pcm_keys": 477
+    },
+    {
+      "path_sha256": "1ff671010c94550dcdddc56c9a2a2ce5bd72f4852eb3a487fb1655a17e8e1411",
+      "content_sha256": "59b943e6833c5670935932cde6d56b131a579909581e33443adf1e2f8e0c2125",
+      "additional_pcm_keys": 600
+    },
+    {
+      "path_sha256": "5b2c9d532224abe4daf50db615257537933a28ec4d090f58e5a28bc53a5a2224",
+      "content_sha256": "9782f3ea9e89ee4d87447be4ff25564c1ff7e35990174f1ddb10f2049c37c01d",
+      "additional_pcm_keys": 600
+    },
+    {
+      "path_sha256": "896e62242903d1c308f75b2788731ac7368e6c8f3df166d63b59ca4681abfe8c",
+      "content_sha256": "da75fb001b1654db21a74401921503627c351bb79ec170c9a95e4e246e38fbc4",
+      "additional_pcm_keys": 600
+    },
+    {
+      "path_sha256": "22b804ef32a015d9cf2bdcf7a1ef005a6cdeab4a1d353c890fb92fac0457ca92",
+      "content_sha256": "1da7390f2d2dccb357db21183dcbc4962413de40b8218569e237e32b4360140b",
+      "additional_pcm_keys": 599
+    },
+    {
+      "path_sha256": "829cb74bdfd204bb75709a92eb7a0c64981caf8524942a44add9b30050407e6e",
+      "content_sha256": "1588cc3f4d4be4031379d58282e4d4eb8bb9fea9f289686591a5eb70b21d2e1e",
+      "additional_pcm_keys": 42
+    },
+    {
+      "path_sha256": "6bd84e4fd125b993d32d63811dfde4fd81fa4f7934cb422a3ec28b3386177c78",
+      "content_sha256": "aa474bc48fcf571014f4d5b3dc1755fc9dbdc83d7d2e1bfe6e7078b2cf8ef4b5",
+      "additional_pcm_keys": 600
+    },
+    {
+      "path_sha256": "448ac18ff22eb84e0fed11486d4cef0b873fd0be648960de20f00a85931a36ac",
+      "content_sha256": "2cde25c911ce4cdbc6943172e2cc6d0979989568e6e378d64955649331a7d85d",
+      "additional_pcm_keys": 600
+    },
+    {
+      "path_sha256": "895ff0a812a617bdf3b52373cdfee2832b465df622043cc65d25652a2cfd8c15",
+      "content_sha256": "86f728cb075f226de8cc61e85a220fdbeccbf9bc7a82c9396b8c1547863b9bd5",
+      "additional_pcm_keys": 600
+    },
+    {
+      "path_sha256": "a5942daeb0112125917ef23d69df0a363839e0dd023c48fcb42a8b538c26e685",
+      "content_sha256": "371563518c4e2d9f850196acd6c97ce155bba8b5ea27987277f706537ff4dfbc",
+      "additional_pcm_keys": 582
+    },
+    {
+      "path_sha256": "857fb7fbdd71764577d03862f13c4f2f1db87cd92c2e60760945d359d9e3770d",
+      "content_sha256": "76ee72388d8810030551f01f352caddf63c96ab2fe6cc971b456cb7607784bbd",
+      "additional_pcm_keys": 309
+    }
+  ],
+  "scoring_effect": "Complete-split recognition scores stay fixed. Strict-history-disjoint sensitivity also excludes matches to these decoded-input fingerprints.",
+  "limits": "Exact stored and decoded representations only; not an acoustic near-duplicate audit or a full fingerprinting of every historical training recording."
+}

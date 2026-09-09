@@ -1,0 +1,10 @@
+{
+  "platform": "linux_x86_64",
+  "archive_sha256": "0f74131d631ad2c694cf0ec53490866bb6461147959589a69fb6fc231944065b",
+  "native_abi": "passed",
+  "worker_pipes": "passed",
+  "inference": "passed",
+  "unicode_audio_path": "passed",
+  "persistent_repeat": "passed",
+  "timestamp_bounds": "passed"
+}

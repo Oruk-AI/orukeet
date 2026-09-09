@@ -1,0 +1,414 @@
+{
+  "status": "fail",
+  "limitations": "Previously exposed development subset; point estimates, no unseen-data claim",
+  "original_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "candidate_sha256": "b659599aa599e4f2b90da49edbb63a24c4e38f61c1d7ec49033576c7fda18db6",
+  "primary": {
+    "original_wer": 10.082235025088266,
+    "candidate_wer": 12.244938074920029,
+    "delta_pp": 2.162703049831764
+  },
+  "cv_macro": {
+    "original_wer": 9.25994528460406,
+    "candidate_wer": 11.543884824803474,
+    "delta_pp": 2.2839395401994147
+  },
+  "fleurs_macro": {
+    "original_wer": 10.904524765572472,
+    "candidate_wer": 12.945991325036584,
+    "delta_pp": 2.0414665594641135
+  },
+  "sets": {
+    "cv_bg_dev_selection": {
+      "original_wer": 17.48633879781421,
+      "candidate_wer": 17.814207650273225,
+      "delta_pp": 0.32786885245901587,
+      "rows": 100,
+      "words": 915
+    },
+    "cv_cs_dev_selection": {
+      "original_wer": 5.087209302325581,
+      "candidate_wer": 5.377906976744186,
+      "delta_pp": 0.29069767441860517,
+      "rows": 100,
+      "words": 688
+    },
+    "cv_da_dev_selection": {
+      "original_wer": 16.289592760180994,
+      "candidate_wer": 20.475113122171944,
+      "delta_pp": 4.18552036199095,
+      "rows": 100,
+      "words": 884
+    },
+    "cv_de_dev_selection": {
+      "original_wer": 5.038335158817087,
+      "candidate_wer": 5.3669222343921135,
+      "delta_pp": 0.32858707557502687,
+      "rows": 100,
+      "words": 913
+    },
+    "cv_el_dev_selection": {
+      "original_wer": 11.297709923664122,
+      "candidate_wer": 11.145038167938932,
+      "delta_pp": -0.15267175572519065,
+      "rows": 100,
+      "words": 655
+    },
+    "cv_en_dev_selection": {
+      "original_wer": 5.6008146639511205,
+      "candidate_wer": 6.211812627291242,
+      "delta_pp": 0.6109979633401217,
+      "rows": 100,
+      "words": 982
+    },
+    "cv_es_dev_selection": {
+      "original_wer": 3.723404255319149,
+      "candidate_wer": 4.148936170212766,
+      "delta_pp": 0.42553191489361675,
+      "rows": 100,
+      "words": 940
+    },
+    "cv_et_dev_selection": {
+      "original_wer": 22.274881516587676,
+      "candidate_wer": 22.906793048973142,
+      "delta_pp": 0.631911532385466,
+      "rows": 100,
+      "words": 1266
+    },
+    "cv_fi_dev_selection": {
+      "original_wer": 8.054711246200608,
+      "candidate_wer": 10.182370820668693,
+      "delta_pp": 2.127659574468085,
+      "rows": 100,
+      "words": 658
+    },
+    "cv_fr_dev_selection": {
+      "original_wer": 6.6600397614314115,
+      "candidate_wer": 5.864811133200795,
+      "delta_pp": -0.7952286282306167,
+      "rows": 100,
+      "words": 1006
+    },
+    "cv_hu_dev_selection": {
+      "original_wer": 7.76566757493188,
+      "candidate_wer": 8.310626702997276,
+      "delta_pp": 0.5449591280653951,
+      "rows": 100,
+      "words": 734
+    },
+    "cv_it_dev_selection": {
+      "original_wer": 2.8513238289205702,
+      "candidate_wer": 3.360488798370672,
+      "delta_pp": 0.5091649694501017,
+      "rows": 100,
+      "words": 982
+    },
+    "cv_lt_dev_selection": {
+      "original_wer": 8.805970149253731,
+      "candidate_wer": 11.194029850746269,
+      "delta_pp": 2.388059701492537,
+      "rows": 100,
+      "words": 670
+    },
+    "cv_lv_dev_selection": {
+      "original_wer": 20.050125313283207,
+      "candidate_wer": 26.06516290726817,
+      "delta_pp": 6.015037593984964,
+      "rows": 100,
+      "words": 798
+    },
+    "cv_mt_dev_selection": {
+      "original_wer": 13.849765258215962,
+      "candidate_wer": 13.849765258215962,
+      "delta_pp": 0.0,
+      "rows": 100,
+      "words": 852
+    },
+    "cv_nl_dev_selection": {
+      "original_wer": 2.620545073375262,
+      "candidate_wer": 3.9832285115303985,
+      "delta_pp": 1.3626834381551363,
+      "rows": 100,
+      "words": 954
+    },
+    "cv_pl_dev_selection": {
+      "original_wer": 1.4796547472256474,
+      "candidate_wer": 1.972872996300863,
+      "delta_pp": 0.4932182490752157,
+      "rows": 100,
+      "words": 811
+    },
+    "cv_pt_dev_selection": {
+      "original_wer": 6.528662420382165,
+      "candidate_wer": 7.643312101910828,
+      "delta_pp": 1.1146496815286628,
+      "rows": 100,
+      "words": 628
+    },
+    "cv_ro_dev_selection": {
+      "original_wer": 5.563093622795115,
+      "candidate_wer": 6.784260515603799,
+      "delta_pp": 1.221166892808684,
+      "rows": 100,
+      "words": 737
+    },
+    "cv_ru_dev_selection": {
+      "original_wer": 4.878048780487805,
+      "candidate_wer": 6.039488966318235,
+      "delta_pp": 1.16144018583043,
+      "rows": 100,
+      "words": 861
+    },
+    "cv_sk_dev_selection": {
+      "original_wer": 6.407766990291262,
+      "candidate_wer": 10.485436893203884,
+      "delta_pp": 4.077669902912622,
+      "rows": 100,
+      "words": 515
+    },
+    "cv_sl_dev_selection": {
+      "original_wer": 22.711267605633804,
+      "candidate_wer": 49.82394366197183,
+      "delta_pp": 27.112676056338028,
+      "rows": 100,
+      "words": 568
+    },
+    "cv_sv_dev_selection": {
+      "original_wer": 14.166666666666666,
+      "candidate_wer": 14.86111111111111,
+      "delta_pp": 0.6944444444444446,
+      "rows": 100,
+      "words": 720
+    },
+    "cv_uk_dev_selection": {
+      "original_wer": 3.0470914127423825,
+      "candidate_wer": 3.185595567867036,
+      "delta_pp": 0.1385041551246533,
+      "rows": 100,
+      "words": 722
+    },
+    "fleurs_bg_dev_selection": {
+      "original_wer": 11.54394299287411,
+      "candidate_wer": 11.923990498812351,
+      "delta_pp": 0.38004750593824177,
+      "rows": 100,
+      "words": 2105
+    },
+    "fleurs_cs_dev_selection": {
+      "original_wer": 10.3954802259887,
+      "candidate_wer": 9.491525423728813,
+      "delta_pp": -0.9039548022598876,
+      "rows": 100,
+      "words": 1770
+    },
+    "fleurs_da_dev_selection": {
+      "original_wer": 15.395966551893753,
+      "candidate_wer": 16.576487948844072,
+      "delta_pp": 1.1805213969503185,
+      "rows": 100,
+      "words": 2033
+    },
+    "fleurs_de_dev_selection": {
+      "original_wer": 5.214424951267056,
+      "candidate_wer": 5.409356725146199,
+      "delta_pp": 0.1949317738791425,
+      "rows": 100,
+      "words": 2052
+    },
+    "fleurs_el_dev_selection": {
+      "original_wer": 25.794564716720405,
+      "candidate_wer": 27.176416397973284,
+      "delta_pp": 1.3818516812528792,
+      "rows": 100,
+      "words": 2171
+    },
+    "fleurs_en_dev_selection": {
+      "original_wer": 6.317335945151812,
+      "candidate_wer": 6.513222331047992,
+      "delta_pp": 0.19588638589618057,
+      "rows": 100,
+      "words": 2042
+    },
+    "fleurs_es_dev_selection": {
+      "original_wer": 3.063629222309505,
+      "candidate_wer": 3.220738413197172,
+      "delta_pp": 0.15710919088766673,
+      "rows": 100,
+      "words": 2546
+    },
+    "fleurs_et_dev_selection": {
+      "original_wer": 14.093529788597053,
+      "candidate_wer": 14.926329276105061,
+      "delta_pp": 0.8327994875080087,
+      "rows": 100,
+      "words": 1561
+    },
+    "fleurs_fi_dev_selection": {
+      "original_wer": 12.830957230142566,
+      "candidate_wer": 13.64562118126273,
+      "delta_pp": 0.8146639511201634,
+      "rows": 100,
+      "words": 1473
+    },
+    "fleurs_fr_dev_selection": {
+      "original_wer": 4.647370566653078,
+      "candidate_wer": 5.014268242967795,
+      "delta_pp": 0.3668976763147169,
+      "rows": 100,
+      "words": 2453
+    },
+    "fleurs_hr_dev_selection": {
+      "original_wer": 8.698030634573303,
+      "candidate_wer": 10.448577680525164,
+      "delta_pp": 1.7505470459518602,
+      "rows": 100,
+      "words": 1828
+    },
+    "fleurs_hu_dev_selection": {
+      "original_wer": 12.2573488630061,
+      "candidate_wer": 13.089295618413756,
+      "delta_pp": 0.831946755407655,
+      "rows": 100,
+      "words": 1803
+    },
+    "fleurs_it_dev_selection": {
+      "original_wer": 2.0814061054579094,
+      "candidate_wer": 2.2201665124884364,
+      "delta_pp": 0.13876040703052706,
+      "rows": 100,
+      "words": 2162
+    },
+    "fleurs_lt_dev_selection": {
+      "original_wer": 18.409517845961176,
+      "candidate_wer": 19.599248591108328,
+      "delta_pp": 1.189730745147152,
+      "rows": 100,
+      "words": 1597
+    },
+    "fleurs_lv_dev_selection": {
+      "original_wer": 19.612590799031477,
+      "candidate_wer": 20.641646489104115,
+      "delta_pp": 1.0290556900726386,
+      "rows": 100,
+      "words": 1652
+    },
+    "fleurs_mt_dev_selection": {
+      "original_wer": 17.96669588080631,
+      "candidate_wer": 19.149868536371603,
+      "delta_pp": 1.1831726555652935,
+      "rows": 100,
+      "words": 2282
+    },
+    "fleurs_nl_dev_selection": {
+      "original_wer": 7.756618671620994,
+      "candidate_wer": 7.663725034835114,
+      "delta_pp": -0.09289363678588014,
+      "rows": 100,
+      "words": 2153
+    },
+    "fleurs_pl_dev_selection": {
+      "original_wer": 6.748466257668712,
+      "candidate_wer": 7.361963190184049,
+      "delta_pp": 0.6134969325153374,
+      "rows": 100,
+      "words": 1793
+    },
+    "fleurs_pt_dev_selection": {
+      "original_wer": 3.6363636363636362,
+      "candidate_wer": 3.909090909090909,
+      "delta_pp": 0.27272727272727293,
+      "rows": 100,
+      "words": 2200
+    },
+    "fleurs_ro_dev_selection": {
+      "original_wer": 11.84984170058797,
+      "candidate_wer": 13.930348258706468,
+      "delta_pp": 2.0805065581184987,
+      "rows": 100,
+      "words": 2211
+    },
+    "fleurs_ru_dev_selection": {
+      "original_wer": 4.969630038652678,
+      "candidate_wer": 4.638321369409166,
+      "delta_pp": -0.3313086692435121,
+      "rows": 100,
+      "words": 1811
+    },
+    "fleurs_sk_dev_selection": {
+      "original_wer": 7.235726399095534,
+      "candidate_wer": 20.01130582249859,
+      "delta_pp": 12.775579423403055,
+      "rows": 100,
+      "words": 1769
+    },
+    "fleurs_sl_dev_selection": {
+      "original_wer": 21.765350877192983,
+      "candidate_wer": 46.82017543859649,
+      "delta_pp": 25.05482456140351,
+      "rows": 100,
+      "words": 1824
+    },
+    "fleurs_sv_dev_selection": {
+      "original_wer": 13.437668645439826,
+      "candidate_wer": 12.466270912034538,
+      "delta_pp": -0.9713977334052881,
+      "rows": 100,
+      "words": 1853
+    },
+    "fleurs_uk_dev_selection": {
+      "original_wer": 6.890660592255125,
+      "candidate_wer": 7.801822323462415,
+      "delta_pp": 0.9111617312072893,
+      "rows": 100,
+      "words": 1756
+    },
+    "english_dialects_dev": {
+      "original_wer": 6.159695817490494,
+      "candidate_wer": 5.779467680608365,
+      "delta_pp": -0.3802281368821294,
+      "rows": 100,
+      "words": 1315
+    },
+    "speechocean762_dev": {
+      "original_wer": 37.423312883435585,
+      "candidate_wer": 43.25153374233129,
+      "delta_pp": 5.828220858895705,
+      "rows": 100,
+      "words": 652
+    }
+  },
+  "failures": [
+    "Primary WER exceeds original",
+    "cv_da_dev_selection: regression 4.185520 pp exceeds 0.5",
+    "cv_en_dev_selection: regression 0.610998 pp exceeds 0.5",
+    "cv_et_dev_selection: regression 0.631912 pp exceeds 0.5",
+    "cv_fi_dev_selection: regression 2.127660 pp exceeds 0.5",
+    "cv_hu_dev_selection: regression 0.544959 pp exceeds 0.5",
+    "cv_it_dev_selection: regression 0.509165 pp exceeds 0.5",
+    "cv_lt_dev_selection: regression 2.388060 pp exceeds 0.5",
+    "cv_lv_dev_selection: regression 6.015038 pp exceeds 0.5",
+    "cv_nl_dev_selection: regression 1.362683 pp exceeds 0.5",
+    "cv_pt_dev_selection: regression 1.114650 pp exceeds 0.5",
+    "cv_ro_dev_selection: regression 1.221167 pp exceeds 0.5",
+    "cv_ru_dev_selection: regression 1.161440 pp exceeds 0.5",
+    "cv_sk_dev_selection: regression 4.077670 pp exceeds 0.5",
+    "cv_sl_dev_selection: regression 27.112676 pp exceeds 0.5",
+    "cv_sv_dev_selection: regression 0.694444 pp exceeds 0.5",
+    "fleurs_da_dev_selection: regression 1.180521 pp exceeds 0.5",
+    "fleurs_el_dev_selection: regression 1.381852 pp exceeds 0.5",
+    "fleurs_et_dev_selection: regression 0.832799 pp exceeds 0.5",
+    "fleurs_fi_dev_selection: regression 0.814664 pp exceeds 0.5",
+    "fleurs_hr_dev_selection: regression 1.750547 pp exceeds 0.5",
+    "fleurs_hu_dev_selection: regression 0.831947 pp exceeds 0.5",
+    "fleurs_lt_dev_selection: regression 1.189731 pp exceeds 0.5",
+    "fleurs_lv_dev_selection: regression 1.029056 pp exceeds 0.5",
+    "fleurs_mt_dev_selection: regression 1.183173 pp exceeds 0.5",
+    "fleurs_pl_dev_selection: regression 0.613497 pp exceeds 0.5",
+    "fleurs_ro_dev_selection: regression 2.080507 pp exceeds 0.5",
+    "fleurs_sk_dev_selection: regression 12.775579 pp exceeds 0.5",
+    "fleurs_sl_dev_selection: regression 25.054825 pp exceeds 0.5",
+    "fleurs_uk_dev_selection: regression 0.911162 pp exceeds 0.5",
+    "speechocean762_dev: regression 5.828221 pp exceeds 1.0"
+  ],
+  "registry_sha256": "249a56d2c2c8f688e4d0654810ae1be69bfe6c3a9b8afdbd051d1c1804895b85"
+}

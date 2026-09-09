@@ -1,0 +1,75 @@
+{
+  "dataset": "google/fleurs",
+  "provider": "Google / FLEURS authors",
+  "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+  "config": "lv_lv",
+  "split": "test",
+  "original_tsv_row_zero_based": 0,
+  "id": 1889,
+  "source_filename": "8857195911787819845.wav",
+  "reference_raw": "Tas mums ir devis vilcienus, automašīnas un daudzus citus transportlīdzekļus.",
+  "reference_normalized_by_provider": "tas mums ir devis vilcienus automašīnas un daudzus citus transportlīdzekļus",
+  "source_num_samples": 114240,
+  "tsv": {
+    "url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/lv_lv/test.tsv",
+    "source_file_sha256": "3207f996478a7176bf1fe08bc01646f63fad6e59acad2b861c1e7bc994fa5e94",
+    "selected_row_file": "provenance/lv_lv-test-row-0.tsv",
+    "selected_row_sha256": "88e9bfeb0b3fd55066f3732044be67c10945663081748d00625d7d152c43fbd8",
+    "note": "Only the selected first row is distributed; the full TSV download is a private .tmp cache."
+  },
+  "archive": {
+    "url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/lv_lv/audio/test.tar.gz",
+    "member": "test/8857195911787819845.wav",
+    "provider_metadata": {
+      "type": "file",
+      "oid": "f6b5ff73707b510ee3b319d146604d05e1f6a65a",
+      "size": 498353648,
+      "lfs": {
+        "oid": "43186c8407ebdb992f4117419a12f53037358de1ef67896598173f4998ff884b",
+        "size": 498353648,
+        "pointerSize": 134
+      },
+      "xetHash": "da42b8713a9e3d7209bdbff526607336f49272314e59a15642e7ed36e1113d55",
+      "path": "data/lv_lv/audio/test.tar.gz",
+      "lastCommit": {
+        "id": "4683b04af03d2d9549064c7d72060a9a94bb6046",
+        "title": "streaming (#11)",
+        "date": "2023-02-07T14:10:57.000Z"
+      },
+      "securityFileStatus": {
+        "status": "safe",
+        "protectAiScan": {
+          "status": "unscanned"
+        },
+        "avScan": {
+          "status": "safe",
+          "message": "",
+          "version": "1.5.1/27923"
+        },
+        "pickleImportScan": {
+          "status": "unscanned",
+          "pickleImports": [],
+          "version": "0.0.0"
+        },
+        "virusTotalScan": {
+          "status": "unscanned",
+          "message": "File not scanned in VirusTotal",
+          "reportLink": "https://www.virustotal.com/gui/file/43186c8407ebdb992f4117419a12f53037358de1ef67896598173f4998ff884b?utm_source=huggingface"
+        }
+      }
+    },
+    "verification_note": "Only the selected member was copied and hashed. The streamed archive was stopped after that member; its full advertised LFS hash was not locally verified.",
+    "members_scanned": 798
+  },
+  "audio": {
+    "local_file": "audio/lv_lv.source.wav",
+    "sha256": "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+    "bytes": 457018,
+    "changes": "None: original archive member copied byte-for-byte."
+  },
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech (2022), Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera and Ankur Bapna; distributed by Google.",
+  "card_url": "https://huggingface.co/datasets/google/fleurs/blob/70bb2e84b976b7e960aa89f1c648e09c59f894dd/README.md",
+  "retrieved_utc": "2026-09-06T04:57:42.446577+00:00"
+}

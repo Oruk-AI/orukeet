@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "unfilled-template-not-a-result",
+  "reporter": {
+    "display_name": null,
+    "attribution_opt_in": false,
+    "link_permission": false
+  },
+  "recorded_at_utc": null,
+  "task": null,
+  "data": {
+    "source": null,
+    "license_or_permission": null,
+    "selection_rule_fixed_before_run": null,
+    "exposure_to_training_or_tuning": null,
+    "languages": [],
+    "recordings": null,
+    "audio_seconds": null,
+    "speaker_or_sentence_grouping": null,
+    "shareable_audio": false
+  },
+  "candidate": {
+    "model_sha256": null,
+    "package_version": null,
+    "runtime_version": null,
+    "precision": null,
+    "decoding": null
+  },
+  "baseline": {
+    "model_id": null,
+    "model_sha256": null,
+    "runtime_version": null,
+    "precision": null,
+    "decoding": null
+  },
+  "hardware": {
+    "os": null,
+    "architecture": null,
+    "cpu": null,
+    "accelerator": null,
+    "ram_gb": null,
+    "driver": null
+  },
+  "accuracy": {
+    "normalization": null,
+    "aggregation": null,
+    "candidate_errors": null,
+    "baseline_errors": null,
+    "reference_words": null,
+    "per_slice_counts_path": null,
+    "candidate_substitutions": null,
+    "candidate_deletions": null,
+    "candidate_insertions": null,
+    "baseline_substitutions": null,
+    "baseline_deletions": null,
+    "baseline_insertions": null
+  },
+  "timing": {
+    "audio_seconds_per_call": null,
+    "startup_seconds": null,
+    "warmups": null,
+    "raw_warm_seconds": [],
+    "measurement_includes": [],
+    "measurement_excludes": []
+  },
+  "known_failures": [],
+  "reproduction_commands": [],
+  "evidence_paths_or_urls": [],
+  "limitations": null
+}

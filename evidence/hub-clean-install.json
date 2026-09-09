@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "environment": "Fresh Python virtual environment, wheel and runner downloaded from private Hub at documented revision; existing authorized HF login reused.",
+  "wheel_revision": "59a1ef77c194f0cfda8f2ad9f007a5f5ad20866f",
+  "wheel_sha256": "6bf603f7a137870f0a0890e4140c21750cc921bff7c9a755a625318facf5c87a",
+  "q8_sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+  "device": "cpu",
+  "fresh_native_runtime_install": true,
+  "offline_environment": "HF_HUB_OFFLINE=1",
+  "unicode_audio_path": "épreuve.wav",
+  "calls": 2,
+  "repeat_equal": true,
+  "transcript": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+  "segments": [
+    {
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "start": 0.24,
+      "end": 10.88
+    }
+  ],
+  "language": null,
+  "audio_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+  "scope": "Local Mac CPU, exact Hub wheel/runner and documented install command. Cross-platform package and native inference checks are separate receipts."
+}

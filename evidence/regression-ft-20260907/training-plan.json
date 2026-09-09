@@ -1,0 +1,1011 @@
+{
+  "run": "regression-ft-20260907",
+  "status": "sealed_for_training",
+  "parent_model": "Orukeet R15-0100",
+  "parent_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+  "selection_rule": "Union of complete-split corpus WER or CER regressions under either reported normalization. Include each selected full partition, not only mistaken utterances.",
+  "sets": [
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "eurospeech_bg",
+      "rows": 6892,
+      "hours": 28.765707065972222,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 7.253446867889225,
+          "orukeet": 7.482180941734256,
+          "delta_pp": 0.22873407384503164
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "eurospeech_el",
+      "rows": 6730,
+      "hours": 28.011912690972224,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 78.14772684073702,
+          "orukeet": 79.18992657229164,
+          "delta_pp": 1.0421997315546179
+        }
+      ],
+      "alignment_status": "repair_required"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "eurospeech_it",
+      "rows": 8714,
+      "hours": 36.354228229166665,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 64.73244818863787,
+          "orukeet": 64.83630613123735,
+          "delta_pp": 0.10385794259947545
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 48.33003770929953,
+          "orukeet": 48.43151982982952,
+          "delta_pp": 0.10148212052998673
+        }
+      ],
+      "alignment_status": "repair_required"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_agr_en",
+      "rows": 6665,
+      "hours": 10.318452430555554,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 8.066625257445487,
+          "orukeet": 8.257870476315015,
+          "delta_pp": 0.19124521886952728
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 4.8687444598326515,
+          "orukeet": 5.0582450070402425,
+          "delta_pp": 0.18950054720759102
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 6.469110330942913,
+          "orukeet": 6.469942263855843,
+          "delta_pp": 0.0008319329129298225
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 3.759626280226227,
+          "orukeet": 3.7651497272588808,
+          "delta_pp": 0.005523447032653728
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_ait_en",
+      "rows": 5468,
+      "hours": 10.457904166666667,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 11.595647992093676,
+          "orukeet": 12.482462255243675,
+          "delta_pp": 0.8868142631499989
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 5.70390438020825,
+          "orukeet": 6.366550814425289,
+          "delta_pp": 0.6626464342170388
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 9.59688649924837,
+          "orukeet": 9.991607566101946,
+          "delta_pp": 0.39472106685357566
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 4.604215371127995,
+          "orukeet": 4.89187609585038,
+          "delta_pp": 0.287660724722385
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_art_en",
+      "rows": 5712,
+      "hours": 10.114382864583334,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 7.6952965632467505,
+          "orukeet": 8.180988090843742,
+          "delta_pp": 0.48569152759699197
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 4.050386632839747,
+          "orukeet": 4.510440100006817,
+          "delta_pp": 0.46005346716706974
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 6.106664268369458,
+          "orukeet": 6.123652206933078,
+          "delta_pp": 0.01698793856362002
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 2.974067535802283,
+          "orukeet": 3.0308980543571638,
+          "delta_pp": 0.05683051855488097
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_bio_en",
+      "rows": 5297,
+      "hours": 10.504789756944446,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 7.499021526418787,
+          "orukeet": 7.8033268101761255,
+          "delta_pp": 0.3043052837573388
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 2.473587120576891,
+          "orukeet": 2.6337585176616347,
+          "delta_pp": 0.16017139708474382
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 6.517026643544065,
+          "orukeet": 6.631325871038941,
+          "delta_pp": 0.1142992274948762
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 1.9066309575750469,
+          "orukeet": 1.918185251547327,
+          "delta_pp": 0.011554293972280139
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_chn_en",
+      "rows": 6308,
+      "hours": 9.427544097222222,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 10.550916755274649,
+          "orukeet": 10.637275803813832,
+          "delta_pp": 0.08635904853918319
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_ecm_en",
+      "rows": 5659,
+      "hours": 10.570892968750002,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 11.025367195271812,
+          "orukeet": 11.387442214289894,
+          "delta_pp": 0.36207501901808214
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 6.25754474740837,
+          "orukeet": 6.619403136299028,
+          "delta_pp": 0.36185838889065813
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 9.08455677383386,
+          "orukeet": 9.100910611410518,
+          "delta_pp": 0.016353837576657426
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 4.791773491050327,
+          "orukeet": 4.799435377878365,
+          "delta_pp": 0.007661886828038256
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_eng_en",
+      "rows": 6648,
+      "hours": 11.598361961805555,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 7.5129600054658345,
+          "orukeet": 8.559154845376673,
+          "delta_pp": 1.0461948399108385
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 3.480922129517251,
+          "orukeet": 4.049847400734305,
+          "delta_pp": 0.5689252712170538
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 5.661737876392195,
+          "orukeet": 6.163014960123712,
+          "delta_pp": 0.5012770837315168
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 2.3402174498369734,
+          "orukeet": 2.4611194202264133,
+          "delta_pp": 0.12090197038943984
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_ent_en",
+      "rows": 8583,
+      "hours": 10.117495520833332,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 7.012303140516406,
+          "orukeet": 7.062006014719439,
+          "delta_pp": 0.04970287420303343
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_fin_en",
+      "rows": 6037,
+      "hours": 11.426505520833333,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 8.550359376458509,
+          "orukeet": 9.093193747352247,
+          "delta_pp": 0.542834370893738
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 4.762900772087173,
+          "orukeet": 5.332797878259269,
+          "delta_pp": 0.5698971061720961
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 6.910239194912128,
+          "orukeet": 6.961147427289764,
+          "delta_pp": 0.050908232377635976
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 3.360882489389852,
+          "orukeet": 3.407131852208228,
+          "delta_pp": 0.046249362818376216
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_hum_en",
+      "rows": 4971,
+      "hours": 10.02624967013889,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 8.058471519816244,
+          "orukeet": 8.330478934536883,
+          "delta_pp": 0.2720074147206386
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 4.338534676034582,
+          "orukeet": 4.5893538687642,
+          "delta_pp": 0.25081919272961795
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_ind_en",
+      "rows": 5503,
+      "hours": 11.078895017361111,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 9.893901492279824,
+          "orukeet": 10.22082291037695,
+          "delta_pp": 0.32692141809712716
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 4.831409489248349,
+          "orukeet": 5.182256881442304,
+          "delta_pp": 0.35084739219395455
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_law_en",
+      "rows": 7273,
+      "hours": 10.321348541666666,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 11.604350843043427,
+          "orukeet": 12.08557499076302,
+          "delta_pp": 0.4812241477195922
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 6.63994012880739,
+          "orukeet": 7.099339097926643,
+          "delta_pp": 0.4593989691192535
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 10.023775822671219,
+          "orukeet": 10.141267242097083,
+          "delta_pp": 0.11749141942586405
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 5.517503120739336,
+          "orukeet": 5.617870414671612,
+          "delta_pp": 0.10036729393227528
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_med_en",
+      "rows": 5168,
+      "hours": 10.308312795138889,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 6.6104388890420145,
+          "orukeet": 6.956809349246162,
+          "delta_pp": 0.3463704602041471
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 2.859283263955743,
+          "orukeet": 3.1016528589442856,
+          "delta_pp": 0.2423695949885425
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 5.4407835324128815,
+          "orukeet": 5.506884769716323,
+          "delta_pp": 0.06610123730344153
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 1.961651765658062,
+          "orukeet": 1.986686831898104,
+          "delta_pp": 0.025035066240041814
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_mil_en",
+      "rows": 5224,
+      "hours": 11.202737222222222,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 9.198696864329793,
+          "orukeet": 9.771951257713875,
+          "delta_pp": 0.5732543933840812
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 4.734977211300876,
+          "orukeet": 5.1864035882237856,
+          "delta_pp": 0.45142637692290943
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 5.987995082322879,
+          "orukeet": 6.099687422156867,
+          "delta_pp": 0.11169233983398819
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 1.7519672354703308,
+          "orukeet": 1.779990319298314,
+          "delta_pp": 0.02802308382798313
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_phl_en",
+      "rows": 8637,
+      "hours": 10.754581875,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 13.238157040882545,
+          "orukeet": 13.448005595961469,
+          "delta_pp": 0.2098485550789242
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 8.277858477221692,
+          "orukeet": 8.534269177563978,
+          "delta_pp": 0.2564107003422862
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 12.008163898002945,
+          "orukeet": 12.054667114475418,
+          "delta_pp": 0.04650321647247324
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 7.425633776568156,
+          "orukeet": 7.4901586397385245,
+          "delta_pp": 0.06452486317036854
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_sct_en",
+      "rows": 12829,
+      "hours": 11.231581006944444,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 27.168823252334377,
+          "orukeet": 27.655094067773128,
+          "delta_pp": 0.4862708154387505
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 17.480870139605305,
+          "orukeet": 18.006635148474434,
+          "delta_pp": 0.5257650088691292
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 26.144821807068567,
+          "orukeet": 26.63493158884296,
+          "delta_pp": 0.4901097817743931
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 17.05476685565545,
+          "orukeet": 17.475728155339805,
+          "delta_pp": 0.4209612996843539
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_sgp_en",
+      "rows": 9480,
+      "hours": 10.753926284722223,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 15.256705269908332,
+          "orukeet": 15.757667207363538,
+          "delta_pp": 0.5009619374552052
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 9.523310165301618,
+          "orukeet": 9.925036741403746,
+          "delta_pp": 0.4017265761021278
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 13.68630371524872,
+          "orukeet": 14.056369820418128,
+          "delta_pp": 0.37006610516940874
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 8.392480939004816,
+          "orukeet": 8.627921849919742,
+          "delta_pp": 0.23544091091492625
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "coverage",
+      "experiment_subdirectory": "coverage",
+      "split": "golos_crowd_ru",
+      "rows": 9896,
+      "hours": 11.113865329861111,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 3.4230265507798547,
+          "orukeet": 3.4825574473151564,
+          "delta_pp": 0.059530896535301636
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 0.7665959381630797,
+          "orukeet": 0.7759927250682025,
+          "delta_pp": 0.0093967869051228
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "coverage",
+      "experiment_subdirectory": "coverage",
+      "split": "nst_da_da",
+      "rows": 54747,
+      "hours": 77.12340222222223,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 16.703976482102956,
+          "orukeet": 16.7390513078173,
+          "delta_pp": 0.03507482571434295
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "coverage",
+      "experiment_subdirectory": "coverage",
+      "split": "nst_sv_sv",
+      "rows": 27638,
+      "hours": 37.90326388888889,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 13.705870725135737,
+          "orukeet": 13.903235755836537,
+          "delta_pp": 0.1973650307007997
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "followup",
+      "experiment_subdirectory": "alignment-followup",
+      "split": "lesbos_el",
+      "rows": 230,
+      "hours": 0.11232479166666667,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 71.29581827568404,
+          "orukeet": 72.36276028222336,
+          "delta_pp": 1.0669420065393211
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    }
+  ],
+  "selected_rows": 230309,
+  "selected_hours": 399.5986659201389,
+  "benchmark_inputs": {
+    "primary": {
+      "comparison_sha256": "cc024031468c602fb6c326943a2ea1b6dffa66440fcb4d04559d12bb83f05ed0",
+      "protocol_sha256": "b55f1ef30a1a131e7abf976e80e22b20efe8a4adac488999dafdc83a8ec86d11"
+    },
+    "coverage": {
+      "comparison_sha256": "298599ce854a9607a188f07becf9c75403a411542c6e960ded9c5d4b25ec8401",
+      "protocol_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb"
+    },
+    "followup": {
+      "comparison_sha256": "be523c66c6268d8526532d783a8aac468406b8011a7016dbaacf47a8adb16877",
+      "protocol_sha256": "80ea4332fc067ca98d0e1a1c2f781ba9c3bbed5aa46fb320a989b4a20c0ae9d1"
+    }
+  },
+  "training_scope": "One complete pass over all 24 selected datasets after the recorded alignment repair and quarantine. Frozen Gabor rows remain immutable; all other parameters train.",
+  "proposed_optimizer": {
+    "name": "AdamW",
+    "peak_lr": 1e-06,
+    "end_lr": 1e-07,
+    "warmup_fraction": 0.03,
+    "betas": [
+      0.9,
+      0.98
+    ],
+    "weight_decay": 0.001,
+    "clip_grad_norm": 1.0
+  },
+  "batching": {
+    "max_padded_seconds": 120,
+    "max_utterances": 16,
+    "accumulate_batches": 4,
+    "order": "Globally shuffled duration buckets; each eligible UID exactly once."
+  },
+  "audio": "Mono 16k PCM16 FLAC cache; verify pre-quantization PCM against original benchmark receipts.",
+  "seed": 20260917,
+  "alignment_policy": "Preserve all pairs from 22 unaffected splits. For Greek and Italian EuroSpeech, use accepted human transcript spans and quarantine unresolved or known incomplete labels.",
+  "canonical_release_replaced": false,
+  "publication_authorized": false,
+  "source_plan_sha256": "184a36eb5bca75d8feb9920fa559bbc1dc245ca6478d7a4c297e9e80de77505a",
+  "training_rows": 223452,
+  "training_hours": 371.47123677083334,
+  "training_splits": 24,
+  "quarantined_rows": 6857,
+  "quarantined_hours": 28.127429149305556,
+  "alignment_summary_sha256": "2792e51941bec20d666e82fd2a83306c14a3e94d629272b5aedb641bf271d1bf",
+  "independent_alignment_audit_sha256": "7e882e17f746b17d4f16f41deda54cc535c7035a089e2d02098f1c65d5e9fef3",
+  "training_manifests": [
+    {
+      "split": "nst_da_da",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/nst_da_da.jsonl",
+      "sha256": "230c58980ef025fa4de682f408a9d3d0fd2326e540369d05224d6b3fd360b793",
+      "rows": 54747,
+      "hours": 77.12340222222223,
+      "original_rows": 54747,
+      "original_manifest_sha256": "b5779e54c52a8a4063f000255f37540df75e9ed84636f2c3b6b138878c9400ef",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "nst_sv_sv",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/nst_sv_sv.jsonl",
+      "sha256": "d4c93d9005a4573d6c4410e1e0c851c52d3ae95b3b074baca958dde5fd4e3293",
+      "rows": 27534,
+      "hours": 37.787708333333335,
+      "original_rows": 27638,
+      "original_manifest_sha256": "afd2f6e9796a41fb9c8b33db66dd9e601b0c618052f525c6ec7036236a3d52ad",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "eurospeech_it",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/eurospeech_it.jsonl",
+      "sha256": "f708ccc58fdafc358e1b953c948ca35d7d522e29d19bf6be2f3addfac03a2016",
+      "rows": 6329,
+      "hours": 26.435091232638886,
+      "original_rows": 8714,
+      "original_manifest_sha256": "06b7b2de7a60df2c6cefa4c5b9db7db6d29c37b9e151d50a3d5e2c25cf1b6fb6",
+      "alignment_status": "human_spans_repaired_with_quarantine"
+    },
+    {
+      "split": "eurospeech_bg",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/eurospeech_bg.jsonl",
+      "sha256": "15496e5139a8a13773e36bc4a195d6baa66431b9b8ef22b4b685e29867ba6b91",
+      "rows": 6892,
+      "hours": 28.765707065972222,
+      "original_rows": 6892,
+      "original_manifest_sha256": "b32a19b38e0f28e021f807324058ca83117c8ab631f0e7735b06f125566e894d",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "eurospeech_el",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/eurospeech_el.jsonl",
+      "sha256": "e788ca5cf7128ed238f516d65106d1ec4f05e773003d0c93fc5503d84fd37c9b",
+      "rows": 2405,
+      "hours": 9.933593854166668,
+      "original_rows": 6730,
+      "original_manifest_sha256": "355059829ac5ee96bd5660868009018b07fadefc0c27f975e0aa25ce9a32bc0d",
+      "alignment_status": "human_spans_repaired_with_quarantine"
+    },
+    {
+      "split": "gigaspeechbench_eng_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_eng_en.jsonl",
+      "sha256": "8832ff2714328357f32ad1b624d1d885d8354bf08f1d83da469f25f6d8b700f7",
+      "rows": 6648,
+      "hours": 11.598361961805555,
+      "original_rows": 6648,
+      "original_manifest_sha256": "eb9c7254d5c52a021d7e02b70a0969c7e1abcb537510e742cd621c10e86fae50",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_fin_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_fin_en.jsonl",
+      "sha256": "2280904eee96cea1e965941254b1022531e00295fe011baa21e075a6140b35e3",
+      "rows": 6037,
+      "hours": 11.426505520833333,
+      "original_rows": 6037,
+      "original_manifest_sha256": "03051a06cca34607517e9fe4d2d7a69ba9fd2de37060b688155cd19ec284a9b4",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_sct_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_sct_en.jsonl",
+      "sha256": "2a9dba9b0ae3b9d6d37f6ada6ec890bc26b96635246ed44f744f6e29e2c00cf6",
+      "rows": 12809,
+      "hours": 11.224908784722222,
+      "original_rows": 12829,
+      "original_manifest_sha256": "6802d83ae2386e1b7fa055e2d1e62f51142f89fa585663d8b6ed30eb5ad86cb8",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_mil_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_mil_en.jsonl",
+      "sha256": "e3af3da24b20a5fe708ad4b300324523a3dea66eacbfc0b07ce2ebacd6673484",
+      "rows": 5224,
+      "hours": 11.202737222222222,
+      "original_rows": 5224,
+      "original_manifest_sha256": "3d5e4326f3b440f49ce0bdfb33c5780367afac6a7477b7320b72b8cae7fc0f3a",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "golos_crowd_ru",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/golos_crowd_ru.jsonl",
+      "sha256": "e70492f8825a693488d86232ba10886e3fee9e222feef298b7ef004c7934bedd",
+      "rows": 9896,
+      "hours": 11.113865329861111,
+      "original_rows": 9896,
+      "original_manifest_sha256": "b0f959ace2fbe8475174206a6d252db2250b1bc629dc47453d7f98b7ddc6d3ac",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_ind_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_ind_en.jsonl",
+      "sha256": "8c5d145b1775dc4ee950482f2f5433d99a49fa241cbf9c7e9b86658d2d6f8009",
+      "rows": 5498,
+      "hours": 11.077870590277778,
+      "original_rows": 5503,
+      "original_manifest_sha256": "d24e249300c66f29a8f63c3c32666ed99591a867cd3aa13388ff01822900dda5",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_phl_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_phl_en.jsonl",
+      "sha256": "3012c1623992b6626eb9fd60dec769d5394857137af574fe7dd6ee42f50c355e",
+      "rows": 8633,
+      "hours": 10.752035208333334,
+      "original_rows": 8637,
+      "original_manifest_sha256": "429cb545a8051bb139c8141c361cbfebdd1771ea71d2fc5ef07b402a2658f8f4",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_sgp_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_sgp_en.jsonl",
+      "sha256": "4021c7db0838350a3fb1d3025ef24308e3d5ece4ddfa34ebacbc898224195a68",
+      "rows": 9468,
+      "hours": 10.750419340277777,
+      "original_rows": 9480,
+      "original_manifest_sha256": "319b0058e51e4ad93d67f249b285d284259da86cb08e38b97ec68204b3ec177a",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_ecm_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_ecm_en.jsonl",
+      "sha256": "7ff59c3085d0be24c8640c6b97399d3b221519258df5552c8efc049eafd1f262",
+      "rows": 5659,
+      "hours": 10.570892968750002,
+      "original_rows": 5659,
+      "original_manifest_sha256": "9426e31828284e7e43bc7b167e96467f4dffdae3612bbee789ceb9c723dcfa90",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_bio_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_bio_en.jsonl",
+      "sha256": "0261edf6ce4204d2e3fb96f59198a8cb45bfda56ec37f95994eff47fb9e67513",
+      "rows": 5297,
+      "hours": 10.504789756944446,
+      "original_rows": 5297,
+      "original_manifest_sha256": "f20a2aca95a2adb96af2536e5e3df61d02a2b30d077fe8a795397874c13df529",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_ait_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_ait_en.jsonl",
+      "sha256": "a844c2b22b3ebf245b61c525501ab566b8c1f8823b45953412809b2b02153cea",
+      "rows": 5468,
+      "hours": 10.457904166666667,
+      "original_rows": 5468,
+      "original_manifest_sha256": "daea6932ef87770de5ce12c0d223ae36d3a6c3008edb260e90d283c6894050a5",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_law_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_law_en.jsonl",
+      "sha256": "b686e3a313505c8196465dab551368df8ec114b7937f9893fd4756847e4a3934",
+      "rows": 7273,
+      "hours": 10.321348541666666,
+      "original_rows": 7273,
+      "original_manifest_sha256": "409681580392a1245f9bc7f6bb03398e2be7d353d6f53d2915b6799000c1b0be",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_agr_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_agr_en.jsonl",
+      "sha256": "eb092b91b8034472dc71d383dc5f0f21aff9c11837c15912dcd3c3d7aa12ccd3",
+      "rows": 6665,
+      "hours": 10.318452430555554,
+      "original_rows": 6665,
+      "original_manifest_sha256": "d4373eccb876b1cd66cda83dc3dbd1081895d2b94724696b7cf19cbc66a358b4",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_med_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_med_en.jsonl",
+      "sha256": "cfe26d39e6642e70e659bb4b2fe52448a98e390337ba8bfec2571e555f25467b",
+      "rows": 5168,
+      "hours": 10.308312795138889,
+      "original_rows": 5168,
+      "original_manifest_sha256": "9c7b99609088f7986bf25fdad798cf9ed5aa9b31788bc33ed27cfc034fed0cd9",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_ent_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_ent_en.jsonl",
+      "sha256": "3c9786a36ca9249d17aeb475e859b038b661dddf22c5835beb2e196a42508cb9",
+      "rows": 8583,
+      "hours": 10.117495520833332,
+      "original_rows": 8583,
+      "original_manifest_sha256": "c77146c3597514ef26d7a7cd40275e6605bb8137d69f5404d852fcc7489d9794",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_art_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_art_en.jsonl",
+      "sha256": "fb531c4c4e2d39479d1e84bd082f81a0f9c5fdbfbd387267d57b728d64223bf4",
+      "rows": 5712,
+      "hours": 10.114382864583334,
+      "original_rows": 5712,
+      "original_manifest_sha256": "f827798ebf0f695eacab78dc2ca049a2783f276a33fa42522030a0f6a1415338",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_hum_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_hum_en.jsonl",
+      "sha256": "1513e09b1c3117dfccd08d66bd9c8076663a9d89e92fe83909f5be835e9ade71",
+      "rows": 4970,
+      "hours": 10.02576689236111,
+      "original_rows": 4971,
+      "original_manifest_sha256": "bac6ba19623d2f78f0e5392bc4a2d0dd0cf1c2fd34b3ec3c954252d311e5359c",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_chn_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_chn_en.jsonl",
+      "sha256": "6cde13382516b93d81a2bdc28d1b17f05d8c987961a87ab0ca02cf91d41ebc78",
+      "rows": 6307,
+      "hours": 9.427359375,
+      "original_rows": 6308,
+      "original_manifest_sha256": "49e6c88a5d4f73ac99900dc49e9dc2cebf82e5b61d5257567bfcb1e0a6515500",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "lesbos_el",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/lesbos_el.jsonl",
+      "sha256": "a0aaddd4156f178da2500793a0a236bbee2722750349f91eebe099acef800681",
+      "rows": 230,
+      "hours": 0.11232479166666667,
+      "original_rows": 230,
+      "original_manifest_sha256": "81f0503b1d5a24286db6b083fd03ee233cbbe755e24c4e86c6160e3e60f98cc8",
+      "alignment_status": "no_known_alignment_defect"
+    }
+  ],
+  "diagnostics": "Fixed hash-selected fit checks and nontraining controls, 256 examples per split when available. All three models receive identical input files.",
+  "seal_script_sha256": "6c09d4fa7710ea913c46ddc1317448c0617d90eac0adc4fc83e12b5dfe5d6d1e",
+  "text_normalization_sha256": "dd1a4db7cab825d82773d30c5b8cd355becf0927eb9781ef270d1b471ed6c86f"
+}

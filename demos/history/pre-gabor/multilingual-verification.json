@@ -1,0 +1,49 @@
+{
+  "checked_at_utc": "2026-09-06T05:01:17.173736+00:00",
+  "scope": "Static listening-kit integrity and browser rendering; no additional inference or quality scoring.",
+  "receipt_sha256": "42bfce2813aceb24d4b9e34ff50cfdb1723cdc4a6f12968101cfeb4b0ecc72e2",
+  "index_html_sha256": "f50484045f199f922951839e0d774d6ca1217a67616cfa753eb9146e98a3f4ae",
+  "clips": [
+    {
+      "config": "fr_fr",
+      "provider_id": 1829,
+      "duration_s": 9.42,
+      "source_and_playback_hashes_verified": true,
+      "selected_row_only": true,
+      "html_preserves_reference_and_prediction": true
+    },
+    {
+      "config": "es_419",
+      "provider_id": 1770,
+      "duration_s": 7.68,
+      "source_and_playback_hashes_verified": true,
+      "selected_row_only": true,
+      "html_preserves_reference_and_prediction": true
+    },
+    {
+      "config": "lv_lv",
+      "provider_id": 1889,
+      "duration_s": 7.14,
+      "source_and_playback_hashes_verified": true,
+      "selected_row_only": true,
+      "html_preserves_reference_and_prediction": true
+    }
+  ],
+  "browser_check": {
+    "browser": "Chrome",
+    "transport": "127.0.0.1 loopback only",
+    "visual_inspection": "Desktop screenshots inspected: heading and scope; French and Spanish side-by-side comparisons; Latvian comparison and attribution footer. No visible clipping or overlapping text.",
+    "audio_controls": "Clicked play for each of the three recordings and observed the pause control; all three reported their expected duration. This is playback/UI verification, not a native-language listening judgment.",
+    "preview_closed": true
+  },
+  "factual_text_differences": {
+    "fr_fr": "Reference contains a non-breaking space after the comma before en particulier; output uses an ordinary space. No other string difference.",
+    "es_419": "Reference contains a comma after sentido; output omits that comma.",
+    "lv_lv": "Reference has devis and citus; actual prediction has devas and citas. These observations compare the displayed strings and do not assert linguistic correctness."
+  },
+  "full_tsv_and_card_files_in_demo": false,
+  "external_assets_or_scripts": false,
+  "local_asset_links_verified": true,
+  "no_absolute_machine_paths_in_demo_text": true,
+  "status": "passed"
+}

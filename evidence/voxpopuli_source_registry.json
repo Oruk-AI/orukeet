@@ -1,0 +1,194 @@
+{
+  "source": {
+    "repository": "facebook/voxpopuli",
+    "revision": "42f01879c780b4a2e90ec0b4f616c2ece526e4f1",
+    "files": [
+      "cs/test-00000-of-00001.parquet",
+      "de/test-00000-of-00001.parquet",
+      "en/test-00000-of-00001.parquet",
+      "en_accented/test-00000-of-00002.parquet",
+      "en_accented/test-00001-of-00002.parquet",
+      "es/test-00000-of-00001.parquet",
+      "et/test-00000-of-00001.parquet",
+      "fi/test-00000-of-00001.parquet",
+      "fr/test-00000-of-00001.parquet",
+      "hr/test-00000-of-00001.parquet",
+      "hu/test-00000-of-00001.parquet",
+      "it/test-00000-of-00001.parquet",
+      "lt/test-00000-of-00001.parquet",
+      "nl/test-00000-of-00001.parquet",
+      "pl/test-00000-of-00001.parquet",
+      "ro/test-00000-of-00001.parquet",
+      "sk/test-00000-of-00001.parquet",
+      "sl/test-00000-of-00001.parquet"
+    ],
+    "bytes": 14314740338
+  },
+  "sets": {
+    "parliamentaccent_en_voxpopuli_confirmation": {
+      "input_rows": 8387,
+      "duplicate_source_id": 2,
+      "excluded_duration_outside_0_4_to_60_seconds": 7,
+      "excluded_invalid_audio": 1,
+      "rows": 1192,
+      "groups": 362,
+      "hours": 3.692928524305555,
+      "transcript_overlap_rows": 0,
+      "sha256": "f7ee5fdb9365bc0980c5ae9215e41df1f1c1ecd28c089a8380494d60392bfb2e"
+    },
+    "voxpopuli_cs_confirmation": {
+      "input_rows": 1123,
+      "excluded_nongold_or_exposed_text": 1,
+      "rows": 600,
+      "groups": 48,
+      "hours": 1.6661103819444445,
+      "transcript_overlap_rows": 0,
+      "sha256": "71cc4704f0ab217b059b086312bdbf9d382ae429b29a81bd2c2a67068b902db8"
+    },
+    "voxpopuli_de_confirmation": {
+      "input_rows": 1968,
+      "excluded_missing_speaker": 84,
+      "excluded_nongold_or_exposed_text": 21,
+      "rows": 600,
+      "groups": 122,
+      "hours": 1.4773023958333333,
+      "transcript_overlap_rows": 0,
+      "sha256": "c21f96818bbf748f28935eab06f0c1c6bda12640df3956dab7f2b51d8630880f"
+    },
+    "voxpopuli_en_confirmation": {
+      "input_rows": 1842,
+      "excluded_missing_speaker": 150,
+      "excluded_nongold_or_exposed_text": 1,
+      "rows": 600,
+      "groups": 285,
+      "hours": 1.6879774479166667,
+      "transcript_overlap_rows": 0,
+      "sha256": "c0fd978569c26ba924030e730bf85dc24bebc20a97a8924814f2aee12edc3d89"
+    },
+    "voxpopuli_es_confirmation": {
+      "input_rows": 1528,
+      "excluded_duration_outside_0_4_to_60_seconds": 1,
+      "rows": 599,
+      "groups": 96,
+      "hours": 1.9846247222222224,
+      "transcript_overlap_rows": 0,
+      "sha256": "bf811c12285d0fdd8734ec63671d0e798ff365231e2974685fc913f3c458ef6f"
+    },
+    "voxpopuli_et_confirmation": {
+      "input_rows": 51,
+      "rows": 51,
+      "groups": 6,
+      "hours": 0.1290975173611111,
+      "transcript_overlap_rows": 0,
+      "sha256": "7c36dba2a13fd37f559d8989971b0a9b406704b37c076f247b6e30ea2550b9c5"
+    },
+    "voxpopuli_fi_confirmation": {
+      "input_rows": 478,
+      "excluded_missing_speaker": 1,
+      "rows": 477,
+      "groups": 26,
+      "hours": 1.3199614930555557,
+      "transcript_overlap_rows": 0,
+      "sha256": "2e10418f7ad199384e70fff92fcbaa33cd25efc001a4789bea82fbbe1c0a15be"
+    },
+    "voxpopuli_fr_confirmation": {
+      "input_rows": 1742,
+      "excluded_missing_speaker": 196,
+      "excluded_nongold_or_exposed_text": 1,
+      "rows": 600,
+      "groups": 143,
+      "hours": 1.757913125,
+      "transcript_overlap_rows": 0,
+      "sha256": "59b943e6833c5670935932cde6d56b131a579909581e33443adf1e2f8e0c2125"
+    },
+    "voxpopuli_hr_confirmation": {
+      "input_rows": 666,
+      "excluded_missing_speaker": 24,
+      "rows": 600,
+      "groups": 20,
+      "hours": 1.9515935763888888,
+      "transcript_overlap_rows": 0,
+      "sha256": "9782f3ea9e89ee4d87447be4ff25564c1ff7e35990174f1ddb10f2049c37c01d"
+    },
+    "voxpopuli_hu_confirmation": {
+      "input_rows": 1110,
+      "excluded_missing_speaker": 23,
+      "rows": 600,
+      "groups": 46,
+      "hours": 1.7503291840277777,
+      "transcript_overlap_rows": 0,
+      "sha256": "da75fb001b1654db21a74401921503627c351bb79ec170c9a95e4e246e38fbc4"
+    },
+    "voxpopuli_it_confirmation": {
+      "input_rows": 1177,
+      "excluded_missing_speaker": 73,
+      "excluded_duration_outside_0_4_to_60_seconds": 1,
+      "rows": 599,
+      "groups": 80,
+      "hours": 2.23064484375,
+      "transcript_overlap_rows": 0,
+      "sha256": "1da7390f2d2dccb357db21183dcbc4962413de40b8218569e237e32b4360140b"
+    },
+    "voxpopuli_lt_confirmation": {
+      "input_rows": 42,
+      "rows": 42,
+      "groups": 7,
+      "hours": 0.12125690972222222,
+      "transcript_overlap_rows": 0,
+      "sha256": "1588cc3f4d4be4031379d58282e4d4eb8bb9fea9f289686591a5eb70b21d2e1e"
+    },
+    "voxpopuli_nl_confirmation": {
+      "input_rows": 1137,
+      "excluded_nongold_or_exposed_text": 1,
+      "excluded_missing_speaker": 27,
+      "rows": 600,
+      "groups": 71,
+      "hours": 1.3599682118055554,
+      "transcript_overlap_rows": 0,
+      "sha256": "aa474bc48fcf571014f4d5b3dc1755fc9dbdc83d7d2e1bfe6e7078b2cf8ef4b5"
+    },
+    "voxpopuli_pl_confirmation": {
+      "input_rows": 1831,
+      "excluded_missing_speaker": 257,
+      "excluded_nongold_or_exposed_text": 12,
+      "rows": 600,
+      "groups": 88,
+      "hours": 1.6636091493055556,
+      "transcript_overlap_rows": 0,
+      "sha256": "2cde25c911ce4cdbc6943172e2cc6d0979989568e6e378d64955649331a7d85d"
+    },
+    "voxpopuli_ro_confirmation": {
+      "input_rows": 1383,
+      "excluded_missing_speaker": 17,
+      "rows": 600,
+      "groups": 49,
+      "hours": 1.92196609375,
+      "transcript_overlap_rows": 0,
+      "sha256": "86f728cb075f226de8cc61e85a220fdbeccbf9bc7a82c9396b8c1547863b9bd5"
+    },
+    "voxpopuli_sk_confirmation": {
+      "input_rows": 604,
+      "excluded_missing_speaker": 22,
+      "rows": 582,
+      "groups": 25,
+      "hours": 1.6748997048611112,
+      "transcript_overlap_rows": 0,
+      "sha256": "371563518c4e2d9f850196acd6c97ce155bba8b5ea27987277f706537ff4dfbc"
+    },
+    "voxpopuli_sl_confirmation": {
+      "input_rows": 309,
+      "rows": 309,
+      "groups": 10,
+      "hours": 0.8175029513888888,
+      "transcript_overlap_rows": 0,
+      "sha256": "76ee72388d8810030551f01f352caddf63c96ab2fe6cc971b456cb7607784bbd"
+    }
+  },
+  "selection_seed": "goal-v2",
+  "limitations": [
+    "English Dialects numeric speaker IDs are scoped to source configurations, based on observed cross-configuration collisions",
+    "Cross-corpus real-world speaker identity is not certified",
+    "PCM deduplication covers the recovered accent pool and this source, not upstream pretraining",
+    "Maximum duration 60 seconds; no model-score-based filtering"
+  ]
+}

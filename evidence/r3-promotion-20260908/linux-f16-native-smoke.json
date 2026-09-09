@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "model": "Orukeet r3 F16",
+  "model_sha256": "de53fb8ec251fb07ade15baabe17b00774ae3f1112f8618b062337f90fb49194",
+  "fixture_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+  "python": "3.13.14",
+  "binding_sha256": "1b42809e197447b8488e0c6756405977450140056ac4468c349eaf8cceebdd25",
+  "runtime_library_sha256": {
+    "libatomic.so.1": "2bd070e46f561a6ff36e4e358f5b0eaf04fdbe37992db38223b13c760a4721ab",
+    "libcublas.so": "ca3aab8908ff4b68dc227c4fb9cdf143f5b4647e5aa24d92750820e87843205e",
+    "libcublas.so.12": "ca3aab8908ff4b68dc227c4fb9cdf143f5b4647e5aa24d92750820e87843205e",
+    "libcudart.so.12": "c3a75b33af334a3486d197dbd1584a2985183ba4688d237a2be5f2f679329920",
+    "libgcc_s.so.1": "489803ded8a4d803e2c792763a2767c12185f5764b7bba080742d14ef2452b27",
+    "libggml-base.so": "2bea93d67a6e4004d81782573060d6695f4c95ad26723345b05b4103056db6b1",
+    "libggml-base.so.0": "2bea93d67a6e4004d81782573060d6695f4c95ad26723345b05b4103056db6b1",
+    "libggml-base.so.0.12.0": "2bea93d67a6e4004d81782573060d6695f4c95ad26723345b05b4103056db6b1",
+    "libggml-cpu.so": "ab3d65fde5fc4adaac934850f389bccd0e7df4d23cf88730595df77ef6a614d1",
+    "libggml-cpu.so.0": "ab3d65fde5fc4adaac934850f389bccd0e7df4d23cf88730595df77ef6a614d1",
+    "libggml-cpu.so.0.12.0": "ab3d65fde5fc4adaac934850f389bccd0e7df4d23cf88730595df77ef6a614d1",
+    "libggml-cuda.so": "26e20aeae1e97eaf10bdb30d365ef08cd77f4d8668afdd07dde1e6027b8be5b2",
+    "libggml-cuda.so.0": "26e20aeae1e97eaf10bdb30d365ef08cd77f4d8668afdd07dde1e6027b8be5b2",
+    "libggml-cuda.so.0.12.0": "26e20aeae1e97eaf10bdb30d365ef08cd77f4d8668afdd07dde1e6027b8be5b2",
+    "libggml.so": "b4223b228fed742bd1075bf0b42792082aef1ef25a59429c1f816a57660bf118",
+    "libggml.so.0": "b4223b228fed742bd1075bf0b42792082aef1ef25a59429c1f816a57660bf118",
+    "libggml.so.0.12.0": "b4223b228fed742bd1075bf0b42792082aef1ef25a59429c1f816a57660bf118",
+    "libgomp.so.1": "98b21ff32bb07b53f1fb266d887d2db0086ea66c8ad03696a1db53f65321cd94",
+    "libllama.so": "5f9eadc35442a5f2fcb78ce5effff73c31b64d7474af798ef1fbe60b89e19952",
+    "libllama.so.0": "5f9eadc35442a5f2fcb78ce5effff73c31b64d7474af798ef1fbe60b89e19952",
+    "libllama.so.0.0.0": "5f9eadc35442a5f2fcb78ce5effff73c31b64d7474af798ef1fbe60b89e19952",
+    "libnemo_speech_asr.so": "dd496266c956d43c854c490d58bd422163b309b5a1b1ac72eec5c00365082c4e",
+    "libnemo_speech_asr_c.so": "4db4deb4fdaaf3a60bcf07d29c7dab78e0ff8601cc0ff5f5debe3484cd6156e3",
+    "libnemo_speech_asr_c.so.1": "4db4deb4fdaaf3a60bcf07d29c7dab78e0ff8601cc0ff5f5debe3484cd6156e3",
+    "libnemo_speech_nmt.so": "4d5769dd9795f34d7500f09435304c023d26a76050ac25d39966e53f40fc421d",
+    "libnemo_speech_nmt_c.so": "6dc34580f0982d4883a1423f6ba443690b7d5d75bbc6cc95fab21553d162c177",
+    "libnemo_speech_nmt_c.so.1": "6dc34580f0982d4883a1423f6ba443690b7d5d75bbc6cc95fab21553d162c177",
+    "libnemo_speech_tts.so": "e772c718d6d320caec30407a0f50c3c00fd517098b7f1c69b7306de1eb4cbe32",
+    "libnemo_speech_tts.so.1": "e772c718d6d320caec30407a0f50c3c00fd517098b7f1c69b7306de1eb4cbe32",
+    "libstdc++.so.6": "26916e7389a561537a0510661fc75538cea236139346f3dbe21bc64ba65605bf"
+  },
+  "results": [
+    {
+      "device": "cuda",
+      "calls": [
+        {
+          "seconds": 14.663037479971536,
+          "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        },
+        {
+          "seconds": 0.07288016797974706,
+          "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ]
+    },
+    {
+      "device": "cpu",
+      "calls": [
+        {
+          "seconds": 4.185763654008042,
+          "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        },
+        {
+          "seconds": 3.0532600409933366,
+          "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ]
+    }
+  ],
+  "scope": "Two repeated JFK transcriptions per device in the existing Linux CUDA container, using the same CUDA SDK for CPU selection. No timing comparison, standalone CPU package or cross-platform app claim."
+}

@@ -1,0 +1,129 @@
+{
+  "runtime": {
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "torch": "2.12.0+cu132",
+    "cuda": "13.2",
+    "cudnn": 92000,
+    "torch_threads": 8,
+    "tf32_matmul": false,
+    "tf32_cudnn": true,
+    "versions": {
+      "nemo_toolkit": "3.0.0",
+      "numpy": "2.4.4",
+      "soundfile": "0.13.1",
+      "transformers": "5.5.0"
+    }
+  },
+  "models_specification_sha256": "e453c853809de9ee8ca387e63b9a23ed8aed634ba6fcf1f8272706e6b40d2505",
+  "status": "complete",
+  "publication_authorized": false,
+  "rows": 4265,
+  "sets": {
+    "librispeech_test_other": {
+      "rows": 2939,
+      "hours": 5.341547256944444,
+      "language": "en"
+    },
+    "fleurs_fr": {
+      "rows": 676,
+      "hours": 1.9511333333333334,
+      "language": "fr"
+    },
+    "fleurs_el": {
+      "rows": 650,
+      "hours": 1.9061,
+      "language": "el"
+    }
+  },
+  "models": {
+    "parakeet": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+    "orukeet_ft4035": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+    "orukeet_targeted": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56"
+  },
+  "manifest_sha256": "8770c5a110b60d3adabf4a8e4826adb516664bd44a8c2352e1da57086f85e500",
+  "script_sha256": "d124288265c6d78f3d09f5ada1d4e91bf2dc1fd2edc2b6dad61db3c87beb988b",
+  "decoding_sha256": "dd264a738b97cabfd1755556df9e844fa04493843738a20deecd2c9c7721fb15",
+  "decoding": {
+    "strategy": "greedy_batch",
+    "model_type": "tdt",
+    "durations": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "greedy": {
+      "max_symbols": 10
+    },
+    "beam": {
+      "beam_size": 2,
+      "return_best_hypothesis": false,
+      "score_norm": true,
+      "tsd_max_sym_exp": 50,
+      "alsd_max_target_len": 2.0
+    }
+  },
+  "precision": "FP32 weights, BF16 CUDA autocast, TF32 matrix multiplication disabled",
+  "evaluation_data_used_for_training": true,
+  "training_splits": [
+    "librispeech_test_other"
+  ],
+  "selection_split": "librispeech_test_other",
+  "evaluation_interpretation": "LibriSpeech test-other is used for training and selection; French and Greek measure changes relative to the canonical parent.",
+  "baselines": "Reused verified baseline predictions from an identical manifest, checkpoint, decoding, and precision.",
+  "baseline_provenance": {
+    "parakeet": {
+      "prediction_sha256": "716c6a95624560bffcc1f55b5bb21c1429680be5225f0e174ee36b9dc0b52eb2",
+      "inference_report_sha256": "1c9e2c17e854f40f0210a048da53d58bf8c06bb6a9a518173f60a3ba149aac43",
+      "source_script_sha256": "f0db5a772424f7c7c2f0c78151e0aa5f02d7eba5872ebb8467763cd84677b213",
+      "source_runtime": {
+        "gpu": "NVIDIA A100-SXM4-40GB",
+        "torch": "2.12.0+cu132",
+        "cuda": "13.2",
+        "cudnn": 92000,
+        "torch_threads": 8,
+        "tf32_matmul": false,
+        "tf32_cudnn": true,
+        "versions": {
+          "nemo_toolkit": "3.0.0",
+          "numpy": "2.4.4",
+          "soundfile": "0.13.1",
+          "transformers": "5.5.0"
+        }
+      }
+    },
+    "orukeet_ft4035": {
+      "prediction_sha256": "434dfaf964ef74b6446513f641fa6a4c8c818dcf770de156a5ec206ab765c88b",
+      "inference_report_sha256": "1c9e2c17e854f40f0210a048da53d58bf8c06bb6a9a518173f60a3ba149aac43",
+      "source_script_sha256": "f0db5a772424f7c7c2f0c78151e0aa5f02d7eba5872ebb8467763cd84677b213",
+      "source_runtime": {
+        "gpu": "NVIDIA A100-SXM4-40GB",
+        "torch": "2.12.0+cu132",
+        "cuda": "13.2",
+        "cudnn": 92000,
+        "torch_threads": 8,
+        "tf32_matmul": false,
+        "tf32_cudnn": true,
+        "versions": {
+          "nemo_toolkit": "3.0.0",
+          "numpy": "2.4.4",
+          "soundfile": "0.13.1",
+          "transformers": "5.5.0"
+        }
+      }
+    }
+  },
+  "empty_output_handling": "Every manifest record is scored; empty hypotheses remain.",
+  "timings": {
+    "orukeet_targeted": {
+      "seconds": 33.19440847297665,
+      "rows": 4265
+    }
+  },
+  "prediction_sha256": {
+    "parakeet": "6fd738cd4f79347efe01646cc57cf61831c5884e65b9e6556347e3cf1b1d65e5",
+    "orukeet_ft4035": "1579ace36d6bb89eaf5b4a668cdaaf1cdbaa8b08f4ba124421f5412c8fb9cff7",
+    "orukeet_targeted": "20638eb43b5a5d983cc636c2074e9f1a56a9f2a791fb2c30c18c31263b41e278"
+  }
+}

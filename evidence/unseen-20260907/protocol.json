@@ -1,0 +1,470 @@
+{
+  "created_utc": "2026-09-07T04:11:39.004717+00:00",
+  "status": "sealed_before_inference",
+  "seed": 20260907,
+  "bootstrap_replicates": 10000,
+  "models": {
+    "parakeet": "models/parakeet-tdt-0.6b-v3/parakeet-tdt-0.6b-v3.nemo",
+    "orukeet": "gabor_half_20260906/orukeet_gabor_half_r15_20260906/step-0100.nemo"
+  },
+  "orukeet_expected_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+  "decoding": {
+    "strategy": "greedy_batch",
+    "model_type": "tdt",
+    "durations": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "greedy": {
+      "max_symbols": 10
+    }
+  },
+  "precision": "FP32 model parameters, CUDA BF16 autocast",
+  "batch_size": 32,
+  "primary_metrics": [
+    "Per-split corpus WER and CER using frozen legacy-compatible NFC scoring",
+    "EuroSpeech fixed-language macro WER",
+    "GigaSpeechBench six-accent macro WER",
+    "GigaSpeechBench twelve-domain macro WER",
+    "Monsoon full test corpus WER"
+  ],
+  "secondary_metrics": [
+    "All primary endpoints restricted to exact-history-text-disjoint records",
+    "English Whisper-normalized WER",
+    "Micro WER, utterance error rate, substitutions/deletions/insertions, long-clip and demographic strata"
+  ],
+  "empty_reference_policy": "Official empty or punctuation-only references remain in complete-split scoring; any predicted words count as corpus-level insertions. These records are counted separately.",
+  "inference_scope": "Every segment in all pinned selected official splits, without sample caps or model-score-dependent filtering.",
+  "inference_failure_policy": "Retry failing batches in smaller batches with identical settings; permanent item failure recorded and scored as an empty hypothesis. Never silently drop a reference.",
+  "uncertainty": "Paired cluster bootstrap by source recording/session or speaker. Omit interval when fewer than 2 clusters; flag fewer than 20 independent clusters. No claim of unseen speakers across corpora.",
+  "selection_rule": "Both checkpoints remain frozen; no tuning, replacement, or selection on these outcomes.",
+  "exclusions": [
+    "EuroSpeech Denmark and Sweden excluded because prior FTSpeech/RixVox evaluation may share parliament recordings.",
+    "Unsupported-language EuroSpeech configurations excluded.",
+    "Sierra mu-bench requires an additional gated data agreement; no access request or submission made.",
+    "MUSCAT deferred: manual segments repeat conversations across devices; not part of this sealed primary suite."
+  ],
+  "coverage_statement": "New evaluation sources absent from recorded Orukeet adaptation/evaluation history. Some original EuroSpeech metadata had been inspected in an abandoned preparation draft; no model trained or evaluated on it. Exact reference matches are flagged and separately excluded in a strict sensitivity analysis. Complete NVIDIA pretraining membership and cross-corpus near-duplicates cannot be established from released records.",
+  "sources_sha256": "55baea6d35ce211fc8886e9fe0a4d9520258bd4122a7211081e1a57f8b84e528",
+  "history_audit_sha256": "31d80e25793ae4f8be6c521b8a1b4f4ad0ae54919dc8803c2b5c79ffda6649d8",
+  "history_index_sha256": "93bd8c1e8df498f48c527d78a06a05e656febbb4c798d84a056db98fc1afdd95",
+  "sets": {
+    "eurospeech_bg": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_bg.jsonl",
+      "sha256": "97626ce54676c97af25b1f8093377b9176a7bd5c05ad9d56aa1507cdf6f8cd30",
+      "rows": 6892,
+      "hours": 28.76570699479845,
+      "clusters": 5,
+      "lang": "bg",
+      "strict_text_unseen_rows": 6887,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 5
+      }
+    },
+    "eurospeech_de": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_de.jsonl",
+      "sha256": "930ab105a19657cfd5b2fe88259b4aae64eef75dd2f48ef73d802ee2c7d0815e",
+      "rows": 4872,
+      "hours": 20.32300313393275,
+      "clusters": 2,
+      "lang": "de",
+      "strict_text_unseen_rows": 4867,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 5
+      }
+    },
+    "eurospeech_el": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_el.jsonl",
+      "sha256": "11d37533a1e29a5ebf1cfa3a2161236a3ef758b610aa04dbf3fe7ee6fe13985c",
+      "rows": 6730,
+      "hours": 28.0451728187667,
+      "clusters": 2,
+      "lang": "el",
+      "strict_text_unseen_rows": 6722,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 8
+      }
+    },
+    "eurospeech_en": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_en.jsonl",
+      "sha256": "1f42a0265715d4268b446168d89656eb7d13e14d5cb6b206a0f13fdd4eda0da1",
+      "rows": 9268,
+      "hours": 38.73929612769021,
+      "clusters": 12,
+      "lang": "en",
+      "strict_text_unseen_rows": 9210,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 58
+      }
+    },
+    "eurospeech_et": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_et.jsonl",
+      "sha256": "441bfd3a8f75d545b7b8888bf6758ac770fd282f0a31a96a952efaa954f875f9",
+      "rows": 3554,
+      "hours": 14.842340241538153,
+      "clusters": 2,
+      "lang": "et",
+      "strict_text_unseen_rows": 3554,
+      "overlap_counts": {}
+    },
+    "eurospeech_fi": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_fi.jsonl",
+      "sha256": "5b0652d4d7492b40eab95ea14177d61632f01aa8b1333aa2a3505c4f5255dd08",
+      "rows": 5422,
+      "hours": 22.57569611204995,
+      "clusters": 6,
+      "lang": "fi",
+      "strict_text_unseen_rows": 5408,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 14
+      }
+    },
+    "eurospeech_fr": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_fr.jsonl",
+      "sha256": "9ae15cd527faa8d1e3ad4a040b4dcf05cb7543bd14f3899bc5bee9275777390a",
+      "rows": 744,
+      "hours": 3.0518863858116996,
+      "clusters": 1,
+      "lang": "fr",
+      "strict_text_unseen_rows": 744,
+      "overlap_counts": {}
+    },
+    "eurospeech_hr": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_hr.jsonl",
+      "sha256": "6ec717e4f469832783c421e085e4d49f54dbadb53bd1ea1df01b8c570215f1ec",
+      "rows": 15638,
+      "hours": 65.37232251617644,
+      "clusters": 34,
+      "lang": "hr",
+      "strict_text_unseen_rows": 15637,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 1
+      }
+    },
+    "eurospeech_it": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_it.jsonl",
+      "sha256": "144cccdcc4a17eceb7f2350ed655fa73034e1f53e7dce55e5753a8c1745ca0e3",
+      "rows": 8714,
+      "hours": 36.37051166348987,
+      "clusters": 5,
+      "lang": "it",
+      "strict_text_unseen_rows": 8673,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 41
+      }
+    },
+    "eurospeech_lt": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_lt.jsonl",
+      "sha256": "a10126eddf379f4a3aef9aab31998d85ee6c73ca0af37066a1be87c2d537c144",
+      "rows": 7319,
+      "hours": 30.313644319905176,
+      "clusters": 7,
+      "lang": "lt",
+      "strict_text_unseen_rows": 7318,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 1
+      }
+    },
+    "eurospeech_lv": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_lv.jsonl",
+      "sha256": "24683f386f40dbaa19c1c95514b3e6666ddea4f2a22096ae3e0bd708b46713c6",
+      "rows": 3343,
+      "hours": 13.929081526332432,
+      "clusters": 6,
+      "lang": "lv",
+      "strict_text_unseen_rows": 3323,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 20
+      }
+    },
+    "eurospeech_mt": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_mt.jsonl",
+      "sha256": "8507fdca8d105ce2bb309815892eeabeb8d76abd565ea04996e3b58ae31cc151",
+      "rows": 3446,
+      "hours": 14.169363680415684,
+      "clusters": 9,
+      "lang": "mt",
+      "strict_text_unseen_rows": 3446,
+      "overlap_counts": {}
+    },
+    "eurospeech_pt": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_pt.jsonl",
+      "sha256": "61e45d329bcd3bc82c6eceb79be8248c98c10462298acff569974a6a438ef440",
+      "rows": 7501,
+      "hours": 30.93359313805898,
+      "clusters": 6,
+      "lang": "pt",
+      "strict_text_unseen_rows": 7492,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 9
+      }
+    },
+    "eurospeech_sk": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_sk.jsonl",
+      "sha256": "187bc8f61fa6f170b53e2c7193e222ba0383300e823b9af18e27ac0cbc78dc3e",
+      "rows": 6915,
+      "hours": 29.02399465560913,
+      "clusters": 11,
+      "lang": "sk",
+      "strict_text_unseen_rows": 6911,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 4
+      }
+    },
+    "eurospeech_sl": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_sl.jsonl",
+      "sha256": "08d93f284b112f37a18b59e6879a2f09bef7895f134bbaba324ac6c5bd93e0e5",
+      "rows": 3585,
+      "hours": 14.851242499881321,
+      "clusters": 3,
+      "lang": "sl",
+      "strict_text_unseen_rows": 3585,
+      "overlap_counts": {}
+    },
+    "eurospeech_uk": {
+      "path": "unseen_20260907/metadata/manifests/eurospeech_uk.jsonl",
+      "sha256": "c22d6521f160bdd0e61c33df42791306f0fd085d01aa03c648ab8a4ab30b8d23",
+      "rows": 3239,
+      "hours": 13.638500107394325,
+      "clusters": 2,
+      "lang": "uk",
+      "strict_text_unseen_rows": 3224,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 15
+      }
+    },
+    "gigaspeechbench_agr_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_agr_en.jsonl",
+      "sha256": "909a63bfa6ea9a1b90a9e3bb7f3e2bc8f8897d6d6ffff51aac1ade94a6fcae90",
+      "rows": 6665,
+      "hours": 10.3184525,
+      "clusters": 40,
+      "lang": "en",
+      "strict_text_unseen_rows": 6587,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 78
+      }
+    },
+    "gigaspeechbench_ait_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_ait_en.jsonl",
+      "sha256": "d46c21f28a997f8641f9707550ae15d3d6a3617a146b017b5a5c71c138e680f0",
+      "rows": 5468,
+      "hours": 10.457904166666669,
+      "clusters": 15,
+      "lang": "en",
+      "strict_text_unseen_rows": 5382,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 86
+      }
+    },
+    "gigaspeechbench_art_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_art_en.jsonl",
+      "sha256": "ce396a6d6a616c25d66d63bc6815863411797a2add73369c6fafe2b18b2720f5",
+      "rows": 5712,
+      "hours": 10.114382777777777,
+      "clusters": 23,
+      "lang": "en",
+      "strict_text_unseen_rows": 5668,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 44
+      }
+    },
+    "gigaspeechbench_bio_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_bio_en.jsonl",
+      "sha256": "1fafb2bb2000049e40e1735a11906a204a522d1a05c24a346c5ae943a0f8b009",
+      "rows": 5297,
+      "hours": 10.50478972222222,
+      "clusters": 32,
+      "lang": "en",
+      "strict_text_unseen_rows": 5292,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 5
+      }
+    },
+    "gigaspeechbench_chn_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_chn_en.jsonl",
+      "sha256": "710789b2ce7eac1dce6697f9a6ea77237a0df03c11e4d672736f9bb972817d12",
+      "rows": 6308,
+      "hours": 9.427544166666667,
+      "clusters": 71,
+      "lang": "en",
+      "strict_text_unseen_rows": 6109,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 199
+      }
+    },
+    "gigaspeechbench_ecm_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_ecm_en.jsonl",
+      "sha256": "e1626b5b7d1c647aa3dffb409262c9991d2b85a9ab2492f6d67727715d68d115",
+      "rows": 5659,
+      "hours": 10.570893055555555,
+      "clusters": 27,
+      "lang": "en",
+      "strict_text_unseen_rows": 5625,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 34
+      }
+    },
+    "gigaspeechbench_eng_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_eng_en.jsonl",
+      "sha256": "a799ba26dc02e73452efe3ee59e534713490c339064e84a5859a9fc3f961c6b7",
+      "rows": 6648,
+      "hours": 11.598361944444445,
+      "clusters": 31,
+      "lang": "en",
+      "strict_text_unseen_rows": 6607,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 41
+      }
+    },
+    "gigaspeechbench_ent_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_ent_en.jsonl",
+      "sha256": "8f91b78574ab8668407a13817a93f273773c01cb9642ffda285abbb899a7057f",
+      "rows": 8583,
+      "hours": 10.117495555555557,
+      "clusters": 28,
+      "lang": "en",
+      "strict_text_unseen_rows": 8295,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 288
+      }
+    },
+    "gigaspeechbench_fin_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_fin_en.jsonl",
+      "sha256": "4c2fe646d582e9b71a32ffa9355137f6d664f20fb0a5272c7bcdb63af42b9947",
+      "rows": 6037,
+      "hours": 11.426505555555556,
+      "clusters": 38,
+      "lang": "en",
+      "strict_text_unseen_rows": 5916,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 121
+      }
+    },
+    "gigaspeechbench_hum_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_hum_en.jsonl",
+      "sha256": "9242229fff9dea5cc30e9aa775c0d6f8347d6aad3f6deaf02340885fc8547b77",
+      "rows": 4971,
+      "hours": 10.026249722222223,
+      "clusters": 32,
+      "lang": "en",
+      "strict_text_unseen_rows": 4936,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 35
+      }
+    },
+    "gigaspeechbench_ind_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_ind_en.jsonl",
+      "sha256": "7522d3f0ab708ee8f54e51e92fd989323e3f2f4797689baf74f3565fa120d112",
+      "rows": 5503,
+      "hours": 11.078895000000001,
+      "clusters": 182,
+      "lang": "en",
+      "strict_text_unseen_rows": 5484,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 19
+      }
+    },
+    "gigaspeechbench_jpn_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_jpn_en.jsonl",
+      "sha256": "d9599eedb9622b1f78205491628b6be93df4d795796980c5ee2d8300c9fb95ad",
+      "rows": 9310,
+      "hours": 9.754672499999998,
+      "clusters": 169,
+      "lang": "en",
+      "strict_text_unseen_rows": 8810,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 500
+      }
+    },
+    "gigaspeechbench_law_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_law_en.jsonl",
+      "sha256": "7074bdc0b2ae73ddff6b405fff41540ee8a7bf7e5ddcb4c6b55735a57ec30627",
+      "rows": 7273,
+      "hours": 10.321348611111112,
+      "clusters": 19,
+      "lang": "en",
+      "strict_text_unseen_rows": 7004,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 269
+      }
+    },
+    "gigaspeechbench_med_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_med_en.jsonl",
+      "sha256": "622e117528d171b2cd93783ce332369da0d986d547c258d3fb5d538b51077c28",
+      "rows": 5168,
+      "hours": 10.308312777777777,
+      "clusters": 62,
+      "lang": "en",
+      "strict_text_unseen_rows": 5148,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 20
+      }
+    },
+    "gigaspeechbench_mil_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_mil_en.jsonl",
+      "sha256": "6716ed852b557ce8582382a65af2362b0ad463e26f18d84c65d17eff2ff69734",
+      "rows": 5224,
+      "hours": 11.202737222222222,
+      "clusters": 40,
+      "lang": "en",
+      "strict_text_unseen_rows": 5219,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 5
+      }
+    },
+    "gigaspeechbench_phl_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_phl_en.jsonl",
+      "sha256": "dc8668b222a9f3c946c260fdef99bac0d0dd451927e81a5d324392875b7a4763",
+      "rows": 8637,
+      "hours": 10.754581944444444,
+      "clusters": 37,
+      "lang": "en",
+      "strict_text_unseen_rows": 8290,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 347
+      }
+    },
+    "gigaspeechbench_sct_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_sct_en.jsonl",
+      "sha256": "6944889ddbed5fb59043cb1a2f95bb62e5140d6ec3814ec265588662ec4adca3",
+      "rows": 12829,
+      "hours": 11.23158111111111,
+      "clusters": 30,
+      "lang": "en",
+      "strict_text_unseen_rows": 12355,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 474
+      }
+    },
+    "gigaspeechbench_sgp_en": {
+      "path": "unseen_20260907/metadata/manifests/gigaspeechbench_sgp_en.jsonl",
+      "sha256": "87f0eca595b523ba7c523effff258ecbb07df56553498a20273d03d547cc14f3",
+      "rows": 9480,
+      "hours": 10.753926388888889,
+      "clusters": 45,
+      "lang": "en",
+      "strict_text_unseen_rows": 9168,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 312
+      }
+    },
+    "monsoon_en_in": {
+      "path": "unseen_20260907/metadata/manifests/monsoon_en_in.jsonl",
+      "sha256": "3f85835dd5cb5f35e23a86e33bef943066d4cd73b1acbb8b6ea330fc3c0d3332",
+      "rows": 2102,
+      "hours": 5.6243333333333325,
+      "clusters": 1444,
+      "lang": "en",
+      "strict_text_unseen_rows": 2101,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 1
+      }
+    }
+  },
+  "parakeet_sha256": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+  "orukeet_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811"
+}

@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "publication_authorized": false,
+  "checked_at_utc": "2026-09-09T05:45:03.872841+00:00",
+  "archive": "dist/orukeet-arxiv-source.zip",
+  "archive_sha256": "f4ad7770293f282b3e1fdd559a5a417035b799d58281e5bf9a6ab925bae51125",
+  "archive_bytes": 143407,
+  "file_count": 15,
+  "files": [
+    {
+      "path": "00README.json",
+      "bytes": 166,
+      "sha256": "0d416b065399f8747ea02460c07b84a8d7a5a4c9a28914e4e8b510ccb18e63ba"
+    },
+    {
+      "path": "assets/affiliations/cambridge.pdf",
+      "bytes": 44738,
+      "sha256": "535e2f3382a9e63ef27fcd561e54cfc87d74f494c3a7f6dd072c2af2bfe7a738"
+    },
+    {
+      "path": "assets/affiliations/hoid.pdf",
+      "bytes": 1978,
+      "sha256": "439f46cb03c498cbc0bb797d39ba31ce80d57742d3b699ae0a6ca5cf2fa1311a"
+    },
+    {
+      "path": "assets/affiliations/openwhispr.pdf",
+      "bytes": 1341,
+      "sha256": "78e575011be731f9d07f665f1440a4582df27d577bbdb3805d2c7a17b40cacd7"
+    },
+    {
+      "path": "assets/affiliations/stanford.png",
+      "bytes": 11528,
+      "sha256": "09434daceea1a4ab62da5db3cd9e81bbe1a7e034224f504d63fd3f12e51af74b"
+    },
+    {
+      "path": "assets/kernel-fits.pdf",
+      "bytes": 20762,
+      "sha256": "b952a1d8e84032cd20cc452dfbea40c6d2c34cea7de4257b7a375ccac73b9e01"
+    },
+    {
+      "path": "assets/oruk-lockup.png",
+      "bytes": 38483,
+      "sha256": "932df9164b237a1a31d1e636897d1766a15b8bac738acf81ee93de8ea2d6c18c"
+    },
+    {
+      "path": "assets/selection-profile.pdf",
+      "bytes": 20686,
+      "sha256": "0a2e8647a8a1a895e7a1e6d9f15779eac14c87f56e30eeeb85bc05ce720ba32f"
+    },
+    {
+      "path": "current-benchmark-values.tex",
+      "bytes": 875,
+      "sha256": "5eda781ff8966fc183d3a9c3a92e2dfe1840e8eddad292b891ef1976e63da9c7"
+    },
+    {
+      "path": "current-domains-table.tex",
+      "bytes": 3010,
+      "sha256": "ca92fc7f970f7608e69628ca2240e51b514118e24071376634884643a530fd26"
+    },
+    {
+      "path": "current-standard-table.tex",
+      "bytes": 2394,
+      "sha256": "46aeaa3d4bf92d81e1acfc2c54b0e46cc9be1a4639ac9d16597c97982206ba2b"
+    },
+    {
+      "path": "neurips_2026.sty",
+      "bytes": 13704,
+      "sha256": "c3fc2894e83d2517ca18b66741d6c595986d97957dc08ec08bb2125a7ec4555a"
+    },
+    {
+      "path": "paper.bbl",
+      "bytes": 2394,
+      "sha256": "e523642246065dacc4bebcb353ca709d5401b4fc4ddb1829fc02ca4afde1d3a8"
+    },
+    {
+      "path": "paper.tex",
+      "bytes": 12026,
+      "sha256": "0dcc45ad9c401a9fd4e4ab389890b7bc51d4c0f8c21d4b18a7628d16b124c6ad"
+    },
+    {
+      "path": "references.bib",
+      "bytes": 2498,
+      "sha256": "e3229e1faad05e4975b231660184d126764f0c7a33bae9c31248d91859347d55"
+    }
+  ],
+  "compiler": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025)",
+  "distribution": "TinyTeX v2025.08 (TeX Live 2025); arXiv selects its own TeX Live 2025 package snapshot",
+  "canonical_pdf_sha256": "401d162a87d4454b0f16998bf3501b9c84da909a7b5be353705528477d2eef62",
+  "clean_pdf_sha256": "067c1fab340bf20192c370c177e1221d985b5caaf9e71aaea2e501fb3acc7e3e",
+  "canonical_pdf_text_match": true,
+  "no_type3_fonts": true,
+  "pages": 5,
+  "abstract_characters": 854,
+  "metadata_sha256": "8e6b4344e042021b85e7e6d360f564530c190da361d864d4a168204aec84c24d",
+  "compile_log_sha256": "b26cc4eef1a3474065605d3719ed62c129f70f8acc25c132acc4fecbe95cc61c",
+  "checks": [
+    "minimal archive",
+    "only required TeX, bibliography and figures",
+    "clean pdfLaTeX build without shell escape",
+    "supplied bibliography resolves all citations",
+    "exact extracted-text match to reviewed PDF",
+    "all printed benchmark rows reproduced",
+    "title, nine authors and model identity match citation metadata",
+    "no arXiv ID or DOI invented"
+  ]
+}

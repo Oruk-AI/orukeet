@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "tests": 13,
+  "command": "python -m unittest discover -p \"test_*.py\" -v",
+  "working_directory": "evaluation/unseen (mounted as the experiment code directory)",
+  "environment": "Pinned NeMo container recorded in README.md",
+  "coverage": [
+    "legacy normalizer equivalence",
+    "corpus versus utterance aggregation",
+    "empty-reference insertion accounting",
+    "permanent failure denominator",
+    "paired bootstrap sign and identity",
+    "speaker/session grouping requirements",
+    "fixed equal-split macro weights",
+    "full waveform retention despite inaccurate duration metadata",
+    "stored PCM16 positive and synthetic negative through decoded-history repair"
+  ],
+  "test_source_sha256": {
+    "test_audio_preparation.py": "0685a3497e66ba5f5d6fa88d49fab2cb843dcc8a1ce1e117ee9cacced2d4f9fa",
+    "test_comparison.py": "5aeff25d3f96f10c8a04dd4972c520dec4530023d7bb32b7f99f1b8ab18b31c8",
+    "test_metrics.py": "45bc5a58e6c831d6ac7385dc6fec5ffc46c0d9c50baefbae67c3c2a7587aa49a"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "orukeet.gabor-half/1",
+  "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "formula": "A exp(-0.5 ((t-mu)/sigma)^2) cos(2 pi f (t-mu)+phase)",
+  "parameter_order": [
+    "amplitude",
+    "center",
+    "sigma",
+    "frequency_cycles_per_tap",
+    "phase"
+  ],
+  "grid_taps": [
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "eligible": "24 Conformer temporal depthwise Conv1d weights; global channel ranking",
+  "fit_method": "float64 bounded multistart variable projection; best 4 grid starts plus best in each frequency quartile; no global-optimum guarantee",
+  "bounds": {
+    "center": [
+      -4,
+      4
+    ],
+    "sigma": [
+      0.25,
+      36
+    ],
+    "frequency": [
+      1e-06,
+      0.499999
+    ]
+  },
+  "rank_metric": "sum((w-g)^2)/sum(w^2); stable layer/channel tie break",
+  "debug_limit": 0,
+  "kernels": 24576,
+  "selected": 12288,
+  "elapsed_seconds": 822.4105946649797,
+  "fit_archive_sha256": "52791beaf3219421e4ad3aa2e2591875b50dbfaa83a6309361c2df71db08de3d",
+  "selected_error_quantiles": {
+    "min": 3.588644774649349e-06,
+    "median": 0.003989304131288821,
+    "p95": 0.015558627700672463,
+    "max": 0.01768064781253141
+  }
+}

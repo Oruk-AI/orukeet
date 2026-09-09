@@ -1,0 +1,30 @@
+{
+  "plan_sha256": "184a36eb5bca75d8feb9920fa559bbc1dc245ca6478d7a4c297e9e80de77505a",
+  "prepared_sha256": "3e232527631f19dc43df66264b41d5c1de58d3e9fa7c4e254a2337590d7788be",
+  "parent_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+  "fit_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+  "batch_order_sha256": "31a03ab4af19cd29c6d7395f9010c0e579bba62fd307ca8cc25693988c30dd1d",
+  "source_sha256": {
+    "train.py": "dfa7e4272d4155c641f56b6bb2aff3530267ef6c8c9a0d091e38d119a37a6a6b",
+    "batches.py": "ed90d29681249a4e2219c6a3a6e525033951a77bebf6c91c132186c702ecda11",
+    "gabor/frozen.py": "88edc3a383a030ffc14ec6066fc7909446f34744c0bed8368cd454a13a190bd0",
+    "gabor/fit.py": "b67f7156cffdff14e83c932bb3a39fc89cb7653345c38582085e68d254f6a950",
+    "gabor/identity.py": "3abca045663752e54f088263b6df3fadae51a7ba25318ef9db349ca533b2ae1a"
+  },
+  "steps": 4,
+  "full_epoch_steps": 66,
+  "batches": 16,
+  "rows": 227,
+  "smoke": true,
+  "parameter_tensors": 651,
+  "trainable_scalar_parameters": 626897542,
+  "frozen_gabor_rows": 12288,
+  "loss": "NeMo TDT, mean_volume over each accumulated target-token volume",
+  "augmentation": "none; dropout disabled; dither zero",
+  "batchnorm": "running statistics preserved; affine parameters trained",
+  "precision": "BF16 autocast; FP32 parameters and AdamW states",
+  "cuda": "13.2",
+  "torch": "2.12.0+cu132",
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "all_remaining_parameters_in_optimizer": true
+}

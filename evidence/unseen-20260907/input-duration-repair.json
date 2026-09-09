@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-09-07T04:25:33.585326+00:00",
+  "reason": "One official EuroSpeech English clip has 20.0 seconds in metadata but 3.0319375 seconds of decoded audio. Its supplied reference contains one word.",
+  "source_id_sha256": "1a06f7e479f38cd9d83256c89c6cd9ca132f11dbf9df41f0cb582830ba467950",
+  "change": "Use the complete published audio without altering the reference; record duration mismatches instead of halting. No sealed record is excluded.",
+  "unchanged": [
+    "model checkpoints",
+    "decoder settings",
+    "precision",
+    "batch size",
+    "dataset membership",
+    "reference transcripts",
+    "scoring definitions"
+  ],
+  "completed_splits_preserved": [
+    "monsoon_en_in",
+    "eurospeech_bg",
+    "eurospeech_de",
+    "eurospeech_el"
+  ],
+  "scope": "Input metadata validation; no model training or outcome-based data selection."
+}

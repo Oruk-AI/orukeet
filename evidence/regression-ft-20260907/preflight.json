@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "kernel_and_batching_tests": {
+    "tests_passed": 4,
+    "command": "python -m pytest -q code/test_batches.py gabor-code/test_gabor.py",
+    "seconds": 3.59
+  },
+  "smoke_updates": 3,
+  "resume_smoke_updates": 4,
+  "resume_cursor": 8,
+  "rows_after_resume": 227,
+  "resumed_third_update_matches_uninterrupted_loss_and_gradient_norm_exactly": true,
+  "gabor_rows_unchanged": 12288,
+  "batchnorm_statistics_unchanged": true,
+  "all_651_parameter_tensors_have_finite_gradients": true,
+  "release_checkpoint_changed": false
+}

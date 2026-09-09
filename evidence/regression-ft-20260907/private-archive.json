@@ -1,0 +1,40 @@
+{
+  "status": "archived-and-verified-private",
+  "repo": "oruk/orukeet",
+  "revision": "940338ff2f8ccc36b1ba1d569f768e7b9e5cc5f3",
+  "parent_revision": "2a41a62a7c19bb5970d348b2c7508b7ff61f5981",
+  "private": true,
+  "files": [
+    {
+      "path": "/dev/shm/orukeet-regression-ft-20260907/checkpoints/orukeet-regression-ft.nemo",
+      "repo_path": "experiments/regression-ft-20260907/r1/orukeet-regression-ft.nemo",
+      "sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+      "bytes": 2509342720
+    },
+    {
+      "path": "/dev/shm/orukeet-regression-ft-20260907/checkpoints/resume.pt",
+      "repo_path": "experiments/regression-ft-20260907/r1/resume.pt",
+      "sha256": "dd27377defdbc16e70260a346d9802a78304363cfefe99a2d8ddc8d547a5bc73",
+      "bytes": 7525577875
+    },
+    {
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/private-training-provenance.tar.gz",
+      "repo_path": "experiments/regression-ft-20260907/r1/private-training-provenance.tar.gz",
+      "sha256": "20140e3f799cbb49ec2ec9287cb6f491beea5170c16087124778d4bcfdd7a602",
+      "bytes": 1216995956
+    },
+    {
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/export-audit.json",
+      "repo_path": "experiments/regression-ft-20260907/r1/export-audit.json",
+      "sha256": "dac88b3fa2d17bd8b8e32ac0e9eaf4d24473b9ac2715f8d1601df3ff03cc751d",
+      "bytes": 85118
+    },
+    {
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/evaluation/comparison.json",
+      "repo_path": "experiments/regression-ft-20260907/r1/comparison.json",
+      "sha256": "1e4b8989b6e25de8aa6b6842edac31712eb40743d3f8293c59b85a0d99ef9918",
+      "bytes": 85199
+    }
+  ],
+  "canonical_release_replaced": false
+}

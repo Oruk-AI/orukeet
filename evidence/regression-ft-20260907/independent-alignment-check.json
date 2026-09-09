@@ -1,0 +1,77 @@
+{
+  "status": "complete",
+  "rows": 128,
+  "groups": [
+    {
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified",
+      "rows": 32,
+      "aligned": {
+        "cer": 0.23005851555281798,
+        "median_cer": 0.05486306179775281,
+        "p90_cer": 0.9570454545454546,
+        "pairs_over_35pct_cer": 6
+      },
+      "original": {
+        "cer": 0.23005851555281798,
+        "median_cer": 0.05486306179775281,
+        "p90_cer": 0.9570454545454546,
+        "pairs_over_35pct_cer": 6
+      }
+    },
+    {
+      "split": "eurospeech_el",
+      "status": "realigned_human_span",
+      "rows": 32,
+      "aligned": {
+        "cer": 0.24206224457717698,
+        "median_cer": 0.07727906050955413,
+        "p90_cer": 0.9451566610858646,
+        "pairs_over_35pct_cer": 8
+      },
+      "original": {
+        "cer": 0.7967334818114328,
+        "median_cer": 0.7906271656271656,
+        "p90_cer": 0.9567448680351907,
+        "pairs_over_35pct_cer": 31
+      }
+    },
+    {
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified",
+      "rows": 32,
+      "aligned": {
+        "cer": 0.07505698469553891,
+        "median_cer": 0.06518046709129512,
+        "p90_cer": 0.15041942604856517,
+        "pairs_over_35pct_cer": 0
+      },
+      "original": {
+        "cer": 0.07505698469553891,
+        "median_cer": 0.06518046709129512,
+        "p90_cer": 0.15041942604856517,
+        "pairs_over_35pct_cer": 0
+      }
+    },
+    {
+      "split": "eurospeech_it",
+      "status": "realigned_human_span",
+      "rows": 32,
+      "aligned": {
+        "cer": 0.18454732185179334,
+        "median_cer": 0.11350964436407474,
+        "p90_cer": 0.4288770053475939,
+        "pairs_over_35pct_cer": 4
+      },
+      "original": {
+        "cer": 0.8019338268620637,
+        "median_cer": 0.7681057038199894,
+        "p90_cer": 0.9506778919746337,
+        "pairs_over_35pct_cer": 32
+      }
+    }
+  ],
+  "protocol_sha256": "9c338a058b8aee46af3774317bf6407971b86c380086fb1b4a302d65d138101d",
+  "predictions_sha256": "2abe869aab788de56057f940c08c8979d474bcb6870562d5168e22aed76ca66c",
+  "note": "Diagnostic evidence about automatic alignment; not independent human annotation of every pair."
+}

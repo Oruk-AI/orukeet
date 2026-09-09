@@ -1,0 +1,15 @@
+{
+  "template_url": "https://media.neurips.cc/Conferences/NeurIPS2026/Formatting_Instructions_For_NeurIPS_2026.zip",
+  "template_link_source": "https://neurips.cc/Conferences/2026/CallForPapers",
+  "retrieved": "2026-09-06",
+  "style_sha256": "c3fc2894e83d2517ca18b66741d6c595986d97957dc08ec08bb2125a7ec4555a",
+  "archive_sha256": "82473931e3ef710fcd3f4a8cd4119b9de32e56825f90f9e5a6d55f2d01b817d9",
+  "style": "Official unmodified NeurIPS 2026 style, preprint option; no submission or acceptance implied.",
+  "logo_source": "https://oruk.ai/brand/kit/oruk-primary.png",
+  "logo_sha256": "932df9164b237a1a31d1e636897d1766a15b8bac738acf81ee93de8ea2d6c18c",
+  "logo_use": "Official September 2026 primary lockup: color Signal tile and lowercase black wordmark. Original PNG and outlined SVG retained without recoloring or distortion.",
+  "logo_guide": "https://oruk.ai/branding",
+  "logo_retrieved": "2026-09-08",
+  "logo_svg_source": "https://oruk.ai/brand/kit/oruk-primary.svg",
+  "logo_svg_sha256": "3547cfacd79cf423d104adfdf342a28aef3a98dd187b1a4cc1949478d690a051"
+}

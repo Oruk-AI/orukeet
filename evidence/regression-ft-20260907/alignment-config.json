@@ -1,0 +1,12 @@
+{
+  "window_seconds": 180,
+  "max_cer": 0.2,
+  "max_wer": 0.35,
+  "min_prediction_words_for_repair": 8,
+  "min_prediction_chars_for_repair": 35,
+  "minimum_word_length_ratio": 0.7,
+  "maximum_word_length_ratio": 1.35,
+  "boundary_word_radius": 2,
+  "candidate_model_used": false,
+  "label_source": "Contiguous spans copied from published human transcripts"
+}

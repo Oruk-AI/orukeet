@@ -1,0 +1,40 @@
+{
+  "label": "r8",
+  "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "initial_student_sha256": "992a35cdfcea8d4d6ca57e8bef4d2fa2ae82a8e1ab02a872598e338faea40ef3",
+  "teacher_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "data_config_sha256": "3fcae532d00017467e2ff79e61635cf7b13f1e805eac08106586039633a4d9f1",
+  "data_audit_sha256": "04b41f81a7bd5dc8deda7d9889d860e3b252fc7162a21548bdf10b24b1a1b702",
+  "launcher_sha256": "4be7284ae51d35b8eb3348cbdb30b79db789d133575c0518c85e74148777a1a8",
+  "command": [
+    "bash",
+    "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r8_20260906-launch.sh",
+    "++export_interval=100",
+    "++recovery_start_model=/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r7_20260906/step-0300.nemo",
+    "++recovery_start_audit=/home/nathanroll/parakeet-ft/gabor_half_20260906/r7-0300-audit.json",
+    "++model.train_ds.input_cfg=/home/nathanroll/parakeet-ft/gabor_half_20260906/language-recovery-input-r8.json",
+    "model.optim.lr=2e-6",
+    "model.optim.sched.min_lr=0.0",
+    "model.optim.sched.warmup_steps=10",
+    "++preserve_bn_statistics=true",
+    "++disable_dropout=true",
+    "++resume_keep=1",
+    "++layer_anchor_scale=5.0",
+    "++conv_anchor_scale=1.0",
+    "++asr_loss_scale=1.0",
+    "++recovery_layer_lrs.lower_encoder=1e-6",
+    "++recovery_layer_lrs.upper_encoder=2e-6",
+    "++recovery_layer_lrs.other=1e-6",
+    "++recovery_layer_lrs.decoder=1e-7",
+    "++recovery_layer_lrs.joint=1e-7",
+    "model.spec_augment.freq_masks=0",
+    "model.spec_augment.time_masks=0"
+  ],
+  "environment": {
+    "NAME": "orukeet_gabor_half_r8_20260906",
+    "STEPS": "400"
+  },
+  "rationale": "R7-0300 improves development mean by 0.112674 WER points and larger English mean by 0.060395, but misses larger primary mean by 0.020564 and development Bulgarian/Latvian guards. Continue from its audited export with equal emphasis on the two remaining training languages. Increase supervised weight and lower-layer/head learning rates to allow compensation outside the fixed Gabor rows. Keep all evaluation criteria unchanged.",
+  "selection_rule": "Evaluate all four exports on unchanged development gates. Lowest development WER among passing exports, otherwise lowest for diagnosis only; then the unchanged larger regression. No promotion on a diagnostic result.",
+  "no_gate_changes": true
+}

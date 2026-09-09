@@ -1,0 +1,5 @@
+{
+  "stage": "failed",
+  "utc": "2026-09-07T16:23:04.299895+00:00",
+  "error": "CalledProcessError(1, ['/opt/venv/bin/python', '/home/nathanroll/parakeet-ft/regression_ft_20260907/code/evaluate.py', '--manifest', '/home/nathanroll/parakeet-ft/regression_ft_20260907/diagnostic/manifest.jsonl', '--base', '/home/nathanroll/parakeet-ft/models/parakeet-tdt-0.6b-v3/parakeet-tdt-0.6b-v3.nemo', '--parent', '/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r15_20260906/step-0100.nemo', '--candidate', '/dev/shm/orukeet-regression-ft-20260907/checkpoints/orukeet-regression-ft.nemo', '--metric-code', '/home/nathanroll/parakeet-ft/unseen_20260907/code', '--output', '/home/nathanroll/parakeet-ft/regression_ft_20260907/evaluation'])"
+}

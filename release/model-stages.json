@@ -1,0 +1,361 @@
+{
+  "status": "private-preparation",
+  "publication_authorized": false,
+  "updated": "2026-09-08",
+  "identity": "Orukeet: Parakeet TDT 0.6B v3 with multilingual/accent adaptation and 50% fitted, frozen temporal Gabor kernels",
+  "base_model": "nvidia/parakeet-tdt-0.6b-v3",
+  "canonical": {
+    "stage": "frozen-gabor-r3",
+    "source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+    "q8_sha256": "93ce19c6d8244acbfea980eeaf970531d4f216171578ef8e041dcc2d070a45bd",
+    "f16_sha256": "de53fb8ec251fb07ade15baabe17b00774ae3f1112f8618b062337f90fb49194",
+    "artifact_manifest": "src/orukeet/artifacts.json",
+    "evidence": [
+      "evidence/standard-asr-r3-20260908/comparison.json",
+      "evidence/domains-r3-20260908/comparison.json",
+      "evidence/librispeech-ft-20260908/r3/export-audit.json"
+    ],
+    "note": "The user-selected manuscript checkpoint; NeMo, Q8 and F16 share these exact source weights."
+  },
+  "gabor": {
+    "stage": "canonical-frozen-gabor-model",
+    "latest_completed_selection": "r3",
+    "candidate_source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+    "parent_source_sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+    "freeze_audit": "evidence/librispeech-ft-20260908/r3/export-audit.json",
+    "source_comparison": "evidence/standard-asr-r3-20260908/comparison.json",
+    "source_comparisons": [
+      "evidence/standard-asr-r3-20260908/comparison.json",
+      "evidence/domains-r3-20260908/comparison.json"
+    ],
+    "metric_bundle": "evidence/r3-promotion-20260908/metric-evidence.tar.gz",
+    "metric_reproduction": "report/current-benchmark-validation.json",
+    "fits_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+    "selected_rows": 12288,
+    "eligible_rows": 24576,
+    "frozen_scalar_taps": 110592,
+    "other_trainable_scalar_parameters": 626897542,
+    "default_changed": true,
+    "selection_basis": "Explicit user selection of the manuscript r3 checkpoint on 2026-09-08.",
+    "native_accuracy_measured_for_this_candidate": true,
+    "native_validation_scope": "Q8 and F16 real-model fixtures on Metal and Linux CUDA/CPU; Q8 native app checks on Windows, Linux and macOS CPU, plus the actual default-model upgrade and production-renderer recording flow.",
+    "native_lineage": "evidence/r3-promotion-20260908/q8-lineage.json",
+    "native_f16": {
+      "lineage": "evidence/r3-promotion-20260908/f16-lineage.json",
+      "gguf_sha256": "de53fb8ec251fb07ade15baabe17b00774ae3f1112f8618b062337f90fb49194",
+      "bytes": 1296681088
+    },
+    "source_release_artifact": {
+      "repo_id": "oruk/orukeet",
+      "revision": "656de2daae7fffe1cc6165e5cd5f9fdf8aa1dfb6",
+      "file": "orukeet-v0.1.0rc1.nemo",
+      "sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+      "private": true
+    },
+    "native_accuracy_scope": "Q8 through the private OpenWhispr v1.9.2 pipeline: 640 fixed English clips across ten corpora, with every output scored; aggregate multilingual report results use NeMo.",
+    "native_accuracy_evidence": "integrations/openwhispr/APP_BENCHMARKS.md"
+  },
+  "report_snapshot": {
+    "description": "Historical recovery comparisons retained at their original checkpoint identities.",
+    "gabor": {
+      "stage": "canonical-frozen-gabor-model",
+      "latest_completed_selection": "r15-0100",
+      "candidate_source_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+      "development_result": "training/gabor_half/results/comparison-r15-0100.json",
+      "larger_result": "training/gabor_half/results/full-r15-0100.json",
+      "freeze_audit": "training/gabor_half/results/r15-0100-audit.json",
+      "fits_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+      "selected_rows": 12288,
+      "eligible_rows": 24576,
+      "eligible_population": "24 Conformer temporal depthwise Conv1d banks, 1024 channels each, 9 taps per row",
+      "selection": "Global lowest normalized squared error to each exact original row; layer/channel tie break",
+      "frozen_scalar_taps": 110592,
+      "other_trainable_scalar_parameters": 626897542,
+      "default_changed": true,
+      "native_accuracy_measured_for_this_candidate": true,
+      "speed_claim": "Materialized kernels preserve operator shapes and FLOPs; no Gabor-derived speedup established",
+      "reference_source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+      "source_qualified": true,
+      "native_accuracy_qualified": false,
+      "metric_bundle": "training/gabor_half/results/metric-r15-0100.tar.gz",
+      "metric_reproduction": "training/gabor_half/results/metric-r15-0100-local-reproduction.json",
+      "ancestry": "training/gabor_half/results/r15-0100-ancestry.json",
+      "longest_recovery_path_updates": 2900,
+      "native_development_result": "training/gabor_half/results/native-r15-0100-development.json",
+      "native_lineage": "training/gabor_half/results/native-r15-0100-lineage.json",
+      "native_f16": {
+        "gguf_sha256": "43176af5322aa141636cfa9578a9dc1e9c1aa28adc25e4460af752b094eff073",
+        "bytes": 1296681088,
+        "lineage": "training/gabor_half/results/native-r15-0100-f16-lineage.json",
+        "development_result": "training/gabor_half/results/native-r15-0100-f16-development.json",
+        "development_qualified": true,
+        "larger_status": "failed",
+        "latency_status": "not-run-after-accuracy-failure",
+        "larger_result": "training/gabor_half/results/native-r15-0100-f16-full.json",
+        "native_accuracy_qualified": false,
+        "metric_bundle": "training/gabor_half/results/metric-native-r15-0100-f16.tar.gz",
+        "metric_reproduction": "training/gabor_half/results/metric-native-r15-0100-f16-local-reproduction.json"
+      },
+      "existing_export_fallback": {
+        "label": "r15-0200",
+        "stage": "source-qualified-native-q8-failed",
+        "new_training": false,
+        "decision": "training/gabor_half/results/r15-0200-native-fallback-decision.json",
+        "source_qualified": true,
+        "source_result": "training/gabor_half/results/full-r15-0200.json",
+        "candidate_source_sha256": "f5111f6132144b5993edbd4e228df9f731cac64d54777416c77dc85e96b58b61",
+        "metric_bundle": "training/gabor_half/results/metric-r15-0200.tar.gz",
+        "metric_reproduction": "training/gabor_half/results/metric-r15-0200-local-reproduction.json",
+        "ancestry": "training/gabor_half/results/r15-0200-ancestry.json",
+        "native_lineage": "training/gabor_half/results/native-r15-0200-lineage.json",
+        "native_start_decision": "training/gabor_half/results/native-r15-0200-start-decision.json",
+        "native_development_result": "training/gabor_half/results/native-r15-0200-development.json",
+        "native_accuracy_qualified": false,
+        "mixed_precision": {
+          "label": "r15-0200-t16",
+          "stage": "native-larger-failed",
+          "export_precision": "q8_0_t16",
+          "gguf_sha256": "dc8ca75792b45b2d69d4dcfb924cd5e801ac6633e881f3301a6926967cd0ee01",
+          "bytes": 726517920,
+          "lineage": "training/gabor_half/results/native-r15-0200-t16-lineage.json",
+          "decision": "training/gabor_half/results/native-r15-0200-t16-start-decision.json",
+          "transducer_matrices_f16": 7,
+          "other_tensor_payloads_byte_exact_to_q8": true,
+          "native_accuracy_qualified": false,
+          "new_training": false,
+          "default_changed": false,
+          "development_qualified": true,
+          "development_result": "training/gabor_half/results/native-r15-0200-t16-development.json",
+          "larger_result": "training/gabor_half/results/native-r15-0200-t16-full.json",
+          "latency_status": "not-run-after-accuracy-failure",
+          "native_smoke": "integrations/openwhispr/native/r15-0200-t16-native-smoke-validation.json",
+          "electron_lifecycle": "integrations/openwhispr/electron-r15-0200-t16-metal.json",
+          "metric_bundle": "training/gabor_half/results/metric-native-r15-0200-t16.tar.gz",
+          "metric_reproduction": "training/gabor_half/results/metric-native-r15-0200-t16-local-reproduction.json"
+        }
+      },
+      "source_release_artifact": {
+        "repo_id": "oruk/orukeet",
+        "revision": "8a802d1685b3b93be693a341c024f2684a22e148",
+        "file": "orukeet-v0.1.0rc1.nemo",
+        "sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+        "private": true
+      }
+    }
+  },
+  "adaptation_baseline": {
+    "stage": "additional-training-before-gabor-surgery",
+    "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+    "q8_sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+    "artifact_manifest": "src/orukeet/artifacts.json",
+    "evidence": [
+      "evidence/source-model-accuracy.json",
+      "evidence/q8-vs-stock.json",
+      "evidence/q8-vs-source.json"
+    ],
+    "note": "Measured average improvement over stock; original 10% promotion gate failed. These canonical downloads do not contain Gabor surgery.",
+    "name": "Pre-Gabor adaptation baseline"
+  },
+  "history": {
+    "r15-0100": {
+      "canonical": {
+        "stage": "frozen-gabor-r15-0100",
+        "source_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+        "q8_sha256": "d522bd7ecde76f627649f5a2255c52d81d293698ecd65cf0d8ddbd6e2f4893c6",
+        "f16_sha256": "43176af5322aa141636cfa9578a9dc1e9c1aa28adc25e4460af752b094eff073",
+        "artifact_manifest": "src/orukeet/artifacts.json",
+        "evidence": [
+          "training/gabor_half/results/full-r15-0100.json",
+          "training/gabor_half/results/r15-0100-audit.json"
+        ],
+        "note": "One source checkpoint; Q8 and F16 are conversions of these exact weights."
+      },
+      "gabor": {
+        "stage": "canonical-frozen-gabor-model",
+        "latest_completed_selection": "r15-0100",
+        "candidate_source_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+        "development_result": "training/gabor_half/results/comparison-r15-0100.json",
+        "larger_result": "training/gabor_half/results/full-r15-0100.json",
+        "freeze_audit": "training/gabor_half/results/r15-0100-audit.json",
+        "fits_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+        "selected_rows": 12288,
+        "eligible_rows": 24576,
+        "eligible_population": "24 Conformer temporal depthwise Conv1d banks, 1024 channels each, 9 taps per row",
+        "selection": "Global lowest normalized squared error to each exact original row; layer/channel tie break",
+        "frozen_scalar_taps": 110592,
+        "other_trainable_scalar_parameters": 626897542,
+        "default_changed": true,
+        "native_accuracy_measured_for_this_candidate": true,
+        "speed_claim": "Materialized kernels preserve operator shapes and FLOPs; no Gabor-derived speedup established",
+        "reference_source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+        "source_qualified": true,
+        "native_accuracy_qualified": false,
+        "metric_bundle": "training/gabor_half/results/metric-r15-0100.tar.gz",
+        "metric_reproduction": "training/gabor_half/results/metric-r15-0100-local-reproduction.json",
+        "ancestry": "training/gabor_half/results/r15-0100-ancestry.json",
+        "longest_recovery_path_updates": 2900,
+        "native_development_result": "training/gabor_half/results/native-r15-0100-development.json",
+        "native_lineage": "training/gabor_half/results/native-r15-0100-lineage.json",
+        "native_f16": {
+          "gguf_sha256": "43176af5322aa141636cfa9578a9dc1e9c1aa28adc25e4460af752b094eff073",
+          "bytes": 1296681088,
+          "lineage": "training/gabor_half/results/native-r15-0100-f16-lineage.json",
+          "development_result": "training/gabor_half/results/native-r15-0100-f16-development.json",
+          "development_qualified": true,
+          "larger_status": "failed",
+          "latency_status": "not-run-after-accuracy-failure",
+          "larger_result": "training/gabor_half/results/native-r15-0100-f16-full.json",
+          "native_accuracy_qualified": false,
+          "metric_bundle": "training/gabor_half/results/metric-native-r15-0100-f16.tar.gz",
+          "metric_reproduction": "training/gabor_half/results/metric-native-r15-0100-f16-local-reproduction.json"
+        },
+        "existing_export_fallback": {
+          "label": "r15-0200",
+          "stage": "source-qualified-native-q8-failed",
+          "new_training": false,
+          "decision": "training/gabor_half/results/r15-0200-native-fallback-decision.json",
+          "source_qualified": true,
+          "source_result": "training/gabor_half/results/full-r15-0200.json",
+          "candidate_source_sha256": "f5111f6132144b5993edbd4e228df9f731cac64d54777416c77dc85e96b58b61",
+          "metric_bundle": "training/gabor_half/results/metric-r15-0200.tar.gz",
+          "metric_reproduction": "training/gabor_half/results/metric-r15-0200-local-reproduction.json",
+          "ancestry": "training/gabor_half/results/r15-0200-ancestry.json",
+          "native_lineage": "training/gabor_half/results/native-r15-0200-lineage.json",
+          "native_start_decision": "training/gabor_half/results/native-r15-0200-start-decision.json",
+          "native_development_result": "training/gabor_half/results/native-r15-0200-development.json",
+          "native_accuracy_qualified": false,
+          "mixed_precision": {
+            "label": "r15-0200-t16",
+            "stage": "native-larger-failed",
+            "export_precision": "q8_0_t16",
+            "gguf_sha256": "dc8ca75792b45b2d69d4dcfb924cd5e801ac6633e881f3301a6926967cd0ee01",
+            "bytes": 726517920,
+            "lineage": "training/gabor_half/results/native-r15-0200-t16-lineage.json",
+            "decision": "training/gabor_half/results/native-r15-0200-t16-start-decision.json",
+            "transducer_matrices_f16": 7,
+            "other_tensor_payloads_byte_exact_to_q8": true,
+            "native_accuracy_qualified": false,
+            "new_training": false,
+            "default_changed": false,
+            "development_qualified": true,
+            "development_result": "training/gabor_half/results/native-r15-0200-t16-development.json",
+            "larger_result": "training/gabor_half/results/native-r15-0200-t16-full.json",
+            "latency_status": "not-run-after-accuracy-failure",
+            "native_smoke": "integrations/openwhispr/native/r15-0200-t16-native-smoke-validation.json",
+            "electron_lifecycle": "integrations/openwhispr/electron-r15-0200-t16-metal.json",
+            "metric_bundle": "training/gabor_half/results/metric-native-r15-0200-t16.tar.gz",
+            "metric_reproduction": "training/gabor_half/results/metric-native-r15-0200-t16-local-reproduction.json"
+          }
+        },
+        "source_release_artifact": {
+          "repo_id": "oruk/orukeet",
+          "revision": "8a802d1685b3b93be693a341c024f2684a22e148",
+          "file": "orukeet-v0.1.0rc1.nemo",
+          "sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+          "private": true
+        }
+      },
+      "artifact_catalog": {
+        "status": "private-review",
+        "repo_id": "oruk/orukeet",
+        "revision": "8a802d1685b3b93be693a341c024f2684a22e148",
+        "files": {
+          "source": {
+            "path": "orukeet-v0.1.0rc1.nemo",
+            "size": 2509342720,
+            "sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+            "source_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811"
+          },
+          "q8": {
+            "path": "orukeet-v0.1.0rc1-q8.gguf",
+            "size": 714456704,
+            "sha256": "d522bd7ecde76f627649f5a2255c52d81d293698ecd65cf0d8ddbd6e2f4893c6",
+            "source_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811"
+          },
+          "f16": {
+            "path": "orukeet-v0.1.0rc1-f16.gguf",
+            "size": 1296681088,
+            "sha256": "43176af5322aa141636cfa9578a9dc1e9c1aa28adc25e4460af752b094eff073",
+            "source_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811"
+          }
+        },
+        "model": "Orukeet",
+        "selection": "r15-0100"
+      }
+    },
+    "ft-4035": {
+      "canonical": {
+        "stage": "frozen-gabor-ft-4035",
+        "source_sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+        "q8_sha256": "9b0c77604c7679d6da68d0014e9f753f3d893c26115f078847316efb1083bd0f",
+        "f16_sha256": "7aa47ba826f7f9ac8bdfae20bfcc39b76c43387999f076bb2dae574ed0a0b73a",
+        "artifact_manifest": "src/orukeet/artifacts.json",
+        "evidence": [
+          "evidence/regression-ft-20260907/comparison.json",
+          "evidence/regression-ft-20260907/export-audit.json",
+          "evidence/regression-ft-20260907/numeric-audit.json"
+        ],
+        "note": "User-selected FT-4035 source; Q8 and F16 are conversions of these exact weights."
+      },
+      "gabor": {
+        "stage": "canonical-frozen-gabor-model",
+        "latest_completed_selection": "ft-4035",
+        "candidate_source_sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+        "parent_source_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+        "freeze_audit": "evidence/regression-ft-20260907/export-audit.json",
+        "source_comparison": "evidence/regression-ft-20260907/comparison.json",
+        "metric_bundle": "evidence/ft4035-promotion-20260907/metric-evidence.tar.gz",
+        "metric_reproduction": "evidence/regression-ft-20260907/numeric-audit.json",
+        "fits_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+        "selected_rows": 12288,
+        "eligible_rows": 24576,
+        "frozen_scalar_taps": 110592,
+        "other_trainable_scalar_parameters": 626897542,
+        "default_changed": true,
+        "selection_basis": "Explicit user selection of FT-4035 on 2026-09-07; recorded scores retained.",
+        "native_accuracy_measured_for_this_candidate": false,
+        "native_validation_scope": "Fixed native fixtures; aggregate scores use NeMo.",
+        "native_lineage": "evidence/ft4035-promotion-20260907/q8-lineage.json",
+        "native_f16": {
+          "lineage": "evidence/ft4035-promotion-20260907/f16-lineage.json",
+          "gguf_sha256": "7aa47ba826f7f9ac8bdfae20bfcc39b76c43387999f076bb2dae574ed0a0b73a",
+          "bytes": 1296681088
+        },
+        "source_release_artifact": {
+          "repo_id": "oruk/orukeet",
+          "revision": "30c6d16738f6f3edee70142c86cda41220c4aacc",
+          "file": "orukeet-v0.1.0rc1.nemo",
+          "sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+          "private": true
+        }
+      },
+      "artifact_catalog": {
+        "status": "private-review",
+        "repo_id": "oruk/orukeet",
+        "revision": "30c6d16738f6f3edee70142c86cda41220c4aacc",
+        "files": {
+          "source": {
+            "path": "orukeet-v0.1.0rc1.nemo",
+            "size": 2509342720,
+            "sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+            "source_sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945"
+          },
+          "q8": {
+            "path": "orukeet-v0.1.0rc1-q8.gguf",
+            "size": 714456704,
+            "sha256": "9b0c77604c7679d6da68d0014e9f753f3d893c26115f078847316efb1083bd0f",
+            "source_sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945"
+          },
+          "f16": {
+            "path": "orukeet-v0.1.0rc1-f16.gguf",
+            "size": 1296681088,
+            "sha256": "7aa47ba826f7f9ac8bdfae20bfcc39b76c43387999f076bb2dae574ed0a0b73a",
+            "source_sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945"
+          }
+        },
+        "model": "Orukeet",
+        "selection": "ft-4035"
+      }
+    }
+  }
+}

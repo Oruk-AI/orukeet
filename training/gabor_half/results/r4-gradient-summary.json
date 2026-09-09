@@ -1,0 +1,6 @@
+{
+  "status": "pass",
+  "tensors": 651,
+  "finite_gradient_tensors": 651,
+  "native_joint_parity": "pass"
+}

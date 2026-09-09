@@ -1,0 +1,110 @@
+[
+  {
+    "label": "R2, step 100",
+    "candidate_sha256": "dad15e12231dc2463606bce04d95a157bf56a57fc09e84aafd5174c15b93a340",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "R5, step 100",
+    "candidate_sha256": "e328b3d8524dbd6ee84f1d269f3f15cf90669286efdc796b1313bc4c100a1f42",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "R5, step 200",
+    "candidate_sha256": "58b548e6bfb62084d04c64b8337328845b65c20c5211dd6547bf1e51caf7002b",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "R5, step 300",
+    "candidate_sha256": "cb2e32a8986bc2b67441e9d1d9ff7467b837d05a486df974e9303c729fa33a79",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "R6, step 400",
+    "candidate_sha256": "8ba6d6ba01fa90798e5e4e4b4605d89d1b84f98f20e824a621999184a1f0cd3f",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "R7, step 300",
+    "candidate_sha256": "992a35cdfcea8d4d6ca57e8bef4d2fa2ae82a8e1ab02a872598e338faea40ef3",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "R8, step 100",
+    "candidate_sha256": "b22dea04beecf1eba46cef835501082d97c44a4e28e1eed356a650246abc3b4d",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "R9, step 600",
+    "candidate_sha256": "ae59dcdaa87c9cf476ae5ecd9986287c49f38ead8a92e53da7bb9fa286514f7e",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "R10, step 400",
+    "candidate_sha256": "69a585b601ab29595297e50d479ce61689c82cd60cce1488706085b6c159e717",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "R11, step 400",
+    "candidate_sha256": "ac0b8f43d67580bafd79614207bf012037147fb792b6a117f02bf0cfb85e92be",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "R12, step 800",
+    "candidate_sha256": "d1610da004fa008fa9475895ee509998fee1f8986de6aa002107ef78eab70f3d",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "R13, step 300",
+    "candidate_sha256": "9607ae4b03331b575947f98f20e369affc9ee7d097058f04581bcfcd3a6378c2",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "R14, step 200",
+    "candidate_sha256": "63d462cf943d07785b382db97f179aaf8d9d4b7fe48672bcccdf8cf4e2617a47",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "R15, step 100",
+    "candidate_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+    "status": "pass",
+    "release_qualified": true
+  },
+  {
+    "label": "R15, step 200",
+    "candidate_sha256": "f5111f6132144b5993edbd4e228df9f731cac64d54777416c77dc85e96b58b61",
+    "status": "pass",
+    "release_qualified": true
+  },
+  {
+    "label": "A1, 35% R11",
+    "candidate_sha256": "64e62b1e9c1812c2607b12b18ca9963c2d9817dc2a895017f25b2f4ac92a4e29",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "A2, 65% R12",
+    "candidate_sha256": "44059de88f9797dcd9a3386e1b267733937326c518b2d570468911b6f7da18db",
+    "status": "fail",
+    "release_qualified": false
+  },
+  {
+    "label": "A3, 15% R7",
+    "candidate_sha256": "dec8b3913a2a6c47371af0587df472f406d9265869a7432f9958d2b216dbbf25",
+    "status": "fail",
+    "release_qualified": false
+  }
+]

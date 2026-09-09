@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "rows": 1487,
+  "seal_sha256": "80ea4332fc067ca98d0e1a1c2f781ba9c3bbed5aa46fb320a989b4a20c0ae9d1",
+  "files": {
+    "comparison.json": {
+      "sha256": "be523c66c6268d8526532d783a8aac468406b8011a7016dbaacf47a8adb16877",
+      "bytes": 20025
+    },
+    "numeric-evidence.jsonl.gz": {
+      "sha256": "5976dbebd6cb88c4a925fad72094bc39f71b6a3a67e9a0b926ec792d8b64abbe",
+      "bytes": 288812
+    }
+  },
+  "written_utc": "2026-09-07T05:57:06.802646+00:00"
+}

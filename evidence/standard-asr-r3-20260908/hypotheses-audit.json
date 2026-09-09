@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "publication_authorized": false,
+  "records": 25705,
+  "paired_predictions": 51410,
+  "models": {
+    "parakeet": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+    "orukeet": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56"
+  },
+  "empty_hypotheses": {
+    "parakeet": 5,
+    "orukeet": 5
+  },
+  "checks": [
+    "Every private hypothesis re-scored locally",
+    "All reference and prediction hashes match",
+    "Every WER/CER numerator and denominator matches released counts",
+    "All 54 model/partition WERs match independent upstream batch scoring"
+  ],
+  "inputs_sha256": {
+    "comparison.json": "9b2702bfe9c7b107db1627df3cb71d24d25d4eb8da0ee8683b0bbf9f994ca7da",
+    "numeric-evidence.jsonl.gz": "3d1467e56efd6769da1f8cb74eef0c3eac7bf93fa8200c39538963a9d4b080c1"
+  },
+  "manifest_sha256": "c8c36e9cbf5053ba7159204b2a507185fc11e818f0ab71259e5937d20f9c9623",
+  "prediction_sha256": {
+    "parakeet": "f130fdab457b9c2f1c5e443a3936819f46d443342c1137f19af9b3295a170af9",
+    "orukeet": "9d46bf83ec4bd1745e3e9b670aafc0d5aad42ea719f5950e9539683e928e534e"
+  },
+  "script_sha256": "80a8c7911819129e39911cd4f78df326485a659a847522779cf40b3b2365eb3a",
+  "upstream_scoring_verified": {
+    "revision": "48219c6028db0517d704600d92f31edfc96e8c23",
+    "model_partition_pairs": 54,
+    "check": "Unmodified upstream normalizer definitions and full-partition batch scoring reproduce all 54 paired WERs."
+  }
+}

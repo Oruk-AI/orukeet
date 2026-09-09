@@ -1,0 +1,228 @@
+{
+  "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "trained_checkpoint_sha256": "88bf2d59e1f157ddcee08b6da3858be830e272b8a17535606a60600c0e99f2ec",
+  "output_sha256": "8f1c1b28445b89495d404a8e68eb825e244a5552bba4bf5ab9098e96721c5b2f",
+  "modified_buffers": [
+    "encoder.layers.0.conv.batch_norm.running_mean",
+    "encoder.layers.0.conv.batch_norm.running_var",
+    "encoder.layers.0.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.1.conv.batch_norm.running_mean",
+    "encoder.layers.1.conv.batch_norm.running_var",
+    "encoder.layers.1.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.2.conv.batch_norm.running_mean",
+    "encoder.layers.2.conv.batch_norm.running_var",
+    "encoder.layers.2.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.3.conv.batch_norm.running_mean",
+    "encoder.layers.3.conv.batch_norm.running_var",
+    "encoder.layers.3.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.4.conv.batch_norm.running_mean",
+    "encoder.layers.4.conv.batch_norm.running_var",
+    "encoder.layers.4.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.5.conv.batch_norm.running_mean",
+    "encoder.layers.5.conv.batch_norm.running_var",
+    "encoder.layers.5.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.6.conv.batch_norm.running_mean",
+    "encoder.layers.6.conv.batch_norm.running_var",
+    "encoder.layers.6.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.7.conv.batch_norm.running_mean",
+    "encoder.layers.7.conv.batch_norm.running_var",
+    "encoder.layers.7.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.8.conv.batch_norm.running_mean",
+    "encoder.layers.8.conv.batch_norm.running_var",
+    "encoder.layers.8.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.9.conv.batch_norm.running_mean",
+    "encoder.layers.9.conv.batch_norm.running_var",
+    "encoder.layers.9.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.10.conv.batch_norm.running_mean",
+    "encoder.layers.10.conv.batch_norm.running_var",
+    "encoder.layers.10.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.11.conv.batch_norm.running_mean",
+    "encoder.layers.11.conv.batch_norm.running_var",
+    "encoder.layers.11.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.12.conv.batch_norm.running_mean",
+    "encoder.layers.12.conv.batch_norm.running_var",
+    "encoder.layers.12.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.13.conv.batch_norm.running_mean",
+    "encoder.layers.13.conv.batch_norm.running_var",
+    "encoder.layers.13.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.14.conv.batch_norm.running_mean",
+    "encoder.layers.14.conv.batch_norm.running_var",
+    "encoder.layers.14.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.15.conv.batch_norm.running_mean",
+    "encoder.layers.15.conv.batch_norm.running_var",
+    "encoder.layers.15.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.16.conv.batch_norm.running_mean",
+    "encoder.layers.16.conv.batch_norm.running_var",
+    "encoder.layers.16.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.17.conv.batch_norm.running_mean",
+    "encoder.layers.17.conv.batch_norm.running_var",
+    "encoder.layers.17.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.18.conv.batch_norm.running_mean",
+    "encoder.layers.18.conv.batch_norm.running_var",
+    "encoder.layers.18.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.19.conv.batch_norm.running_mean",
+    "encoder.layers.19.conv.batch_norm.running_var",
+    "encoder.layers.19.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.20.conv.batch_norm.running_mean",
+    "encoder.layers.20.conv.batch_norm.running_var",
+    "encoder.layers.20.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.21.conv.batch_norm.running_mean",
+    "encoder.layers.21.conv.batch_norm.running_var",
+    "encoder.layers.21.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.22.conv.batch_norm.running_mean",
+    "encoder.layers.22.conv.batch_norm.running_var",
+    "encoder.layers.22.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.23.conv.batch_norm.running_mean",
+    "encoder.layers.23.conv.batch_norm.running_var",
+    "encoder.layers.23.conv.batch_norm.num_batches_tracked"
+  ],
+  "learned_parameters_retained": true,
+  "gabor_taps_retained": true,
+  "diagnostic": "Restore BatchNorm running state only; no trainable weights are reverted. Not a retraining run.",
+  "trained_vs_original_variance": [
+    {
+      "tensor": "encoder.layers.0.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0598887205123901,
+      "variance_ratio_min": 0.14644557237625122,
+      "variance_ratio_max": 2.776954174041748
+    },
+    {
+      "tensor": "encoder.layers.1.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0141113996505737,
+      "variance_ratio_min": 0.0781761184334755,
+      "variance_ratio_max": 2855.86962890625
+    },
+    {
+      "tensor": "encoder.layers.2.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0174640417099,
+      "variance_ratio_min": 0.006703986786305904,
+      "variance_ratio_max": 2.3301684856414795
+    },
+    {
+      "tensor": "encoder.layers.3.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0535539388656616,
+      "variance_ratio_min": 0.033331409096717834,
+      "variance_ratio_max": 2.6141085624694824
+    },
+    {
+      "tensor": "encoder.layers.4.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.071174144744873,
+      "variance_ratio_min": 0.01378443744033575,
+      "variance_ratio_max": 2.839479446411133
+    },
+    {
+      "tensor": "encoder.layers.5.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0896822214126587,
+      "variance_ratio_min": 0.016598081216216087,
+      "variance_ratio_max": 2.1572463512420654
+    },
+    {
+      "tensor": "encoder.layers.6.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0666406154632568,
+      "variance_ratio_min": 0.05574594810605049,
+      "variance_ratio_max": 2.2928805351257324
+    },
+    {
+      "tensor": "encoder.layers.7.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0592527389526367,
+      "variance_ratio_min": 0.09532944113016129,
+      "variance_ratio_max": 2.506723165512085
+    },
+    {
+      "tensor": "encoder.layers.8.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0593039989471436,
+      "variance_ratio_min": 0.3794732689857483,
+      "variance_ratio_max": 2.573847770690918
+    },
+    {
+      "tensor": "encoder.layers.9.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0005199909210205,
+      "variance_ratio_min": 0.030654199421405792,
+      "variance_ratio_max": 2.6335363388061523
+    },
+    {
+      "tensor": "encoder.layers.10.conv.batch_norm.running_var",
+      "variance_ratio_median": 0.9645430445671082,
+      "variance_ratio_min": 0.19956432282924652,
+      "variance_ratio_max": 2.809004783630371
+    },
+    {
+      "tensor": "encoder.layers.11.conv.batch_norm.running_var",
+      "variance_ratio_median": 0.9660742282867432,
+      "variance_ratio_min": 0.26447612047195435,
+      "variance_ratio_max": 2.3129208087921143
+    },
+    {
+      "tensor": "encoder.layers.12.conv.batch_norm.running_var",
+      "variance_ratio_median": 0.9582170844078064,
+      "variance_ratio_min": 0.22212103009223938,
+      "variance_ratio_max": 2.6882097721099854
+    },
+    {
+      "tensor": "encoder.layers.13.conv.batch_norm.running_var",
+      "variance_ratio_median": 0.9281055927276611,
+      "variance_ratio_min": 0.11523401737213135,
+      "variance_ratio_max": 5.819673538208008
+    },
+    {
+      "tensor": "encoder.layers.14.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.014799952507019,
+      "variance_ratio_min": 0.32848742604255676,
+      "variance_ratio_max": 2.403904438018799
+    },
+    {
+      "tensor": "encoder.layers.15.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0591439008712769,
+      "variance_ratio_min": 0.2424110770225525,
+      "variance_ratio_max": 3.237400770187378
+    },
+    {
+      "tensor": "encoder.layers.16.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0221682786941528,
+      "variance_ratio_min": 0.2198404222726822,
+      "variance_ratio_max": 6.73712158203125
+    },
+    {
+      "tensor": "encoder.layers.17.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0916500091552734,
+      "variance_ratio_min": 0.16777177155017853,
+      "variance_ratio_max": 4.855879783630371
+    },
+    {
+      "tensor": "encoder.layers.18.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.1184484958648682,
+      "variance_ratio_min": 0.09517567604780197,
+      "variance_ratio_max": 5.8905768394470215
+    },
+    {
+      "tensor": "encoder.layers.19.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.104839563369751,
+      "variance_ratio_min": 0.31956496834754944,
+      "variance_ratio_max": 45.488040924072266
+    },
+    {
+      "tensor": "encoder.layers.20.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.1071205139160156,
+      "variance_ratio_min": 0.3863249123096466,
+      "variance_ratio_max": 24.683650970458984
+    },
+    {
+      "tensor": "encoder.layers.21.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0027551651000977,
+      "variance_ratio_min": 0.5134307742118835,
+      "variance_ratio_max": 5.037319660186768
+    },
+    {
+      "tensor": "encoder.layers.22.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0112345218658447,
+      "variance_ratio_min": 0.2464049607515335,
+      "variance_ratio_max": 9.54680061340332
+    },
+    {
+      "tensor": "encoder.layers.23.conv.batch_norm.running_var",
+      "variance_ratio_median": 1.0090121030807495,
+      "variance_ratio_min": 0.4253828525543213,
+      "variance_ratio_max": 2.112914562225342
+    }
+  ]
+}

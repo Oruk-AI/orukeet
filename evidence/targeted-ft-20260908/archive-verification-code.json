@@ -1,0 +1,5 @@
+{
+  "initial_archive_source_sha256": "975146b3abef39134293d96a2170db778483466bebf53203b01f44c0cb2bed01",
+  "verification_source_sha256": "b5fb5ee6b80549caedc968cb43352b5351a0ce225139e7fcc9a9a3111255c92f",
+  "change": "Allow and verify the HF-generated LFS rule for the newly uploaded checkpoint; preserve all existing rules, model weights, and documents."
+}

@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "tests": 10,
+  "runtime": "Same pinned NeMo container used for R10; CPU tensors and CUDA_VISIBLE_DEVICES empty",
+  "coverage": [
+    "Correct weighted update to trainable entries",
+    "Fixed rows and buffers preserved",
+    "Input states not mutated",
+    "Reject changed fixed rows, buffers, shapes, missing tensors and nonfinite values",
+    "Preserve module-version metadata and reject mismatched versions",
+    "Direct three-parent sum with one final rounding",
+    "Reject invalid mixture weights",
+    "Permit the known stateless augmentation metadata difference only with no stored tensors"
+  ],
+  "source_sha256": {
+    "average_recovered.py": "6e2216e9926eae383e10d99301a8e6f3dd5708247ba2a44a41578aadf3454e5d",
+    "test_average_recovered.py": "e768818053a51991a5418a3a4d93e1cebcaa1a252921624ac45c6bbbcb977a2d"
+  },
+  "scope": "Unit validation before starting A1; model candidates require separate audits and recognition tests."
+}

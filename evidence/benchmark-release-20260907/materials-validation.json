@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "publication_authorized": false,
+  "complete_clips": 327888,
+  "sampled_clips": 12006,
+  "pdf_score_rows": 121,
+  "standard_test_clips": 25705,
+  "standard_test_splits": 27,
+  "markdown_score_rows": 658,
+  "csv_score_rows": 94,
+  "checks": [
+    "Per-record integer edit counts match every score",
+    "Every split is present",
+    "Full-precision CSV values match",
+    "Rendered PDF values match",
+    "All available Markdown score surfaces match",
+    "Model and sample conditions retained"
+  ],
+  "inputs_sha256": {
+    "evidence/unseen-20260907/numeric-evidence.jsonl.gz": "b356ef424028ea6dfd2f775abebe5087a4515418aff25d67597013d56522ae60",
+    "evidence/unseen-20260907/coverage/numeric-evidence.jsonl.gz": "a9ca147b0a0ee4551e3556b1fa94117ba0c8716e30e8dc121e71c6c1c0e8d537",
+    "evidence/unseen-20260907/alignment-followup/numeric-evidence.jsonl.gz": "5976dbebd6cb88c4a925fad72094bc39f71b6a3a67e9a0b926ec792d8b64abbe",
+    "evidence/benchmark-release-20260907/complete.csv": "af6a94cbc86e0744aaad77c7a8963529d6b80abb066e257d8d2636f5593b04e6",
+    "evidence/regression-ft-20260907/numeric-evidence.jsonl.gz": "6f1dac9f47c9dd6ff944c2ca01062711d4615637f7d86f15837015bcb533b676",
+    "evidence/benchmark-release-20260907/sampled.csv": "afdc3f5baadc5d8b2f605a590a870615f6a982f783e64830189ade0752ef0c8c",
+    "README.md": "46523cf400a096bb86c8c11ec20217146197bf7799bc48f1389eaf3f48a798ad",
+    "MODEL_CARD.md": "df0b4b0e253be7ea135c99d169539863595dc8aa10d81a6d24372f889bd707ea",
+    "hub/README.md": "3e58676e16533b79a3136069893038aa75c53710baba2938afa554955f34c51d",
+    "launch/publication/github-README.md": "46523cf400a096bb86c8c11ec20217146197bf7799bc48f1389eaf3f48a798ad",
+    "launch/publication/github-MODEL_CARD.md": "df0b4b0e253be7ea135c99d169539863595dc8aa10d81a6d24372f889bd707ea",
+    "launch/publication/huggingface-README.md": "3e58676e16533b79a3136069893038aa75c53710baba2938afa554955f34c51d",
+    "docs/benchmark-scores.md": "cbbe2748474eb13d2fc5d683f77a64a025999dc0a9b18acd9bd37c062d3ffca5",
+    "output/pdf/orukeet-technical-report.pdf": "51ab8907ae207c6ebdc176d1362b3c516bea2783b622be40c309958e375edef7",
+    "evidence/benchmark-release-20260907/scores.json": "59702040173a85368e235f20dc38a8ee9bc49570b0d0b4ed9b59e952550ef7b6"
+  },
+  "script_sha256": "1498e56d10366da8f56792f461be0b74e0683e855f8837fcd1e558885c6e441f"
+}

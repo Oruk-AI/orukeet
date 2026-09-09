@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "candidate_sha256": "6b9934a6728c712aa4ea406d483295399e1e9755a3c39412d6c98be30506d1e5",
+  "training_evaluation_export_identities_match": true,
+  "all_requested_rows_trained_once_and_reevaluated": true,
+  "recorded_source_hashes_match": true,
+  "score_artifact_hashes_match": true
+}

@@ -1,0 +1,915 @@
+{
+  "status": "complete",
+  "publication_authorized": false,
+  "rows": 25705,
+  "sets": {
+    "fleurs_bg": {
+      "rows": 658,
+      "hours": 1.8574666666666677,
+      "language": "bg",
+      "models": {
+        "parakeet": {
+          "words": 14130,
+          "errors": 1684,
+          "substitutions": 1327,
+          "deletions": 250,
+          "insertions": 107,
+          "chars": 87860,
+          "char_errors": 3372,
+          "utterance_error": 539,
+          "wer": 11.91790516631281,
+          "cer": 3.8379239699521968
+        },
+        "orukeet": {
+          "words": 14128,
+          "errors": 1465,
+          "substitutions": 1167,
+          "deletions": 197,
+          "insertions": 101,
+          "chars": 87860,
+          "char_errors": 2936,
+          "utterance_error": 527,
+          "wer": 10.369479048697622,
+          "cer": 3.3416799453676305
+        }
+      }
+    },
+    "fleurs_cs": {
+      "rows": 723,
+      "hours": 2.4499500000000016,
+      "language": "cs",
+      "models": {
+        "parakeet": {
+          "words": 13825,
+          "errors": 1538,
+          "substitutions": 1291,
+          "deletions": 150,
+          "insertions": 97,
+          "chars": 89878,
+          "char_errors": 2886,
+          "utterance_error": 552,
+          "wer": 11.124773960216999,
+          "cer": 3.211019381828701
+        },
+        "orukeet": {
+          "words": 13823,
+          "errors": 1240,
+          "substitutions": 1048,
+          "deletions": 103,
+          "insertions": 89,
+          "chars": 89878,
+          "char_errors": 2397,
+          "utterance_error": 505,
+          "wer": 8.970556319178181,
+          "cer": 2.666948530229867
+        }
+      }
+    },
+    "fleurs_da": {
+      "rows": 930,
+      "hours": 2.93865,
+      "language": "da",
+      "models": {
+        "parakeet": {
+          "words": 20368,
+          "errors": 3501,
+          "substitutions": 2802,
+          "deletions": 452,
+          "insertions": 247,
+          "chars": 125295,
+          "char_errors": 7911,
+          "utterance_error": 872,
+          "wer": 17.18872741555381,
+          "cer": 6.313899197892972
+        },
+        "orukeet": {
+          "words": 20349,
+          "errors": 3027,
+          "substitutions": 2432,
+          "deletions": 351,
+          "insertions": 244,
+          "chars": 125295,
+          "char_errors": 6658,
+          "utterance_error": 853,
+          "wer": 14.875423853752027,
+          "cer": 5.313859292070713
+        }
+      }
+    },
+    "fleurs_de": {
+      "rows": 862,
+      "hours": 3.152583333333336,
+      "language": "de",
+      "models": {
+        "parakeet": {
+          "words": 18651,
+          "errors": 786,
+          "substitutions": 626,
+          "deletions": 105,
+          "insertions": 55,
+          "chars": 130459,
+          "char_errors": 1842,
+          "utterance_error": 439,
+          "wer": 4.214251246581953,
+          "cer": 1.4119378502058118
+        },
+        "orukeet": {
+          "words": 18648,
+          "errors": 731,
+          "substitutions": 577,
+          "deletions": 82,
+          "insertions": 72,
+          "chars": 130459,
+          "char_errors": 1983,
+          "utterance_error": 386,
+          "wer": 3.91999141999142,
+          "cer": 1.5200177833648887
+        }
+      }
+    },
+    "fleurs_el": {
+      "rows": 650,
+      "hours": 1.9061000000000012,
+      "language": "el",
+      "models": {
+        "parakeet": {
+          "words": 15147,
+          "errors": 3192,
+          "substitutions": 2691,
+          "deletions": 365,
+          "insertions": 136,
+          "chars": 94733,
+          "char_errors": 8533,
+          "utterance_error": 615,
+          "wer": 21.07347989700931,
+          "cer": 9.007420856512514
+        },
+        "orukeet": {
+          "words": 15145,
+          "errors": 4666,
+          "substitutions": 4274,
+          "deletions": 248,
+          "insertions": 144,
+          "chars": 94733,
+          "char_errors": 8696,
+          "utterance_error": 647,
+          "wer": 30.80884780455596,
+          "cer": 9.179483390159712
+        }
+      }
+    },
+    "fleurs_en": {
+      "rows": 647,
+      "hours": 1.7744166666666674,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 14544,
+          "errors": 623,
+          "substitutions": 441,
+          "deletions": 129,
+          "insertions": 53,
+          "chars": 83495,
+          "char_errors": 1673,
+          "utterance_error": 337,
+          "wer": 4.283553355335534,
+          "cer": 2.0037127971734834
+        },
+        "orukeet": {
+          "words": 14544,
+          "errors": 556,
+          "substitutions": 396,
+          "deletions": 86,
+          "insertions": 74,
+          "chars": 83495,
+          "char_errors": 1475,
+          "utterance_error": 304,
+          "wer": 3.822882288228823,
+          "cer": 1.7665728486735732
+        }
+      }
+    },
+    "fleurs_es": {
+      "rows": 908,
+      "hours": 3.0905833333333335,
+      "language": "es",
+      "models": {
+        "parakeet": {
+          "words": 23523,
+          "errors": 758,
+          "substitutions": 549,
+          "deletions": 131,
+          "insertions": 78,
+          "chars": 138908,
+          "char_errors": 1784,
+          "utterance_error": 406,
+          "wer": 3.222378098031714,
+          "cer": 1.28430327986869
+        },
+        "orukeet": {
+          "words": 23521,
+          "errors": 648,
+          "substitutions": 481,
+          "deletions": 87,
+          "insertions": 80,
+          "chars": 138908,
+          "char_errors": 1447,
+          "utterance_error": 379,
+          "wer": 2.75498490710429,
+          "cer": 1.0416966625392345
+        }
+      }
+    },
+    "fleurs_et": {
+      "rows": 893,
+      "hours": 3.0070666666666614,
+      "language": "et",
+      "models": {
+        "parakeet": {
+          "words": 14755,
+          "errors": 1965,
+          "substitutions": 1630,
+          "deletions": 188,
+          "insertions": 147,
+          "chars": 110763,
+          "char_errors": 4275,
+          "utterance_error": 714,
+          "wer": 13.317519484920366,
+          "cer": 3.8595921020557404
+        },
+        "orukeet": {
+          "words": 14712,
+          "errors": 1536,
+          "substitutions": 1293,
+          "deletions": 130,
+          "insertions": 113,
+          "chars": 110763,
+          "char_errors": 3754,
+          "utterance_error": 636,
+          "wer": 10.440456769983687,
+          "cer": 3.3892184213139767
+        }
+      }
+    },
+    "fleurs_fi": {
+      "rows": 918,
+      "hours": 3.3040002777777766,
+      "language": "fi",
+      "models": {
+        "parakeet": {
+          "words": 14778,
+          "errors": 1646,
+          "substitutions": 1400,
+          "deletions": 160,
+          "insertions": 86,
+          "chars": 128318,
+          "char_errors": 3328,
+          "utterance_error": 649,
+          "wer": 11.138178373257546,
+          "cer": 2.593556632740535
+        },
+        "orukeet": {
+          "words": 14758,
+          "errors": 1380,
+          "substitutions": 1175,
+          "deletions": 112,
+          "insertions": 93,
+          "chars": 128318,
+          "char_errors": 2769,
+          "utterance_error": 590,
+          "wer": 9.350860550210056,
+          "cer": 2.1579201670848986
+        }
+      }
+    },
+    "fleurs_fr": {
+      "rows": 676,
+      "hours": 1.951133333333332,
+      "language": "fr",
+      "models": {
+        "parakeet": {
+          "words": 18132,
+          "errors": 850,
+          "substitutions": 677,
+          "deletions": 126,
+          "insertions": 47,
+          "chars": 104679,
+          "char_errors": 1759,
+          "utterance_error": 377,
+          "wer": 4.687844694462828,
+          "cer": 1.6803752424077418
+        },
+        "orukeet": {
+          "words": 18134,
+          "errors": 908,
+          "substitutions": 699,
+          "deletions": 109,
+          "insertions": 100,
+          "chars": 104679,
+          "char_errors": 1778,
+          "utterance_error": 382,
+          "wer": 5.007168854086247,
+          "cer": 1.6985259698697923
+        }
+      }
+    },
+    "fleurs_hr": {
+      "rows": 914,
+      "hours": 2.565966666666669,
+      "language": "hr",
+      "models": {
+        "parakeet": {
+          "words": 17683,
+          "errors": 1997,
+          "substitutions": 1636,
+          "deletions": 218,
+          "insertions": 143,
+          "chars": 113127,
+          "char_errors": 3989,
+          "utterance_error": 734,
+          "wer": 11.293332579313464,
+          "cer": 3.5261255049634483
+        },
+        "orukeet": {
+          "words": 17682,
+          "errors": 1803,
+          "substitutions": 1493,
+          "deletions": 161,
+          "insertions": 149,
+          "chars": 113127,
+          "char_errors": 4156,
+          "utterance_error": 698,
+          "wer": 10.196810315575162,
+          "cer": 3.673747204469313
+        }
+      }
+    },
+    "fleurs_hu": {
+      "rows": 905,
+      "hours": 3.0696833333333298,
+      "language": "hu",
+      "models": {
+        "parakeet": {
+          "words": 16997,
+          "errors": 2312,
+          "substitutions": 1956,
+          "deletions": 240,
+          "insertions": 116,
+          "chars": 122112,
+          "char_errors": 5125,
+          "utterance_error": 745,
+          "wer": 13.602400423604166,
+          "cer": 4.196966719077568
+        },
+        "orukeet": {
+          "words": 16980,
+          "errors": 1814,
+          "substitutions": 1547,
+          "deletions": 153,
+          "insertions": 114,
+          "chars": 122112,
+          "char_errors": 3629,
+          "utterance_error": 665,
+          "wer": 10.683156654888103,
+          "cer": 2.971861897274633
+        }
+      }
+    },
+    "fleurs_it": {
+      "rows": 865,
+      "hours": 3.5211833333333318,
+      "language": "it",
+      "models": {
+        "parakeet": {
+          "words": 21219,
+          "errors": 516,
+          "substitutions": 397,
+          "deletions": 81,
+          "insertions": 38,
+          "chars": 130635,
+          "char_errors": 1035,
+          "utterance_error": 298,
+          "wer": 2.431782836137424,
+          "cer": 0.792283844299001
+        },
+        "orukeet": {
+          "words": 21222,
+          "errors": 444,
+          "substitutions": 327,
+          "deletions": 59,
+          "insertions": 58,
+          "chars": 130635,
+          "char_errors": 994,
+          "utterance_error": 270,
+          "wer": 2.092168504382245,
+          "cer": 0.7608986871818425
+        }
+      }
+    },
+    "fleurs_lt": {
+      "rows": 986,
+      "hours": 2.968483333333328,
+      "language": "lt",
+      "models": {
+        "parakeet": {
+          "words": 17460,
+          "errors": 3658,
+          "substitutions": 3249,
+          "deletions": 319,
+          "insertions": 90,
+          "chars": 129514,
+          "char_errors": 7207,
+          "utterance_error": 931,
+          "wer": 20.950744558991982,
+          "cer": 5.564649381534043
+        },
+        "orukeet": {
+          "words": 17457,
+          "errors": 2890,
+          "substitutions": 2600,
+          "deletions": 204,
+          "insertions": 86,
+          "chars": 129514,
+          "char_errors": 5534,
+          "utterance_error": 889,
+          "wer": 16.554963624906915,
+          "cer": 4.272897138533286
+        }
+      }
+    },
+    "fleurs_lv": {
+      "rows": 851,
+      "hours": 2.8385,
+      "language": "lv",
+      "models": {
+        "parakeet": {
+          "words": 15638,
+          "errors": 3406,
+          "substitutions": 3047,
+          "deletions": 228,
+          "insertions": 131,
+          "chars": 110872,
+          "char_errors": 6022,
+          "utterance_error": 813,
+          "wer": 21.780278808031717,
+          "cer": 5.431488563388412
+        },
+        "orukeet": {
+          "words": 15618,
+          "errors": 2719,
+          "substitutions": 2432,
+          "deletions": 170,
+          "insertions": 117,
+          "chars": 110872,
+          "char_errors": 4673,
+          "utterance_error": 762,
+          "wer": 17.4093994109361,
+          "cer": 4.214770185439065
+        }
+      }
+    },
+    "fleurs_mt": {
+      "rows": 926,
+      "hours": 3.547383333333337,
+      "language": "mt",
+      "models": {
+        "parakeet": {
+          "words": 22136,
+          "errors": 4255,
+          "substitutions": 3445,
+          "deletions": 549,
+          "insertions": 261,
+          "chars": 130698,
+          "char_errors": 8091,
+          "utterance_error": 893,
+          "wer": 19.222081676906395,
+          "cer": 6.190607354358904
+        },
+        "orukeet": {
+          "words": 22127,
+          "errors": 3452,
+          "substitutions": 2852,
+          "deletions": 326,
+          "insertions": 274,
+          "chars": 130698,
+          "char_errors": 6645,
+          "utterance_error": 870,
+          "wer": 15.600849640710445,
+          "cer": 5.084240003672589
+        }
+      }
+    },
+    "fleurs_nl": {
+      "rows": 364,
+      "hours": 0.9687166666666657,
+      "language": "nl",
+      "models": {
+        "parakeet": {
+          "words": 8373,
+          "errors": 536,
+          "substitutions": 425,
+          "deletions": 65,
+          "insertions": 46,
+          "chars": 53378,
+          "char_errors": 1218,
+          "utterance_error": 257,
+          "wer": 6.401528723277201,
+          "cer": 2.281838959871108
+        },
+        "orukeet": {
+          "words": 8369,
+          "errors": 469,
+          "substitutions": 367,
+          "deletions": 44,
+          "insertions": 58,
+          "chars": 53378,
+          "char_errors": 1030,
+          "utterance_error": 243,
+          "wer": 5.604014816585016,
+          "cer": 1.9296339315823
+        }
+      }
+    },
+    "fleurs_pl": {
+      "rows": 758,
+      "hours": 2.0506833333333336,
+      "language": "pl",
+      "models": {
+        "parakeet": {
+          "words": 14545,
+          "errors": 991,
+          "substitutions": 841,
+          "deletions": 99,
+          "insertions": 51,
+          "chars": 102431,
+          "char_errors": 2139,
+          "utterance_error": 463,
+          "wer": 6.813337916809901,
+          "cer": 2.088235006980309
+        },
+        "orukeet": {
+          "words": 14540,
+          "errors": 889,
+          "substitutions": 754,
+          "deletions": 73,
+          "insertions": 62,
+          "chars": 102431,
+          "char_errors": 1998,
+          "utterance_error": 429,
+          "wer": 6.114167812929849,
+          "cer": 1.950581366968984
+        }
+      }
+    },
+    "fleurs_pt": {
+      "rows": 919,
+      "hours": 3.238916666666665,
+      "language": "pt",
+      "models": {
+        "parakeet": {
+          "words": 21823,
+          "errors": 979,
+          "substitutions": 664,
+          "deletions": 157,
+          "insertions": 158,
+          "chars": 129341,
+          "char_errors": 2565,
+          "utterance_error": 457,
+          "wer": 4.48609265453879,
+          "cer": 1.9831298660130972
+        },
+        "orukeet": {
+          "words": 21825,
+          "errors": 813,
+          "substitutions": 560,
+          "deletions": 84,
+          "insertions": 169,
+          "chars": 129341,
+          "char_errors": 2112,
+          "utterance_error": 404,
+          "wer": 3.725085910652921,
+          "cer": 1.6328928955242343
+        }
+      }
+    },
+    "fleurs_ro": {
+      "rows": 883,
+      "hours": 2.5275999999999996,
+      "language": "ro",
+      "models": {
+        "parakeet": {
+          "words": 21173,
+          "errors": 2423,
+          "substitutions": 1910,
+          "deletions": 377,
+          "insertions": 136,
+          "chars": 128746,
+          "char_errors": 4973,
+          "utterance_error": 735,
+          "wer": 11.443819959382232,
+          "cer": 3.8626442763270314
+        },
+        "orukeet": {
+          "words": 21168,
+          "errors": 1978,
+          "substitutions": 1561,
+          "deletions": 294,
+          "insertions": 123,
+          "chars": 128746,
+          "char_errors": 3947,
+          "utterance_error": 689,
+          "wer": 9.344293272864702,
+          "cer": 3.0657263138272257
+        }
+      }
+    },
+    "fleurs_ru": {
+      "rows": 775,
+      "hours": 2.498283333333333,
+      "language": "ru",
+      "models": {
+        "parakeet": {
+          "words": 15284,
+          "errors": 747,
+          "substitutions": 612,
+          "deletions": 87,
+          "insertions": 48,
+          "chars": 108418,
+          "char_errors": 1618,
+          "utterance_error": 387,
+          "wer": 4.8874640146558495,
+          "cer": 1.4923721153314025
+        },
+        "orukeet": {
+          "words": 15290,
+          "errors": 722,
+          "substitutions": 588,
+          "deletions": 69,
+          "insertions": 65,
+          "chars": 108418,
+          "char_errors": 1606,
+          "utterance_error": 353,
+          "wer": 4.722040549378679,
+          "cer": 1.4813038425353724
+        }
+      }
+    },
+    "fleurs_sk": {
+      "rows": 792,
+      "hours": 2.613533333333332,
+      "language": "sk",
+      "models": {
+        "parakeet": {
+          "words": 15202,
+          "errors": 1400,
+          "substitutions": 1124,
+          "deletions": 215,
+          "insertions": 61,
+          "chars": 101331,
+          "char_errors": 2947,
+          "utterance_error": 567,
+          "wer": 9.209314563873175,
+          "cer": 2.9082906514294735
+        },
+        "orukeet": {
+          "words": 15204,
+          "errors": 1178,
+          "substitutions": 946,
+          "deletions": 151,
+          "insertions": 81,
+          "chars": 101331,
+          "char_errors": 2439,
+          "utterance_error": 508,
+          "wer": 7.74796106287819,
+          "cer": 2.4069633182343013
+        }
+      }
+    },
+    "fleurs_sl": {
+      "rows": 834,
+      "hours": 2.270316666666667,
+      "language": "sl",
+      "models": {
+        "parakeet": {
+          "words": 16595,
+          "errors": 3753,
+          "substitutions": 3044,
+          "deletions": 390,
+          "insertions": 319,
+          "chars": 105975,
+          "char_errors": 8159,
+          "utterance_error": 787,
+          "wer": 22.61524555589033,
+          "cer": 7.6989856098136356
+        },
+        "orukeet": {
+          "words": 16589,
+          "errors": 3667,
+          "substitutions": 3017,
+          "deletions": 351,
+          "insertions": 299,
+          "chars": 105975,
+          "char_errors": 8779,
+          "utterance_error": 773,
+          "wer": 22.1050093435409,
+          "cer": 8.284029252182119
+        }
+      }
+    },
+    "fleurs_sv": {
+      "rows": 759,
+      "hours": 2.3331000000000013,
+      "language": "sv",
+      "models": {
+        "parakeet": {
+          "words": 15357,
+          "errors": 2054,
+          "substitutions": 1627,
+          "deletions": 291,
+          "insertions": 136,
+          "chars": 98461,
+          "char_errors": 4194,
+          "utterance_error": 638,
+          "wer": 13.375008139610602,
+          "cer": 4.259554544438915
+        },
+        "orukeet": {
+          "words": 15342,
+          "errors": 1743,
+          "substitutions": 1383,
+          "deletions": 246,
+          "insertions": 114,
+          "chars": 98461,
+          "char_errors": 3395,
+          "utterance_error": 601,
+          "wer": 11.360969886585842,
+          "cer": 3.4480657316094696
+        }
+      }
+    },
+    "fleurs_uk": {
+      "rows": 750,
+      "hours": 2.262533333333333,
+      "language": "uk",
+      "models": {
+        "parakeet": {
+          "words": 14532,
+          "errors": 872,
+          "substitutions": 725,
+          "deletions": 89,
+          "insertions": 58,
+          "chars": 98386,
+          "char_errors": 1707,
+          "utterance_error": 432,
+          "wer": 6.000550509221029,
+          "cer": 1.7350029475738418
+        },
+        "orukeet": {
+          "words": 14540,
+          "errors": 783,
+          "substitutions": 644,
+          "deletions": 65,
+          "insertions": 74,
+          "chars": 98386,
+          "char_errors": 1578,
+          "utterance_error": 399,
+          "wer": 5.385144429160936,
+          "cer": 1.6038867318520929
+        }
+      }
+    },
+    "librispeech_test_clean": {
+      "rows": 2620,
+      "hours": 5.403466840277785,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 53000,
+          "errors": 812,
+          "substitutions": 665,
+          "deletions": 59,
+          "insertions": 88,
+          "chars": 280449,
+          "char_errors": 1656,
+          "utterance_error": 559,
+          "wer": 1.5320754716981133,
+          "cer": 0.5904816918584127
+        },
+        "orukeet": {
+          "words": 53000,
+          "errors": 774,
+          "substitutions": 639,
+          "deletions": 62,
+          "insertions": 73,
+          "chars": 280449,
+          "char_errors": 1575,
+          "utterance_error": 522,
+          "wer": 1.460377358490566,
+          "cer": 0.5615994351914252
+        }
+      }
+    },
+    "librispeech_test_other": {
+      "rows": 2939,
+      "hours": 5.341547256944446,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 52841,
+          "errors": 1660,
+          "substitutions": 1378,
+          "deletions": 111,
+          "insertions": 171,
+          "chars": 271456,
+          "char_errors": 3596,
+          "utterance_error": 1005,
+          "wer": 3.141499971612952,
+          "cer": 1.3247082400094305
+        },
+        "orukeet": {
+          "words": 52841,
+          "errors": 1509,
+          "substitutions": 1274,
+          "deletions": 101,
+          "insertions": 134,
+          "chars": 271456,
+          "char_errors": 3239,
+          "utterance_error": 943,
+          "wer": 2.8557370223879186,
+          "cer": 1.1931952139573265
+        }
+      }
+    }
+  },
+  "models": {
+    "parakeet": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+    "orukeet": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56"
+  },
+  "manifest_sha256": "c8c36e9cbf5053ba7159204b2a507185fc11e818f0ab71259e5937d20f9c9623",
+  "script_sha256": "1c8951a18eba92ae8fe12c537149c961ae0c0e6f748216e27488305b5a2806c2",
+  "normalizer_sha256": "138b700db56379c5b1965c67c704b2f9ea37071bb0c959d64209ed82f305e0d2",
+  "decoding": {
+    "strategy": "greedy_batch",
+    "model_type": "tdt",
+    "durations": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "greedy": {
+      "max_symbols": 10
+    },
+    "beam": {
+      "beam_size": 2,
+      "return_best_hypothesis": false,
+      "score_norm": true,
+      "tsd_max_sym_exp": 50,
+      "alsd_max_target_len": 2.0
+    }
+  },
+  "precision": "FP32 weights, BF16 CUDA autocast, TF32 matrix multiplication disabled",
+  "normalizers": {
+    "en": "Pinned EnglishTextNormalizer with spelling/name/compound maps",
+    "other": "Pinned MultilingualNormalizer; diacritics retained; language-specific numbers; compound-boundary alignment"
+  },
+  "empty_output_handling": "Every manifest record is scored; empty hypotheses remain.",
+  "timings": {
+    "parakeet": {
+      "seconds": 203.1919359380263,
+      "rows": 25705
+    },
+    "orukeet": {
+      "seconds": 203.6581549209659,
+      "rows": 25705
+    }
+  },
+  "prediction_sha256": {
+    "parakeet": "f130fdab457b9c2f1c5e443a3936819f46d443342c1137f19af9b3295a170af9",
+    "orukeet": "9d46bf83ec4bd1745e3e9b670aafc0d5aad42ea719f5950e9539683e928e534e"
+  },
+  "numeric_evidence_sha256": "3d1467e56efd6769da1f8cb74eef0c3eac7bf93fa8200c39538963a9d4b080c1",
+  "scoring": {
+    "protocol": "Pinned English and multilingual normalization; compound-aware WER",
+    "dependencies": {
+      "kaldialign": "0.12.0",
+      "num2words": "0.5.14",
+      "regex": "2026.9.3",
+      "rapidfuzz": "3.14.6"
+    },
+    "code_sha256": {
+      "evaluation/standard_asr/rescore.py": "47e77bad2d65f1eb6d7a29a156ba747807b4017d4fcedf8d3d2011c5a4e0ab82",
+      "evaluation/standard_asr/scoring.py": "3b2bd425a79a94b9afa294ba55efc6b9fb5943d7021ce27394dadf6c58082bd0",
+      "evaluation/standard_asr/vendor/provenance.json": "f6fb39bc16cb4b52ac62882baab0f1925d7405ee8a98f0ae32419edf9275aa12",
+      "evaluation/standard_asr/vendor/LICENSE": "5ee13882fce0975f0ad3c3d5c2042af4896c2a669be2d6df5b3d256811267c85",
+      "evaluation/standard_asr/vendor/english_abbreviations.py": "52997cc963e0bd6568d15554ad8d5fb0759f20f361483632a22f90d2d0e07db1",
+      "evaluation/standard_asr/vendor/__init__.py": "8c39e42af3204c41c564c970e24525da160663836b54acc1b629e4342f862334",
+      "evaluation/standard_asr/vendor/multilingual.py": "4c8db6c4171c8c2f5567d2ed625a3a1f0d45156af45ca42d9555c0c9b61a29d5",
+      "evaluation/standard_asr/vendor/normalizer.py": "490b56393484ef386b486f3679cc2261264af280b3512154431e0bdcf2778295"
+    },
+    "reference_word_counts": "Non-English word-boundary alignment may change reference token counts separately for each model.",
+    "cer": "Character distance before compound alignment, including normalized spaces.",
+    "inference_comparison_sha256": "23584aab2856bf7ebaad7611cfdc9395d7d09b40ea6d64afcb8472d5f63bae34"
+  }
+}

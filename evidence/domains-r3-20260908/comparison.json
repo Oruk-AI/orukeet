@@ -1,0 +1,1535 @@
+{
+  "status": "complete",
+  "publication_authorized": false,
+  "rows": 12006,
+  "sets": {
+    "eurospeech_bg": {
+      "rows": 256,
+      "hours": 1.072353802083333,
+      "language": "bg",
+      "models": {
+        "parakeet": {
+          "words": 7448,
+          "errors": 1059,
+          "substitutions": 631,
+          "deletions": 122,
+          "insertions": 306,
+          "chars": 46565,
+          "char_errors": 3352,
+          "utterance_error": 230,
+          "wer": 14.21858216970999,
+          "cer": 7.198539675722109
+        },
+        "orukeet": {
+          "words": 7448,
+          "errors": 971,
+          "substitutions": 545,
+          "deletions": 104,
+          "insertions": 322,
+          "chars": 46565,
+          "char_errors": 3128,
+          "utterance_error": 224,
+          "wer": 13.03705692803437,
+          "cer": 6.717491678299152
+        }
+      }
+    },
+    "eurospeech_de": {
+      "rows": 256,
+      "hours": 1.0912282638888895,
+      "language": "de",
+      "models": {
+        "parakeet": {
+          "words": 8440,
+          "errors": 1131,
+          "substitutions": 499,
+          "deletions": 244,
+          "insertions": 388,
+          "chars": 58395,
+          "char_errors": 4983,
+          "utterance_error": 228,
+          "wer": 13.40047393364929,
+          "cer": 8.533264834318008
+        },
+        "orukeet": {
+          "words": 8445,
+          "errors": 941,
+          "substitutions": 376,
+          "deletions": 236,
+          "insertions": 329,
+          "chars": 58395,
+          "char_errors": 4174,
+          "utterance_error": 221,
+          "wer": 11.142687981053879,
+          "cer": 7.147872249336416
+        }
+      }
+    },
+    "eurospeech_el": {
+      "rows": 256,
+      "hours": 1.0396271527777776,
+      "language": "el",
+      "models": {
+        "parakeet": {
+          "words": 7910,
+          "errors": 2043,
+          "substitutions": 1804,
+          "deletions": 133,
+          "insertions": 106,
+          "chars": 50646,
+          "char_errors": 4291,
+          "utterance_error": 256,
+          "wer": 25.828065739570164,
+          "cer": 8.472534849741342
+        },
+        "orukeet": {
+          "words": 7908,
+          "errors": 2084,
+          "substitutions": 1756,
+          "deletions": 152,
+          "insertions": 176,
+          "chars": 50646,
+          "char_errors": 4563,
+          "utterance_error": 255,
+          "wer": 26.35306019221042,
+          "cer": 9.009596019428978
+        }
+      }
+    },
+    "eurospeech_en": {
+      "rows": 256,
+      "hours": 1.0540027430555547,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 9636,
+          "errors": 2351,
+          "substitutions": 746,
+          "deletions": 325,
+          "insertions": 1280,
+          "chars": 55374,
+          "char_errors": 9882,
+          "utterance_error": 248,
+          "wer": 24.398090493980906,
+          "cer": 17.845920468089716
+        },
+        "orukeet": {
+          "words": 9636,
+          "errors": 2290,
+          "substitutions": 737,
+          "deletions": 324,
+          "insertions": 1229,
+          "chars": 55374,
+          "char_errors": 9687,
+          "utterance_error": 247,
+          "wer": 23.765047737650477,
+          "cer": 17.493769639180844
+        }
+      }
+    },
+    "eurospeech_et": {
+      "rows": 256,
+      "hours": 1.0695780555555554,
+      "language": "et",
+      "models": {
+        "parakeet": {
+          "words": 6793,
+          "errors": 2355,
+          "substitutions": 1515,
+          "deletions": 367,
+          "insertions": 473,
+          "chars": 47632,
+          "char_errors": 6958,
+          "utterance_error": 252,
+          "wer": 34.668040630060354,
+          "cer": 14.607826671145448
+        },
+        "orukeet": {
+          "words": 6764,
+          "errors": 1713,
+          "substitutions": 987,
+          "deletions": 220,
+          "insertions": 506,
+          "chars": 47632,
+          "char_errors": 5689,
+          "utterance_error": 248,
+          "wer": 25.325251330573625,
+          "cer": 11.943651326839099
+        }
+      }
+    },
+    "eurospeech_fi": {
+      "rows": 256,
+      "hours": 1.0576934722222222,
+      "language": "fi",
+      "models": {
+        "parakeet": {
+          "words": 6296,
+          "errors": 1046,
+          "substitutions": 600,
+          "deletions": 163,
+          "insertions": 283,
+          "chars": 51597,
+          "char_errors": 3704,
+          "utterance_error": 228,
+          "wer": 16.61372299872935,
+          "cer": 7.178711940616703
+        },
+        "orukeet": {
+          "words": 6288,
+          "errors": 956,
+          "substitutions": 517,
+          "deletions": 160,
+          "insertions": 279,
+          "chars": 51597,
+          "char_errors": 3494,
+          "utterance_error": 220,
+          "wer": 15.20356234096692,
+          "cer": 6.771711533616296
+        }
+      }
+    },
+    "eurospeech_fr": {
+      "rows": 256,
+      "hours": 1.0628877083333337,
+      "language": "fr",
+      "models": {
+        "parakeet": {
+          "words": 10678,
+          "errors": 2074,
+          "substitutions": 1216,
+          "deletions": 427,
+          "insertions": 431,
+          "chars": 63628,
+          "char_errors": 7236,
+          "utterance_error": 245,
+          "wer": 19.423112942498594,
+          "cer": 11.372351794807317
+        },
+        "orukeet": {
+          "words": 10677,
+          "errors": 1525,
+          "substitutions": 778,
+          "deletions": 294,
+          "insertions": 453,
+          "chars": 63628,
+          "char_errors": 5603,
+          "utterance_error": 241,
+          "wer": 14.283038306640442,
+          "cer": 8.805871628842647
+        }
+      }
+    },
+    "eurospeech_hr": {
+      "rows": 256,
+      "hours": 1.0454521527777771,
+      "language": "hr",
+      "models": {
+        "parakeet": {
+          "words": 7503,
+          "errors": 970,
+          "substitutions": 487,
+          "deletions": 163,
+          "insertions": 320,
+          "chars": 45726,
+          "char_errors": 3968,
+          "utterance_error": 222,
+          "wer": 12.92816206850593,
+          "cer": 8.677776319818047
+        },
+        "orukeet": {
+          "words": 7502,
+          "errors": 942,
+          "substitutions": 479,
+          "deletions": 135,
+          "insertions": 328,
+          "chars": 45726,
+          "char_errors": 3869,
+          "utterance_error": 216,
+          "wer": 12.556651559584111,
+          "cer": 8.461269299741941
+        }
+      }
+    },
+    "eurospeech_it": {
+      "rows": 256,
+      "hours": 1.0571320486111113,
+      "language": "it",
+      "models": {
+        "parakeet": {
+          "words": 8026,
+          "errors": 879,
+          "substitutions": 339,
+          "deletions": 199,
+          "insertions": 341,
+          "chars": 50422,
+          "char_errors": 3434,
+          "utterance_error": 218,
+          "wer": 10.951906304510342,
+          "cer": 6.810519217801753
+        },
+        "orukeet": {
+          "words": 8025,
+          "errors": 989,
+          "substitutions": 337,
+          "deletions": 204,
+          "insertions": 448,
+          "chars": 50422,
+          "char_errors": 4204,
+          "utterance_error": 225,
+          "wer": 12.32398753894081,
+          "cer": 8.337630399428821
+        }
+      }
+    },
+    "eurospeech_lt": {
+      "rows": 256,
+      "hours": 1.0921616319444443,
+      "language": "lt",
+      "models": {
+        "parakeet": {
+          "words": 6473,
+          "errors": 2488,
+          "substitutions": 1732,
+          "deletions": 361,
+          "insertions": 395,
+          "chars": 47147,
+          "char_errors": 7616,
+          "utterance_error": 254,
+          "wer": 38.43658272825583,
+          "cer": 16.15373194476849
+        },
+        "orukeet": {
+          "words": 6468,
+          "errors": 2141,
+          "substitutions": 1442,
+          "deletions": 276,
+          "insertions": 423,
+          "chars": 47147,
+          "char_errors": 6761,
+          "utterance_error": 253,
+          "wer": 33.10142238713667,
+          "cer": 14.340254947292511
+        }
+      }
+    },
+    "eurospeech_lv": {
+      "rows": 256,
+      "hours": 1.0540805208333333,
+      "language": "lv",
+      "models": {
+        "parakeet": {
+          "words": 6422,
+          "errors": 3672,
+          "substitutions": 2603,
+          "deletions": 781,
+          "insertions": 288,
+          "chars": 44539,
+          "char_errors": 11870,
+          "utterance_error": 256,
+          "wer": 57.17844908128309,
+          "cer": 26.650800422101977
+        },
+        "orukeet": {
+          "words": 6412,
+          "errors": 2702,
+          "substitutions": 1952,
+          "deletions": 380,
+          "insertions": 370,
+          "chars": 44539,
+          "char_errors": 7665,
+          "utterance_error": 255,
+          "wer": 42.13973799126637,
+          "cer": 17.20963649834976
+        }
+      }
+    },
+    "eurospeech_mt": {
+      "rows": 256,
+      "hours": 1.0746674826388882,
+      "language": "mt",
+      "models": {
+        "parakeet": {
+          "words": 7797,
+          "errors": 2872,
+          "substitutions": 1804,
+          "deletions": 529,
+          "insertions": 539,
+          "chars": 46869,
+          "char_errors": 9066,
+          "utterance_error": 256,
+          "wer": 36.83468000513018,
+          "cer": 19.343275939320232
+        },
+        "orukeet": {
+          "words": 7796,
+          "errors": 2818,
+          "substitutions": 1803,
+          "deletions": 475,
+          "insertions": 540,
+          "chars": 46869,
+          "char_errors": 8853,
+          "utterance_error": 256,
+          "wer": 36.14674191893278,
+          "cer": 18.88881776867439
+        }
+      }
+    },
+    "eurospeech_pt": {
+      "rows": 256,
+      "hours": 1.0251623090277782,
+      "language": "pt",
+      "models": {
+        "parakeet": {
+          "words": 8224,
+          "errors": 1898,
+          "substitutions": 486,
+          "deletions": 589,
+          "insertions": 823,
+          "chars": 48490,
+          "char_errors": 8568,
+          "utterance_error": 238,
+          "wer": 23.078793774319067,
+          "cer": 17.669622602598473
+        },
+        "orukeet": {
+          "words": 8225,
+          "errors": 1958,
+          "substitutions": 510,
+          "deletions": 611,
+          "insertions": 837,
+          "chars": 48490,
+          "char_errors": 8932,
+          "utterance_error": 237,
+          "wer": 23.805471124620063,
+          "cer": 18.42029284388534
+        }
+      }
+    },
+    "eurospeech_sk": {
+      "rows": 256,
+      "hours": 1.0663451041666665,
+      "language": "sk",
+      "models": {
+        "parakeet": {
+          "words": 7269,
+          "errors": 1257,
+          "substitutions": 844,
+          "deletions": 211,
+          "insertions": 202,
+          "chars": 46146,
+          "char_errors": 3580,
+          "utterance_error": 241,
+          "wer": 17.292612463887743,
+          "cer": 7.757985524205782
+        },
+        "orukeet": {
+          "words": 7265,
+          "errors": 1083,
+          "substitutions": 679,
+          "deletions": 163,
+          "insertions": 241,
+          "chars": 46146,
+          "char_errors": 3197,
+          "utterance_error": 230,
+          "wer": 14.907088781830694,
+          "cer": 6.928011095219521
+        }
+      }
+    },
+    "eurospeech_sl": {
+      "rows": 256,
+      "hours": 1.042155416666667,
+      "language": "sl",
+      "models": {
+        "parakeet": {
+          "words": 7754,
+          "errors": 3755,
+          "substitutions": 2988,
+          "deletions": 469,
+          "insertions": 298,
+          "chars": 47334,
+          "char_errors": 7539,
+          "utterance_error": 255,
+          "wer": 48.42661851947382,
+          "cer": 15.927240461401952
+        },
+        "orukeet": {
+          "words": 7748,
+          "errors": 3892,
+          "substitutions": 3140,
+          "deletions": 470,
+          "insertions": 282,
+          "chars": 47334,
+          "char_errors": 7820,
+          "utterance_error": 256,
+          "wer": 50.23231801755292,
+          "cer": 16.52089407191448
+        }
+      }
+    },
+    "eurospeech_uk": {
+      "rows": 256,
+      "hours": 1.0933650694444448,
+      "language": "uk",
+      "models": {
+        "parakeet": {
+          "words": 7413,
+          "errors": 1012,
+          "substitutions": 467,
+          "deletions": 202,
+          "insertions": 343,
+          "chars": 49036,
+          "char_errors": 3720,
+          "utterance_error": 222,
+          "wer": 13.651692971806286,
+          "cer": 7.586263153601435
+        },
+        "orukeet": {
+          "words": 7411,
+          "errors": 1056,
+          "substitutions": 500,
+          "deletions": 186,
+          "insertions": 370,
+          "chars": 49036,
+          "char_errors": 3720,
+          "utterance_error": 218,
+          "wer": 14.249089191742005,
+          "cer": 7.586263153601435
+        }
+      }
+    },
+    "gigaspeechbench_agr_en": {
+      "rows": 256,
+      "hours": 0.4082733159722223,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 4660,
+          "errors": 289,
+          "substitutions": 119,
+          "deletions": 79,
+          "insertions": 91,
+          "chars": 23271,
+          "char_errors": 921,
+          "utterance_error": 128,
+          "wer": 6.201716738197425,
+          "cer": 3.9577156117055563
+        },
+        "orukeet": {
+          "words": 4660,
+          "errors": 272,
+          "substitutions": 130,
+          "deletions": 63,
+          "insertions": 79,
+          "chars": 23271,
+          "char_errors": 793,
+          "utterance_error": 115,
+          "wer": 5.836909871244635,
+          "cer": 3.407674788363199
+        }
+      }
+    },
+    "gigaspeechbench_ait_en": {
+      "rows": 256,
+      "hours": 0.5016255555555552,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 5073,
+          "errors": 442,
+          "substitutions": 212,
+          "deletions": 77,
+          "insertions": 153,
+          "chars": 26079,
+          "char_errors": 1268,
+          "utterance_error": 162,
+          "wer": 8.712793219002563,
+          "cer": 4.862149622301469
+        },
+        "orukeet": {
+          "words": 5073,
+          "errors": 405,
+          "substitutions": 210,
+          "deletions": 70,
+          "insertions": 125,
+          "chars": 26079,
+          "char_errors": 1148,
+          "utterance_error": 161,
+          "wer": 7.983441750443524,
+          "cer": 4.402009279496913
+        }
+      }
+    },
+    "gigaspeechbench_art_en": {
+      "rows": 256,
+      "hours": 0.4463050000000003,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 4311,
+          "errors": 236,
+          "substitutions": 109,
+          "deletions": 47,
+          "insertions": 80,
+          "chars": 22835,
+          "char_errors": 653,
+          "utterance_error": 106,
+          "wer": 5.474367896079796,
+          "cer": 2.8596452813663236
+        },
+        "orukeet": {
+          "words": 4311,
+          "errors": 210,
+          "substitutions": 109,
+          "deletions": 40,
+          "insertions": 61,
+          "chars": 22835,
+          "char_errors": 563,
+          "utterance_error": 102,
+          "wer": 4.8712595685455815,
+          "cer": 2.4655134661703526
+        }
+      }
+    },
+    "gigaspeechbench_bio_en": {
+      "rows": 256,
+      "hours": 0.5044194444444443,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 4871,
+          "errors": 179,
+          "substitutions": 108,
+          "deletions": 16,
+          "insertions": 55,
+          "chars": 27904,
+          "char_errors": 451,
+          "utterance_error": 92,
+          "wer": 3.6748101005953604,
+          "cer": 1.6162557339449541
+        },
+        "orukeet": {
+          "words": 4871,
+          "errors": 161,
+          "substitutions": 111,
+          "deletions": 13,
+          "insertions": 37,
+          "chars": 27904,
+          "char_errors": 381,
+          "utterance_error": 87,
+          "wer": 3.305276123999179,
+          "cer": 1.365395642201835
+        }
+      }
+    },
+    "gigaspeechbench_chn_en": {
+      "rows": 256,
+      "hours": 0.3659214236111112,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 2795,
+          "errors": 405,
+          "substitutions": 281,
+          "deletions": 61,
+          "insertions": 63,
+          "chars": 14020,
+          "char_errors": 1261,
+          "utterance_error": 165,
+          "wer": 14.490161001788909,
+          "cer": 8.99429386590585
+        },
+        "orukeet": {
+          "words": 2795,
+          "errors": 379,
+          "substitutions": 252,
+          "deletions": 64,
+          "insertions": 63,
+          "chars": 14020,
+          "char_errors": 1180,
+          "utterance_error": 157,
+          "wer": 13.559928443649374,
+          "cer": 8.41654778887304
+        }
+      }
+    },
+    "gigaspeechbench_ecm_en": {
+      "rows": 256,
+      "hours": 0.47235996527777796,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 5800,
+          "errors": 409,
+          "substitutions": 223,
+          "deletions": 60,
+          "insertions": 126,
+          "chars": 29608,
+          "char_errors": 1272,
+          "utterance_error": 139,
+          "wer": 7.051724137931035,
+          "cer": 4.29613617941097
+        },
+        "orukeet": {
+          "words": 5800,
+          "errors": 381,
+          "substitutions": 213,
+          "deletions": 48,
+          "insertions": 120,
+          "chars": 29608,
+          "char_errors": 1174,
+          "utterance_error": 134,
+          "wer": 6.568965517241379,
+          "cer": 3.9651445555255336
+        }
+      }
+    },
+    "gigaspeechbench_eng_en": {
+      "rows": 256,
+      "hours": 0.46552720486111093,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 4485,
+          "errors": 182,
+          "substitutions": 102,
+          "deletions": 27,
+          "insertions": 53,
+          "chars": 22477,
+          "char_errors": 493,
+          "utterance_error": 98,
+          "wer": 4.057971014492754,
+          "cer": 2.1933532054989544
+        },
+        "orukeet": {
+          "words": 4485,
+          "errors": 157,
+          "substitutions": 95,
+          "deletions": 23,
+          "insertions": 39,
+          "chars": 22477,
+          "char_errors": 415,
+          "utterance_error": 90,
+          "wer": 3.500557413600892,
+          "cer": 1.846331805845976
+        }
+      }
+    },
+    "gigaspeechbench_ent_en": {
+      "rows": 256,
+      "hours": 0.2886933854166668,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 3720,
+          "errors": 387,
+          "substitutions": 208,
+          "deletions": 98,
+          "insertions": 81,
+          "chars": 17497,
+          "char_errors": 1189,
+          "utterance_error": 133,
+          "wer": 10.403225806451612,
+          "cer": 6.795450648682631
+        },
+        "orukeet": {
+          "words": 3720,
+          "errors": 330,
+          "substitutions": 174,
+          "deletions": 77,
+          "insertions": 79,
+          "chars": 17497,
+          "char_errors": 987,
+          "utterance_error": 129,
+          "wer": 8.870967741935484,
+          "cer": 5.640967022918215
+        }
+      }
+    },
+    "gigaspeechbench_fin_en": {
+      "rows": 256,
+      "hours": 0.4903747569444444,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 5813,
+          "errors": 338,
+          "substitutions": 161,
+          "deletions": 60,
+          "insertions": 117,
+          "chars": 29726,
+          "char_errors": 1015,
+          "utterance_error": 135,
+          "wer": 5.814553586788233,
+          "cer": 3.4145192760546323
+        },
+        "orukeet": {
+          "words": 5813,
+          "errors": 297,
+          "substitutions": 156,
+          "deletions": 48,
+          "insertions": 93,
+          "chars": 29726,
+          "char_errors": 893,
+          "utterance_error": 132,
+          "wer": 5.109237915018063,
+          "cer": 3.0041041512480655
+        }
+      }
+    },
+    "gigaspeechbench_hum_en": {
+      "rows": 256,
+      "hours": 0.5111050347222221,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 5062,
+          "errors": 404,
+          "substitutions": 184,
+          "deletions": 94,
+          "insertions": 126,
+          "chars": 27303,
+          "char_errors": 1281,
+          "utterance_error": 137,
+          "wer": 7.981035163966811,
+          "cer": 4.69179211075706
+        },
+        "orukeet": {
+          "words": 5062,
+          "errors": 378,
+          "substitutions": 189,
+          "deletions": 71,
+          "insertions": 118,
+          "chars": 27303,
+          "char_errors": 1145,
+          "utterance_error": 136,
+          "wer": 7.467404188067957,
+          "cer": 4.193678350364428
+        }
+      }
+    },
+    "gigaspeechbench_ind_en": {
+      "rows": 256,
+      "hours": 0.5177380729166666,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 5259,
+          "errors": 342,
+          "substitutions": 227,
+          "deletions": 62,
+          "insertions": 53,
+          "chars": 29317,
+          "char_errors": 939,
+          "utterance_error": 125,
+          "wer": 6.5031374786081,
+          "cer": 3.202919807620152
+        },
+        "orukeet": {
+          "words": 5259,
+          "errors": 294,
+          "substitutions": 194,
+          "deletions": 47,
+          "insertions": 53,
+          "chars": 29317,
+          "char_errors": 739,
+          "utterance_error": 116,
+          "wer": 5.590416428978894,
+          "cer": 2.520721765528533
+        }
+      }
+    },
+    "gigaspeechbench_jpn_en": {
+      "rows": 256,
+      "hours": 0.312707482638889,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 2554,
+          "errors": 489,
+          "substitutions": 283,
+          "deletions": 94,
+          "insertions": 112,
+          "chars": 12402,
+          "char_errors": 1474,
+          "utterance_error": 158,
+          "wer": 19.14643696162882,
+          "cer": 11.885179809708111
+        },
+        "orukeet": {
+          "words": 2554,
+          "errors": 454,
+          "substitutions": 270,
+          "deletions": 85,
+          "insertions": 99,
+          "chars": 12402,
+          "char_errors": 1347,
+          "utterance_error": 150,
+          "wer": 17.776037588097104,
+          "cer": 10.861151427189164
+        }
+      }
+    },
+    "gigaspeechbench_law_en": {
+      "rows": 256,
+      "hours": 0.39185109375,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 3958,
+          "errors": 386,
+          "substitutions": 230,
+          "deletions": 74,
+          "insertions": 82,
+          "chars": 20771,
+          "char_errors": 1115,
+          "utterance_error": 152,
+          "wer": 9.752400202122285,
+          "cer": 5.368061239227769
+        },
+        "orukeet": {
+          "words": 3958,
+          "errors": 358,
+          "substitutions": 203,
+          "deletions": 76,
+          "insertions": 79,
+          "chars": 20771,
+          "char_errors": 1045,
+          "utterance_error": 144,
+          "wer": 9.044972208185953,
+          "cer": 5.031052910307641
+        }
+      }
+    },
+    "gigaspeechbench_med_en": {
+      "rows": 256,
+      "hours": 0.5099035937499998,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 5251,
+          "errors": 183,
+          "substitutions": 114,
+          "deletions": 22,
+          "insertions": 47,
+          "chars": 28617,
+          "char_errors": 502,
+          "utterance_error": 94,
+          "wer": 3.485050466577795,
+          "cer": 1.7542020477338645
+        },
+        "orukeet": {
+          "words": 5251,
+          "errors": 167,
+          "substitutions": 105,
+          "deletions": 23,
+          "insertions": 39,
+          "chars": 28617,
+          "char_errors": 444,
+          "utterance_error": 88,
+          "wer": 3.180346600647496,
+          "cer": 1.551525317119195
+        }
+      }
+    },
+    "gigaspeechbench_mil_en": {
+      "rows": 256,
+      "hours": 0.545510017361111,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 5953,
+          "errors": 204,
+          "substitutions": 135,
+          "deletions": 35,
+          "insertions": 34,
+          "chars": 32433,
+          "char_errors": 501,
+          "utterance_error": 109,
+          "wer": 3.4268436082647407,
+          "cer": 1.5447229673480714
+        },
+        "orukeet": {
+          "words": 5953,
+          "errors": 182,
+          "substitutions": 122,
+          "deletions": 29,
+          "insertions": 31,
+          "chars": 32433,
+          "char_errors": 455,
+          "utterance_error": 97,
+          "wer": 3.0572820426675626,
+          "cer": 1.4028921160546357
+        }
+      }
+    },
+    "gigaspeechbench_phl_en": {
+      "rows": 256,
+      "hours": 0.3380872395833332,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 3511,
+          "errors": 467,
+          "substitutions": 231,
+          "deletions": 106,
+          "insertions": 130,
+          "chars": 17501,
+          "char_errors": 1449,
+          "utterance_error": 156,
+          "wer": 13.30105383081743,
+          "cer": 8.279526884178047
+        },
+        "orukeet": {
+          "words": 3511,
+          "errors": 449,
+          "substitutions": 232,
+          "deletions": 93,
+          "insertions": 124,
+          "chars": 17501,
+          "char_errors": 1334,
+          "utterance_error": 151,
+          "wer": 12.788379379094275,
+          "cer": 7.622421575909948
+        }
+      }
+    },
+    "gigaspeechbench_sct_en": {
+      "rows": 256,
+      "hours": 0.23421114583333333,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 2840,
+          "errors": 627,
+          "substitutions": 373,
+          "deletions": 152,
+          "insertions": 102,
+          "chars": 13641,
+          "char_errors": 1991,
+          "utterance_error": 179,
+          "wer": 22.077464788732396,
+          "cer": 14.595704127263398
+        },
+        "orukeet": {
+          "words": 2840,
+          "errors": 578,
+          "substitutions": 336,
+          "deletions": 146,
+          "insertions": 96,
+          "chars": 13641,
+          "char_errors": 1790,
+          "utterance_error": 172,
+          "wer": 20.35211267605634,
+          "cer": 13.122205116926912
+        }
+      }
+    },
+    "gigaspeechbench_sgp_en": {
+      "rows": 256,
+      "hours": 0.2844177951388889,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 3304,
+          "errors": 459,
+          "substitutions": 236,
+          "deletions": 122,
+          "insertions": 101,
+          "chars": 16250,
+          "char_errors": 1503,
+          "utterance_error": 155,
+          "wer": 13.892251815980629,
+          "cer": 9.249230769230769
+        },
+        "orukeet": {
+          "words": 3304,
+          "errors": 425,
+          "substitutions": 222,
+          "deletions": 112,
+          "insertions": 91,
+          "chars": 16250,
+          "char_errors": 1334,
+          "utterance_error": 152,
+          "wer": 12.86319612590799,
+          "cer": 8.20923076923077
+        }
+      }
+    },
+    "golos_crowd_ru": {
+      "rows": 256,
+      "hours": 0.2929183506944444,
+      "language": "ru",
+      "models": {
+        "parakeet": {
+          "words": 1303,
+          "errors": 37,
+          "substitutions": 34,
+          "deletions": 2,
+          "insertions": 1,
+          "chars": 8520,
+          "char_errors": 56,
+          "utterance_error": 31,
+          "wer": 2.83960092095165,
+          "cer": 0.6572769953051644
+        },
+        "orukeet": {
+          "words": 1302,
+          "errors": 38,
+          "substitutions": 35,
+          "deletions": 2,
+          "insertions": 1,
+          "chars": 8520,
+          "char_errors": 61,
+          "utterance_error": 33,
+          "wer": 2.9185867895545314,
+          "cer": 0.715962441314554
+        }
+      }
+    },
+    "golos_farfield_ru": {
+      "rows": 256,
+      "hours": 0.18247008680555546,
+      "language": "ru",
+      "models": {
+        "parakeet": {
+          "words": 1065,
+          "errors": 85,
+          "substitutions": 74,
+          "deletions": 5,
+          "insertions": 6,
+          "chars": 6941,
+          "char_errors": 180,
+          "utterance_error": 60,
+          "wer": 7.981220657276995,
+          "cer": 2.593286269989915
+        },
+        "orukeet": {
+          "words": 1066,
+          "errors": 97,
+          "substitutions": 81,
+          "deletions": 6,
+          "insertions": 10,
+          "chars": 6941,
+          "char_errors": 210,
+          "utterance_error": 67,
+          "wer": 9.099437148217635,
+          "cer": 3.0255006483215676
+        }
+      }
+    },
+    "lesbos_el": {
+      "rows": 230,
+      "hours": 0.11232479166666667,
+      "language": "el",
+      "models": {
+        "parakeet": {
+          "words": 1131,
+          "errors": 1072,
+          "substitutions": 744,
+          "deletions": 240,
+          "insertions": 88,
+          "chars": 5811,
+          "char_errors": 4134,
+          "utterance_error": 229,
+          "wer": 94.78337754199823,
+          "cer": 71.14093959731544
+        },
+        "orukeet": {
+          "words": 1131,
+          "errors": 1058,
+          "substitutions": 688,
+          "deletions": 303,
+          "insertions": 67,
+          "chars": 5811,
+          "char_errors": 4164,
+          "utterance_error": 229,
+          "wer": 93.54553492484527,
+          "cer": 71.65720185854414
+        }
+      }
+    },
+    "monsoon_en_in": {
+      "rows": 256,
+      "hours": 0.6956833333333333,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 6137,
+          "errors": 253,
+          "substitutions": 139,
+          "deletions": 35,
+          "insertions": 79,
+          "chars": 31236,
+          "char_errors": 600,
+          "utterance_error": 135,
+          "wer": 4.122535440769106,
+          "cer": 1.920860545524395
+        },
+        "orukeet": {
+          "words": 6137,
+          "errors": 232,
+          "substitutions": 133,
+          "deletions": 38,
+          "insertions": 61,
+          "chars": 31236,
+          "char_errors": 563,
+          "utterance_error": 132,
+          "wer": 3.7803487045787842,
+          "cer": 1.8024074785503905
+        }
+      }
+    },
+    "nst_da_da": {
+      "rows": 256,
+      "hours": 0.3674177777777777,
+      "language": "da",
+      "models": {
+        "parakeet": {
+          "words": 2571,
+          "errors": 681,
+          "substitutions": 406,
+          "deletions": 239,
+          "insertions": 36,
+          "chars": 13714,
+          "char_errors": 1715,
+          "utterance_error": 209,
+          "wer": 26.487747957992998,
+          "cer": 12.505468863934665
+        },
+        "orukeet": {
+          "words": 2579,
+          "errors": 299,
+          "substitutions": 243,
+          "deletions": 41,
+          "insertions": 15,
+          "chars": 13714,
+          "char_errors": 604,
+          "utterance_error": 153,
+          "wer": 11.593640946103141,
+          "cer": 4.404258422050459
+        }
+      }
+    },
+    "nst_sv_sv": {
+      "rows": 256,
+      "hours": 0.3503472222222222,
+      "language": "sv",
+      "models": {
+        "parakeet": {
+          "words": 1980,
+          "errors": 328,
+          "substitutions": 259,
+          "deletions": 45,
+          "insertions": 24,
+          "chars": 11754,
+          "char_errors": 807,
+          "utterance_error": 161,
+          "wer": 16.565656565656564,
+          "cer": 6.865747830525779
+        },
+        "orukeet": {
+          "words": 1991,
+          "errors": 246,
+          "substitutions": 193,
+          "deletions": 23,
+          "insertions": 30,
+          "chars": 11754,
+          "char_errors": 417,
+          "utterance_error": 136,
+          "wer": 12.355600200904068,
+          "cer": 3.547728432873915
+        }
+      }
+    },
+    "voxpopuli_cs": {
+      "rows": 256,
+      "hours": 0.6932252083333335,
+      "language": "cs",
+      "models": {
+        "parakeet": {
+          "words": 5397,
+          "errors": 395,
+          "substitutions": 246,
+          "deletions": 85,
+          "insertions": 64,
+          "chars": 35419,
+          "char_errors": 1391,
+          "utterance_error": 150,
+          "wer": 7.318880859736891,
+          "cer": 3.92727067393207
+        },
+        "orukeet": {
+          "words": 5396,
+          "errors": 399,
+          "substitutions": 237,
+          "deletions": 103,
+          "insertions": 59,
+          "chars": 35419,
+          "char_errors": 1411,
+          "utterance_error": 146,
+          "wer": 7.394366197183099,
+          "cer": 3.983737541997233
+        }
+      }
+    },
+    "voxpopuli_es": {
+      "rows": 256,
+      "hours": 0.8307443402777775,
+      "language": "es",
+      "models": {
+        "parakeet": {
+          "words": 7739,
+          "errors": 470,
+          "substitutions": 210,
+          "deletions": 152,
+          "insertions": 108,
+          "chars": 46958,
+          "char_errors": 1994,
+          "utterance_error": 120,
+          "wer": 6.073136064090968,
+          "cer": 4.246347800161847
+        },
+        "orukeet": {
+          "words": 7738,
+          "errors": 480,
+          "substitutions": 216,
+          "deletions": 151,
+          "insertions": 113,
+          "chars": 46958,
+          "char_errors": 2037,
+          "utterance_error": 118,
+          "wer": 6.203153269578703,
+          "cer": 4.3379189914391585
+        }
+      }
+    },
+    "voxpopuli_hu": {
+      "rows": 256,
+      "hours": 0.7771814756944443,
+      "language": "hu",
+      "models": {
+        "parakeet": {
+          "words": 5577,
+          "errors": 669,
+          "substitutions": 505,
+          "deletions": 89,
+          "insertions": 75,
+          "chars": 40981,
+          "char_errors": 1679,
+          "utterance_error": 213,
+          "wer": 11.995696611081227,
+          "cer": 4.097020570508285
+        },
+        "orukeet": {
+          "words": 5576,
+          "errors": 616,
+          "substitutions": 454,
+          "deletions": 101,
+          "insertions": 61,
+          "chars": 40981,
+          "char_errors": 1588,
+          "utterance_error": 204,
+          "wer": 11.047345767575322,
+          "cer": 3.8749664478660844
+        }
+      }
+    },
+    "voxpopuli_it": {
+      "rows": 256,
+      "hours": 0.9244941145833333,
+      "language": "it",
+      "models": {
+        "parakeet": {
+          "words": 8233,
+          "errors": 936,
+          "substitutions": 326,
+          "deletions": 400,
+          "insertions": 210,
+          "chars": 51717,
+          "char_errors": 4507,
+          "utterance_error": 178,
+          "wer": 11.368881331227985,
+          "cer": 8.714735966896765
+        },
+        "orukeet": {
+          "words": 8235,
+          "errors": 973,
+          "substitutions": 257,
+          "deletions": 475,
+          "insertions": 241,
+          "chars": 51717,
+          "char_errors": 4943,
+          "utterance_error": 182,
+          "wer": 11.815421979356406,
+          "cer": 9.557785641085136
+        }
+      }
+    },
+    "voxpopuli_nl": {
+      "rows": 256,
+      "hours": 0.5597956423611112,
+      "language": "nl",
+      "models": {
+        "parakeet": {
+          "words": 5442,
+          "errors": 517,
+          "substitutions": 253,
+          "deletions": 163,
+          "insertions": 101,
+          "chars": 33326,
+          "char_errors": 1890,
+          "utterance_error": 174,
+          "wer": 9.500183755972069,
+          "cer": 5.671247674488387
+        },
+        "orukeet": {
+          "words": 5440,
+          "errors": 520,
+          "substitutions": 255,
+          "deletions": 167,
+          "insertions": 98,
+          "chars": 33326,
+          "char_errors": 1875,
+          "utterance_error": 173,
+          "wer": 9.558823529411764,
+          "cer": 5.626237772309908
+        }
+      }
+    },
+    "voxpopuli_pl": {
+      "rows": 256,
+      "hours": 0.7600847395833334,
+      "language": "pl",
+      "models": {
+        "parakeet": {
+          "words": 5431,
+          "errors": 352,
+          "substitutions": 199,
+          "deletions": 78,
+          "insertions": 75,
+          "chars": 39743,
+          "char_errors": 1359,
+          "utterance_error": 142,
+          "wer": 6.481310992450746,
+          "cer": 3.4194700953627053
+        },
+        "orukeet": {
+          "words": 5431,
+          "errors": 339,
+          "substitutions": 190,
+          "deletions": 74,
+          "insertions": 75,
+          "chars": 39743,
+          "char_errors": 1357,
+          "utterance_error": 140,
+          "wer": 6.241944393297735,
+          "cer": 3.4144377626248645
+        }
+      }
+    },
+    "voxpopuli_ro": {
+      "rows": 256,
+      "hours": 0.8114564409722217,
+      "language": "ro",
+      "models": {
+        "parakeet": {
+          "words": 7439,
+          "errors": 854,
+          "substitutions": 651,
+          "deletions": 129,
+          "insertions": 74,
+          "chars": 47152,
+          "char_errors": 2006,
+          "utterance_error": 216,
+          "wer": 11.480037639467671,
+          "cer": 4.25432643366135
+        },
+        "orukeet": {
+          "words": 7438,
+          "errors": 833,
+          "substitutions": 615,
+          "deletions": 143,
+          "insertions": 75,
+          "chars": 47152,
+          "char_errors": 1961,
+          "utterance_error": 211,
+          "wer": 11.199247109438021,
+          "cer": 4.158890397013913
+        }
+      }
+    }
+  },
+  "models": {
+    "parakeet": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+    "orukeet": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56"
+  },
+  "manifest_sha256": "c16b21855716bc1f62a9c55f775b137cc720a944f3e9343fd8993788db2eaa8e",
+  "script_sha256": "1c8951a18eba92ae8fe12c537149c961ae0c0e6f748216e27488305b5a2806c2",
+  "normalizer_sha256": "138b700db56379c5b1965c67c704b2f9ea37071bb0c959d64209ed82f305e0d2",
+  "decoding": {
+    "strategy": "greedy_batch",
+    "model_type": "tdt",
+    "durations": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "greedy": {
+      "max_symbols": 10
+    },
+    "beam": {
+      "beam_size": 2,
+      "return_best_hypothesis": false,
+      "score_norm": true,
+      "tsd_max_sym_exp": 50,
+      "alsd_max_target_len": 2.0
+    }
+  },
+  "precision": "FP32 weights, BF16 CUDA autocast, TF32 matrix multiplication disabled",
+  "normalizers": {
+    "en": "Pinned EnglishTextNormalizer with spelling/name/compound maps",
+    "other": "Pinned MultilingualNormalizer; diacritics retained; language-specific numbers; compound-boundary alignment"
+  },
+  "empty_output_handling": "Every manifest record is scored; empty hypotheses remain.",
+  "timings": {
+    "parakeet": {
+      "seconds": 99.74245833995519,
+      "rows": 12006
+    },
+    "orukeet": {
+      "seconds": 95.6186072769924,
+      "rows": 12006
+    }
+  },
+  "prediction_sha256": {
+    "parakeet": "7dea719a080b71b4e5bf3b731af07f36d2ba7953265aa359813407880994f90f",
+    "orukeet": "525d958901b5e7b345719dc77fa8b7231dbe24a4b48dc273ea76b23df35ad7fa"
+  },
+  "numeric_evidence_sha256": "298f3164c745523f25b2e7df25492dab5b6607c149ea561d44af3720c29236df",
+  "scoring": {
+    "protocol": "Pinned English and multilingual normalization; compound-aware WER",
+    "dependencies": {
+      "kaldialign": "0.12.0",
+      "num2words": "0.5.14",
+      "regex": "2026.9.3",
+      "rapidfuzz": "3.14.6"
+    },
+    "code_sha256": {
+      "evaluation/standard_asr/rescore.py": "47e77bad2d65f1eb6d7a29a156ba747807b4017d4fcedf8d3d2011c5a4e0ab82",
+      "evaluation/standard_asr/scoring.py": "3b2bd425a79a94b9afa294ba55efc6b9fb5943d7021ce27394dadf6c58082bd0",
+      "evaluation/standard_asr/vendor/provenance.json": "f6fb39bc16cb4b52ac62882baab0f1925d7405ee8a98f0ae32419edf9275aa12",
+      "evaluation/standard_asr/vendor/LICENSE": "5ee13882fce0975f0ad3c3d5c2042af4896c2a669be2d6df5b3d256811267c85",
+      "evaluation/standard_asr/vendor/english_abbreviations.py": "52997cc963e0bd6568d15554ad8d5fb0759f20f361483632a22f90d2d0e07db1",
+      "evaluation/standard_asr/vendor/__init__.py": "8c39e42af3204c41c564c970e24525da160663836b54acc1b629e4342f862334",
+      "evaluation/standard_asr/vendor/multilingual.py": "4c8db6c4171c8c2f5567d2ed625a3a1f0d45156af45ca42d9555c0c9b61a29d5",
+      "evaluation/standard_asr/vendor/normalizer.py": "490b56393484ef386b486f3679cc2261264af280b3512154431e0bdcf2778295"
+    },
+    "reference_word_counts": "Non-English word-boundary alignment may change reference token counts separately for each model.",
+    "cer": "Character distance before compound alignment, including normalized spaces.",
+    "inference_comparison_sha256": "3892c802fd85d6cab5bee77b69a774b0fa6308294f6a7e5e536ef89300e853ba"
+  }
+}

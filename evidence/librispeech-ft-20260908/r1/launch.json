@@ -1,0 +1,7 @@
+{
+  "pid": 73865,
+  "command": [
+    "/opt/venv/bin/python",
+    "/home/nathanroll/parakeet-ft/librispeech_ft_20260908/r1/code/run_pipeline.py"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "rows": 327888,
+  "hours": 756.0229703993056,
+  "splits": 47,
+  "languages": 25,
+  "strict_rows": 324431,
+  "failures": {
+    "parakeet": 0,
+    "orukeet": 0
+  },
+  "duplicate_audio_extra_rows": 7,
+  "within_split_duplicate_audio_extra_rows": 7,
+  "report_sha256": "bb36c24547a1612b62c9578d04e1796279c1759f2a5ae2c3e6a15c7e35e8b70c",
+  "script_sha256": "35a69c02cb8d4c3553ca701c365b59532b9cdb65664c09557565edbd16809362",
+  "comparison_sha256": {
+    "primary": "cc024031468c602fb6c326943a2ea1b6dffa66440fcb4d04559d12bb83f05ed0",
+    "coverage": "298599ce854a9607a188f07becf9c75403a411542c6e960ded9c5d4b25ec8401",
+    "followup": "be523c66c6268d8526532d783a8aac468406b8011a7016dbaacf47a8adb16877"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "voxpopuli": {
+    "repository": "facebook/voxpopuli",
+    "revision": "42f01879c780b4a2e90ec0b4f616c2ece526e4f1",
+    "languages": [
+      "it"
+    ],
+    "split": "validation",
+    "format": "parquet",
+    "files": [
+      {
+        "path": "it/validation-00000-of-00001.parquet",
+        "bytes": 895791495,
+        "sha256": "bac7f19dfa409854b662de774254ce77660c42f0261912dcdc2c9dc8fa229c02"
+      }
+    ]
+  },
+  "lesbos": {
+    "repository": "ilsp/lesbian-speech-corpus",
+    "revision": "6bb115fa67491dd74ba81f59e8a0fbb94384ea72",
+    "languages": [
+      "el"
+    ],
+    "split": "test",
+    "format": "parquet",
+    "files": [
+      {
+        "path": "data/test-00000-of-00001.parquet",
+        "bytes": 22574896,
+        "sha256": "236330195e5aa931ba7e5651d88cde1a14a24a8272796edfcfa5bacee7b22962"
+      }
+    ]
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "complete": true,
+  "plan_sha256": "184a36eb5bca75d8feb9920fa559bbc1dc245ca6478d7a4c297e9e80de77505a",
+  "original_preparation_sha256": "50936a84cd96ea2a3ede3b7c75a409d770e3fba3612d7a34610092b57ab5541b",
+  "rows": 223452,
+  "hours": 371.47123677083334,
+  "manifests": [
+    {
+      "split": "nst_da_da",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/nst_da_da.jsonl",
+      "sha256": "230c58980ef025fa4de682f408a9d3d0fd2326e540369d05224d6b3fd360b793",
+      "rows": 54747,
+      "hours": 77.12340222222223,
+      "original_rows": 54747,
+      "original_manifest_sha256": "b5779e54c52a8a4063f000255f37540df75e9ed84636f2c3b6b138878c9400ef",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "nst_sv_sv",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/nst_sv_sv.jsonl",
+      "sha256": "d4c93d9005a4573d6c4410e1e0c851c52d3ae95b3b074baca958dde5fd4e3293",
+      "rows": 27534,
+      "hours": 37.787708333333335,
+      "original_rows": 27638,
+      "original_manifest_sha256": "afd2f6e9796a41fb9c8b33db66dd9e601b0c618052f525c6ec7036236a3d52ad",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "eurospeech_it",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/eurospeech_it.jsonl",
+      "sha256": "f708ccc58fdafc358e1b953c948ca35d7d522e29d19bf6be2f3addfac03a2016",
+      "rows": 6329,
+      "hours": 26.435091232638886,
+      "original_rows": 8714,
+      "original_manifest_sha256": "06b7b2de7a60df2c6cefa4c5b9db7db6d29c37b9e151d50a3d5e2c25cf1b6fb6",
+      "alignment_status": "human_spans_repaired_with_quarantine"
+    },
+    {
+      "split": "eurospeech_bg",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/eurospeech_bg.jsonl",
+      "sha256": "15496e5139a8a13773e36bc4a195d6baa66431b9b8ef22b4b685e29867ba6b91",
+      "rows": 6892,
+      "hours": 28.765707065972222,
+      "original_rows": 6892,
+      "original_manifest_sha256": "b32a19b38e0f28e021f807324058ca83117c8ab631f0e7735b06f125566e894d",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "eurospeech_el",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/eurospeech_el.jsonl",
+      "sha256": "e788ca5cf7128ed238f516d65106d1ec4f05e773003d0c93fc5503d84fd37c9b",
+      "rows": 2405,
+      "hours": 9.933593854166668,
+      "original_rows": 6730,
+      "original_manifest_sha256": "355059829ac5ee96bd5660868009018b07fadefc0c27f975e0aa25ce9a32bc0d",
+      "alignment_status": "human_spans_repaired_with_quarantine"
+    },
+    {
+      "split": "gigaspeechbench_eng_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_eng_en.jsonl",
+      "sha256": "8832ff2714328357f32ad1b624d1d885d8354bf08f1d83da469f25f6d8b700f7",
+      "rows": 6648,
+      "hours": 11.598361961805555,
+      "original_rows": 6648,
+      "original_manifest_sha256": "eb9c7254d5c52a021d7e02b70a0969c7e1abcb537510e742cd621c10e86fae50",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_fin_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_fin_en.jsonl",
+      "sha256": "2280904eee96cea1e965941254b1022531e00295fe011baa21e075a6140b35e3",
+      "rows": 6037,
+      "hours": 11.426505520833333,
+      "original_rows": 6037,
+      "original_manifest_sha256": "03051a06cca34607517e9fe4d2d7a69ba9fd2de37060b688155cd19ec284a9b4",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_sct_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_sct_en.jsonl",
+      "sha256": "2a9dba9b0ae3b9d6d37f6ada6ec890bc26b96635246ed44f744f6e29e2c00cf6",
+      "rows": 12809,
+      "hours": 11.224908784722222,
+      "original_rows": 12829,
+      "original_manifest_sha256": "6802d83ae2386e1b7fa055e2d1e62f51142f89fa585663d8b6ed30eb5ad86cb8",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_mil_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_mil_en.jsonl",
+      "sha256": "e3af3da24b20a5fe708ad4b300324523a3dea66eacbfc0b07ce2ebacd6673484",
+      "rows": 5224,
+      "hours": 11.202737222222222,
+      "original_rows": 5224,
+      "original_manifest_sha256": "3d5e4326f3b440f49ce0bdfb33c5780367afac6a7477b7320b72b8cae7fc0f3a",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "golos_crowd_ru",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/golos_crowd_ru.jsonl",
+      "sha256": "e70492f8825a693488d86232ba10886e3fee9e222feef298b7ef004c7934bedd",
+      "rows": 9896,
+      "hours": 11.113865329861111,
+      "original_rows": 9896,
+      "original_manifest_sha256": "b0f959ace2fbe8475174206a6d252db2250b1bc629dc47453d7f98b7ddc6d3ac",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_ind_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_ind_en.jsonl",
+      "sha256": "8c5d145b1775dc4ee950482f2f5433d99a49fa241cbf9c7e9b86658d2d6f8009",
+      "rows": 5498,
+      "hours": 11.077870590277778,
+      "original_rows": 5503,
+      "original_manifest_sha256": "d24e249300c66f29a8f63c3c32666ed99591a867cd3aa13388ff01822900dda5",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_phl_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_phl_en.jsonl",
+      "sha256": "3012c1623992b6626eb9fd60dec769d5394857137af574fe7dd6ee42f50c355e",
+      "rows": 8633,
+      "hours": 10.752035208333334,
+      "original_rows": 8637,
+      "original_manifest_sha256": "429cb545a8051bb139c8141c361cbfebdd1771ea71d2fc5ef07b402a2658f8f4",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_sgp_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_sgp_en.jsonl",
+      "sha256": "4021c7db0838350a3fb1d3025ef24308e3d5ece4ddfa34ebacbc898224195a68",
+      "rows": 9468,
+      "hours": 10.750419340277777,
+      "original_rows": 9480,
+      "original_manifest_sha256": "319b0058e51e4ad93d67f249b285d284259da86cb08e38b97ec68204b3ec177a",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_ecm_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_ecm_en.jsonl",
+      "sha256": "7ff59c3085d0be24c8640c6b97399d3b221519258df5552c8efc049eafd1f262",
+      "rows": 5659,
+      "hours": 10.570892968750002,
+      "original_rows": 5659,
+      "original_manifest_sha256": "9426e31828284e7e43bc7b167e96467f4dffdae3612bbee789ceb9c723dcfa90",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_bio_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_bio_en.jsonl",
+      "sha256": "0261edf6ce4204d2e3fb96f59198a8cb45bfda56ec37f95994eff47fb9e67513",
+      "rows": 5297,
+      "hours": 10.504789756944446,
+      "original_rows": 5297,
+      "original_manifest_sha256": "f20a2aca95a2adb96af2536e5e3df61d02a2b30d077fe8a795397874c13df529",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_ait_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_ait_en.jsonl",
+      "sha256": "a844c2b22b3ebf245b61c525501ab566b8c1f8823b45953412809b2b02153cea",
+      "rows": 5468,
+      "hours": 10.457904166666667,
+      "original_rows": 5468,
+      "original_manifest_sha256": "daea6932ef87770de5ce12c0d223ae36d3a6c3008edb260e90d283c6894050a5",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_law_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_law_en.jsonl",
+      "sha256": "b686e3a313505c8196465dab551368df8ec114b7937f9893fd4756847e4a3934",
+      "rows": 7273,
+      "hours": 10.321348541666666,
+      "original_rows": 7273,
+      "original_manifest_sha256": "409681580392a1245f9bc7f6bb03398e2be7d353d6f53d2915b6799000c1b0be",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_agr_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_agr_en.jsonl",
+      "sha256": "eb092b91b8034472dc71d383dc5f0f21aff9c11837c15912dcd3c3d7aa12ccd3",
+      "rows": 6665,
+      "hours": 10.318452430555554,
+      "original_rows": 6665,
+      "original_manifest_sha256": "d4373eccb876b1cd66cda83dc3dbd1081895d2b94724696b7cf19cbc66a358b4",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_med_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_med_en.jsonl",
+      "sha256": "cfe26d39e6642e70e659bb4b2fe52448a98e390337ba8bfec2571e555f25467b",
+      "rows": 5168,
+      "hours": 10.308312795138889,
+      "original_rows": 5168,
+      "original_manifest_sha256": "9c7b99609088f7986bf25fdad798cf9ed5aa9b31788bc33ed27cfc034fed0cd9",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_ent_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_ent_en.jsonl",
+      "sha256": "3c9786a36ca9249d17aeb475e859b038b661dddf22c5835beb2e196a42508cb9",
+      "rows": 8583,
+      "hours": 10.117495520833332,
+      "original_rows": 8583,
+      "original_manifest_sha256": "c77146c3597514ef26d7a7cd40275e6605bb8137d69f5404d852fcc7489d9794",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_art_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_art_en.jsonl",
+      "sha256": "fb531c4c4e2d39479d1e84bd082f81a0f9c5fdbfbd387267d57b728d64223bf4",
+      "rows": 5712,
+      "hours": 10.114382864583334,
+      "original_rows": 5712,
+      "original_manifest_sha256": "f827798ebf0f695eacab78dc2ca049a2783f276a33fa42522030a0f6a1415338",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_hum_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_hum_en.jsonl",
+      "sha256": "1513e09b1c3117dfccd08d66bd9c8076663a9d89e92fe83909f5be835e9ade71",
+      "rows": 4970,
+      "hours": 10.02576689236111,
+      "original_rows": 4971,
+      "original_manifest_sha256": "bac6ba19623d2f78f0e5392bc4a2d0dd0cf1c2fd34b3ec3c954252d311e5359c",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "gigaspeechbench_chn_en",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/gigaspeechbench_chn_en.jsonl",
+      "sha256": "6cde13382516b93d81a2bdc28d1b17f05d8c987961a87ab0ca02cf91d41ebc78",
+      "rows": 6307,
+      "hours": 9.427359375,
+      "original_rows": 6308,
+      "original_manifest_sha256": "49e6c88a5d4f73ac99900dc49e9dc2cebf82e5b61d5257567bfcb1e0a6515500",
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "split": "lesbos_el",
+      "path": "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/lesbos_el.jsonl",
+      "sha256": "a0aaddd4156f178da2500793a0a236bbee2722750349f91eebe099acef800681",
+      "rows": 230,
+      "hours": 0.11232479166666667,
+      "original_rows": 230,
+      "original_manifest_sha256": "81f0503b1d5a24286db6b083fd03ee233cbbe755e24c4e86c6160e3e60f98cc8",
+      "alignment_status": "no_known_alignment_defect"
+    }
+  ],
+  "quarantined_rows": 6857,
+  "original_float_pcm_verified_for_every_row": true
+}

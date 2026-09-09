@@ -1,0 +1,31 @@
+{
+  "ready": true,
+  "protocol_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb",
+  "files": {
+    "comparison.json": {
+      "remote_path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/comparison/comparison.json",
+      "sha256": "298599ce854a9607a188f07becf9c75403a411542c6e960ded9c5d4b25ec8401",
+      "bytes": 63593
+    },
+    "numeric-evidence.jsonl.gz": {
+      "remote_path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/comparison/numeric-evidence.jsonl.gz",
+      "sha256": "a9ca147b0a0ee4551e3556b1fa94117ba0c8716e30e8dc121e71c6c1c0e8d537",
+      "bytes": 18706845
+    },
+    "runtime.json": {
+      "remote_path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/results/runtime.json",
+      "sha256": "440e2b077fad63a163720753f0262c3e9ad637e933fa8eaf91bb3c3fe34d5b33",
+      "bytes": 10650
+    },
+    "comparison-receipt.json": {
+      "remote_path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/comparison/comparison-receipt.json",
+      "sha256": "0bea97fe1b09ed4d250c1d5dccca30b3db3c93702be8c5a936c04abd9341a2aa",
+      "bytes": 487
+    }
+  },
+  "phase": "coverage",
+  "raw_audio_included": false,
+  "raw_references_included": false,
+  "raw_predictions_included": false,
+  "publication_authorized": false
+}

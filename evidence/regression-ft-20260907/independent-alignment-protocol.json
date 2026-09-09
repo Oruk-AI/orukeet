@@ -1,0 +1,655 @@
+{
+  "selection": "First 32 UIDs by SHA-256(alignment-check-20260918:UID) per language and acceptance type.",
+  "input_sha256": {
+    "eurospeech_el": "939735ecbc0455bc2adeba6ff09ded8ae09f02448f8abc6aa89afb8b98a01cd0",
+    "eurospeech_it": "6a921cbf2851ee23153440774f6b9f888b772c47ea209f4ea8482a5dd1e76b19"
+  },
+  "model": "openai/whisper-large-v3",
+  "revision": "06f233fe06e710322aca913c1bc4249a0d71fce1",
+  "model_weights_sha256": "a8e94b85976e5864ba3e9525c7e6c83b2a1eca42d4b797a0c7c24d778e40fd95",
+  "script_sha256": "1adc02e9fca213a7ebfdab5557a33cb53aae72a3263f013175d0c43b8496b153",
+  "rows": 128,
+  "samples": [
+    {
+      "uid_sha256": "760132c5837530feed1b28935efb8dfc9aee6d068888f3065e341f53b4fd2e66",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "d9384734a214a38fea53d73ac39f1c30de18724209835e1ff8e9422281302f8e",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "07f6ece71ba20b2512feb98ca89672113ff788f2ca05a50ae8c341febf8daa11",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "1d2197012f29fd03849057d61b3b26a68689fa502411452db909187ac1ebfe06",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "ad1fa2d9004dad505643981a56e348073ad24f8a551327c99d9eef64b2554c01",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "9e37c0c9b2490d93a3b53b48b56451186de3f59f63046aa3cf5d222bebefaae8",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "e1a765cfb21a95ae7dc2046fa093d6c36cfadd7a8548f0f3a2a20471cedf6b08",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "ab20ba336b2470b4337459348665b9097d11f00c765943bdd6b5d1feeac73707",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "57b2cbfce20e4b05fb409f057a6d12e2c388465e254d9e7fe94f4430f87b4f62",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "42cc9c167157b66942d542493e29997d775a19d71f98baa936792a48bf1cb2c2",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "0f6027b31e02d76cfffe5486d06dc1feea9f7169790be14f0e630075b7439fda",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "2d045ef5df296314e29ba9894cb84a8bdef3226bbc082b0fb8068ae575fe8c43",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "b9858eb55d5d344b452899b0d0584d39e51ce1253091db56e5e5f9bc48ed1e5b",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "4f9858df8c97a2ca3243b00e281561f28a62f6c4a40232b8c7fac4f506f3f715",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "3dfd167cb5d0d28e0e9c8d2108d17577c7301eab59d12f8d03b53fa84d303a6f",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "96d9b42ad636d2ee8db71e3d59634588a556a65b95510ab5ba7f7d5afc4f089c",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "1f8857540195bc629f1d486b9132d9a49dabe6d59e411adee9fbd71172a08bf2",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "de615e9dcf0735ae3a7c0515442b426ecb1a0b393b375cc0b6997ab6f2e46da9",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "fbdfb6164f9e6420e4880d376e1de0b3c499479f6b32619c79c9c817c46656fc",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "f4ef7ba4505f527c37eb9a24e5ab962bf393f6de39e163b66d51a34abd89ffee",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "48b5f5ca0859707f2377e1c10e0c5b244e37386ee79aae29223fe2dff10974db",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "1c0e4c43254f81be5ed6c4eb56f0aec2f8cfe65715189b4cb1bd0dd990362c4a",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "fb72cf8d44b5296df1933b9e90351ef36ab43b86c0f6f63b4c7a2e50dfbb9276",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "438b5d5f2f9a413de2f39bf9d8acec9fb7fc30956893d4589eda0f12c17a636a",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "4c8b9859e433b4c07f0da906693f3aa9a096924955779b98295c2aa5481189ac",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "71a5eab7496e89d002c1a1d33afa72baa3acf674867ca6154207ce6424778c2c",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "3e2e3844e23774713d7cb6fbed61e15b5311ed93e5dc01b066d8a1dac605434a",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "fe6ffc1e0f499e1ed418f75f9a6f0c21b4e7f0330fb8369eaa93f8728c22b191",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "aead9c0405030388efd5007e648f4f6d0b83aa559b69c0ba701f2386877aeff3",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "6e2a011d7cbe287b60ba3696a58812e5970b8c8e34a7e9af2ceb5a9f68afe4bc",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "7d3364de2772896ebd8ef9b981b92b818579f0926d50366b4b2537d757630884",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "3a0958c96b4b8cbb4c560502822627e7c52343ad0327216fb0b05f0acc680a54",
+      "split": "eurospeech_el",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "b816da469bf56461208372d1f578a09aa45b5e561b482fa1ab6370d352bf27e0",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "66142d7fe8db5a133f48c5e3507a5f2c50d758ace625eb38af11a1053ae01e35",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "ed993141427f2fe40669b626ec2902098ef527e0fce3a6e3511ad953efcea48a",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "aed948058561c11de0493b04d085da4c540c46eb42f460a475bc02dba93cdacc",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "3b93abd6eb72bdb803903bccb70ad44d036cb85012b52a8249cc788d1be03a65",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "95447426339298734a83ebc584de5c85d4262f48ee01966876321511d3d041fc",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "6d948e8009bc2afa16924f5b48fd21b099f61c6407827ea7cfe25cbe887df3fa",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "43e957e084bfc770b864842876c529f32728db1429d6de500f577df65447f3cc",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "0dcfbf1589174aa69f0eeac5ba729281292ec8ccecba7279594a88a8e2ab2490",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "fa3a42a27e5bdaa616a88082d626721169a6a7f9ab624704839b3f14ccb427ff",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "bdf88d968a65cdbf4ed230751321344eba47ecee689a7df74124c240ad716f70",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "1d52b43aed1f22bcfc83115b95e416e453bb8588e56ed9814c11d01de3c82b8c",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "c5b4dce5d0fbb6dd88ae25c437f0dd68e1f4c1fbabd4bf31e5c2469d82850734",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "3761aacc1f737351ee47e8104cef3be55912fe7d7e2ef6ecd4520e30da09aca8",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "84b06705087aeae2b4d2063324d4ee8450e3a67fd67453aafb2fa09378c45c9e",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "bffaf51c07fb8e126ede91a3637931117488a1a416532514068f3d1a4e951e23",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "ce03811d5cc7a1e740e6c4b822413e8292667e0d291f1c819b8c2fcc03548dc2",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "098d970a9c4a85599d9b71dfa4a31debe104d22a6c0aa10d4a58efd5b5f3a4ec",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "765dee99fd48879731616f3aecd9c209de31c81a271d53f3a7b4279f544f2da5",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "f9e06a6d4b07f1b62d568935b33dc68a490369ec6f5521f8ecc70b1d9216be46",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "86f608a429af492a6a17c242b217239727cc1b8fa088a40c9f931afb6bc8eef4",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "5f55e7f9aed0dcbb2a7fee1a2aed53ec4180baa24794650f7842a68c165dbb5a",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "de4e6d4504d9c66f0600362e5bbb89b73e94dd4e0d9df84a06ebf3bf9789c0e1",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "4c5f9244f451949dd4d6f61f50731a75cbdaa380ee4f5ca9a06bd0a5b7d71d6d",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "f9a66f15ef3e29efb4f80e10c3acdffa84661fd3e27bf66f89bf4545cd8d8ceb",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "79aa03fc64dce300f2e5cda2895b70ac497324c8a8f2e21f0e68d4aac6099892",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "95bf54c0d038e7c2b61a6882ccdf67edcecce8b2a8d42c23b8d3967bb29a8b73",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "9558ef69e5208a130253a847a9a723443953d662c2bfe28f6770399f21100181",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "0addc75e2083ce7ddbe562caf2e3b0ad4a3af89b009c02b14f826bd2d3eb38ba",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "a6b04ce197de6615c0910b6f13cf1760f29400ca774a92ba62496dd36596a299",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "ad94ae665599af005b33dff39c41a693ba7a58513c010a407034dd5c82189e52",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "ba0ac2854f37a61e627d5f62909662d8ddcd497439857ae308b99a942f198b9f",
+      "split": "eurospeech_el",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "cb05d92138e030e4ad14bf922dd18a0afaf507da009ae52ddea498b1f53c0643",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "da5bcac5a874adb261b65b6980ced0d3de97deee6055fe64f0e1e11ab35f1396",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "c580c7dc5653d124c3a05bf515d414c0f47a11fad8530a8bb07d03e0b71f2b4b",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "9b76ed6e3735659d4f2a076570ef756843f4ee04ff7cd0cb3c931d469652b87a",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "b91555a01133dfd098b6a774159142aa7a8c32eefbe4a9d5181cba93943b9272",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "aa0ae86ffb1bdca23adc7c0a11e1fe60d0ecb862fabd13ac565546e4e24177b5",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "4f2e80cb67eadbff9da428926b55e0998aadbfdb5546beeba9a611c6b82a994d",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "8b241c69fade56a4aea0b60ea6b471f1afe11709a936daf4c1f3e91a43aad26e",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "fe3cb62cc02e883e48b74c200282d6ab6d9c1bbd30d8572217592b5a16b4b44e",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "0362c54f44a5f911fc88ffa5112d3dff6906fc1dfa4407a4138f1627097ce9d7",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "c22374b20963d530090b1f84af21c8a17240f93b4d27fd9a9506712d2ca5f8a6",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "0063e5a0b4c94989c20d0df3104010fb2717ef72a4f980cdc3826184f82b5cd8",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "8ad3caa95a5588ed7988dd9041f8130fa92d3d9fbed6e7ed91a9e444f37d71c7",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "619ab68311cd5f7842c31c45e7d0deb1b8470f7ceb154d4da0ddfe46098e00b5",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "d88e6814eead9357be37a6202f203e70bf0885a441982d73a413b5ad29ac4574",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "caab46aa9ebf869fa936b3871746f58d04e326a98e2cc52dece2ab868e49d3c7",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "6ec71016bea94e65648bf5205c50dae04837ff56ddcf29df0ffc8257f92ea30e",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "484e1037c25264d3980d1e43ab42bd30b38437c19099ac7b2b7cd1fc80d734eb",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "ace3aad66fff86681c4dda217637dd3b213714665acf93cf81fa5998e87573ff",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "9a88a521bd2156518e267c2d60c498123725602c6c2eed281acfce18fd130817",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "460d0671a9ad52517fa7e1adf0e56d1e53ab6e14539ba4b1fade7a6f4dcca740",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "2f8b3a4fd7237bc09bb57d49b74b0f1799cc4de6875562ae4266dd3bc188e0b7",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "6f3abcdb83ba3dccd832259d317ba04bb80599539d5816eca60cea0f6590568e",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "ede42fc4ce452ceea48608f3adfed4b557d7b22982202c37c99e7722c556ac32",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "409f5e0254294b5171d63ec624cfe79cebbe4ab1a53b669928f83920b8bbc624",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "a3d5e16d047efca486b140081d942219d72d0b990d120bae2bbfb4b183678392",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "56fde1e8bd0d41f61d82dfb90598c86c32cd34a44edf212fd545fc7029e2616e",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "47c7b8eb2e12aca407d4b2467dccbfce9d003499dfb54497e7350a51ecac5233",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "9fc53df129edef8166f8d024dcbbfd95bab7a3ea4ba3a7cb02c064574e0332d8",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "774f8ceb085d4d38517485e0f3cfb83968e77c01dc88b4c391fccf2f6606487e",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "d80892c3d3e1528c93d92986132a1e9ffb26db684d904179804d361f53dc0630",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "2c2e5dd85239ce50103572eafc58127585b916920843a320516b7aee2f85a00e",
+      "split": "eurospeech_it",
+      "status": "assigned_pair_verified"
+    },
+    {
+      "uid_sha256": "226198b2d8925f06401bd3a1aa812cd27968e0a3d9778bd49dcd30ced5d21454",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "23965897a0929c3ac83372ef912012b56aead849b61179fb1fffe447f4810716",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "79bb8d9a8833218395ca5bae2a070707821a2a2a4c14520e4e4d4bad6855bfbd",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "9684403f5109f2386e158f434d8cee70408cd487cc645565e5e688d758d77e12",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "0980b267c27bcada9f48aab745e9696effb48646ab5a22c164867654745e2271",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "729c0634c4ca2d4482a1667f33a644b528dea170ba53f89783df6b9e4fb6f18f",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "12e9c452243bb65f01793e96a2809f518d47cfa2b4a883f24b32b34694750256",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "f602aebdde2730814e39054dd71e5fb2be64dc69e0929ced66bcb041c5852658",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "64723b47d44c66d58c3fa8655c130fdad18d5ba9f01d82b6740e71f5200de7c3",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "e474c1a0f38d7d7b49bd4e2f7fdc066731871c164bd1871119ef3e1a479cb465",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "4e7a26164638de10c998d159dc2a1abffcd420261f801e7d89a698d7ee05925c",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "12a4ad2b77d0ffb854c54ff612cb8db9be4c04d9edb7f670e400adcf97222e5a",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "55d864770a5a24bea91d470a636fc14b53469b1da20155e2b8c1a6988246c67a",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "8c8144fbbf8856ea42d794cc1eeb370519da6d9bd1fee5a3e249011af8e500d0",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "fa60ecb6d4ac1368224a367053e9a80c9b61b9abc13dbd9b1d08c271b19ba6bd",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "3ae717a1e5c4ab6c6473532fcd01462e1536b77ee74a7bdeb40d4defa1e9bc4c",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "1bb0031f239344e3bca5ea42fe3bf4cba4126f2f91742025e9d90ab27fcb0e86",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "6f7be7cbf83aa32c0ae93371e9384f3500bcdbfb387191891c8406d3b71cbfe8",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "1f1d46a8c8585006119d5bb6e1f0f0109b6c3da1527f9d8c40b576c1a227b208",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "759f1dbe55181ad1e44391075a33b9e1170d61d73cb2a536bc692ceda6115e71",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "932af14e737b39a0bb57b273ef5a7a23018af441971c8e00221bd4d2adf57ed3",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "0c1849e909f3a749b97c6d0cfc1040ac8959a1e2c7ed45603acdcb34f542d651",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "3cbcc84e361aaa8c79415321baa5dadba3957f5ff7a52b00d1d0ad2d786be017",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "a64358a4723a67b0f066c4da09991f5fc3ecfb77fbb3941abb5d9551612c8653",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "b2e3f60f6feda4865a3aaff8b4e1300b732c0f674b924d2fdb2da8122a3cdf4b",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "05bf86f09b1992872d6d95645f12fca45f1677e60ee1cb74be83dbd4d1143e2e",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "08114e56eea42fd13e44a430d8be5d41b78977f1cc8113f54e9925997b33853d",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "7a8ea6029784275d08607b61a940e2e9a38338f6884471584c97577a56ed545a",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "a33e76a7deb42dcac231d288c9a998cc5b439c66d01a2b88dc5d398bb19f92a8",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "1944446ef7a0a25037b6af9950fdccef26fceab68ea0a1526cfade04ccc934c0",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "3dbb5d11ad3aef879b547db2e93aa8fd2b927fbd48f655b40119940bb8794259",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    },
+    {
+      "uid_sha256": "fe9e00fad5902a8934b3729690ff73d8cee0027bd27eb6e185e85bc52af2f928",
+      "split": "eurospeech_it",
+      "status": "realigned_human_span"
+    }
+  ],
+  "purpose": "Independent alignment diagnostic. Whisper output is not used as a training label."
+}

@@ -1,0 +1,869 @@
+{
+  "status": "selected",
+  "selected": {
+    "fraction": 0.75,
+    "model_path": "/home/nathanroll/parakeet-ft/models/ft/stage3_baseblend_a075_20260905.nemo",
+    "model_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+    "eligible": true,
+    "failures": [],
+    "primary": {
+      "base_wer": 12.379730778121,
+      "candidate_wer": 9.959447310962826,
+      "delta_pp": -2.420283467158174,
+      "relative_improvement": 0.19550372383183
+    },
+    "families": {
+      "cv": {
+        "base_wer": 11.842148117919393,
+        "candidate_wer": 9.056275898231716,
+        "delta_pp": -2.7858722196876724
+      },
+      "fleurs": {
+        "base_wer": 12.91731343832261,
+        "candidate_wer": 10.862618723693938,
+        "delta_pp": -2.054694714628675
+      }
+    },
+    "sets": {
+      "cv_bg_dev_selection": {
+        "base_wer": 20.66957787481805,
+        "candidate_wer": 16.521106259097525,
+        "delta_pp": -4.148471615720524
+      },
+      "cv_cs_dev_selection": {
+        "base_wer": 5.218216318785578,
+        "candidate_wer": 5.692599620493358,
+        "delta_pp": 0.4743833017077801
+      },
+      "cv_da_dev_selection": {
+        "base_wer": 16.07843137254902,
+        "candidate_wer": 14.352941176470589,
+        "delta_pp": -1.7254901960784306
+      },
+      "cv_de_dev_selection": {
+        "base_wer": 4.632352941176471,
+        "candidate_wer": 4.926470588235294,
+        "delta_pp": 0.2941176470588234
+      },
+      "cv_el_dev_selection": {
+        "base_wer": 18.564102564102566,
+        "candidate_wer": 11.179487179487179,
+        "delta_pp": -7.384615384615387
+      },
+      "cv_en_dev_selection": {
+        "base_wer": 6.267605633802817,
+        "candidate_wer": 5.845070422535211,
+        "delta_pp": -0.42253521126760596
+      },
+      "cv_es_dev_selection": {
+        "base_wer": 3.1847133757961785,
+        "candidate_wer": 3.3262561924982306,
+        "delta_pp": 0.14154281670205204
+      },
+      "cv_et_dev_selection": {
+        "base_wer": 22.80130293159609,
+        "candidate_wer": 20.955483170466884,
+        "delta_pp": -1.8458197611292064
+      },
+      "cv_fi_dev_selection": {
+        "base_wer": 7.983623336745138,
+        "candidate_wer": 7.881269191402252,
+        "delta_pp": -0.10235414534288623
+      },
+      "cv_fr_dev_selection": {
+        "base_wer": 6.768414067684141,
+        "candidate_wer": 6.436629064366291,
+        "delta_pp": -0.33178500331785
+      },
+      "cv_hu_dev_selection": {
+        "base_wer": 8.168761220825854,
+        "candidate_wer": 7.63016157989228,
+        "delta_pp": -0.5385996409335734
+      },
+      "cv_it_dev_selection": {
+        "base_wer": 4.0673211781206176,
+        "candidate_wer": 3.576437587657784,
+        "delta_pp": -0.4908835904628335
+      },
+      "cv_lt_dev_selection": {
+        "base_wer": 10.40582726326743,
+        "candidate_wer": 9.573361082206036,
+        "delta_pp": -0.8324661810613936
+      },
+      "cv_lv_dev_selection": {
+        "base_wer": 33.333333333333336,
+        "candidate_wer": 20.81218274111675,
+        "delta_pp": -12.521150592216586
+      },
+      "cv_mt_dev_selection": {
+        "base_wer": 14.585012087026591,
+        "candidate_wer": 13.456889605157132,
+        "delta_pp": -1.1281224818694593
+      },
+      "cv_nl_dev_selection": {
+        "base_wer": 3.1702274293590627,
+        "candidate_wer": 2.4810475534114405,
+        "delta_pp": -0.6891798759476222
+      },
+      "cv_pl_dev_selection": {
+        "base_wer": 1.6339869281045751,
+        "candidate_wer": 1.2254901960784315,
+        "delta_pp": -0.40849673202614367
+      },
+      "cv_pt_dev_selection": {
+        "base_wer": 7.202505219206681,
+        "candidate_wer": 5.741127348643007,
+        "delta_pp": -1.4613778705636742
+      },
+      "cv_ro_dev_selection": {
+        "base_wer": 11.11111111111111,
+        "candidate_wer": 6.375227686703097,
+        "delta_pp": -4.735883424408014
+      },
+      "cv_ru_dev_selection": {
+        "base_wer": 4.297774366845741,
+        "candidate_wer": 3.9907904834996164,
+        "delta_pp": -0.3069838833461245
+      },
+      "cv_sk_dev_selection": {
+        "base_wer": 5.2493438320209975,
+        "candidate_wer": 5.511811023622047,
+        "delta_pp": 0.2624671916010497
+      },
+      "cv_sl_dev_selection": {
+        "base_wer": 47.147846332945285,
+        "candidate_wer": 21.42025611175786,
+        "delta_pp": -25.727590221187427
+      },
+      "cv_sv_dev_selection": {
+        "base_wer": 17.80952380952381,
+        "candidate_wer": 15.142857142857142,
+        "delta_pp": -2.666666666666668
+      },
+      "cv_uk_dev_selection": {
+        "base_wer": 3.8606403013182673,
+        "candidate_wer": 3.2956685499058382,
+        "delta_pp": -0.5649717514124291
+      },
+      "fleurs_bg_dev_selection": {
+        "base_wer": 12.273316062176166,
+        "candidate_wer": 10.395077720207254,
+        "delta_pp": -1.8782383419689115
+      },
+      "fleurs_cs_dev_selection": {
+        "base_wer": 12.127894156560089,
+        "candidate_wer": 9.9595736861448,
+        "delta_pp": -2.1683204704152885
+      },
+      "fleurs_da_dev_selection": {
+        "base_wer": 18.317323617091752,
+        "candidate_wer": 16.528651871480623,
+        "delta_pp": -1.7886717456111292
+      },
+      "fleurs_de_dev_selection": {
+        "base_wer": 5.857605177993528,
+        "candidate_wer": 5.663430420711974,
+        "delta_pp": -0.1941747572815542
+      },
+      "fleurs_el_dev_selection": {
+        "base_wer": 36.85773685773686,
+        "candidate_wer": 25.54202554202554,
+        "delta_pp": -11.315711315711319
+      },
+      "fleurs_en_dev_selection": {
+        "base_wer": 6.840390879478828,
+        "candidate_wer": 6.319218241042345,
+        "delta_pp": -0.5211726384364823
+      },
+      "fleurs_es_dev_selection": {
+        "base_wer": 3.291070946857297,
+        "candidate_wer": 3.1292149986512006,
+        "delta_pp": -0.1618559482060964
+      },
+      "fleurs_et_dev_selection": {
+        "base_wer": 16.35434412265758,
+        "candidate_wer": 14.522998296422488,
+        "delta_pp": -1.8313458262350917
+      },
+      "fleurs_fi_dev_selection": {
+        "base_wer": 13.596102745792736,
+        "candidate_wer": 12.311780336581045,
+        "delta_pp": -1.2843224092116916
+      },
+      "fleurs_fr_dev_selection": {
+        "base_wer": 4.8426812585499315,
+        "candidate_wer": 4.678522571819426,
+        "delta_pp": -0.16415868673050582
+      },
+      "fleurs_hr_dev_selection": {
+        "base_wer": 10.917838638045891,
+        "candidate_wer": 9.17838638045892,
+        "delta_pp": -1.7394522575869722
+      },
+      "fleurs_hu_dev_selection": {
+        "base_wer": 15.591985428051002,
+        "candidate_wer": 12.896174863387978,
+        "delta_pp": -2.6958105646630237
+      },
+      "fleurs_it_dev_selection": {
+        "base_wer": 2.4602460246024602,
+        "candidate_wer": 2.13021302130213,
+        "delta_pp": -0.33003300330033003
+      },
+      "fleurs_lt_dev_selection": {
+        "base_wer": 22.863070539419088,
+        "candidate_wer": 18.87966804979253,
+        "delta_pp": -3.983402489626556
+      },
+      "fleurs_lv_dev_selection": {
+        "base_wer": 24.130879345603272,
+        "candidate_wer": 19.591002044989775,
+        "delta_pp": -4.539877300613497
+      },
+      "fleurs_mt_dev_selection": {
+        "base_wer": 20.63164108618654,
+        "candidate_wer": 16.351829988193625,
+        "delta_pp": -4.279811097992916
+      },
+      "fleurs_nl_dev_selection": {
+        "base_wer": 8.653555219364598,
+        "candidate_wer": 8.260211800302573,
+        "delta_pp": -0.39334341906202575
+      },
+      "fleurs_pl_dev_selection": {
+        "base_wer": 6.847785634536658,
+        "candidate_wer": 6.438407145515445,
+        "delta_pp": -0.4093784890212131
+      },
+      "fleurs_pt_dev_selection": {
+        "base_wer": 4.403100775193798,
+        "candidate_wer": 3.441860465116279,
+        "delta_pp": -0.9612403100775193
+      },
+      "fleurs_ro_dev_selection": {
+        "base_wer": 13.354763296317943,
+        "candidate_wer": 11.163062536528345,
+        "delta_pp": -2.1917007597895974
+      },
+      "fleurs_ru_dev_selection": {
+        "base_wer": 5.675287356321839,
+        "candidate_wer": 5.675287356321839,
+        "delta_pp": 0.0
+      },
+      "fleurs_sk_dev_selection": {
+        "base_wer": 8.914159941305943,
+        "candidate_wer": 6.7131327953044755,
+        "delta_pp": -2.2010271460014676
+      },
+      "fleurs_sl_dev_selection": {
+        "base_wer": 26.321506154960172,
+        "candidate_wer": 22.628530050687907,
+        "delta_pp": -3.6929761042722653
+      },
+      "fleurs_sv_dev_selection": {
+        "base_wer": 14.76157082748948,
+        "candidate_wer": 12.903225806451612,
+        "delta_pp": -1.8583450210378682
+      },
+      "fleurs_uk_dev_selection": {
+        "base_wer": 7.046979865771812,
+        "candidate_wer": 6.263982102908278,
+        "delta_pp": -0.7829977628635341
+      },
+      "english_dialects_dev": {
+        "base_wer": 5.722124240642759,
+        "candidate_wer": 5.810307662159514,
+        "delta_pp": 0.08818342151675473
+      },
+      "speechocean762_dev": {
+        "base_wer": 38.42173350582147,
+        "candidate_wer": 35.1875808538163,
+        "delta_pp": -3.2341526520051715
+      },
+      "libri_en_dev_other": {
+        "base_wer": 3.7569060773480665,
+        "candidate_wer": 3.7317049529902104,
+        "delta_pp": -0.025201124357856042
+      }
+    }
+  },
+  "candidates": [
+    {
+      "fraction": 0.5,
+      "model_path": "/home/nathanroll/parakeet-ft/models/ft/stage3_baseblend_a050_20260905.nemo",
+      "model_sha256": "038a4cfde77eb648010a2c8140007d0ee49fabe6af87aeaa063a61a5f4417192",
+      "eligible": true,
+      "failures": [],
+      "primary": {
+        "base_wer": 12.379730778121,
+        "candidate_wer": 10.701138869121309,
+        "delta_pp": -1.6785919089996915,
+        "relative_improvement": 0.13559195584174644
+      },
+      "families": {
+        "cv": {
+          "base_wer": 11.842148117919393,
+          "candidate_wer": 9.873895092052607,
+          "delta_pp": -1.9682530258667859
+        },
+        "fleurs": {
+          "base_wer": 12.91731343832261,
+          "candidate_wer": 11.528382646190012,
+          "delta_pp": -1.3889307921325973
+        }
+      },
+      "sets": {
+        "cv_bg_dev_selection": {
+          "base_wer": 20.66957787481805,
+          "candidate_wer": 17.758369723435226,
+          "delta_pp": -2.911208151382823
+        },
+        "cv_cs_dev_selection": {
+          "base_wer": 5.218216318785578,
+          "candidate_wer": 5.597722960151803,
+          "delta_pp": 0.37950664136622425
+        },
+        "cv_da_dev_selection": {
+          "base_wer": 16.07843137254902,
+          "candidate_wer": 14.745098039215685,
+          "delta_pp": -1.333333333333334
+        },
+        "cv_de_dev_selection": {
+          "base_wer": 4.632352941176471,
+          "candidate_wer": 5.0,
+          "delta_pp": 0.367647058823529
+        },
+        "cv_el_dev_selection": {
+          "base_wer": 18.564102564102566,
+          "candidate_wer": 17.94871794871795,
+          "delta_pp": -0.6153846153846168
+        },
+        "cv_en_dev_selection": {
+          "base_wer": 6.267605633802817,
+          "candidate_wer": 5.985915492957746,
+          "delta_pp": -0.28169014084507094
+        },
+        "cv_es_dev_selection": {
+          "base_wer": 3.1847133757961785,
+          "candidate_wer": 3.467799009200283,
+          "delta_pp": 0.28308563340410453
+        },
+        "cv_et_dev_selection": {
+          "base_wer": 22.80130293159609,
+          "candidate_wer": 21.335504885993487,
+          "delta_pp": -1.4657980456026038
+        },
+        "cv_fi_dev_selection": {
+          "base_wer": 7.983623336745138,
+          "candidate_wer": 7.778915046059366,
+          "delta_pp": -0.20470829068577245
+        },
+        "cv_fr_dev_selection": {
+          "base_wer": 6.768414067684141,
+          "candidate_wer": 6.70205706702057,
+          "delta_pp": -0.06635700066357053
+        },
+        "cv_hu_dev_selection": {
+          "base_wer": 8.168761220825854,
+          "candidate_wer": 7.899461400359066,
+          "delta_pp": -0.26929982046678713
+        },
+        "cv_it_dev_selection": {
+          "base_wer": 4.0673211781206176,
+          "candidate_wer": 3.576437587657784,
+          "delta_pp": -0.4908835904628335
+        },
+        "cv_lt_dev_selection": {
+          "base_wer": 10.40582726326743,
+          "candidate_wer": 10.093652445369408,
+          "delta_pp": -0.31217481789802193
+        },
+        "cv_lv_dev_selection": {
+          "base_wer": 33.333333333333336,
+          "candidate_wer": 22.927241962774957,
+          "delta_pp": -10.406091370558379
+        },
+        "cv_mt_dev_selection": {
+          "base_wer": 14.585012087026591,
+          "candidate_wer": 13.698630136986301,
+          "delta_pp": -0.8863819500402901
+        },
+        "cv_nl_dev_selection": {
+          "base_wer": 3.1702274293590627,
+          "candidate_wer": 2.5499655410062028,
+          "delta_pp": -0.6202618883528599
+        },
+        "cv_pl_dev_selection": {
+          "base_wer": 1.6339869281045751,
+          "candidate_wer": 1.1437908496732025,
+          "delta_pp": -0.4901960784313726
+        },
+        "cv_pt_dev_selection": {
+          "base_wer": 7.202505219206681,
+          "candidate_wer": 6.054279749478079,
+          "delta_pp": -1.1482254697286018
+        },
+        "cv_ro_dev_selection": {
+          "base_wer": 11.11111111111111,
+          "candidate_wer": 7.5591985428051,
+          "delta_pp": -3.551912568306011
+        },
+        "cv_ru_dev_selection": {
+          "base_wer": 4.297774366845741,
+          "candidate_wer": 3.760552570990023,
+          "delta_pp": -0.5372217958557179
+        },
+        "cv_sk_dev_selection": {
+          "base_wer": 5.2493438320209975,
+          "candidate_wer": 5.511811023622047,
+          "delta_pp": 0.2624671916010497
+        },
+        "cv_sl_dev_selection": {
+          "base_wer": 47.147846332945285,
+          "candidate_wer": 26.77532013969732,
+          "delta_pp": -20.372526193247964
+        },
+        "cv_sv_dev_selection": {
+          "base_wer": 17.80952380952381,
+          "candidate_wer": 15.619047619047619,
+          "delta_pp": -2.1904761904761916
+        },
+        "cv_uk_dev_selection": {
+          "base_wer": 3.8606403013182673,
+          "candidate_wer": 3.4839924670433144,
+          "delta_pp": -0.37664783427495285
+        },
+        "fleurs_bg_dev_selection": {
+          "base_wer": 12.273316062176166,
+          "candidate_wer": 10.880829015544041,
+          "delta_pp": -1.3924870466321249
+        },
+        "fleurs_cs_dev_selection": {
+          "base_wer": 12.127894156560089,
+          "candidate_wer": 10.106578463800073,
+          "delta_pp": -2.021315692760016
+        },
+        "fleurs_da_dev_selection": {
+          "base_wer": 18.317323617091752,
+          "candidate_wer": 16.661146074859225,
+          "delta_pp": -1.656177542232527
+        },
+        "fleurs_de_dev_selection": {
+          "base_wer": 5.857605177993528,
+          "candidate_wer": 5.922330097087379,
+          "delta_pp": 0.06472491909385081
+        },
+        "fleurs_el_dev_selection": {
+          "base_wer": 36.85773685773686,
+          "candidate_wer": 34.36293436293436,
+          "delta_pp": -2.4948024948024994
+        },
+        "fleurs_en_dev_selection": {
+          "base_wer": 6.840390879478828,
+          "candidate_wer": 6.449511400651466,
+          "delta_pp": -0.39087947882736174
+        },
+        "fleurs_es_dev_selection": {
+          "base_wer": 3.291070946857297,
+          "candidate_wer": 3.075263015915835,
+          "delta_pp": -0.215807930941462
+        },
+        "fleurs_et_dev_selection": {
+          "base_wer": 16.35434412265758,
+          "candidate_wer": 14.778534923339011,
+          "delta_pp": -1.5758091993185683
+        },
+        "fleurs_fi_dev_selection": {
+          "base_wer": 13.596102745792736,
+          "candidate_wer": 12.533215234720991,
+          "delta_pp": -1.0628875110717448
+        },
+        "fleurs_fr_dev_selection": {
+          "base_wer": 4.8426812585499315,
+          "candidate_wer": 4.678522571819426,
+          "delta_pp": -0.16415868673050582
+        },
+        "fleurs_hr_dev_selection": {
+          "base_wer": 10.917838638045891,
+          "candidate_wer": 9.437453737971873,
+          "delta_pp": -1.480384900074018
+        },
+        "fleurs_hu_dev_selection": {
+          "base_wer": 15.591985428051002,
+          "candidate_wer": 13.588342440801457,
+          "delta_pp": -2.0036429872495454
+        },
+        "fleurs_it_dev_selection": {
+          "base_wer": 2.4602460246024602,
+          "candidate_wer": 2.28022802280228,
+          "delta_pp": -0.18001800180018002
+        },
+        "fleurs_lt_dev_selection": {
+          "base_wer": 22.863070539419088,
+          "candidate_wer": 19.46058091286307,
+          "delta_pp": -3.4024896265560187
+        },
+        "fleurs_lv_dev_selection": {
+          "base_wer": 24.130879345603272,
+          "candidate_wer": 20.65439672801636,
+          "delta_pp": -3.476482617586914
+        },
+        "fleurs_mt_dev_selection": {
+          "base_wer": 20.63164108618654,
+          "candidate_wer": 17.591499409681226,
+          "delta_pp": -3.040141676505314
+        },
+        "fleurs_nl_dev_selection": {
+          "base_wer": 8.653555219364598,
+          "candidate_wer": 8.229954614220878,
+          "delta_pp": -0.42360060514372044
+        },
+        "fleurs_pl_dev_selection": {
+          "base_wer": 6.847785634536658,
+          "candidate_wer": 6.438407145515445,
+          "delta_pp": -0.4093784890212131
+        },
+        "fleurs_pt_dev_selection": {
+          "base_wer": 4.403100775193798,
+          "candidate_wer": 3.5968992248062017,
+          "delta_pp": -0.8062015503875966
+        },
+        "fleurs_ro_dev_selection": {
+          "base_wer": 13.354763296317943,
+          "candidate_wer": 11.367621274108709,
+          "delta_pp": -1.987142022209234
+        },
+        "fleurs_ru_dev_selection": {
+          "base_wer": 5.675287356321839,
+          "candidate_wer": 5.818965517241379,
+          "delta_pp": 0.14367816091954033
+        },
+        "fleurs_sk_dev_selection": {
+          "base_wer": 8.914159941305943,
+          "candidate_wer": 7.410124724871607,
+          "delta_pp": -1.5040352164343362
+        },
+        "fleurs_sl_dev_selection": {
+          "base_wer": 26.321506154960172,
+          "candidate_wer": 23.569876900796523,
+          "delta_pp": -2.7516292541636496
+        },
+        "fleurs_sv_dev_selection": {
+          "base_wer": 14.76157082748948,
+          "candidate_wer": 12.903225806451612,
+          "delta_pp": -1.8583450210378682
+        },
+        "fleurs_uk_dev_selection": {
+          "base_wer": 7.046979865771812,
+          "candidate_wer": 6.413124533929903,
+          "delta_pp": -0.6338553318419091
+        },
+        "english_dialects_dev": {
+          "base_wer": 5.722124240642759,
+          "candidate_wer": 5.77111503037429,
+          "delta_pp": 0.048990789731530704
+        },
+        "speechocean762_dev": {
+          "base_wer": 38.42173350582147,
+          "candidate_wer": 36.73997412677878,
+          "delta_pp": -1.6817593790426884
+        },
+        "libri_en_dev_other": {
+          "base_wer": 3.7569060773480665,
+          "candidate_wer": 3.729766404962683,
+          "delta_pp": -0.027139672385383395
+        }
+      }
+    },
+    {
+      "fraction": 0.75,
+      "model_path": "/home/nathanroll/parakeet-ft/models/ft/stage3_baseblend_a075_20260905.nemo",
+      "model_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+      "eligible": true,
+      "failures": [],
+      "primary": {
+        "base_wer": 12.379730778121,
+        "candidate_wer": 9.959447310962826,
+        "delta_pp": -2.420283467158174,
+        "relative_improvement": 0.19550372383183
+      },
+      "families": {
+        "cv": {
+          "base_wer": 11.842148117919393,
+          "candidate_wer": 9.056275898231716,
+          "delta_pp": -2.7858722196876724
+        },
+        "fleurs": {
+          "base_wer": 12.91731343832261,
+          "candidate_wer": 10.862618723693938,
+          "delta_pp": -2.054694714628675
+        }
+      },
+      "sets": {
+        "cv_bg_dev_selection": {
+          "base_wer": 20.66957787481805,
+          "candidate_wer": 16.521106259097525,
+          "delta_pp": -4.148471615720524
+        },
+        "cv_cs_dev_selection": {
+          "base_wer": 5.218216318785578,
+          "candidate_wer": 5.692599620493358,
+          "delta_pp": 0.4743833017077801
+        },
+        "cv_da_dev_selection": {
+          "base_wer": 16.07843137254902,
+          "candidate_wer": 14.352941176470589,
+          "delta_pp": -1.7254901960784306
+        },
+        "cv_de_dev_selection": {
+          "base_wer": 4.632352941176471,
+          "candidate_wer": 4.926470588235294,
+          "delta_pp": 0.2941176470588234
+        },
+        "cv_el_dev_selection": {
+          "base_wer": 18.564102564102566,
+          "candidate_wer": 11.179487179487179,
+          "delta_pp": -7.384615384615387
+        },
+        "cv_en_dev_selection": {
+          "base_wer": 6.267605633802817,
+          "candidate_wer": 5.845070422535211,
+          "delta_pp": -0.42253521126760596
+        },
+        "cv_es_dev_selection": {
+          "base_wer": 3.1847133757961785,
+          "candidate_wer": 3.3262561924982306,
+          "delta_pp": 0.14154281670205204
+        },
+        "cv_et_dev_selection": {
+          "base_wer": 22.80130293159609,
+          "candidate_wer": 20.955483170466884,
+          "delta_pp": -1.8458197611292064
+        },
+        "cv_fi_dev_selection": {
+          "base_wer": 7.983623336745138,
+          "candidate_wer": 7.881269191402252,
+          "delta_pp": -0.10235414534288623
+        },
+        "cv_fr_dev_selection": {
+          "base_wer": 6.768414067684141,
+          "candidate_wer": 6.436629064366291,
+          "delta_pp": -0.33178500331785
+        },
+        "cv_hu_dev_selection": {
+          "base_wer": 8.168761220825854,
+          "candidate_wer": 7.63016157989228,
+          "delta_pp": -0.5385996409335734
+        },
+        "cv_it_dev_selection": {
+          "base_wer": 4.0673211781206176,
+          "candidate_wer": 3.576437587657784,
+          "delta_pp": -0.4908835904628335
+        },
+        "cv_lt_dev_selection": {
+          "base_wer": 10.40582726326743,
+          "candidate_wer": 9.573361082206036,
+          "delta_pp": -0.8324661810613936
+        },
+        "cv_lv_dev_selection": {
+          "base_wer": 33.333333333333336,
+          "candidate_wer": 20.81218274111675,
+          "delta_pp": -12.521150592216586
+        },
+        "cv_mt_dev_selection": {
+          "base_wer": 14.585012087026591,
+          "candidate_wer": 13.456889605157132,
+          "delta_pp": -1.1281224818694593
+        },
+        "cv_nl_dev_selection": {
+          "base_wer": 3.1702274293590627,
+          "candidate_wer": 2.4810475534114405,
+          "delta_pp": -0.6891798759476222
+        },
+        "cv_pl_dev_selection": {
+          "base_wer": 1.6339869281045751,
+          "candidate_wer": 1.2254901960784315,
+          "delta_pp": -0.40849673202614367
+        },
+        "cv_pt_dev_selection": {
+          "base_wer": 7.202505219206681,
+          "candidate_wer": 5.741127348643007,
+          "delta_pp": -1.4613778705636742
+        },
+        "cv_ro_dev_selection": {
+          "base_wer": 11.11111111111111,
+          "candidate_wer": 6.375227686703097,
+          "delta_pp": -4.735883424408014
+        },
+        "cv_ru_dev_selection": {
+          "base_wer": 4.297774366845741,
+          "candidate_wer": 3.9907904834996164,
+          "delta_pp": -0.3069838833461245
+        },
+        "cv_sk_dev_selection": {
+          "base_wer": 5.2493438320209975,
+          "candidate_wer": 5.511811023622047,
+          "delta_pp": 0.2624671916010497
+        },
+        "cv_sl_dev_selection": {
+          "base_wer": 47.147846332945285,
+          "candidate_wer": 21.42025611175786,
+          "delta_pp": -25.727590221187427
+        },
+        "cv_sv_dev_selection": {
+          "base_wer": 17.80952380952381,
+          "candidate_wer": 15.142857142857142,
+          "delta_pp": -2.666666666666668
+        },
+        "cv_uk_dev_selection": {
+          "base_wer": 3.8606403013182673,
+          "candidate_wer": 3.2956685499058382,
+          "delta_pp": -0.5649717514124291
+        },
+        "fleurs_bg_dev_selection": {
+          "base_wer": 12.273316062176166,
+          "candidate_wer": 10.395077720207254,
+          "delta_pp": -1.8782383419689115
+        },
+        "fleurs_cs_dev_selection": {
+          "base_wer": 12.127894156560089,
+          "candidate_wer": 9.9595736861448,
+          "delta_pp": -2.1683204704152885
+        },
+        "fleurs_da_dev_selection": {
+          "base_wer": 18.317323617091752,
+          "candidate_wer": 16.528651871480623,
+          "delta_pp": -1.7886717456111292
+        },
+        "fleurs_de_dev_selection": {
+          "base_wer": 5.857605177993528,
+          "candidate_wer": 5.663430420711974,
+          "delta_pp": -0.1941747572815542
+        },
+        "fleurs_el_dev_selection": {
+          "base_wer": 36.85773685773686,
+          "candidate_wer": 25.54202554202554,
+          "delta_pp": -11.315711315711319
+        },
+        "fleurs_en_dev_selection": {
+          "base_wer": 6.840390879478828,
+          "candidate_wer": 6.319218241042345,
+          "delta_pp": -0.5211726384364823
+        },
+        "fleurs_es_dev_selection": {
+          "base_wer": 3.291070946857297,
+          "candidate_wer": 3.1292149986512006,
+          "delta_pp": -0.1618559482060964
+        },
+        "fleurs_et_dev_selection": {
+          "base_wer": 16.35434412265758,
+          "candidate_wer": 14.522998296422488,
+          "delta_pp": -1.8313458262350917
+        },
+        "fleurs_fi_dev_selection": {
+          "base_wer": 13.596102745792736,
+          "candidate_wer": 12.311780336581045,
+          "delta_pp": -1.2843224092116916
+        },
+        "fleurs_fr_dev_selection": {
+          "base_wer": 4.8426812585499315,
+          "candidate_wer": 4.678522571819426,
+          "delta_pp": -0.16415868673050582
+        },
+        "fleurs_hr_dev_selection": {
+          "base_wer": 10.917838638045891,
+          "candidate_wer": 9.17838638045892,
+          "delta_pp": -1.7394522575869722
+        },
+        "fleurs_hu_dev_selection": {
+          "base_wer": 15.591985428051002,
+          "candidate_wer": 12.896174863387978,
+          "delta_pp": -2.6958105646630237
+        },
+        "fleurs_it_dev_selection": {
+          "base_wer": 2.4602460246024602,
+          "candidate_wer": 2.13021302130213,
+          "delta_pp": -0.33003300330033003
+        },
+        "fleurs_lt_dev_selection": {
+          "base_wer": 22.863070539419088,
+          "candidate_wer": 18.87966804979253,
+          "delta_pp": -3.983402489626556
+        },
+        "fleurs_lv_dev_selection": {
+          "base_wer": 24.130879345603272,
+          "candidate_wer": 19.591002044989775,
+          "delta_pp": -4.539877300613497
+        },
+        "fleurs_mt_dev_selection": {
+          "base_wer": 20.63164108618654,
+          "candidate_wer": 16.351829988193625,
+          "delta_pp": -4.279811097992916
+        },
+        "fleurs_nl_dev_selection": {
+          "base_wer": 8.653555219364598,
+          "candidate_wer": 8.260211800302573,
+          "delta_pp": -0.39334341906202575
+        },
+        "fleurs_pl_dev_selection": {
+          "base_wer": 6.847785634536658,
+          "candidate_wer": 6.438407145515445,
+          "delta_pp": -0.4093784890212131
+        },
+        "fleurs_pt_dev_selection": {
+          "base_wer": 4.403100775193798,
+          "candidate_wer": 3.441860465116279,
+          "delta_pp": -0.9612403100775193
+        },
+        "fleurs_ro_dev_selection": {
+          "base_wer": 13.354763296317943,
+          "candidate_wer": 11.163062536528345,
+          "delta_pp": -2.1917007597895974
+        },
+        "fleurs_ru_dev_selection": {
+          "base_wer": 5.675287356321839,
+          "candidate_wer": 5.675287356321839,
+          "delta_pp": 0.0
+        },
+        "fleurs_sk_dev_selection": {
+          "base_wer": 8.914159941305943,
+          "candidate_wer": 6.7131327953044755,
+          "delta_pp": -2.2010271460014676
+        },
+        "fleurs_sl_dev_selection": {
+          "base_wer": 26.321506154960172,
+          "candidate_wer": 22.628530050687907,
+          "delta_pp": -3.6929761042722653
+        },
+        "fleurs_sv_dev_selection": {
+          "base_wer": 14.76157082748948,
+          "candidate_wer": 12.903225806451612,
+          "delta_pp": -1.8583450210378682
+        },
+        "fleurs_uk_dev_selection": {
+          "base_wer": 7.046979865771812,
+          "candidate_wer": 6.263982102908278,
+          "delta_pp": -0.7829977628635341
+        },
+        "english_dialects_dev": {
+          "base_wer": 5.722124240642759,
+          "candidate_wer": 5.810307662159514,
+          "delta_pp": 0.08818342151675473
+        },
+        "speechocean762_dev": {
+          "base_wer": 38.42173350582147,
+          "candidate_wer": 35.1875808538163,
+          "delta_pp": -3.2341526520051715
+        },
+        "libri_en_dev_other": {
+          "base_wer": 3.7569060773480665,
+          "candidate_wer": 3.7317049529902104,
+          "delta_pp": -0.025201124357856042
+        }
+      }
+    }
+  ],
+  "confirmation_used": false,
+  "baseline_sha256": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+  "protocol_sha256": "7477292764c94a597e72238678115b22012a5c67fae630873cfe7552a677cbfe"
+}

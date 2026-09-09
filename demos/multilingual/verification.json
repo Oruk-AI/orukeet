@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-09-08T21:30:48.449408+00:00",
+  "scope": "r3 fixed-example integrity, returned text, source rows and playback PCM verification",
+  "model_sha256": "93ce19c6d8244acbfea980eeaf970531d4f216171578ef8e041dcc2d070a45bd",
+  "receipt_sha256": "bccd46993698d2cb6368a6b410edb83650e05320ee2eb044a9fa27674c311875",
+  "index_html_sha256": "5ffcd090e6bff28da14047632158a1cbe0cd319c057983a7153b6194fd9594ee",
+  "clips": [
+    {
+      "config": "fr_fr",
+      "provider_id": 1829,
+      "duration_s": 9.42,
+      "source_and_playback_hashes_verified": true,
+      "html_preserves_reference_and_prediction": true
+    },
+    {
+      "config": "es_419",
+      "provider_id": 1770,
+      "duration_s": 7.68,
+      "source_and_playback_hashes_verified": true,
+      "html_preserves_reference_and_prediction": true
+    },
+    {
+      "config": "lv_lv",
+      "provider_id": 1889,
+      "duration_s": 7.14,
+      "source_and_playback_hashes_verified": true,
+      "html_preserves_reference_and_prediction": true
+    }
+  ],
+  "full_tsv_and_card_files_in_demo": false,
+  "external_assets_or_scripts": false
+}

@@ -1,0 +1,73 @@
+{
+  "status": "historical-research",
+  "repo_id": "oruk/orukeet",
+  "revision": "8d3dd1507c2b3baa6f5799d0f0d8d09424ed8631",
+  "files": {
+    "q8": {
+      "path": "orukeet-v0.1.0rc1-q8.gguf",
+      "size": 714456736,
+      "sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0"
+    },
+    "source": {
+      "path": "orukeet-v0.1.0rc1.nemo",
+      "size": 2509332480,
+      "sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32"
+    },
+    "stage3": {
+      "path": "continuations/2026-09-05/stage3_anchored_accents_20260905.nemo",
+      "size": 2509332480,
+      "sha256": "47a51fee7318b831be95759324ec2af853706af13ce17cf575384b6f6973be9f",
+      "repo_id": "oruk/parakeet-tdt-0.6b-v3-cv-fleurs",
+      "revision": "f5a7020dbda2190ee37fd399b77af1ab1d5a6293",
+      "scope": "reviewer-only"
+    },
+    "stage2": {
+      "path": "parakeet-tdt-0.6b-v3-ft-cv-fleurs.nemo",
+      "size": 2509332480,
+      "sha256": "d041b63b2a48f68597de91c8994f711e4290659f836dcb738b87039361beac5b",
+      "repo_id": "oruk/parakeet-tdt-0.6b-v3-cv-fleurs",
+      "revision": "f5a7020dbda2190ee37fd399b77af1ab1d5a6293",
+      "scope": "reviewer-only"
+    },
+    "stage1": {
+      "path": "parakeet-tdt-0.6b-v3-ft-stage1-ema.nemo",
+      "size": 2509332480,
+      "sha256": "76f0a271f3e02e9013b19fe87e3d42b197818e5be1222604510af30ea22b7dcd",
+      "repo_id": "oruk/parakeet-tdt-0.6b-v3-cv-fleurs",
+      "revision": "f5a7020dbda2190ee37fd399b77af1ab1d5a6293",
+      "scope": "reviewer-only"
+    },
+    "historical-recipe": {
+      "path": "recipe.tgz",
+      "size": 5000230,
+      "sha256": "d70c8839a6ba9eb942a04703d0c1d1f66e0a8e4c736bad2a1bd2cbcba527cd4d",
+      "repo_id": "oruk/parakeet-tdt-0.6b-v3-cv-fleurs",
+      "revision": "f5a7020dbda2190ee37fd399b77af1ab1d5a6293",
+      "scope": "reviewer-only"
+    },
+    "q8-evidence": {
+      "path": "release-review/2026-09-05/q8-evidence-20260905.tar.gz",
+      "size": 3533342,
+      "sha256": "44c7e408219ab55b94a1bd2f74cf01b20ac91d455c65015d9b171b48ba4df78a",
+      "revision": "1470a3682616d09831c8923bcd4b8420b016a9de",
+      "repo_id": "oruk/parakeet-tdt-0.6b-v3-cv-fleurs",
+      "scope": "reviewer-only"
+    },
+    "training-inputs": {
+      "path": "release-review/2026-09-05/training-inputs-20260905.tar.gz",
+      "size": 170815123,
+      "sha256": "19e4e3284b88d6bc7d0065e863cc3d32e435a1f3427b4d120e9241f6f88a0aa5",
+      "revision": "bd70ec3a85c58c304c210d4bb259a2d75da11aa2",
+      "repo_id": "oruk/parakeet-tdt-0.6b-v3-cv-fleurs",
+      "scope": "reviewer-only"
+    },
+    "source-evidence": {
+      "path": "continuations/2026-09-05/goal-v2/goal_v2_evidence_20260905.tar.gz",
+      "size": 15156068,
+      "sha256": "bf822a6d8e9407419af44dd69b9c94c2f1138c8f433a80d3ab0a195bdb2b201c",
+      "repo_id": "oruk/parakeet-tdt-0.6b-v3-cv-fleurs",
+      "revision": "f5a7020dbda2190ee37fd399b77af1ab1d5a6293",
+      "scope": "reviewer-only"
+    }
+  }
+}

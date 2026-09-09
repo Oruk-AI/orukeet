@@ -1,0 +1,48 @@
+{
+  "run": {
+    "plan_sha256": "184a36eb5bca75d8feb9920fa559bbc1dc245ca6478d7a4c297e9e80de77505a",
+    "prepared_sha256": "3e232527631f19dc43df66264b41d5c1de58d3e9fa7c4e254a2337590d7788be",
+    "parent_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+    "fit_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+    "batch_order_sha256": "9bb79bbaa6c7ce73fa940867e99841e4d98806e9b15a4fc67ead6212726589d4",
+    "source_sha256": {
+      "batches.py": "ed90d29681249a4e2219c6a3a6e525033951a77bebf6c91c132186c702ecda11",
+      "prepare_audio.py": "7627ca8a432ba1c2502a4228e43338dde83580bd43213ddb38ba305c14d15793",
+      "probe_italy24.py": "4e8193026b9d29abbb92727db5dce09b49d6ff78286508b5013de4d5c1d8c250",
+      "test_batches.py": "78d620708aeb8f88c1b5ac65bd3410be56781f174bb187a7af78a3ac22789e8e",
+      "train.py": "0702dcde0a6a36501a9f2c3912b5d3bd5d0995d7fd672095e826bd3db47ba772",
+      "gabor/frozen.py": "88edc3a383a030ffc14ec6066fc7909446f34744c0bed8368cd454a13a190bd0",
+      "gabor/fit.py": "b67f7156cffdff14e83c932bb3a39fc89cb7653345c38582085e68d254f6a950",
+      "gabor/identity.py": "3abca045663752e54f088263b6df3fadae51a7ba25318ef9db349ca533b2ae1a"
+    },
+    "steps": 3,
+    "full_epoch_steps": 66,
+    "batches": 12,
+    "rows": 173,
+    "smoke": true,
+    "parameter_tensors": 651,
+    "trainable_scalar_parameters": 626897542,
+    "frozen_gabor_rows": 12288,
+    "loss": "NeMo TDT, mean_volume over each accumulated target-token volume",
+    "augmentation": "none; dropout disabled; dither zero",
+    "batchnorm": "running statistics preserved; affine parameters trained",
+    "precision": "BF16 autocast; FP32 parameters and AdamW states",
+    "cuda": "13.2",
+    "torch": "2.12.0+cu132",
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "all_remaining_parameters_in_optimizer": true
+  },
+  "audit": {
+    "frozen_gabor_rows_unchanged": 12288,
+    "batchnorm_statistics_unchanged": true,
+    "floating_tensors_finite": true,
+    "tensor_keys_match_parent": true,
+    "changed_tensors": 651,
+    "seen_by_split": {
+      "nst_da_da": 173
+    },
+    "seen_rows": 173,
+    "exactly_one_pass": false,
+    "optimizer_steps": 3
+  }
+}

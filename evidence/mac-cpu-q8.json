@@ -1,0 +1,41 @@
+{
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "arm",
+  "python": "3.12.13 (main, Mar 10 2026, 18:18:07) [Clang 21.1.4 ]",
+  "device": "cpu",
+  "model": "oruk-parakeet-v3-20260905.q8_0.gguf",
+  "model_sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+  "model_bytes": 714456736,
+  "runtime": "NVIDIA/NeMo-Speech.cpp v0.1.0",
+  "repeats": 10,
+  "results": [
+    {
+      "audio": "jfk_11s.wav",
+      "audio_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "duration_s": 11.0,
+      "first_s": 2.994129583996255,
+      "warm_s": [
+        2.116617124993354,
+        2.424267584021436,
+        2.326257583015831,
+        2.70948958399822,
+        2.0553856670157984,
+        2.1409023750165943,
+        2.685366082994733,
+        2.0387824589852244,
+        1.8300442500039935,
+        1.65783250000095
+      ],
+      "warm_median_s": 2.128759750004974,
+      "warm_p95_s": 2.6986340085466507,
+      "rtfx": 5.167328065073711,
+      "deterministic": true
+    }
+  ],
+  "load_s": 2.542263749986887,
+  "peak_process_tree_rss_bytes": 1018576896,
+  "hardware": "Apple M5 Max, 18 CPU cores, 128 GiB unified memory",
+  "measurement": "File decode, quiet-point windows, and worker IPC; model loading, hotkey post-roll, paste, and text cleanup excluded from warm times.",
+  "date": "2026-09-05"
+}

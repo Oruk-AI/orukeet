@@ -1,0 +1,63 @@
+{
+  "run": {
+    "plan_sha256": "92bba0c907eb8d2c79f6df62f8c68a742e207d8059fc43b51576f5da5ff6f7db",
+    "prepared_sha256": "65a4198c9ef7f6f2e59198089b515b4523c75eea09bf380a462d0bbc66b6928d",
+    "parent_sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+    "fit_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+    "batch_order_sha256": "11c0cd72587fc11826c53354053481b07d9a742b236d0544981f529c846c3e87",
+    "source_sha256": {
+      "train.py": "4f4bc5d010ddb732c64598b3b63dbf84d9b78d1f1f9e15da0c2e4991e008771c",
+      "batches.py": "ed90d29681249a4e2219c6a3a6e525033951a77bebf6c91c132186c702ecda11",
+      "gabor/frozen.py": "88edc3a383a030ffc14ec6066fc7909446f34744c0bed8368cd454a13a190bd0",
+      "gabor/fit.py": "b67f7156cffdff14e83c932bb3a39fc89cb7653345c38582085e68d254f6a950",
+      "gabor/identity.py": "3abca045663752e54f088263b6df3fadae51a7ba25318ef9db349ca533b2ae1a"
+    },
+    "steps": 88,
+    "full_epoch_steps": 88,
+    "batches": 349,
+    "rows": 4265,
+    "smoke": false,
+    "parameter_tensors": 651,
+    "trainable_scalar_parameters": 626897542,
+    "frozen_gabor_rows": 12288,
+    "loss": "NeMo TDT, mean_volume over each accumulated target-token volume",
+    "augmentation": "none; dropout disabled; dither zero",
+    "batchnorm": "running statistics preserved; affine parameters trained",
+    "precision": "BF16 autocast; FP32 parameters and AdamW states",
+    "cuda": "13.2",
+    "torch": "2.12.0+cu132",
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "cudnn": 92000,
+    "torch_threads": 8,
+    "tf32_matmul": true,
+    "tf32_cudnn": true,
+    "versions": {
+      "nemo_toolkit": "3.0.0",
+      "numpy": "2.4.4",
+      "soundfile": "0.13.1",
+      "soxr": "1.0.0",
+      "transformers": "5.5.0",
+      "huggingface_hub": "1.9.2"
+    },
+    "all_remaining_parameters_in_optimizer": true,
+    "evaluation_data_used_for_training": true,
+    "optimizer_checkpoint_saved": false
+  },
+  "audit": {
+    "frozen_gabor_rows_unchanged": 12288,
+    "batchnorm_statistics_unchanged": true,
+    "floating_tensors_finite": true,
+    "tensor_keys_match_parent": true,
+    "changed_tensors": 651,
+    "seen_by_split": {
+      "librispeech_test_other": 2939,
+      "fleurs_el": 650,
+      "fleurs_fr": 676
+    },
+    "seen_rows": 4265,
+    "exactly_one_pass": true,
+    "optimizer_steps": 88,
+    "checkpoint_path": "/dev/shm/orukeet-targeted-ft-20260908/checkpoints/orukeet-targeted-ft.nemo",
+    "checkpoint_sha256": "6b9934a6728c712aa4ea406d483295399e1e9755a3c39412d6c98be30506d1e5"
+  }
+}

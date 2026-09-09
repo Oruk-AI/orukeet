@@ -1,0 +1,38 @@
+{
+  "status": "pass",
+  "suites": {
+    "development": {
+      "all_fields_exact": true,
+      "reference_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+      "candidate_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+      "registry_sha256": "11248b790ec2a756f296cf5fd41e29ffbb16d3ae5df87b527c5c0057d0327765",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.011620336615671,
+        "delta_pp": -0.07061468847259465
+      },
+      "status": "pass",
+      "failures": []
+    },
+    "larger": {
+      "all_fields_exact": true,
+      "reference_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+      "candidate_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+      "registry_sha256": "9628f7e1b6daced49c5ac330b9e81d440c33784f85002b924a5661a3b25d5d95",
+      "primary": {
+        "reference_wer": 15.371306565215429,
+        "candidate_wer": 15.34088687521396,
+        "delta_pp": -0.03041969000146949,
+        "relative_improvement": 0.001978991823005316,
+        "paired_delta_95ci": [
+          -0.1410351508899022,
+          0.061823155508115304
+        ]
+      },
+      "status": "pass",
+      "failures": [],
+      "release_qualified": true
+    }
+  },
+  "scope": "Stored-count statistics, not acoustic ASR inference."
+}

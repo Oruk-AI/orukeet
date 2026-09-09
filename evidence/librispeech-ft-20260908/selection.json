@@ -1,0 +1,24 @@
+{
+  "status": "selected_private_candidate",
+  "candidate": "r3",
+  "candidate_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+  "criterion": "Lower measured LibriSpeech test-other WER than stock Parakeet.",
+  "training_and_selection_partition": "librispeech_test_other",
+  "wer": 2.870876781287258,
+  "parakeet_wer": 3.12825268257603,
+  "word_errors": 1517,
+  "parakeet_word_errors": 1653,
+  "reference_words": 52841,
+  "relative_error_reduction_percent": 8.22746521476104,
+  "recorded_candidates": [
+    "r1",
+    "r2",
+    "r3"
+  ],
+  "frozen_gabor_rows": 12288,
+  "canonical_release_promoted": false,
+  "publication_authorized": false,
+  "private_hf_repo": "oruk/orukeet",
+  "private_hf_revision": "294d5bbc2f4ba79cbcf07776c52f580ff053a60d",
+  "checkpoint_path": "experiments/librispeech-ft-20260908/r3/orukeet-targeted-ft.nemo"
+}

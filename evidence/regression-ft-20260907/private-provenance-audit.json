@@ -1,0 +1,164 @@
+{
+  "status": "pass",
+  "bundle_sha256": "20140e3f799cbb49ec2ec9287cb6f491beea5170c16087124778d4bcfdd7a602",
+  "verified_members": {
+    "code/batches.py": {
+      "sha256": "ed90d29681249a4e2219c6a3a6e525033951a77bebf6c91c132186c702ecda11",
+      "bytes": 1560
+    },
+    "code/train.py": {
+      "sha256": "06e035feb926f5d168f1aa6cb05113735641e3d6aa4cd829112dd77600d77f82",
+      "bytes": 17485
+    },
+    "training-ready/eurospeech_bg.jsonl": {
+      "sha256": "15496e5139a8a13773e36bc4a195d6baa66431b9b8ef22b4b685e29867ba6b91",
+      "bytes": 15097376
+    },
+    "training-ready/eurospeech_el.jsonl": {
+      "sha256": "e788ca5cf7128ed238f516d65106d1ec4f05e773003d0c93fc5503d84fd37c9b",
+      "bytes": 6969271
+    },
+    "training-ready/eurospeech_it.jsonl": {
+      "sha256": "f708ccc58fdafc358e1b953c948ca35d7d522e29d19bf6be2f3addfac03a2016",
+      "bytes": 14342352
+    },
+    "training-ready/gigaspeechbench_agr_en.jsonl": {
+      "sha256": "eb092b91b8034472dc71d383dc5f0f21aff9c11837c15912dcd3c3d7aa12ccd3",
+      "bytes": 10804429
+    },
+    "training-ready/gigaspeechbench_ait_en.jsonl": {
+      "sha256": "a844c2b22b3ebf245b61c525501ab566b8c1f8823b45953412809b2b02153cea",
+      "bytes": 9024330
+    },
+    "training-ready/gigaspeechbench_art_en.jsonl": {
+      "sha256": "fb531c4c4e2d39479d1e84bd082f81a0f9c5fdbfbd387267d57b728d64223bf4",
+      "bytes": 9306276
+    },
+    "training-ready/gigaspeechbench_bio_en.jsonl": {
+      "sha256": "0261edf6ce4204d2e3fb96f59198a8cb45bfda56ec37f95994eff47fb9e67513",
+      "bytes": 8778024
+    },
+    "training-ready/gigaspeechbench_chn_en.jsonl": {
+      "sha256": "6cde13382516b93d81a2bdc28d1b17f05d8c987961a87ab0ca02cf91d41ebc78",
+      "bytes": 9786482
+    },
+    "training-ready/gigaspeechbench_ecm_en.jsonl": {
+      "sha256": "7ff59c3085d0be24c8640c6b97399d3b221519258df5552c8efc049eafd1f262",
+      "bytes": 9527452
+    },
+    "training-ready/gigaspeechbench_eng_en.jsonl": {
+      "sha256": "8832ff2714328357f32ad1b624d1d885d8354bf08f1d83da469f25f6d8b700f7",
+      "bytes": 10737431
+    },
+    "training-ready/gigaspeechbench_ent_en.jsonl": {
+      "sha256": "3c9786a36ca9249d17aeb475e859b038b661dddf22c5835beb2e196a42508cb9",
+      "bytes": 13547318
+    },
+    "training-ready/gigaspeechbench_fin_en.jsonl": {
+      "sha256": "2280904eee96cea1e965941254b1022531e00295fe011baa21e075a6140b35e3",
+      "bytes": 10123003
+    },
+    "training-ready/gigaspeechbench_hum_en.jsonl": {
+      "sha256": "1513e09b1c3117dfccd08d66bd9c8076663a9d89e92fe83909f5be835e9ade71",
+      "bytes": 8217046
+    },
+    "training-ready/gigaspeechbench_ind_en.jsonl": {
+      "sha256": "8c5d145b1775dc4ee950482f2f5433d99a49fa241cbf9c7e9b86658d2d6f8009",
+      "bytes": 9154854
+    },
+    "training-ready/gigaspeechbench_law_en.jsonl": {
+      "sha256": "b686e3a313505c8196465dab551368df8ec114b7937f9893fd4756847e4a3934",
+      "bytes": 11614423
+    },
+    "training-ready/gigaspeechbench_med_en.jsonl": {
+      "sha256": "cfe26d39e6642e70e659bb4b2fe52448a98e390337ba8bfec2571e555f25467b",
+      "bytes": 8597358
+    },
+    "training-ready/gigaspeechbench_mil_en.jsonl": {
+      "sha256": "e3af3da24b20a5fe708ad4b300324523a3dea66eacbfc0b07ce2ebacd6673484",
+      "bytes": 8882790
+    },
+    "training-ready/gigaspeechbench_phl_en.jsonl": {
+      "sha256": "3012c1623992b6626eb9fd60dec769d5394857137af574fe7dd6ee42f50c355e",
+      "bytes": 13558521
+    },
+    "training-ready/gigaspeechbench_sct_en.jsonl": {
+      "sha256": "2a9dba9b0ae3b9d6d37f6ada6ec890bc26b96635246ed44f744f6e29e2c00cf6",
+      "bytes": 19744600
+    },
+    "training-ready/gigaspeechbench_sgp_en.jsonl": {
+      "sha256": "4021c7db0838350a3fb1d3025ef24308e3d5ece4ddfa34ebacbc898224195a68",
+      "bytes": 14889368
+    },
+    "training-ready/golos_crowd_ru.jsonl": {
+      "sha256": "e70492f8825a693488d86232ba10886e3fee9e222feef298b7ef004c7934bedd",
+      "bytes": 17059301
+    },
+    "training-ready/lesbos_el.jsonl": {
+      "sha256": "a0aaddd4156f178da2500793a0a236bbee2722750349f91eebe099acef800681",
+      "bytes": 371943
+    },
+    "training-ready/nst_da_da.jsonl": {
+      "sha256": "230c58980ef025fa4de682f408a9d3d0fd2326e540369d05224d6b3fd360b793",
+      "bytes": 91859173
+    },
+    "training-ready/nst_sv_sv.jsonl": {
+      "sha256": "d4c93d9005a4573d6c4410e1e0c851c52d3ae95b3b074baca958dde5fd4e3293",
+      "bytes": 46000746
+    },
+    "gabor-source/frozen.py": {
+      "sha256": "88edc3a383a030ffc14ec6066fc7909446f34744c0bed8368cd454a13a190bd0",
+      "bytes": 3925
+    },
+    "gabor-source/fit.py": {
+      "sha256": "b67f7156cffdff14e83c932bb3a39fc89cb7653345c38582085e68d254f6a950",
+      "bytes": 7587
+    },
+    "gabor-source/identity.py": {
+      "sha256": "3abca045663752e54f088263b6df3fadae51a7ba25318ef9db349ca533b2ae1a",
+      "bytes": 337
+    },
+    "gabor-source/fit-full/fits.json": {
+      "sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+      "bytes": 8210559
+    },
+    "export-metadata/repair.json": {
+      "sha256": "5948d9937b4700bf4d5aee5fba0e7ee3eae95ff13304f8adf8bd829e4233b9af",
+      "bytes": 1475
+    },
+    "run-v1/complete.json": {
+      "sha256": "59e0515eb09b916fbcf85a1a0166d1085d939853bb8f2410708cd5cf38c47eb7",
+      "bytes": 3229
+    },
+    "run-v1/metrics.jsonl": {
+      "sha256": "0e5866dea734bce92fb62c7bbe1b006057b4751a191fb0f166c94fd6a7e3f70f",
+      "bytes": 3834348
+    },
+    "run-v1/run.json": {
+      "sha256": "6ff8dbcc9e3777932f0f8f1dea89d9c05c0c47454b431cd8f7c00c4d2be7c8b5",
+      "bytes": 1777
+    },
+    "run-v1/training-exposure.jsonl.gz": {
+      "sha256": "fbe80b68812f0b81969a2e05c723682144c495ee3add76475aab33ac79a59da9",
+      "bytes": 38060883
+    },
+    "evaluation/comparison.json": {
+      "sha256": "1e4b8989b6e25de8aa6b6842edac31712eb40743d3f8293c59b85a0d99ef9918",
+      "bytes": 85199
+    },
+    "evaluation/summary.json": {
+      "sha256": "80ef6714a64bf7383fd2c482c581faa94b841bb626b793860dc19e4fd52386ff",
+      "bytes": 22934
+    }
+  },
+  "training_manifests": 24,
+  "training_rows": 223452,
+  "training_log_updates": 4035,
+  "prediction_rows": {
+    "candidate": 12006,
+    "parakeet": 12006,
+    "parent": 12006
+  },
+  "archive_members": 267,
+  "audit_script_sha256": "79b2bfb51c2dbbc5bd6a3dcdc2a4645a4245ffd3684c69fd032d9c4a4a431c66"
+}

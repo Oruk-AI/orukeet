@@ -1,0 +1,51 @@
+{
+  "label": "r12",
+  "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "initial_student_sha256": "ac0b8f43d67580bafd79614207bf012037147fb792b6a117f02bf0cfb85e92be",
+  "teacher_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "data_config_sha256": "9c43e01a398c99c2e34dd9f41be3c87b6b31cefacb77697c4946d1c457b63e63",
+  "data_audit_sha256": "b703fb241da7410146e66412c064289e1274e6a86d96914357473d4710763084",
+  "preceding_average_selection_sha256": "af83570c31f3f5b16f4aae76b4e65db8a0dd663323a1b55ba15eff172d5d9456",
+  "parent_full_comparison_sha256": "ade06fa9921f47798a67ab091716e441047d83cfd69dcfc60699df3f73dd035d",
+  "launcher_sha256": "4be7284ae51d35b8eb3348cbdb30b79db789d133575c0518c85e74148777a1a8",
+  "command": [
+    "bash",
+    "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r12_20260906-launch.sh",
+    "++export_interval=400",
+    "++seed=20260909",
+    "++model.train_ds.seed=20260909",
+    "++model.train_ds.shard_seed=20260909",
+    "++recovery_start_model=/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r11_20260906/step-0400.nemo",
+    "++recovery_start_audit=/home/nathanroll/parakeet-ft/gabor_half_20260906/r11-0400-audit.json",
+    "++model.train_ds.input_cfg=/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/input_cfg_with_accents.yaml",
+    "model.optim.lr=2e-6",
+    "model.optim.sched.min_lr=0.0",
+    "model.optim.sched.warmup_steps=25",
+    "++preserve_bn_statistics=true",
+    "++disable_dropout=true",
+    "++resume_keep=1",
+    "++layer_anchor_scale=50.0",
+    "++conv_anchor_scale=25.0",
+    "++asr_loss_scale=0.1",
+    "++recovery_layer_lrs.lower_encoder=1e-6",
+    "++recovery_layer_lrs.upper_encoder=2e-6",
+    "++recovery_layer_lrs.conv_neighbors=2e-5",
+    "++recovery_layer_lrs.other=1e-6",
+    "++recovery_layer_lrs.decoder=1e-7",
+    "++recovery_layer_lrs.joint=1e-7",
+    "model.spec_augment.freq_masks=0",
+    "model.spec_augment.time_masks=0"
+  ],
+  "environment": {
+    "NAME": "orukeet_gabor_half_r12_20260906",
+    "STEPS": "800"
+  },
+  "declared_export_steps": [
+    400,
+    800
+  ],
+  "rationale": "Continue the strongest teacher-matching run after A1 fails qualification. R11 passed every larger individual guard and the English mean, but missed the multilingual mean by 0.007812 points and one Finnish development error beyond its guard. Test more optimization with the same objective, original training mixture and per-group peak rates. Use a fresh optimizer, an 800-step cosine schedule and seed 20260909. All remaining parameters train; the same 12,288 fitted rows and BatchNorm statistics remain fixed. This is adaptive recovery on exposed regressions, not independent validation.",
+  "selection_rule": "Evaluate both declared exports; lowest development WER among passing exports, otherwise lowest for diagnosis only, then unchanged larger regression.",
+  "no_gate_changes": true,
+  "native_qualification_required_separately": true
+}

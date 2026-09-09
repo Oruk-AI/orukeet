@@ -1,0 +1,75 @@
+{
+  "status": "local-checks-pass-hosted-ci-unavailable",
+  "platform": "macOS-26.4.1-arm64-arm-64bit-Mach-O",
+  "local_checks": [
+    {
+      "command": ".venv/bin/python -m pytest -q",
+      "passed": 24,
+      "skipped": 1
+    },
+    {
+      "command": ".venv/bin/python -m pytest -q training/gabor_half/test_optimizer_groups.py training/regression_ft/test_batches.py training/regression_ft/test_text.py training/regression_ft/test_alignment_mapping.py training/regression_ft/test_summary.py training/regression_ft/test_repair_export.py",
+      "passed": 10
+    },
+    {
+      "command": ".venv/bin/python training/selection/test_evaluation.py",
+      "passed": 3
+    },
+    {
+      "command": ".venv/bin/python -m build",
+      "result": "source distribution and wheel built"
+    },
+    {
+      "command": ".venv/bin/orukeet --help",
+      "result": "pass"
+    },
+    {
+      "command": "python3 training/regression_ft/verify_results.py evidence/regression-ft-20260907",
+      "result": "All 12,006 sealed recording IDs, 402 split rates, pooled summaries, and model identities verified."
+    }
+  ],
+  "hosted_ci": {
+    "run_id": 34144938684,
+    "commit": "6d749883a506306c37c23b63031285defcf8fcd1",
+    "jobs_started": false,
+    "annotations": [
+      {
+        "path": ".github",
+        "blob_href": "https://github.com/Oruk-AI/orukeet/blob/6d749883a506306c37c23b63031285defcf8fcd1/.github",
+        "start_line": 1,
+        "start_column": null,
+        "end_line": 1,
+        "end_column": null,
+        "annotation_level": "failure",
+        "title": "",
+        "message": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings",
+        "raw_details": ""
+      }
+    ]
+  },
+  "recorded_utc": "2026-09-07T16:36:35.663309+00:00",
+  "experiment_source_sha256": {
+    "training/regression_ft/archive_run.py": "97d77c96d98c5b76e822fae2cf5d9e2e938e4498dbe7f0cc90cd5e0352574882",
+    "training/regression_ft/audit_export.py": "64d8f18c9474b4867c363d291a2016727e0c5783da3804e755e289d942ae6a12",
+    "training/regression_ft/batches.py": "ed90d29681249a4e2219c6a3a6e525033951a77bebf6c91c132186c702ecda11",
+    "training/regression_ft/check_alignment.py": "1adc02e9fca213a7ebfdab5557a33cb53aae72a3263f013175d0c43b8496b153",
+    "training/regression_ft/evaluate.py": "16f2be24ac0d115a6cd1921881e60be6f2549cdf05dbcd88d3247b19e2ed78f9",
+    "training/regression_ft/exposure.py": "747efb2f2d0e4d3568da2e30af9d3b94637d570bec709edda8f8098d98559aff",
+    "training/regression_ft/fetch_private.py": "031a11fdadc5f9c6373556d67f79968a3b1f426b6e211ac2119997cf07be3d07",
+    "training/regression_ft/finish_run.py": "047a8a380c90caac62cd44656faf04779dd4d3bb7699a6eb9fe962cb628db53a",
+    "training/regression_ft/prepare_audio.py": "7627ca8a432ba1c2502a4228e43338dde83580bd43213ddb38ba305c14d15793",
+    "training/regression_ft/prepare_diagnostic.py": "cc8f96317bd9a5daefee84bb25ff194ae098570fa686193e69b18d980fa82cfb",
+    "training/regression_ft/realign.py": "20e8233543fa1f6b8c07793c3939a76bf127dba91c444e97515c5a62b1998b3c",
+    "training/regression_ft/repair_export.py": "6231c0cac133cc038f53257fef2e09b8d9f61c3b3fc5e5fe7c42cbbe09699186",
+    "training/regression_ft/seal_training.py": "6c09d4fa7710ea913c46ddc1317448c0617d90eac0adc4fc83e12b5dfe5d6d1e",
+    "training/regression_ft/summarize.py": "5ffa15a3caed641c8757d742b0841f70225aa8e3e25d947e4fb1f6a92305e83a",
+    "training/regression_ft/test_alignment_mapping.py": "77a88161df9198c47b12f6bf0f6817493b4318eeee20dcb78503d769cf799ba5",
+    "training/regression_ft/test_batches.py": "78d620708aeb8f88c1b5ac65bd3410be56781f174bb187a7af78a3ac22789e8e",
+    "training/regression_ft/test_repair_export.py": "3ce1690db1726baeb6bbca9af9b103919e49bf531ea9b0e29f9cfec0e8eeedde",
+    "training/regression_ft/test_summary.py": "ee9d149c2cce942261ff36e9c03523704f5a1ba308c48dd5fe8cc5c97302c6ab",
+    "training/regression_ft/test_text.py": "ca5ab72b2e76f4f3d925094a9913fd24aeedb23849de9dfad5620402dad3a679",
+    "training/regression_ft/text.py": "d9a14f6108c935f53c01cf6a226ce0991d3f664f9a4394d17642344089b98f04",
+    "training/regression_ft/train.py": "06e035feb926f5d168f1aa6cb05113735641e3d6aa4cd829112dd77600d77f82",
+    "training/regression_ft/verify_results.py": "5ee8387585e24569245b4ed8ad7c7d39229cc3e458a0af1d3ba29172eef66aa6"
+  }
+}

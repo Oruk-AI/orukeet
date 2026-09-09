@@ -1,0 +1,126 @@
+{
+  "plan_sha256": "165c95358b61c4d528c39468ee85388f2212d526bd97535088faa00fd06698f1",
+  "r5_larger_results": [
+    {
+      "label": "r5-0300",
+      "status": "fail",
+      "release_qualified": false,
+      "primary": {
+        "reference_wer": 15.371306565215429,
+        "candidate_wer": 15.44410431441895,
+        "delta_pp": 0.07279774920352189,
+        "relative_improvement": -0.0047359506424951014,
+        "paired_delta_95ci": [
+          -0.039816774063278285,
+          0.17493742839922855
+        ]
+      },
+      "english": {
+        "reference_wer": 9.360330471804506,
+        "candidate_wer": 9.400854548830592,
+        "delta_pp": 0.0405240770260864,
+        "relative_improvement": -0.0043293425534658425,
+        "paired_delta_95ci": [
+          -0.04677547443728651,
+          0.13579306048680587
+        ]
+      },
+      "failures": [
+        "Primary WER exceeds original",
+        "English macro WER exceeds original",
+        "english:voxpopuli_accented exceeds regression guardrail"
+      ]
+    },
+    {
+      "label": "r5-0200",
+      "status": "fail",
+      "release_qualified": false,
+      "primary": {
+        "reference_wer": 15.371306565215429,
+        "candidate_wer": 15.433595757074958,
+        "delta_pp": 0.06228919185952897,
+        "relative_improvement": -0.004052303009848712,
+        "paired_delta_95ci": [
+          -0.04358969653898058,
+          0.1637701961396019
+        ]
+      },
+      "english": {
+        "reference_wer": 9.360330471804506,
+        "candidate_wer": 9.41143732232113,
+        "delta_pp": 0.051106850516623226,
+        "relative_improvement": -0.0054599408290731954,
+        "paired_delta_95ci": [
+          -0.026282368816714644,
+          0.1312672612414683
+        ]
+      },
+      "failures": [
+        "Primary WER exceeds original",
+        "English macro WER exceeds original",
+        "english:voxpopuli_accented exceeds regression guardrail"
+      ]
+    },
+    {
+      "label": "r5-0100",
+      "status": "fail",
+      "release_qualified": false,
+      "primary": {
+        "reference_wer": 15.371306565215429,
+        "candidate_wer": 15.372052983021621,
+        "delta_pp": 0.0007464178061926674,
+        "relative_improvement": -4.8559164637529406e-05,
+        "paired_delta_95ci": [
+          -0.11500776893649062,
+          0.10613235078397353
+        ]
+      },
+      "english": {
+        "reference_wer": 9.360330471804506,
+        "candidate_wer": 9.45361622231012,
+        "delta_pp": 0.09328575050561483,
+        "relative_improvement": -0.009966074465705299,
+        "paired_delta_95ci": [
+          0.014504012990966432,
+          0.17308492945739076
+        ]
+      },
+      "failures": [
+        "Primary WER exceeds original",
+        "English macro WER exceeds original",
+        "english:voxpopuli_accented exceeds regression guardrail",
+        "english:learner exceeds regression guardrail"
+      ]
+    }
+  ],
+  "starting_checkpoint": {
+    "label": "original",
+    "sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32"
+  },
+  "note": "A larger-suite pass does not erase a development failure.",
+  "command": [
+    "bash",
+    "/home/nathanroll/parakeet-ft/gabor_half_20260906/run_recovery.sh",
+    "++export_interval=200",
+    "model.optim.lr=3e-6",
+    "model.optim.sched.min_lr=0.0",
+    "model.optim.sched.warmup_steps=10",
+    "++preserve_bn_statistics=true",
+    "++disable_dropout=true",
+    "++resume_keep=1",
+    "++layer_anchor_scale=5.0",
+    "++conv_anchor_scale=1.0",
+    "++asr_loss_scale=0.1",
+    "++recovery_layer_lrs.lower_encoder=3e-6",
+    "++recovery_layer_lrs.upper_encoder=3e-6",
+    "++recovery_layer_lrs.other=3e-6",
+    "++recovery_layer_lrs.decoder=1e-7",
+    "++recovery_layer_lrs.joint=1e-7",
+    "model.spec_augment.freq_masks=0",
+    "model.spec_augment.time_masks=0"
+  ],
+  "environment": {
+    "NAME": "orukeet_gabor_half_r6_20260906",
+    "STEPS": "600"
+  }
+}

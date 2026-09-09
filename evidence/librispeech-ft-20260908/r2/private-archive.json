@@ -1,0 +1,45 @@
+{
+  "status": "archived-and-verified-private",
+  "repo": "oruk/orukeet",
+  "revision": "6456f89a46380ee2910f172c61e5232613be8ebd",
+  "parent_revision": "36b689461642dbaa65e97a825f234de4828882d1",
+  "private": true,
+  "files": [
+    {
+      "path": "/dev/shm/orukeet-librispeech-ft-20260908/r2/checkpoints/orukeet-targeted-ft.nemo",
+      "repo_path": "experiments/librispeech-ft-20260908/r2/orukeet-targeted-ft.nemo",
+      "sha256": "3e703fa07386d5fd04604ce8c4e5afa1d7f345dd5b6e8bdc0b92e8adba4dc7d8",
+      "bytes": 2509342720
+    },
+    {
+      "path": "/home/nathanroll/parakeet-ft/librispeech_ft_20260908/r2/private-provenance.tar.gz",
+      "repo_path": "experiments/librispeech-ft-20260908/r2/private-provenance.tar.gz",
+      "sha256": "e2293e9d7547e3fdd767d8a6fb83b76ce6ce3edd8d9fcba64b5a9be263f477cd",
+      "bytes": 4381581
+    },
+    {
+      "path": "/home/nathanroll/parakeet-ft/librispeech_ft_20260908/r2/export-audit.json",
+      "repo_path": "experiments/librispeech-ft-20260908/r2/export-audit.json",
+      "sha256": "9f7fb860a77709a35feb0640a54d7b4fffca82b4251f8dc4d542e735c5b3b9d9",
+      "bytes": 85841
+    },
+    {
+      "path": "/home/nathanroll/parakeet-ft/librispeech_ft_20260908/r2/scored/comparison.json",
+      "repo_path": "experiments/librispeech-ft-20260908/r2/comparison.json",
+      "sha256": "3f9735cfcd26897db8ed46dbe83d046be7c9cb802cf5aa304cace0d9d2e0249b",
+      "bytes": 7735
+    },
+    {
+      "path": "/home/nathanroll/parakeet-ft/librispeech_ft_20260908/r2/scored/hypotheses-audit.json",
+      "repo_path": "experiments/librispeech-ft-20260908/r2/hypotheses-audit.json",
+      "sha256": "d8ca9c906537524d63516d970118c37ee32a6d5c4b609a40de086644543be58d",
+      "bytes": 1687
+    }
+  ],
+  "canonical_release_replaced": false,
+  "preexisting_model_and_document_files_unchanged": true,
+  "gitattributes_added_rules": [
+    "experiments/librispeech-ft-20260908/r2/orukeet-targeted-ft.nemo filter=lfs diff=lfs merge=lfs -text"
+  ],
+  "verification_script_sha256": "c8041d79eb4ef83faa723fb9aa3f5b4833887cea763416cb77e65df4d9899d8f"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "trainable_parameter_tensors": 651,
+  "all_have_finite_gradients": true,
+  "source": "r11-gradient-coverage.json",
+  "training_source_hashes_match": true,
+  "controlled_command_changes_from_r10": {
+    "++layer_anchor_scale": [
+      "5.0",
+      "50.0"
+    ],
+    "++conv_anchor_scale": [
+      "5.0",
+      "25.0"
+    ],
+    "++asr_loss_scale": [
+      "1.0",
+      "0.1"
+    ]
+  },
+  "initial_weights_data_and_horizon_equal": true
+}

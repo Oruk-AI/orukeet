@@ -1,0 +1,1 @@
+Per-language Orukeet WER change under matched NeMo decoding, with the same paired bootstrap as the macro comparison. All 20 primary languages and complete 95% intervals are shown, alphabetically. Languages share a scale. These marginal intervals are not adjusted for simultaneous inference.

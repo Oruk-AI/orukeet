@@ -1,0 +1,669 @@
+{
+  "status": "complete",
+  "comparison_sha256": "1e4b8989b6e25de8aa6b6842edac31712eb40743d3f8293c59b85a0d99ef9918",
+  "manifest_sha256": "de74268f6e85706671c936108d5c3cab2d73ae77f6abb9a589e3d7af556d2a1f",
+  "script_sha256": "5ffa15a3caed641c8757d742b0841f70225aa8e3e25d947e4fb1f6a92305e83a",
+  "normalization": "Standard English for English; legacy multilingual normalization elsewhere.",
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 20260919,
+    "unit": "Recording/speaker cluster where available, otherwise utterance; paired across models and stratified by split.",
+    "limitation": "Intervals are conditional on these selected datasets and available cluster metadata. Fit checks are training-exposed."
+  },
+  "roles": {
+    "nontraining_control": {
+      "rows": 5888,
+      "splits": 23,
+      "reference_words": 155657,
+      "reference_chars": 989058,
+      "parakeet_wer": 21.732398799925477,
+      "parent_wer": 19.508920254148546,
+      "candidate_wer": 20.46101363896259,
+      "parakeet_cer": 10.900472975295685,
+      "parent_cer": 9.76181376623009,
+      "candidate_cer": 10.559744726800652,
+      "candidate_minus_parakeet_wer": {
+        "delta_pp": -1.2713851609628861,
+        "paired_cluster_bootstrap_95ci_pp": [
+          -1.5493634796468436,
+          -1.01544176151969
+        ],
+        "relative_reduction_percent": 5.8501832801229785
+      },
+      "candidate_minus_parent_wer": {
+        "delta_pp": 0.9520933848140452,
+        "paired_cluster_bootstrap_95ci_pp": [
+          0.7482155850203218,
+          1.1562968044516821
+        ],
+        "relative_reduction_percent": -4.880297691573077
+      },
+      "candidate_minus_parakeet_cer": {
+        "delta_pp": -0.3407282484950329,
+        "paired_cluster_bootstrap_95ci_pp": [
+          -0.5207611756697145,
+          -0.1627856525431166
+        ],
+        "relative_reduction_percent": 3.125811597966832
+      },
+      "candidate_minus_parent_cer": {
+        "delta_pp": 0.7979309605705627,
+        "paired_cluster_bootstrap_95ci_pp": [
+          0.6472478914792941,
+          0.9485053157760728
+        ],
+        "relative_reduction_percent": -8.174003107198335
+      }
+    },
+    "training_exposed_fit_check": {
+      "rows": 6118,
+      "splits": 24,
+      "reference_words": 108043,
+      "reference_chars": 588357,
+      "parakeet_wer": 12.538526327480726,
+      "parent_wer": 12.123876604685172,
+      "candidate_wer": 10.854011828623788,
+      "parakeet_cer": 6.385408858907092,
+      "parent_cer": 6.534468018566958,
+      "candidate_cer": 5.637053693590796,
+      "candidate_minus_parakeet_wer": {
+        "delta_pp": -1.684514498856938,
+        "paired_cluster_bootstrap_95ci_pp": [
+          -1.8824485034620084,
+          -1.4968605344199326
+        ],
+        "relative_reduction_percent": 13.43470879161439
+      },
+      "candidate_minus_parent_wer": {
+        "delta_pp": -1.2698647760613841,
+        "paired_cluster_bootstrap_95ci_pp": [
+          -1.464813932247982,
+          -1.0733223975866968
+        ],
+        "relative_reduction_percent": 10.47408199099169
+      },
+      "candidate_minus_parakeet_cer": {
+        "delta_pp": -0.7483551653162959,
+        "paired_cluster_bootstrap_95ci_pp": [
+          -0.913166399548263,
+          -0.5797959385739899
+        ],
+        "relative_reduction_percent": 11.719768958449784
+      },
+      "candidate_minus_parent_cer": {
+        "delta_pp": -0.8974143249761619,
+        "paired_cluster_bootstrap_95ci_pp": [
+          -1.0737292660684352,
+          -0.7236327640888899
+        ],
+        "relative_reduction_percent": 13.733548353534818
+      }
+    }
+  },
+  "splits": {
+    "eurospeech_de": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 2,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 15.062662567982974,
+      "parent_wer": 13.478363679356821,
+      "candidate_wer": 12.355166706077087,
+      "parakeet_cer": 9.943760984182777,
+      "parent_cer": 9.242530755711774,
+      "candidate_cer": 8.442882249560633
+    },
+    "eurospeech_en": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 12,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 25.697686482000208,
+      "parent_wer": 24.92997198879552,
+      "candidate_wer": 25.230833073970327,
+      "parakeet_cer": 17.901959014173514,
+      "parent_cer": 17.37654599620836,
+      "candidate_cer": 17.571544642051098
+    },
+    "eurospeech_et": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 2,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 38.277582159624416,
+      "parent_wer": 29.900234741784036,
+      "candidate_wer": 30.22300469483568,
+      "parakeet_cer": 14.68480174364993,
+      "parent_cer": 11.516053315449744,
+      "candidate_cer": 12.689663844412776
+    },
+    "eurospeech_fi": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 6,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 18.670237907672917,
+      "parent_wer": 17.520088230660154,
+      "candidate_wer": 17.5515991807153,
+      "parakeet_cer": 7.846476033898969,
+      "parent_cer": 7.490262854011313,
+      "candidate_cer": 7.715342610533733
+    },
+    "eurospeech_fr": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 1,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 20.00377073906486,
+      "parent_wer": 15.139517345399698,
+      "candidate_wer": 15.214932126696832,
+      "parakeet_cer": 11.853266491604996,
+      "parent_cer": 9.585422137343837,
+      "candidate_cer": 9.760483806795575
+    },
+    "eurospeech_hr": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 28,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 13.263269921511242,
+      "parent_wer": 13.037115870693096,
+      "candidate_wer": 13.289876280431024,
+      "parakeet_cer": 8.687672070969716,
+      "parent_cer": 8.447318970414718,
+      "candidate_cer": 8.654896648166762
+    },
+    "eurospeech_lt": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 7,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 39.427588364091335,
+      "parent_wer": 33.76603065373788,
+      "candidate_wer": 35.78354707538317,
+      "parakeet_cer": 16.13354920579355,
+      "parent_cer": 14.685161685555506,
+      "candidate_cer": 16.6652080689625
+    },
+    "eurospeech_lv": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 6,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 57.80643156750039,
+      "parent_wer": 43.31210191082803,
+      "candidate_wer": 46.41913935062917,
+      "parakeet_cer": 26.645050111106073,
+      "parent_cer": 16.563874654210693,
+      "candidate_cer": 18.93338170604508
+    },
+    "eurospeech_mt": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 9,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 40.743579915676506,
+      "parent_wer": 38.72492653634854,
+      "candidate_wer": 41.4079468506452,
+      "parakeet_cer": 19.232653756843696,
+      "parent_cer": 17.994929805500522,
+      "candidate_cer": 19.67789352591551
+    },
+    "eurospeech_pt": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 6,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 23.30808697776692,
+      "parent_wer": 23.442462741265576,
+      "candidate_wer": 24.248717322257512,
+      "parakeet_cer": 17.53200864649152,
+      "parent_cer": 17.76687728633189,
+      "candidate_cer": 18.619055537080147
+    },
+    "eurospeech_sk": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 9,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 18.610693285929166,
+      "parent_wer": 15.178449336797485,
+      "candidate_wer": 17.475728155339805,
+      "parakeet_cer": 8.22801649594253,
+      "parent_cer": 7.088377455545209,
+      "candidate_cer": 9.374307126069798
+    },
+    "eurospeech_sl": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 3,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 51.647925552539746,
+      "parent_wer": 48.73982163629314,
+      "candidate_wer": 54.16828227995347,
+      "parakeet_cer": 17.225301877873747,
+      "parent_cer": 15.590219586609944,
+      "candidate_cer": 17.968716428172403
+    },
+    "eurospeech_uk": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 2,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 15.21769177608846,
+      "parent_wer": 14.056668970283345,
+      "candidate_wer": 17.733241188666206,
+      "parakeet_cer": 8.839069886837658,
+      "parent_cer": 7.981260829571951,
+      "candidate_cer": 11.331208419791645
+    },
+    "gigaspeechbench_jpn_en": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 95,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 19.914596273291924,
+      "parent_wer": 19.52639751552795,
+      "candidate_wer": 18.09006211180124,
+      "parakeet_cer": 12.053033346725593,
+      "parent_cer": 12.165528324628365,
+      "candidate_cer": 11.08075532342306
+    },
+    "golos_farfield_ru": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 256,
+      "rows_with_cluster_metadata": 0,
+      "parakeet_wer": 8.536585365853659,
+      "parent_wer": 8.72420262664165,
+      "candidate_wer": 10.412757973733584,
+      "parakeet_cer": 2.593286269989915,
+      "parent_cer": 2.564471978101138,
+      "candidate_cer": 3.529750756375162
+    },
+    "monsoon_en_in": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 243,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 4.947453516572352,
+      "parent_wer": 4.8181083265966045,
+      "candidate_wer": 4.65642683912692,
+      "parakeet_cer": 2.4595119157466034,
+      "parent_cer": 2.3863310954850614,
+      "candidate_cer": 2.360876897133221
+    },
+    "voxpopuli_cs": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 37,
+      "rows_with_cluster_metadata": 237,
+      "parakeet_wer": 8.154585798816568,
+      "parent_wer": 7.988165680473373,
+      "candidate_wer": 8.302514792899409,
+      "parakeet_cer": 3.9329173607385868,
+      "parent_cer": 4.1616081764024955,
+      "candidate_cer": 4.107964651740591
+    },
+    "voxpopuli_es": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 48,
+      "rows_with_cluster_metadata": 251,
+      "parakeet_wer": 6.124031007751938,
+      "parent_wer": 5.8785529715762275,
+      "candidate_wer": 6.291989664082688,
+      "parakeet_cer": 4.246347800161847,
+      "parent_cer": 4.0078367903232675,
+      "candidate_cer": 4.33365986626347
+    },
+    "voxpopuli_hu": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 29,
+      "rows_with_cluster_metadata": 252,
+      "parakeet_wer": 13.8109701625871,
+      "parent_wer": 13.185635161693764,
+      "candidate_wer": 13.346435590494908,
+      "parakeet_cer": 4.1067811912837655,
+      "parent_cer": 3.9140089309680097,
+      "candidate_cer": 3.9213293965496208
+    },
+    "voxpopuli_it": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 51,
+      "rows_with_cluster_metadata": 248,
+      "parakeet_wer": 11.579075130477,
+      "parent_wer": 11.785410850831411,
+      "candidate_wer": 11.967471780555893,
+      "parakeet_cer": 8.714735966896765,
+      "parent_cer": 8.898427983061662,
+      "candidate_cer": 9.617727246359998
+    },
+    "voxpopuli_nl": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 41,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 10.416284613973959,
+      "parent_wer": 10.361269026224097,
+      "candidate_wer": 10.618008435723455,
+      "parakeet_cer": 5.671247674488387,
+      "parent_cer": 5.578227209986197,
+      "candidate_cer": 5.800276060733362
+    },
+    "voxpopuli_pl": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 75,
+      "rows_with_cluster_metadata": 218,
+      "parakeet_wer": 6.516936671575847,
+      "parent_wer": 6.498527245949926,
+      "candidate_wer": 6.406480117820324,
+      "parakeet_cer": 3.4194700953627053,
+      "parent_cer": 3.5075359182749164,
+      "candidate_cer": 3.487406587323554
+    },
+    "voxpopuli_ro": {
+      "role": "nontraining_control",
+      "rows": 256,
+      "bootstrap_clusters": 38,
+      "rows_with_cluster_metadata": 243,
+      "parakeet_wer": 11.99140593527595,
+      "parent_wer": 11.883980126225326,
+      "candidate_wer": 11.682556734255405,
+      "parakeet_cer": 4.394299287410926,
+      "parent_cer": 4.247964031218188,
+      "candidate_cer": 4.260688836104513
+    },
+    "eurospeech_bg": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 5,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 14.758032262365019,
+      "parent_wer": 14.65137981602453,
+      "candidate_wer": 13.784828689508066,
+      "parakeet_cer": 6.930947386446338,
+      "parent_cer": 7.28413031379768,
+      "candidate_cer": 6.58418596686502
+    },
+    "eurospeech_el": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 2,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 26.06772807682588,
+      "parent_wer": 18.701036138488753,
+      "candidate_wer": 18.321961081627496,
+      "parakeet_cer": 8.482072342441953,
+      "parent_cer": 7.589638287790239,
+      "candidate_cer": 7.68441004580635
+    },
+    "eurospeech_it": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 5,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 10.642224409448819,
+      "parent_wer": 12.278543307086615,
+      "candidate_wer": 12.340059055118111,
+      "parakeet_cer": 6.332537160228193,
+      "parent_cer": 8.008448646834719,
+      "candidate_cer": 8.221638800607987
+    },
+    "gigaspeechbench_agr_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 31,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 6.791969243912858,
+      "parent_wer": 6.8560444254592054,
+      "candidate_wer": 6.300726185390858,
+      "parakeet_cer": 3.982680270942296,
+      "parent_cer": 3.986967332590243,
+      "candidate_cer": 3.4425105033010373
+    },
+    "gigaspeechbench_ait_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 14,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 10.53855094924448,
+      "parent_wer": 10.945370011623401,
+      "candidate_wer": 9.724912824486633,
+      "parakeet_cer": 5.007824726134586,
+      "parent_cer": 5.416237260964159,
+      "candidate_cer": 4.614679949616398
+    },
+    "gigaspeechbench_art_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 23,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 6.06549815498155,
+      "parent_wer": 6.4575645756457565,
+      "candidate_wer": 5.350553505535055,
+      "parakeet_cer": 3.0956643234510763,
+      "parent_cer": 3.4580622625856874,
+      "candidate_cer": 2.6197441383224906
+    },
+    "gigaspeechbench_bio_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 31,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 6.73502211499799,
+      "parent_wer": 6.855649376759148,
+      "candidate_wer": 6.151990349819059,
+      "parakeet_cer": 1.9549086757990868,
+      "parent_cer": 2.011986301369863,
+      "candidate_cer": 1.8050799086757991
+    },
+    "gigaspeechbench_chn_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 52,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 15.376420454545455,
+      "parent_wer": 15.909090909090908,
+      "candidate_wer": 14.524147727272727,
+      "parakeet_cer": 9.246088193456615,
+      "parent_cer": 9.743954480796585,
+      "candidate_cer": 8.613086770981507
+    },
+    "gigaspeechbench_ecm_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 27,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 8.30053054937532,
+      "parent_wer": 8.386103029265788,
+      "candidate_wer": 7.804210166010611,
+      "parakeet_cer": 4.385491808804693,
+      "parent_cer": 4.35852491067215,
+      "candidate_cer": 4.0686307557473205
+    },
+    "gigaspeechbench_eng_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 31,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 6.146106736657917,
+      "parent_wer": 6.6272965879265096,
+      "candidate_wer": 4.811898512685914,
+      "parakeet_cer": 2.430494067646538,
+      "parent_cer": 2.465911103240659,
+      "candidate_cer": 2.009916769966354
+    },
+    "gigaspeechbench_ent_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 28,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 10.784051378110783,
+      "parent_wer": 10.222103291410223,
+      "candidate_wer": 9.151725983409152,
+      "parakeet_cer": 6.84915882520673,
+      "parent_cer": 6.432848588537211,
+      "candidate_cer": 5.725691474194468
+    },
+    "gigaspeechbench_fin_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 38,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 7.486812999829845,
+      "parent_wer": 7.1465033180193975,
+      "candidate_wer": 6.891271056661562,
+      "parakeet_cer": 3.5691523263224982,
+      "parent_cer": 3.307503941498105,
+      "candidate_cer": 3.1934520814464458
+    },
+    "gigaspeechbench_hum_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 31,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 8.295566502463053,
+      "parent_wer": 7.862068965517241,
+      "candidate_wer": 7.8817733990147785,
+      "parakeet_cer": 4.75511174512601,
+      "parent_cer": 4.4149383664362265,
+      "candidate_cer": 4.3088627967372615
+    },
+    "gigaspeechbench_ind_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 128,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 8.536585365853659,
+      "parent_wer": 8.686679174484052,
+      "candidate_wer": 7.74859287054409,
+      "parakeet_cer": 3.4145347059423097,
+      "parent_cer": 3.5198586620460026,
+      "candidate_cer": 2.7384228586960213
+    },
+    "gigaspeechbench_law_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 19,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 11.127781945486372,
+      "parent_wer": 11.0527631907977,
+      "candidate_wer": 10.602650662665667,
+      "parakeet_cer": 5.568623685852815,
+      "parent_cer": 5.515817771590418,
+      "candidate_cer": 5.352599491143008
+    },
+    "gigaspeechbench_med_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 57,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 5.160075329566855,
+      "parent_wer": 5.12241054613936,
+      "candidate_wer": 4.971751412429379,
+      "parakeet_cer": 1.9096072760218838,
+      "parent_cer": 1.8364288950064467,
+      "candidate_cer": 1.7214342962679026
+    },
+    "gigaspeechbench_mil_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 40,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 5.985449735449736,
+      "parent_wer": 6.068121693121693,
+      "candidate_wer": 5.505952380952381,
+      "parakeet_cer": 1.7623038899634644,
+      "parent_cer": 1.8851125234103958,
+      "candidate_cer": 1.584231371465414
+    },
+    "gigaspeechbench_phl_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 36,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 14.002267573696145,
+      "parent_wer": 13.775510204081632,
+      "candidate_wer": 13.095238095238095,
+      "parakeet_cer": 8.36853522091563,
+      "parent_cer": 8.351409978308027,
+      "candidate_cer": 7.734901244434296
+    },
+    "gigaspeechbench_sct_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 28,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 22.657342657342657,
+      "parent_wer": 24.09090909090909,
+      "candidate_wer": 20.734265734265733,
+      "parakeet_cer": 14.660336011687363,
+      "parent_cer": 16.28926223520818,
+      "candidate_cer": 13.433162892622352
+    },
+    "gigaspeechbench_sgp_en": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 42,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 14.94459418987721,
+      "parent_wer": 15.03444144953579,
+      "candidate_wer": 13.986223420185684,
+      "parakeet_cer": 9.483286396473613,
+      "parent_cer": 9.556752785600588,
+      "candidate_cer": 8.607811926043835
+    },
+    "golos_crowd_ru": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 256,
+      "rows_with_cluster_metadata": 0,
+      "parakeet_wer": 3.144171779141104,
+      "parent_wer": 2.9907975460122698,
+      "candidate_wer": 3.7576687116564416,
+      "parakeet_cer": 0.6572769953051644,
+      "parent_cer": 0.5985915492957746,
+      "candidate_cer": 0.7511737089201878
+    },
+    "lesbos_el": {
+      "role": "training_exposed_fit_check",
+      "rows": 230,
+      "bootstrap_clusters": 12,
+      "rows_with_cluster_metadata": 230,
+      "parakeet_wer": 96.10963748894784,
+      "parent_wer": 93.63395225464191,
+      "candidate_wer": 93.63395225464191,
+      "parakeet_cer": 71.34744450180692,
+      "parent_cer": 72.41438650834624,
+      "candidate_cer": 73.10273618998451
+    },
+    "nst_da_da": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 55,
+      "rows_with_cluster_metadata": 256,
+      "parakeet_wer": 33.41076267905536,
+      "parent_wer": 33.13975996902826,
+      "candidate_wer": 12.853271389856756,
+      "parakeet_cer": 19.250401050021875,
+      "parent_cer": 19.352486510135627,
+      "candidate_cer": 4.637596616596179
+    },
+    "nst_sv_sv": {
+      "role": "training_exposed_fit_check",
+      "rows": 256,
+      "bootstrap_clusters": 256,
+      "rows_with_cluster_metadata": 0,
+      "parakeet_wer": 21.113340020060182,
+      "parent_wer": 19.95987963891675,
+      "candidate_wer": 13.891675025075227,
+      "parakeet_cer": 12.446826612217118,
+      "parent_cer": 11.936362089501447,
+      "candidate_cer": 3.6583290794623107
+    }
+  }
+}

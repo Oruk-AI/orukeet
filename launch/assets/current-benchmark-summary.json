@@ -1,0 +1,161 @@
+{
+  "status": "visually-reviewed",
+  "model": "Orukeet r3",
+  "source": "evidence/r3-promotion-20260908/scores.json",
+  "source_sha256": "27f12c1ced540a0b101d380a4e093a9cd531361006dc55c09de931725088eca5",
+  "model_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+  "figsize_inches": [
+    7.2,
+    4.0
+  ],
+  "panels": {
+    "fleurs": {
+      "splits": [
+        "fleurs_bg",
+        "fleurs_cs",
+        "fleurs_da",
+        "fleurs_de",
+        "fleurs_el",
+        "fleurs_en",
+        "fleurs_es",
+        "fleurs_et",
+        "fleurs_fi",
+        "fleurs_fr",
+        "fleurs_hr",
+        "fleurs_hu",
+        "fleurs_it",
+        "fleurs_lt",
+        "fleurs_lv",
+        "fleurs_mt",
+        "fleurs_nl",
+        "fleurs_pl",
+        "fleurs_pt",
+        "fleurs_ro",
+        "fleurs_ru",
+        "fleurs_sk",
+        "fleurs_sl",
+        "fleurs_sv",
+        "fleurs_uk"
+      ],
+      "rows": 20146,
+      "models": {
+        "parakeet": {
+          "errors": 46442,
+          "words": 421870,
+          "substitutions": 38136,
+          "deletions": 5461,
+          "insertions": 2845,
+          "chars": 2757813,
+          "char_errors": 98352,
+          "utterance_error": 14637,
+          "wer": 11.008604546424253,
+          "cer": 3.5663041692819637
+        },
+        "orukeet": {
+          "errors": 41521,
+          "words": 421715,
+          "substitutions": 34613,
+          "deletions": 3955,
+          "insertions": 2953,
+          "chars": 2757813,
+          "char_errors": 86408,
+          "utterance_error": 13762,
+          "wer": 9.845748906251853,
+          "cer": 3.133207363951073
+        }
+      },
+      "wins": 23,
+      "ties": 0,
+      "losses": 2,
+      "relative_wer_reduction_percent": 10.563152080434325
+    },
+    "domain_english": {
+      "splits": [
+        "eurospeech_en",
+        "gigaspeechbench_agr_en",
+        "gigaspeechbench_ait_en",
+        "gigaspeechbench_art_en",
+        "gigaspeechbench_bio_en",
+        "gigaspeechbench_chn_en",
+        "gigaspeechbench_ecm_en",
+        "gigaspeechbench_eng_en",
+        "gigaspeechbench_ent_en",
+        "gigaspeechbench_fin_en",
+        "gigaspeechbench_hum_en",
+        "gigaspeechbench_ind_en",
+        "gigaspeechbench_jpn_en",
+        "gigaspeechbench_law_en",
+        "gigaspeechbench_med_en",
+        "gigaspeechbench_mil_en",
+        "gigaspeechbench_phl_en",
+        "gigaspeechbench_sct_en",
+        "gigaspeechbench_sgp_en",
+        "monsoon_en_in"
+      ],
+      "rows": 5120,
+      "models": {
+        "parakeet": {
+          "errors": 9032,
+          "words": 94993,
+          "substitutions": 4421,
+          "deletions": 1646,
+          "insertions": 2965,
+          "chars": 498262,
+          "char_errors": 29760,
+          "utterance_error": 2806,
+          "wer": 9.508069015611676,
+          "cer": 5.972761318342559
+        },
+        "orukeet": {
+          "errors": 8399,
+          "words": 94993,
+          "substitutions": 4193,
+          "deletions": 1490,
+          "insertions": 2716,
+          "chars": 498262,
+          "char_errors": 27417,
+          "utterance_error": 2692,
+          "wer": 8.841704125567148,
+          "cer": 5.502526783098049
+        }
+      },
+      "wins": 20,
+      "ties": 0,
+      "losses": 0,
+      "relative_wer_reduction_percent": 7.008414526129303
+    }
+  },
+  "improvements": {
+    "all": {
+      "relative_wer_reduction_percent": 8.792931740190369,
+      "improved_splits": 36,
+      "splits": 47
+    },
+    "english": {
+      "relative_wer_reduction_percent": 7.008414526129303,
+      "improved_splits": 20,
+      "splits": 20
+    },
+    "fleurs": {
+      "relative_wer_reduction_percent": 10.563152080434325,
+      "improved_splits": 23,
+      "splits": 25
+    }
+  },
+  "alt_text": "Orukeet r3 versus NVIDIA Parakeet TDT 0.6B v3. Across 20,146 FLEURS clips and 25 languages, pooled WER is 9.85% versus 11.01%, a 10.6% relative reduction. Across 5,120 English accent/domain clips, WER is 8.84% versus 9.51%, a 7.0% reduction. Both comparisons use matched NeMo decoding; all split scores and the evaluation protocol accompany the release.",
+  "files": [
+    {
+      "path": "launch/assets/current-benchmark-summary.pdf",
+      "sha256": "b646532c0a2745b7f8b3f254c0fda688067915eff8e88c13e4b4d64fbc598da1"
+    },
+    {
+      "path": "launch/assets/current-benchmark-summary.svg",
+      "sha256": "6d9b8146c14b09fa89a27dd3a548b5197b306cefe01bc3975d319fef56c85524"
+    },
+    {
+      "path": "launch/assets/current-benchmark-summary.png",
+      "sha256": "d27d543a206aa69a458c89db73c250340ec255f69a7f572707540940cf69ad04"
+    }
+  ],
+  "visual_review": "Paired bars, labels, zero origin, shared scale, denominators and all four scores inspected at final export size on 2026-09-08."
+}

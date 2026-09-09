@@ -1,0 +1,10 @@
+{
+  "platform": "macos_arm64",
+  "archive_sha256": "971661d38d4bf97a63c528d13041a964316d25068d8df045e5b4839848092f25",
+  "native_abi": "passed",
+  "worker_pipes": "passed",
+  "inference": "passed",
+  "unicode_audio_path": "passed",
+  "persistent_repeat": "passed",
+  "timestamp_bounds": "passed"
+}

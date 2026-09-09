@@ -1,0 +1,91 @@
+{
+  "runtime": {
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "torch": "2.12.0+cu132",
+    "cuda": "13.2",
+    "cudnn": 92000,
+    "torch_threads": 8,
+    "tf32_matmul": false,
+    "tf32_cudnn": true,
+    "versions": {
+      "nemo_toolkit": "3.0.0",
+      "numpy": "2.4.4",
+      "soundfile": "0.13.1",
+      "transformers": "5.5.0"
+    }
+  },
+  "models_specification_sha256": "71534c0ecac8ccac26d654c1d22e78f840074d7ed4174ca4e0998a64239eaa5b",
+  "status": "complete",
+  "publication_authorized": false,
+  "rows": 4265,
+  "sets": {
+    "librispeech_test_other": {
+      "rows": 2939,
+      "hours": 5.341547256944444,
+      "language": "en"
+    },
+    "fleurs_fr": {
+      "rows": 676,
+      "hours": 1.9511333333333334,
+      "language": "fr"
+    },
+    "fleurs_el": {
+      "rows": 650,
+      "hours": 1.9061,
+      "language": "el"
+    }
+  },
+  "models": {
+    "parakeet": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+    "orukeet_ft4035": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+    "orukeet_targeted": "6b9934a6728c712aa4ea406d483295399e1e9755a3c39412d6c98be30506d1e5"
+  },
+  "manifest_sha256": "8770c5a110b60d3adabf4a8e4826adb516664bd44a8c2352e1da57086f85e500",
+  "script_sha256": "c4bf01ca362cd31c703a7d7548815cd6a7824581c160f8f5913adc0719751057",
+  "decoding_sha256": "dd264a738b97cabfd1755556df9e844fa04493843738a20deecd2c9c7721fb15",
+  "decoding": {
+    "strategy": "greedy_batch",
+    "model_type": "tdt",
+    "durations": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "greedy": {
+      "max_symbols": 10
+    },
+    "beam": {
+      "beam_size": 2,
+      "return_best_hypothesis": false,
+      "score_norm": true,
+      "tsd_max_sym_exp": 50,
+      "alsd_max_target_len": 2.0
+    }
+  },
+  "precision": "FP32 weights, BF16 CUDA autocast, TF32 matrix multiplication disabled",
+  "evaluation_data_used_for_training": true,
+  "evaluation_interpretation": "Candidate re-evaluated on the three complete partitions used for this pass.",
+  "baselines": "Both stock Parakeet and parent Orukeet freshly decoded under identical settings.",
+  "empty_output_handling": "Every manifest record is scored; empty hypotheses remain.",
+  "timings": {
+    "parakeet": {
+      "seconds": 34.503414058999624,
+      "rows": 4265
+    },
+    "orukeet_ft4035": {
+      "seconds": 32.08338777301833,
+      "rows": 4265
+    },
+    "orukeet_targeted": {
+      "seconds": 32.05897111399099,
+      "rows": 4265
+    }
+  },
+  "prediction_sha256": {
+    "parakeet": "b6641c1c7d03ac533367c4d198909ae343cb10c4bd06fbd6cfe011f9ac78f695",
+    "orukeet_ft4035": "ed8ab932a30497c129be135fba5fb0a9d4c92c7384cfd09258cc0c83dbf15b25",
+    "orukeet_targeted": "3bb948781d15e9a6b81b59fca4facc5fb4588ab5e03a4c9a2557c6ce13d0844d"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "candidate_sha256": "f5111f6132144b5993edbd4e228df9f731cac64d54777416c77dc85e96b58b61",
+  "gguf_sha256": "4a6c4863f3b4243a1292f277650e39ba2b2578be9a5e9406a5300c637431e29c",
+  "gguf_bytes": 714456704,
+  "converter_commit": "4f9676226f667d14608487df744f375db87127f8",
+  "librosa_version": "0.11.0",
+  "mel_filterbank_sha256": "f5608e00763a20a191022fbb00a43346db5f1ec06828a97a6f4157f7d02b76c8",
+  "fits_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+  "fitted_rows_exact_after_f16_rounding": 12288,
+  "depthwise_storage_dtype": "float16",
+  "export_precision": "q8_0",
+  "scope": "Private experimental export; native precision requires separate ASR validation"
+}

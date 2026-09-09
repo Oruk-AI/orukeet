@@ -1,0 +1,98 @@
+{
+  "encoder.layers.0.conv.depthwise_conv.weight": {
+    "count": 700,
+    "hash": "b68019b40dae2eb6d4b53fc443d67147aa8db0c78a1cd86ba4b2334e426fbfee"
+  },
+  "encoder.layers.1.conv.depthwise_conv.weight": {
+    "count": 748,
+    "hash": "a1ac405baa890c87172db3c05a64338d6adf863b4404b851ca93989e147e804d"
+  },
+  "encoder.layers.10.conv.depthwise_conv.weight": {
+    "count": 389,
+    "hash": "680ed9b83c9301a3e9f75040ef7f554e5d24ae3fc1cca6f9d445b2b565542d37"
+  },
+  "encoder.layers.11.conv.depthwise_conv.weight": {
+    "count": 291,
+    "hash": "f4174db2e6175c537b9f5f608d5dd55a6bd95ad872683b6ba35609706d4b6acd"
+  },
+  "encoder.layers.12.conv.depthwise_conv.weight": {
+    "count": 194,
+    "hash": "f0a31cc5fee32cfe9a1dbba6a17060df5eeeaa880d8fd367e8a05bc26e54c340"
+  },
+  "encoder.layers.13.conv.depthwise_conv.weight": {
+    "count": 175,
+    "hash": "f64e3e8b04390015e94b85bb234821ae6284de2371bbaf81e28a562cd842cbb3"
+  },
+  "encoder.layers.14.conv.depthwise_conv.weight": {
+    "count": 238,
+    "hash": "9780d589db3a7e482ea272eaccf14a2895b7231d678c4b3a508599be003ba01e"
+  },
+  "encoder.layers.15.conv.depthwise_conv.weight": {
+    "count": 343,
+    "hash": "5043f2c56c23c50a8638c2ae728c0b1ff00d67f5db5e8a779b254c5693a1903b"
+  },
+  "encoder.layers.16.conv.depthwise_conv.weight": {
+    "count": 398,
+    "hash": "8dc6ac9bb13653c464eb76dfc0e961c9d9af3a89225c38544813fdec2d83d141"
+  },
+  "encoder.layers.17.conv.depthwise_conv.weight": {
+    "count": 455,
+    "hash": "d90eba2036f82d879145fa16a159dfd66c00e6fe5acfc8f903b6af58f1c28b8d"
+  },
+  "encoder.layers.18.conv.depthwise_conv.weight": {
+    "count": 439,
+    "hash": "9155d257346ab250897bf184858732a85e0f02688da3f5bb169b32c0ae04332f"
+  },
+  "encoder.layers.19.conv.depthwise_conv.weight": {
+    "count": 501,
+    "hash": "e440a69633a2a0421cd34213407840690a1406a3d164e7f845bf50b2b664caca"
+  },
+  "encoder.layers.2.conv.depthwise_conv.weight": {
+    "count": 707,
+    "hash": "490003ba6fd891228657433c7cb2ddb671b597f6fdb4f28368d0ab42dada85ff"
+  },
+  "encoder.layers.20.conv.depthwise_conv.weight": {
+    "count": 569,
+    "hash": "35963056c18d13e4b00318ed1cf4ae31cf05337526034e4bb416da3966ef958b"
+  },
+  "encoder.layers.21.conv.depthwise_conv.weight": {
+    "count": 560,
+    "hash": "1145e9f639dffffe63e2822503ea7fedc08bceb17fe08e470640a542a61d07b6"
+  },
+  "encoder.layers.22.conv.depthwise_conv.weight": {
+    "count": 635,
+    "hash": "8de4d7ff63f9414ecf9c38ab014fa07e67ac9d51c061b2701cc4c20899a4ff5c"
+  },
+  "encoder.layers.23.conv.depthwise_conv.weight": {
+    "count": 677,
+    "hash": "72297fa745fbdd9d83e6cbfcdb0db56e8f82156cd5234c9d532508fe2cab5b94"
+  },
+  "encoder.layers.3.conv.depthwise_conv.weight": {
+    "count": 677,
+    "hash": "ada45e32ee5aa4e96d3b299767711d0cf5113f1f5e70d44a00702af03fb7e704"
+  },
+  "encoder.layers.4.conv.depthwise_conv.weight": {
+    "count": 713,
+    "hash": "8c5632064911048f68fa831b9f5193d3e08ffc555c46af34658acc2f00548d03"
+  },
+  "encoder.layers.5.conv.depthwise_conv.weight": {
+    "count": 657,
+    "hash": "426833c342611258a556fc9b3eda5eb83e3d9ab2472e2b796824a2755320af6e"
+  },
+  "encoder.layers.6.conv.depthwise_conv.weight": {
+    "count": 583,
+    "hash": "93970ff16e85169fb80f5b0660a1513466b08631b144c1d20a86df5488889d74"
+  },
+  "encoder.layers.7.conv.depthwise_conv.weight": {
+    "count": 573,
+    "hash": "94898d1d72a93f40c68546b719c8417cd73eab247225fbff4920e867d799958b"
+  },
+  "encoder.layers.8.conv.depthwise_conv.weight": {
+    "count": 564,
+    "hash": "0a7b3fb0d99ed152770923ac42ca3a83429c13e0bc83628a1ab40d76b03f341f"
+  },
+  "encoder.layers.9.conv.depthwise_conv.weight": {
+    "count": 502,
+    "hash": "c1aab24f725e6831306ef7a0b7a5416d1ce96fac49d485d039e4e7e9ed4caaf1"
+  }
+}

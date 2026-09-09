@@ -1,0 +1,64 @@
+{
+  "rule": "Lowest development primary WER among development-qualified exports; if none qualify, lowest primary WER for diagnosis only.",
+  "candidates": [
+    {
+      "label": "r7-0100",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r7_20260906/step-0100.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 9.980218583929986,
+        "delta_pp": -0.10201644115827957
+      },
+      "failures": [
+        "cv_bg_dev_selection: regression 0.765027 pp exceeds 0.5",
+        "cv_cs_dev_selection: regression 0.581395 pp exceeds 0.5",
+        "cv_lv_dev_selection: regression 0.626566 pp exceeds 0.5",
+        "fleurs_fi_dev_selection: regression 0.610998 pp exceeds 0.5"
+      ]
+    },
+    {
+      "label": "r7-0200",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r7_20260906/step-0200.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 9.978370817649441,
+        "delta_pp": -0.10386420743882459
+      },
+      "failures": [
+        "cv_bg_dev_selection: regression 0.983607 pp exceeds 0.5",
+        "cv_lv_dev_selection: regression 0.751880 pp exceeds 0.5"
+      ]
+    },
+    {
+      "label": "r7-0300",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r7_20260906/step-0300.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 9.969561091055287,
+        "delta_pp": -0.11267393403297896
+      },
+      "failures": [
+        "cv_bg_dev_selection: regression 0.874317 pp exceeds 0.5",
+        "cv_lv_dev_selection: regression 0.626566 pp exceeds 0.5"
+      ]
+    }
+  ],
+  "selected": {
+    "label": "r7-0300",
+    "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r7_20260906/step-0300.nemo",
+    "status": "fail",
+    "primary": {
+      "original_wer": 10.082235025088266,
+      "candidate_wer": 9.969561091055287,
+      "delta_pp": -0.11267393403297896
+    },
+    "failures": [
+      "cv_bg_dev_selection: regression 0.874317 pp exceeds 0.5",
+      "cv_lv_dev_selection: regression 0.626566 pp exceeds 0.5"
+    ]
+  },
+  "diagnostic_only": true
+}

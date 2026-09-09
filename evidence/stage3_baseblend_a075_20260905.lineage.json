@@ -1,0 +1,15 @@
+{
+  "name": "stage3_baseblend_a075_20260905",
+  "alpha": 0.75,
+  "sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "base_sha256": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+  "trained_parent_sha256": "47a51fee7318b831be95759324ec2af853706af13ce17cf575384b6f6973be9f",
+  "tokenizer_artifacts": {
+    "tokenizer.vocab": "41130ff456706304a1adec782ccc9e003c4d417e8e324353d281be958cac4e17",
+    "tokenizer.model": "eacec2b0a77f336d4a2ca4a25a7047575d3c2b74de47e997f4c205126ed3135e",
+    "vocab.txt": "3cde1409fd78783a79b29ed4d32da57c746993856f7c8263bcb905d2e5839db7"
+  },
+  "model_path": "/home/nathanroll/parakeet-ft/models/ft/stage3_baseblend_a075_20260905.nemo",
+  "operation": "(1-alpha)*stock + alpha*new-fine-tune",
+  "inference_architecture_unchanged": true
+}

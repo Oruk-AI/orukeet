@@ -1,0 +1,20 @@
+{
+  "status": "pass",
+  "trainable_parameter_tensors": 651,
+  "all_have_finite_gradients": true,
+  "source": "r13-gradient-coverage.json",
+  "training_source_hashes_match": true,
+  "initial_student_sha256": "44059de88f9797dcd9a3386e1b267733937326c518b2d570468911b6f7da18db",
+  "objective_equal_to_r12": true,
+  "all_peak_learning_rates_half_r12": true,
+  "training_mixture_verified": "80% original plus 20% original English CV/FLEURS",
+  "new_optimizer_schedule_steps": 300,
+  "declared_exports": [
+    100,
+    200,
+    300
+  ],
+  "sampling_seed": 20260910,
+  "frozen_gabor_rows": 12288,
+  "non_gabor_scalar_parameters": 626897542
+}

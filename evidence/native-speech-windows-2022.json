@@ -1,0 +1,10 @@
+{
+  "platform": "win_amd64",
+  "archive_sha256": "5e4ea81046012edcd77fd8848de8eefb5a4ba38cc26f52eb544ab184695a75d6",
+  "native_abi": "passed",
+  "worker_pipes": "passed",
+  "inference": "passed",
+  "unicode_audio_path": "passed",
+  "persistent_repeat": "passed",
+  "timestamp_bounds": "passed"
+}

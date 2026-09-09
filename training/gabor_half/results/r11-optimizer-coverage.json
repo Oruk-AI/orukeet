@@ -1,0 +1,32 @@
+{
+  "status": "pass",
+  "parameter_tensors": 651,
+  "trainable_scalar_parameters": 626897542,
+  "frozen_gabor_rows": 12288,
+  "groups": [
+    {
+      "tensors": 378,
+      "initial_lr": 1e-06
+    },
+    {
+      "tensors": 126,
+      "initial_lr": 2e-06
+    },
+    {
+      "tensors": 120,
+      "initial_lr": 2e-05
+    },
+    {
+      "tensors": 12,
+      "initial_lr": 1e-06
+    },
+    {
+      "tensors": 9,
+      "initial_lr": 1e-07
+    },
+    {
+      "tensors": 6,
+      "initial_lr": 1e-07
+    }
+  ]
+}

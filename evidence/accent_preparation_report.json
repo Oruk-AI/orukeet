@@ -1,0 +1,38 @@
+{
+  "english_dialects_test": {
+    "input_rows": 747,
+    "rows": 747,
+    "hours": 1.332574930555554
+  },
+  "speechocean762_test": {
+    "input_rows": 120,
+    "rows": 120,
+    "hours": 0.13261833333333337
+  },
+  "english_dialects_dev": {
+    "input_rows": 750,
+    "rows": 750,
+    "hours": 1.41869048611111
+  },
+  "speechocean762_dev": {
+    "input_rows": 120,
+    "rows": 120,
+    "hours": 0.1613708333333334
+  },
+  "english_dialects_train": {
+    "input_rows": 13682,
+    "rows": 5973,
+    "hours": 9.818193142361116,
+    "excluded_heldout_identity_or_text": 7695,
+    "excluded_unknown_tokens": 13,
+    "excluded_duration": 1
+  },
+  "speechocean762_train": {
+    "input_rows": 2260,
+    "rows": 2254,
+    "hours": 2.569078055555556,
+    "excluded_heldout_identity_or_text": 2,
+    "excluded_duration": 1,
+    "excluded_unknown_tokens": 3
+  }
+}

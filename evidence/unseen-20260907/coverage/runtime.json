@@ -1,0 +1,320 @@
+{
+  "started_utc": "2026-09-07T05:28:33.045214+00:00",
+  "seal_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb",
+  "model_hashes": {
+    "parakeet": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+    "orukeet": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811"
+  },
+  "decoding": {
+    "strategy": "greedy_batch",
+    "model_type": "tdt",
+    "durations": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "greedy": {
+      "max_symbols": 10
+    },
+    "beam": {
+      "beam_size": 2,
+      "return_best_hypothesis": false,
+      "score_norm": true,
+      "tsd_max_sym_exp": 50,
+      "alsd_max_target_len": 2.0
+    }
+  },
+  "versions": {
+    "torch": "2.12.0+cu132",
+    "nemo_toolkit": "3.0.0",
+    "pyarrow": "24.0.0",
+    "huggingface_hub": "1.9.2",
+    "soundfile": "0.13.1",
+    "soxr": "1.0.0",
+    "rapidfuzz": "3.14.1",
+    "whisper_normalizer": "0.1.12"
+  },
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "precision": "FP32 model parameters, CUDA BF16 autocast",
+  "script_sha256": "3cda7aacf9548e3fd1a2d0b59aabd5444a4bdaf4ed12e534c874d8dcc99ffcf8",
+  "sets": {
+    "golos_crowd_ru": {
+      "seal_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb",
+      "rows": 9896,
+      "audio_receipt_sha256": "1fc13be4a2d3601e16bc3621480c2303f9273fd56b391a50c6def4545b8e1d9d",
+      "prediction_sha256": {
+        "parakeet": "dac05366d7bd32d070671ce2189cceeb1c24dd1ce159d1a24ec2cb43d3641b55",
+        "orukeet": "bc084e41d8b1ac4be2759c1a79cb22568bfd53255e5a7552b01bfa81d7bfc805"
+      },
+      "timing": {
+        "parakeet": {
+          "seconds": 53.90968181999051,
+          "rows_this_process": 9896,
+          "resumed_rows": 0
+        },
+        "orukeet": {
+          "seconds": 47.57361206499627,
+          "rows_this_process": 9896,
+          "resumed_rows": 0
+        }
+      },
+      "failures_this_process": {
+        "parakeet": 0,
+        "orukeet": 0
+      },
+      "completed_utc": "2026-09-07T05:31:04.124608+00:00"
+    },
+    "golos_farfield_ru": {
+      "seal_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb",
+      "rows": 1915,
+      "audio_receipt_sha256": "27b40221561638db5ef1dc1de35008a051e2d97a58f3ed766f18f671b8cf5738",
+      "prediction_sha256": {
+        "parakeet": "6b76d659de97a6ceca863a045d21706ac2995ab81e37001b30bc9a4f0bbd5425",
+        "orukeet": "ab5ac94a8f5ef271fb0b8c48f1e42f130eb325a3e65ce3962b6c640b8d43afd0"
+      },
+      "timing": {
+        "orukeet": {
+          "seconds": 11.338376120023895,
+          "rows_this_process": 1915,
+          "resumed_rows": 0
+        },
+        "parakeet": {
+          "seconds": 11.365760237007635,
+          "rows_this_process": 1915,
+          "resumed_rows": 0
+        }
+      },
+      "failures_this_process": {
+        "orukeet": 0,
+        "parakeet": 0
+      },
+      "completed_utc": "2026-09-07T05:31:27.309962+00:00"
+    },
+    "nst_da_da": {
+      "seal_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb",
+      "rows": 54747,
+      "audio_receipt_sha256": "9c7c69ff7b66957aad5c9bc9ab4a93bde705c607422cfd8230396e092a8e4475",
+      "prediction_sha256": {
+        "parakeet": "9ba6a1d2d8e6a476d36a40e4cfcbef45122cca0fe0b7be065efb0ae7fc6d3047",
+        "orukeet": "7beffbd22dbf64e62cb35f48bd61cb4a7fdd125978c69a35955b344453eeae9e"
+      },
+      "timing": {
+        "parakeet": {
+          "seconds": 319.8125662150269,
+          "rows_this_process": 54747,
+          "resumed_rows": 0
+        },
+        "orukeet": {
+          "seconds": 278.9989223680168,
+          "rows_this_process": 54747,
+          "resumed_rows": 0
+        }
+      },
+      "failures_this_process": {
+        "parakeet": 0,
+        "orukeet": 0
+      },
+      "completed_utc": "2026-09-07T05:46:51.163196+00:00"
+    },
+    "nst_sv_sv": {
+      "seal_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb",
+      "rows": 27638,
+      "audio_receipt_sha256": "c58176b544546d29309280cea6056e1f75696d1ae95d503a8c3b9fba62f380cd",
+      "prediction_sha256": {
+        "parakeet": "62132c2c545658192c424896043651f20f14e2d75cb64cf1592ab24dbc6e58bb",
+        "orukeet": "61a575cbe5e7d2d61c8b21d4105fe1fb20943e8cd15d7f771a2704d8f730edcb"
+      },
+      "timing": {
+        "orukeet": {
+          "seconds": 144.78193176200148,
+          "rows_this_process": 27638,
+          "resumed_rows": 0
+        },
+        "parakeet": {
+          "seconds": 134.72805581300054,
+          "rows_this_process": 27638,
+          "resumed_rows": 0
+        }
+      },
+      "failures_this_process": {
+        "orukeet": 0,
+        "parakeet": 0
+      },
+      "completed_utc": "2026-09-07T05:51:34.272536+00:00"
+    },
+    "voxpopuli_cs": {
+      "seal_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb",
+      "rows": 1103,
+      "audio_receipt_sha256": "9e3145c4116a078b38aa16d8966a63e9d0ec37858dcba91a2f28b9c2716a9da3",
+      "prediction_sha256": {
+        "parakeet": "dca959716be798eeb4ea54a472b7d5cae0b629d293b4f8f2ea0657b6ff51ce2c",
+        "orukeet": "a95bc88724bb59d044d9453edcf01cb71e702e6b8b33d2f50a75bdc3d6c60034"
+      },
+      "timing": {
+        "parakeet": {
+          "seconds": 8.70677035098197,
+          "rows_this_process": 1103,
+          "resumed_rows": 0
+        },
+        "orukeet": {
+          "seconds": 8.761263293999946,
+          "rows_this_process": 1103,
+          "resumed_rows": 0
+        }
+      },
+      "failures_this_process": {
+        "parakeet": 0,
+        "orukeet": 0
+      },
+      "completed_utc": "2026-09-07T05:51:53.077799+00:00"
+    },
+    "voxpopuli_es": {
+      "seal_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb",
+      "rows": 1631,
+      "audio_receipt_sha256": "44c6404eebcf402049cc7369df2b9b93c5f1d2a747636dfc6f7fc59bc1605dc5",
+      "prediction_sha256": {
+        "parakeet": "ed99b118d4e219a042fce0c7cefc10198f8b4d753c74e9dc17bc288850816373",
+        "orukeet": "ddf4c8d339d4a635c1e271b667e73ed7f95b8748c9b35b8cfe26c3893aa85f00"
+      },
+      "timing": {
+        "orukeet": {
+          "seconds": 14.15047264599707,
+          "rows_this_process": 1631,
+          "resumed_rows": 0
+        },
+        "parakeet": {
+          "seconds": 15.319904623000184,
+          "rows_this_process": 1631,
+          "resumed_rows": 0
+        }
+      },
+      "failures_this_process": {
+        "orukeet": 0,
+        "parakeet": 0
+      },
+      "completed_utc": "2026-09-07T05:52:36.486576+00:00"
+    },
+    "voxpopuli_hu": {
+      "seal_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb",
+      "rows": 1076,
+      "audio_receipt_sha256": "962dd0f5f337cfe9c793d5c4dc8a35dfcb4af7fe61adaff8c6ae213866e33407",
+      "prediction_sha256": {
+        "parakeet": "22a6d51028ba7a475b999438a42584cec6c8cb2ecc85232cad7f610b94792089",
+        "orukeet": "264da0116b863ae8fd7916afe762fb382e1ec752dbbaf0e7be9501491cad7a51"
+      },
+      "timing": {
+        "parakeet": {
+          "seconds": 9.204894688009517,
+          "rows_this_process": 1076,
+          "resumed_rows": 0
+        },
+        "orukeet": {
+          "seconds": 9.926736408000579,
+          "rows_this_process": 1076,
+          "resumed_rows": 0
+        }
+      },
+      "failures_this_process": {
+        "parakeet": 0,
+        "orukeet": 0
+      },
+      "completed_utc": "2026-09-07T05:52:55.832713+00:00"
+    },
+    "voxpopuli_nl": {
+      "seal_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb",
+      "rows": 1230,
+      "audio_receipt_sha256": "def26eb6c5b8ebe816f160d02a598d2f1c1799c2f9970159871b306bd7fad6db",
+      "prediction_sha256": {
+        "parakeet": "3b986dbf4bcfead2362cdc60c75b538f56472795c3fb4b4e1e8b792a242a8690",
+        "orukeet": "26e63a887e3140afb59393de0c9cc8af3da1219448e516671db75a31099a55b5"
+      },
+      "timing": {
+        "orukeet": {
+          "seconds": 8.730910957005108,
+          "rows_this_process": 1230,
+          "resumed_rows": 0
+        },
+        "parakeet": {
+          "seconds": 8.625101605983218,
+          "rows_this_process": 1230,
+          "resumed_rows": 0
+        }
+      },
+      "failures_this_process": {
+        "orukeet": 0,
+        "parakeet": 0
+      },
+      "completed_utc": "2026-09-07T05:53:16.786176+00:00"
+    },
+    "voxpopuli_pl": {
+      "seal_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb",
+      "rows": 1691,
+      "audio_receipt_sha256": "fef1d214d8172e0c3351438c8365c81de0c46b1ba7af5d2414ff084dd9451426",
+      "prediction_sha256": {
+        "parakeet": "c2d225dd7c799c4dfbefdaf109edec353df6699bee3282f856f3a64dd0d4f2c5",
+        "orukeet": "d4611288fd271fd055f281aef353c724318480bac79ba2285c5cbd513b43b035"
+      },
+      "timing": {
+        "parakeet": {
+          "seconds": 14.131527585006552,
+          "rows_this_process": 1691,
+          "resumed_rows": 0
+        },
+        "orukeet": {
+          "seconds": 14.02409211700433,
+          "rows_this_process": 1691,
+          "resumed_rows": 0
+        }
+      },
+      "failures_this_process": {
+        "parakeet": 0,
+        "orukeet": 0
+      },
+      "completed_utc": "2026-09-07T05:54:00.556149+00:00"
+    },
+    "voxpopuli_ro": {
+      "seal_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb",
+      "rows": 1418,
+      "audio_receipt_sha256": "3c816baa78b27a78e9f58a91dc609fd138721480c5050c320c727bb1138168c8",
+      "prediction_sha256": {
+        "parakeet": "9208b25a0c91e08760eca4fbe4f85f2a780113ca2c6dd615fc9ec6b3583a1517",
+        "orukeet": "0e220ffe233976f3b857f538170c4c4bc92930b6d2affdc47a6e4971e138efab"
+      },
+      "timing": {
+        "orukeet": {
+          "seconds": 11.422427587007405,
+          "rows_this_process": 1418,
+          "resumed_rows": 0
+        },
+        "parakeet": {
+          "seconds": 11.29553205097909,
+          "rows_this_process": 1418,
+          "resumed_rows": 0
+        }
+      },
+      "failures_this_process": {
+        "orukeet": 0,
+        "parakeet": 0
+      },
+      "completed_utc": "2026-09-07T05:54:32.547421+00:00"
+    }
+  },
+  "cuda_version": "13.2",
+  "cudnn_version": 92000,
+  "float32_matmul_precision": "highest",
+  "tf32_matmul_allowed": false,
+  "tf32_cudnn_allowed": true,
+  "compute_capability": [
+    8,
+    0
+  ],
+  "final_model_hashes": {
+    "parakeet": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+    "orukeet": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811"
+  },
+  "completed_utc": "2026-09-07T05:54:47.311504+00:00",
+  "complete": true,
+  "coverage_wrapper_sha256": "839bb90d83ae1a35dc8d6f090b02bb1b619e2cf60e01ead4b92756aac7bf61d2"
+}

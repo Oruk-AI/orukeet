@@ -1,0 +1,2145 @@
+{
+  "status": "failed",
+  "failures": [
+    "Primary relative improvement is below 10%",
+    "Multilingual family did not improve: ftspeech"
+  ],
+  "primary": {
+    "base_wer": 16.580574948321065,
+    "candidate_wer": 15.371306565215429,
+    "delta_pp": -1.209268383105636,
+    "relative_improvement": 0.07293283778606752,
+    "members": [
+      "language:cs",
+      "language:da",
+      "language:de",
+      "language:en",
+      "language:es",
+      "language:fi",
+      "language:fr",
+      "language:hr",
+      "language:hu",
+      "language:it",
+      "language:lt",
+      "language:lv",
+      "language:nl",
+      "language:pl",
+      "language:pt",
+      "language:ro",
+      "language:ru",
+      "language:sk",
+      "language:sl",
+      "language:sv"
+    ],
+    "paired_delta_95ci": [
+      -1.5105723496037893,
+      -0.8434491618412321
+    ],
+    "valid_bootstrap_replicates": 5000
+  },
+  "families": {
+    "cv": {
+      "base_wer": 7.225363465933137,
+      "candidate_wer": 5.6238747621633465,
+      "delta_pp": -1.6014887037697907,
+      "relative_improvement": 0.22164818577233503,
+      "members": [
+        "set:cv_de_confirmation",
+        "set:cv_en_confirmation",
+        "set:cv_es_confirmation",
+        "set:cv_fr_confirmation",
+        "set:cv_it_confirmation",
+        "set:cv_lv_confirmation",
+        "set:cv_nl_confirmation",
+        "set:cv_pl_confirmation",
+        "set:cv_pt_confirmation",
+        "set:cv_ru_confirmation"
+      ],
+      "paired_delta_95ci": [
+        -1.8962986336883103,
+        -1.3049071013169706
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "fleurs": {
+      "base_wer": 13.022691565457036,
+      "candidate_wer": 11.281155287727831,
+      "delta_pp": -1.741536277729205,
+      "relative_improvement": 0.1337309010948755,
+      "members": [
+        "set:fleurs_bg_confirmation",
+        "set:fleurs_cs_confirmation",
+        "set:fleurs_da_confirmation",
+        "set:fleurs_de_confirmation",
+        "set:fleurs_en_confirmation",
+        "set:fleurs_es_confirmation",
+        "set:fleurs_et_confirmation",
+        "set:fleurs_fi_confirmation",
+        "set:fleurs_fr_confirmation",
+        "set:fleurs_hr_confirmation",
+        "set:fleurs_hu_confirmation",
+        "set:fleurs_it_confirmation",
+        "set:fleurs_lt_confirmation",
+        "set:fleurs_lv_confirmation",
+        "set:fleurs_mt_confirmation",
+        "set:fleurs_pl_confirmation",
+        "set:fleurs_pt_confirmation",
+        "set:fleurs_ro_confirmation",
+        "set:fleurs_ru_confirmation",
+        "set:fleurs_sk_confirmation",
+        "set:fleurs_sl_confirmation",
+        "set:fleurs_sv_confirmation",
+        "set:fleurs_uk_confirmation"
+      ],
+      "paired_delta_95ci": [
+        -2.206507561638271,
+        -1.3057685478201897
+      ],
+      "valid_bootstrap_replicates": 4987
+    },
+    "ftspeech": {
+      "base_wer": 25.303525077451226,
+      "candidate_wer": 25.51285271707276,
+      "delta_pp": 0.20932763962153444,
+      "relative_improvement": -0.008272667107875442,
+      "members": [
+        "set:ftspeech_da_confirmation"
+      ],
+      "paired_delta_95ci": [
+        -1.4397439503608884,
+        1.9742430943610711
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "rixvox": {
+      "base_wer": 29.145559963381142,
+      "candidate_wer": 27.30546231309124,
+      "delta_pp": -1.840097650289902,
+      "relative_improvement": 0.06313475028792803,
+      "members": [
+        "set:rixvox_sv_confirmation"
+      ],
+      "paired_delta_95ci": [
+        -2.2627649154324847,
+        -1.4426436396939717
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "voxpopuli": {
+      "base_wer": 16.823271897856237,
+      "candidate_wer": 16.4072810226073,
+      "delta_pp": -0.4159908752489372,
+      "relative_improvement": 0.024727108839151968,
+      "members": [
+        "set:voxpopuli_cs_confirmation",
+        "set:voxpopuli_de_confirmation",
+        "set:voxpopuli_en_confirmation",
+        "set:voxpopuli_es_confirmation",
+        "set:voxpopuli_et_confirmation",
+        "set:voxpopuli_fi_confirmation",
+        "set:voxpopuli_fr_confirmation",
+        "set:voxpopuli_hr_confirmation",
+        "set:voxpopuli_hu_confirmation",
+        "set:voxpopuli_it_confirmation",
+        "set:voxpopuli_lt_confirmation",
+        "set:voxpopuli_nl_confirmation",
+        "set:voxpopuli_pl_confirmation",
+        "set:voxpopuli_ro_confirmation",
+        "set:voxpopuli_sk_confirmation",
+        "set:voxpopuli_sl_confirmation"
+      ],
+      "paired_delta_95ci": [
+        -0.9012433296604092,
+        0.7145921222119309
+      ],
+      "valid_bootstrap_replicates": 4989
+    }
+  },
+  "english_aggregate": {
+    "base_wer": 9.724731548185984,
+    "candidate_wer": 9.360330471804506,
+    "delta_pp": -0.364401076381478,
+    "relative_improvement": 0.03747158207667456,
+    "members": [
+      "english:common_voice",
+      "english:fleurs",
+      "english:voxpopuli",
+      "english:voxpopuli_accented",
+      "english:core",
+      "english:learner",
+      "english:dialect"
+    ],
+    "paired_delta_95ci": [
+      -0.5415611382985404,
+      -0.16709303812785037
+    ],
+    "valid_bootstrap_replicates": 5000
+  },
+  "metrics": {
+    "set:accent_en_469b5f4bb597_confirmation": {
+      "base_wer": 6.886517943743938,
+      "candidate_wer": 6.595538312318138,
+      "delta_pp": -0.29097963142579975,
+      "relative_improvement": 0.04225352112676051,
+      "rows": 200,
+      "groups": 107,
+      "reference_words": 2062,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.8875797959230546,
+        0.2585323764379668
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:accent_en_74d0bb6d856d_confirmation": {
+      "base_wer": 6.606060606060606,
+      "candidate_wer": 6.666666666666667,
+      "delta_pp": 0.06060606060606055,
+      "relative_improvement": -0.00917431192660545,
+      "rows": 168,
+      "groups": 69,
+      "reference_words": 1650,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.4951498736898019,
+        0.6244475277356906
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:accent_en_a163705d3331_confirmation": {
+      "base_wer": 5.656665027053616,
+      "candidate_wer": 5.804230201672405,
+      "delta_pp": 0.14756517461878982,
+      "relative_improvement": -0.026086956521739202,
+      "rows": 200,
+      "groups": 163,
+      "reference_words": 2033,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.32155635294178564,
+        0.6398659419088107
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:accent_en_fecbdec18469_confirmation": {
+      "base_wer": 4.612546125461255,
+      "candidate_wer": 4.428044280442805,
+      "delta_pp": -0.1845018450184499,
+      "relative_improvement": 0.039999999999999925,
+      "rows": 53,
+      "groups": 21,
+      "reference_words": 542,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.3385283662915293,
+        0.8993210836736011
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:core_en_libri_test_clean": {
+      "base_wer": 2.163027108433735,
+      "candidate_wer": 2.1234939759036147,
+      "delta_pp": -0.03953313253012025,
+      "relative_improvement": 0.018276762402088642,
+      "rows": 2620,
+      "groups": 40,
+      "reference_words": 53120,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.10577398481942173,
+        0.02539353810260713
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:cv_de_confirmation": {
+      "base_wer": 3.636846296787895,
+      "candidate_wer": 3.7695779134589857,
+      "delta_pp": 0.1327316166710908,
+      "relative_improvement": -0.03649635036496335,
+      "rows": 400,
+      "groups": 362,
+      "reference_words": 3767,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.16764810949779757,
+        0.4459405556334155
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:cv_en_confirmation": {
+      "base_wer": 6.175651733738294,
+      "candidate_wer": 5.973171349025563,
+      "delta_pp": -0.20248038471273144,
+      "relative_improvement": 0.032786885245901676,
+      "rows": 400,
+      "groups": 393,
+      "reference_words": 3951,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.5224270980148445,
+        0.07568256316441507
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:cv_es_confirmation": {
+      "base_wer": 2.5785854616895874,
+      "candidate_wer": 2.529469548133595,
+      "delta_pp": -0.04911591355599221,
+      "relative_improvement": 0.01904761904761909,
+      "rows": 400,
+      "groups": 372,
+      "reference_words": 4072,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.24553286623452697,
+        0.1368224591393348
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:cv_et_confirmation": {
+      "base_wer": 14.285714285714286,
+      "candidate_wer": 14.285714285714286,
+      "delta_pp": 0.0,
+      "relative_improvement": 0.0,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 14,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3187
+    },
+    "set:cv_fr_confirmation": {
+      "base_wer": 6.355140186915888,
+      "candidate_wer": 6.121495327102804,
+      "delta_pp": -0.2336448598130838,
+      "relative_improvement": 0.03676470588235292,
+      "rows": 400,
+      "groups": 379,
+      "reference_words": 4280,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.6073453823984316,
+        0.1240557171073591
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:cv_it_confirmation": {
+      "base_wer": 3.292181069958848,
+      "candidate_wer": 3.343621399176955,
+      "delta_pp": 0.05144032921810693,
+      "relative_improvement": -0.015625,
+      "rows": 400,
+      "groups": 328,
+      "reference_words": 3888,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.2272182192645023,
+        0.3201181974883034
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:cv_lv_confirmation": {
+      "base_wer": 34.50635386119257,
+      "candidate_wer": 20.267188009123494,
+      "delta_pp": -14.239165852069078,
+      "relative_improvement": 0.4126534466477809,
+      "rows": 400,
+      "groups": 343,
+      "reference_words": 3069,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -16.89645309216863,
+        -11.68949058961603
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:cv_nl_confirmation": {
+      "base_wer": 2.484472049689441,
+      "candidate_wer": 2.484472049689441,
+      "delta_pp": 0.0,
+      "relative_improvement": 0.0,
+      "rows": 73,
+      "groups": 20,
+      "reference_words": 644,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.7079708691619243,
+        0.7916485257321493
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:cv_pl_confirmation": {
+      "base_wer": 0.6995452955578874,
+      "candidate_wer": 0.7694998251136761,
+      "delta_pp": 0.06995452955578874,
+      "relative_improvement": -0.10000000000000009,
+      "rows": 400,
+      "groups": 175,
+      "reference_words": 2859,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.17230389310477437,
+        0.3477165792808084
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:cv_pt_confirmation": {
+      "base_wer": 6.602426837972876,
+      "candidate_wer": 5.42469664525339,
+      "delta_pp": -1.177730192719486,
+      "relative_improvement": 0.17837837837837833,
+      "rows": 400,
+      "groups": 58,
+      "reference_words": 2802,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -2.3369973972459124,
+        -0.24792620990985165
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:cv_ru_confirmation": {
+      "base_wer": 5.922431865828092,
+      "candidate_wer": 5.555555555555555,
+      "delta_pp": -0.366876310272537,
+      "relative_improvement": 0.06194690265486735,
+      "rows": 226,
+      "groups": 24,
+      "reference_words": 1908,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.8283662492838829,
+        0.0729528583854385
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:dialect_en_english_dialects_source_holdout": {
+      "base_wer": 4.789379490878009,
+      "candidate_wer": 4.800064107700938,
+      "delta_pp": 0.010684616822929094,
+      "relative_improvement": -0.002230897936419396,
+      "rows": 2698,
+      "groups": 18,
+      "reference_words": 37437,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.08958873339323557,
+        0.10622348886416509
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_bg_confirmation": {
+      "base_wer": 12.231404958677686,
+      "candidate_wer": 10.743801652892563,
+      "delta_pp": -1.4876033057851235,
+      "relative_improvement": 0.1216216216216216,
+      "rows": 37,
+      "groups": 16,
+      "reference_words": 605,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -3.0837004405286343,
+        0.0
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_cs_confirmation": {
+      "base_wer": 16.943521594684384,
+      "candidate_wer": 14.285714285714286,
+      "delta_pp": -2.6578073089700975,
+      "relative_improvement": 0.1568627450980391,
+      "rows": 18,
+      "groups": 12,
+      "reference_words": 301,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -4.385964912280702,
+        -0.3905118846525113
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_da_confirmation": {
+      "base_wer": 17.92452830188679,
+      "candidate_wer": 14.959568733153638,
+      "delta_pp": -2.9649595687331534,
+      "relative_improvement": 0.16541353383458646,
+      "rows": 35,
+      "groups": 14,
+      "reference_words": 742,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -6.207886356017432,
+        -0.4291539370488516
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_de_confirmation": {
+      "base_wer": 3.7131882202304736,
+      "candidate_wer": 3.4571062740076823,
+      "delta_pp": -0.25608194622279123,
+      "relative_improvement": 0.06896551724137934,
+      "rows": 36,
+      "groups": 20,
+      "reference_words": 781,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.1152935556893937,
+        0.4255682540836159
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_en_confirmation": {
+      "base_wer": 3.6398467432950192,
+      "candidate_wer": 3.6398467432950192,
+      "delta_pp": 0.0,
+      "relative_improvement": 0.0,
+      "rows": 25,
+      "groups": 12,
+      "reference_words": 522,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.8772895896127985,
+        1.1560693641618498
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_es_confirmation": {
+      "base_wer": 4.211469534050179,
+      "candidate_wer": 2.4193548387096775,
+      "delta_pp": -1.7921146953405018,
+      "relative_improvement": 0.42553191489361697,
+      "rows": 34,
+      "groups": 14,
+      "reference_words": 1116,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -3.52534077010279,
+        -0.11813840036076018
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_et_confirmation": {
+      "base_wer": 15.942028985507246,
+      "candidate_wer": 14.285714285714286,
+      "delta_pp": -1.6563146997929596,
+      "relative_improvement": 0.10389610389610382,
+      "rows": 31,
+      "groups": 13,
+      "reference_words": 483,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -3.4188034188034186,
+        0.0
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_fi_confirmation": {
+      "base_wer": 12.0,
+      "candidate_wer": 10.0,
+      "delta_pp": -2.0,
+      "relative_improvement": 0.16666666666666663,
+      "rows": 11,
+      "groups": 6,
+      "reference_words": 150,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -9.090909090909092,
+        1.3489438548789667
+      ],
+      "valid_bootstrap_replicates": 4989
+    },
+    "set:fleurs_fr_confirmation": {
+      "base_wer": 6.837606837606837,
+      "candidate_wer": 6.6239316239316235,
+      "delta_pp": -0.2136752136752138,
+      "relative_improvement": 0.03125,
+      "rows": 16,
+      "groups": 13,
+      "reference_words": 468,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.8352015465753193,
+        1.0676156583629892
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_hr_confirmation": {
+      "base_wer": 10.58673469387755,
+      "candidate_wer": 8.928571428571429,
+      "delta_pp": -1.658163265306122,
+      "relative_improvement": 0.15662650602409633,
+      "rows": 42,
+      "groups": 21,
+      "reference_words": 784,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -4.064064439905483,
+        0.47350018402649796
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_hu_confirmation": {
+      "base_wer": 19.667170953101362,
+      "candidate_wer": 17.851739788199698,
+      "delta_pp": -1.8154311649016641,
+      "relative_improvement": 0.09230769230769231,
+      "rows": 38,
+      "groups": 16,
+      "reference_words": 661,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -3.788118527042578,
+        0.22424049610148228
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_it_confirmation": {
+      "base_wer": 3.299492385786802,
+      "candidate_wer": 2.918781725888325,
+      "delta_pp": -0.38071065989847686,
+      "relative_improvement": 0.11538461538461531,
+      "rows": 27,
+      "groups": 13,
+      "reference_words": 788,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.1640280087886814,
+        0.33116714967328126
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_lt_confirmation": {
+      "base_wer": 27.116212338593975,
+      "candidate_wer": 21.09038737446198,
+      "delta_pp": -6.025824964131996,
+      "relative_improvement": 0.22222222222222232,
+      "rows": 42,
+      "groups": 18,
+      "reference_words": 697,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -9.399272437382034,
+        -3.241447329270385
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_lv_confirmation": {
+      "base_wer": 24.735729386892178,
+      "candidate_wer": 22.41014799154334,
+      "delta_pp": -2.325581395348838,
+      "relative_improvement": 0.09401709401709402,
+      "rows": 27,
+      "groups": 14,
+      "reference_words": 473,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -5.6000273224043715,
+        1.4963528678304225
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_mt_confirmation": {
+      "base_wer": 21.52641878669276,
+      "candidate_wer": 16.2426614481409,
+      "delta_pp": -5.283757338551858,
+      "relative_improvement": 0.24545454545454537,
+      "rows": 21,
+      "groups": 9,
+      "reference_words": 511,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -7.5675675675675675,
+        -2.816901408450704
+      ],
+      "valid_bootstrap_replicates": 4999
+    },
+    "set:fleurs_nl_confirmation": {
+      "base_wer": 5.0,
+      "candidate_wer": 5.0,
+      "delta_pp": 0.0,
+      "relative_improvement": 0.0,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 20,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3138
+    },
+    "set:fleurs_pl_confirmation": {
+      "base_wer": 7.046070460704607,
+      "candidate_wer": 5.691056910569106,
+      "delta_pp": -1.3550135501355012,
+      "relative_improvement": 0.1923076923076923,
+      "rows": 22,
+      "groups": 12,
+      "reference_words": 369,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -3.284859271274519,
+        0.0
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_pt_confirmation": {
+      "base_wer": 7.070707070707071,
+      "candidate_wer": 6.565656565656566,
+      "delta_pp": -0.5050505050505052,
+      "relative_improvement": 0.0714285714285714,
+      "rows": 20,
+      "groups": 9,
+      "reference_words": 396,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.1656034024455078,
+        0.0
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_ro_confirmation": {
+      "base_wer": 11.73913043478261,
+      "candidate_wer": 10.108695652173912,
+      "delta_pp": -1.6304347826086971,
+      "relative_improvement": 0.13888888888888906,
+      "rows": 39,
+      "groups": 18,
+      "reference_words": 920,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -3.3812347093958692,
+        0.0
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_ru_confirmation": {
+      "base_wer": 5.294117647058823,
+      "candidate_wer": 3.7254901960784315,
+      "delta_pp": -1.568627450980392,
+      "relative_improvement": 0.2962962962962963,
+      "rows": 27,
+      "groups": 16,
+      "reference_words": 510,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -2.8226597711044716,
+        -0.4081217852994863
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_sk_confirmation": {
+      "base_wer": 12.784588441330998,
+      "candidate_wer": 11.558669001751314,
+      "delta_pp": -1.225919439579684,
+      "relative_improvement": 0.09589041095890405,
+      "rows": 33,
+      "groups": 20,
+      "reference_words": 571,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -3.158022794211807,
+        0.4210748389962244
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_sl_confirmation": {
+      "base_wer": 35.14376996805112,
+      "candidate_wer": 31.94888178913738,
+      "delta_pp": -3.194888178913736,
+      "relative_improvement": 0.09090909090909083,
+      "rows": 19,
+      "groups": 13,
+      "reference_words": 313,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -5.472807196892251,
+        -0.3904379190613054
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_sv_confirmation": {
+      "base_wer": 14.495412844036696,
+      "candidate_wer": 14.128440366972477,
+      "delta_pp": -0.36697247706421976,
+      "relative_improvement": 0.025316455696202556,
+      "rows": 28,
+      "groups": 16,
+      "reference_words": 545,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -3.0813828887259604,
+        2.7027027027027026
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:fleurs_uk_confirmation": {
+      "base_wer": 5.572755417956657,
+      "candidate_wer": 5.882352941176471,
+      "delta_pp": 0.30959752321981426,
+      "relative_improvement": -0.05555555555555558,
+      "rows": 19,
+      "groups": 10,
+      "reference_words": 323,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.9479422880796688,
+        1.2345679012345678
+      ],
+      "valid_bootstrap_replicates": 4999
+    },
+    "set:ftspeech_da_confirmation": {
+      "base_wer": 25.303525077451226,
+      "candidate_wer": 25.51285271707276,
+      "delta_pp": 0.20932763962153444,
+      "relative_improvement": -0.008272667107875442,
+      "rows": 600,
+      "groups": 40,
+      "reference_words": 11943,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.4397439503608884,
+        1.9742430943610711
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:learner_en_speechocean_official_test": {
+      "base_wer": 23.300910724242613,
+      "candidate_wer": 21.541416269128305,
+      "delta_pp": -1.7594944551143072,
+      "relative_improvement": 0.07551183195958533,
+      "rows": 2500,
+      "groups": 125,
+      "reference_words": 16141,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -2.2993064381815147,
+        -1.233053257796894
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:parliamentaccent_en_voxpopuli_confirmation": {
+      "base_wer": 21.274139706111754,
+      "candidate_wer": 20.99335475618507,
+      "delta_pp": -0.2807849499266837,
+      "relative_improvement": 0.013198416190057127,
+      "rows": 1192,
+      "groups": 362,
+      "reference_words": 32053,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.7578019002735591,
+        0.18250117469984342
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:rixvox_sv_confirmation": {
+      "base_wer": 29.145559963381142,
+      "candidate_wer": 27.30546231309124,
+      "delta_pp": -1.840097650289902,
+      "relative_improvement": 0.06313475028792803,
+      "rows": 600,
+      "groups": 26,
+      "reference_words": 32770,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -2.2627649154324847,
+        -1.4426436396939717
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_cs_confirmation": {
+      "base_wer": 11.414549196548721,
+      "candidate_wer": 11.010844613314335,
+      "delta_pp": -0.4037045832343864,
+      "relative_improvement": 0.035367545076282925,
+      "rows": 600,
+      "groups": 48,
+      "reference_words": 12633,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.7287370074622397,
+        -0.07588007359213922
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_de_confirmation": {
+      "base_wer": 10.001615769914364,
+      "candidate_wer": 9.96930037162708,
+      "delta_pp": -0.03231539828728458,
+      "relative_improvement": 0.003231017770597755,
+      "rows": 600,
+      "groups": 122,
+      "reference_words": 12378,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.22282315978732228,
+        0.13781486887952965
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_en_confirmation": {
+      "base_wer": 6.703433786356772,
+      "candidate_wer": 6.329197032368197,
+      "delta_pp": -0.37423675398857537,
+      "relative_improvement": 0.0558276199804113,
+      "rows": 600,
+      "groups": 285,
+      "reference_words": 15231,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.753209477953024,
+        -0.1219307028198145
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_es_confirmation": {
+      "base_wer": 6.937786440499394,
+      "candidate_wer": 6.77448243164937,
+      "delta_pp": -0.16330400885002394,
+      "relative_improvement": 0.023538344722854987,
+      "rows": 599,
+      "groups": 96,
+      "reference_words": 18983,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.3940546793694596,
+        0.01574251329830872
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_et_confirmation": {
+      "base_wer": 27.388535031847134,
+      "candidate_wer": 23.779193205944797,
+      "delta_pp": -3.6093418259023373,
+      "relative_improvement": 0.13178294573643412,
+      "rows": 51,
+      "groups": 6,
+      "reference_words": 942,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -6.593406593406593,
+        -0.44747724067189815
+      ],
+      "valid_bootstrap_replicates": 4992
+    },
+    "set:voxpopuli_fi_confirmation": {
+      "base_wer": 14.865034526051476,
+      "candidate_wer": 14.463276836158192,
+      "delta_pp": -0.40175768989328375,
+      "relative_improvement": 0.027027027027027084,
+      "rows": 477,
+      "groups": 26,
+      "reference_words": 7965,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.7612280539070228,
+        0.06808989447434821
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_fr_confirmation": {
+      "base_wer": 9.295679946209447,
+      "candidate_wer": 9.172409928839581,
+      "delta_pp": -0.12327001736986531,
+      "relative_improvement": 0.013261000602772688,
+      "rows": 600,
+      "groups": 143,
+      "reference_words": 17847,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.29252137272559153,
+        0.040446459419525446
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_hr_confirmation": {
+      "base_wer": 19.136266766954996,
+      "candidate_wer": 19.092390623041243,
+      "delta_pp": -0.04387614391375294,
+      "relative_improvement": 0.0022928267278087278,
+      "rows": 600,
+      "groups": 20,
+      "reference_words": 15954,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.3253554574983146,
+        0.42094364240718823
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_hu_confirmation": {
+      "base_wer": 16.109398466524386,
+      "candidate_wer": 16.01454430479804,
+      "delta_pp": -0.09485416172634586,
+      "relative_improvement": 0.0058881256133463955,
+      "rows": 600,
+      "groups": 46,
+      "reference_words": 12651,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.5167844567489988,
+        0.3192131514084861
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_it_confirmation": {
+      "base_wer": 14.463943676554331,
+      "candidate_wer": 14.438059740125277,
+      "delta_pp": -0.025883936429053733,
+      "relative_improvement": 0.0017895490336435893,
+      "rows": 599,
+      "groups": 80,
+      "reference_words": 19317,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.4321114120060114,
+        0.40921911718816534
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_lt_confirmation": {
+      "base_wer": 29.75609756097561,
+      "candidate_wer": 34.02439024390244,
+      "delta_pp": 4.268292682926827,
+      "relative_improvement": -0.14344262295081966,
+      "rows": 42,
+      "groups": 7,
+      "reference_words": 820,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.8246627091203453,
+        22.049689440993788
+      ],
+      "valid_bootstrap_replicates": 4997
+    },
+    "set:voxpopuli_nl_confirmation": {
+      "base_wer": 11.152529478889312,
+      "candidate_wer": 11.106884747052112,
+      "delta_pp": -0.04564473183719997,
+      "relative_improvement": 0.004092769440654842,
+      "rows": 600,
+      "groups": 71,
+      "reference_words": 13145,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.2816943196040208,
+        0.1894390843885335
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_pl_confirmation": {
+      "base_wer": 6.768134715025907,
+      "candidate_wer": 6.533354922279793,
+      "delta_pp": -0.2347797927461137,
+      "relative_improvement": 0.03468899521531099,
+      "rows": 600,
+      "groups": 88,
+      "reference_words": 12352,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.441338304457019,
+        -0.017738303251871274
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_ro_confirmation": {
+      "base_wer": 14.554535950749216,
+      "candidate_wer": 14.386107561853875,
+      "delta_pp": -0.16842838889534129,
+      "relative_improvement": 0.01157222665602553,
+      "rows": 600,
+      "groups": 49,
+      "reference_words": 17218,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.3960314375787588,
+        0.07210703463741443
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_sk_confirmation": {
+      "base_wer": 13.31812998859749,
+      "candidate_wer": 12.702394526795896,
+      "delta_pp": -0.6157354618015951,
+      "relative_improvement": 0.046232876712328674,
+      "rows": 582,
+      "groups": 25,
+      "reference_words": 13155,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.9579010149169818,
+        -0.24973476232174588
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "set:voxpopuli_sl_confirmation": {
+      "base_wer": 57.30667906400124,
+      "candidate_wer": 52.71966527196653,
+      "delta_pp": -4.5870137920347105,
+      "relative_improvement": 0.08004326663061112,
+      "rows": 309,
+      "groups": 10,
+      "reference_words": 6453,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -6.037168880124567,
+        -3.050547130603837
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:cs": {
+      "base_wer": 11.543219421679295,
+      "candidate_wer": 11.087057368176898,
+      "delta_pp": -0.45616205350239625,
+      "relative_improvement": 0.03951774949765563,
+      "rows": 618,
+      "groups": 60,
+      "reference_words": 12934,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.780860885846165,
+        -0.12862787856881572
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:da": {
+      "base_wer": 24.871895940086716,
+      "candidate_wer": 24.8955459203784,
+      "delta_pp": 0.023649980291683192,
+      "relative_improvement": -0.0009508716323296529,
+      "rows": 635,
+      "groups": 54,
+      "reference_words": 12685,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.5586489012137443,
+        1.7005823282552845
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:de": {
+      "base_wer": 8.294930875576037,
+      "candidate_wer": 8.289022805151838,
+      "delta_pp": -0.005908070424199607,
+      "relative_improvement": 0.0007122507122507837,
+      "rows": 1036,
+      "groups": 504,
+      "reference_words": 16926,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.16234002340667317,
+        0.13567946705318398
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:en": {
+      "base_wer": 6.516443361753959,
+      "candidate_wer": 6.186561104344295,
+      "delta_pp": -0.3298822574096638,
+      "relative_improvement": 0.050623052959501647,
+      "rows": 1025,
+      "groups": 690,
+      "reference_words": 19704,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.6328048997587312,
+        -0.12263950803328454
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:es": {
+      "base_wer": 6.0775309254892225,
+      "candidate_wer": 5.858259898225146,
+      "delta_pp": -0.21927102726407632,
+      "relative_improvement": 0.03607896528250498,
+      "rows": 1033,
+      "groups": 482,
+      "reference_words": 24171,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.42806056484470256,
+        -0.04402389594310665
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:fi": {
+      "base_wer": 14.8120764017252,
+      "candidate_wer": 14.380776340110906,
+      "delta_pp": -0.43130006161429435,
+      "relative_improvement": 0.02911813643926786,
+      "rows": 488,
+      "groups": 32,
+      "reference_words": 8115,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.8014856825416267,
+        0.026132481862282383
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:fr": {
+      "base_wer": 8.687762779375968,
+      "candidate_wer": 8.541712768311573,
+      "delta_pp": -0.14605001106439452,
+      "relative_improvement": 0.016811003565970428,
+      "rows": 1016,
+      "groups": 535,
+      "reference_words": 22595,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.297117904228712,
+        0.008339838770273283
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:hr": {
+      "base_wer": 18.73581073007528,
+      "candidate_wer": 18.61632214123551,
+      "delta_pp": -0.11948858883976854,
+      "relative_improvement": 0.0063775510204082675,
+      "rows": 642,
+      "groups": 41,
+      "reference_words": 16738,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.43080638265084187,
+        0.31309374784896427
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:hu": {
+      "base_wer": 16.286057692307693,
+      "candidate_wer": 16.10576923076923,
+      "delta_pp": -0.18028846153846345,
+      "relative_improvement": 0.011070110701107083,
+      "rows": 638,
+      "groups": 62,
+      "reference_words": 13312,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.6014752185160616,
+        0.2289861332705923
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:it": {
+      "base_wer": 12.286917017463427,
+      "candidate_wer": 12.261909723669403,
+      "delta_pp": -0.02500729379402422,
+      "relative_improvement": 0.002035278154681186,
+      "rows": 1026,
+      "groups": 421,
+      "reference_words": 23993,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.3537922485749915,
+        0.32651609514118074
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:lt": {
+      "base_wer": 28.54317732366513,
+      "candidate_wer": 28.081740276862227,
+      "delta_pp": -0.461437046802903,
+      "relative_improvement": 0.01616628175519641,
+      "rows": 84,
+      "groups": 25,
+      "reference_words": 1517,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -4.974377756019995,
+        6.203499518690831
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:lv": {
+      "base_wer": 33.201581027667984,
+      "candidate_wer": 20.553359683794465,
+      "delta_pp": -12.64822134387352,
+      "relative_improvement": 0.38095238095238104,
+      "rows": 427,
+      "groups": 357,
+      "reference_words": 3542,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -15.007386744710688,
+        -10.363029042323394
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:nl": {
+      "base_wer": 10.747697439988396,
+      "candidate_wer": 10.70418449488723,
+      "delta_pp": -0.04351294510116688,
+      "relative_improvement": 0.004048582995951344,
+      "rows": 673,
+      "groups": 91,
+      "reference_words": 13789,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.2694216210247458,
+        0.17868664902390016
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:pl": {
+      "base_wer": 5.661103979460847,
+      "candidate_wer": 5.455712451861361,
+      "delta_pp": -0.20539152759948642,
+      "relative_improvement": 0.03628117913832196,
+      "rows": 1022,
+      "groups": 275,
+      "reference_words": 15580,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.3804830998278586,
+        -0.021970611632575944
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:pt": {
+      "base_wer": 6.6604127579737336,
+      "candidate_wer": 5.565978736710444,
+      "delta_pp": -1.0944340212632895,
+      "relative_improvement": 0.16431924882629112,
+      "rows": 420,
+      "groups": 67,
+      "reference_words": 3198,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -2.131026401996183,
+        -0.2681761659819211
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:ro": {
+      "base_wer": 14.411732274782224,
+      "candidate_wer": 14.169147645826442,
+      "delta_pp": -0.24258462895578248,
+      "relative_improvement": 0.016832440703901996,
+      "rows": 639,
+      "groups": 67,
+      "reference_words": 18138,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.47856008829744534,
+        0.0
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:ru": {
+      "base_wer": 5.789909015715467,
+      "candidate_wer": 5.169561621174524,
+      "delta_pp": -0.6203473945409428,
+      "relative_improvement": 0.1071428571428571,
+      "rows": 253,
+      "groups": 40,
+      "reference_words": 2418,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.0737369710259175,
+        -0.20088396785032425
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:sk": {
+      "base_wer": 13.295934722424596,
+      "candidate_wer": 12.654815678274806,
+      "delta_pp": -0.6411190441497894,
+      "relative_improvement": 0.04821917808219178,
+      "rows": 615,
+      "groups": 45,
+      "reference_words": 13726,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.9792146650249188,
+        -0.2893465443861404
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:sl": {
+      "base_wer": 56.28140703517588,
+      "candidate_wer": 51.75879396984924,
+      "delta_pp": -4.522613065326638,
+      "relative_improvement": 0.0803571428571429,
+      "rows": 328,
+      "groups": 23,
+      "reference_words": 6766,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -5.851361685965681,
+        -3.043172654584784
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "language:sv": {
+      "base_wer": 28.90589824403422,
+      "candidate_wer": 27.08989944469458,
+      "delta_pp": -1.8159987993396385,
+      "relative_improvement": 0.0628245067497405,
+      "rows": 628,
+      "groups": 42,
+      "reference_words": 33315,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -2.2327527242844947,
+        -1.4208805419740107
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "english:common_voice": {
+      "base_wer": 6.202383277983981,
+      "candidate_wer": 6.094940418050401,
+      "delta_pp": -0.10744285993358016,
+      "relative_improvement": 0.017322834645669194,
+      "rows": 1021,
+      "groups": 753,
+      "reference_words": 10238,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.32601158752895654,
+        0.09930535910919944
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "english:fleurs": {
+      "base_wer": 3.6398467432950192,
+      "candidate_wer": 3.6398467432950192,
+      "delta_pp": 0.0,
+      "relative_improvement": 0.0,
+      "rows": 25,
+      "groups": 12,
+      "reference_words": 522,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.8772895896127985,
+        1.1560693641618498
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "english:voxpopuli": {
+      "base_wer": 6.703433786356772,
+      "candidate_wer": 6.329197032368197,
+      "delta_pp": -0.37423675398857537,
+      "relative_improvement": 0.0558276199804113,
+      "rows": 600,
+      "groups": 285,
+      "reference_words": 15231,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.753209477953024,
+        -0.1219307028198145
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "english:voxpopuli_accented": {
+      "base_wer": 21.274139706111754,
+      "candidate_wer": 20.99335475618507,
+      "delta_pp": -0.2807849499266837,
+      "relative_improvement": 0.013198416190057127,
+      "rows": 1192,
+      "groups": 362,
+      "reference_words": 32053,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.7578019002735591,
+        0.18250117469984342
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "english:core": {
+      "base_wer": 2.163027108433735,
+      "candidate_wer": 2.1234939759036147,
+      "delta_pp": -0.03953313253012025,
+      "relative_improvement": 0.018276762402088642,
+      "rows": 2620,
+      "groups": 40,
+      "reference_words": 53120,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.10577398481942173,
+        0.02539353810260713
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "english:learner": {
+      "base_wer": 23.300910724242613,
+      "candidate_wer": 21.541416269128305,
+      "delta_pp": -1.7594944551143072,
+      "relative_improvement": 0.07551183195958533,
+      "rows": 2500,
+      "groups": 125,
+      "reference_words": 16141,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -2.2993064381815147,
+        -1.233053257796894
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "english:dialect": {
+      "base_wer": 4.789379490878009,
+      "candidate_wer": 4.800064107700938,
+      "delta_pp": 0.010684616822929094,
+      "relative_improvement": -0.002230897936419396,
+      "rows": 2698,
+      "groups": 18,
+      "reference_words": 37437,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.08958873339323557,
+        0.10622348886416509
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:cv:india and south asia (india, pakistan, sri lanka)": {
+      "base_wer": 6.797020484171322,
+      "candidate_wer": 6.517690875232774,
+      "delta_pp": -0.2793296089385482,
+      "relative_improvement": 0.04109589041095896,
+      "rows": 208,
+      "groups": 115,
+      "reference_words": 2148,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.8571252501460825,
+        0.2452454235994169
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:cv:england english": {
+      "base_wer": 6.526806526806527,
+      "candidate_wer": 6.643356643356643,
+      "delta_pp": 0.11655011655011638,
+      "relative_improvement": -0.017857142857142794,
+      "rows": 173,
+      "groups": 74,
+      "reference_words": 1716,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.433892674969117,
+        0.665359166585061
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:cv:united states english": {
+      "base_wer": 5.331541218637993,
+      "candidate_wer": 5.510752688172043,
+      "delta_pp": 0.17921146953405032,
+      "relative_improvement": -0.03361344537815136,
+      "rows": 219,
+      "groups": 182,
+      "reference_words": 2232,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.24728094016111318,
+        0.6250209544032183
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:cv:canadian english": {
+      "base_wer": 4.612546125461255,
+      "candidate_wer": 4.428044280442805,
+      "delta_pp": -0.1845018450184499,
+      "relative_improvement": 0.039999999999999925,
+      "rows": 53,
+      "groups": 21,
+      "reference_words": 542,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.3385283662915293,
+        0.8993210836736011
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:cv:united states english,midwestern,african american ,midwestern wisconsin,wisconsin": {
+      "base_wer": 20.0,
+      "candidate_wer": 20.0,
+      "delta_pp": 0.0,
+      "relative_improvement": 0.0,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 5,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3162
+    },
+    "accent:cv:southern african (south africa, zimbabwe, namibia)": {
+      "base_wer": 0.0,
+      "candidate_wer": 0.0,
+      "delta_pp": 0.0,
+      "relative_improvement": null,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 5,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3158
+    },
+    "accent:cv:scottish english,glaswegian": {
+      "base_wer": 0.0,
+      "candidate_wer": 0.0,
+      "delta_pp": 0.0,
+      "relative_improvement": null,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 9,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3164
+    },
+    "accent:cv:german english,sick": {
+      "base_wer": 14.285714285714286,
+      "candidate_wer": 14.285714285714286,
+      "delta_pp": 0.0,
+      "relative_improvement": 0.0,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 14,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3172
+    },
+    "accent:cv:united states english,kentucky": {
+      "base_wer": 0.0,
+      "candidate_wer": 0.0,
+      "delta_pp": 0.0,
+      "relative_improvement": null,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 11,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3176
+    },
+    "accent:cv:australian english": {
+      "base_wer": 7.317073170731708,
+      "candidate_wer": 7.317073170731708,
+      "delta_pp": 0.0,
+      "relative_improvement": 0.0,
+      "rows": 4,
+      "groups": 4,
+      "reference_words": 41,
+      "population_inference_supported": false,
+      "paired_delta_95ci": [
+        0.0,
+        0.0
+      ],
+      "valid_bootstrap_replicates": 4909
+    },
+    "accent:cv:spanish native with a good level of proficiency in english,colombian": {
+      "base_wer": 0.0,
+      "candidate_wer": 9.090909090909092,
+      "delta_pp": 9.090909090909092,
+      "relative_improvement": null,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 11,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3179
+    },
+    "accent:cv:canadian english,french canadian": {
+      "base_wer": 16.666666666666668,
+      "candidate_wer": 8.333333333333334,
+      "delta_pp": -8.333333333333334,
+      "relative_improvement": 0.5,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 12,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3126
+    },
+    "accent:cv:united states english,england english,india and south asia (india, pakistan, sri lanka)": {
+      "base_wer": 0.0,
+      "candidate_wer": 0.0,
+      "delta_pp": 0.0,
+      "relative_improvement": null,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 15,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3206
+    },
+    "accent:cv:england english, north yorkshire": {
+      "base_wer": 0.0,
+      "candidate_wer": 0.0,
+      "delta_pp": 0.0,
+      "relative_improvement": null,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 9,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3156
+    },
+    "accent:cv:united states english,india and south asia (india, pakistan, sri lanka)": {
+      "base_wer": 0.0,
+      "candidate_wer": 0.0,
+      "delta_pp": 0.0,
+      "relative_improvement": null,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 14,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3154
+    },
+    "accent:cv:united states english,england english": {
+      "base_wer": 7.6923076923076925,
+      "candidate_wer": 7.6923076923076925,
+      "delta_pp": 0.0,
+      "relative_improvement": 0.0,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 13,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3205
+    },
+    "accent:cv:malaysian english": {
+      "base_wer": 0.0,
+      "candidate_wer": 0.0,
+      "delta_pp": 0.0,
+      "relative_improvement": null,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 9,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3247
+    },
+    "accent:cv:irish english": {
+      "base_wer": 0.0,
+      "candidate_wer": 0.0,
+      "delta_pp": 0.0,
+      "relative_improvement": null,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 15,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3170
+    },
+    "accent:cv:filipino": {
+      "base_wer": 10.0,
+      "candidate_wer": 10.0,
+      "delta_pp": 0.0,
+      "relative_improvement": 0.0,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 10,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3181
+    },
+    "accent:cv:wise canadian english": {
+      "base_wer": 0.0,
+      "candidate_wer": 0.0,
+      "delta_pp": 0.0,
+      "relative_improvement": null,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 11,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3238
+    },
+    "accent:cv:united states english,a midwestern accent, specific to the st. louis area.": {
+      "base_wer": 6.666666666666667,
+      "candidate_wer": 6.666666666666667,
+      "delta_pp": 0.0,
+      "relative_improvement": 0.0,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 15,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3159
+    },
+    "accent:cv:flemish": {
+      "base_wer": 16.666666666666668,
+      "candidate_wer": 16.666666666666668,
+      "delta_pp": 0.0,
+      "relative_improvement": 0.0,
+      "rows": 1,
+      "groups": 1,
+      "reference_words": 12,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3192
+    },
+    "accent:english_dialects:southern": {
+      "base_wer": 4.5895369485043025,
+      "candidate_wer": 4.7193006419887995,
+      "delta_pp": 0.129763693484497,
+      "relative_improvement": -0.028273809523809534,
+      "rows": 1049,
+      "groups": 7,
+      "reference_words": 14642,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        0.005769058105760631,
+        0.2487873033599724
+      ],
+      "valid_bootstrap_replicates": 4995
+    },
+    "accent:english_dialects:irish": {
+      "base_wer": 6.880301602262017,
+      "candidate_wer": 6.691800188501413,
+      "delta_pp": -0.18850141376060403,
+      "relative_improvement": 0.027397260273972712,
+      "rows": 150,
+      "groups": 1,
+      "reference_words": 2122,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3157
+    },
+    "accent:english_dialects:scottish": {
+      "base_wer": 4.760058167716917,
+      "candidate_wer": 4.701890450799806,
+      "delta_pp": -0.058167716917110646,
+      "relative_improvement": 0.012219959266802416,
+      "rows": 749,
+      "groups": 5,
+      "reference_words": 10315,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.16734401147501793,
+        0.0732421875
+      ],
+      "valid_bootstrap_replicates": 4970
+    },
+    "accent:english_dialects:northern": {
+      "base_wer": 4.397004938664967,
+      "candidate_wer": 4.540385534490999,
+      "delta_pp": 0.1433805958260317,
+      "relative_improvement": -0.03260869565217406,
+      "rows": 450,
+      "groups": 3,
+      "reference_words": 6277,
+      "population_inference_supported": false,
+      "paired_delta_95ci": [
+        0.047619047619047616,
+        0.2830188679245283
+      ],
+      "valid_bootstrap_replicates": 4748
+    },
+    "accent:english_dialects:welsh": {
+      "base_wer": 5.247376311844078,
+      "candidate_wer": 4.697651174412794,
+      "delta_pp": -0.5497251374312837,
+      "relative_improvement": 0.10476190476190461,
+      "rows": 150,
+      "groups": 1,
+      "reference_words": 2001,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3157
+    },
+    "accent:english_dialects:midlands": {
+      "base_wer": 4.951923076923077,
+      "candidate_wer": 4.8076923076923075,
+      "delta_pp": -0.14423076923076916,
+      "relative_improvement": 0.029126213592232997,
+      "rows": 150,
+      "groups": 1,
+      "reference_words": 2080,
+      "population_inference_supported": false,
+      "paired_delta_95ci": null,
+      "valid_bootstrap_replicates": 3172
+    },
+    "accent:speechocean762:mandarin_l1_english": {
+      "base_wer": 23.300910724242613,
+      "candidate_wer": 21.541416269128305,
+      "delta_pp": -1.7594944551143072,
+      "relative_improvement": 0.07551183195958533,
+      "rows": 2500,
+      "groups": 125,
+      "reference_words": 16141,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -2.2993064381815147,
+        -1.233053257796894
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:voxpopuli:en_fr": {
+      "base_wer": 23.41642827952595,
+      "candidate_wer": 23.212096444626074,
+      "delta_pp": -0.20433183489987528,
+      "relative_improvement": 0.008726003490401313,
+      "rows": 91,
+      "groups": 27,
+      "reference_words": 2447,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -2.9704285518881326,
+        1.9535632862917955
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:voxpopuli:en_fi": {
+      "base_wer": 18.554476806903992,
+      "candidate_wer": 19.2017259978425,
+      "delta_pp": 0.6472491909385099,
+      "relative_improvement": -0.0348837209302324,
+      "rows": 75,
+      "groups": 20,
+      "reference_words": 1854,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.5057001744003202,
+        1.8362858100616273
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:voxpopuli:en_pl": {
+      "base_wer": 20.89887640449438,
+      "candidate_wer": 20.224719101123597,
+      "delta_pp": -0.6741573033707837,
+      "relative_improvement": 0.03225806451612889,
+      "rows": 110,
+      "groups": 33,
+      "reference_words": 3115,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.989171494011288,
+        0.495124352349855
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:voxpopuli:en_de": {
+      "base_wer": 21.356335514574656,
+      "candidate_wer": 21.0291493158834,
+      "delta_pp": -0.32718619869125476,
+      "relative_improvement": 0.01532033426183843,
+      "rows": 256,
+      "groups": 83,
+      "reference_words": 6724,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.2962967701260715,
+        0.6413016422044048
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:voxpopuli:en_es": {
+      "base_wer": 23.068726691529037,
+      "candidate_wer": 23.015450186467767,
+      "delta_pp": -0.053276505061269575,
+      "relative_improvement": 0.002309468822170979,
+      "rows": 61,
+      "groups": 18,
+      "reference_words": 1877,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.2306113866856567,
+        1.0225210516731444
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:voxpopuli:en_ro": {
+      "base_wer": 20.022883295194507,
+      "candidate_wer": 19.75591151792525,
+      "delta_pp": -0.2669717772692586,
+      "relative_improvement": 0.013333333333333308,
+      "rows": 94,
+      "groups": 27,
+      "reference_words": 2622,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.2001714530647236,
+        0.8128101697530782
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:voxpopuli:en_cs": {
+      "base_wer": 19.891745602165088,
+      "candidate_wer": 20.20748759585025,
+      "delta_pp": 0.31574199368516176,
+      "relative_improvement": -0.01587301587301604,
+      "rows": 90,
+      "groups": 26,
+      "reference_words": 2217,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.872411059576835,
+        1.3306721255544172
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:voxpopuli:en_sl": {
+      "base_wer": 25.801526717557252,
+      "candidate_wer": 25.49618320610687,
+      "delta_pp": -0.3053435114503813,
+      "relative_improvement": 0.011834319526627168,
+      "rows": 25,
+      "groups": 7,
+      "reference_words": 655,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -2.5641025641025643,
+        1.3211292220993678
+      ],
+      "valid_bootstrap_replicates": 4995
+    },
+    "accent:voxpopuli:en_hu": {
+      "base_wer": 21.232876712328768,
+      "candidate_wer": 21.147260273972602,
+      "delta_pp": -0.0856164383561655,
+      "relative_improvement": 0.0040322580645162365,
+      "rows": 84,
+      "groups": 23,
+      "reference_words": 2336,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.8691317684715925,
+        0.5702255944207179
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:voxpopuli:en_hr": {
+      "base_wer": 24.608150470219435,
+      "candidate_wer": 21.473354231974923,
+      "delta_pp": -3.134796238244512,
+      "relative_improvement": 0.127388535031847,
+      "rows": 22,
+      "groups": 9,
+      "reference_words": 638,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -15.386813186813187,
+        2.3881786287685083
+      ],
+      "valid_bootstrap_replicates": 4999
+    },
+    "accent:voxpopuli:en_it": {
+      "base_wer": 19.76534296028881,
+      "candidate_wer": 19.314079422382672,
+      "delta_pp": -0.4512635379061365,
+      "relative_improvement": 0.022831050228310446,
+      "rows": 43,
+      "groups": 15,
+      "reference_words": 1108,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -3.3156854499579476,
+        1.5019805255390253
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:voxpopuli:en_lt": {
+      "base_wer": 25.601374570446737,
+      "candidate_wer": 24.22680412371134,
+      "delta_pp": -1.3745704467353974,
+      "relative_improvement": 0.05369127516778527,
+      "rows": 24,
+      "groups": 7,
+      "reference_words": 582,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -6.635795526121619,
+        2.0485789311090516
+      ],
+      "valid_bootstrap_replicates": 4996
+    },
+    "accent:voxpopuli:en_nl": {
+      "base_wer": 20.360690015682174,
+      "candidate_wer": 20.151594354417146,
+      "delta_pp": -0.2090956612650281,
+      "relative_improvement": 0.010269576379974277,
+      "rows": 144,
+      "groups": 45,
+      "reference_words": 3826,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -2.20205479805992,
+        1.8645391055213925
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:voxpopuli:en_sk": {
+      "base_wer": 20.87832973362131,
+      "candidate_wer": 21.382289416846653,
+      "delta_pp": 0.503959683225343,
+      "relative_improvement": -0.024137931034482918,
+      "rows": 50,
+      "groups": 16,
+      "reference_words": 1389,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -1.3081005592823696,
+        2.193305443468627
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "accent:voxpopuli:en_et": {
+      "base_wer": 23.680241327300152,
+      "candidate_wer": 21.417797888386122,
+      "delta_pp": -2.2624434389140298,
+      "relative_improvement": 0.09554140127388544,
+      "rows": 23,
+      "groups": 6,
+      "reference_words": 663,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -5.434782608695652,
+        -0.3898635477582846
+      ],
+      "valid_bootstrap_replicates": 4993
+    },
+    "novel_prompt:learner": {
+      "base_wer": 23.468354430379748,
+      "candidate_wer": 21.664556962025316,
+      "delta_pp": -1.803797468354432,
+      "relative_improvement": 0.07686084142394833,
+      "rows": 2448,
+      "groups": 123,
+      "reference_words": 15800,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -2.3516633220215435,
+        -1.2722471621837779
+      ],
+      "valid_bootstrap_replicates": 5000
+    },
+    "novel_prompt:dialect": {
+      "base_wer": 14.422369389256806,
+      "candidate_wer": 14.56953642384106,
+      "delta_pp": 0.1471670345842533,
+      "relative_improvement": -0.010204081632652962,
+      "rows": 108,
+      "groups": 10,
+      "reference_words": 1359,
+      "population_inference_supported": true,
+      "paired_delta_95ci": [
+        -0.7163881406241958,
+        0.8750228102189778
+      ],
+      "valid_bootstrap_replicates": 5000
+    }
+  },
+  "base_model_sha256": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+  "candidate_model_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "bootstrap": {
+    "replicates": 5000,
+    "seed": 20260905,
+    "distinct_global_clusters": 4266,
+    "method": "Paired multinomial bootstrap of all source-qualified global clusters; identical draws for both models and all metrics",
+    "unit": "speaker; FLEURS parallel sentence identity shared across languages",
+    "scope": "Fixed declared languages and corpora, not a random sample of all languages",
+    "empty_draw_handling": "Only undefined metric replicates are omitted; report count and suppress interval if fewer than 80% remain"
+  },
+  "limitations": [
+    "Public pretraining overlap is unknown",
+    "FLEURS sentence clusters are not speaker clusters",
+    "CV uses inherited truncated speaker hashes",
+    "RixVox protocols are not always verbatim",
+    "Repeated English Dialects prompts are present; novel-prompt results are diagnostic",
+    "Per-accent intervals are descriptive, without simultaneous multiple-comparison guarantees"
+  ],
+  "registry_sha256": "c6fee4d0cb2c2071d41148f545048d2791dcc23ec49db2dd299fbcaaa283b253",
+  "protocol_sha256": "7477292764c94a597e72238678115b22012a5c67fae630873cfe7552a677cbfe"
+}

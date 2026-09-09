@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "method": "Independent NumPy reduction and seeded paired cluster bootstrap from transcript-free numeric counts.",
+  "phases": {
+    "primary": {
+      "rows": 224056,
+      "splits": 35,
+      "scoring_variants_checked": 110,
+      "endpoint_groups": 4
+    },
+    "coverage": {
+      "rows": 102345,
+      "splits": 10,
+      "scoring_variants_checked": 20,
+      "endpoint_groups": 0
+    },
+    "followup": {
+      "rows": 1487,
+      "splits": 2,
+      "scoring_variants_checked": 4,
+      "endpoint_groups": 0
+    }
+  },
+  "inputs": {
+    "primary": {
+      "protocol.json": "b55f1ef30a1a131e7abf976e80e22b20efe8a4adac488999dafdc83a8ec86d11",
+      "comparison.json": "cc024031468c602fb6c326943a2ea1b6dffa66440fcb4d04559d12bb83f05ed0",
+      "numeric-evidence.jsonl.gz": "b356ef424028ea6dfd2f775abebe5087a4515418aff25d67597013d56522ae60",
+      "comparison-receipt.json": "90d6697674b171be5e4c5486cae55ec4c2ec2f82eb0ef2fc11223c9e43068a97"
+    },
+    "coverage": {
+      "protocol.json": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb",
+      "comparison.json": "298599ce854a9607a188f07becf9c75403a411542c6e960ded9c5d4b25ec8401",
+      "numeric-evidence.jsonl.gz": "a9ca147b0a0ee4551e3556b1fa94117ba0c8716e30e8dc121e71c6c1c0e8d537",
+      "comparison-receipt.json": "0bea97fe1b09ed4d250c1d5dccca30b3db3c93702be8c5a936c04abd9341a2aa"
+    },
+    "followup": {
+      "protocol.json": "80ea4332fc067ca98d0e1a1c2f781ba9c3bbed5aa46fb320a989b4a20c0ae9d1",
+      "comparison.json": "be523c66c6268d8526532d783a8aac468406b8011a7016dbaacf47a8adb16877",
+      "numeric-evidence.jsonl.gz": "5976dbebd6cb88c4a925fad72094bc39f71b6a3a67e9a0b926ec792d8b64abbe",
+      "comparison-receipt.json": "c33e289346288c1c8a84bf8484309aafc0b5820162a513fb5a4bb04f6bd2cc12"
+    }
+  },
+  "numpy": "2.5.2",
+  "script_sha256": "aed52d00f17f956d74ccf9eb42264b70ebacc4f98abd35cbdb3c376e284de022"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "pass",
+  "rows": 12006,
+  "splits": 47,
+  "split_rates_recomputed": 402,
+  "all_sealed_record_ids_present_exactly_once": true,
+  "integer_counts_and_pooled_rates_match": true,
+  "model_identity_chain_matches": true,
+  "script_sha256": "5ee8387585e24569245b4ed8ad7c7d39229cc3e458a0af1d3ba29172eef66aa6",
+  "inputs": {
+    "comparison.json": "1e4b8989b6e25de8aa6b6842edac31712eb40743d3f8293c59b85a0d99ef9918",
+    "summary.json": "80ef6714a64bf7383fd2c482c581faa94b841bb626b793860dc19e4fd52386ff",
+    "numeric-evidence.jsonl.gz": "6f1dac9f47c9dd6ff944c2ca01062711d4615637f7d86f15837015bcb533b676",
+    "diagnostic-protocol.json": "d7206347f10c4071e0ef1c80923ef2ee2d29122ca7c5a44fcb7c01494829b22e",
+    "diagnostic-prepared.json": "1988eb19d645c2d935c8e086d06897b5de6f44a4ca30f25872657ea0639d7196",
+    "export-audit.json": "dac88b3fa2d17bd8b8e32ac0e9eaf4d24473b9ac2715f8d1601df3ff03cc751d",
+    "export-metadata-repair.json": "5948d9937b4700bf4d5aee5fba0e7ee3eae95ff13304f8adf8bd829e4233b9af",
+    "training-complete.json": "59e0515eb09b916fbcf85a1a0166d1085d939853bb8f2410708cd5cf38c47eb7"
+  }
+}

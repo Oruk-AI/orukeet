@@ -1,0 +1,112 @@
+{
+  "started_utc": "2026-09-07T05:55:59.674354+00:00",
+  "seal_sha256": "80ea4332fc067ca98d0e1a1c2f781ba9c3bbed5aa46fb320a989b4a20c0ae9d1",
+  "model_hashes": {
+    "parakeet": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+    "orukeet": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811"
+  },
+  "decoding": {
+    "strategy": "greedy_batch",
+    "model_type": "tdt",
+    "durations": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "greedy": {
+      "max_symbols": 10
+    },
+    "beam": {
+      "beam_size": 2,
+      "return_best_hypothesis": false,
+      "score_norm": true,
+      "tsd_max_sym_exp": 50,
+      "alsd_max_target_len": 2.0
+    }
+  },
+  "versions": {
+    "torch": "2.12.0+cu132",
+    "nemo_toolkit": "3.0.0",
+    "pyarrow": "24.0.0",
+    "huggingface_hub": "1.9.2",
+    "soundfile": "0.13.1",
+    "soxr": "1.0.0",
+    "rapidfuzz": "3.14.1",
+    "whisper_normalizer": "0.1.12"
+  },
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "precision": "FP32 model parameters, CUDA BF16 autocast",
+  "script_sha256": "3cda7aacf9548e3fd1a2d0b59aabd5444a4bdaf4ed12e534c874d8dcc99ffcf8",
+  "sets": {
+    "lesbos_el": {
+      "seal_sha256": "80ea4332fc067ca98d0e1a1c2f781ba9c3bbed5aa46fb320a989b4a20c0ae9d1",
+      "rows": 230,
+      "audio_receipt_sha256": "43040b61c0bb4074e0f1243b5e6268085b1f5e49c174c795d7de3bec2a0eab2e",
+      "prediction_sha256": {
+        "parakeet": "c3437052ce384e4b0bbff0f36de5421f6fc71880327d8b3b07ddfe6ee32c20a5",
+        "orukeet": "798f4251245d78f9a560c2d731ab82dc6bd4574871a34d546242a447e77fc61d"
+      },
+      "timing": {
+        "parakeet": {
+          "seconds": 2.722878922999371,
+          "rows_this_process": 230,
+          "resumed_rows": 0
+        },
+        "orukeet": {
+          "seconds": 1.1992353689856827,
+          "rows_this_process": 230,
+          "resumed_rows": 0
+        }
+      },
+      "failures_this_process": {
+        "parakeet": 0,
+        "orukeet": 0
+      },
+      "completed_utc": "2026-09-07T05:56:06.568201+00:00"
+    },
+    "voxpopuli_it": {
+      "seal_sha256": "80ea4332fc067ca98d0e1a1c2f781ba9c3bbed5aa46fb320a989b4a20c0ae9d1",
+      "rows": 1257,
+      "audio_receipt_sha256": "90eae88a2eeacc939e00648fafc8a7b197f2662f8c9461704c2cd72b5d9dbad4",
+      "prediction_sha256": {
+        "parakeet": "7f1506834afc8d7814e51c01f60ca72fdf7c8b63b7a534d447273c68071503b3",
+        "orukeet": "b8ced34510a8c76bab5dca0588672c5ba92b4a5cd853c59771b8181c54f73863"
+      },
+      "timing": {
+        "orukeet": {
+          "seconds": 10.135799162992043,
+          "rows_this_process": 1257,
+          "resumed_rows": 0
+        },
+        "parakeet": {
+          "seconds": 9.904836624977179,
+          "rows_this_process": 1257,
+          "resumed_rows": 0
+        }
+      },
+      "failures_this_process": {
+        "orukeet": 0,
+        "parakeet": 0
+      },
+      "completed_utc": "2026-09-07T05:56:48.334687+00:00"
+    }
+  },
+  "cuda_version": "13.2",
+  "cudnn_version": 92000,
+  "float32_matmul_precision": "highest",
+  "tf32_matmul_allowed": false,
+  "tf32_cudnn_allowed": true,
+  "compute_capability": [
+    8,
+    0
+  ],
+  "final_model_hashes": {
+    "parakeet": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+    "orukeet": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811"
+  },
+  "completed_utc": "2026-09-07T05:57:02.977329+00:00",
+  "complete": true,
+  "coverage_wrapper_sha256": "839bb90d83ae1a35dc8d6f090b02bb1b619e2cf60e01ead4b92756aac7bf61d2"
+}

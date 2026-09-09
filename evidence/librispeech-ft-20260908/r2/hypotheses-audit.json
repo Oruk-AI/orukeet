@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "publication_authorized": false,
+  "records": 4265,
+  "paired_predictions": 12795,
+  "models": {
+    "parakeet": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+    "orukeet_ft4035": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+    "orukeet_targeted": "3e703fa07386d5fd04604ce8c4e5afa1d7f345dd5b6e8bdc0b92e8adba4dc7d8"
+  },
+  "empty_hypotheses": {
+    "parakeet": 0,
+    "orukeet_ft4035": 1,
+    "orukeet_targeted": 0
+  },
+  "checks": [
+    "Every private hypothesis re-scored locally",
+    "All reference and prediction hashes match",
+    "Every WER/CER numerator and denominator matches saved counts",
+    "All model/partition WERs match independent upstream batch scoring"
+  ],
+  "inputs_sha256": {
+    "comparison.json": "3f9735cfcd26897db8ed46dbe83d046be7c9cb802cf5aa304cace0d9d2e0249b",
+    "numeric-evidence.jsonl.gz": "dfa886ecf7c4628e925fd859ef3e62728c79c3db5e9e78ad07776767c30e3c7f"
+  },
+  "manifest_sha256": "8770c5a110b60d3adabf4a8e4826adb516664bd44a8c2352e1da57086f85e500",
+  "prediction_sha256": {
+    "parakeet": "716c6a95624560bffcc1f55b5bb21c1429680be5225f0e174ee36b9dc0b52eb2",
+    "orukeet_ft4035": "434dfaf964ef74b6446513f641fa6a4c8c818dcf770de156a5ec206ab765c88b",
+    "orukeet_targeted": "466212f457f21e427ac523aa13cb4a944fedf9fded14cf2ffacdbee0890af090"
+  },
+  "script_sha256": "20a9bfd9cb4efb8736a3f8a47ffbca01828eaee49c9617f0971a2fa28572f3f3",
+  "upstream_scoring_verified": {
+    "revision": "48219c6028db0517d704600d92f31edfc96e8c23",
+    "model_partition_pairs": 9,
+    "check": "Unmodified upstream normalizer definitions and full-partition batch scoring reproduce all paired WERs."
+  }
+}

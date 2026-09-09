@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "tests": 4,
+  "environment": "Existing pinned NeMo Speech 26.07.00 container; CPU only",
+  "checks": [
+    "One encoder and decoder teacher forward per batch",
+    "ASR and each matching term counted exactly once",
+    "Student gradients finite; teacher gradients absent",
+    "Teacher parameters excluded from student parameters/state",
+    "Layer-only path unchanged and does not consume sampling RNG",
+    "Padded positions excluded and token/duration KL normalized separately"
+  ],
+  "source_sha256": {
+    "train.py": "97dd1726e0cd81d06d42222a521bc6c43e2d463e5ce2277fecd31fa050dff4b0",
+    "layer_anchor.py": "8fe723a11c45810e28b18f69be7d9d601612e743dd98fb7c69b76a178d30760f",
+    "posterior_loss.py": "1338b94f61de0bfe14c179ef7944ff7ea7f302eca282ea1a48177058b9c3025d",
+    "test_layer_posterior.py": "f492233b7d535eea633c2b437b43d3dffb099a413c3897a4a5ddae4a32da3dad",
+    "test_posterior_loss.py": "38c598526ac74d39f59f4beb94a6ee711523c1f31f3a33218db32477828b80c1"
+  },
+  "log_sha256": "a2ca6e7234f63b7c52176672fe7c92bf3d90fe0edf89357ddbd474c94623e0bd"
+}

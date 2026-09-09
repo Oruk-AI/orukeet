@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "optimizer_steps": 4035,
+  "rows": 223452,
+  "step_sequence_has_no_gaps_or_duplicates": true,
+  "loss_lr_gradient_norm_all_finite": true,
+  "coverage_matches_sealed_plan": true,
+  "peak_lr": 1e-06,
+  "final_lr": 1e-07,
+  "training_seconds": 5044.2377801350085,
+  "peak_cuda_bytes": 25458837504
+}

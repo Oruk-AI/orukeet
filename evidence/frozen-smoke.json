@@ -1,0 +1,10 @@
+{
+  "platform": "macOS arm64",
+  "packager": "PyInstaller 6.22.2",
+  "app_bundle": "OpenWhisper.app",
+  "dispatch": "--speech-worker",
+  "native_model_load": "passed",
+  "transcription": "passed",
+  "persistent_worker_reuse": "passed",
+  "gui_started": false
+}

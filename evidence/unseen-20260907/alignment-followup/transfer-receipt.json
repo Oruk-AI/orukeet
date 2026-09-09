@@ -1,0 +1,31 @@
+{
+  "ready": true,
+  "protocol_sha256": "80ea4332fc067ca98d0e1a1c2f781ba9c3bbed5aa46fb320a989b4a20c0ae9d1",
+  "files": {
+    "comparison.json": {
+      "remote_path": "/home/nathanroll/parakeet-ft/unseen_20260907/alignment-followup/comparison/comparison.json",
+      "sha256": "be523c66c6268d8526532d783a8aac468406b8011a7016dbaacf47a8adb16877",
+      "bytes": 20025
+    },
+    "numeric-evidence.jsonl.gz": {
+      "remote_path": "/home/nathanroll/parakeet-ft/unseen_20260907/alignment-followup/comparison/numeric-evidence.jsonl.gz",
+      "sha256": "5976dbebd6cb88c4a925fad72094bc39f71b6a3a67e9a0b926ec792d8b64abbe",
+      "bytes": 288812
+    },
+    "runtime.json": {
+      "remote_path": "/home/nathanroll/parakeet-ft/unseen_20260907/alignment-followup/results/runtime.json",
+      "sha256": "e6d40be329e7d93af501f249f19130ceb363bdf80f8cb99064b376d9752c19f4",
+      "bytes": 3489
+    },
+    "comparison-receipt.json": {
+      "remote_path": "/home/nathanroll/parakeet-ft/unseen_20260907/alignment-followup/comparison/comparison-receipt.json",
+      "sha256": "c33e289346288c1c8a84bf8484309aafc0b5820162a513fb5a4bb04f6bd2cc12",
+      "bytes": 483
+    }
+  },
+  "phase": "followup",
+  "raw_audio_included": false,
+  "raw_references_included": false,
+  "raw_predictions_included": false,
+  "publication_authorized": false
+}

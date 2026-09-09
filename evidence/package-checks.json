@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "python": "3.12.13",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "unit_and_real_model_tests": {
+    "metal": {
+      "passed": 20,
+      "seconds": 3.38
+    },
+    "cpu": {
+      "passed": 20,
+      "seconds": 8.89
+    }
+  },
+  "selection_contract_tests": 3,
+  "fresh_wheel_transcription": "passed",
+  "fresh_sdk_install_and_transcription": "passed",
+  "model_sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+  "language_reported": null
+}

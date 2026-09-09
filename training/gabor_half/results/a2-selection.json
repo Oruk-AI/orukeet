@@ -1,0 +1,71 @@
+{
+  "rule": "Audit and evaluate all three development candidates. Test development-passing candidates on the larger regression in increasing development-WER order, stopping at the first full pass. If none passes development, run the lowest-development-WER candidate once for diagnosis only. Preserve every result and explicitly name any larger comparisons not run.",
+  "development_candidates": [
+    {
+      "label": "a2-0350",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_a2_20260906/a2-0350.nemo",
+      "weights": [
+        0.65,
+        0.35
+      ],
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.05086738084064,
+        "delta_pp": -0.0313676442476265
+      },
+      "failures": [
+        "cv_hu_dev_selection: regression 0.544959 pp exceeds 0.5"
+      ]
+    },
+    {
+      "label": "a2-0500",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_a2_20260906/a2-0500.nemo",
+      "weights": [
+        0.5,
+        0.5
+      ],
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.008086190889848,
+        "delta_pp": -0.07414883419841764
+      },
+      "failures": [
+        "fleurs_lt_dev_selection: regression 0.500939 pp exceeds 0.5"
+      ]
+    },
+    {
+      "label": "a2-0650",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_a2_20260906/a2-0650.nemo",
+      "weights": [
+        0.35,
+        0.65
+      ],
+      "status": "pass",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.0202362580958,
+        "delta_pp": -0.061998766992463816
+      },
+      "failures": []
+    }
+  ],
+  "larger_order": [
+    "a2-0650"
+  ],
+  "diagnostic_only": false,
+  "larger_results": [
+    {
+      "label": "a2-0650",
+      "source_qualified": false,
+      "comparison_sha256": "e0f81c0fc464207fe23e7890796e5a558508d6f9271796a8bb0ff54355906126"
+    }
+  ],
+  "source_qualified_selection": null,
+  "larger_comparisons_not_run": [
+    "a2-0350",
+    "a2-0500"
+  ],
+  "native_qualified": false
+}

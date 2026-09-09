@@ -1,0 +1,123 @@
+{
+  "primary_organization": "Oruk AI",
+  "authors": [
+    {
+      "name": "Nathan Roll",
+      "affiliations": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "Irene Yi",
+      "affiliations": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "Büşra Marşan",
+      "affiliations": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "Vianney Grenez",
+      "affiliations": [
+        1
+      ]
+    },
+    {
+      "name": "Gabriel Stein",
+      "affiliations": [
+        4
+      ]
+    },
+    {
+      "name": "Momcilo Mrkaic",
+      "affiliations": [
+        5
+      ]
+    },
+    {
+      "name": "Pavle Padjin",
+      "affiliations": [
+        5
+      ]
+    },
+    {
+      "name": "Vladimir Zeljkovic",
+      "affiliations": [
+        5
+      ]
+    },
+    {
+      "name": "Calbert Graham",
+      "affiliations": [
+        1,
+        3
+      ]
+    }
+  ],
+  "affiliations": [
+    {
+      "id": 1,
+      "name": "Oruk AI",
+      "slug": "oruk",
+      "primary": true,
+      "source": "report/assets/oruk-lockup.png",
+      "source_sha256": "932df9164b237a1a31d1e636897d1766a15b8bac738acf81ee93de8ea2d6c18c",
+      "web_asset": "docs/assets/team/oruk.png",
+      "web_asset_sha256": "717fb1a29a3faf8cf62baa924c65e77afb8fb82180e7398612a01a672af014da",
+      "display_width": 184
+    },
+    {
+      "id": 2,
+      "name": "Stanford University",
+      "slug": "stanford",
+      "primary": false,
+      "source": "report/assets/affiliations/stanford.png",
+      "source_sha256": "09434daceea1a4ab62da5db3cd9e81bbe1a7e034224f504d63fd3f12e51af74b",
+      "web_asset": "docs/assets/team/stanford.png",
+      "web_asset_sha256": "6521b4f360f081fb9322b05ff4740fe8ad2b7c720ee1a9e3f7b9935624f4abc2",
+      "display_width": 144
+    },
+    {
+      "id": 3,
+      "name": "University of Cambridge",
+      "slug": "cambridge",
+      "primary": false,
+      "source": "report/assets/affiliations/cambridge.svg",
+      "source_sha256": "27381d019c0a54c53b7b746750dc148f35dca2a6fe96b39dff5f896b0e745902",
+      "web_asset": "docs/assets/team/cambridge.png",
+      "web_asset_sha256": "a3faf2131e9e2df035d4b21d076c0eea606669c7fb46283b7c90041880a632fd",
+      "display_width": 144
+    },
+    {
+      "id": 4,
+      "name": "OpenWhispr",
+      "slug": "openwhispr",
+      "primary": false,
+      "source": "report/assets/affiliations/openwhispr.svg",
+      "source_sha256": "29d50f34b1ffe4b11665aaeefdaf63a22796c53c38234cd9d6f06c5153c9e13a",
+      "web_asset": "docs/assets/team/openwhispr.png",
+      "web_asset_sha256": "564f133d0c0b5c87cd6384f9ce2689fffa6da68b004f303d2e278322e213ac62",
+      "display_width": 40
+    },
+    {
+      "id": 5,
+      "name": "Hoid",
+      "slug": "hoid",
+      "primary": false,
+      "source": "report/assets/affiliations/hoid.svg",
+      "source_sha256": "49b5fc2265f1294abf6bb65f054078b640b9fbaed9780e2817ab6a103cd2eb72",
+      "web_asset": "docs/assets/team/hoid.png",
+      "web_asset_sha256": "b5a252792faf5ce80c3f1aee671867524c97e2d85de3808a0c93f0c01a4c33d8",
+      "display_width": 76
+    }
+  ],
+  "source_report": "report/paper.tex",
+  "citation": "CITATION.cff",
+  "presentation": "Oruk leads each page; the remaining marks label author affiliations in report order."
+}

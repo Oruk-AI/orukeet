@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "tests": 10,
+  "duration_seconds": 16.71,
+  "environment": "Existing NeMo 26.07.00 container; CPU-only unit checks, torch 2.12.0+cu132",
+  "files_sha256": {
+    "test_gabor.py": "3fa7ab5633fb78ce727f6cb9a4bedeb82f3e119dc8b67b51b6a9611687a2e1bf",
+    "test_compare.py": "947c7fb11fe0c5b55505aef14251353454426879a694c7bef1dfbae21f63f4cc",
+    "test_anchor_loss.py": "c8a0f56ff88bfc39a6d9d851bfc39af18ee56c32057a5a26f8382e2521e7097c",
+    "test_posterior_loss.py": "38c598526ac74d39f59f4beb94a6ee711523c1f31f3a33218db32477828b80c1",
+    "test_layer_anchor.py": "43b330c8713be5eb718285c1659394f258416cd3010d2ea022c98e3c1b04c541",
+    "layer_anchor.py": "035acf9ec32fbe6432295b89342586435f54a40c76bece3bfbb29371e1a2e554",
+    "train.py": "b2aab1ffd4e8ff1538d48a177d78b6770caf08c2f8f4a1fe5503a5ad05b6c91e"
+  },
+  "note": "Initial new hook test used exact zero and observed 8.56e-16 normalized MSE from FP32 training versus no-grad linear kernels; corrected numerical tolerance to 1e-12 before this passing run."
+}

@@ -1,0 +1,16 @@
+{
+  "step": 88,
+  "total_steps": 88,
+  "next_batch": 349,
+  "loss": 0.5003265142440796,
+  "lr": 1e-07,
+  "gradient_norm": 2.761955976486206,
+  "seen_rows": 4265,
+  "seen_by_split": {
+    "librispeech_test_other": 2939,
+    "fleurs_el": 650,
+    "fleurs_fr": 676
+  },
+  "elapsed_seconds": 134.33099230000516,
+  "cuda_peak_bytes": 40715446784
+}

@@ -1,0 +1,23 @@
+{
+  "pid": 71257,
+  "command": [
+    "/opt/venv/bin/python",
+    "/home/nathanroll/parakeet-ft/targeted_ft_20260908/code/train.py",
+    "--plan",
+    "/home/nathanroll/parakeet-ft/targeted_ft_20260908/prepared/plan.json",
+    "--prepared",
+    "/home/nathanroll/parakeet-ft/targeted_ft_20260908/prepared/prepared.json",
+    "--parent",
+    "/dev/shm/orukeet-regression-ft-20260907/checkpoints/orukeet-regression-ft.nemo",
+    "--fits",
+    "/home/nathanroll/parakeet-ft/gabor_half_20260906/fit-full/fits.json",
+    "--gabor-code",
+    "/home/nathanroll/parakeet-ft/gabor_half_20260906",
+    "--output",
+    "/home/nathanroll/parakeet-ft/targeted_ft_20260908/run",
+    "--checkpoint-dir",
+    "/dev/shm/orukeet-targeted-ft-20260908/checkpoints",
+    "--skip-optimizer-checkpoint"
+  ],
+  "tmpdir": "/dev/shm/orukeet-targeted-ft-20260908/tmp"
+}

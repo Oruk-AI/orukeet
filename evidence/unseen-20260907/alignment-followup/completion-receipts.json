@@ -1,0 +1,54 @@
+{
+  "lesbos_el.complete.json": {
+    "seal_sha256": "80ea4332fc067ca98d0e1a1c2f781ba9c3bbed5aa46fb320a989b4a20c0ae9d1",
+    "rows": 230,
+    "audio_receipt_sha256": "43040b61c0bb4074e0f1243b5e6268085b1f5e49c174c795d7de3bec2a0eab2e",
+    "prediction_sha256": {
+      "parakeet": "c3437052ce384e4b0bbff0f36de5421f6fc71880327d8b3b07ddfe6ee32c20a5",
+      "orukeet": "798f4251245d78f9a560c2d731ab82dc6bd4574871a34d546242a447e77fc61d"
+    },
+    "timing": {
+      "parakeet": {
+        "seconds": 2.722878922999371,
+        "rows_this_process": 230,
+        "resumed_rows": 0
+      },
+      "orukeet": {
+        "seconds": 1.1992353689856827,
+        "rows_this_process": 230,
+        "resumed_rows": 0
+      }
+    },
+    "failures_this_process": {
+      "parakeet": 0,
+      "orukeet": 0
+    },
+    "completed_utc": "2026-09-07T05:56:06.568201+00:00"
+  },
+  "voxpopuli_it.complete.json": {
+    "seal_sha256": "80ea4332fc067ca98d0e1a1c2f781ba9c3bbed5aa46fb320a989b4a20c0ae9d1",
+    "rows": 1257,
+    "audio_receipt_sha256": "90eae88a2eeacc939e00648fafc8a7b197f2662f8c9461704c2cd72b5d9dbad4",
+    "prediction_sha256": {
+      "parakeet": "7f1506834afc8d7814e51c01f60ca72fdf7c8b63b7a534d447273c68071503b3",
+      "orukeet": "b8ced34510a8c76bab5dca0588672c5ba92b4a5cd853c59771b8181c54f73863"
+    },
+    "timing": {
+      "orukeet": {
+        "seconds": 10.135799162992043,
+        "rows_this_process": 1257,
+        "resumed_rows": 0
+      },
+      "parakeet": {
+        "seconds": 9.904836624977179,
+        "rows_this_process": 1257,
+        "resumed_rows": 0
+      }
+    },
+    "failures_this_process": {
+      "orukeet": 0,
+      "parakeet": 0
+    },
+    "completed_utc": "2026-09-07T05:56:48.334687+00:00"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "private draft; future publication needs approval",
+  "source": "evidence/r3-promotion-20260908/scores.json",
+  "model": "Orukeet r3",
+  "alt_text": "Orukeet r3: 12,288 fitted, frozen Gabor kernels. Pooled WER falls from NVIDIA Parakeet\u2019s 11.01% to Orukeet\u2019s 9.85% across the 25-language, 20,146-clip FLEURS comparison, a 10.6% relative reduction. On 5,120 English accent/domain clips, WER is 8.84% for Orukeet versus 9.51% for Parakeet. Matched NeMo decoding; full split scores and methods included. Native Q8 is 714 MB.",
+  "files": [
+    "orukeet-card-landscape.png",
+    "orukeet-card-square.png"
+  ]
+}

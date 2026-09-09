@@ -1,0 +1,155 @@
+{
+  "label": "a3-0150",
+  "candidate_sha256": "dec8b3913a2a6c47371af0587df472f406d9265869a7432f9958d2b216dbbf25",
+  "longest_recovery_path_updates": 2800,
+  "nodes": {
+    "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32": {
+      "label": "original-before-surgery",
+      "optimizer_updates_in_this_node": 0,
+      "parents": [],
+      "longest_recovery_path_updates": 0
+    },
+    "8ba6d6ba01fa90798e5e4e4b4605d89d1b84f98f20e824a621999184a1f0cd3f": {
+      "label": "r6-0400",
+      "optimizer_updates_in_this_node": 400,
+      "parents": [
+        "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32"
+      ],
+      "longest_recovery_path_updates": 400,
+      "evidence_sha256": {
+        "r6-0400-audit.json": "1f01413f0599f2de5f22bd283b6a0bea4d6fb02386c413698f3d1b4be5d82f40",
+        "r6-provenance.json": "b460f9fef69cd2163a88eb0956b9afb4d21d1dbd5d2d440a539d138f8a93ba76"
+      },
+      "operation": "recovery training",
+      "seed": 20260906,
+      "declared_run_steps": 600
+    },
+    "992a35cdfcea8d4d6ca57e8bef4d2fa2ae82a8e1ab02a872598e338faea40ef3": {
+      "label": "r7-0300",
+      "optimizer_updates_in_this_node": 300,
+      "parents": [
+        "8ba6d6ba01fa90798e5e4e4b4605d89d1b84f98f20e824a621999184a1f0cd3f"
+      ],
+      "longest_recovery_path_updates": 700,
+      "evidence_sha256": {
+        "r7-0300-audit.json": "69e28b3ad2155116189ee9be21c8a8914acc4081d7fa2f4519b7a39aa52318b2",
+        "r7-provenance.json": "f4a734d987fa3ae3aa8c816b3b0505966bfa0c206eb63a38b131f7e454bf742e"
+      },
+      "operation": "recovery training",
+      "seed": 20260906,
+      "declared_run_steps": 300
+    },
+    "b22dea04beecf1eba46cef835501082d97c44a4e28e1eed356a650246abc3b4d": {
+      "label": "r8-0100",
+      "optimizer_updates_in_this_node": 100,
+      "parents": [
+        "992a35cdfcea8d4d6ca57e8bef4d2fa2ae82a8e1ab02a872598e338faea40ef3"
+      ],
+      "longest_recovery_path_updates": 800,
+      "evidence_sha256": {
+        "r8-0100-audit.json": "593c3785afa6c784079c9274b0e4804dac8f938977923bf400ea3791f831de8b",
+        "r8-provenance.json": "15242682f4abf480260f3b920b021814f6f760100e400dbdb15a164e456b503e"
+      },
+      "operation": "recovery training",
+      "seed": 20260906,
+      "declared_run_steps": 400
+    },
+    "ae59dcdaa87c9cf476ae5ecd9986287c49f38ead8a92e53da7bb9fa286514f7e": {
+      "label": "r9-0600",
+      "optimizer_updates_in_this_node": 600,
+      "parents": [
+        "b22dea04beecf1eba46cef835501082d97c44a4e28e1eed356a650246abc3b4d"
+      ],
+      "longest_recovery_path_updates": 1400,
+      "evidence_sha256": {
+        "r9-0600-audit.json": "02e4d13b1e3ea83010d5e131dad007060a07ada30a4465394db720e9088c990d",
+        "r9-provenance.json": "3f19018a7a990ae43dd56f2cecfde811c2c821cd6bc27022d19b7793aca2f92e"
+      },
+      "operation": "recovery training",
+      "seed": 20260907,
+      "declared_run_steps": 600
+    },
+    "ac0b8f43d67580bafd79614207bf012037147fb792b6a117f02bf0cfb85e92be": {
+      "label": "r11-0400",
+      "optimizer_updates_in_this_node": 400,
+      "parents": [
+        "ae59dcdaa87c9cf476ae5ecd9986287c49f38ead8a92e53da7bb9fa286514f7e"
+      ],
+      "longest_recovery_path_updates": 1800,
+      "evidence_sha256": {
+        "r11-0400-audit.json": "75734ed46136327a36709897b7ab8adce4cf6dac5f1327dc70d489a6ac8cdd28",
+        "r11-provenance.json": "922ba5e8bcb1deda0c20e4411638f48eea3ea11537616ba30466808f32a977aa"
+      },
+      "operation": "recovery training",
+      "seed": 20260908,
+      "declared_run_steps": 400
+    },
+    "d1610da004fa008fa9475895ee509998fee1f8986de6aa002107ef78eab70f3d": {
+      "label": "r12-0800",
+      "optimizer_updates_in_this_node": 800,
+      "parents": [
+        "ac0b8f43d67580bafd79614207bf012037147fb792b6a117f02bf0cfb85e92be"
+      ],
+      "longest_recovery_path_updates": 2600,
+      "evidence_sha256": {
+        "r12-0800-audit.json": "e5f856dc429ec2b022fd0d55b7ff57f633e42372285a26d9a92e358f4d2909db",
+        "r12-provenance.json": "324987237fddcf80703a1dd8341cec9fb6712755b2ad9eaf2f134cede93d703f"
+      },
+      "operation": "recovery training",
+      "seed": 20260909,
+      "declared_run_steps": 800
+    },
+    "44059de88f9797dcd9a3386e1b267733937326c518b2d570468911b6f7da18db": {
+      "label": "a2-0650",
+      "optimizer_updates_in_this_node": 0,
+      "parents": [
+        "ac0b8f43d67580bafd79614207bf012037147fb792b6a117f02bf0cfb85e92be",
+        "d1610da004fa008fa9475895ee509998fee1f8986de6aa002107ef78eab70f3d"
+      ],
+      "longest_recovery_path_updates": 2600,
+      "evidence_sha256": {
+        "a2-0650-audit.json": "47c221cf0e1f38eeedca06e302b3a54b2bde118d572b7c284211ead087da6596",
+        "a2-0650-average.json": "6d018283fda0e0310028bbdd7e9a822594df66b2018666b003857e1ec6b5777a"
+      },
+      "operation": "parameter average",
+      "parent_weights": [
+        0.35,
+        0.65
+      ]
+    },
+    "63d462cf943d07785b382db97f179aaf8d9d4b7fe48672bcccdf8cf4e2617a47": {
+      "label": "r14-0200",
+      "optimizer_updates_in_this_node": 200,
+      "parents": [
+        "44059de88f9797dcd9a3386e1b267733937326c518b2d570468911b6f7da18db"
+      ],
+      "longest_recovery_path_updates": 2800,
+      "evidence_sha256": {
+        "r14-0200-audit.json": "d510b39489aa8c00b7a7e62033628a01b0a60b65c9a59ad5083f2ea1e926e659",
+        "r14-provenance.json": "d284beb047a63d333aa1ca7ac5fd02b26f6782cb60c3b4505c62f347eb30f07b"
+      },
+      "operation": "recovery training",
+      "seed": 20260911,
+      "declared_run_steps": 400
+    },
+    "dec8b3913a2a6c47371af0587df472f406d9265869a7432f9958d2b216dbbf25": {
+      "label": "a3-0150",
+      "optimizer_updates_in_this_node": 0,
+      "parents": [
+        "63d462cf943d07785b382db97f179aaf8d9d4b7fe48672bcccdf8cf4e2617a47",
+        "992a35cdfcea8d4d6ca57e8bef4d2fa2ae82a8e1ab02a872598e338faea40ef3"
+      ],
+      "longest_recovery_path_updates": 2800,
+      "evidence_sha256": {
+        "a3-0150-audit.json": "748b3c0ee9dd142fa4f6ae8acd617422bf26197fa00d9124d94e0f2a84b9b721",
+        "a3-0150-average.json": "d59071b7e1688af482a7cb09cec2bb35504787719fdbda6aef0259902aa9a2c7"
+      },
+      "operation": "parameter average",
+      "parent_weights": [
+        0.85,
+        0.15
+      ]
+    }
+  },
+  "scope": "Audited weight ancestry only. The path includes prior recovery before parameter averaging; it is not a single uninterrupted optimizer run. It excludes foundation training, pre-surgery adaptation and experiments outside this ancestry. No unique audio-hours or independent generalization claim is inferred."
+}

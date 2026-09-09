@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/huggingface/open_asr_leaderboard",
+  "revision": "48219c6028db0517d704600d92f31edfc96e8c23",
+  "license": "Apache-2.0",
+  "upstream_sha256": {
+    "normalizer/normalizer.py": "490b56393484ef386b486f3679cc2261264af280b3512154431e0bdcf2778295",
+    "normalizer/english_abbreviations.py": "52997cc963e0bd6568d15554ad8d5fb0759f20f361483632a22f90d2d0e07db1",
+    "normalizer/data_utils.py": "738f362b477ee357f743a567b8bbd69fac49e56dce0a477cbdd52dec863842b8",
+    "normalizer/eval_utils.py": "27138d5884e39f5e6422e1dc48ce60dc2f5c15a56e63117115d7e6088d29e449"
+  },
+  "vendored_sha256": {
+    "LICENSE": "5ee13882fce0975f0ad3c3d5c2042af4896c2a669be2d6df5b3d256811267c85",
+    "english_abbreviations.py": "52997cc963e0bd6568d15554ad8d5fb0759f20f361483632a22f90d2d0e07db1",
+    "__init__.py": "8c39e42af3204c41c564c970e24525da160663836b54acc1b629e4342f862334",
+    "multilingual.py": "4c8db6c4171c8c2f5567d2ed625a3a1f0d45156af45ca42d9555c0c9b61a29d5",
+    "normalizer.py": "490b56393484ef386b486f3679cc2261264af280b3512154431e0bdcf2778295"
+  },
+  "modifications": {
+    "normalizer.py": "None",
+    "english_abbreviations.py": "None",
+    "multilingual.py": "Exact MultilingualNormalizer and normalize_compound_pairs definitions extracted; imports minimized, empty FILLER_WORDS preserved."
+  }
+}

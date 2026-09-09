@@ -1,0 +1,2376 @@
+[
+  {
+    "type": "group",
+    "weight": 0.018619926262180155,
+    "tags": {
+      "lang": "bg"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.4726702168937618,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_bg_accent_b9247ddc3de55a37.jsonl",
+            "weight": 0.38198819915902876,
+            "tags": {
+              "lang": "bg",
+              "src": "cv",
+              "accent_pool": "sofia accent"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_bg_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.6180118008409713,
+            "tags": {
+              "lang": "bg",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.5273297831062381,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_bg_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "bg",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.02792472460920991,
+    "tags": {
+      "lang": "cs"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.6487066065228306,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_cs_accent_8c6ad2e4ea7ef92b.jsonl",
+            "weight": 0.05924585567256773,
+            "tags": {
+              "lang": "cs",
+              "src": "cv",
+              "accent_pool": "moravsk\u00fd ,bez p\u0159\u00edzvuku,han\u00e1ck\u00fd"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_cs_accent_901b814ea1127c3d.jsonl",
+            "weight": 0.08537414617018585,
+            "tags": {
+              "lang": "cs",
+              "src": "cv",
+              "accent_pool": "st\u0159edo\u010desk\u00fd kraj / praha"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_cs_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.8553799981572465,
+            "tags": {
+              "lang": "cs",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.35129339347716937,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_cs_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "cs",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.01546712710801205,
+    "tags": {
+      "lang": "da"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.41980098826219503,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_da_accent_db170d3ee268cf7b.jsonl",
+            "weight": 0.3016232502326483,
+            "tags": {
+              "lang": "da",
+              "src": "cv",
+              "accent_pool": "sj\u00e6lland/k\u00f8benhavn"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_da_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.6983767497673518,
+            "tags": {
+              "lang": "da",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.5801990117378051,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_da_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "da",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.10340632785195661,
+    "tags": {
+      "lang": "de"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.8814369990805491,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_d6872467ab7f14e4.jsonl",
+            "weight": 0.0025616775960875296,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "amerikanisches deutsch"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_c18333f8bcd73bc9.jsonl",
+            "weight": 0.0074390430620169526,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "belgisches deutsch,belgien,ostbelgien"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_37fbc08196c0e066.jsonl",
+            "weight": 0.37672227868101904,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "deutschland deutsch"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_a2318848d7c385a6.jsonl",
+            "weight": 0.006990707280095664,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "deutschland deutsch,alemanischer akzent,s\u00fcddeutscher akzent"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_3c88c1c8620ce802.jsonl",
+            "weight": 0.001029661239258675,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "deutschland deutsch,berliner deutsch"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_f8a15b63f57f34e1.jsonl",
+            "weight": 0.003078237493230018,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "deutschland deutsch,brandenburger dialekt,berliner dialekt"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_16cc8a56d2974d2b.jsonl",
+            "weight": 0.0035326669197214616,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "deutschland deutsch,hochdeutsch"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_387bff06b3985a8e.jsonl",
+            "weight": 0.0028368591736861134,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "deutschland deutsch,leichter saarl\u00e4ndische einschlag mit unsch\u00e4rfe bei ch und sch"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_7e37334d99e5634b.jsonl",
+            "weight": 0.00585527189961595,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "deutschland deutsch,niederrhein"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_d5f21411191ce681.jsonl",
+            "weight": 0.003239677901064842,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "deutschland deutsch,ruhrgebiet deutsch,west deutsch"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_663f9fdebaec0f9c.jsonl",
+            "weight": 0.004333487101406571,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "deutschland deutsch,schweizerdeutsch"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_c5cfdcc7d89fe1f6.jsonl",
+            "weight": 0.002240031978641562,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "deutschland deutsch,\u00f6sterreichisches deutsch"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_0cc1102ef343220a.jsonl",
+            "weight": 0.0021791984661253794,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "deutschland ruhrgebiet"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_961a14ee1ffdea8e.jsonl",
+            "weight": 0.002433975255290024,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "franz\u00f6sisch deutsch"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_4af8e66d1a96e346.jsonl",
+            "weight": 0.009599837074609515,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "italienisch deutsch"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_e1421fe592e33005.jsonl",
+            "weight": 0.0020789621302738422,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "kraichgauer"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.02229176644919127,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_d04704911422698f.jsonl",
+            "weight": 0.001613642372776965,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "russisch deutsch"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_b13cd8c1c6624fd1.jsonl",
+            "weight": 0.0358679948187418,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "schweizerdeutsch"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.3773363821469955,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_322e79f529d49bcd.jsonl",
+            "weight": 0.12373000688682578,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "\u00f6sterreichisches deutsch"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_6d059b17275b907e.jsonl",
+            "weight": 0.003008634073325715,
+            "tags": {
+              "lang": "de",
+              "src": "cv",
+              "accent_pool": "\u00f6sterreichisches deutsch,k\u00e4rnten,steiermark"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.11856300091945098,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_de_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "de",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.015610088756680568,
+    "tags": {
+      "lang": "el"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.30410586838471937,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_el_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "el",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.6958941316152806,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_el_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "el",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.11525255592620479,
+    "tags": {
+      "lang": "en"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.9021831446833793,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_b49af3d6345aa402.jsonl",
+            "weight": 0.05221462451036019,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "australian english"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_fecbdec184694cfa.jsonl",
+            "weight": 0.06921090046278873,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "canadian english"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_74d0bb6d856d915a.jsonl",
+            "weight": 0.10057787240045397,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "england english"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_516382d040a9c4df.jsonl",
+            "weight": 0.012116865293979595,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "filipino"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_6e66ee9e42925bb3.jsonl",
+            "weight": 0.00856498142750766,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "hong kong english"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_469b5f4bb5976b26.jsonl",
+            "weight": 0.08760763231560167,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "india and south asia (india, pakistan, sri lanka)"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_2d95d53a3f5b69b0.jsonl",
+            "weight": 0.014831437782285899,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "irish english"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_ece5d26628435e2a.jsonl",
+            "weight": 0.006476670435897627,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "malaysian english"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_84b141eaf4b2c1d1.jsonl",
+            "weight": 0.011342378928325516,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "new zealand english"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.05617750942477953,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_59658cf65eaf2239.jsonl",
+            "weight": 0.011847273705240462,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "scottish english"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_fffb85cd75a67751.jsonl",
+            "weight": 0.005317221840095654,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "singaporean english"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_daf90aff0f4422da.jsonl",
+            "weight": 0.018983273962024823,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "southern african (south africa, zimbabwe, namibia)"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_a163705d3331e331.jsonl",
+            "weight": 0.18699420423649485,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "united states english"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_b80a4f027e178d96.jsonl",
+            "weight": 0.002872419354396273,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "united states english,england english"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.34823072029385294,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_ca936ce5054c1385.jsonl",
+            "weight": 0.004348630793170592,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "welsh english"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_27eb0fb4438c23f0.jsonl",
+            "weight": 0.002285382832744023,
+            "tags": {
+              "lang": "en",
+              "src": "cv",
+              "accent_pool": "west indies and bermuda (bahamas, bermuda, jamaica, trinidad)"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.0978168553166207,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_en_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "en",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.08757071432254299,
+    "tags": {
+      "lang": "es"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.8641775328723954,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_0e5357af09217511.jsonl",
+            "weight": 0.05894556019287357,
+            "tags": {
+              "lang": "es",
+              "src": "cv",
+              "accent_pool": "am\u00e9rica central"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_48d2844f33090e4f.jsonl",
+            "weight": 0.08650906999706486,
+            "tags": {
+              "lang": "es",
+              "src": "cv",
+              "accent_pool": "andino-pac\u00edfico: colombia, per\u00fa, ecuador, oeste de bolivia y venezuela andina"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_417552b428136792.jsonl",
+            "weight": 0.06962504294674861,
+            "tags": {
+              "lang": "es",
+              "src": "cv",
+              "accent_pool": "caribe: cuba, venezuela, puerto rico, rep\u00fablica dominicana, panam\u00e1, colombia caribe\u00f1a, m\u00e9xico caribe\u00f1o, costa del golfo de m\u00e9xico"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_5fbb3eee036a2346.jsonl",
+            "weight": 0.04675961379121824,
+            "tags": {
+              "lang": "es",
+              "src": "cv",
+              "accent_pool": "chileno: chile, cuyo"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_5b763254ee2a6d29.jsonl",
+            "weight": 0.002607613914018489,
+            "tags": {
+              "lang": "es",
+              "src": "cv",
+              "accent_pool": "ciudad de m\u00e9xico"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_e6f9925f43b3c8cc.jsonl",
+            "weight": 0.06977055767607444,
+            "tags": {
+              "lang": "es",
+              "src": "cv",
+              "accent_pool": "espa\u00f1a: centro-sur peninsular (madrid, toledo, castilla-la mancha)"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_77a0f9f43a248140.jsonl",
+            "weight": 0.024940322556042015,
+            "tags": {
+              "lang": "es",
+              "src": "cv",
+              "accent_pool": "espa\u00f1a: islas canarias"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_394a8528434590ba.jsonl",
+            "weight": 0.09138320378369366,
+            "tags": {
+              "lang": "es",
+              "src": "cv",
+              "accent_pool": "espa\u00f1a: norte peninsular (asturias, castilla y le\u00f3n, cantabria, pa\u00eds vasco, navarra, arag\u00f3n, la rioja, guadalajara, cuenca)"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_42171b1ce7f112ae.jsonl",
+            "weight": 0.05686386016105222,
+            "tags": {
+              "lang": "es",
+              "src": "cv",
+              "accent_pool": "espa\u00f1a: sur peninsular (andalucia, extremadura, murcia)"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_99e77016f5c47fbb.jsonl",
+            "weight": 0.221371302223942,
+            "tags": {
+              "lang": "es",
+              "src": "cv",
+              "accent_pool": "m\u00e9xico"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.007785340408496146,
+            "tags": {
+              "lang": "es",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_7591d0a20ef5581a.jsonl",
+            "weight": 0.07710367046447791,
+            "tags": {
+              "lang": "es",
+              "src": "cv",
+              "accent_pool": "rioplatense: argentina, uruguay, este de bolivia, paraguay"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.18633484188429794,
+            "tags": {
+              "lang": "es",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.1358224671276047,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_es_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "es",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.016913971218711972,
+    "tags": {
+      "lang": "et"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.4848210159614176,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_et_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.014246184972346186,
+            "tags": {
+              "lang": "et",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_et_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.9857538150276538,
+            "tags": {
+              "lang": "et",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.5151789840385823,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_et_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "et",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.014418771852581296,
+    "tags": {
+      "lang": "fi"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.2907842784012306,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fi_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.2833899521631151,
+            "tags": {
+              "lang": "fi",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fi_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.716610047836885,
+            "tags": {
+              "lang": "fi",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.7092157215987693,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_fi_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "fi",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.09844872405781697,
+    "tags": {
+      "lang": "fr"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.868999298599861,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_5e2031cc6caa06e6.jsonl",
+            "weight": 0.05587443021641481,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais de belgique"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_c874f639ab50ba9a.jsonl",
+            "weight": 0.38505248165456885,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais de france"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_4cfc870f3bf6a623.jsonl",
+            "weight": 0.0029900230541341725,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais de france,du sud de la france r\u00e9gion occitanie"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_0afdf44338699ddc.jsonl",
+            "weight": 0.0025956335101839593,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais de france,franche-comt\u00e9"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_4a9cd1d2d6c334a7.jsonl",
+            "weight": 0.004878739658744057,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais de france,fran\u00e7ais d'influence suisse et belge"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_750b481d02eedf1b.jsonl",
+            "weight": 0.004400639873167484,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais de france,fran\u00e7ais d\u2019ha\u00efti"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_3c261539a8b1f13f.jsonl",
+            "weight": 0.0032238367789057657,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais de france,lorrain"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_37c025ea3a5047f5.jsonl",
+            "weight": 0.002206856590774517,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais de france,sud ouest"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_5f3c948998002709.jsonl",
+            "weight": 0.008418959626702093,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais de la r\u00e9union"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_008c6c111ba89b48.jsonl",
+            "weight": 0.03302366180216709,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais de suisse"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_55065cda2de376bc.jsonl",
+            "weight": 0.005537766731346279,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais des \u00e9tats-unis"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_341f3d5dc4d4adf9.jsonl",
+            "weight": 0.008605682062643822,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais du b\u00e9nin"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_9e5328acb6f8faa0.jsonl",
+            "weight": 0.07061363857141555,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais du canada"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_8ca7663549bf26d6.jsonl",
+            "weight": 0.001955509118199744,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais du royaume-uni"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_10d3ebd021e604b8.jsonl",
+            "weight": 0.0031849819025117393,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais d\u2019alg\u00e9rie"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_c698859be90828b6.jsonl",
+            "weight": 0.0034064296008561065,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "fran\u00e7ais d\u2019allemagne"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.04162612687269605,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.36240460237456773,
+            "tags": {
+              "lang": "fr",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.13100070140013897,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_fr_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "fr",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.015327320632095336,
+    "tags": {
+      "lang": "hr"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 1.0,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_hr_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "hr",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.03646593793109577,
+    "tags": {
+      "lang": "hu"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.7078849611163209,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_604ec95774c8d0d5.jsonl",
+            "weight": 0.11939293685645432,
+            "tags": {
+              "lang": "hu",
+              "src": "cv",
+              "accent_pool": "budapesti"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_ce3dc5ca8a2158dd.jsonl",
+            "weight": 0.03827172666081326,
+            "tags": {
+              "lang": "hu",
+              "src": "cv",
+              "accent_pool": "budapesti, enyhe salg\u00f3tarj\u00e1ni \u00edzzel"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_81102a00cf6a89c4.jsonl",
+            "weight": 0.02770963891464868,
+            "tags": {
+              "lang": "hu",
+              "src": "cv",
+              "accent_pool": "hajd\u00fa-bihar megye"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_333e2adbe2944282.jsonl",
+            "weight": 0.09194430236566255,
+            "tags": {
+              "lang": "hu",
+              "src": "cv",
+              "accent_pool": "hajd\u00fa-bihari"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_71ed75ecad74950a.jsonl",
+            "weight": 0.04838854208820106,
+            "tags": {
+              "lang": "hu",
+              "src": "cv",
+              "accent_pool": "nincs"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_fecba68473243aae.jsonl",
+            "weight": 0.01781888481833218,
+            "tags": {
+              "lang": "hu",
+              "src": "cv",
+              "accent_pool": "pesti, kiss\u00e9 raccsol\u00f3"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.07449691324109477,
+            "tags": {
+              "lang": "hu",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_f9ce7d27df5aca47.jsonl",
+            "weight": 0.07108886741661072,
+            "tags": {
+              "lang": "hu",
+              "src": "cv",
+              "accent_pool": "standard, kis p\u00e9csi be\u00fct\u00e9ssel"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_2d803aa9980b94f5.jsonl",
+            "weight": 0.03765119972426151,
+            "tags": {
+              "lang": "hu",
+              "src": "cv",
+              "accent_pool": "szabolcsi,nyomott t, s hang,s\u00e1rk\u00f6zi"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.47323698791392094,
+            "tags": {
+              "lang": "hu",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.29211503888367923,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_hu_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "hu",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.07429910842216678,
+    "tags": {
+      "lang": "it"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.8411013951909029,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_c002ca5d1baba65f.jsonl",
+            "weight": 0.005189111683906711,
+            "tags": {
+              "lang": "it",
+              "src": "cv",
+              "accent_pool": "comune,neutrale"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_92769d776788107a.jsonl",
+            "weight": 0.004133643446699326,
+            "tags": {
+              "lang": "it",
+              "src": "cv",
+              "accent_pool": "meridionale"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_4a30ab73425c5b24.jsonl",
+            "weight": 0.015021894184757873,
+            "tags": {
+              "lang": "it",
+              "src": "cv",
+              "accent_pool": "piemontese"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.04778566626776121,
+            "tags": {
+              "lang": "it",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_e1af08abaa3963e4.jsonl",
+            "weight": 0.04372479694833615,
+            "tags": {
+              "lang": "it",
+              "src": "cv",
+              "accent_pool": "romanesco"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_ce3596f33c50317c.jsonl",
+            "weight": 0.03631879225688165,
+            "tags": {
+              "lang": "it",
+              "src": "cv",
+              "accent_pool": "tendente al siculo, ma non marcato"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_1e140df2633341b3.jsonl",
+            "weight": 0.04010262432005846,
+            "tags": {
+              "lang": "it",
+              "src": "cv",
+              "accent_pool": "trentino,lucano"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.7808532672897404,
+            "tags": {
+              "lang": "it",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_5f4dfad36fb632ba.jsonl",
+            "weight": 0.026870203601858246,
+            "tags": {
+              "lang": "it",
+              "src": "cv",
+              "accent_pool": "veneto"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.15889860480909715,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_it_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "it",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.02112687140718183,
+    "tags": {
+      "lang": "lt"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.5346419628190606,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_lt_accent_c0454f276c1b494f.jsonl",
+            "weight": 0.34607764213507825,
+            "tags": {
+              "lang": "lt",
+              "src": "cv",
+              "accent_pool": "auk\u0161taitis,kaunietis"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_lt_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.6539223578649217,
+            "tags": {
+              "lang": "lt",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.4653580371809394,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_lt_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "lt",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.024851893715213996,
+    "tags": {
+      "lang": "lv"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.6553095910088266,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_lv_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.30997064287425097,
+            "tags": {
+              "lang": "lv",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_lv_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.690029357125749,
+            "tags": {
+              "lang": "lv",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.3446904089911734,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_lv_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "lv",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.01577362940958667,
+    "tags": {
+      "lang": "mt"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.337740753580546,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_mt_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "mt",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.662259246419454,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_mt_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "mt",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.036320567243547125,
+    "tags": {
+      "lang": "nl"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.7266155478901124,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_nl_accent_b3b3528ac876ec2a.jsonl",
+            "weight": 0.14539776987099842,
+            "tags": {
+              "lang": "nl",
+              "src": "cv",
+              "accent_pool": "belgisch nederlands"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_nl_accent_eb4acc613546044c.jsonl",
+            "weight": 0.6158527049769261,
+            "tags": {
+              "lang": "nl",
+              "src": "cv",
+              "accent_pool": "nederlands nederlands"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_nl_accent_8adb59a7d88960ba.jsonl",
+            "weight": 0.04103099574579427,
+            "tags": {
+              "lang": "nl",
+              "src": "cv",
+              "accent_pool": "nederlands nederlands,noord-brabants stadsaccent"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_nl_accent_4b788edd5ff75160.jsonl",
+            "weight": 0.03526666604714111,
+            "tags": {
+              "lang": "nl",
+              "src": "cv",
+              "accent_pool": "surinaams nederlands"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_nl_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.16245186335914016,
+            "tags": {
+              "lang": "nl",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.2733844521098877,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_nl_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "nl",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.02915304214270935,
+    "tags": {
+      "lang": "pl"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.6506688596808512,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pl_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.07767781766530349,
+            "tags": {
+              "lang": "pl",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pl_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.9223221823346965,
+            "tags": {
+              "lang": "pl",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.3493311403191488,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_pl_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "pl",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.026723356100165,
+    "tags": {
+      "lang": "pt"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.622180847814034,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_9ca766f4e9fa7276.jsonl",
+            "weight": 0.08470093570649678,
+            "tags": {
+              "lang": "pt",
+              "src": "cv",
+              "accent_pool": "brasileiro,sulista,catarinense,tubaronense"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_e74637f92b56690b.jsonl",
+            "weight": 0.03237530371402605,
+            "tags": {
+              "lang": "pt",
+              "src": "cv",
+              "accent_pool": "carioca"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_6767725281bfd2e7.jsonl",
+            "weight": 0.036004331460320095,
+            "tags": {
+              "lang": "pt",
+              "src": "cv",
+              "accent_pool": "interior do estado de s\u00e3o paulo"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_c56b3c4c1887eb61.jsonl",
+            "weight": 0.06718363493730103,
+            "tags": {
+              "lang": "pt",
+              "src": "cv",
+              "accent_pool": "neutro"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_4e53e36451da9661.jsonl",
+            "weight": 0.031195465642346414,
+            "tags": {
+              "lang": "pt",
+              "src": "cv",
+              "accent_pool": "paranaense, mesclado com rondoniense,pai e m\u00e3e nordestinos, possuo pouqu\u00edssimo sotaque dessa regi\u00e3o do brasil."
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_ab76b32b4d4f795c.jsonl",
+            "weight": 0.031953844171034085,
+            "tags": {
+              "lang": "pt",
+              "src": "cv",
+              "accent_pool": "paulista"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_2a8a3ac32de0e5af.jsonl",
+            "weight": 0.0880203958238675,
+            "tags": {
+              "lang": "pt",
+              "src": "cv",
+              "accent_pool": "portugu\u00eas do brasil,regi\u00e3o sul do brasil"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.14531751976755464,
+            "tags": {
+              "lang": "pt",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.48324856877705336,
+            "tags": {
+              "lang": "pt",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.37781915218596607,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_pt_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "pt",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.01816392305059745,
+    "tags": {
+      "lang": "ro"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.43576797891243507,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_ro_accent_46d37c056327a243.jsonl",
+            "weight": 0.15691164054698264,
+            "tags": {
+              "lang": "ro",
+              "src": "cv",
+              "accent_pool": "bucharest"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_ro_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.02367435094472904,
+            "tags": {
+              "lang": "ro",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_ro_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.8194140085082883,
+            "tags": {
+              "lang": "ro",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.5642320210875649,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_ro_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "ro",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.030479254197253433,
+    "tags": {
+      "lang": "ru"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.6839039522140353,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_ru_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.13326975008690872,
+            "tags": {
+              "lang": "ru",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_ru_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.8420923774746143,
+            "tags": {
+              "lang": "ru",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_ru_accent_2de3ec781b061739.jsonl",
+            "weight": 0.024637872438477027,
+            "tags": {
+              "lang": "ru",
+              "src": "cv",
+              "accent_pool": "\u043d\u0438\u0436\u0435\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0438\u0439"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.31609604778596456,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_ru_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "ru",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.01777670039345124,
+    "tags": {
+      "lang": "sk"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.5560324863290466,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sk_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.4143385025955441,
+            "tags": {
+              "lang": "sk",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sk_accent_c8fec55c02f8091a.jsonl",
+            "weight": 0.1250015405730934,
+            "tags": {
+              "lang": "sk",
+              "src": "cv",
+              "accent_pool": "z\u00e1padoslovensk\u00fd"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sk_accent_ec87c307f68c4c9d.jsonl",
+            "weight": 0.4606599568313624,
+            "tags": {
+              "lang": "sk",
+              "src": "cv",
+              "accent_pool": "\u0161tandardn\u00fd"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.44396751367095355,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_sk_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "sk",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.013749677532150497,
+    "tags": {
+      "lang": "sl"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.30631741079011304,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sl_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.15971926939017728,
+            "tags": {
+              "lang": "sl",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sl_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.8402807306098227,
+            "tags": {
+              "lang": "sl",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.693682589209887,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_sl_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "sl",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.018297550650257347,
+    "tags": {
+      "lang": "sv"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.5161785841703478,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sv_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.04959663281717213,
+            "tags": {
+              "lang": "sv",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sv_accent_fef2e0b60c6f80e5.jsonl",
+            "weight": 0.1641307517078736,
+            "tags": {
+              "lang": "sv",
+              "src": "cv",
+              "accent_pool": "sk\u00e5nska"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sv_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.7862726154749543,
+            "tags": {
+              "lang": "sv",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.48382141582965227,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_sv_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "sv",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.02785823520663118,
+    "tags": {
+      "lang": "uk"
+    },
+    "input_cfg": [
+      {
+        "type": "group",
+        "weight": 0.6430488796144502,
+        "tags": {
+          "src": "cv"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_uk_accent_8032bdc87dc5c553.jsonl",
+            "weight": 0.05050583717541038,
+            "tags": {
+              "lang": "uk",
+              "src": "cv",
+              "accent_pool": "rare_annotated"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_uk_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 0.5934368772959927,
+            "tags": {
+              "lang": "uk",
+              "src": "cv",
+              "accent_pool": "unknown"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_uk_accent_511e405e42c2ac20.jsonl",
+            "weight": 0.13008800967235307,
+            "tags": {
+              "lang": "uk",
+              "src": "cv",
+              "accent_pool": "\u0431\u0435\u0437 \u0430\u043a\u0446\u0435\u043d\u0442\u0443,\u043d\u0435 \u0432\u0438\u043c\u043e\u0432\u043b\u044f\u044e \u0442\u0432\u0435\u0440\u0434\u043e\u0457 \u043b"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_uk_accent_9613c3a165b89d82.jsonl",
+            "weight": 0.05192827502805809,
+            "tags": {
+              "lang": "uk",
+              "src": "cv",
+              "accent_pool": "\u0432\u0438\u043c\u043e\u0432\u0430 \u0442\u0438\u043f\u0456\u043a\u043e\u0432\u0430 \u0434\u043b\u044f \u043b\u0443\u0433\u0430\u043d\u0441\u044c\u043a\u043e\u0457 \u043e\u0431\u043b\u0430\u0441\u0442\u0456"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_uk_accent_e67740b8b8449ec5.jsonl",
+            "weight": 0.14794948897915808,
+            "tags": {
+              "lang": "uk",
+              "src": "cv",
+              "accent_pool": "\u043b\u044c\u0432\u0456\u0432\u0449\u0438\u043d\u0430"
+            }
+          },
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_uk_accent_d52816c07b3cce2c.jsonl",
+            "weight": 0.02609151184902785,
+            "tags": {
+              "lang": "uk",
+              "src": "cv",
+              "accent_pool": "\u043f\u0440\u043e\u0436\u0438\u0432\u0430\u044e \u0432 \u043a\u0438\u0454\u0432\u0456, \u0430\u043b\u0435 \u0434\u0438\u0442\u0438\u043d\u0441\u0442\u0432\u043e \u043f\u0440\u043e\u0432\u0456\u0432 \u0432 \u043e\u0434\u0435\u0441\u044c\u043a\u0456\u0439 \u043e\u0431\u043b\u0430\u0441\u0442\u0456"
+            }
+          }
+        ]
+      },
+      {
+        "type": "group",
+        "weight": 0.3569511203855498,
+        "tags": {
+          "src": "fleurs"
+        },
+        "input_cfg": [
+          {
+            "type": "nemo",
+            "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_uk_accent_b23a6a8439c0dde5.jsonl",
+            "weight": 1.0,
+            "tags": {
+              "lang": "uk",
+              "src": "fleurs",
+              "accent_pool": "unknown"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "weight": 0.08,
+    "tags": {
+      "lang": "en",
+      "cohort": "accent_extension"
+    },
+    "input_cfg": [
+      {
+        "type": "nemo",
+        "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/accent_extension_20260905/english_dialects_train.jsonl",
+        "weight": 0.6615804068877841,
+        "tags": {
+          "lang": "en",
+          "src": "english_dialects"
+        }
+      },
+      {
+        "type": "nemo",
+        "manifest_filepath": "/home/nathanroll/parakeet-ft/manifests/accent_extension_20260905/speechocean762_train.jsonl",
+        "weight": 0.3384195931122158,
+        "tags": {
+          "lang": "en",
+          "src": "speechocean762"
+        }
+      }
+    ]
+  }
+]

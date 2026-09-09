@@ -1,0 +1,9 @@
+{
+  "opened_utc": "2026-09-06T01:14:24.725131+00:00",
+  "selected_model_path": "/home/nathanroll/parakeet-ft/models/ft/stage3_baseblend_a075_20260905.nemo",
+  "selected_model_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "protocol_sha256": "7477292764c94a597e72238678115b22012a5c67fae630873cfe7552a677cbfe",
+  "registry_sha256": "c6fee4d0cb2c2071d41148f545048d2791dcc23ec49db2dd299fbcaaa283b253",
+  "development_decision_sha256": "3e30d3169d983a75447f7c0385499accba58f709d056ec4a6d0aaebb22ca8049",
+  "policy": "This confirmation is consumed by this selected candidate; never reuse it as a fresh gate after outcome-informed model changes."
+}

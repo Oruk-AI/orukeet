@@ -1,0 +1,85 @@
+{
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "arm",
+  "python": "3.12.13 (main, Mar 10 2026, 18:18:07) [Clang 21.1.4 ]",
+  "device": "metal",
+  "model": "oruk-parakeet-v3-20260905.fp16.gguf",
+  "model_sha256": "29cfd4725869f0c3946a38eec99a471108d993cf809973b8a177b87fdd03c310",
+  "model_bytes": 1296681120,
+  "runtime": "NVIDIA/NeMo-Speech.cpp v0.1.0",
+  "repeats": 10,
+  "results": [
+    {
+      "audio": "jfk_11s.wav",
+      "audio_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "duration_s": 11.0,
+      "first_s": 0.4968102919810917,
+      "warm_s": [
+        0.1699258330045268,
+        0.15791016598814167,
+        0.07581633300287649,
+        0.2895091669925023,
+        0.14405199998873286,
+        0.29908104200148955,
+        0.23445120800170116,
+        0.35311408300185576,
+        0.08418449998134747,
+        0.530474792001769
+      ],
+      "warm_median_s": 0.20218852050311398,
+      "warm_p95_s": 0.45066247295180784,
+      "rtfx": 54.40467130689838,
+      "deterministic": true
+    },
+    {
+      "audio": "jfk_66s.wav",
+      "audio_sha256": "14bbe6b35152b7aab7e8ba94fb6b0b91f6dcf46effca2f601c6786fd284244ed",
+      "duration_s": 66.0,
+      "first_s": 1.4217207920155488,
+      "warm_s": [
+        0.7670205419999547,
+        1.2112082079984248,
+        1.1501201250066515,
+        1.0123393750109244,
+        0.8502826250041835,
+        1.2172917920106556,
+        0.873494125000434,
+        0.9767989589890931,
+        0.8123966249986552,
+        0.874763375002658
+      ],
+      "warm_median_s": 0.9257811669958755,
+      "warm_p95_s": 1.2145541792051517,
+      "rtfx": 71.29114563236091,
+      "deterministic": true
+    },
+    {
+      "audio": "jfk_308s.wav",
+      "audio_sha256": "089b2e3c57963d986f894df4dadb17a2bd67a08996ce9fe1980ef4505d62d21f",
+      "duration_s": 308.0,
+      "first_s": 3.7053314590011723,
+      "warm_s": [
+        3.5040069590031635,
+        4.016912708000746,
+        4.201575582992518,
+        5.350926082988735,
+        6.669713542010868,
+        3.9713500830112025,
+        3.390231708995998,
+        3.37223300000187,
+        3.24939870799426,
+        3.8728652079880703
+      ],
+      "warm_median_s": 3.9221076454996364,
+      "warm_p95_s": 6.0762591854509065,
+      "rtfx": 78.52920619183158,
+      "deterministic": true
+    }
+  ],
+  "load_s": 0.2791728340089321,
+  "peak_process_tree_rss_bytes": 1694040064,
+  "hardware": "Apple M5 Max, 18 CPU cores, 128 GiB unified memory",
+  "measurement": "File decode, quiet-point windows, and worker IPC; model loading, hotkey post-roll, paste, and text cleanup excluded from warm times.",
+  "date": "2026-09-05"
+}

@@ -1,0 +1,23 @@
+{
+  "status": "compatibility-preflight-fixed",
+  "models_created_before_fix": 0,
+  "evaluations_started_before_fix": 0,
+  "discarded_accuracy_results": 0,
+  "original_decision_sha256": "c3c1d317c8c1a7f8743f24171eb1244f3fbc31d8d439d27b530a058263c6aaf8",
+  "original_generator_sha256": "2f538cdeb7fa6185508fb12bb6cfa27aebc55ff03d4664c2d4c71afcb6c92a7c",
+  "updated_generator_sha256": "6e2216e9926eae383e10d99301a8e6f3dd5708247ba2a44a41578aadf3454e5d",
+  "metadata_difference": {
+    "parent_counts": [
+      831,
+      830,
+      830
+    ],
+    "common_entries_equal": 830,
+    "only_extra_entry": "spec_augmentation.spec_augment",
+    "extra_value": {
+      "version": 1
+    }
+  },
+  "resolution": "Permit this known stateless augmentation metadata presence difference only when it owns no stored tensor. Preserve the exporting parent metadata and continue rejecting every other module-version mismatch. All candidate weights, parents, qualification gates and selection rules remain unchanged.",
+  "unit_tests_passed": 10
+}

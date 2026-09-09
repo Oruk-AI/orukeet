@@ -1,0 +1,80 @@
+{
+  "rule": "Audit and evaluate all three development candidates. Test development-passing candidates on the larger regression in increasing development-WER order, stopping at the first full pass. If none passes development, run the lowest-development-WER candidate once for diagnosis only. Preserve every result and explicitly name any larger comparisons not run.",
+  "development_candidates": [
+    {
+      "label": "a1-0350",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_a1_20260906/a1-0350.nemo",
+      "weights": [
+        0.1625,
+        0.4875,
+        0.35
+      ],
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 9.954120793198163,
+        "delta_pp": -0.12811423189010213
+      },
+      "failures": [
+        "fleurs_fi_dev_selection: regression 0.543109 pp exceeds 0.5",
+        "fleurs_lv_dev_selection: regression 0.544794 pp exceeds 0.5"
+      ]
+    },
+    {
+      "label": "a1-0500",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_a1_20260906/a1-0500.nemo",
+      "weights": [
+        0.125,
+        0.375,
+        0.5
+      ],
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.037852755568737,
+        "delta_pp": -0.04438226951952763
+      },
+      "failures": [
+        "cv_bg_dev_selection: regression 0.546448 pp exceeds 0.5",
+        "fleurs_fi_dev_selection: regression 0.543109 pp exceeds 0.5",
+        "fleurs_hu_dev_selection: regression 0.776484 pp exceeds 0.5"
+      ]
+    },
+    {
+      "label": "a1-0650",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_a1_20260906/a1-0650.nemo",
+      "weights": [
+        0.0875,
+        0.2625,
+        0.65
+      ],
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.013468099741665,
+        "delta_pp": -0.06876692534659931
+      },
+      "failures": [
+        "fleurs_hu_dev_selection: regression 0.887410 pp exceeds 0.5",
+        "fleurs_lv_dev_selection: regression 0.544794 pp exceeds 0.5"
+      ]
+    }
+  ],
+  "larger_order": [
+    "a1-0350"
+  ],
+  "diagnostic_only": true,
+  "larger_results": [
+    {
+      "label": "a1-0350",
+      "source_qualified": false,
+      "comparison_sha256": "ac3d5d7e7f0b4404ce52f2f0a5353ac267ed16105063ac225177761040b73617"
+    }
+  ],
+  "source_qualified_selection": null,
+  "larger_comparisons_not_run": [
+    "a1-0500",
+    "a1-0650"
+  ],
+  "native_qualified": false
+}

@@ -1,0 +1,1896 @@
+{
+  "purpose": "Post-inference diagnostic, not a scoring variant or exhaustive reference-quality audit.",
+  "selection": "16 evenly spaced IDs per language among references with at least 15 normalized words.",
+  "signal_definition": "At least eight predicted words; assigned normalized word distance >0.85, closest same-session reference distance <0.6, and timestamp offset >20 seconds. This heuristic flags evidence for inspection; it does not establish a population error rate.",
+  "script_sha256": "0ce6ad43e40a116590379ac1644bb3e29d077e31a06069860f92e445c7445df1",
+  "sets": {
+    "eurospeech_bg": {
+      "eligible_rows": 6414,
+      "probes": [
+        {
+          "record_sha256": "c194bc6b75519b749e11449616798510d3391d2a43ba207b5ff0f6bd4923acc7",
+          "assigned_distance": 0.10526315789473684,
+          "nearest_distance": 0.10526315789473684,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "538e484192b7d7318195ca08cd5debcdd69e7836f1271bcbcbdccb8c143f2cab",
+          "assigned_distance": 0.10256410256410256,
+          "nearest_distance": 0.10256410256410256,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "7f1ea0e1ee2ff5e40fb22ab97b133ecb57a808fffa84cae15716ae1e2becbe68",
+          "assigned_distance": 0.21621621621621623,
+          "nearest_distance": 0.21621621621621623,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "1a1825f883ebc03aa6b9baee3775fcd1ebbd7c5469838d6fbfe6ff0034b7560b",
+          "assigned_distance": 0.21052631578947367,
+          "nearest_distance": 0.21052631578947367,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "faf7a54af11b59b63b38e9961030d03bcaa1016b6a9fbfddb4fa5636618c1840",
+          "assigned_distance": 0.06666666666666667,
+          "nearest_distance": 0.06666666666666667,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "f817c6c02dc5f6710fca18cd4c80a8a6df4552a94b8dfd5639df343b9c497853",
+          "assigned_distance": 0.0,
+          "nearest_distance": 0.0,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "1c086410a75849a1af5cd24bcc1af99220c5a181acac89c0abfc254ee6fc0323",
+          "assigned_distance": 0.14545454545454545,
+          "nearest_distance": 0.14545454545454545,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "9ec246715f9451346eecbd0bc7fb74f86c6ee574cc553fc54a92953b084c1a40",
+          "assigned_distance": 0.18181818181818182,
+          "nearest_distance": 0.18181818181818182,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "a03a78b8f0bed2864586d05d162c0e1b05ea58ecd6cc9fa22b8e656e6e94164b",
+          "assigned_distance": 0.038461538461538464,
+          "nearest_distance": 0.038461538461538464,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "61a5a7439f1f60ae28fe36051a6678fc9aba0fefce4ee412dc048c7c0f581e29",
+          "assigned_distance": 0.1724137931034483,
+          "nearest_distance": 0.1724137931034483,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "a3dfe2ea2cd9228a05d3ffd2a0a05bf01a115ebbf9a8dc902ff7444e4b23cb20",
+          "assigned_distance": 0.09523809523809523,
+          "nearest_distance": 0.09523809523809523,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "47fcd549d7ce25691ea01684e5700a41ca1a2b9ab714393bc8661bb16433fd90",
+          "assigned_distance": 0.21428571428571427,
+          "nearest_distance": 0.21428571428571427,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "05eb66fb78969e844035dbba0fd9080b18525269ea7bd1fe2df5659caab37272",
+          "assigned_distance": 0.24,
+          "nearest_distance": 0.24,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "c568740c44cbfebe7367704e52201714f75b0731a75ee40d03b5e76a16eeefe8",
+          "assigned_distance": 0.17391304347826086,
+          "nearest_distance": 0.17391304347826086,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "3520c3e3d105132c300c629fb233e77a58cf8c667fdad438bf5c3c203478ff1e",
+          "assigned_distance": 0.21052631578947367,
+          "nearest_distance": 0.21052631578947367,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "92efc87d719fd6a0f8a9ff9c7700548486fdac5196193a38f9c93314f9385344",
+          "assigned_distance": 0.075,
+          "nearest_distance": 0.075,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    },
+    "eurospeech_de": {
+      "eligible_rows": 4578,
+      "probes": [
+        {
+          "record_sha256": "705acafd1ec22933db6be34f676b48c0c212b6c1cdfe75e6848f2bc0454fa13e",
+          "assigned_distance": 0.20833333333333334,
+          "nearest_distance": 0.20833333333333334,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "0b89c3b4640c7ee88ac47d87c42e80ea090c10bfffe874ae02743231c44ad6e8",
+          "assigned_distance": 0.17391304347826086,
+          "nearest_distance": 0.17391304347826086,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "8c61debc1355716d02726154e256f5ccc8195d6ca138ef77ebe3a24447b98690",
+          "assigned_distance": 0.10638297872340426,
+          "nearest_distance": 0.10638297872340426,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "9e4314af50fa630b080b03935c7c80c06903f2b1200c39b78eede69caa0776ef",
+          "assigned_distance": 0.08695652173913043,
+          "nearest_distance": 0.08695652173913043,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "1502ba99ee0e2794c1b19c057fc401ea668ac737b998d3369fc1651f666a6698",
+          "assigned_distance": 0.2631578947368421,
+          "nearest_distance": 0.2631578947368421,
+          "nearest_start_offset_seconds": -36404.84765625,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "78265682d87aa8eb6c342cd445810edf34e3f65078a7ddb73a96e5629fd6b95c",
+          "assigned_distance": 0.0,
+          "nearest_distance": 0.0,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "c7d73a76d9a5741bc2da310bb1b5308a366ef89e715bb88783999c3e8bb94c31",
+          "assigned_distance": 0.09090909090909091,
+          "nearest_distance": 0.09090909090909091,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "5b1589a6f9b2e3d1f1a463b8f61bcfa83d8694eb9f9b634bfbf181befae9b1f5",
+          "assigned_distance": 0.058823529411764705,
+          "nearest_distance": 0.058823529411764705,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "3caeb913ce06c8978f90edf6d1bcb6ec2f83a39606d594d836fa067f4e2fe2e3",
+          "assigned_distance": 0.022727272727272728,
+          "nearest_distance": 0.022727272727272728,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "bb70f4d7fbe07901af4fd4fe9ee0478ba4336409ecb1a33ff789d21bd016756e",
+          "assigned_distance": 0.3939393939393939,
+          "nearest_distance": 0.3939393939393939,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "25c096d96e8b6386d8539872a9da7225a74e84d9cdd2d524242ea7d810860608",
+          "assigned_distance": 0.14814814814814814,
+          "nearest_distance": 0.14814814814814814,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "204c39730890586e24e6f05c735ca3cc419805073a81a7b47919b117fb41d599",
+          "assigned_distance": 0.05,
+          "nearest_distance": 0.05,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "78452986406585effbdd801a144c0e4c6623df45a3eb2c324333e92a59fd20d2",
+          "assigned_distance": 0.1346153846153846,
+          "nearest_distance": 0.1346153846153846,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "fdf467df435af52b8357f6a9449725a1566c2cbafdc15f5a958473d7eee05275",
+          "assigned_distance": 0.0,
+          "nearest_distance": 0.0,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "1bcd38bb4450e2b459f33b5c796f70e3abc10602305365a0465f86c99527b75f",
+          "assigned_distance": 0.029411764705882353,
+          "nearest_distance": 0.029411764705882353,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "396cfba22c9543dbd234b6884e8296f3daf6284fbf5d39dee75f770f23207be1",
+          "assigned_distance": 0.04,
+          "nearest_distance": 0.04,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    },
+    "eurospeech_el": {
+      "eligible_rows": 6590,
+      "probes": [
+        {
+          "record_sha256": "f50b1d16233881945c85467d24673c7f7e775e3da885482791ab691bb7ee2ec2",
+          "assigned_distance": 1.0,
+          "nearest_distance": 0.7551020408163265,
+          "nearest_start_offset_seconds": -19.951171875,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "9f4009f705bac05c3a8269fc182640531110b6519779eb140896f943674110fb",
+          "assigned_distance": 0.96,
+          "nearest_distance": 0.8717948717948718,
+          "nearest_start_offset_seconds": -14464.591796875,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "d1bc56372c1673245854630f34e6cc639b97feab74ce1eb22c3f8701551fafa1",
+          "assigned_distance": 0.9615384615384616,
+          "nearest_distance": 0.34615384615384615,
+          "nearest_start_offset_seconds": -25.82421875,
+          "strong_offset_signal": true
+        },
+        {
+          "record_sha256": "aedf9a57d34abbc9fd3baacbb68aada136ad32f710596f0e0937b8b790b1c52a",
+          "assigned_distance": 0.7368421052631579,
+          "nearest_distance": 0.7368421052631579,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "06f6770d2c9c7a8bfb3360de96e40fe64db2efd4a6b1fdc0086608194abeb1be",
+          "assigned_distance": 1.0,
+          "nearest_distance": 0.4888888888888889,
+          "nearest_start_offset_seconds": -42.59375,
+          "strong_offset_signal": true
+        },
+        {
+          "record_sha256": "d2108faa63a4a3aec7d91925ac3b559703d13f3b202d4e03ab265cce6aa97287",
+          "assigned_distance": 0.9487179487179487,
+          "nearest_distance": 0.6666666666666666,
+          "nearest_start_offset_seconds": -54.52734375,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "e65c5ad08c61bdf6250d1cc8749e74b3b121c59dfd481685a4bc7ae060a6c8bf",
+          "assigned_distance": 0.9736842105263158,
+          "nearest_distance": 0.8529411764705882,
+          "nearest_start_offset_seconds": -4762.81640625,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "bcf126120abc3cdb6ed6ef08ff4c36f1945465839a25065cc5d7eb0c95c3b2d0",
+          "assigned_distance": 0.9583333333333334,
+          "nearest_distance": 0.8275862068965517,
+          "nearest_start_offset_seconds": 38133.7607421875,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "a2b85b938e3199d969d4056c0bca7b60542f08d5cc8867bec23020632a562dea",
+          "assigned_distance": 1.0,
+          "nearest_distance": 0.5,
+          "nearest_start_offset_seconds": -17.3759765625,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "4b685031e802cefbcc3a07160eb60424639658238191138a50d8a8ab58c48147",
+          "assigned_distance": 0.71875,
+          "nearest_distance": 0.71875,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "a54b4e1a5e5bdec0fb1d504d41aabed160a6b3f45c79ca2d96f24642ac93f6da",
+          "assigned_distance": 0.9666666666666667,
+          "nearest_distance": 0.6153846153846154,
+          "nearest_start_offset_seconds": -38.224609375,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "c80abeeb530f83c3a4a46329ff93879456ad0dd194ec1047fce932ff88d04d2e",
+          "assigned_distance": 1.0,
+          "nearest_distance": 0.65,
+          "nearest_start_offset_seconds": -44.703125,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "a92ea7dc39d8d552340ffefd4d15faa1f3fc36399360010758169e860635957b",
+          "assigned_distance": 1.0,
+          "nearest_distance": 0.8333333333333334,
+          "nearest_start_offset_seconds": -31498.5126953125,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "6ae8688d316a3dde9e50e53422c8042994969c451f004ea980d6769ac8d05bd3",
+          "assigned_distance": 0.38235294117647056,
+          "nearest_distance": 0.38235294117647056,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "014026dcdbcac072ee0b01c76d2856bb9802572ab3c78e6796fdaf0d345b1474",
+          "assigned_distance": 1.0,
+          "nearest_distance": 0.8857142857142857,
+          "nearest_start_offset_seconds": 35817.712890625,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "0460a40c9c0a9ab35ab564a6afbf71a224c93738c3fee7347792883ace86246f",
+          "assigned_distance": 1.0,
+          "nearest_distance": 0.8571428571428571,
+          "nearest_start_offset_seconds": 18701.0888671875,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 2
+    },
+    "eurospeech_en": {
+      "eligible_rows": 9054,
+      "probes": [
+        {
+          "record_sha256": "080761d4cf45ce588595a1f0e4b1a32c86d04d7ce8f3acba0cfc798e8516e555",
+          "assigned_distance": 0.21739130434782608,
+          "nearest_distance": 0.21739130434782608,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "217608264bad6a1eaf3c581db67ec181c59ab844b0695ceaafbe3eddfd829086",
+          "assigned_distance": 0.20833333333333334,
+          "nearest_distance": 0.20833333333333334,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "ca087daba70e64f22cf53c6812d7f5766429ac6ce94426d25e6592ec651131af",
+          "assigned_distance": 0.25925925925925924,
+          "nearest_distance": 0.25925925925925924,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "47cecb9d28677eed5eb6b6f9abe953c30bfe30c71cf52df181fcd0e068073ded",
+          "assigned_distance": 0.24390243902439024,
+          "nearest_distance": 0.24390243902439024,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "04d70d524807c4e296cd20d0e15a714bda6f70b3bbf6a211496246833adcf633",
+          "assigned_distance": 0.14754098360655737,
+          "nearest_distance": 0.14754098360655737,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "84831c3b2ef1d41482fdc3465f67d5ce942de631f4475089623984fcc3c10f2d",
+          "assigned_distance": 0.16666666666666666,
+          "nearest_distance": 0.16666666666666666,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "ced2580434f416a69f9fdca12db3acbb076336c13cfb387e2fb9684f3f5c3c8d",
+          "assigned_distance": 0.2916666666666667,
+          "nearest_distance": 0.2916666666666667,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "3e4812555892a2b2040d968b1aa5beaf32712375ddf09c987700c19908a2df7c",
+          "assigned_distance": 0.2857142857142857,
+          "nearest_distance": 0.2857142857142857,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "d57268110fe93a9a611a4d0b5a923e2fe0da31486fcfe0d7d31570b1790f6c26",
+          "assigned_distance": 0.5,
+          "nearest_distance": 0.5,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "9b1ab0119840b524d6e0047775f9e21d30d343adc624455d3929edc73a867649",
+          "assigned_distance": 0.13333333333333333,
+          "nearest_distance": 0.13333333333333333,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "d8c88fefa8621f7f7dcc79c03a327af0f07435ec6d16127be77f84a6fb7926e5",
+          "assigned_distance": 0.2830188679245283,
+          "nearest_distance": 0.2830188679245283,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "585f42fa67dccb896f54c5cdc3f907b7d46a63e56c950dbf5822234a9f9983bd",
+          "assigned_distance": 0.39655172413793105,
+          "nearest_distance": 0.39655172413793105,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "5a5ec0147cd2be1977c8c82d1ea177a70118050f3955e979c73eb7e4e3d5e4ed",
+          "assigned_distance": 0.024390243902439025,
+          "nearest_distance": 0.024390243902439025,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "c89a13dab5e738bb22b314b64bb074be3e174128bb8e7d3d5d9e75f8ac6322b3",
+          "assigned_distance": 0.4146341463414634,
+          "nearest_distance": 0.4146341463414634,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "d5b5fc5c893734c3756e5bfc7a1aab41d27a1ea360b59edaefadf9b6222c8448",
+          "assigned_distance": 0.25,
+          "nearest_distance": 0.25,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "09de22709e58625ecb433daf6bfc7224c660ee52d6f3adf33aec7e5b4fe77095",
+          "assigned_distance": 0.5434782608695652,
+          "nearest_distance": 0.5434782608695652,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    },
+    "eurospeech_et": {
+      "eligible_rows": 3311,
+      "probes": [
+        {
+          "record_sha256": "f5b04f716825e1120b61023eb61db9804db1291d35340702560bc7087ac5cee0",
+          "assigned_distance": 0.6071428571428571,
+          "nearest_distance": 0.6071428571428571,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "b573249fe870f5fbe0a0f690c3836091041ae640bf354a15c9f7378721beb486",
+          "assigned_distance": 0.47058823529411764,
+          "nearest_distance": 0.47058823529411764,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "7808ababd56ce404e6adaa33e3f7b47183a852371995ac84527ee23b9a1ae309",
+          "assigned_distance": 0.38461538461538464,
+          "nearest_distance": 0.38461538461538464,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "55d23430d476181ac35899f82f6204782c70913725ea2606f46cbb20f426588f",
+          "assigned_distance": 0.45714285714285713,
+          "nearest_distance": 0.45714285714285713,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "5f026423fde540ff0b8a60a5ff4e796994c52e1d01a5b0d2ecb3a2179c533f61",
+          "assigned_distance": 0.4186046511627907,
+          "nearest_distance": 0.4186046511627907,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "8e6e19bece74320499c37c331a7dcff16637a26e064846b2b333765ac21cf729",
+          "assigned_distance": 0.2222222222222222,
+          "nearest_distance": 0.2222222222222222,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "7d88c6a310cbd2bdb8073b66d3545fb83562875e71c26dd05f637d10a3a7b596",
+          "assigned_distance": 0.20689655172413793,
+          "nearest_distance": 0.20689655172413793,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "df2e36f8427b1d958a562c5dd7d76929f3e917f8f722b0f3f5a494187c4b406f",
+          "assigned_distance": 0.1935483870967742,
+          "nearest_distance": 0.1935483870967742,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "9426e0ce4818592daac6fb1ea23a9ad0a52f22f5bc0b510eecf72b8144b88bc8",
+          "assigned_distance": 0.4146341463414634,
+          "nearest_distance": 0.4146341463414634,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "8ad88cfda24fe6d8d7e15b8c38b8ac74bb0bd778107d64f9a3a57176fbd4d52f",
+          "assigned_distance": 0.3333333333333333,
+          "nearest_distance": 0.3333333333333333,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "90fda32e857312004dbd945297fc280cd51313840ff1924faf3833388d72ce2e",
+          "assigned_distance": 0.2857142857142857,
+          "nearest_distance": 0.2857142857142857,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "38537160a6e4b5381959a4af586441811fb73ed528e8ec79d3e572caa7314b0e",
+          "assigned_distance": 0.6451612903225806,
+          "nearest_distance": 0.6451612903225806,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "886b61c880e8617c0b9ad4cbd7ef230d25d08254a9591eb1c3d46df3f7c39330",
+          "assigned_distance": 0.22727272727272727,
+          "nearest_distance": 0.22727272727272727,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "bea8e99ad10472d893a415886d9ab3c6a257b865810236851355b719659fc81c",
+          "assigned_distance": 0.32142857142857145,
+          "nearest_distance": 0.32142857142857145,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "5d379e3e312aea486ac22bc1dde7ffb4a36427712487523182633a9c513481c0",
+          "assigned_distance": 0.42105263157894735,
+          "nearest_distance": 0.42105263157894735,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "e7f96a7f003476a343dde299db15d2d95c2d680da0acdbdc75e1c04b04dedfcb",
+          "assigned_distance": 0.4782608695652174,
+          "nearest_distance": 0.4782608695652174,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    },
+    "eurospeech_fi": {
+      "eligible_rows": 4941,
+      "probes": [
+        {
+          "record_sha256": "edc2f54815aa7c645fc2005c4f25717ba851f5bfa4da426dee745023075d8066",
+          "assigned_distance": 0.08,
+          "nearest_distance": 0.08,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "51e3c586bb79c240af1567f04856fc2306fb336173fb159d6215421a870b1ff9",
+          "assigned_distance": 0.0,
+          "nearest_distance": 0.0,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "2dcc0476a1590f5e5232e97bff87b6c7155ee2c61418b4d7f34939eb6379a0ab",
+          "assigned_distance": 0.03571428571428571,
+          "nearest_distance": 0.03571428571428571,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "2501ae3bcb3ef485686bd6c825da98bf1d2ed4b2e86029c6197a5ed4e75947e6",
+          "assigned_distance": 0.42105263157894735,
+          "nearest_distance": 0.42105263157894735,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "6363ca9af59e1f1efaff82a46f3de41ede00aae531877f87a71174564137771f",
+          "assigned_distance": 0.3076923076923077,
+          "nearest_distance": 0.3076923076923077,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "3ff7bf99fb596ddf276b59b25b7fe26536ba51b1cd3b9568e59660fb6abaad88",
+          "assigned_distance": 0.20833333333333334,
+          "nearest_distance": 0.20833333333333334,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "533d12914ecc9d7a968c557e291178504f355efa11ac4fae3a5d28ea60e9429a",
+          "assigned_distance": 0.06896551724137931,
+          "nearest_distance": 0.06896551724137931,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "b58e3ce0e88a22de5fde8f0a56aee4e98cff22aacfcb387f9286afc5edc45833",
+          "assigned_distance": 0.23809523809523808,
+          "nearest_distance": 0.23809523809523808,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "2094b4e3c05411e49de29146b3385151ef84e5b3cf222178fe8a77155ccd1769",
+          "assigned_distance": 0.16666666666666666,
+          "nearest_distance": 0.16666666666666666,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "9c2f02feb3c0e8bbed75a2af9d44c95f602821dab3b26acfaaf62cab557ef707",
+          "assigned_distance": 0.36666666666666664,
+          "nearest_distance": 0.36666666666666664,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "5ed7002171cf7548ef3682c8332a3e9874acf601db87a2e2fc6bf9372baba458",
+          "assigned_distance": 0.17647058823529413,
+          "nearest_distance": 0.17647058823529413,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "347e9f5a3284934ceea61754b08133a347306e19ffae0ff9c6b8247ba03e0ce0",
+          "assigned_distance": 0.17391304347826086,
+          "nearest_distance": 0.17391304347826086,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "f0747805d2d5cf886a76c4c632d08da4892108c80c8180fb7214cbcd1ee03c26",
+          "assigned_distance": 0.12280701754385964,
+          "nearest_distance": 0.12280701754385964,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "4d7b6910860a55496fd9987c53e3f3fb886b68a5aafebc9baa073a63e58ee1e3",
+          "assigned_distance": 0.30434782608695654,
+          "nearest_distance": 0.30434782608695654,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "00c7d7111b9fa20566309a4985aea058d9fe4b4d9365117e056435d53c5bb57c",
+          "assigned_distance": 0.2222222222222222,
+          "nearest_distance": 0.2222222222222222,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "07131816e9aee7a8744b229aba2c7cf3bb7e8e79f84183a388c811d5a4f76691",
+          "assigned_distance": 0.48717948717948717,
+          "nearest_distance": 0.48717948717948717,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    },
+    "eurospeech_fr": {
+      "eligible_rows": 741,
+      "probes": [
+        {
+          "record_sha256": "cc8a13151c88222d998b70a21c4a753d16f2b9e99164a8409725d2ef14508a46",
+          "assigned_distance": 0.21052631578947367,
+          "nearest_distance": 0.21052631578947367,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "54e34d03d39da35099886bf0d5d3973ea9e2d11719f902fca6bcaa8b51ba7ed2",
+          "assigned_distance": 0.18181818181818182,
+          "nearest_distance": 0.18181818181818182,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "a944049d5533aac405eb110efbf1db2756d3a876564000b41d6684e12c27a3e4",
+          "assigned_distance": 0.6046511627906976,
+          "nearest_distance": 0.6046511627906976,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "7e907c0716834b8c0602655e22d3a56dd69c1493b7f3998075882c6442b6c244",
+          "assigned_distance": 0.15789473684210525,
+          "nearest_distance": 0.15789473684210525,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "e72ad8e8675bf0178bfb74e18903e627e85e2ede027e76446595a79fc4833ffa",
+          "assigned_distance": 0.05454545454545454,
+          "nearest_distance": 0.05454545454545454,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "5ded311c16b47303a31282930f3e9b4fd0a7eb1218dd25938da3c69d7c2b1ae9",
+          "assigned_distance": 0.07407407407407407,
+          "nearest_distance": 0.07407407407407407,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "b32dc62cd8330fb32a7576ee8d703ff7ad5e7a3b594bdbf289b0f90ec5a0c48a",
+          "assigned_distance": 0.16666666666666666,
+          "nearest_distance": 0.16666666666666666,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "5ce17f74f690382ed0cb65c28e7d5e7df39f36f85e32656580eefff70e7051c8",
+          "assigned_distance": 0.125,
+          "nearest_distance": 0.125,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "5251058a18b1c5c84b19b383d1f6194b479f687d7ab298ab1ddf7dab6a94b63c",
+          "assigned_distance": 0.1694915254237288,
+          "nearest_distance": 0.1694915254237288,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "526666b115cf49c86bff6c7523764a62cd2703fcd9d29a5bfe01cdd41389b7a2",
+          "assigned_distance": 0.23529411764705882,
+          "nearest_distance": 0.23529411764705882,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "fcad30297a5f31abc1aa913ed40b1198ff795957a6d61bbaa46174e537911222",
+          "assigned_distance": 0.225,
+          "nearest_distance": 0.225,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "76b85368f1c4025e48fd96edd8ce11a6833d8fe1971733fcac4ff86d9654bb87",
+          "assigned_distance": 0.08695652173913043,
+          "nearest_distance": 0.08695652173913043,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "da49649fc61f8b12e900c1bc8dfb04e69a5896f6a979b3bda6ee33a19875bb8a",
+          "assigned_distance": 0.09302325581395349,
+          "nearest_distance": 0.09302325581395349,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "e5c23718cd2289c6d54b985be3163626595396fd90c75a7c992ccdc017c6db85",
+          "assigned_distance": 0.047619047619047616,
+          "nearest_distance": 0.047619047619047616,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "20e2d5d8b2f925df373337c8d1e47ff27a69718a4c3fd6cb2a693c3526ee4bde",
+          "assigned_distance": 0.15254237288135594,
+          "nearest_distance": 0.15254237288135594,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "4585b44db0be40fb6e878d19bcd34c77d52a6f19b75a29b11bfe048759cc1326",
+          "assigned_distance": 0.22641509433962265,
+          "nearest_distance": 0.22641509433962265,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    },
+    "eurospeech_hr": {
+      "eligible_rows": 14951,
+      "probes": [
+        {
+          "record_sha256": "743f393cadec7cd24c786562c006c104dbf89d973d7d4d0d4e87d20405b6bd07",
+          "assigned_distance": 0.08,
+          "nearest_distance": 0.08,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "d764164f145f0b0c94714e317d0dd95cbd27f8b307353c003028b91c2776de7d",
+          "assigned_distance": 0.25,
+          "nearest_distance": 0.25,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "902d077bc9aca7c61aa76b7b65dfc2f3d5d932029995a316d9fff347ee5aeeb0",
+          "assigned_distance": 0.08823529411764706,
+          "nearest_distance": 0.08823529411764706,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "8004b37c94f03caf7d8aa00c63fe13844f1b28ae431c28d3355f7eb82307d4fe",
+          "assigned_distance": 0.16666666666666666,
+          "nearest_distance": 0.16666666666666666,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "864e4d87bdbeb4a17578cf5bd3bcd5bc572d8280fd0da3f45ad8b3d699d8d722",
+          "assigned_distance": 0.14285714285714285,
+          "nearest_distance": 0.14285714285714285,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "421e49754d3a04d4f3c8b628fc8def1713e59b3a80f97428a124dfb5fea80cd5",
+          "assigned_distance": 0.4117647058823529,
+          "nearest_distance": 0.4117647058823529,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "c0fe4337f923f28179e74f9053c0a72797a53cf638fd13a2279db226e46312ec",
+          "assigned_distance": 0.0,
+          "nearest_distance": 0.0,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "d92e9826f32ffb52cbf8681f72ad00d1eada1bda21d09ab31cecc1f3cf28efbd",
+          "assigned_distance": 0.05405405405405406,
+          "nearest_distance": 0.05405405405405406,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "1cc96d5a97b19f30d578062672447474b9b66739bae094fc4d9f41fc4add0c7a",
+          "assigned_distance": 0.3,
+          "nearest_distance": 0.3,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "24aa3b61a2b49b1fa643053ea12b09314db79b5a0361b0613bbf8212dded93c8",
+          "assigned_distance": 0.14285714285714285,
+          "nearest_distance": 0.14285714285714285,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "3b59789bdbbc9a3a88d5f7a74afe8bcddf8fc732686e45c31dd593f7c83121cd",
+          "assigned_distance": 0.030303030303030304,
+          "nearest_distance": 0.030303030303030304,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "802977e9c8c18afefe879b14fc12051d56531fde9e23dc51e2be5619d12657e4",
+          "assigned_distance": 0.13793103448275862,
+          "nearest_distance": 0.13793103448275862,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "485acb8a81c40ef944b8079a3014d1afabcb6973de55405d401cc24c40f931f0",
+          "assigned_distance": 0.03225806451612903,
+          "nearest_distance": 0.03225806451612903,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "b1cd1b3cd81cfb61e4b686e423905d8002764f8a2abd64c5a484c92cefaa3b3e",
+          "assigned_distance": 0.22727272727272727,
+          "nearest_distance": 0.22727272727272727,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "dea762641a41d341f457a170a11610f118de7c55633596e4db605435ae6a5218",
+          "assigned_distance": 0.36363636363636365,
+          "nearest_distance": 0.36363636363636365,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "cfe5e75df483cb69d7919ba7aede370261c262a1d6f602ab487a7a4fdfa70d20",
+          "assigned_distance": 0.0,
+          "nearest_distance": 0.0,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    },
+    "eurospeech_it": {
+      "eligible_rows": 8451,
+      "probes": [
+        {
+          "record_sha256": "18cf09d8ede90f03c91e467cc63cb5ab98cd0ca0ebf541e58b7fec48b6ec5fe1",
+          "assigned_distance": 0.9333333333333333,
+          "nearest_distance": 0.5675675675675675,
+          "nearest_start_offset_seconds": 27.279296875,
+          "strong_offset_signal": true
+        },
+        {
+          "record_sha256": "527c91f342a78f7e04a46ec16cc3edf46498b566708b8e49d285de33d55d0957",
+          "assigned_distance": 0.9375,
+          "nearest_distance": 0.8125,
+          "nearest_start_offset_seconds": -16190.81689453125,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "c48116f54600acba2afee3331a04f4bc5334f3f0dea2c77c5846183b3354ebb4",
+          "assigned_distance": 0.9736842105263158,
+          "nearest_distance": 0.7954545454545454,
+          "nearest_start_offset_seconds": 14.49609375,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "76fe4cd2936a5d018f5514da76717e9cdcdfa8c2c0fc26e0ccf9beb0e4561c1c",
+          "assigned_distance": 0.1111111111111111,
+          "nearest_distance": 0.1111111111111111,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "84e045361f4e5f33fe297948ff8f52fcc6f335a14848b586c34a606bbf7c5dfb",
+          "assigned_distance": 0.06896551724137931,
+          "nearest_distance": 0.06896551724137931,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "18ac42e86874c6442137c2685c15a8f2959e9b16bed46b767644b545339c4653",
+          "assigned_distance": 0.2711864406779661,
+          "nearest_distance": 0.2711864406779661,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "79099ed6158a0b6220776b0fb7902a5bb081cd5d8189085767d1c464edfca0c5",
+          "assigned_distance": 0.9545454545454546,
+          "nearest_distance": 0.6829268292682927,
+          "nearest_start_offset_seconds": -35.6640625,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "332f6cb0f0fb67382aa94545a1d8cb695254d93b172aa1d2779261c5a4b56ecd",
+          "assigned_distance": 0.967741935483871,
+          "nearest_distance": 0.20689655172413793,
+          "nearest_start_offset_seconds": -38.416015625,
+          "strong_offset_signal": true
+        },
+        {
+          "record_sha256": "4d69980a67d41dc7d71605a8b45ed6649f05f4ae88f191237c837433a4ee0142",
+          "assigned_distance": 1.0,
+          "nearest_distance": 0.5238095238095238,
+          "nearest_start_offset_seconds": -46.671875,
+          "strong_offset_signal": true
+        },
+        {
+          "record_sha256": "db20fcb027c3f7516b94e1f12825891393d041d13046429c455f3672369dcfa7",
+          "assigned_distance": 0.03333333333333333,
+          "nearest_distance": 0.03333333333333333,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "2a31e239337173d7a7fe8fd3ded960aeefff8085ad63905a702be0557902844c",
+          "assigned_distance": 0.06451612903225806,
+          "nearest_distance": 0.06451612903225806,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "513d15a493e7bbb76cc8a7a313c4de5853a4818df20101b929e81985a2e4d6d2",
+          "assigned_distance": 0.975,
+          "nearest_distance": 0.5428571428571428,
+          "nearest_start_offset_seconds": -10.6875,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "da9eb5d6cbe43a3283da146f2188289720d1d755a580556961f71a5c0ea8f7a6",
+          "assigned_distance": 0.10810810810810811,
+          "nearest_distance": 0.10810810810810811,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "8d88d2416b566f30735b93dd3ffb52e7dd59d8ed08798ae2ad84d8e46154d335",
+          "assigned_distance": 1.0,
+          "nearest_distance": 0.8571428571428571,
+          "nearest_start_offset_seconds": 14233.486328125,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "9c671fd6d5163861c573a580a1ccce4055d6b6099471bdcbb6f31070cf9cf69c",
+          "assigned_distance": 1.0,
+          "nearest_distance": 0.65625,
+          "nearest_start_offset_seconds": -47.85546875,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "88c23ff9a98183025e123268bb05ea4cbe4e06efb020c7b8095f124adeac5191",
+          "assigned_distance": 1.0,
+          "nearest_distance": 0.7213114754098361,
+          "nearest_start_offset_seconds": -61.9208984375,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 3
+    },
+    "eurospeech_lt": {
+      "eligible_rows": 6564,
+      "probes": [
+        {
+          "record_sha256": "028c51d5361bb0472536057225760cfe0ae211f0e270f31ca8304255a033c3b9",
+          "assigned_distance": 0.2916666666666667,
+          "nearest_distance": 0.2916666666666667,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "553dc5c52f28bfb895c25239177ce7e956e47859184723bff331c81af43afb9c",
+          "assigned_distance": 0.3939393939393939,
+          "nearest_distance": 0.3939393939393939,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "3e6c20388e4bd68ca4b22e92dca12346c4dcf3ec122a96bffcb2b992f82fa396",
+          "assigned_distance": 0.5555555555555556,
+          "nearest_distance": 0.5555555555555556,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "c830d6813d31e726d591e3d89c058137c10635b7b93121c903d6d1a3ca075839",
+          "assigned_distance": 0.20833333333333334,
+          "nearest_distance": 0.20833333333333334,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "bee10fde69bda201592567a3f0535bd755481574b815ba1b381771b516b4ed87",
+          "assigned_distance": 0.26666666666666666,
+          "nearest_distance": 0.26666666666666666,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "a7160b0f2c655969451ddda752e2b7c55e063102d2ca7cff868a2ad47013ed2e",
+          "assigned_distance": 0.21739130434782608,
+          "nearest_distance": 0.21739130434782608,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "77d27b741e5f1707e10c71995caf60f70b78af49f736f03009c2fa3d4900ddb6",
+          "assigned_distance": 0.32,
+          "nearest_distance": 0.32,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "53254e1683aac0c947989950927b4f5f588d3dc19317a15c70fabc96c02478f9",
+          "assigned_distance": 0.5151515151515151,
+          "nearest_distance": 0.5151515151515151,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "d91a0b749d158594c14489be516cb2e629486963faf574d7ee188ddeb39ca1dc",
+          "assigned_distance": 0.41935483870967744,
+          "nearest_distance": 0.41935483870967744,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "6d8b38e954e9eb9cb2c2c46399ddc1ee7ddf675048780de7bf774bbb55fd7ca2",
+          "assigned_distance": 0.10526315789473684,
+          "nearest_distance": 0.10526315789473684,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "7bc3fa01529797407e13388f3723a17f6d0ebd00fc24c151f8c739befa91c2e6",
+          "assigned_distance": 0.3870967741935484,
+          "nearest_distance": 0.3870967741935484,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "6f711ce49337ef9a2fb4ea341d84eefb558982885641d312082bfdd70810dba9",
+          "assigned_distance": 0.18604651162790697,
+          "nearest_distance": 0.18604651162790697,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "9805573228ae3bd03cb8efc5177aa0c71b9d62914c6a8f6169cc318feec80f52",
+          "assigned_distance": 0.43478260869565216,
+          "nearest_distance": 0.43478260869565216,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "469104fa6e0e1507137fc2098f80567f9b2d9aa915f3e7dbd0fd1073b1504bdd",
+          "assigned_distance": 0.38461538461538464,
+          "nearest_distance": 0.38461538461538464,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "ca33341ce723585a18becab9f4cce5e59e980679b55dd3f876f488b158dcba71",
+          "assigned_distance": 0.36363636363636365,
+          "nearest_distance": 0.36363636363636365,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "7a9e2ff26ca474e62605aeee97899e06d6fbd8c084c0c1fceed88013582a2bce",
+          "assigned_distance": 0.25,
+          "nearest_distance": 0.25,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    },
+    "eurospeech_lv": {
+      "eligible_rows": 3064,
+      "probes": [
+        {
+          "record_sha256": "756ce1644b36b4dd23d088d379699460444471f2eebbf109ea67a4f7a22533d4",
+          "assigned_distance": 0.39285714285714285,
+          "nearest_distance": 0.39285714285714285,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "735e1c6998f1e8152a2206a9f1a35cdfa530d76e100ffa0639ebee70fede594d",
+          "assigned_distance": 0.7297297297297297,
+          "nearest_distance": 0.7297297297297297,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "6385689a5281cd676d972d15a660d47ce0b9908886afd36425467a8b8d469541",
+          "assigned_distance": 0.5,
+          "nearest_distance": 0.5,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "372296085b8d1a69b87a497ccdb0031928ddca3ef73d2253b4b895f27980c0b2",
+          "assigned_distance": 0.34375,
+          "nearest_distance": 0.34375,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "fb2660354a4845c50bbc508a5186c3c41440fbfa9ae69aa9db6783dfb377f95c",
+          "assigned_distance": 0.7837837837837838,
+          "nearest_distance": 0.7837837837837838,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "501cc3a95915dbf90e212fc5d11bcbb890d2e61cb1d55ee6e758411f65390364",
+          "assigned_distance": 0.25,
+          "nearest_distance": 0.25,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "5b78eb2804b710718fbde9be2e864020a90254f48ca6bb9adc5fa1b3a5524d5b",
+          "assigned_distance": 0.42857142857142855,
+          "nearest_distance": 0.42857142857142855,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "87335180dc09fefaf03bbafef216cfa44ccc975c2748ce7df11774c569dd4bb1",
+          "assigned_distance": 0.5789473684210527,
+          "nearest_distance": 0.5789473684210527,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "bb62c13bba16863ec9af8cf9ca62f809fd303aaa8a32f1edfea097942ced4da8",
+          "assigned_distance": 0.8,
+          "nearest_distance": 0.8,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "413384b6beec361091bac4bb7d6aac9c242a95e20031de8514985bb93fc98da6",
+          "assigned_distance": 0.4117647058823529,
+          "nearest_distance": 0.4117647058823529,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "f9007fd5b4d81b1fa9dc2591d7dbf3f5487598b0b415443a57032d2d2731f0cd",
+          "assigned_distance": 0.4827586206896552,
+          "nearest_distance": 0.4827586206896552,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "20c6a438711ddc39eb8870257316d48fdab0e895bc7fa28fe8407a59778e6d52",
+          "assigned_distance": 0.4444444444444444,
+          "nearest_distance": 0.4444444444444444,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "d43763c5e97ffe8e3f2ec85c68ccc708c557581e65d8da9f594ec1bbcaa5ea14",
+          "assigned_distance": 0.6410256410256411,
+          "nearest_distance": 0.6410256410256411,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "31be4db9f38e4266e6839670982ca857aa2de3690a7b0350b90649a693ad4344",
+          "assigned_distance": 0.3157894736842105,
+          "nearest_distance": 0.3157894736842105,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "699e31466bd69de9bb39bc508d9670f3beff59804933bedbab9cc8b1b74087c6",
+          "assigned_distance": 1.0,
+          "nearest_distance": 0.96,
+          "nearest_start_offset_seconds": 2571.087890625,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "ba9e83ccc0d5ba7278ebbb6986c1e5451dcb5b28558829fa3a848dc5d3b179b9",
+          "assigned_distance": 0.2727272727272727,
+          "nearest_distance": 0.2727272727272727,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    },
+    "eurospeech_mt": {
+      "eligible_rows": 3358,
+      "probes": [
+        {
+          "record_sha256": "1c97d2b158d3a063ef8eb708bca0783f6e221d626ee2444635099a4c99484b48",
+          "assigned_distance": 0.05263157894736842,
+          "nearest_distance": 0.05263157894736842,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "f3e7647f537728879d0ff52d87222d942013e17747ffa5c6efa422d02da9e5c2",
+          "assigned_distance": 0.35294117647058826,
+          "nearest_distance": 0.35294117647058826,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "449ba6afabac1051df952b20dde03e1c926956e24839e51ae0f3f015b21768f1",
+          "assigned_distance": 0.4090909090909091,
+          "nearest_distance": 0.4090909090909091,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "a663dd94e752593ffc5e895b30da838da1e35f600beee717a70c5d26b2a4a89a",
+          "assigned_distance": 0.59375,
+          "nearest_distance": 0.59375,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "c9ebb2e76b9350400a04f085f14f6d1ed1023a15db87f0125ae9bc54fb528dd4",
+          "assigned_distance": 0.5172413793103449,
+          "nearest_distance": 0.5172413793103449,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "af7bd6a72e8889013c0b486fbef0e8edaf1ee0e3b50c555a903b20956909a1c3",
+          "assigned_distance": 0.5217391304347826,
+          "nearest_distance": 0.5217391304347826,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "e370fa53aea21c7ecc4a0c4f8d603b4c438fcd480c558b4486849d003bc1f322",
+          "assigned_distance": 0.21875,
+          "nearest_distance": 0.21875,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "1a1a6a989f76516aee84ade31aa12688b3a11f65b2bf7b316abe76b5f7eaba1b",
+          "assigned_distance": 0.35,
+          "nearest_distance": 0.35,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "7eee074023ecedd381ee91268d90382a6cd6acb2c12a524ab7312d67018bca43",
+          "assigned_distance": 0.3611111111111111,
+          "nearest_distance": 0.3611111111111111,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "d00fa42287f18bf7ba4782553570cbbdb14fae383f0802b75146d347872a263f",
+          "assigned_distance": 0.4878048780487805,
+          "nearest_distance": 0.4878048780487805,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "ab796f9691f1110869b2787442022db540cdaec4194e7015303b01ccfbdfcef6",
+          "assigned_distance": 0.3181818181818182,
+          "nearest_distance": 0.3181818181818182,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "3b56b9850d2d4977b206221360c9a61bed33b42e54c2685ba6b213e54e8214f9",
+          "assigned_distance": 0.3111111111111111,
+          "nearest_distance": 0.3111111111111111,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "05dfd2bd6577ae7e5bebbbf0f0f5b8deb54d085e439e627ae48c50518333be63",
+          "assigned_distance": 0.4,
+          "nearest_distance": 0.4,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "58226c9a91276221d5ff0d01b4f738198b2adc67dbfe775c565d111a40180b3c",
+          "assigned_distance": 0.46875,
+          "nearest_distance": 0.46875,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "066a1338989be963352c6df549b0acb9f6343b45eb5e116b6514c69864bfd544",
+          "assigned_distance": 0.32,
+          "nearest_distance": 0.32,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "eec5ac25465f14615cfae967bc06ed3dd9bffa1ba3f69505682625e126332464",
+          "assigned_distance": 0.16666666666666666,
+          "nearest_distance": 0.16666666666666666,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    },
+    "eurospeech_pt": {
+      "eligible_rows": 7260,
+      "probes": [
+        {
+          "record_sha256": "148f3828c901ad736578aba7f73f84d79b04bf80f91947d05ca5f7a4f0baadd2",
+          "assigned_distance": 0.5365853658536586,
+          "nearest_distance": 0.5365853658536586,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "d49d042d45364be0f7bbab931b7f5dd6a8f1b9d2e57abb60d366b5dbaf3110cb",
+          "assigned_distance": 0.41025641025641024,
+          "nearest_distance": 0.41025641025641024,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "6da81023f6af60c1439fc0e1c165983a776a2039de5e0bae4ab12fafdcbad134",
+          "assigned_distance": 0.07894736842105263,
+          "nearest_distance": 0.07894736842105263,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "d2b81ea299c8e672d2578f7843d41738e2425af85462771e78fe08303f484a6b",
+          "assigned_distance": 0.0,
+          "nearest_distance": 0.0,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "ac6f907941f2cb69e9e6cdab4284c488da6a541e17caff78786883d9d56afbaf",
+          "assigned_distance": 0.03125,
+          "nearest_distance": 0.03125,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "217af46dbd0d45fa1eeba077b2e9f643662a446e69089572a04c6ea99e7e249a",
+          "assigned_distance": 0.3137254901960784,
+          "nearest_distance": 0.3137254901960784,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "18618d9d3115100c024afebbeaff5bc65274e669eee50ba1d998675f2a5b5dd9",
+          "assigned_distance": 0.2037037037037037,
+          "nearest_distance": 0.2037037037037037,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "259186106d2f1f6e9e427f6621d77acca447e0f851c0e0d825f22f81fbac3d26",
+          "assigned_distance": 0.3076923076923077,
+          "nearest_distance": 0.3076923076923077,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "80be42815c20caa320b1adcb3f6896372f9d2a9f98ac36f5a81ae54ec1255a40",
+          "assigned_distance": 0.34782608695652173,
+          "nearest_distance": 0.34782608695652173,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "7258121317b84ff6cccb266077ee4f5e71a594a57f12f83bc191d5b9418ba049",
+          "assigned_distance": 0.3783783783783784,
+          "nearest_distance": 0.3783783783783784,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "2033d97cf43896e98fab62703d2e950903bbca7f243601748606e95eaf9d15bc",
+          "assigned_distance": 0.37209302325581395,
+          "nearest_distance": 0.37209302325581395,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "4ee186b5fe25efcf89f4c76e7b73957952ad1cefa14c0c517c56b4dd4e1e00d5",
+          "assigned_distance": 0.0,
+          "nearest_distance": 0.0,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "fb3ae79f4360eba708778e2593b0db2e56c3a4968b8d350a3e7cade126f027b3",
+          "assigned_distance": 0.2857142857142857,
+          "nearest_distance": 0.2857142857142857,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "89a7b48793bf1d008bff544f666c23e0d1d2f5dcb733bf5df57d2835ef202b95",
+          "assigned_distance": 0.14285714285714285,
+          "nearest_distance": 0.14285714285714285,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "2ff3f5459263670b1e10bc0cfd259723796140d4f9987f4bcfab2c3f4aa423c5",
+          "assigned_distance": 0.12,
+          "nearest_distance": 0.12,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "75e3c59f0898e3d314c2eec73d665ef281434c772f04b84a56da2d9a439507d3",
+          "assigned_distance": 0.05,
+          "nearest_distance": 0.05,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    },
+    "eurospeech_sk": {
+      "eligible_rows": 6542,
+      "probes": [
+        {
+          "record_sha256": "4a11da30c43a1ee90b6004a5879b27f3e1be0eae992e56e5ce7233b1dd0d96d0",
+          "assigned_distance": 0.11363636363636363,
+          "nearest_distance": 0.11363636363636363,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "b9049242b74977db8bdb7a42b0ed9eca8ef4a27be192985b2db58ed834cf8574",
+          "assigned_distance": 0.14285714285714285,
+          "nearest_distance": 0.14285714285714285,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "ff109c7b1067ff90833f07a99d8c986ba32720178fa2d03793e51b5c4ec4885d",
+          "assigned_distance": 0.14285714285714285,
+          "nearest_distance": 0.14285714285714285,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "a643065f3a795d728d1e5806716fec095aa1accb87c7a15331e72ab19a565e0f",
+          "assigned_distance": 0.4117647058823529,
+          "nearest_distance": 0.4117647058823529,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "698dd574888ec4f14040fcfcf5abc9a951efc8a0eeb698153f87b8cadfac9a1f",
+          "assigned_distance": 0.2571428571428571,
+          "nearest_distance": 0.2571428571428571,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "5bcc372ef384df975bce117a9ed4494f9d2e68458ef556a985a8349905988757",
+          "assigned_distance": 0.12121212121212122,
+          "nearest_distance": 0.12121212121212122,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "254e0c9d37a57e07aba43e6d8104919550f499a33c238b127d1b3b628ab9d255",
+          "assigned_distance": 0.7083333333333334,
+          "nearest_distance": 0.7083333333333334,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "4a00cbe94ec6de55b0845876517588260e79841805e81f1f7d85101def88a69e",
+          "assigned_distance": 0.16,
+          "nearest_distance": 0.16,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "3bc9cc72947cf0e88cca29191b314230a02a0bd82df093a0a66f7c8366626212",
+          "assigned_distance": 0.03333333333333333,
+          "nearest_distance": 0.03333333333333333,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "37e594e289a4258d5dd1b05d41eef245ab6c0abdb189e5ae5d3b76c08782cc55",
+          "assigned_distance": 0.045454545454545456,
+          "nearest_distance": 0.045454545454545456,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "bc21b087646052005b3a12f00a6ba2552a4f5fe235a1344903ec3d1b964a545a",
+          "assigned_distance": 0.3103448275862069,
+          "nearest_distance": 0.3103448275862069,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "a98c61c7655d14c1427fb6b9fbf388ece41db9b1a8b6c43dca50c4240680589e",
+          "assigned_distance": 0.0,
+          "nearest_distance": 0.0,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "a178a8dd0e6df5e7be7b806c960965cf6f759dc2e6eb0742ba211b1c598753a1",
+          "assigned_distance": 0.175,
+          "nearest_distance": 0.175,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "9710a587fd698333bb93ba1fa494f0bf22142bbdf7257859ffbec747eae8a178",
+          "assigned_distance": 0.3333333333333333,
+          "nearest_distance": 0.3333333333333333,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "0e3287fda319fef1d134e03e3cb26be4171e31be619a1d647e14ecbd7635efa8",
+          "assigned_distance": 0.14634146341463414,
+          "nearest_distance": 0.14634146341463414,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "1aa4c4a2d1ad94e43ffc9590ae597ebe9d99a37b17bb9680a692579a038933d5",
+          "assigned_distance": 0.043478260869565216,
+          "nearest_distance": 0.043478260869565216,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    },
+    "eurospeech_sl": {
+      "eligible_rows": 3492,
+      "probes": [
+        {
+          "record_sha256": "fdecd1fe05d4f83f0760381179aa4b123cce140717d075274980c68b7f3f37e6",
+          "assigned_distance": 0.37142857142857144,
+          "nearest_distance": 0.37142857142857144,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "35941e895c0be697bd99c79cacc72544279712cdcba652f0a06085530eae4647",
+          "assigned_distance": 0.5714285714285714,
+          "nearest_distance": 0.5714285714285714,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "ba16c0937b15cb7dfea01efbcaecdd79f2858a19278a78b7d367b7e36e6ca128",
+          "assigned_distance": 0.5,
+          "nearest_distance": 0.5,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "b53866aafcbd0abcc5a4c86c589cf0331dbb0909d87815c844fa9a41089ab026",
+          "assigned_distance": 0.21052631578947367,
+          "nearest_distance": 0.21052631578947367,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "9009373321044410cffa179185a172ff8f855a165717e25038ca7157ae307bb0",
+          "assigned_distance": 0.5,
+          "nearest_distance": 0.5,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "46479200e9b89c2ac1a73b492ab4628ef62c46dd6d597892e69b86d48f736a65",
+          "assigned_distance": 0.4444444444444444,
+          "nearest_distance": 0.4444444444444444,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "874cb877e35b436a9ca8fd9faa6b71838a53a714a2b4cc117f2a03075a6c61d4",
+          "assigned_distance": 0.7567567567567568,
+          "nearest_distance": 0.7567567567567568,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "8a48bfda91ba163aa9eaaa1de520dc4d2fc3a9277271cd598678aa96fbc9ab26",
+          "assigned_distance": 0.5384615384615384,
+          "nearest_distance": 0.5384615384615384,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "62cebe16d6d88cb551b2f28a97483d9e4d832946390a6df987a2c161013cd49b",
+          "assigned_distance": 0.6071428571428571,
+          "nearest_distance": 0.6071428571428571,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "df8677877915a32595817e98f273b0e2c8a10752345e3718560179cf783a968b",
+          "assigned_distance": 0.5957446808510638,
+          "nearest_distance": 0.5957446808510638,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "2a425cfdfccfe9baebed6d2e061874dbc3469bdab573bfb2bfe34f82b4ece4b7",
+          "assigned_distance": 0.6744186046511628,
+          "nearest_distance": 0.6744186046511628,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "0ace1aa0e079d89907815477d08b10c7dd1419c51a359599f7c2e8f094b67358",
+          "assigned_distance": 0.3611111111111111,
+          "nearest_distance": 0.3611111111111111,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "75c0b621e2d6cb20c98298de29782faf655957718ee5ee1a5787910df83f7816",
+          "assigned_distance": 0.10526315789473684,
+          "nearest_distance": 0.10526315789473684,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "503fa1fd23ea8bcdbf5d997c0f99a269f56d2bba0a91ec687288d1cb45d7bc85",
+          "assigned_distance": 0.5882352941176471,
+          "nearest_distance": 0.5882352941176471,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "daf7540ed68e70ce4b95be385155a3be2fd95d37aab889fe5285dff9bc4010f0",
+          "assigned_distance": 0.55,
+          "nearest_distance": 0.55,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "e26253ef5f543bd2f2d7772ecfd6c49d50d90f90c66fcdb4115033371930b7b5",
+          "assigned_distance": 0.8,
+          "nearest_distance": 0.8,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    },
+    "eurospeech_uk": {
+      "eligible_rows": 2923,
+      "probes": [
+        {
+          "record_sha256": "47dbbcd424caaff8253eb28c05e483b5ae4c1cbdea63bf7061f77ec388af7d0a",
+          "assigned_distance": 0.18181818181818182,
+          "nearest_distance": 0.18181818181818182,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "2a345387dfb788cdcd5ec18d4c97a0e3af5e79d9c1a46875b1c255ae01ad8d38",
+          "assigned_distance": 0.06060606060606061,
+          "nearest_distance": 0.06060606060606061,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "8abc46eb4724bbdbed574b6aa23b5a78bc39cd0c30ed8e78a4a1f13e439f8fa0",
+          "assigned_distance": 0.09302325581395349,
+          "nearest_distance": 0.09302325581395349,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "9b1fb0d019d90392c69bc6e2d0afcee2b6010503b6fa5b47e76e91879be2bf3c",
+          "assigned_distance": 0.17647058823529413,
+          "nearest_distance": 0.17647058823529413,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "6966ab6c345f2f1c5f2ff103615eb2a4810c8d5c4d60824d5f39d3d6fd6cd721",
+          "assigned_distance": 0.16,
+          "nearest_distance": 0.16,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "0ad8da8e5016b4b1a8a81569465f1de0aa5d1180b4b710f29be425704444fc39",
+          "assigned_distance": 0.09090909090909091,
+          "nearest_distance": 0.09090909090909091,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "b23dcb5c9e76fe5ba4a160890c96a7a88afd20a2743bcd639c96e302bad894d9",
+          "assigned_distance": 0.09433962264150944,
+          "nearest_distance": 0.09433962264150944,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "af8ea1bf6d3abcaed501a55cc923300382d33c0459e6764f230b1cdec0575b58",
+          "assigned_distance": 0.0,
+          "nearest_distance": 0.0,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "3266aaf1b75fc7d9e056b8d68cba2f8935d2b3ea76d88bcb9523fca14ee5c4da",
+          "assigned_distance": 0.13333333333333333,
+          "nearest_distance": 0.13333333333333333,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "afe95c31af39045108e923b9f4e8c5c40bab264a7819e5ca57fad8697e9a8b22",
+          "assigned_distance": 0.23809523809523808,
+          "nearest_distance": 0.23809523809523808,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "c0bc1c08ffb04ae357e1ea66a73a94fd276406d62b436e81f747db0309d63669",
+          "assigned_distance": 0.08333333333333333,
+          "nearest_distance": 0.08333333333333333,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "f99f37b40b19a9fc207c36dc9df4a947a5d76212cb22ab2d6d1bb129bc504adc",
+          "assigned_distance": 0.034482758620689655,
+          "nearest_distance": 0.034482758620689655,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "88d6752a5d4f72d34476b2372ebc5085a12136b6ee7457588b0558598e4a589d",
+          "assigned_distance": 0.10526315789473684,
+          "nearest_distance": 0.10526315789473684,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "b15a4cc2cb0b07871deddeb121beb13a8716b9f48912a83660b1c93283be8932",
+          "assigned_distance": 0.05555555555555555,
+          "nearest_distance": 0.05555555555555555,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "0b71c034475de1a851b1312b5849ee435a0b0c89711581c89ef5a8e6da72333f",
+          "assigned_distance": 0.1891891891891892,
+          "nearest_distance": 0.1891891891891892,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        },
+        {
+          "record_sha256": "1ef3788edbfbc7e93b5f40dfd3d19203a78f7e90a6580327951c10a3f8938787",
+          "assigned_distance": 0.3142857142857143,
+          "nearest_distance": 0.3142857142857143,
+          "nearest_start_offset_seconds": 0.0,
+          "strong_offset_signal": false
+        }
+      ],
+      "strong_offset_signals": 0
+    }
+  }
+}

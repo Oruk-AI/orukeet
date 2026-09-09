@@ -1,0 +1,62 @@
+{
+  "label": "a1",
+  "method": "Single float64 weighted sum of trained parameters, rounded once",
+  "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "parents": [
+    {
+      "label": "r2-0100",
+      "path": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r2_20260906/step-0100.nemo",
+      "sha256": "dad15e12231dc2463606bce04d95a157bf56a57fc09e84aafd5174c15b93a340"
+    },
+    {
+      "label": "r7-0300",
+      "path": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r7_20260906/step-0300.nemo",
+      "sha256": "992a35cdfcea8d4d6ca57e8bef4d2fa2ae82a8e1ab02a872598e338faea40ef3"
+    },
+    {
+      "label": "r11-0400",
+      "path": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r11_20260906/step-0400.nemo",
+      "sha256": "ac0b8f43d67580bafd79614207bf012037147fb792b6a117f02bf0cfb85e92be"
+    }
+  ],
+  "candidates": [
+    {
+      "label": "a1-0350",
+      "weights": [
+        0.1625,
+        0.4875,
+        0.35
+      ]
+    },
+    {
+      "label": "a1-0500",
+      "weights": [
+        0.125,
+        0.375,
+        0.5
+      ]
+    },
+    {
+      "label": "a1-0650",
+      "weights": [
+        0.0875,
+        0.2625,
+        0.65
+      ]
+    }
+  ],
+  "fixed_rows": 12288,
+  "parameter_tensors_averaged": 651,
+  "rationale": "R2 has the lowest measured larger multilingual mean; R7 retains stronger English performance; R11 passes every larger individual guard and misses the primary mean by 0.007812 points plus one development Finnish word error. These parents share the same fixed fits. Hold the R2:R7 ratio at 1:3 and test R11 shares 35%, 50%, 65%. This heuristic uses exposed outcomes. WER is not assumed to interpolate linearly, and no independent generalization claim follows.",
+  "selection_rule": "Audit and evaluate all three development candidates. Test development-passing candidates on the larger regression in increasing development-WER order, stopping at the first full pass. If none passes development, run the lowest-development-WER candidate once for diagnosis only. Preserve every result and explicitly name any larger comparisons not run.",
+  "new_optimizer_steps": 0,
+  "inference_ensemble": false,
+  "no_gate_changes": true,
+  "native_qualification_required_separately": true,
+  "code_sha256": {
+    "average_recovered.py": "2f538cdeb7fa6185508fb12bb6cfa27aebc55ff03d4664c2d4c71afcb6c92a7c",
+    "audit_checkpoint.py": "7360e311472f70f456e94a4391e3f42776bd8863b1678208b10509555d422227",
+    "compare.py": "d725d50168b9093824d26d6000b34c4fc4f15b7ad92de5175536c60d24743483",
+    "full_regression.py": "45329aacb626a1f30a18327f27a375bb3a1202397a6f6a8aceeea8e791c9cb97"
+  }
+}

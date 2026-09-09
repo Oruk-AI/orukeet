@@ -1,0 +1,1027 @@
+{
+  "purpose": "Post-inference source-integrity diagnostic; no membership, reference, model, or metric changes.",
+  "source_revision": "7a55bbcee3933f5d9817bb2d4c37399d596f543d",
+  "script_sha256": "22644a66c94189c85d92e4fe9ec8a316d7bf19e3a162247e4aed02651d143de1",
+  "shards": {
+    "greece/test-00005-of-00007.parquet": {
+      "source_sha256": "31a098f5f78b2b671aeac66817de51f70c4bd4b23ccc76033db659d0e6e538a6",
+      "metadata_rows_verified": 961,
+      "audio_samples_verified": [
+        {
+          "source_index": 0,
+          "record_sha256": "de3373e4d8789c333283946741b46a4a76bec8da697bbea28798d0b6993f81d8",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.13793103396892548,
+          "provider_cer_field": 0.04615384712815285,
+          "provider_asr_vs_human": {
+            "words": 29,
+            "errors": 2,
+            "substitutions": 2,
+            "deletions": 0,
+            "insertions": 0,
+            "chars": 194,
+            "char_errors": 3,
+            "utterance_error": 1
+          },
+          "parakeet_vs_human": {
+            "words": 29,
+            "errors": 28,
+            "substitutions": 24,
+            "deletions": 4,
+            "insertions": 0,
+            "chars": 194,
+            "char_errors": 154,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 29,
+            "errors": 28,
+            "substitutions": 24,
+            "deletions": 4,
+            "insertions": 0,
+            "chars": 191,
+            "char_errors": 152,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 29,
+            "errors": 28,
+            "substitutions": 23,
+            "deletions": 5,
+            "insertions": 0,
+            "chars": 194,
+            "char_errors": 153,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 29,
+            "errors": 28,
+            "substitutions": 23,
+            "deletions": 5,
+            "insertions": 0,
+            "chars": 191,
+            "char_errors": 151,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "a36556973747cf921e463366c6b22b0604cd35c4edd04514a136e36531debae3",
+            "start_offset_seconds": 22582.080078125,
+            "normalized_word_distance": 0.8518518518518519,
+            "assigned_reference_normalized_word_distance": 0.9655172413793104
+          }
+        },
+        {
+          "source_index": 137,
+          "record_sha256": "04ce64119437ab1402a43ae2612492265be14dc2db2e9b8021cd55cff2fa8270",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.11999999731779099,
+          "provider_cer_field": 0.017751479521393776,
+          "provider_asr_vs_human": {
+            "words": 25,
+            "errors": 0,
+            "substitutions": 0,
+            "deletions": 0,
+            "insertions": 0,
+            "chars": 165,
+            "char_errors": 0,
+            "utterance_error": 0
+          },
+          "parakeet_vs_human": {
+            "words": 25,
+            "errors": 29,
+            "substitutions": 24,
+            "deletions": 0,
+            "insertions": 5,
+            "chars": 165,
+            "char_errors": 141,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 25,
+            "errors": 29,
+            "substitutions": 24,
+            "deletions": 0,
+            "insertions": 5,
+            "chars": 165,
+            "char_errors": 141,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 25,
+            "errors": 29,
+            "substitutions": 24,
+            "deletions": 0,
+            "insertions": 5,
+            "chars": 165,
+            "char_errors": 143,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 25,
+            "errors": 29,
+            "substitutions": 24,
+            "deletions": 0,
+            "insertions": 5,
+            "chars": 165,
+            "char_errors": 143,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "fdc16c074087b2bd3ab102237630386431b775fff510abde94f321f35c0b9806",
+            "start_offset_seconds": -10923.279296875,
+            "normalized_word_distance": 0.8666666666666667,
+            "assigned_reference_normalized_word_distance": 0.9666666666666667
+          }
+        },
+        {
+          "source_index": 274,
+          "record_sha256": "908dae442178c2fe09bd09dab0717beb38bd466c320f4f2652658eb92eeed9c5",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.10526315867900848,
+          "provider_cer_field": 0.021276595070958138,
+          "provider_asr_vs_human": {
+            "words": 19,
+            "errors": 1,
+            "substitutions": 1,
+            "deletions": 0,
+            "insertions": 0,
+            "chars": 141,
+            "char_errors": 1,
+            "utterance_error": 1
+          },
+          "parakeet_vs_human": {
+            "words": 19,
+            "errors": 27,
+            "substitutions": 14,
+            "deletions": 2,
+            "insertions": 11,
+            "chars": 141,
+            "char_errors": 128,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 19,
+            "errors": 27,
+            "substitutions": 14,
+            "deletions": 2,
+            "insertions": 11,
+            "chars": 140,
+            "char_errors": 129,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 19,
+            "errors": 27,
+            "substitutions": 14,
+            "deletions": 2,
+            "insertions": 11,
+            "chars": 141,
+            "char_errors": 130,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 19,
+            "errors": 27,
+            "substitutions": 14,
+            "deletions": 2,
+            "insertions": 11,
+            "chars": 140,
+            "char_errors": 131,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "9ee2359f965a2c729635f41548b43cb6424fe9ac3f3c641cdacb0346280db407",
+            "start_offset_seconds": -39.3125,
+            "normalized_word_distance": 0.3611111111111111,
+            "assigned_reference_normalized_word_distance": 0.9642857142857143
+          }
+        },
+        {
+          "source_index": 411,
+          "record_sha256": "0900656558b43e131c13597902b2be95f4ce51895d8d0c7c980f7fb509be00d9",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.21875,
+          "provider_cer_field": 0.054794520139694214,
+          "provider_asr_vs_human": {
+            "words": 32,
+            "errors": 4,
+            "substitutions": 3,
+            "deletions": 1,
+            "insertions": 0,
+            "chars": 214,
+            "char_errors": 9,
+            "utterance_error": 1
+          },
+          "parakeet_vs_human": {
+            "words": 32,
+            "errors": 45,
+            "substitutions": 31,
+            "deletions": 0,
+            "insertions": 14,
+            "chars": 214,
+            "char_errors": 188,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 31,
+            "errors": 45,
+            "substitutions": 30,
+            "deletions": 0,
+            "insertions": 15,
+            "chars": 212,
+            "char_errors": 186,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 32,
+            "errors": 44,
+            "substitutions": 31,
+            "deletions": 0,
+            "insertions": 13,
+            "chars": 214,
+            "char_errors": 197,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 31,
+            "errors": 44,
+            "substitutions": 30,
+            "deletions": 0,
+            "insertions": 14,
+            "chars": 212,
+            "char_errors": 196,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "644316d526ab075d2a24cba4960577e74785bf6137707a664c73247c60c0025f",
+            "start_offset_seconds": -42.63671875,
+            "normalized_word_distance": 0.717391304347826,
+            "assigned_reference_normalized_word_distance": 0.9782608695652174
+          }
+        },
+        {
+          "source_index": 548,
+          "record_sha256": "dab9f164ee98877a9912eeb18714ce5acb7e88c7683cccb6933ddb8e1b85776d",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.42307692766189575,
+          "provider_cer_field": 0.10059171915054321,
+          "provider_asr_vs_human": {
+            "words": 26,
+            "errors": 7,
+            "substitutions": 5,
+            "deletions": 0,
+            "insertions": 2,
+            "chars": 159,
+            "char_errors": 11,
+            "utterance_error": 1
+          },
+          "parakeet_vs_human": {
+            "words": 26,
+            "errors": 29,
+            "substitutions": 25,
+            "deletions": 0,
+            "insertions": 4,
+            "chars": 159,
+            "char_errors": 146,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 28,
+            "errors": 29,
+            "substitutions": 27,
+            "deletions": 0,
+            "insertions": 2,
+            "chars": 163,
+            "char_errors": 146,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 26,
+            "errors": 29,
+            "substitutions": 25,
+            "deletions": 0,
+            "insertions": 4,
+            "chars": 159,
+            "char_errors": 151,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 28,
+            "errors": 29,
+            "substitutions": 27,
+            "deletions": 0,
+            "insertions": 2,
+            "chars": 163,
+            "char_errors": 146,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "6c51a38f0521f48ca1cb86896bf20e1404ca8155c60d551b924d3f590028d212",
+            "start_offset_seconds": -42.3203125,
+            "normalized_word_distance": 0.7692307692307693,
+            "assigned_reference_normalized_word_distance": 0.9666666666666667
+          }
+        },
+        {
+          "source_index": 685,
+          "record_sha256": "8845218120af9de8afc3f0ce688e09fb891c7bc962f6455494e88e178dd5ba13",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.20000000298023224,
+          "provider_cer_field": 0.07560137659311295,
+          "provider_asr_vs_human": {
+            "words": 45,
+            "errors": 9,
+            "substitutions": 6,
+            "deletions": 2,
+            "insertions": 1,
+            "chars": 289,
+            "char_errors": 21,
+            "utterance_error": 1
+          },
+          "parakeet_vs_human": {
+            "words": 45,
+            "errors": 42,
+            "substitutions": 31,
+            "deletions": 11,
+            "insertions": 0,
+            "chars": 289,
+            "char_errors": 206,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 44,
+            "errors": 42,
+            "substitutions": 32,
+            "deletions": 10,
+            "insertions": 0,
+            "chars": 287,
+            "char_errors": 208,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 45,
+            "errors": 42,
+            "substitutions": 32,
+            "deletions": 10,
+            "insertions": 0,
+            "chars": 289,
+            "char_errors": 210,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 44,
+            "errors": 42,
+            "substitutions": 33,
+            "deletions": 9,
+            "insertions": 0,
+            "chars": 287,
+            "char_errors": 212,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "fce67eb38d225704ca48ee277a8ce859288ab3a2bc608ba2ca93ce92afa74a8f",
+            "start_offset_seconds": -42.72265625,
+            "normalized_word_distance": 0.4411764705882353,
+            "assigned_reference_normalized_word_distance": 0.9333333333333333
+          }
+        },
+        {
+          "source_index": 822,
+          "record_sha256": "c4e63a3ee91d9091b2f6a0dfa68b6ef3550643fa798844e5bf7092abc0c10173",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.095238097012043,
+          "provider_cer_field": 0.0234375,
+          "provider_asr_vs_human": {
+            "words": 21,
+            "errors": 1,
+            "substitutions": 1,
+            "deletions": 0,
+            "insertions": 0,
+            "chars": 125,
+            "char_errors": 2,
+            "utterance_error": 1
+          },
+          "parakeet_vs_human": {
+            "words": 21,
+            "errors": 21,
+            "substitutions": 20,
+            "deletions": 0,
+            "insertions": 1,
+            "chars": 125,
+            "char_errors": 107,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 21,
+            "errors": 21,
+            "substitutions": 20,
+            "deletions": 0,
+            "insertions": 1,
+            "chars": 126,
+            "char_errors": 107,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 21,
+            "errors": 21,
+            "substitutions": 20,
+            "deletions": 0,
+            "insertions": 1,
+            "chars": 125,
+            "char_errors": 107,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 21,
+            "errors": 21,
+            "substitutions": 20,
+            "deletions": 0,
+            "insertions": 1,
+            "chars": 126,
+            "char_errors": 107,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "b6615888dff86dac8226fe7168147e14a1c0ed5be3c80383b012d9f3aea4e52d",
+            "start_offset_seconds": -45.94921875,
+            "normalized_word_distance": 0.5416666666666666,
+            "assigned_reference_normalized_word_distance": 0.9545454545454546
+          }
+        },
+        {
+          "source_index": 960,
+          "record_sha256": "64e84406ae79173eba179f368df5214eb412b0860f56166865cfa3df87bd0c61",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.02777777798473835,
+          "provider_cer_field": 0.004065040498971939,
+          "provider_asr_vs_human": {
+            "words": 36,
+            "errors": 0,
+            "substitutions": 0,
+            "deletions": 0,
+            "insertions": 0,
+            "chars": 244,
+            "char_errors": 0,
+            "utterance_error": 0
+          },
+          "parakeet_vs_human": {
+            "words": 36,
+            "errors": 34,
+            "substitutions": 34,
+            "deletions": 0,
+            "insertions": 0,
+            "chars": 244,
+            "char_errors": 193,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 36,
+            "errors": 34,
+            "substitutions": 34,
+            "deletions": 0,
+            "insertions": 0,
+            "chars": 244,
+            "char_errors": 193,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 36,
+            "errors": 34,
+            "substitutions": 34,
+            "deletions": 0,
+            "insertions": 0,
+            "chars": 244,
+            "char_errors": 195,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 36,
+            "errors": 34,
+            "substitutions": 34,
+            "deletions": 0,
+            "insertions": 0,
+            "chars": 244,
+            "char_errors": 195,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "0559136a71eebace88c28a7cea2fc823d8b7aefdf25fa54d06606c7d81d10168",
+            "start_offset_seconds": -41.359375,
+            "normalized_word_distance": 0.7777777777777778,
+            "assigned_reference_normalized_word_distance": 0.9444444444444444
+          }
+        }
+      ]
+    },
+    "italy/test-00004-of-00009.parquet": {
+      "source_sha256": "f7f3528ee6c90b211ef56cd08de6667f2f1b8f0d9768b4f72ef99da7b756dc8d",
+      "metadata_rows_verified": 968,
+      "audio_samples_verified": [
+        {
+          "source_index": 0,
+          "record_sha256": "2afeb390d31aa48875a876a757e140344db75f7c2d79d8a135f7115b0410226f",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.3478260934352875,
+          "provider_cer_field": 0.19463087618350983,
+          "provider_asr_vs_human": {
+            "words": 24,
+            "errors": 5,
+            "substitutions": 1,
+            "deletions": 2,
+            "insertions": 2,
+            "chars": 151,
+            "char_errors": 23,
+            "utterance_error": 1
+          },
+          "parakeet_vs_human": {
+            "words": 24,
+            "errors": 24,
+            "substitutions": 22,
+            "deletions": 2,
+            "insertions": 0,
+            "chars": 151,
+            "char_errors": 112,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 24,
+            "errors": 23,
+            "substitutions": 21,
+            "deletions": 2,
+            "insertions": 0,
+            "chars": 144,
+            "char_errors": 106,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 24,
+            "errors": 24,
+            "substitutions": 22,
+            "deletions": 2,
+            "insertions": 0,
+            "chars": 151,
+            "char_errors": 112,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 24,
+            "errors": 23,
+            "substitutions": 21,
+            "deletions": 2,
+            "insertions": 0,
+            "chars": 144,
+            "char_errors": 106,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "92e491778ac27cba0155b6d9c6c80c622a9bd26d7c4b8e51324a2c754b169212",
+            "start_offset_seconds": -25.248046875,
+            "normalized_word_distance": 0.7727272727272727,
+            "assigned_reference_normalized_word_distance": 1.0
+          }
+        },
+        {
+          "source_index": 138,
+          "record_sha256": "7cccb6f235a8698f004235eab21f2fa92148fb66a39263f238d74c330a6e3701",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.09090909361839294,
+          "provider_cer_field": 0.030534351244568825,
+          "provider_asr_vs_human": {
+            "words": 44,
+            "errors": 3,
+            "substitutions": 2,
+            "deletions": 0,
+            "insertions": 1,
+            "chars": 255,
+            "char_errors": 7,
+            "utterance_error": 1
+          },
+          "parakeet_vs_human": {
+            "words": 44,
+            "errors": 42,
+            "substitutions": 37,
+            "deletions": 5,
+            "insertions": 0,
+            "chars": 255,
+            "char_errors": 192,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 45,
+            "errors": 42,
+            "substitutions": 36,
+            "deletions": 6,
+            "insertions": 0,
+            "chars": 259,
+            "char_errors": 192,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 44,
+            "errors": 42,
+            "substitutions": 38,
+            "deletions": 4,
+            "insertions": 0,
+            "chars": 255,
+            "char_errors": 189,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 45,
+            "errors": 42,
+            "substitutions": 37,
+            "deletions": 5,
+            "insertions": 0,
+            "chars": 259,
+            "char_errors": 189,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "43eb763ee3ada15c581e250262ec8f0b0b06859a941658ea08d4e1f6599b25be",
+            "start_offset_seconds": 19309.185546875,
+            "normalized_word_distance": 0.8461538461538461,
+            "assigned_reference_normalized_word_distance": 0.9545454545454546
+          }
+        },
+        {
+          "source_index": 276,
+          "record_sha256": "ed0e1ed2fc1024f11e98c8f6f8a2a4a2c8c1457e4f5a9c6c7b108a79e377ad84",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.261904776096344,
+          "provider_cer_field": 0.1487603336572647,
+          "provider_asr_vs_human": {
+            "words": 40,
+            "errors": 6,
+            "substitutions": 2,
+            "deletions": 2,
+            "insertions": 2,
+            "chars": 246,
+            "char_errors": 29,
+            "utterance_error": 1
+          },
+          "parakeet_vs_human": {
+            "words": 40,
+            "errors": 47,
+            "substitutions": 38,
+            "deletions": 0,
+            "insertions": 9,
+            "chars": 246,
+            "char_errors": 200,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 40,
+            "errors": 47,
+            "substitutions": 38,
+            "deletions": 0,
+            "insertions": 9,
+            "chars": 238,
+            "char_errors": 200,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 40,
+            "errors": 49,
+            "substitutions": 38,
+            "deletions": 0,
+            "insertions": 11,
+            "chars": 246,
+            "char_errors": 206,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 40,
+            "errors": 49,
+            "substitutions": 38,
+            "deletions": 0,
+            "insertions": 11,
+            "chars": 238,
+            "char_errors": 206,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "bf6e07d4289ec678f11c60d80276b7237ce6163febe924fbe0d95a1709d95eb3",
+            "start_offset_seconds": -3811.2158203125,
+            "normalized_word_distance": 0.8979591836734694,
+            "assigned_reference_normalized_word_distance": 0.9591836734693877
+          }
+        },
+        {
+          "source_index": 414,
+          "record_sha256": "7671e74f83f169ab141406ad7364c512e2f67fdbd20869f5551ce697dabfc491",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.06896551698446274,
+          "provider_cer_field": 0.050314463675022125,
+          "provider_asr_vs_human": {
+            "words": 29,
+            "errors": 1,
+            "substitutions": 0,
+            "deletions": 0,
+            "insertions": 1,
+            "chars": 149,
+            "char_errors": 7,
+            "utterance_error": 1
+          },
+          "parakeet_vs_human": {
+            "words": 29,
+            "errors": 29,
+            "substitutions": 23,
+            "deletions": 6,
+            "insertions": 0,
+            "chars": 149,
+            "char_errors": 106,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 30,
+            "errors": 30,
+            "substitutions": 23,
+            "deletions": 7,
+            "insertions": 0,
+            "chars": 156,
+            "char_errors": 113,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 29,
+            "errors": 29,
+            "substitutions": 23,
+            "deletions": 6,
+            "insertions": 0,
+            "chars": 149,
+            "char_errors": 106,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 30,
+            "errors": 30,
+            "substitutions": 23,
+            "deletions": 7,
+            "insertions": 0,
+            "chars": 156,
+            "char_errors": 113,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "44f1050cbfb96d3a73a506ad7540d26f8d564de9ebd06b157e243bc96f790c66",
+            "start_offset_seconds": -36.015625,
+            "normalized_word_distance": 0.5789473684210527,
+            "assigned_reference_normalized_word_distance": 1.0
+          }
+        },
+        {
+          "source_index": 552,
+          "record_sha256": "1ae4d5162ba7848561c799b5669edd2294ca11b8fc341a9c9f839835b053922c",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.29411765933036804,
+          "provider_cer_field": 0.11818181723356247,
+          "provider_asr_vs_human": {
+            "words": 17,
+            "errors": 2,
+            "substitutions": 1,
+            "deletions": 0,
+            "insertions": 1,
+            "chars": 100,
+            "char_errors": 7,
+            "utterance_error": 1
+          },
+          "parakeet_vs_human": {
+            "words": 17,
+            "errors": 24,
+            "substitutions": 15,
+            "deletions": 0,
+            "insertions": 9,
+            "chars": 100,
+            "char_errors": 117,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 18,
+            "errors": 24,
+            "substitutions": 16,
+            "deletions": 0,
+            "insertions": 8,
+            "chars": 104,
+            "char_errors": 115,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 17,
+            "errors": 22,
+            "substitutions": 16,
+            "deletions": 0,
+            "insertions": 6,
+            "chars": 100,
+            "char_errors": 105,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 18,
+            "errors": 22,
+            "substitutions": 17,
+            "deletions": 0,
+            "insertions": 5,
+            "chars": 104,
+            "char_errors": 102,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "923c9bd01a3c97b826faaeaae0b04fbcda663b93a2d6c326e81eadbbc24ca42b",
+            "start_offset_seconds": -47.712890625,
+            "normalized_word_distance": 0.5428571428571428,
+            "assigned_reference_normalized_word_distance": 0.9230769230769231
+          }
+        },
+        {
+          "source_index": 690,
+          "record_sha256": "f2f1f0432c9170601f167fa449a0b0fc495daca0345bd3b9e8a24fd89f65493d",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.0731707289814949,
+          "provider_cer_field": 0.012765957042574883,
+          "provider_asr_vs_human": {
+            "words": 41,
+            "errors": 1,
+            "substitutions": 1,
+            "deletions": 0,
+            "insertions": 0,
+            "chars": 232,
+            "char_errors": 1,
+            "utterance_error": 1
+          },
+          "parakeet_vs_human": {
+            "words": 41,
+            "errors": 40,
+            "substitutions": 33,
+            "deletions": 7,
+            "insertions": 0,
+            "chars": 232,
+            "char_errors": 175,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 41,
+            "errors": 40,
+            "substitutions": 33,
+            "deletions": 7,
+            "insertions": 0,
+            "chars": 232,
+            "char_errors": 175,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 41,
+            "errors": 40,
+            "substitutions": 33,
+            "deletions": 7,
+            "insertions": 0,
+            "chars": 232,
+            "char_errors": 175,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 41,
+            "errors": 40,
+            "substitutions": 33,
+            "deletions": 7,
+            "insertions": 0,
+            "chars": 232,
+            "char_errors": 175,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "89b4044e7a0137553172a5a03c855bae5e043225316648b6a15d1150aeb37a47",
+            "start_offset_seconds": -45.791015625,
+            "normalized_word_distance": 0.2558139534883721,
+            "assigned_reference_normalized_word_distance": 0.975609756097561
+          }
+        },
+        {
+          "source_index": 828,
+          "record_sha256": "15469e31be6366e8bf5bd0ee8b57c12c9ad400aa59fb7b0f1987756d1603319f",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.0555555559694767,
+          "provider_cer_field": 0.008620689623057842,
+          "provider_asr_vs_human": {
+            "words": 39,
+            "errors": 0,
+            "substitutions": 0,
+            "deletions": 0,
+            "insertions": 0,
+            "chars": 228,
+            "char_errors": 0,
+            "utterance_error": 0
+          },
+          "parakeet_vs_human": {
+            "words": 39,
+            "errors": 37,
+            "substitutions": 36,
+            "deletions": 1,
+            "insertions": 0,
+            "chars": 228,
+            "char_errors": 169,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 39,
+            "errors": 37,
+            "substitutions": 36,
+            "deletions": 1,
+            "insertions": 0,
+            "chars": 228,
+            "char_errors": 169,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 39,
+            "errors": 37,
+            "substitutions": 36,
+            "deletions": 1,
+            "insertions": 0,
+            "chars": 228,
+            "char_errors": 169,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 39,
+            "errors": 37,
+            "substitutions": 36,
+            "deletions": 1,
+            "insertions": 0,
+            "chars": 228,
+            "char_errors": 169,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "ed057c5b903911a7f18ade5135f2276d60778d4fc11d08983ef013097fefedfc",
+            "start_offset_seconds": -44.720703125,
+            "normalized_word_distance": 0.4883720930232558,
+            "assigned_reference_normalized_word_distance": 0.9487179487179487
+          }
+        },
+        {
+          "source_index": 967,
+          "record_sha256": "1034ddfafd66dd493e22611da5db6203209f1eee33a938d018301de5bfa7bc81",
+          "pcm_matches_inference": true,
+          "provider_wer_field": 0.34210526943206787,
+          "provider_cer_field": 0.12595419585704803,
+          "provider_asr_vs_human": {
+            "words": 39,
+            "errors": 6,
+            "substitutions": 2,
+            "deletions": 1,
+            "insertions": 3,
+            "chars": 234,
+            "char_errors": 24,
+            "utterance_error": 1
+          },
+          "parakeet_vs_human": {
+            "words": 39,
+            "errors": 40,
+            "substitutions": 38,
+            "deletions": 0,
+            "insertions": 2,
+            "chars": 234,
+            "char_errors": 183,
+            "utterance_error": 1
+          },
+          "parakeet_vs_provider_asr": {
+            "words": 41,
+            "errors": 40,
+            "substitutions": 36,
+            "deletions": 2,
+            "insertions": 2,
+            "chars": 254,
+            "char_errors": 192,
+            "utterance_error": 1
+          },
+          "orukeet_vs_human": {
+            "words": 39,
+            "errors": 40,
+            "substitutions": 38,
+            "deletions": 0,
+            "insertions": 2,
+            "chars": 234,
+            "char_errors": 183,
+            "utterance_error": 1
+          },
+          "orukeet_vs_provider_asr": {
+            "words": 41,
+            "errors": 40,
+            "substitutions": 36,
+            "deletions": 2,
+            "insertions": 2,
+            "chars": 254,
+            "char_errors": 192,
+            "utterance_error": 1
+          },
+          "nearest_same_session_reference": {
+            "record_sha256": "958550cd88ec0b528e1295aaaaec0faf0c566a6edcba22da2efbfca1d0093554",
+            "start_offset_seconds": -40.341796875,
+            "normalized_word_distance": 0.4878048780487805,
+            "assigned_reference_normalized_word_distance": 0.975609756097561
+          }
+        }
+      ]
+    }
+  }
+}

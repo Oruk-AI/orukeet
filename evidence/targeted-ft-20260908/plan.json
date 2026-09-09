@@ -1,0 +1,41 @@
+{
+  "status": "sealed_for_training",
+  "publication_authorized": false,
+  "experiment": "targeted-ft-20260908",
+  "seed": 20260908,
+  "parent_stage": "Orukeet FT-4035",
+  "parent_sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+  "fit_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+  "source_manifest_sha256": "c8c36e9cbf5053ba7159204b2a507185fc11e818f0ab71259e5937d20f9c9623",
+  "evaluation_manifest_sha256": "8770c5a110b60d3adabf4a8e4826adb516664bd44a8c2352e1da57086f85e500",
+  "training_rows": 4265,
+  "training_hours": 9.198780590277778,
+  "splits": {
+    "librispeech_test_other": 2939,
+    "fleurs_fr": 676,
+    "fleurs_el": 650
+  },
+  "passes": 1,
+  "evaluation_data_used_for_training": true,
+  "evaluation_interpretation": "Re-evaluation on the same complete partitions used for this pass.",
+  "text_formatting": "Original evaluation references, unchanged; zero unknown tokenizer targets.",
+  "frozen_gabor_rows": 12288,
+  "batching": {
+    "max_padded_seconds": 120,
+    "max_utterances": 16,
+    "accumulate_batches": 4,
+    "fused_joint_batch_size": 1
+  },
+  "proposed_optimizer": {
+    "name": "AdamW",
+    "peak_lr": 1e-06,
+    "end_lr": 1e-07,
+    "warmup_fraction": 0.03,
+    "betas": [
+      0.9,
+      0.98
+    ],
+    "weight_decay": 0.001,
+    "clip_grad_norm": 1.0
+  }
+}

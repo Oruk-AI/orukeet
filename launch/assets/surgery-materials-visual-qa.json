@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "private": true,
+  "reviewed": "2026-09-06",
+  "files": {
+    "launch/assets/orukeet-card-landscape.png": "b91109fadcd2b963572be8229fca77466207f6071362813ac51e2b1a596d7035",
+    "launch/assets/orukeet-card-square.png": "2b94c3356b65464955dbd6e66f942e26be2b3f4451b0aa0b98ebecfd38e0cf82",
+    "launch/assets/orukeet-social-preview.png": "ae095c9d1410fcea77c365695ff0f360edc6576b7aad77feea5ef418ff812bc6",
+    "launch/assets/orukeet-language-evidence.png": "6197f22200d6554b8cc22e16a9f957e90325f6e48c9ee3fdbc894f7f6d119d76",
+    "launch/assets/orukeet-proof.mp4": "a8e8e8deab46ca3cf15e40fe3f52303d0f80a941615d39c15eb7c69a44017cde",
+    "launch/assets/orukeet-proof-thumbnail.png": "5bfb3272512b2ee93db9eddd2ad45b1f76b8e0a1611290692a089a552fb7b6c7"
+  },
+  "checks": [
+    "all stage labels readable",
+    "all original data and runtime qualifiers retained",
+    "both social card aspect ratios inspected",
+    "all four proof-video scenes inspected",
+    "actual transcript and 181 ms receipt retained",
+    "20 language rows and intervals uncropped",
+    "R15 update: re-rendered and visually inspected landscape and square cards; Gabor source pass and native Q8 failure are explicit, while headline measurements remain pre-surgery."
+  ],
+  "new_asr_measurement": false
+}

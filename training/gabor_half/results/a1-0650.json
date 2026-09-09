@@ -1,0 +1,30 @@
+{
+  "method": "Convex average of audited trained states; not an inference ensemble",
+  "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "parents_sha256": [
+    "dad15e12231dc2463606bce04d95a157bf56a57fc09e84aafd5174c15b93a340",
+    "992a35cdfcea8d4d6ca57e8bef4d2fa2ae82a8e1ab02a872598e338faea40ef3",
+    "ac0b8f43d67580bafd79614207bf012037147fb792b6a117f02bf0cfb85e92be"
+  ],
+  "weights": [
+    0.0875,
+    0.2625,
+    0.65
+  ],
+  "output_sha256": "544458fea024f2701b3d16cf4339b94b2cca5c74d21079d8bec2f0a993e41107",
+  "fits_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+  "coverage_sha256": "94d47a9ab3055659650d38e65d2508d73929cd0363b5768292aca9acebc236b0",
+  "frozen_rows_copied_exactly": 12288,
+  "parameter_tensors_averaged": 651,
+  "unchanged_buffers": 74,
+  "tokenizer_assets_equal": true,
+  "inference_configuration_equal": true,
+  "state_metadata_policy": "Preserve the exporting parent metadata; require matching common module versions. Allow presence of the known stateless training augmentation child only when it owns no stored tensor.",
+  "stateless_augmentation_metadata_present": [
+    true,
+    false,
+    false
+  ],
+  "precision": "One ordered float64 weighted sum, rounded once to the original storage dtype; fixed rows copied",
+  "scope": "New experimental candidate; independent checkpoint and accuracy audits still required"
+}

@@ -1,0 +1,6 @@
+{
+  "status": "pass",
+  "rows": 4265,
+  "model_partitions": 6,
+  "all_integer_counts_equal": true
+}

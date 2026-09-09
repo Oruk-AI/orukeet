@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "interpretation": "Mac and A100 benchmark inputs have identical PCM; WAV container headers differ.",
+  "files": [
+    {
+      "container_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "pcm_sha256": "a29462b8ebd467318000e683b9117ade46230d3255ed2024e7db894abd9b38c9",
+      "frames": 176000,
+      "sample_rate": 16000,
+      "channels": 1,
+      "sample_width": 2
+    },
+    {
+      "container_sha256": "59dfb9a4acb36fe2a2affc14bacbee2920ff435cb13cc314a08c13f66ba7860e",
+      "pcm_sha256": "a29462b8ebd467318000e683b9117ade46230d3255ed2024e7db894abd9b38c9",
+      "frames": 176000,
+      "sample_rate": 16000,
+      "channels": 1,
+      "sample_width": 2
+    }
+  ]
+}

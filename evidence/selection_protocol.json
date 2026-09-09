@@ -1,0 +1,81 @@
+{
+  "version": "2.1-prospective-coverage-amendment",
+  "objective": "A newly produced fine-tune objectively better than stock Parakeet v3 for multilingual and multi-accent ASR",
+  "baseline_sha256": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+  "new_training_parent_sha256": "47a51fee7318b831be95759324ec2af853706af13ce17cf575384b6f6973be9f",
+  "historical_note": "The stage-3 update failed a different comparison against stage-2 EMA. That decision remains recorded. This study explicitly compares new fine-tuned artifacts with the stock model, as requested by the active goal.",
+  "candidate_family": {
+    "method": "Linear parameter interpolation between stock weights and the completed 800-step new fine-tune",
+    "fine_tuned_weight_fractions": [
+      0.5,
+      0.75
+    ],
+    "nonfloating_buffers": "stock values; equality checked",
+    "batchnorm_running_statistics": "must match between parents",
+    "tokenizer_and_architecture": "unchanged",
+    "research_basis": "https://arxiv.org/abs/2210.15282"
+  },
+  "development": {
+    "multilingual_sets": "The frozen 24 CV and 25 FLEURS development selection manifests from the first continuation",
+    "additional_sets": [
+      "English Dialects existing development",
+      "SpeechOcean existing development",
+      "LibriSpeech dev-other"
+    ],
+    "primary": "0.5 * CV language-macro WER + 0.5 * FLEURS language-macro WER",
+    "minimum_relative_primary_improvement_over_stock": 0.1,
+    "maximum_source_language_regression_pp": 0.5,
+    "maximum_each_english_guardrail_regression_pp": 0.2,
+    "selection": "Among eligible candidates, choose lowest primary development WER; ties choose the smaller fine-tuned fraction. If none qualifies, continue development without opening confirmation."
+  },
+  "confirmation": {
+    "exposure": "Exclude training, historically inspected tests/validation, all first-run selection and confirmation, and this study's development utterances. CV additionally excludes previously exposed speakers globally. FLEURS excludes within-language sentence identities; speaker identity is unavailable. No claim of upstream pretraining decontamination.",
+    "coverage_requirement": "At least 20 primary languages, each with at least 20 distinct source-qualified resampling groups across its included corpora. Report every remaining available language descriptively. All 25 trained languages retain their development regression checks.",
+    "primary": "Equal-weight macro WER over eligible languages. Within a language, pool reference-word and error counts from CV, FLEURS, VoxPopuli, FTSpeech and RixVox confirmation manifests. Include a source-language stratum in the primary only with at least 5 groups; require at least 20 distinct groups across the language. English accent, learner, dialect and LibriSpeech auxiliary sets do not alter the multilingual primary.",
+    "minimum_relative_primary_improvement_over_stock": 0.1,
+    "paired_primary_95ci_upper_must_be_below_zero": true,
+    "each_multilingual_family_must_improve": true,
+    "english_requirements": "Fresh CV English/accent speakers plus previously unused source-held-out learner/dialect audio where available, and LibriSpeech test-clean. No confirmation corpus may regress by more than 0.3 WER percentage points; paired 95% upper bounds must also be below the 0.3-point noninferiority margin for the English aggregate and each core/learner/dialect corpus with adequate groups.",
+    "minimum_groups_for_primary_slice": 20,
+    "minimum_words_for_accent_slice": 500,
+    "bootstrap_replicates": 5000,
+    "bootstrap_unit": "Global source-qualified speaker ID; FLEURS parallel sentence ID when speaker is unavailable, shared across language strata",
+    "repeat_policy": "Open confirmation only after a candidate is selected. A failed confirmation is consumed and cannot be reused as a fresh gate for another candidate.",
+    "interpretation": "Establish average multilingual superiority and English noninferiority on the defined suite; disclose all measured per-language and accent tradeoffs, coverage gaps and public pretraining limitations. Do not claim universal superiority.",
+    "minimum_groups_for_corpus_noninferiority": 5,
+    "additional_source_note": "New sources are confirmation only. VoxPopuli uses published test, gold transcripts and source speaker IDs. FTSpeech uses official test-balanced and test-other. RixVox uses previously unused official dev+test to include 29 source speakers; human parliamentary protocols are automatically aligned and not always verbatim. English Dialects speaker IDs are configuration-qualified because bare numeric IDs collide. Source-held-out English requires disjoint source speakers and recordings; repeated prompts and transcript-novel subsets are reported.",
+    "minimum_groups_for_primary_language": 20,
+    "minimum_groups_for_contributing_source_language": 5,
+    "family_metric": "For each of CV, FLEURS, VoxPopuli, FTSpeech and RixVox, language-macro WER over strata with at least 5 groups. Every family must improve in point estimate; all family intervals and sample sizes are disclosed.",
+    "english_metric": "Equal weight to English corpus aggregates: Common Voice (main English plus separately reserved accent recordings), FLEURS English, VoxPopuli English, VoxPopuli accented English, LibriSpeech test-clean, SpeechOcean official test, and English Dialects source-speaker holdout. Noninferiority requires the aggregate paired 95% upper bound below +0.3 pp and separately the same bound for LibriSpeech, SpeechOcean and English Dialects. Every English corpus point regression must be <=0.3 pp. Individual accent slices are reported with uncertainty; no all-accent superiority claim.",
+    "duration_policy": "For newly converted HF sources, retain complete clips from 0.4 through 60 seconds. Existing frozen manifests and official LibriSpeech/SpeechOcean retain their original full clips. No truncation or prediction-based filtering."
+  },
+  "artifact_requirements": [
+    "New standalone .nemo file",
+    "Parent/child hashes and fixed decoding",
+    "No added inference model or routing dependency",
+    "Matched per-utterance predictions",
+    "Private durable backup",
+    "Reproducible reports and honest limitations"
+  ],
+  "production_deployment": false,
+  "amendment": {
+    "timestamp_utc": "2026-09-06T01:10:34.508377+00:00",
+    "prior_protocol_sha256": "7bfe2ff2a1eb2463677de8866b92b5a99ff2a036b48b2ee158ea3b2e04af2032",
+    "reason": "A prediction-free metadata audit found only 12 languages meeting the initial per-source CV/FLEURS group requirement. The benchmark is expanded with public parliamentary speech and the primary is made language-balanced across these sources. This is a changed estimand, prospectively declared, not a claim that the old coverage design was met.",
+    "changes": [
+      "Expanded confirmation sources",
+      "Language-level pooled within-language WER and macro aggregation",
+      "20 groups per primary language, with at least 5 groups per contributing source stratum",
+      "Explicit English corpus aggregation and retained 0.3 pp margins"
+    ],
+    "unchanged": [
+      "10% minimum primary relative gain",
+      "Paired 95% primary interval entirely below zero",
+      "Every multilingual source family must improve",
+      "Development selection rules and candidate family",
+      "Only one selected candidate opens this confirmation gate"
+    ],
+    "confirmation_predictions_observed": false
+  }
+}

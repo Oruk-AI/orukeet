@@ -1,0 +1,6 @@
+{
+  "status": "pass",
+  "trainable_parameter_tensors": 651,
+  "all_have_finite_gradients": true,
+  "source": "r8-gradient-coverage.json"
+}

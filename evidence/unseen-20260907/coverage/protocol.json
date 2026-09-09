@@ -1,0 +1,218 @@
+{
+  "status": "sealed_before_inference",
+  "seed": 20260908,
+  "bootstrap_replicates": 10000,
+  "models": {
+    "parakeet": "models/parakeet-tdt-0.6b-v3/parakeet-tdt-0.6b-v3.nemo",
+    "orukeet": "gabor_half_20260906/orukeet_gabor_half_r15_20260906/step-0100.nemo"
+  },
+  "orukeet_expected_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+  "decoding": {
+    "strategy": "greedy_batch",
+    "model_type": "tdt",
+    "durations": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "greedy": {
+      "max_symbols": 10
+    }
+  },
+  "precision": "FP32 model parameters, CUDA BF16 autocast",
+  "batch_size": 32,
+  "empty_reference_policy": "Official empty or punctuation-only references remain in complete-split scoring; any predicted words count as corpus-level insertions. These records are counted separately.",
+  "inference_scope": "Every segment in all pinned selected official splits, without sample caps or model-score-dependent filtering.",
+  "inference_failure_policy": "Retry failing batches in smaller batches with identical settings; permanent item failure recorded and scored as an empty hypothesis. Never silently drop a reference.",
+  "uncertainty": "Paired cluster bootstrap by source recording/session or speaker. Omit interval when fewer than 2 clusters; flag fewer than 20 independent clusters. No claim of unseen speakers across corpora.",
+  "selection_rule": "Mechanically cover the nine supported languages absent from the first suite, using every human-transcribed record of the pinned published test/validation partitions except exact previously exposed source IDs. No model tuning or checkpoint selection.",
+  "history_audit_sha256": "31d80e25793ae4f8be6c521b8a1b4f4ad0ae54919dc8803c2b5c79ffda6649d8",
+  "history_index_sha256": "93bd8c1e8df498f48c527d78a06a05e656febbb4c798d84a056db98fc1afdd95",
+  "parakeet_sha256": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+  "orukeet_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+  "created_utc": "2026-09-07T04:49:31.160667+00:00",
+  "suite": "language_coverage_extension",
+  "sets": {
+    "golos_crowd_ru": {
+      "path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/metadata/manifests/golos_crowd_ru.jsonl",
+      "sha256": "1303cf706de907784257a0a3e0962a047243083d92a4b0ff6a382aa9beae8bef",
+      "rows": 9896,
+      "hours": null,
+      "lang": "ru",
+      "source": "golos_crowd",
+      "clusters": null,
+      "cluster_metadata_available": false,
+      "strict_text_unseen_rows": 9884,
+      "historically_evaluated_speaker_rows": 0,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 12
+      }
+    },
+    "golos_farfield_ru": {
+      "path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/metadata/manifests/golos_farfield_ru.jsonl",
+      "sha256": "60778fda5c6ff6f38a3bde90ae571358fd08b13823a0b51dbe683307d0cd6ce7",
+      "rows": 1915,
+      "hours": null,
+      "lang": "ru",
+      "source": "golos_farfield",
+      "clusters": null,
+      "cluster_metadata_available": false,
+      "strict_text_unseen_rows": 1915,
+      "historically_evaluated_speaker_rows": 0,
+      "overlap_counts": {}
+    },
+    "nst_da_da": {
+      "path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/metadata/manifests/nst_da_da.jsonl",
+      "sha256": "9b10366a5fcf6665fd04dd1750bf800cb24142558730f487f5ae1d5298810f94",
+      "rows": 54747,
+      "hours": null,
+      "lang": "da",
+      "source": "nst_da",
+      "clusters": 56,
+      "cluster_metadata_available": true,
+      "strict_text_unseen_rows": 54711,
+      "historically_evaluated_speaker_rows": 0,
+      "overlap_counts": {
+        "exact_primary_suite_normalized_text": 6,
+        "exact_historical_normalized_text": 30
+      }
+    },
+    "nst_sv_sv": {
+      "path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/metadata/manifests/nst_sv_sv.jsonl",
+      "sha256": "aa46035c0f45dfdbd1c19f35c7bcbb7b42055f27a01d654e7f685829c6857d6a",
+      "rows": 27638,
+      "hours": null,
+      "lang": "sv",
+      "source": "nst_sv",
+      "clusters": null,
+      "cluster_metadata_available": false,
+      "strict_text_unseen_rows": 27348,
+      "historically_evaluated_speaker_rows": 0,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 221,
+        "exact_primary_suite_normalized_text": 91
+      }
+    },
+    "voxpopuli_cs": {
+      "path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/metadata/manifests/voxpopuli_cs.jsonl",
+      "sha256": "485ae026d6aa34ad5d94a8f3aad09abc74ffc014f106ecc2491621ccbf47c084",
+      "rows": 1103,
+      "hours": null,
+      "lang": "cs",
+      "source": "voxpopuli",
+      "clusters": null,
+      "cluster_metadata_available": false,
+      "strict_text_unseen_rows": 1103,
+      "historically_evaluated_speaker_rows": 807,
+      "overlap_counts": {}
+    },
+    "voxpopuli_es": {
+      "path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/metadata/manifests/voxpopuli_es.jsonl",
+      "sha256": "dfaa0cbf2e2b8dd8e8ec321e09fd2b401e6ac57f63e29651a97f5bfdbda58ed4",
+      "rows": 1631,
+      "hours": null,
+      "lang": "es",
+      "source": "voxpopuli",
+      "clusters": null,
+      "cluster_metadata_available": false,
+      "strict_text_unseen_rows": 1630,
+      "historically_evaluated_speaker_rows": 1081,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 1
+      }
+    },
+    "voxpopuli_hu": {
+      "path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/metadata/manifests/voxpopuli_hu.jsonl",
+      "sha256": "f7b235fd55f7a073e5d9f582fa156b3547d3cbb3597ad61f7390754445efdc97",
+      "rows": 1076,
+      "hours": null,
+      "lang": "hu",
+      "source": "voxpopuli",
+      "clusters": null,
+      "cluster_metadata_available": false,
+      "strict_text_unseen_rows": 1072,
+      "historically_evaluated_speaker_rows": 762,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 4
+      }
+    },
+    "voxpopuli_nl": {
+      "path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/metadata/manifests/voxpopuli_nl.jsonl",
+      "sha256": "a0b81b5cadf7afb48a1277ac384f10b5683228489b87bc1d486a9b0117678a30",
+      "rows": 1230,
+      "hours": null,
+      "lang": "nl",
+      "source": "voxpopuli",
+      "clusters": 47,
+      "cluster_metadata_available": true,
+      "strict_text_unseen_rows": 1216,
+      "historically_evaluated_speaker_rows": 1068,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 14
+      }
+    },
+    "voxpopuli_pl": {
+      "path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/metadata/manifests/voxpopuli_pl.jsonl",
+      "sha256": "d2d04025bc46de988c85b2a19dfa78c8ec20b156c5eedcd6212cc4734844a7ba",
+      "rows": 1691,
+      "hours": null,
+      "lang": "pl",
+      "source": "voxpopuli",
+      "clusters": null,
+      "cluster_metadata_available": false,
+      "strict_text_unseen_rows": 1656,
+      "historically_evaluated_speaker_rows": 827,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 35
+      }
+    },
+    "voxpopuli_ro": {
+      "path": "/home/nathanroll/parakeet-ft/unseen_20260907/coverage/metadata/manifests/voxpopuli_ro.jsonl",
+      "sha256": "a64823b2fe9376b1c0630c7e8308d95e5eb51ff973153b8c8761b9c2d824ef04",
+      "rows": 1418,
+      "hours": null,
+      "lang": "ro",
+      "source": "voxpopuli",
+      "clusters": null,
+      "cluster_metadata_available": false,
+      "strict_text_unseen_rows": 1418,
+      "historically_evaluated_speaker_rows": 1121,
+      "overlap_counts": {}
+    }
+  },
+  "sources_sha256": "2eb4d892fffb9f98355b9a4057810a6970f39758b63d6c3c02a5560641604824",
+  "primary_protocol_sha256": "b55f1ef30a1a131e7abf976e80e22b20efe8a4adac488999dafdc83a8ec86d11",
+  "primary_metrics": [
+    "Per-split and per-language corpus WER/CER. This supplementary pass does not replace the original primary endpoints."
+  ],
+  "secondary_metrics": [
+    "Exact-reference-history-disjoint sensitivity analysis. Source speaker/recording-cluster uncertainty where grouping IDs are available."
+  ],
+  "excluded_rows": {
+    "golos_crowd_ru:missing_transcript": 98,
+    "golos_farfield_ru:missing_transcript": 1
+  },
+  "input_rows_by_split": {
+    "voxpopuli_cs": 1103,
+    "voxpopuli_es": 1631,
+    "voxpopuli_hu": 1076,
+    "voxpopuli_nl": 1230,
+    "voxpopuli_pl": 1691,
+    "voxpopuli_ro": 1418,
+    "nst_da_da": 54747,
+    "nst_sv_sv": 27638,
+    "golos_crowd_ru": 9994,
+    "golos_farfield_ru": 1916
+  },
+  "coverage_statement": "The supplemental partition choices follow missing-language coverage after the first suite was sealed. Some first-suite results were available during this preparation; no outputs from these supplemental partitions were examined before this seal. Checkpoints are unchanged.",
+  "limitations": [
+    "VoxPopuli validation clips can have speakers previously heard in other VoxPopuli partitions; speaker familiarity is reported separately from record-level exclusion.",
+    "The Swedish NST mirror and Golos mirrors omit speaker/session identifiers. Their confidence intervals are not estimated.",
+    "The NST Swedish partition is the published mirror test partition; it is not asserted to be the original NST speaker-held-out test.",
+    "NVIDIA pretraining membership and cross-corpus acoustic near-duplicates remain unverified. Sources are not claimed to postdate pretraining.",
+    "The Golos parquet mirrors contain null references; unannotated rows are excluded before inference and counted explicitly. No reference is invented.",
+    "Durations are obtained from decoded audio, since these parquet metadata omit reliable durations."
+  ]
+}

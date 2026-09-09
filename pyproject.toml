@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orukeet"
+version = "0.1.0"
+description = "Multilingual Parakeet ASR with fitted, frozen Gabor kernels and native inference"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [{name = "Oruk AI"}]
+dependencies = ["numpy>=2,<3", "av>=14,<19", "huggingface-hub>=0.34,<2"]
+
+[project.optional-dependencies]
+eval = ["rapidfuzz>=3,<4"]
+dev = ["pytest>=8", "matplotlib>=3.9", "build>=1", "reportlab>=4", "markdown>=3"]
+
+[project.scripts]
+orukeet = "orukeet.cli:main"
+
+[tool.setuptools.package-data]
+orukeet = ["*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,45 @@
+{
+  "status": "archived-and-verified-private",
+  "repo": "oruk/orukeet",
+  "revision": "f0f73418e20ac02519a959e8f6ebb8b2b9cf1876",
+  "parent_revision": "bc47de42d6929da9b3d6fd49b3969b2a33c4d408",
+  "private": true,
+  "files": [
+    {
+      "path": "/dev/shm/orukeet-targeted-ft-20260908/checkpoints/orukeet-targeted-ft.nemo",
+      "repo_path": "experiments/targeted-ft-20260908/r1/orukeet-targeted-ft.nemo",
+      "sha256": "6b9934a6728c712aa4ea406d483295399e1e9755a3c39412d6c98be30506d1e5",
+      "bytes": 2509342720
+    },
+    {
+      "path": "/home/nathanroll/parakeet-ft/targeted_ft_20260908/private-provenance.tar.gz",
+      "repo_path": "experiments/targeted-ft-20260908/r1/private-provenance.tar.gz",
+      "sha256": "71a8b3cadfff14b73e555e14c5ca80a65317fdd50585a27177ce192a16dd533a",
+      "bytes": 4539930
+    },
+    {
+      "path": "/home/nathanroll/parakeet-ft/targeted_ft_20260908/export-audit.json",
+      "repo_path": "experiments/targeted-ft-20260908/r1/export-audit.json",
+      "sha256": "65825fef24c5cf4fb08a5bec06eed79c4eae77415a0638028cc4e66171b77e42",
+      "bytes": 86132
+    },
+    {
+      "path": "/home/nathanroll/parakeet-ft/targeted_ft_20260908/scored/comparison.json",
+      "repo_path": "experiments/targeted-ft-20260908/r1/comparison.json",
+      "sha256": "611045a1abfb58517dc09258446d28764e7e3473fdda5e6f8f2f23567cda1ef1",
+      "bytes": 7582
+    },
+    {
+      "path": "/home/nathanroll/parakeet-ft/targeted_ft_20260908/scored/hypotheses-audit.json",
+      "repo_path": "experiments/targeted-ft-20260908/r1/hypotheses-audit.json",
+      "sha256": "0809b7a923bab36f6d8429b9d7752e1082b77380e165c23bfccff41db13b1298",
+      "bytes": 1687
+    }
+  ],
+  "canonical_release_replaced": false,
+  "preexisting_model_and_document_files_unchanged": true,
+  "gitattributes_added_rules": [
+    "experiments/targeted-ft-20260908/r1/orukeet-targeted-ft.nemo filter=lfs diff=lfs merge=lfs -text"
+  ],
+  "verification_script_sha256": "b5fb5ee6b80549caedc968cb43352b5351a0ce225139e7fcc9a9a3111255c92f"
+}

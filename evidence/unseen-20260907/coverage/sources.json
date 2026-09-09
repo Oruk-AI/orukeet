@@ -1,0 +1,247 @@
+{
+  "voxpopuli": {
+    "repository": "facebook/voxpopuli",
+    "revision": "42f01879c780b4a2e90ec0b4f616c2ece526e4f1",
+    "languages": [
+      "cs",
+      "es",
+      "hu",
+      "nl",
+      "pl",
+      "ro"
+    ],
+    "split": "validation",
+    "format": "parquet",
+    "files": [
+      {
+        "path": "cs/validation-00000-of-00001.parquet",
+        "bytes": 581315522,
+        "sha256": "0cdb3ab586f3851d610d9d97a1f391a27d164bcfb793e748b39e029c0729dcf7"
+      },
+      {
+        "path": "es/validation-00000-of-00001.parquet",
+        "bytes": 999471951,
+        "sha256": "cc306dcc1889f4cfe1aab63bab362ae5feef597f75f2d007b0f752025e14276c"
+      },
+      {
+        "path": "hu/validation-00000-of-00001.parquet",
+        "bytes": 608942228,
+        "sha256": "8088dc7e889a58e88cd25292f188b1934435558768432644acd3e0a9ea9eabeb"
+      },
+      {
+        "path": "nl/validation-00000-of-00001.parquet",
+        "bytes": 505096493,
+        "sha256": "b7634836e339a494aaaaa4a717dbc6df30fcefabd228ba3ad1fcd38516a90325"
+      },
+      {
+        "path": "pl/validation-00000-of-00001.parquet",
+        "bytes": 935328458,
+        "sha256": "1eeeee6c9a9e0e31ac8c9bd10279aa4b6df0708055f202c1c5368df960e4cb7f"
+      },
+      {
+        "path": "ro/validation-00000-of-00001.parquet",
+        "bytes": 859422680,
+        "sha256": "5f8f5297e164016a883c5bf7cac6c8604e23197a408eaf98a05efb4370c2a349"
+      }
+    ]
+  },
+  "nst_da": {
+    "repository": "alexandrainst/nst-da",
+    "revision": "0f14ad2005e0aab8f56cf3213b7689da1faf23c2",
+    "languages": [
+      "da"
+    ],
+    "split": "test",
+    "format": "parquet",
+    "files": [
+      {
+        "path": "data/test-00000-of-00018-3b160dd6cceec21b.parquet",
+        "bytes": 462824399,
+        "sha256": "6598cb6e9d6da70261fb056881e9cba5da5375b389d2957477c09e993bbe5c30"
+      },
+      {
+        "path": "data/test-00001-of-00018-511a434d7156a503.parquet",
+        "bytes": 450673945,
+        "sha256": "ba973ce7da8c7b289597b667409bc0b7a70cb238a5d24825ec50a8b76ba0bc95"
+      },
+      {
+        "path": "data/test-00002-of-00018-d60949071ce1c563.parquet",
+        "bytes": 440861435,
+        "sha256": "67c32a6a61936a91643a4cc6335d01bf6f3ea95a0d1d0dec855353658db0389e"
+      },
+      {
+        "path": "data/test-00003-of-00018-9c342ac7e325dc9d.parquet",
+        "bytes": 474730467,
+        "sha256": "55358805c8b5bb2fbb918ab2242d73b732f0f5ea52288ec5cb514b35c10e7b1a"
+      },
+      {
+        "path": "data/test-00004-of-00018-4768e9f43556ec25.parquet",
+        "bytes": 502939417,
+        "sha256": "6ff85f75c029fada830b5e2130e63c7237994a1442740a5c285b5c9b9371a1bc"
+      },
+      {
+        "path": "data/test-00005-of-00018-72a6ae27880268c2.parquet",
+        "bytes": 482494879,
+        "sha256": "de51fda8cb978e89e25f4a5eba9d8f1758eca73a9cf9b1152ca84198131f52f7"
+      },
+      {
+        "path": "data/test-00006-of-00018-8073910e403f3782.parquet",
+        "bytes": 530244482,
+        "sha256": "4d718151491452620edef8e9dd438c37086f14a3c7510fbb9d2b0706c077948c"
+      },
+      {
+        "path": "data/test-00007-of-00018-3eb2403a87b6e510.parquet",
+        "bytes": 490251009,
+        "sha256": "7a78ec314189c29148a1ee17847286c532bf60d98b6cae275d6c3e1ce08c9791"
+      },
+      {
+        "path": "data/test-00008-of-00018-92be6ee41a1362b9.parquet",
+        "bytes": 519054816,
+        "sha256": "f5e872c6ff5be6d486109b39c6868a873c7169a04f430152e75ba7e978745fbe"
+      },
+      {
+        "path": "data/test-00009-of-00018-77cf21b2ecc3069b.parquet",
+        "bytes": 484345816,
+        "sha256": "2cbf10770ce849f81d635ca076ed8e85774c151a17994df32bb370a793ffcb21"
+      },
+      {
+        "path": "data/test-00010-of-00018-9feb5ef0a586b80f.parquet",
+        "bytes": 448737783,
+        "sha256": "b00b76727d93d8bebf8f75dcff171f5c6e0a89874bb9e388dc3b6fd8fbe0a1e2"
+      },
+      {
+        "path": "data/test-00011-of-00018-400f7467e4e77c9d.parquet",
+        "bytes": 516270996,
+        "sha256": "b174e48aba66df14a48a22f777df320dff9f0cf5877f1cab97776ac33747d8c1"
+      },
+      {
+        "path": "data/test-00012-of-00018-6415bcf751ae16d3.parquet",
+        "bytes": 488301363,
+        "sha256": "e8445a565c3c2a20b68ac89d57a67c28677f34536d7915a4dc016abe918487fc"
+      },
+      {
+        "path": "data/test-00013-of-00018-85817dad7a44ad90.parquet",
+        "bytes": 513499738,
+        "sha256": "b38e99f717716f6195a7374ec13e621839d157463e1a2e047190cc1e8b75320b"
+      },
+      {
+        "path": "data/test-00014-of-00018-c8cfbde9977c0384.parquet",
+        "bytes": 495019767,
+        "sha256": "dc07bdbce78ca22051b9baae047c01eda6922912f37a391e858d5483082fb562"
+      },
+      {
+        "path": "data/test-00015-of-00018-9409f6f68f1b95df.parquet",
+        "bytes": 481356316,
+        "sha256": "37c1af8a7f70ed85f8ca7405fc418437a37f889ae9963e796502a26a63cece43"
+      },
+      {
+        "path": "data/test-00016-of-00018-59a255a3a42930e7.parquet",
+        "bytes": 485730340,
+        "sha256": "0d8b1a9a4d46564c65179c2fc7b65bd4ece9e4cb8969e64a3a23f5adae2d107e"
+      },
+      {
+        "path": "data/test-00017-of-00018-93c8fc02ef391d12.parquet",
+        "bytes": 435489308,
+        "sha256": "462618e68183e80ed4843e24ea49cabf9a9209033736fa18cba996f4fa120d25"
+      }
+    ]
+  },
+  "nst_sv": {
+    "repository": "jzju/nst",
+    "revision": "ade45482b1fa163b34177963c1e6f4d29621e24f",
+    "languages": [
+      "sv"
+    ],
+    "split": "test",
+    "format": "parquet",
+    "files": [
+      {
+        "path": "data/test-00000-of-00009-1ba5dcde39a450d6.parquet",
+        "bytes": 465064991,
+        "sha256": "c1014e76b89bb0a00fa2909c8cb5a8fabd4eda3e91f7f5882f963f9eb37d117e"
+      },
+      {
+        "path": "data/test-00001-of-00009-9814f92cd3f459bc.parquet",
+        "bytes": 461017384,
+        "sha256": "8ef92a30c6fa5b775cbd57c836f7c0c369df71eea347fe4f84d2afdd57631be0"
+      },
+      {
+        "path": "data/test-00002-of-00009-3c289faf82d1fac2.parquet",
+        "bytes": 461421628,
+        "sha256": "9620f2bcdb96538b7e278628306f25969dc6b91de3efbdee8667f25bb3713282"
+      },
+      {
+        "path": "data/test-00003-of-00009-bd4f214a4d22a772.parquet",
+        "bytes": 465087578,
+        "sha256": "ce53a808e357e9ed898a4cc414cd904fd9150c9ee1316cd7dd61abc178b81876"
+      },
+      {
+        "path": "data/test-00004-of-00009-4b34b8c349ebc384.parquet",
+        "bytes": 464364572,
+        "sha256": "91942c0f47a79b6748200964e2697225c9cbfff8684fbedf1c4abfcdf14bbca6"
+      },
+      {
+        "path": "data/test-00005-of-00009-7aa34a67852650eb.parquet",
+        "bytes": 462763206,
+        "sha256": "428db8d0095f980d3997c3700740f41c9885c068798e518617c4ecdff656a220"
+      },
+      {
+        "path": "data/test-00006-of-00009-10e5822b561daf87.parquet",
+        "bytes": 464099428,
+        "sha256": "3dc39dc128f2414a11705b7f537a8ae8c045bd5b577fd345c0d81b2bb73c0aca"
+      },
+      {
+        "path": "data/test-00007-of-00009-3cfa36b9b0a9a6e3.parquet",
+        "bytes": 467962601,
+        "sha256": "366ef3313a5182eb0852c900160fa1a1ebfb1c96bebd88907b66cf0a0abb0bdf"
+      },
+      {
+        "path": "data/test-00008-of-00009-2b1ec0c0df720db2.parquet",
+        "bytes": 467423304,
+        "sha256": "83d499fdfcc8e30d7ff11b57c54cadcccede902b2f79747d3dda2df97c96fa0a"
+      }
+    ]
+  },
+  "golos_crowd": {
+    "repository": "bond005/sberdevices_golos_10h_crowd",
+    "revision": "e634b6b810e4d30c81b4c6d8262379fe8b9f708c",
+    "languages": [
+      "ru"
+    ],
+    "split": "test",
+    "format": "parquet",
+    "files": [
+      {
+        "path": "data/test-00000-of-00003-cad0cfaddbc8fa71.parquet",
+        "bytes": 399298061,
+        "sha256": "02a8d822f70c3ce8eabe80206129d3b0890377f92d8715515cd40310dec4ac1e"
+      },
+      {
+        "path": "data/test-00001-of-00003-9d9aa103f1ceb4c7.parquet",
+        "bytes": 399598281,
+        "sha256": "d87ed9f127c40ce6e873613041a15900cc0afc12e02f9a7aace02458878ffc42"
+      },
+      {
+        "path": "data/test-00002-of-00003-91f7e0c1d8f0af36.parquet",
+        "bytes": 394413013,
+        "sha256": "aeb01a81a6bbdeaa3078336fdb12c761c079950e95b1cd2369e385dcc80ec335"
+      }
+    ]
+  },
+  "golos_farfield": {
+    "repository": "bond005/sberdevices_golos_100h_farfield",
+    "revision": "c93949f7140beef4adc404e7b54841e957f81c54",
+    "languages": [
+      "ru"
+    ],
+    "split": "test",
+    "format": "parquet",
+    "files": [
+      {
+        "path": "data/test-00000-of-00001-7fb58d4cda8ff9fe.parquet",
+        "bytes": 129509490,
+        "sha256": "b6708fc8ae88ee4be2ac06e48af44b1d3e5ebd1d4c7128f7abcf363f97a4b8eb"
+      }
+    ]
+  }
+}

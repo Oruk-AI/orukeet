@@ -1,0 +1,35 @@
+{
+  "name": "stage3_anchored_accents_20260905",
+  "start_utc": "2026-09-06 00:16:56",
+  "initialization_sha256": "d041b63b2a48f68597de91c8994f711e4290659f836dcb738b87039361beac5b",
+  "actual_optimizer_log": {
+    "name": "AdamW",
+    "lr": 2e-06,
+    "betas": [
+      0.9,
+      0.98
+    ],
+    "weight_decay": 0.001,
+    "scheduler": "CosineAnnealing",
+    "warmup_steps": 50,
+    "max_steps": 800,
+    "min_lr": 5e-07
+  },
+  "trainable_parameter_elements": 151136256,
+  "anchor_scale": 0.1,
+  "top_encoder_layers": 6,
+  "precision": "bf16-mixed",
+  "seed": 20260905,
+  "training_pool_rows": 1716650,
+  "training_pool_hours": 2676.1825556423414,
+  "additional_accent_sampling_weight": 0.08,
+  "all_english_sampling_weight": 0.19525255592620477,
+  "note": "A bounded sampled continuation, not a complete pass over every training record. inherited_model_hparams.yaml has stale initialization optimizer fields; captured argv and live optimizer log describe the actual run.",
+  "training_completed": true,
+  "final_logged_step_zero_based": 799,
+  "final_logged_asr_train_loss": 0.17103911936283112,
+  "final_learning_rate": 5.000065925742092e-07,
+  "final_anchor_cosine": 0.07861538231372833,
+  "export_validation": "checkpoint_verification.json",
+  "candidate_sha256": "47a51fee7318b831be95759324ec2af853706af13ce17cf575384b6f6973be9f"
+}

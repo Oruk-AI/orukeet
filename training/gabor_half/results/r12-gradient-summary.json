@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "trainable_parameter_tensors": 651,
+  "all_have_finite_gradients": true,
+  "source": "r12-gradient-coverage.json",
+  "training_source_hashes_match": true,
+  "initial_student_sha256": "ac0b8f43d67580bafd79614207bf012037147fb792b6a117f02bf0cfb85e92be",
+  "objective_rates_and_training_mixture_equal_to_r11": true,
+  "new_optimizer_schedule_steps": 800,
+  "declared_exports": [
+    400,
+    800
+  ],
+  "sampling_seed": 20260909,
+  "frozen_gabor_rows": 12288,
+  "non_gabor_scalar_parameters": 626897542
+}

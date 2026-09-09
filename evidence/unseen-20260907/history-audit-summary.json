@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-09-07T04:09:53.713840+00:00",
+  "policy": "All historical manifests and line-oriented saved predictions; conservative unused reserves included. Source audio caches alone are not treated as exposure.",
+  "index_sha256": "93bd8c1e8df498f48c527d78a06a05e656febbb4c798d84a056db98fc1afdd95",
+  "unique_keys": {
+    "audio_sha256": 9964,
+    "basename": 2271894,
+    "fleurs_id": 2144,
+    "pcm_sha256": 23113,
+    "sentence_id": 2111264,
+    "source_row_id": 23113,
+    "speaker": 136761,
+    "text": 2204458
+  },
+  "counts": {
+    "records_with_repetition": 13059318
+  },
+  "limitations": [
+    "Exact metadata/text fingerprints; not an acoustic near-duplicate or cross-corpus speaker-identity proof.",
+    "NVIDIA aggregate pretraining sources do not provide complete record-level provenance."
+  ],
+  "inventory_files": 7501,
+  "indexed_manifest_files": 5566,
+  "full_audit_sha256": "31d80e25793ae4f8be6c521b8a1b4f4ad0ae54919dc8803c2b5c79ffda6649d8"
+}

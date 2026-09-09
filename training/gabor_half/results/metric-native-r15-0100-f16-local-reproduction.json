@@ -1,0 +1,43 @@
+{
+  "status": "pass",
+  "suites": {
+    "development": {
+      "all_fields_exact": true,
+      "reference_sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+      "candidate_sha256": "43176af5322aa141636cfa9578a9dc1e9c1aa28adc25e4460af752b094eff073",
+      "registry_sha256": "11248b790ec2a756f296cf5fd41e29ffbb16d3ae5df87b527c5c0057d0327765",
+      "primary": {
+        "original_wer": 10.101759056329339,
+        "candidate_wer": 10.021132540431513,
+        "delta_pp": -0.08062651589782585
+      },
+      "status": "pass",
+      "failures": []
+    },
+    "larger": {
+      "all_fields_exact": true,
+      "reference_sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+      "candidate_sha256": "43176af5322aa141636cfa9578a9dc1e9c1aa28adc25e4460af752b094eff073",
+      "registry_sha256": "9628f7e1b6daced49c5ac330b9e81d440c33784f85002b924a5661a3b25d5d95",
+      "primary": {
+        "reference_wer": 15.303734210950779,
+        "candidate_wer": 15.371980249021309,
+        "delta_pp": 0.06824603807053009,
+        "relative_improvement": -0.0044594369668087275,
+        "paired_delta_95ci": [
+          -0.08370776529439047,
+          0.2794263316722577
+        ]
+      },
+      "status": "fail",
+      "failures": [
+        "Primary WER exceeds original",
+        "English macro WER exceeds original",
+        "language:lt exceeds regression guardrail"
+      ],
+      "native_accuracy_qualified": false
+    }
+  },
+  "scope": "Stored-count statistics, not acoustic ASR inference.",
+  "execution": "native"
+}

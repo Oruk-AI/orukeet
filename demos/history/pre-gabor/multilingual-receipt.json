@@ -1,0 +1,397 @@
+{
+  "private_review": true,
+  "kind": "qualitative_reused_source_multilingual_listening",
+  "started_utc": "2026-09-06T04:58:32.461019+00:00",
+  "source_revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+  "selection_sha256": "22f04a216ce1be6253ab725483164e3784ba1cddaf540db8a37822acfd82e43f",
+  "command": ".venv/bin/python demos/multilingual/reproduce.py --model /path/to/orukeet-v0.1.0rc1-q8.gguf --runtime /path/to/native-runtime --device metal",
+  "command_note": "Portable invocation; exact local paths are kept only in the private .tmp run cache. Artifact, code and runtime hashes identify this run.",
+  "environment": {
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "architecture": "arm64",
+    "chip": "Apple M5 Max",
+    "device": "metal",
+    "python": "3.12.13",
+    "orukeet_version": "0.1.0rc1",
+    "packages": {
+      "numpy": "2.5.2",
+      "av": "18.1.0"
+    }
+  },
+  "model": {
+    "sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+    "bytes": 714456736,
+    "format": "Q8_0 GGUF",
+    "release_artifact": "orukeet-v0.1.0rc1-q8.gguf"
+  },
+  "runtime": {
+    "name": "NVIDIA NeMo-Speech.cpp",
+    "files_sha256": {
+      "lib/libggml-base.0.12.0.dylib": "2cff3ca311fb7f4dbc86ab385ee0030ee38ae5e0aebb4445784f50114b224a3c",
+      "lib/libggml-base.0.dylib": "2cff3ca311fb7f4dbc86ab385ee0030ee38ae5e0aebb4445784f50114b224a3c",
+      "lib/libggml-base.dylib": "2cff3ca311fb7f4dbc86ab385ee0030ee38ae5e0aebb4445784f50114b224a3c",
+      "lib/libggml-blas.0.12.0.dylib": "89278408b33a60ca0ef46d4dc6b506ffa4ea45f618097ec194db22a3ae03a35f",
+      "lib/libggml-blas.0.dylib": "89278408b33a60ca0ef46d4dc6b506ffa4ea45f618097ec194db22a3ae03a35f",
+      "lib/libggml-blas.dylib": "89278408b33a60ca0ef46d4dc6b506ffa4ea45f618097ec194db22a3ae03a35f",
+      "lib/libggml-cpu.0.12.0.dylib": "f60a8569814f9fcdda5fb56aac1302840894c50ae0c3ab619505ddd6f71f67b8",
+      "lib/libggml-cpu.0.dylib": "f60a8569814f9fcdda5fb56aac1302840894c50ae0c3ab619505ddd6f71f67b8",
+      "lib/libggml-cpu.dylib": "f60a8569814f9fcdda5fb56aac1302840894c50ae0c3ab619505ddd6f71f67b8",
+      "lib/libggml-metal.0.12.0.dylib": "26bbb62453b8705d3344b50b029f012169e6925030093fc7d24f23f0823d2c25",
+      "lib/libggml-metal.0.dylib": "26bbb62453b8705d3344b50b029f012169e6925030093fc7d24f23f0823d2c25",
+      "lib/libggml-metal.dylib": "26bbb62453b8705d3344b50b029f012169e6925030093fc7d24f23f0823d2c25",
+      "lib/libggml.0.12.0.dylib": "e0566fb0b7bc5a4bc76ee7ee7217ce5622c4e21f4c89d52b082735ca785e7e14",
+      "lib/libggml.0.dylib": "e0566fb0b7bc5a4bc76ee7ee7217ce5622c4e21f4c89d52b082735ca785e7e14",
+      "lib/libggml.dylib": "e0566fb0b7bc5a4bc76ee7ee7217ce5622c4e21f4c89d52b082735ca785e7e14",
+      "lib/libllama.0.0.0.dylib": "3e800f0252059efa40a47c18ddea27585ecd8ad29c94e54991b84c183611d5a7",
+      "lib/libllama.0.dylib": "3e800f0252059efa40a47c18ddea27585ecd8ad29c94e54991b84c183611d5a7",
+      "lib/libllama.dylib": "3e800f0252059efa40a47c18ddea27585ecd8ad29c94e54991b84c183611d5a7",
+      "lib/libnemo_speech_asr.dylib": "3a6b68f2f4cb9620e9131aff2a4570e283100cf48b22825323798b31feefb79f",
+      "lib/libnemo_speech_asr_c.1.dylib": "daf79cec8af12abf94d207236d9fb1558947396568d9be2691419cc04ef9d0bf",
+      "lib/libnemo_speech_asr_c.dylib": "daf79cec8af12abf94d207236d9fb1558947396568d9be2691419cc04ef9d0bf",
+      "lib/libnemo_speech_nmt.dylib": "9cfbc982b76cb2575e0b13b5ebab7a2e74a6f8209f29c21e809ddd69f757aca2",
+      "lib/libnemo_speech_nmt_c.1.dylib": "e297ba67e5ac356debae592151a76649ef6587e00f2785aba072aa7f567e5368",
+      "lib/libnemo_speech_nmt_c.dylib": "e297ba67e5ac356debae592151a76649ef6587e00f2785aba072aa7f567e5368",
+      "lib/libnemo_speech_tts.1.dylib": "4152e9d822e4074626c6bce90fd1465290552ced35d3244e670862d77d530583",
+      "lib/libnemo_speech_tts.dylib": "4152e9d822e4074626c6bce90fd1465290552ced35d3244e670862d77d530583"
+    }
+  },
+  "package_files_sha256": {
+    "__init__.py": "d82cec35d11031b0dad655070944e5542682fd9ef079b9a123e23c4fe5d67639",
+    "artifacts.json": "b7b13ad2e29ee5a404b3e2aabc5e0a1b0f9e1b7dee255502cf127184408250ac",
+    "audio.py": "6914f603212fda9c52d579c5a82db45ff31f3257fee702f762dffb016d67476d",
+    "cli.py": "5fc488a45589ae51d6f5b0c453abd679ed862df6ecd2c9a5424246822f3907b2",
+    "install.py": "2911efd11877bdc366813a734eebd6f717698d2ac580b32de5f64d5e89e5f6e7",
+    "model.py": "0c3c9184d5866aff187ac0862337793fe85b47747b5c9db568abb991e46f475a",
+    "native_runtimes.json": "98b2018bbc0c6d6b2810616ab333d90370639c080390e62d82f7ff95c36515d6",
+    "nvidia.py": "1b42809e197447b8488e0c6756405977450140056ac4468c349eaf8cceebdd25",
+    "process.py": "478e1c0ca124ab0e5bd8723400dde6939acf6369cfb67478a62aea63d3ae36a4",
+    "worker.py": "4eac8ae5f2e22001a9b4d7103e33051cf05644d8fe9afa5c278f92e23da767c5"
+  },
+  "script_sha256": "8c3f43069d5a8efa315c02db25dfd3ccb450f8e4a50a0312bbc27d9ebe141d13",
+  "timing_scope": "One sequential call per fixed recording after one model initialization, no warmup and no selection across repeated calls. Includes file decoding, PCM preparation, IPC and inference. Excludes initialization, browser playback and app interaction. Not a benchmark.",
+  "limitations": [
+    "Only three fixed examples from a reused public evaluation source",
+    "Prior training or evaluation exposure of these particular recordings is not established here",
+    "Not fresh held-out confirmation",
+    "No baseline comparison or aggregate accuracy claim",
+    "No native-speaker assessment",
+    "Read-speech examples do not cover general accents or real-world conditions",
+    "No microphone or OpenWhispr integration demonstrated"
+  ],
+  "clips": [
+    {
+      "config": "fr_fr",
+      "source": {
+        "dataset": "google/fleurs",
+        "provider": "Google / FLEURS authors",
+        "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+        "config": "fr_fr",
+        "split": "test",
+        "original_tsv_row_zero_based": 0,
+        "id": 1829,
+        "source_filename": "7105431834829365765.wav",
+        "reference_raw": "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+        "reference_normalized_by_provider": "les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables en particulier sur des produits comme les boissons alcoolisées ou le tabac",
+        "source_num_samples": 150720,
+        "tsv": {
+          "url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/fr_fr/test.tsv",
+          "source_file_sha256": "5d06d338b242e00786fcf12c4c92008b9f399d5a5c872c91dca90572e7869c0d",
+          "selected_row_file": "provenance/fr_fr-test-row-0.tsv",
+          "selected_row_sha256": "76e71baec21f8d775ad1a8e916279d8d33dca9a8be31e560ae2f218a69b3f67e",
+          "note": "Only the selected first row is distributed; the full TSV download is a private .tmp cache."
+        },
+        "archive": {
+          "url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/fr_fr/audio/test.tar.gz",
+          "member": "test/7105431834829365765.wav",
+          "provider_metadata": {
+            "type": "file",
+            "oid": "65ab8257d52eb99025fe3fa75f6489240ccf7679",
+            "size": 349036055,
+            "lfs": {
+              "oid": "d23690e102f373554d1b544cd2ff1e76e4fedeb04953c0b72751a1b7c518cfdd",
+              "size": 349036055,
+              "pointerSize": 134
+            },
+            "xetHash": "a9996ed8367bc7e17f745a23cfc948c5745fa941abb668af0ffb3596839d98a7",
+            "path": "data/fr_fr/audio/test.tar.gz",
+            "lastCommit": {
+              "id": "4683b04af03d2d9549064c7d72060a9a94bb6046",
+              "title": "streaming (#11)",
+              "date": "2023-02-07T14:10:57.000Z"
+            },
+            "securityFileStatus": {
+              "status": "queued",
+              "protectAiScan": {
+                "status": "unscanned"
+              },
+              "avScan": {
+                "status": "safe",
+                "message": "No security issues detected",
+                "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+              },
+              "pickleImportScan": {
+                "status": "unscanned",
+                "pickleImports": [],
+                "version": "0.0.0"
+              },
+              "virusTotalScan": {
+                "status": "queued",
+                "message": "QUEUED",
+                "reportLink": "https://www.virustotal.com/gui/file/d23690e102f373554d1b544cd2ff1e76e4fedeb04953c0b72751a1b7c518cfdd?utm_source=huggingface"
+              }
+            }
+          },
+          "verification_note": "Only the selected member was copied and hashed. The streamed archive was stopped after that member; its full advertised LFS hash was not locally verified.",
+          "members_scanned": 558
+        },
+        "audio": {
+          "local_file": "audio/fr_fr.source.wav",
+          "sha256": "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+          "bytes": 602938,
+          "changes": "None: original archive member copied byte-for-byte."
+        },
+        "license": "CC-BY-4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech (2022), Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera and Ankur Bapna; distributed by Google.",
+        "card_url": "https://huggingface.co/datasets/google/fleurs/blob/70bb2e84b976b7e960aa89f1c648e09c59f894dd/README.md",
+        "retrieved_utc": "2026-09-06T04:57:03.081274+00:00"
+      },
+      "playback": {
+        "local_file": "audio/fr_fr.playback.wav",
+        "sha256": "9da159e147d71fbe799a06415fdc91e0ba9e049f3d16f94cb88e4f29f4bf5f02",
+        "pcm_sha256": "406b1f5ca30aec9ba3cba225a91136b333a0992a8dfdd84f37b388d8819310aa",
+        "duration_s": 9.42,
+        "sample_rate_hz": 16000,
+        "channels": 1,
+        "encoding": "PCM16 WAV",
+        "changes": "Decoded with Orukeet's audio path to mono 16 kHz PCM16 for browser playback. No trimming, denoising, speed change or generated speech."
+      },
+      "call_index_one_based": 1,
+      "transcribe_call_s": 0.6146563339862041,
+      "result": {
+        "text": "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+        "segments": [
+          {
+            "text": "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les",
+            "start": 0.0,
+            "end": 7.04
+          },
+          {
+            "text": "boissons alcoolisées ou le tabac.",
+            "start": 7.04,
+            "end": 9.2
+          }
+        ],
+        "language": null
+      },
+      "error": null
+    },
+    {
+      "config": "es_419",
+      "source": {
+        "dataset": "google/fleurs",
+        "provider": "Google / FLEURS authors",
+        "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+        "config": "es_419",
+        "split": "test",
+        "original_tsv_row_zero_based": 0,
+        "id": 1770,
+        "source_filename": "7285658688146080595.wav",
+        "reference_raw": "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+        "reference_normalized_by_provider": "esto parece tener sentido ya que en la tierra no se percibe su movimiento ¿cierto?",
+        "source_num_samples": 122880,
+        "tsv": {
+          "url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/es_419/test.tsv",
+          "source_file_sha256": "d107a93a4f54a18ac25cd470bb4cdadce14fb075b0c1d1542258e274d209ec09",
+          "selected_row_file": "provenance/es_419-test-row-0.tsv",
+          "selected_row_sha256": "53ca0d10c461b65a69cea66e63fa3bfaa6deeddd41889bf96b94809cc8178140",
+          "note": "Only the selected first row is distributed; the full TSV download is a private .tmp cache."
+        },
+        "archive": {
+          "url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/es_419/audio/test.tar.gz",
+          "member": "test/7285658688146080595.wav",
+          "provider_metadata": {
+            "type": "file",
+            "oid": "19103c0aba86016c609839a7997486937b703ac2",
+            "size": 582112372,
+            "lfs": {
+              "oid": "981802f6c828fd214fcf8bfc1036d80c9184b6eeb5650b3f7882f8affec046c9",
+              "size": 582112372,
+              "pointerSize": 134
+            },
+            "xetHash": "101f479ce7e6276a6acbee9edbd16eab1c3c6c342ddf8f94b310228cbf7f43ad",
+            "path": "data/es_419/audio/test.tar.gz",
+            "lastCommit": {
+              "id": "4683b04af03d2d9549064c7d72060a9a94bb6046",
+              "title": "streaming (#11)",
+              "date": "2023-02-07T14:10:57.000Z"
+            },
+            "securityFileStatus": {
+              "status": "safe",
+              "protectAiScan": {
+                "status": "unscanned"
+              },
+              "avScan": {
+                "status": "safe",
+                "message": "No security issues detected",
+                "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+              },
+              "pickleImportScan": {
+                "status": "unscanned",
+                "pickleImports": [],
+                "version": "0.0.0"
+              },
+              "virusTotalScan": {
+                "status": "unscanned",
+                "message": "File not scanned in VirusTotal",
+                "reportLink": "https://www.virustotal.com/gui/file/981802f6c828fd214fcf8bfc1036d80c9184b6eeb5650b3f7882f8affec046c9?utm_source=huggingface"
+              }
+            }
+          },
+          "verification_note": "Only the selected member was copied and hashed. The streamed archive was stopped after that member; its full advertised LFS hash was not locally verified.",
+          "members_scanned": 761
+        },
+        "audio": {
+          "local_file": "audio/es_419.source.wav",
+          "sha256": "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+          "bytes": 491578,
+          "changes": "None: original archive member copied byte-for-byte."
+        },
+        "license": "CC-BY-4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech (2022), Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera and Ankur Bapna; distributed by Google.",
+        "card_url": "https://huggingface.co/datasets/google/fleurs/blob/70bb2e84b976b7e960aa89f1c648e09c59f894dd/README.md",
+        "retrieved_utc": "2026-09-06T04:57:43.385969+00:00"
+      },
+      "playback": {
+        "local_file": "audio/es_419.playback.wav",
+        "sha256": "25c2820fbfc09a588480efe521c5b31a4e1046756a0434da923d0faf9ff7bf49",
+        "pcm_sha256": "826f5be66d78801ddc6543813885681186c4f616ec6ef51938fda3867901aeca",
+        "duration_s": 7.68,
+        "sample_rate_hz": 16000,
+        "channels": 1,
+        "encoding": "PCM16 WAV",
+        "changes": "Decoded with Orukeet's audio path to mono 16 kHz PCM16 for browser playback. No trimming, denoising, speed change or generated speech."
+      },
+      "call_index_one_based": 2,
+      "transcribe_call_s": 0.5037023330223747,
+      "result": {
+        "text": "Esto parece tener sentido ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+        "segments": [
+          {
+            "text": "Esto parece tener sentido ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+            "start": 0.32,
+            "end": 6.72
+          }
+        ],
+        "language": null
+      },
+      "error": null
+    },
+    {
+      "config": "lv_lv",
+      "source": {
+        "dataset": "google/fleurs",
+        "provider": "Google / FLEURS authors",
+        "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+        "config": "lv_lv",
+        "split": "test",
+        "original_tsv_row_zero_based": 0,
+        "id": 1889,
+        "source_filename": "8857195911787819845.wav",
+        "reference_raw": "Tas mums ir devis vilcienus, automašīnas un daudzus citus transportlīdzekļus.",
+        "reference_normalized_by_provider": "tas mums ir devis vilcienus automašīnas un daudzus citus transportlīdzekļus",
+        "source_num_samples": 114240,
+        "tsv": {
+          "url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/lv_lv/test.tsv",
+          "source_file_sha256": "3207f996478a7176bf1fe08bc01646f63fad6e59acad2b861c1e7bc994fa5e94",
+          "selected_row_file": "provenance/lv_lv-test-row-0.tsv",
+          "selected_row_sha256": "88e9bfeb0b3fd55066f3732044be67c10945663081748d00625d7d152c43fbd8",
+          "note": "Only the selected first row is distributed; the full TSV download is a private .tmp cache."
+        },
+        "archive": {
+          "url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/lv_lv/audio/test.tar.gz",
+          "member": "test/8857195911787819845.wav",
+          "provider_metadata": {
+            "type": "file",
+            "oid": "f6b5ff73707b510ee3b319d146604d05e1f6a65a",
+            "size": 498353648,
+            "lfs": {
+              "oid": "43186c8407ebdb992f4117419a12f53037358de1ef67896598173f4998ff884b",
+              "size": 498353648,
+              "pointerSize": 134
+            },
+            "xetHash": "da42b8713a9e3d7209bdbff526607336f49272314e59a15642e7ed36e1113d55",
+            "path": "data/lv_lv/audio/test.tar.gz",
+            "lastCommit": {
+              "id": "4683b04af03d2d9549064c7d72060a9a94bb6046",
+              "title": "streaming (#11)",
+              "date": "2023-02-07T14:10:57.000Z"
+            },
+            "securityFileStatus": {
+              "status": "safe",
+              "protectAiScan": {
+                "status": "unscanned"
+              },
+              "avScan": {
+                "status": "safe",
+                "message": "",
+                "version": "1.5.1/27923"
+              },
+              "pickleImportScan": {
+                "status": "unscanned",
+                "pickleImports": [],
+                "version": "0.0.0"
+              },
+              "virusTotalScan": {
+                "status": "unscanned",
+                "message": "File not scanned in VirusTotal",
+                "reportLink": "https://www.virustotal.com/gui/file/43186c8407ebdb992f4117419a12f53037358de1ef67896598173f4998ff884b?utm_source=huggingface"
+              }
+            }
+          },
+          "verification_note": "Only the selected member was copied and hashed. The streamed archive was stopped after that member; its full advertised LFS hash was not locally verified.",
+          "members_scanned": 798
+        },
+        "audio": {
+          "local_file": "audio/lv_lv.source.wav",
+          "sha256": "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          "bytes": 457018,
+          "changes": "None: original archive member copied byte-for-byte."
+        },
+        "license": "CC-BY-4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech (2022), Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera and Ankur Bapna; distributed by Google.",
+        "card_url": "https://huggingface.co/datasets/google/fleurs/blob/70bb2e84b976b7e960aa89f1c648e09c59f894dd/README.md",
+        "retrieved_utc": "2026-09-06T04:57:42.446577+00:00"
+      },
+      "playback": {
+        "local_file": "audio/lv_lv.playback.wav",
+        "sha256": "0046336e59aca17a93029fcd1a6352751b118dab6ffb4fd1c215c7f048674e26",
+        "pcm_sha256": "b2b4cc5861a11b85ea4062dff38336d0a7627b9fbe8bdd4196ae1ae263c04aa9",
+        "duration_s": 7.14,
+        "sample_rate_hz": 16000,
+        "channels": 1,
+        "encoding": "PCM16 WAV",
+        "changes": "Decoded with Orukeet's audio path to mono 16 kHz PCM16 for browser playback. No trimming, denoising, speed change or generated speech."
+      },
+      "call_index_one_based": 3,
+      "transcribe_call_s": 0.13960166700417176,
+      "result": {
+        "text": "Tas mums ir devas vilcienus, automašīnas un daudzus citas transportlīdzekļus.",
+        "segments": [
+          {
+            "text": "Tas mums ir devas vilcienus, automašīnas un daudzus citas transportlīdzekļus.",
+            "start": 0.88,
+            "end": 6.96
+          }
+        ],
+        "language": null
+      },
+      "error": null
+    }
+  ],
+  "model_initialization_s": 1.8656817500013858,
+  "ended_utc": "2026-09-06T04:58:38.291524+00:00",
+  "status": "completed_with_all_outputs_retained"
+}

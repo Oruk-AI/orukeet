@@ -1,0 +1,43 @@
+{
+  "status": "complete",
+  "same_checkpoint_hashes": true,
+  "same_audio_hashes": true,
+  "same_decoding_and_precision": true,
+  "batching": "Fresh runs sort only the 4,265 selected recordings. The preceding full evaluation sorted all 25,705 recordings, giving different padded batches.",
+  "comparison": {
+    "parakeet": {
+      "librispeech_test_other": {
+        "previous_full_evaluation_wer": 3.141499971612952,
+        "fresh_subset_wer": 3.12825268257603,
+        "changed_hypotheses": 42
+      },
+      "fleurs_fr": {
+        "previous_full_evaluation_wer": 4.687844694462828,
+        "fresh_subset_wer": 4.698097601323408,
+        "changed_hypotheses": 18
+      },
+      "fleurs_el": {
+        "previous_full_evaluation_wer": 21.07347989700931,
+        "fresh_subset_wer": 21.040470060077904,
+        "changed_hypotheses": 69
+      }
+    },
+    "orukeet_ft4035": {
+      "librispeech_test_other": {
+        "previous_full_evaluation_wer": 3.249370753770746,
+        "fresh_subset_wer": 3.256940633220416,
+        "changed_hypotheses": 40
+      },
+      "fleurs_fr": {
+        "previous_full_evaluation_wer": 5.052120677293034,
+        "fresh_subset_wer": 5.030059014946776,
+        "changed_hypotheses": 21
+      },
+      "fleurs_el": {
+        "previous_full_evaluation_wer": 31.389512613921543,
+        "fresh_subset_wer": 31.369700171707834,
+        "changed_hypotheses": 51
+      }
+    }
+  }
+}

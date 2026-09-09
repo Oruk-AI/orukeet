@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "device": "cuda",
+  "gpu": "A100-SXM4-40GB",
+  "wheel_version": "0.1.0rc1",
+  "persistent_reuse": true,
+  "language": null,
+  "model_sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+  "audio_path": "converter/test_files/asr/wav/test/jfk.wav",
+  "transcript": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+}

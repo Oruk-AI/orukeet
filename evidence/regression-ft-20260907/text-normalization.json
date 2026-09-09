@@ -1,0 +1,396 @@
+{
+  "splits": {
+    "nst_da_da": {
+      "input_rows": 54747,
+      "output_rows": 54747,
+      "changed_rows": 8436,
+      "unknown_surfaces_before": {
+        "\\": 9326,
+        "&": 22
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 90,
+      "total_target_tokens": 1094830
+    },
+    "nst_sv_sv": {
+      "input_rows": 27638,
+      "output_rows": 27534,
+      "changed_rows": 2725,
+      "unknown_surfaces_before": {
+        "(": 104,
+        ")": 104,
+        "\\": 928,
+        ";": 3
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 74,
+      "total_target_tokens": 482201
+    },
+    "eurospeech_it": {
+      "input_rows": 6329,
+      "output_rows": 6329,
+      "changed_rows": 3203,
+      "unknown_surfaces_before": {
+        "*": 1623,
+        ";": 693,
+        "(": 193,
+        ")": 197,
+        "«": 136,
+        "»": 118,
+        "\"": 159,
+        "‑": 2,
+        "«*": 4,
+        "*»": 4,
+        "(\"*": 1,
+        "\")*": 1,
+        "(*": 4,
+        "*)": 6,
+        "*(": 171,
+        ")*": 148,
+        "°": 8,
+        "»;": 3,
+        "))*": 1,
+        ");": 5,
+        "+»": 1,
+        "*;": 7,
+        "\";": 1,
+        "\")": 2,
+        "»*": 1,
+        ")*;": 2,
+        "**": 3,
+        "+": 2
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 148,
+      "total_target_tokens": 424273
+    },
+    "eurospeech_bg": {
+      "input_rows": 6892,
+      "output_rows": 6892,
+      "changed_rows": 2131,
+      "unknown_surfaces_before": {
+        "–": 1343,
+        "„": 940,
+        "“": 637,
+        "“)": 8,
+        "(": 201,
+        ")": 196,
+        "ѝ": 18,
+        ";": 82,
+        "\"": 28,
+        "§": 163,
+        "„§": 36,
+        "ѝ": 2,
+        "„(": 9,
+        "“;": 4,
+        "ѝ;": 1,
+        "”": 281,
+        "`": 1,
+        "”;": 7,
+        "”)": 1,
+        ");": 1
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 178,
+      "total_target_tokens": 518105
+    },
+    "eurospeech_el": {
+      "input_rows": 2405,
+      "output_rows": 2405,
+      "changed_rows": 2371,
+      "unknown_surfaces_before": {
+        "ς": 9418,
+        "’": 135,
+        ";": 322,
+        "ς;": 53,
+        "«": 192,
+        "»": 164,
+        "ϋ": 20,
+        ";»": 2,
+        "ς»": 21,
+        "Ί": 2,
+        "»;": 1,
+        "΄": 5,
+        "»»": 1,
+        "ς)": 2,
+        "ΐ": 2
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 182,
+      "total_target_tokens": 220225
+    },
+    "gigaspeechbench_eng_en": {
+      "input_rows": 6648,
+      "output_rows": 6648,
+      "changed_rows": 883,
+      "unknown_surfaces_before": {
+        "#": 1066,
+        "\"": 7,
+        "[": 110,
+        "]": 110
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 106,
+      "total_target_tokens": 208747
+    },
+    "gigaspeechbench_fin_en": {
+      "input_rows": 6037,
+      "output_rows": 6037,
+      "changed_rows": 1400,
+      "unknown_surfaces_before": {
+        "[": 242,
+        "]": 242,
+        "#": 1778,
+        "\"": 2
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 118,
+      "total_target_tokens": 249067
+    },
+    "gigaspeechbench_sct_en": {
+      "input_rows": 12829,
+      "output_rows": 12809,
+      "changed_rows": 2030,
+      "unknown_surfaces_before": {
+        "(": 413,
+        ")": 413,
+        "(~)": 17,
+        "#": 2014,
+        "[": 247,
+        "]": 247
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 112,
+      "total_target_tokens": 254615
+    },
+    "gigaspeechbench_mil_en": {
+      "input_rows": 5224,
+      "output_rows": 5224,
+      "changed_rows": 643,
+      "unknown_surfaces_before": {
+        "#": 709,
+        "[": 102,
+        "]": 102,
+        "\"": 2
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 117,
+      "total_target_tokens": 244886
+    },
+    "golos_crowd_ru": {
+      "input_rows": 9896,
+      "output_rows": 9896,
+      "changed_rows": 0,
+      "unknown_surfaces_before": {},
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 82,
+      "total_target_tokens": 150362
+    },
+    "gigaspeechbench_ind_en": {
+      "input_rows": 5503,
+      "output_rows": 5498,
+      "changed_rows": 723,
+      "unknown_surfaces_before": {
+        "#": 747,
+        "[": 97,
+        "]": 97,
+        "(": 357,
+        ")": 357,
+        "(~)": 28,
+        "\"": 6
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 110,
+      "total_target_tokens": 229716
+    },
+    "gigaspeechbench_phl_en": {
+      "input_rows": 8637,
+      "output_rows": 8633,
+      "changed_rows": 2097,
+      "unknown_surfaces_before": {
+        "#": 2222,
+        "[": 186,
+        "]": 186,
+        "(": 351,
+        ")": 351,
+        "(~)": 49
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 119,
+      "total_target_tokens": 211159
+    },
+    "gigaspeechbench_sgp_en": {
+      "input_rows": 9480,
+      "output_rows": 9468,
+      "changed_rows": 2165,
+      "unknown_surfaces_before": {
+        "#": 2292,
+        "[": 333,
+        "]": 333,
+        "\"": 5,
+        "(": 378,
+        ")": 378,
+        "(~)": 22
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 194,
+      "total_target_tokens": 232695
+    },
+    "gigaspeechbench_ecm_en": {
+      "input_rows": 5659,
+      "output_rows": 5659,
+      "changed_rows": 1012,
+      "unknown_surfaces_before": {
+        "#": 1081,
+        "[": 234,
+        "]": 234
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 121,
+      "total_target_tokens": 235183
+    },
+    "gigaspeechbench_bio_en": {
+      "input_rows": 5297,
+      "output_rows": 5297,
+      "changed_rows": 424,
+      "unknown_surfaces_before": {
+        "#": 488,
+        "[": 63,
+        "]": 63
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 97,
+      "total_target_tokens": 209799
+    },
+    "gigaspeechbench_ait_en": {
+      "input_rows": 5468,
+      "output_rows": 5468,
+      "changed_rows": 2916,
+      "unknown_surfaces_before": {
+        "#": 4712,
+        "[": 129,
+        "]": 129
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 93,
+      "total_target_tokens": 197483
+    },
+    "gigaspeechbench_law_en": {
+      "input_rows": 7273,
+      "output_rows": 7273,
+      "changed_rows": 1282,
+      "unknown_surfaces_before": {
+        "#": 1609,
+        "[": 32,
+        "]": 32
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 100,
+      "total_target_tokens": 204549
+    },
+    "gigaspeechbench_agr_en": {
+      "input_rows": 6665,
+      "output_rows": 6665,
+      "changed_rows": 1291,
+      "unknown_surfaces_before": {
+        "\"": 14,
+        "#": 1504,
+        "[": 195,
+        "]": 195
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 102,
+      "total_target_tokens": 217065
+    },
+    "gigaspeechbench_med_en": {
+      "input_rows": 5168,
+      "output_rows": 5168,
+      "changed_rows": 694,
+      "unknown_surfaces_before": {
+        "[": 237,
+        "]": 237,
+        "#": 784,
+        "\"": 8
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 127,
+      "total_target_tokens": 208599
+    },
+    "gigaspeechbench_ent_en": {
+      "input_rows": 8583,
+      "output_rows": 8583,
+      "changed_rows": 1626,
+      "unknown_surfaces_before": {
+        "#": 1800,
+        "[": 232,
+        "]": 232,
+        "\"": 10
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 106,
+      "total_target_tokens": 218074
+    },
+    "gigaspeechbench_art_en": {
+      "input_rows": 5712,
+      "output_rows": 5712,
+      "changed_rows": 1656,
+      "unknown_surfaces_before": {
+        "#": 2426,
+        "[": 196,
+        "]": 196,
+        "\"": 36
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 97,
+      "total_target_tokens": 190312
+    },
+    "gigaspeechbench_hum_en": {
+      "input_rows": 4971,
+      "output_rows": 4970,
+      "changed_rows": 1162,
+      "unknown_surfaces_before": {
+        "#": 1576,
+        "[": 62,
+        "]": 62
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 110,
+      "total_target_tokens": 189779
+    },
+    "gigaspeechbench_chn_en": {
+      "input_rows": 6308,
+      "output_rows": 6307,
+      "changed_rows": 952,
+      "unknown_surfaces_before": {
+        "#": 1247,
+        "[": 75,
+        "]": 75,
+        "(": 49,
+        ")": 49,
+        "(~)": 18,
+        "\"": 1
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 102,
+      "total_target_tokens": 136519
+    },
+    "lesbos_el": {
+      "input_rows": 230,
+      "output_rows": 230,
+      "changed_rows": 81,
+      "unknown_surfaces_before": {
+        "ς": 122,
+        "ΐ": 1,
+        "ϋ": 1
+      },
+      "unknown_surfaces_after": {},
+      "max_target_tokens": 69,
+      "total_target_tokens": 2883
+    }
+  },
+  "script_sha256": "d9a14f6108c935f53c01cf6a226ce0991d3f664f9a4394d17642344089b98f04",
+  "tokenizer_proto_sha256": "eacec2b0a77f336d4a2ca4a25a7047575d3c2b74de47e997f4c205126ed3135e",
+  "evaluation_references_preserved": true,
+  "unknown_training_tokens": 0,
+  "policy": "Preserve case and words; remove explicit non-speech annotations and formatting delimiters; retain NST punctuation names as words; collapse whitespace; map documented unsupported Greek/Bulgarian orthography and punctuation to the unchanged tokenizer. Quarantine labels with no lexical target."
+}

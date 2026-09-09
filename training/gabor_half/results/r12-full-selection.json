@@ -1,0 +1,45 @@
+{
+  "rule": "Lowest development primary WER among development-qualified exports; if none qualify, lowest primary WER for diagnosis only.",
+  "candidates": [
+    {
+      "label": "r12-0400",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r12_20260906/step-0400.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.026510821447475,
+        "delta_pp": -0.05572420364078938
+      },
+      "failures": [
+        "fleurs_lv_dev_selection: regression 0.544794 pp exceeds 0.5"
+      ]
+    },
+    {
+      "label": "r12-0800",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r12_20260906/step-0800.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.01037188996509,
+        "delta_pp": -0.07186313512317569
+      },
+      "failures": [
+        "fleurs_lv_dev_selection: regression 0.544794 pp exceeds 0.5"
+      ]
+    }
+  ],
+  "selected": {
+    "label": "r12-0800",
+    "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r12_20260906/step-0800.nemo",
+    "status": "fail",
+    "primary": {
+      "original_wer": 10.082235025088266,
+      "candidate_wer": 10.01037188996509,
+      "delta_pp": -0.07186313512317569
+    },
+    "failures": [
+      "fleurs_lv_dev_selection: regression 0.544794 pp exceeds 0.5"
+    ]
+  },
+  "diagnostic_only": true
+}

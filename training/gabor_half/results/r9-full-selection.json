@@ -1,0 +1,61 @@
+{
+  "rule": "Lowest development primary WER among development-qualified exports; if none qualify, lowest primary WER for diagnosis only.",
+  "candidates": [
+    {
+      "label": "r9-0200",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r9_20260906/step-0200.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 9.975218224117471,
+        "delta_pp": -0.10701680097079333
+      },
+      "failures": [
+        "cv_bg_dev_selection: regression 0.655738 pp exceeds 0.5",
+        "cv_hu_dev_selection: regression 0.544959 pp exceeds 0.5"
+      ]
+    },
+    {
+      "label": "r9-0400",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r9_20260906/step-0400.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 9.99000872156062,
+        "delta_pp": -0.09222630352764592
+      },
+      "failures": [
+        "cv_cs_dev_selection: regression 0.581395 pp exceeds 0.5",
+        "cv_lv_dev_selection: regression 0.877193 pp exceeds 0.5",
+        "fleurs_sl_dev_selection: regression 0.657895 pp exceeds 0.5"
+      ]
+    },
+    {
+      "label": "r9-0600",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r9_20260906/step-0600.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 9.951292441947672,
+        "delta_pp": -0.13094258314059404
+      },
+      "failures": [
+        "cv_it_dev_selection: regression 0.610998 pp exceeds 0.5"
+      ]
+    }
+  ],
+  "selected": {
+    "label": "r9-0600",
+    "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r9_20260906/step-0600.nemo",
+    "status": "fail",
+    "primary": {
+      "original_wer": 10.082235025088266,
+      "candidate_wer": 9.951292441947672,
+      "delta_pp": -0.13094258314059404
+    },
+    "failures": [
+      "cv_it_dev_selection: regression 0.610998 pp exceeds 0.5"
+    ]
+  },
+  "diagnostic_only": true
+}

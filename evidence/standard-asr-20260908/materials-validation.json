@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "publication_authorized": false,
+  "rows": 25705,
+  "splits": 27,
+  "model_sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+  "summaries": {
+    "fleurs_five": {
+      "languages": [
+        "de",
+        "es",
+        "fr",
+        "it",
+        "pt"
+      ],
+      "rows": 4230,
+      "models": {
+        "parakeet": {
+          "wer": 3.808469905950542,
+          "cer": 1.4304060165588683
+        },
+        "orukeet": {
+          "wer": 3.519016557451244,
+          "cer": 1.3445768405840324
+        }
+      }
+    },
+    "fleurs_all": {
+      "languages": [
+        "bg",
+        "cs",
+        "da",
+        "de",
+        "el",
+        "en",
+        "es",
+        "et",
+        "fi",
+        "fr",
+        "hr",
+        "hu",
+        "it",
+        "lt",
+        "lv",
+        "mt",
+        "nl",
+        "pl",
+        "pt",
+        "ro",
+        "ru",
+        "sk",
+        "sl",
+        "sv",
+        "uk"
+      ],
+      "rows": 20146,
+      "models": {
+        "parakeet": {
+          "wer": 11.067263784477086,
+          "cer": 3.568636666241543
+        },
+        "orukeet": {
+          "wer": 10.082782488724796,
+          "cer": 3.2053077911011587
+        }
+      }
+    }
+  },
+  "checks": [
+    "Unique complete test membership",
+    "All paired integer counts",
+    "WER and CER recomputation",
+    "Pinned checkpoint and source hashes",
+    "Rendered abstract and all 27 test table rows match measurements"
+  ],
+  "inputs_sha256": {
+    "comparison.json": "30cd142602e07ef47307ed996de4a852a0e8c9de5cf657a5273ce3f8a552f383",
+    "preparation.json": "bdcb541929a11fd1304f62c8ab586c356ef277e1789004d36ad098c71c9e8564",
+    "numeric-evidence.jsonl.gz": "875d30e586d8e0802cb1ee4cf9b66f3a1d849a3e3f8f3da97166e10037196a17",
+    "hypotheses-audit.json": "b028eb1995aea91644ce149b7cf57c824245204fbf765dd3fe82cd95f4aa51cf"
+  },
+  "outputs_sha256": {
+    "report/standard-benchmark-values.tex": "137fda4dfa71e1a08c6830ba41c35840ecfa250e7b6cf22834049ef4208da79a",
+    "report/standard-benchmark-table.tex": "dde308176577c1b16da2776d143251786c7c77f79a010f0bdcd2c17088404374",
+    "docs/standard-asr-benchmarks.md": "3d8742c711c590bd977ae05b855c7556512d72c2854b39c9a3783fb320fbb8ab",
+    "evidence/standard-asr-20260908/scores.csv": "061230475b09924486685412ead6cd91fdd993129e2556acd6032a182fbaa68f"
+  }
+}

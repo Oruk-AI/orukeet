@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "method": "Known historical recordings passed through the current audio-preparation and final-scoring overlap paths; no ASR inference.",
+  "positive_controls": [
+    {
+      "source": "english_dialects",
+      "source_audio_sha256": "48bd157c7d7ca0563df5e482bbd726c34e36eeac908e12cc5e7f925585e7245c",
+      "stored_pcm_in_original_index": true,
+      "original_detector_found_overlap": false,
+      "decoded_history_detector_found_overlap": true
+    },
+    {
+      "source": "speechocean762",
+      "source_audio_sha256": "5fb0fdadeff6fbe56fcff7a63916864ca86766742a26c91834721cd8ebd00ea2",
+      "stored_pcm_in_original_index": true,
+      "original_detector_found_overlap": false,
+      "decoded_history_detector_found_overlap": true
+    }
+  ],
+  "unique_positive_controls": 2,
+  "synthetic_negative_detected_as_overlap": false,
+  "negative_seed": 20260907,
+  "original_index_unchanged": true,
+  "original_index_sha256": "93bd8c1e8df498f48c527d78a06a05e656febbb4c798d84a056db98fc1afdd95",
+  "decoded_fingerprints_sha256": "f2a3bbc65731c66bf3faab3202e295db27537853c6ad339a455222ac61aa8eb0",
+  "script_sha256": "7e413099fe075613bc41c57e0fbdeb9a33572364ae9c410ce07b4dde4355cb01"
+}

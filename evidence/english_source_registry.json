@@ -1,0 +1,55 @@
+{
+  "source": {
+    "repository": "ylacombe/english_dialects",
+    "revision": "ed3d69abb765fd304ccdcc646ec6ca3c49740d15",
+    "files": [
+      "irish_male/train-00000-of-00001-876ed4aebc6599d3.parquet",
+      "midlands_female/train-00000-of-00001-1b72e37a96191510.parquet",
+      "midlands_male/train-00000-of-00001-49c48937e7376123.parquet",
+      "northern_female/train-00000-of-00001-9372d2899e0c3bf8.parquet",
+      "northern_male/train-00000-of-00003-f6fe2795af8a599c.parquet",
+      "northern_male/train-00001-of-00003-c0e3aee450062c0d.parquet",
+      "northern_male/train-00002-of-00003-7c6b1aead3f2d5bc.parquet",
+      "scottish_female/train-00000-of-00002-f29398ad833a005d.parquet",
+      "scottish_female/train-00001-of-00002-9dd779e251173189.parquet",
+      "scottish_male/train-00000-of-00002-c0ace91149bc30ae.parquet",
+      "scottish_male/train-00001-of-00002-58d01ae306d0a012.parquet",
+      "southern_female/train-00000-of-00006-4871f5f893725459.parquet",
+      "southern_female/train-00001-of-00006-751aa4603c83690e.parquet",
+      "southern_female/train-00002-of-00006-4bc3cfea0fa8189e.parquet",
+      "southern_female/train-00003-of-00006-7d9f1d2e74bf33ca.parquet",
+      "southern_female/train-00004-of-00006-2b57429cedb1de20.parquet",
+      "southern_female/train-00005-of-00006-9db7597003dafae8.parquet",
+      "southern_male/train-00000-of-00006-830c7d47d45efe00.parquet",
+      "southern_male/train-00001-of-00006-e6c32d24c7424403.parquet",
+      "southern_male/train-00002-of-00006-d5554396f83ab505.parquet",
+      "southern_male/train-00003-of-00006-1d94a5111036374b.parquet",
+      "southern_male/train-00004-of-00006-5eab675cd3cbf955.parquet",
+      "southern_male/train-00005-of-00006-e157c0d00cdec5a2.parquet",
+      "welsh_female/train-00000-of-00002-295532a766106885.parquet",
+      "welsh_female/train-00001-of-00002-b420a22bb0e4dce3.parquet",
+      "welsh_male/train-00000-of-00003-936591939654f98b.parquet",
+      "welsh_male/train-00001-of-00003-19d8eca64dca634f.parquet",
+      "welsh_male/train-00002-of-00003-47fecc2ad6536939.parquet"
+    ],
+    "bytes": 8983178426
+  },
+  "sets": {
+    "dialect_en_english_dialects_source_holdout": {
+      "input_rows": 17877,
+      "excluded_exposed_speaker": 15179,
+      "rows": 2698,
+      "groups": 18,
+      "hours": 4.632675295138889,
+      "transcript_overlap_rows": 2590,
+      "sha256": "5184e55c2a016cb4c2b1245a8d8132e56b5f37b5148dfad8401f44d35543b686"
+    }
+  },
+  "selection_seed": "goal-v2",
+  "limitations": [
+    "English Dialects numeric speaker IDs are scoped to source configurations, based on observed cross-configuration collisions",
+    "Cross-corpus real-world speaker identity is not certified",
+    "PCM deduplication covers the recovered accent pool and this source, not upstream pretraining",
+    "Maximum duration 60 seconds; no model-score-based filtering"
+  ]
+}

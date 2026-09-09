@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Orukeet — private multilingual listening kit</title>
+<style>
+:root { color-scheme: light; font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:#17232b; background:#f4f5f2; }
+body { max-width:1040px; margin:0 auto; padding:36px 24px 60px; line-height:1.55; }
+h1 { font-size:clamp(1.8rem,4vw,2.6rem); line-height:1.15; margin:12px 0; }
+h2 { margin:0 0 8px; font-size:1.45rem; } h3 { font-size:1rem; margin:0 0 8px; }
+.status { color:#60430c; font-weight:750; letter-spacing:.04em; font-size:.8rem; }
+.scope { max-width:88ch; } .meta { color:#465663; font-size:.9rem; }
+article { margin-top:26px; padding:26px; background:white; border:1px solid #cbd2d6; border-radius:10px; }
+audio { width:100%; margin:12px 0 22px; }
+.comparison { display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+.transcript { margin:0; font-size:1.13rem; line-height:1.65; white-space:pre-wrap; overflow-wrap:anywhere; }
+details { margin-top:25px; border-top:1px solid #dce0e2; padding-top:14px; font-size:.9rem; }
+summary { cursor:pointer; font-weight:650; } code { overflow-wrap:anywhere; }
+a { color:#005f73; text-underline-offset:3px; } a:focus-visible,summary:focus-visible,audio:focus-visible { outline:3px solid #ae5a00; outline-offset:4px; }
+footer { margin-top:32px; font-size:.9rem; }
+@media(max-width:650px) { body { padding:22px 14px 40px; } article { padding:20px; } .comparison { grid-template-columns:1fr; gap:22px; } }
+</style></head><body>
+<div class="status">PRIVATE REVIEW · THREE FIXED EXAMPLES</div>
+<h1>Listen to Orukeet in three languages.</h1>
+<p class="scope">French, Spanish and Latvian: the first physical test-TSV row in each selected FLEURS configuration, fixed before inference. Play the recording and compare the provider's reference with the actual model output. Orukeet r3 supplies every transcript shown here.</p>
+<p class="scope">These three read-speech examples use FLEURS, a public evaluation source used in this project. Clip membership is fixed and every output is shown as returned. Full quantitative comparisons and their protocols accompany the model release.</p>
+<p class="meta">Orukeet r3 · Q8 · Apple M5 Max · metal · run 2026-09-08T21:30:19.322956+00:00</p>
+<article aria-labelledby="fr_fr">
+<h2 id="fr_fr">French</h2>
+<p class="meta">FLEURS test · original TSV row 0 · ID 1829 · 9.42 seconds</p>
+<audio controls preload="metadata" aria-label="Listen to the French FLEURS recording" src="audio/fr_fr.playback.wav">Audio playback is unavailable. <a href="audio/fr_fr.playback.wav">Download WAV</a>.</audio>
+<div class="comparison"><section><h3>Provider reference</h3><p lang="fr" class="transcript">Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.</p></section>
+<section><h3>Actual Orukeet output</h3><p class="transcript">Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.</p></section></div>
+<details><summary>Source and reproduction details</summary>
+<p>Source file: <code>7105431834829365765.wav</code>. Reference and prediction are shown without editorial corrections. The reference is supplied by the dataset, not newly checked by a native speaker.</p>
+<p>Provider-normalized reference: <span lang="fr">les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables en particulier sur des produits comme les boissons alcoolisées ou le tabac</span></p>
+<p>Model call 1 in this process: 0.190005 seconds after initialization. No warm-up or repeated best-of selection. This number is a run receipt, not a benchmark.</p>
+<p>Original WAV SHA-256: <code>84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990</code></p>
+<p><a href="audio/fr_fr.source.wav">Original source WAV</a> · <a href="provenance/fr_fr.json">Clip provenance</a> · <a href="https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/fr_fr/test.tsv">Pinned provider TSV</a></p>
+</details></article><article aria-labelledby="es_419">
+<h2 id="es_419">Spanish · Latin America</h2>
+<p class="meta">FLEURS test · original TSV row 0 · ID 1770 · 7.68 seconds</p>
+<audio controls preload="metadata" aria-label="Listen to the Spanish · Latin America FLEURS recording" src="audio/es_419.playback.wav">Audio playback is unavailable. <a href="audio/es_419.playback.wav">Download WAV</a>.</audio>
+<div class="comparison"><section><h3>Provider reference</h3><p lang="es" class="transcript">Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?</p></section>
+<section><h3>Actual Orukeet output</h3><p class="transcript">Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?</p></section></div>
+<details><summary>Source and reproduction details</summary>
+<p>Source file: <code>7285658688146080595.wav</code>. Reference and prediction are shown without editorial corrections. The reference is supplied by the dataset, not newly checked by a native speaker.</p>
+<p>Provider-normalized reference: <span lang="es">esto parece tener sentido ya que en la tierra no se percibe su movimiento ¿cierto?</span></p>
+<p>Model call 2 in this process: 0.047251 seconds after initialization. No warm-up or repeated best-of selection. This number is a run receipt, not a benchmark.</p>
+<p>Original WAV SHA-256: <code>9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780</code></p>
+<p><a href="audio/es_419.source.wav">Original source WAV</a> · <a href="provenance/es_419.json">Clip provenance</a> · <a href="https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/es_419/test.tsv">Pinned provider TSV</a></p>
+</details></article><article aria-labelledby="lv_lv">
+<h2 id="lv_lv">Latvian</h2>
+<p class="meta">FLEURS test · original TSV row 0 · ID 1889 · 7.14 seconds</p>
+<audio controls preload="metadata" aria-label="Listen to the Latvian FLEURS recording" src="audio/lv_lv.playback.wav">Audio playback is unavailable. <a href="audio/lv_lv.playback.wav">Download WAV</a>.</audio>
+<div class="comparison"><section><h3>Provider reference</h3><p lang="lv" class="transcript">Tas mums ir devis vilcienus, automašīnas un daudzus citus transportlīdzekļus.</p></section>
+<section><h3>Actual Orukeet output</h3><p class="transcript">Tas mums ir devis vilcienus, automašīnas un daudzus citas transportlīdzekļus.</p></section></div>
+<details><summary>Source and reproduction details</summary>
+<p>Source file: <code>8857195911787819845.wav</code>. Reference and prediction are shown without editorial corrections. The reference is supplied by the dataset, not newly checked by a native speaker.</p>
+<p>Provider-normalized reference: <span lang="lv">tas mums ir devis vilcienus automašīnas un daudzus citus transportlīdzekļus</span></p>
+<p>Model call 3 in this process: 0.047306 seconds after initialization. No warm-up or repeated best-of selection. This number is a run receipt, not a benchmark.</p>
+<p>Original WAV SHA-256: <code>65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d</code></p>
+<p><a href="audio/lv_lv.source.wav">Original source WAV</a> · <a href="provenance/lv_lv.json">Clip provenance</a> · <a href="https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/lv_lv/test.tsv">Pinned provider TSV</a></p>
+</details></article>
+<footer><p><strong>Audio and references:</strong> FLEURS (2022), Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera and Ankur Bapna; distributed by Google. <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Original files are preserved. Playback copies use mono 16 kHz PCM16; no content was trimmed or synthesized. No endorsement is implied.</p>
+<p>Source revision: <code>70bb2e84b976b7e960aa89f1c648e09c59f894dd</code>. <a href="README.md">Scope and reproduction</a> · <a href="receipt.json">Complete run receipt</a> · <a href="provenance/selection.json">Selection made before inference</a> · <a href="provenance/source-card.json">Verified provider card record</a></p>
+<p>This static page uses local audio and inline styles. It has no external assets, uploads, analytics or network requests unless a visitor follows an external source/license link.</p></footer>
+</body></html>

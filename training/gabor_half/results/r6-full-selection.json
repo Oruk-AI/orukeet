@@ -1,0 +1,73 @@
+{
+  "rule": "Lowest development primary WER among development-qualified exports; if none qualify, lowest primary WER for diagnosis only.",
+  "candidates": [
+    {
+      "label": "r6-0600",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r6_20260906/step-0600.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.006386400055174,
+        "delta_pp": -0.07584862503309191
+      },
+      "failures": [
+        "cv_bg_dev_selection: regression 0.655738 pp exceeds 0.5",
+        "cv_hu_dev_selection: regression 0.681199 pp exceeds 0.5",
+        "cv_lv_dev_selection: regression 0.501253 pp exceeds 0.5",
+        "fleurs_hu_dev_selection: regression 0.665557 pp exceeds 0.5",
+        "fleurs_lv_dev_selection: regression 0.847458 pp exceeds 0.5"
+      ]
+    },
+    {
+      "label": "r6-0400",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r6_20260906/step-0400.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.00627916029637,
+        "delta_pp": -0.07595586479189609
+      },
+      "failures": [
+        "cv_bg_dev_selection: regression 0.655738 pp exceeds 0.5",
+        "fleurs_et_dev_selection: regression 0.512492 pp exceeds 0.5",
+        "fleurs_hu_dev_selection: regression 0.554631 pp exceeds 0.5",
+        "fleurs_uk_dev_selection: regression 0.512528 pp exceeds 0.5"
+      ]
+    },
+    {
+      "label": "r6-0200",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r6_20260906/step-0200.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.046718847913779,
+        "delta_pp": -0.03551617717448636
+      },
+      "failures": [
+        "cv_bg_dev_selection: regression 0.765027 pp exceeds 0.5",
+        "cv_cs_dev_selection: regression 0.872093 pp exceeds 0.5",
+        "cv_lv_dev_selection: regression 0.501253 pp exceeds 0.5",
+        "fleurs_fi_dev_selection: regression 0.543109 pp exceeds 0.5",
+        "fleurs_hu_dev_selection: regression 0.721021 pp exceeds 0.5",
+        "fleurs_lv_dev_selection: regression 0.544794 pp exceeds 0.5"
+      ]
+    }
+  ],
+  "selected": {
+    "label": "r6-0400",
+    "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r6_20260906/step-0400.nemo",
+    "status": "fail",
+    "primary": {
+      "original_wer": 10.082235025088266,
+      "candidate_wer": 10.00627916029637,
+      "delta_pp": -0.07595586479189609
+    },
+    "failures": [
+      "cv_bg_dev_selection: regression 0.655738 pp exceeds 0.5",
+      "fleurs_et_dev_selection: regression 0.512492 pp exceeds 0.5",
+      "fleurs_hu_dev_selection: regression 0.554631 pp exceeds 0.5",
+      "fleurs_uk_dev_selection: regression 0.512528 pp exceeds 0.5"
+    ]
+  },
+  "diagnostic_only": true
+}

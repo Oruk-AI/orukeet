@@ -1,0 +1,13 @@
+{
+  "selected_at_utc": "2026-09-06T04:54:39.416200+00:00",
+  "dataset": "google/fleurs",
+  "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+  "split": "test",
+  "rule": "First physical data row (zero-based TSV row 0) of each original data/{config}/test.tsv at this pinned revision. No outputs have been generated or inspected when this selection is written. This is not an assertion about Dataset Viewer/Parquet row order.",
+  "configs": [
+    "fr_fr",
+    "es_419",
+    "lv_lv"
+  ],
+  "scope": "Three qualitative reused-source examples; not held-out confirmation, no comparison, no native-speaker judgment."
+}

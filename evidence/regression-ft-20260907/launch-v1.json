@@ -1,0 +1,27 @@
+{
+  "pid": 54087,
+  "argv": [
+    "/opt/venv/bin/python",
+    "-u",
+    "/home/nathanroll/parakeet-ft/regression_ft_20260907/code/train.py",
+    "--plan",
+    "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/training-plan.json",
+    "--prepared",
+    "/home/nathanroll/parakeet-ft/regression_ft_20260907/training-ready/prepared.json",
+    "--parent",
+    "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r15_20260906/step-0100.nemo",
+    "--fits",
+    "/home/nathanroll/parakeet-ft/gabor_half_20260906/fit-full/fits.json",
+    "--gabor-code",
+    "/home/nathanroll/parakeet-ft/gabor_half_20260906",
+    "--output",
+    "/home/nathanroll/parakeet-ft/regression_ft_20260907/run-v1",
+    "--checkpoint-dir",
+    "/dev/shm/orukeet-regression-ft-20260907/checkpoints",
+    "--workers",
+    "4"
+  ],
+  "git_commit": "679a7c1",
+  "log": "/home/nathanroll/parakeet-ft/regression_ft_20260907/train-v1.log",
+  "canonical_release_replaced": false
+}

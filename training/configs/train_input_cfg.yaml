@@ -1,0 +1,419 @@
+- type: group
+  weight: 0.02068
+  tags:
+    lang: bg
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_bg_train.json
+    weight: 0.4644
+    tags:
+      lang: bg
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_bg_train.json
+    weight: 0.5356
+    tags:
+      lang: bg
+      src: fleurs
+- type: group
+  weight: 0.03093
+  tags:
+    lang: cs
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_cs_train.json
+    weight: 0.6489
+    tags:
+      lang: cs
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_cs_train.json
+    weight: 0.3511
+    tags:
+      lang: cs
+      src: fleurs
+- type: group
+  weight: 0.01721
+  tags:
+    lang: da
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_da_train.json
+    weight: 0.4227
+    tags:
+      lang: da
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_da_train.json
+    weight: 0.5773
+    tags:
+      lang: da
+      src: fleurs
+- type: group
+  weight: 0.11453
+  tags:
+    lang: de
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_de_train.json
+    weight: 0.8819
+    tags:
+      lang: de
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_de_train.json
+    weight: 0.1181
+    tags:
+      lang: de
+      src: fleurs
+- type: group
+  weight: 0.01753
+  tags:
+    lang: el
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_el_train.json
+    weight: 0.3183
+    tags:
+      lang: el
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_el_train.json
+    weight: 0.6817
+    tags:
+      lang: el
+      src: fleurs
+- type: group
+  weight: 0.1
+  tags:
+    lang: en
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_en_train.json
+    weight: 0.9029
+    tags:
+      lang: en
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_en_train.json
+    weight: 0.0971
+    tags:
+      lang: en
+      src: fleurs
+- type: group
+  weight: 0.09674
+  tags:
+    lang: es
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_es_train.json
+    weight: 0.864
+    tags:
+      lang: es
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_es_train.json
+    weight: 0.136
+    tags:
+      lang: es
+      src: fleurs
+- type: group
+  weight: 0.01874
+  tags:
+    lang: et
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_et_train.json
+    weight: 0.4833
+    tags:
+      lang: et
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_et_train.json
+    weight: 0.5167
+    tags:
+      lang: et
+      src: fleurs
+- type: group
+  weight: 0.01709
+  tags:
+    lang: fi
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_fi_train.json
+    weight: 0.3508
+    tags:
+      lang: fi
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_fi_train.json
+    weight: 0.6492
+    tags:
+      lang: fi
+      src: fleurs
+- type: group
+  weight: 0.1095
+  tags:
+    lang: fr
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_fr_train.json
+    weight: 0.8693
+    tags:
+      lang: fr
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_fr_train.json
+    weight: 0.1307
+    tags:
+      lang: fr
+      src: fleurs
+- type: group
+  weight: 0.01739
+  tags:
+    lang: hr
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_hr_train.json
+    weight: 1.0
+    tags:
+      lang: hr
+      src: fleurs
+- type: group
+  weight: 0.04116
+  tags:
+    lang: hu
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_hu_train.json
+    weight: 0.7118
+    tags:
+      lang: hu
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_hu_train.json
+    weight: 0.2882
+    tags:
+      lang: hu
+      src: fleurs
+- type: group
+  weight: 0.08217
+  tags:
+    lang: it
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_it_train.json
+    weight: 0.8416
+    tags:
+      lang: it
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_it_train.json
+    weight: 0.1584
+    tags:
+      lang: it
+      src: fleurs
+- type: group
+  weight: 0.02351
+  tags:
+    lang: lt
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_lt_train.json
+    weight: 0.5233
+    tags:
+      lang: lt
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_lt_train.json
+    weight: 0.4767
+    tags:
+      lang: lt
+      src: fleurs
+- type: group
+  weight: 0.02767
+  tags:
+    lang: lv
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_lv_train.json
+    weight: 0.6539
+    tags:
+      lang: lv
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_lv_train.json
+    weight: 0.3461
+    tags:
+      lang: lv
+      src: fleurs
+- type: group
+  weight: 0.01776
+  tags:
+    lang: mt
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_mt_train.json
+    weight: 0.329
+    tags:
+      lang: mt
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_mt_train.json
+    weight: 0.671
+    tags:
+      lang: mt
+      src: fleurs
+- type: group
+  weight: 0.03985
+  tags:
+    lang: nl
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_nl_train.json
+    weight: 0.7268
+    tags:
+      lang: nl
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_nl_train.json
+    weight: 0.2732
+    tags:
+      lang: nl
+      src: fleurs
+- type: group
+  weight: 0.03388
+  tags:
+    lang: pl
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_pl_train.json
+    weight: 0.6628
+    tags:
+      lang: pl
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_pl_train.json
+    weight: 0.3372
+    tags:
+      lang: pl
+      src: fleurs
+- type: group
+  weight: 0.0306
+  tags:
+    lang: pt
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_pt_train.json
+    weight: 0.6162
+    tags:
+      lang: pt
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_pt_train.json
+    weight: 0.3838
+    tags:
+      lang: pt
+      src: fleurs
+- type: group
+  weight: 0.02018
+  tags:
+    lang: ro
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_ro_train.json
+    weight: 0.4295
+    tags:
+      lang: ro
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_ro_train.json
+    weight: 0.5705
+    tags:
+      lang: ro
+      src: fleurs
+- type: group
+  weight: 0.03443
+  tags:
+    lang: ru
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_ru_train.json
+    weight: 0.6851
+    tags:
+      lang: ru
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_ru_train.json
+    weight: 0.3149
+    tags:
+      lang: ru
+      src: fleurs
+- type: group
+  weight: 0.0195
+  tags:
+    lang: sk
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_sk_train.json
+    weight: 0.5525
+    tags:
+      lang: sk
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_sk_train.json
+    weight: 0.4475
+    tags:
+      lang: sk
+      src: fleurs
+- type: group
+  weight: 0.01543
+  tags:
+    lang: sl
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_sl_train.json
+    weight: 0.3054
+    tags:
+      lang: sl
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_sl_train.json
+    weight: 0.6946
+    tags:
+      lang: sl
+      src: fleurs
+- type: group
+  weight: 0.02118
+  tags:
+    lang: sv
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_sv_train.json
+    weight: 0.5107
+    tags:
+      lang: sv
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_sv_train.json
+    weight: 0.4893
+    tags:
+      lang: sv
+      src: fleurs
+- type: group
+  weight: 0.03234
+  tags:
+    lang: uk
+  input_cfg:
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/cv_uk_train.json
+    weight: 0.6519
+    tags:
+      lang: uk
+      src: cv
+  - type: nemo
+    manifest_filepath: /work/users/nathanroll/parakeet-ft/manifests/final/fleurs_uk_train.json
+    weight: 0.3481
+    tags:
+      lang: uk
+      src: fleurs

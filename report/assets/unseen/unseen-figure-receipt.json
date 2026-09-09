@@ -1,0 +1,35 @@
+{
+  "comparison_sha256": "cc024031468c602fb6c326943a2ea1b6dffa66440fcb4d04559d12bb83f05ed0",
+  "coverage_comparison_sha256": "298599ce854a9607a188f07becf9c75403a411542c6e960ded9c5d4b25ec8401",
+  "script_sha256": "d4592c29243257dd133fbfa59ba0a2d7d69fe8ba888f974e517386a3a6337866",
+  "matplotlib": "3.11.1",
+  "files": {
+    "unseen-language-coverage.png": "aa66de577f8ebb9997568eda3fccdd9c80f93a0d02c13518abc7405830b1bba7",
+    "unseen-language-coverage.pdf": "26c89cabebbc8558a71d761eb18af8b178cbbfff5f63ce415f6fcd9589ca6f55",
+    "unseen-english-accents.png": "c6be28a4ad2ceaa78e578f520aca33c8a6000f8731331443b4910c8f6c3a8069",
+    "unseen-english-accents.pdf": "ae6fd18d34f9348020558c340cd2c3666cc1addcc32a939ba936615f567b41e3",
+    "unseen-english-accents.svg": "3cacedbe24885630d0eaad88403cf80f890dea42d462bf0d89e889cb907b8f34",
+    "unseen-benchmark-captions.md": "59459974d24ee611c2f4c543d54e17dbea6e4e5bcb869f023943139ef1288565",
+    "unseen-language-coverage.svg": "03cd68fc07a2271bf8e1d3d4132eee814a85174137e7fa74a52af7a6984146aa",
+    "unseen-eurospeech.png": "a5efb7b9dcb242a5301a5edffde5d6dace4dd03a1319e49c9cd817cc4dd30854",
+    "unseen-eurospeech.pdf": "14be92cd1d4ea09546d60482c3c329c212321b0f551e1e1ab510ab271ee5782a",
+    "unseen-english-domains.svg": "81760f0eb64d9e313914456860cddcecb3740f9cf81f48cf8eec71862338f1dc",
+    "unseen-english-domains.png": "03e2048952df3576b88a45d19add8b835e51a0a4e61d51fcc03c76dd5173272a",
+    "unseen-english-domains.pdf": "11d7260cf143d636651cc89d4255f929f67b0ad26c5589450602a3543f0ffb58",
+    "unseen-eurospeech.svg": "2957f74c5f09b3c8b5cdb6b3d6b08082e0b774a7f2fc93cf6a93e2539f0af64c"
+  },
+  "visual_review": "passed",
+  "reviewed_utc": "2026-09-07T05:57:41.859084+00:00",
+  "visual_review_method": "Rendered all four PDFs with Poppler at 96 dpi (final physical size) and 200 dpi; visually inspected all eight images for text clipping, overlap, row alignment, interval/point placement and legibility.",
+  "rendered_review_sha256": {
+    "unseen-english-accents-200.png": "c480c1a5458d5694a86e7b258d37c7725198d2ce03ef8fb3edad133974bcb5d0",
+    "unseen-english-accents-96.png": "edaad9ebac4faa4df30ad40309fe7ef1be745c04b47b9e9f97e545977f3ac987",
+    "unseen-english-domains-200.png": "199142e5f7c16c3035ddc50119d1261fe654f728c89aaf2126c53c0d62bb0733",
+    "unseen-english-domains-96.png": "7d58112b34d8469dd960118bf687e743820290334c627b542294a82073514671",
+    "unseen-eurospeech-200.png": "47e4ce61fb8a0af0a207496fc29d6df435a8a9002c05e6ee5a8d195a4be788ce",
+    "unseen-eurospeech-96.png": "82e5d9fcec75219a71b2eca68122d9228cc791bd45c1eac021b6a8412bcea604",
+    "unseen-language-coverage-200.png": "f15a5a702b5b56afdc670fde46d655047599d703e0db2e01a97247889afd9ced",
+    "unseen-language-coverage-96.png": "fa38a68c491c962dc44d30397c6479e977ce78346982a1feaa382b3094a1086e"
+  },
+  "visual_review_findings": "All four figures readable at final size; no clipping or overlap. Open markers and group counts identify unavailable intervals. English plots share axis limits; EuroSpeech plot names the source-alignment defect."
+}

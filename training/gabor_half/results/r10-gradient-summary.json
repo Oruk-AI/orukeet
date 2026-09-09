@@ -1,0 +1,7 @@
+{
+  "status": "pass",
+  "trainable_parameter_tensors": 651,
+  "all_have_finite_gradients": true,
+  "source": "r10-gradient-coverage.json",
+  "training_source_hashes_match": true
+}

@@ -1,0 +1,16 @@
+{
+  "status": "private-prepared",
+  "file": "launch/assets/orukeet-social-preview.png",
+  "dimensions": [
+    1280,
+    640
+  ],
+  "bytes": 65956,
+  "sha256": "d3686e34e8af043ec93aee8a9104fca232900e7a9982476cfdb380d9b559171e",
+  "model": "Orukeet r3",
+  "alt_text": "Orukeet r3 and Parakeet have 627 million parameters. Across the 25-language, 20,146-clip FLEURS comparison, pooled WER is 9.85% for Orukeet versus 11.01% for Parakeet (10.6% relative reduction). On 5,120 English clips, WER is 8.84% for Orukeet versus 9.51% for Parakeet (7.0% relative reduction). Code MIT; weights CC BY-SA 4.0.",
+  "source": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview",
+  "benchmark_source": "evidence/r3-promotion-20260908/scores.json",
+  "benchmark_source_sha256": "27f12c1ced540a0b101d380a4e093a9cd531361006dc55c09de931725088eca5",
+  "interpretation": "Pooled WER under matched NeMo decoding; relative improvements computed from integer edit counts."
+}

@@ -1,0 +1,37 @@
+{
+  "created_at": "2026-09-06T17:03:13.757987+00:00",
+  "status": "planned; waiting for R5 larger regressions",
+  "basis": "R1-R5 development failures and R2 larger English regressions; all are exposed development evidence.",
+  "start_rule": "Use the first R5 checkpoint in the existing 300,200,100 order that passes every larger-suite metric, if any; otherwise start again from the exact original Orukeet source. Development failures remain failures.",
+  "frozen_gabor_rows": 12288,
+  "fit_identity_unchanged": true,
+  "teacher": "Exact original Orukeet encoder; output of all 24 blocks and all 24 convolution branches",
+  "loss": {
+    "asr": 0.1,
+    "mean_normalized_block_mse": 5.0,
+    "mean_normalized_conv_mse": 1.0
+  },
+  "steps": 600,
+  "warmup_steps": 10,
+  "learning_rates": {
+    "lower_encoder": 3e-06,
+    "upper_encoder": 3e-06,
+    "other": 3e-06,
+    "decoder": 1e-07,
+    "joint": 1e-07
+  },
+  "minimum_lr": 0.0,
+  "batch_seconds": 60,
+  "accumulation": 4,
+  "dropout": false,
+  "specaugment": false,
+  "batchnorm_running_buffers": "original and frozen; affine parameters train",
+  "training_mixture": "Existing English recovery mixture if continuing a passing R5 checkpoint; original audited mixture otherwise. No evaluation audio enters training.",
+  "export_and_development_order": [
+    600,
+    400,
+    200
+  ],
+  "acceptance": "Unchanged development and larger release guards. Lower distillation loss alone is not acceptance.",
+  "larger_suite_selection": "Lowest development primary WER among development-qualified exports; if none qualify, lowest primary WER for diagnosis only. This rule is recorded before R6 starts."
+}

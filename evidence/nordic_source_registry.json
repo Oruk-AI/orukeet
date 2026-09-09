@@ -1,0 +1,103 @@
+{
+  "sources": {
+    "ftspeech": {
+      "repository": "alexandrainst/ftspeech",
+      "revision": "e1b7096db63c7d996a8220b13780a547a88a9af0",
+      "files": [
+        "data/test_balanced-00000-of-00024-3b0d81db08b57798.parquet",
+        "data/test_balanced-00001-of-00024-9e4c2914cc48cf68.parquet",
+        "data/test_balanced-00002-of-00024-9f9967dc93b86c0c.parquet",
+        "data/test_balanced-00003-of-00024-093b08462ace829a.parquet",
+        "data/test_balanced-00004-of-00024-9479ad75e4e86fdf.parquet",
+        "data/test_balanced-00005-of-00024-68381d70c8b92b16.parquet",
+        "data/test_balanced-00006-of-00024-4b7041846ba7e2e2.parquet",
+        "data/test_balanced-00007-of-00024-a2110e9a89552e8f.parquet",
+        "data/test_balanced-00008-of-00024-36970b5f55125ebf.parquet",
+        "data/test_balanced-00009-of-00024-3706b9bbbcc853a9.parquet",
+        "data/test_balanced-00010-of-00024-595ec20430400110.parquet",
+        "data/test_balanced-00011-of-00024-b3e45fd01660e662.parquet",
+        "data/test_balanced-00012-of-00024-7f21130b50e4fe13.parquet",
+        "data/test_balanced-00013-of-00024-79e57e3f1dc13c0a.parquet",
+        "data/test_balanced-00014-of-00024-eb687b468de45a39.parquet",
+        "data/test_balanced-00015-of-00024-8498bf3c82ddbce0.parquet",
+        "data/test_balanced-00016-of-00024-486bd7aa048ed22d.parquet",
+        "data/test_balanced-00017-of-00024-a1189a7e2416c21c.parquet",
+        "data/test_balanced-00018-of-00024-cfc2298bb54ee9ca.parquet",
+        "data/test_balanced-00019-of-00024-5b5a285ec201f0a2.parquet",
+        "data/test_balanced-00020-of-00024-10ed054881fd33b9.parquet",
+        "data/test_balanced-00021-of-00024-cbd3d20964829027.parquet",
+        "data/test_balanced-00022-of-00024-ed4032218f74318e.parquet",
+        "data/test_balanced-00023-of-00024-321fac12353ea000.parquet",
+        "data/test_other-00000-of-00026-a62c66522ede305e.parquet",
+        "data/test_other-00001-of-00026-7db6687ed186f493.parquet",
+        "data/test_other-00002-of-00026-996c1952dde2106f.parquet",
+        "data/test_other-00003-of-00026-a0c4c01f0c050b60.parquet",
+        "data/test_other-00004-of-00026-adbfed01f5dba6f7.parquet",
+        "data/test_other-00005-of-00026-e0c635db4bddb76d.parquet",
+        "data/test_other-00006-of-00026-3b2d5e3419606f86.parquet",
+        "data/test_other-00007-of-00026-fb68084384b70e29.parquet",
+        "data/test_other-00008-of-00026-ee79902afdb30f4e.parquet",
+        "data/test_other-00009-of-00026-f3b1f9c8be43e9c9.parquet",
+        "data/test_other-00010-of-00026-0588e7b6946bb322.parquet",
+        "data/test_other-00011-of-00026-1b0d00fdb76c7507.parquet",
+        "data/test_other-00012-of-00026-d8943cba3ce52585.parquet",
+        "data/test_other-00013-of-00026-ae5fc07c64508d7e.parquet",
+        "data/test_other-00014-of-00026-75721781d6a67cb0.parquet",
+        "data/test_other-00015-of-00026-b5c496991ca81526.parquet",
+        "data/test_other-00016-of-00026-df857ed59e1f3328.parquet",
+        "data/test_other-00017-of-00026-50f61ac7428c03ea.parquet",
+        "data/test_other-00018-of-00026-8b7f188be36fe426.parquet",
+        "data/test_other-00019-of-00026-19315baa5d1fd266.parquet",
+        "data/test_other-00020-of-00026-5d186de37f791185.parquet",
+        "data/test_other-00021-of-00026-a153d5fbc47f42ae.parquet",
+        "data/test_other-00022-of-00026-fe279486bd9bdb5a.parquet",
+        "data/test_other-00023-of-00026-b83c5c169efb9d8e.parquet",
+        "data/test_other-00024-of-00026-d81067439864cd24.parquet",
+        "data/test_other-00025-of-00026-2c4db7469e263f94.parquet"
+      ],
+      "bytes": 2403282721
+    },
+    "rixvox": {
+      "repository": "KBLab/rixvox",
+      "revision": "9b2b6066ee184faf436363ff0823f2e465ccfb31",
+      "files": [
+        "data/test/test_0.tar.gz",
+        "data/test/test_1.tar.gz",
+        "data/test_metadata.parquet"
+      ],
+      "bytes": 5544921171
+    },
+    "rixvox_dev": {
+      "repository": "KBLab/rixvox",
+      "revision": "9b2b6066ee184faf436363ff0823f2e465ccfb31",
+      "files": [
+        "data/dev/dev_0.tar.gz",
+        "data/dev/dev_1.tar.gz",
+        "data/dev_metadata.parquet"
+      ],
+      "bytes": 4901147148
+    }
+  },
+  "sets": {
+    "ftspeech_da_confirmation": {
+      "input_rows": 11371,
+      "rows": 600,
+      "groups": 40,
+      "hours": 1.2187805729166667,
+      "sha256": "83e620978eee4327dd089a3d8bd65f0235cc20f25ab8de060c95ee557db4a654"
+    },
+    "rixvox_sv_confirmation": {
+      "input_rows": 16817,
+      "excluded_missing_speaker_or_training_text": 872,
+      "rows": 600,
+      "groups": 26,
+      "hours": 3.9687888194444447,
+      "sha256": "936e4c6ec4eb7fe4d1bb4597286014b9eb0e02f85ad03179973e5281a59ec740"
+    }
+  },
+  "limitations": [
+    "RixVox references are human parliamentary protocols, automatically aligned, and may depart from verbatim speech.",
+    "RixVox official development and test are both previously unused for this campaign and are combined prospectively for speaker coverage.",
+    "No upstream pretraining or cross-corpus real-world speaker decontamination claim."
+  ]
+}

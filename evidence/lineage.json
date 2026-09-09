@@ -1,0 +1,21 @@
+{
+  "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "converter_commit": "4f9676226f667d14608487df744f375db87127f8",
+  "librosa_version": "1.0.0",
+  "artifacts": [
+    {
+      "name": "oruk-parakeet-v3-20260905.q8_0.gguf",
+      "sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+      "size_bytes": 714456736,
+      "precision": "q8_0",
+      "mel_filterbank_sha256": "bce5ec5f194a5913f6508cee5a85512e7bad2352db8fc28f5c6ff75af8b09137"
+    },
+    {
+      "name": "oruk-parakeet-v3-20260905.fp16.gguf",
+      "sha256": "29cfd4725869f0c3946a38eec99a471108d993cf809973b8a177b87fdd03c310",
+      "size_bytes": 1296681120,
+      "precision": "fp16",
+      "mel_filterbank_sha256": "bce5ec5f194a5913f6508cee5a85512e7bad2352db8fc28f5c6ff75af8b09137"
+    }
+  ]
+}

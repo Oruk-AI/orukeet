@@ -1,0 +1,53 @@
+{
+  "label": "r13",
+  "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "initial_student_sha256": "44059de88f9797dcd9a3386e1b267733937326c518b2d570468911b6f7da18db",
+  "teacher_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "data_config_sha256": "530cf019b7bdc32a9d5d0428ba5b407b652e9c3339e19212ea9be5690049b201",
+  "data_audit_sha256": "921ea2d5e6410c72a76ef0e77c58fb5850ea01a820cb073693825847f0f74a50",
+  "preceding_selection_sha256": "320a04570d9a916d0f08cf00213f5c674177d18a47fe6ba2d8aabff4e6226651",
+  "parent_development_comparison_sha256": "b4ba83ea5be61cfb6620fb3b659f943fa84015536f56ea9a5923a6e5f0bde2f3",
+  "parent_full_comparison_sha256": "e0f81c0fc464207fe23e7890796e5a558508d6f9271796a8bb0ff54355906126",
+  "launcher_sha256": "4be7284ae51d35b8eb3348cbdb30b79db789d133575c0518c85e74148777a1a8",
+  "command": [
+    "bash",
+    "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r13_20260906-launch.sh",
+    "++export_interval=100",
+    "++seed=20260910",
+    "++model.train_ds.seed=20260910",
+    "++model.train_ds.shard_seed=20260910",
+    "++recovery_start_model=/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_a2_20260906/a2-0650.nemo",
+    "++recovery_start_audit=/home/nathanroll/parakeet-ft/gabor_half_20260906/a2-0650-audit.json",
+    "++model.train_ds.input_cfg=/home/nathanroll/parakeet-ft/gabor_half_20260906/english-recovery-input-r13.json",
+    "model.optim.lr=1e-6",
+    "model.optim.sched.min_lr=0.0",
+    "model.optim.sched.warmup_steps=10",
+    "++preserve_bn_statistics=true",
+    "++disable_dropout=true",
+    "++resume_keep=1",
+    "++layer_anchor_scale=50.0",
+    "++conv_anchor_scale=25.0",
+    "++asr_loss_scale=0.1",
+    "++recovery_layer_lrs.lower_encoder=5e-7",
+    "++recovery_layer_lrs.upper_encoder=1e-6",
+    "++recovery_layer_lrs.conv_neighbors=1e-5",
+    "++recovery_layer_lrs.other=5e-7",
+    "++recovery_layer_lrs.decoder=5e-8",
+    "++recovery_layer_lrs.joint=5e-8",
+    "model.spec_augment.freq_masks=0",
+    "model.spec_augment.time_masks=0"
+  ],
+  "environment": {
+    "NAME": "orukeet_gabor_half_r13_20260906",
+    "STEPS": "300"
+  },
+  "declared_export_steps": [
+    100,
+    200,
+    300
+  ],
+  "rationale": "A2-0650 passes every development guard, the larger multilingual mean and every larger individual guard. English macro WER alone remains 0.012449 points above the original. Test a short English-emphasized continuation: 80% original mixture plus 20% original English CV/FLEURS group, preserving all training membership. Retain R11/R12 teacher coefficients, halve every peak learning rate, and use a fresh 300-step cosine schedule with 10 warmup steps and seed 20260910. All 651 remaining parameter tensors train; exact Gabor functions and BN running statistics stay fixed. This is adaptive recovery on exposed regressions, not independent validation.",
+  "selection_rule": "Audit and evaluate all three declared exports. Run development-passing exports on the larger regression in increasing development-WER order, stopping at the first full pass. If none passes development, evaluate the lowest-development-WER export once for diagnosis. Record all results and explicitly name larger comparisons not run.",
+  "no_gate_changes": true,
+  "native_qualification_required_separately": true
+}

@@ -1,0 +1,696 @@
+{
+  "source_config_sha256": "9c43e01a398c99c2e34dd9f41be3c87b6b31cefacb77697c4946d1c457b63e63",
+  "config_sha256": "dcc930e45330dee4a23aa7f0ad1bcaf8c10d80d17f4bdb5ff82e1bcbe7848c7b",
+  "membership_changed": false,
+  "evaluation_audio_overlap": 0,
+  "evaluation_paths_checked": 28138,
+  "top_level_weights": {
+    "original_mixture": 0.5,
+    "english_cv_fleurs": 0.2,
+    "speechocean_train": 0.2,
+    "english_dialects_train": 0.1
+  },
+  "training_manifests": {
+    "/home/nathanroll/parakeet-ft/manifests/accent_extension_20260905/english_dialects_train.jsonl": {
+      "sha256": "d6ccff42fe139835de7d056924ac34d3a5cb7db048a2b9e985493a2c1b866c79",
+      "rows": 5973
+    },
+    "/home/nathanroll/parakeet-ft/manifests/accent_extension_20260905/speechocean762_train.jsonl": {
+      "sha256": "4613b92adb56fa052906f6f09d476e25028622fe937e35df82aebc90f6fe61ef",
+      "rows": 2254
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_bg_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "855e5d9750a1d095e8273a46ed090cdd3600ce1898b9d3a17a15b6b3c9601fc0",
+      "rows": 3516
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_bg_accent_b9247ddc3de55a37.jsonl": {
+      "sha256": "206dd381654a6f796b346e376d8b0a3755323ec1a25e8a9a76d12006b064cd3f",
+      "rows": 1423
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_cs_accent_8c6ad2e4ea7ef92b.jsonl": {
+      "sha256": "df585a5ccc65d479fccd2c2cb053a70cd4041ff1d6a790d75bd9f6504d6550e1",
+      "rows": 385
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_cs_accent_901b814ea1127c3d.jsonl": {
+      "sha256": "52397c3f2a3f425b1746b2fa8389d261efa8d65b67f083666d0d7bd903626858",
+      "rows": 688
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_cs_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "a8c438b590e7c23a1cbba8e47ab19d4d621a29acc9a58a2f3a48035129b44799",
+      "rows": 20010
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_da_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "d988ea798aca35ad6ed73ae01fa480d51fa7a87d9b4764925317ef715962730b",
+      "rows": 2688
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_da_accent_db170d3ee268cf7b.jsonl": {
+      "sha256": "ca14d2c6ec6488af8698b2cc54bea42ec8009066575b978d41a9d68956a506d6",
+      "rows": 552
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_0cc1102ef343220a.jsonl": {
+      "sha256": "c6fef63b92137b01145c666e6cece0d71f19cdcf3bbdae78d4afb1882aef7c42",
+      "rows": 203
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_16cc8a56d2974d2b.jsonl": {
+      "sha256": "286022dc9931084ce796c45946e07ae84cdc7823c826cf6304abcae11e078a22",
+      "rows": 357
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_322e79f529d49bcd.jsonl": {
+      "sha256": "4539b67a746d051145f8a679b372a232be5c540a02996a351fb3cd1ea02efdc1",
+      "rows": 15182
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_37fbc08196c0e066.jsonl": {
+      "sha256": "55f8f21317c9517efff6951abd25262401580f34c968a3ecab78814a6538fae9",
+      "rows": 145240
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_387bff06b3985a8e.jsonl": {
+      "sha256": "91868bed7b01062d6f183e45f2f5a9d32a615a3950d521f490f1cf873608ff2b",
+      "rows": 280
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_3c88c1c8620ce802.jsonl": {
+      "sha256": "9b7a160c105d1140f1de0d9dc590d3367602b96ff3d77c77b9c9b1710c3cf6f7",
+      "rows": 114
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_4af8e66d1a96e346.jsonl": {
+      "sha256": "fdb9794378b073a5bf8ae582984d41ae9c20930d0eac2f48842935952434ce0d",
+      "rows": 933
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_663f9fdebaec0f9c.jsonl": {
+      "sha256": "be0920f55955438d9995a8bf60bd71bd0974cfbdc0af3997a61d13e907dd2891",
+      "rows": 395
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_6d059b17275b907e.jsonl": {
+      "sha256": "d26714b4fa6b106aa753ed876958cbfdb148c58dec4e4520a063e35d421e8935",
+      "rows": 284
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_7e37334d99e5634b.jsonl": {
+      "sha256": "ef8facd449327b6d54547b135306a98e8157a71a339aca504fa05868ff0deb57",
+      "rows": 578
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "89e187848c3420a36cd80847130dca6a20031534020940d471fc35b6cc1767ad",
+      "rows": 2241
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_961a14ee1ffdea8e.jsonl": {
+      "sha256": "4a7ab721a810b29c235c21559b8bf2f912b85c16ebcb37fa02fafc7755771580",
+      "rows": 245
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_a2318848d7c385a6.jsonl": {
+      "sha256": "fcdd5b19423571d11520321f10dc9923d6a7d24353dba0237a05e8ef2d175136",
+      "rows": 741
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_b13cd8c1c6624fd1.jsonl": {
+      "sha256": "450fd1d2de213d78fe64a2e66549d9eb50951c6d6ddd7e8bfd19ca01a7382795",
+      "rows": 3444
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "d0daf72e6d2da3570312487559e744df35a7c623726d7b9b4f6d9bcc1c9b33b8",
+      "rows": 136937
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_c18333f8bcd73bc9.jsonl": {
+      "sha256": "a2f2316a42cea35d85dc5aba0abe3b3c51c8b63846dfbdac5ec4cc487083d07e",
+      "rows": 860
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_c5cfdcc7d89fe1f6.jsonl": {
+      "sha256": "f96152f0c2cf7663c1cb81ba9090a8db06d818e26ff1849fa3ee377477eb0f88",
+      "rows": 247
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_d04704911422698f.jsonl": {
+      "sha256": "2ba620c8890f2b447a9759847607d3e93a0b8036e15b9ea5250af8dc20bf88f2",
+      "rows": 160
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_d5f21411191ce681.jsonl": {
+      "sha256": "b5180ddb54c12ed9a2a11b316883159296fed670b3ae8e2cce4a51caa39c0a99",
+      "rows": 388
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_d6872467ab7f14e4.jsonl": {
+      "sha256": "8122517400971248269137de8b0fb11cee5ec661e552efa8ac6429d235c3b9a6",
+      "rows": 234
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_e1421fe592e33005.jsonl": {
+      "sha256": "1952d67b579c8fa7d9bef516de1ebd347e5ecb459024a6d0bbbec423a3481e56",
+      "rows": 215
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_de_accent_f8a15b63f57f34e1.jsonl": {
+      "sha256": "fbd11b2dd68f6646424e285e6a6f1567e1df2f92ad7c018b4cb3f97637c7c23c",
+      "rows": 289
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_el_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "e5548685b8f71b33a52a7a54ad11c974b57f831787c5efb3f3c7764cc6c15713",
+      "rows": 1599
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_27eb0fb4438c23f0.jsonl": {
+      "sha256": "6b1161207ca94540512dcbc517562de8376210ed2457f2d2708314ca59361f5f",
+      "rows": 256
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_2d95d53a3f5b69b0.jsonl": {
+      "sha256": "494d0d26d429850d33304f3382db02087bd7946010bcf461a1f9ef7703ecb211",
+      "rows": 1860
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_469b5f4bb5976b26.jsonl": {
+      "sha256": "bde06b745e73f3e9e993244b541909d6fbf3dfa9622f258fc90ee631aa82f8ac",
+      "rows": 14652
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_516382d040a9c4df.jsonl": {
+      "sha256": "f0f119d497435e753f1b8c45e4a6754d60c0ed54c990807ab39e4ae3f086d72c",
+      "rows": 1549
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_59658cf65eaf2239.jsonl": {
+      "sha256": "01c48446ba04871a145bcf0b98b77c9e420898b3ee19727af8e6f61c224afeec",
+      "rows": 1463
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_6e66ee9e42925bb3.jsonl": {
+      "sha256": "5307a5f50801670ef2d070af34b1f96dbf759433b704de58383fa356370d542c",
+      "rows": 1073
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_74d0bb6d856d915a.jsonl": {
+      "sha256": "115e747b86f9b4fd92e65248e4c02e51cf7556291c31403e93aea23fd4c09c3e",
+      "rows": 20066
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "87eb66b87505b6dd50c6756f4c5ce3d5085c7a3871bf042b8b73e57049b31d03",
+      "rows": 7289
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_84b141eaf4b2c1d1.jsonl": {
+      "sha256": "fb215924b8af4b6866d51073eaef2f2ed1ce8fd61ae86396fa59af3788038705",
+      "rows": 1419
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_a163705d3331e331.jsonl": {
+      "sha256": "cbb36e08f6beca484eb329e156e0acce8612a6718f3f3280f97dc36327f0fa75",
+      "rows": 70138
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "7cb006e2d409dc602514627b003d81b3595d46d09c20ae288f2e6388dedaf894",
+      "rows": 233883
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_b49af3d6345aa402.jsonl": {
+      "sha256": "2943a049d0c37b8a3925a443eb2695e9edf14371582550894341a1db2d82ae4e",
+      "rows": 6756
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_b80a4f027e178d96.jsonl": {
+      "sha256": "67c98036d9320459943e675a07bbb3ff7aab30e6e0b8776f658f031783c820bb",
+      "rows": 381
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_ca936ce5054c1385.jsonl": {
+      "sha256": "455d7e168570e5fda758241fc8df31d8b2d82fb18e92e7912d51253aa851a2f7",
+      "rows": 552
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_daf90aff0f4422da.jsonl": {
+      "sha256": "d337693d823046c09806b09dc01d4f35ffd5c05aee6ae45af5b69e03eefe8cc0",
+      "rows": 2340
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_ece5d26628435e2a.jsonl": {
+      "sha256": "df8c6abd065bd1e8788c4e69e93f0a72c22b76d2e14f538350ffa88e105b0c44",
+      "rows": 801
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_fecbdec184694cfa.jsonl": {
+      "sha256": "48dae781603c8e900f39e507f625dbad414948c40773eb0c8ec87efedfbdf448",
+      "rows": 9753
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_en_accent_fffb85cd75a67751.jsonl": {
+      "sha256": "0a33dfbf68875b1db6df6fc8e4b4b9c5392ecd4f68148bbaabb5b6b35c1c44cb",
+      "rows": 674
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_0e5357af09217511.jsonl": {
+      "sha256": "1055a6b0c1bced81cada5d25142a26990fb86e9716addac88d7e3f7f62434846",
+      "rows": 6059
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_394a8528434590ba.jsonl": {
+      "sha256": "5c5c6d92a479b1f8b7719a9dfc098daed61332797bb2119c80482030a7446392",
+      "rows": 15705
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_417552b428136792.jsonl": {
+      "sha256": "3f76f6540a0e7d7199c302edcc09af0ac67a390aee3526a531c02857767b62e9",
+      "rows": 8239
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_42171b1ce7f112ae.jsonl": {
+      "sha256": "186fc289664ec0e18aba0d32cbd9ccd1e1dd528cb97580b5c153b97a09eb7200",
+      "rows": 6210
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_48d2844f33090e4f.jsonl": {
+      "sha256": "875f88a0b65d6680455a11abae7aa0a9e2320ecce2ec0b622be919752f2cee53",
+      "rows": 13253
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_5b763254ee2a6d29.jsonl": {
+      "sha256": "41d00951e03b52abea463994743ce85379f2affc424a4947b49c1e8742d36044",
+      "rows": 209
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_5fbb3eee036a2346.jsonl": {
+      "sha256": "0ec11e6fec4c61608397d048f9e2e72c1b773f892e7c8236692b546050a2cfd5",
+      "rows": 4176
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_7591d0a20ef5581a.jsonl": {
+      "sha256": "3e123fcaa92386f9aae426b3a7dc867fdc684774d00d9e65363a658f16926277",
+      "rows": 10543
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_77a0f9f43a248140.jsonl": {
+      "sha256": "44ce538a4d1987fab0c90b686966606fb1860be116b7a238951564fda693098a",
+      "rows": 2107
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "277af465c7617058b6e7d1e779326b7a5721cb805ead1457671a1d9721734e85",
+      "rows": 623
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_99e77016f5c47fbb.jsonl": {
+      "sha256": "3efe1d3b7d42016245979f8cb2ff14b4f893c4b689b40b5572025d3bf6f80748",
+      "rows": 95795
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "230e3accac0ff3c8322ad21a727a836cf729eccecbdf8180e21895df7ec4f2e7",
+      "rows": 61064
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_es_accent_e6f9925f43b3c8cc.jsonl": {
+      "sha256": "7d7a45af093cec269163b7d0c4bc66042f33a8b4042b8d7819fd053981c9229e",
+      "rows": 9233
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_et_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "22765926b83497930a72322570685fd7e55905975b235d0c13022c11491b28f5",
+      "rows": 19
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_et_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "f376280b3c109068c540b6e15b38b37665e1d47305ccacd0f8204ab6de5ac598",
+      "rows": 3294
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fi_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "58f16bb1874c3df9a00cfa489a46c6f7baa17cb4ab641506f4b179c50d06c9ae",
+      "rows": 142
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fi_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "d11926687601d6f2700c309dbfc6332742a42d1ee5d12fcfdfba7a78c29c1d91",
+      "rows": 999
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_008c6c111ba89b48.jsonl": {
+      "sha256": "f029c4f45fd8db244fafa1bbcfc6f79b0dfa922916a62cb00dd4da971765646e",
+      "rows": 3486
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_0afdf44338699ddc.jsonl": {
+      "sha256": "1126943f78ca8023a7ec5821020af21e90dd13f4406a1961a15153a830315942",
+      "rows": 295
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_10d3ebd021e604b8.jsonl": {
+      "sha256": "6d7355deda439c2ce926746cd2fc14b98674008ae4bcd051a6c14f2923015233",
+      "rows": 347
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_341f3d5dc4d4adf9.jsonl": {
+      "sha256": "cf860445525534d003de1c27aa34199e8bf4ba98350efcd02001ff2a23d3c37a",
+      "rows": 817
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_37c025ea3a5047f5.jsonl": {
+      "sha256": "05cbc16ad708ac1fc4cadba11af58a8faa8b3ea6d416dc008569ecd440379354",
+      "rows": 217
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_3c261539a8b1f13f.jsonl": {
+      "sha256": "50cf81def634b19b2acdb2c9e1b09e96558de9fd3978bfc675b57f53e0e5f15c",
+      "rows": 353
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_4a9cd1d2d6c334a7.jsonl": {
+      "sha256": "7e0035ebc95fbbb85beeef12e39df651b29b7c89c52bc185dde0b15dac31efa9",
+      "rows": 604
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_4cfc870f3bf6a623.jsonl": {
+      "sha256": "ce83d4df8ebb9b05c819bc85e5ac13bb44f27f32a7c9733ca46767ee541b54ac",
+      "rows": 267
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_55065cda2de376bc.jsonl": {
+      "sha256": "60b9aa56a1c3a237a053f3aa2272e5deb70a16528c8163289589e53a7af9c730",
+      "rows": 489
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_5e2031cc6caa06e6.jsonl": {
+      "sha256": "ec29d592a94bd6454df8cb620d60440226958036557a613d21616aaffd9180dc",
+      "rows": 5758
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_5f3c948998002709.jsonl": {
+      "sha256": "08b3921c50c6a747a1983693cdbc29d4ecf306ed46d7220de10fed1d9a3a1fdf",
+      "rows": 905
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_750b481d02eedf1b.jsonl": {
+      "sha256": "e16a6722c4bccdeb2676a7289552accf49e65f3754b3df7299f6f7eb4035f713",
+      "rows": 374
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "380a3cfd717426b6097650808a145f9a56c3fdfbd63d3f7fe0c53ccccae1b3d8",
+      "rows": 4188
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_8ca7663549bf26d6.jsonl": {
+      "sha256": "855d8e57517a0cc850fbc309199bee80de738f7921a5e16187d49367f4a131be",
+      "rows": 158
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_9e5328acb6f8faa0.jsonl": {
+      "sha256": "f27ec9f46a97469e42f9951ecfdf065978813c56309c0228c7fe0d499f478256",
+      "rows": 7212
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "bae5afb322739bd8c35e7e13c96d10e881d5d46eca17af164860a640ddc66605",
+      "rows": 126491
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_c698859be90828b6.jsonl": {
+      "sha256": "c6cd6a19785d492f5fb5d08e09ef311a953622b2e1aafee411ec8e49f9a64a10",
+      "rows": 325
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_fr_accent_c874f639ab50ba9a.jsonl": {
+      "sha256": "1b9cc541785f05c3c537a8943fa4700ba2f317a94a9e0ae923709b10f41bfd31",
+      "rows": 153808
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_2d803aa9980b94f5.jsonl": {
+      "sha256": "f32aa825d76c512a2d161b4e90cdb4d72b761d56fcfad693d0c8cfaca6d86f57",
+      "rows": 423
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_333e2adbe2944282.jsonl": {
+      "sha256": "983274a6fa09953d5e08f78fc4601d16f8b65ab6430af72d7b6b5de5a5283d24",
+      "rows": 1180
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_604ec95774c8d0d5.jsonl": {
+      "sha256": "0e6a8f262df025ae529edb88d0e9bcee57a7e88d843dba78dbf13240a234d5d1",
+      "rows": 1793
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_71ed75ecad74950a.jsonl": {
+      "sha256": "230c6ef5652095a4019fe72b6ec626225caa142604eb59f4bf0df538737b4e48",
+      "rows": 579
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "615019a151ec19f15e485858f95a9b644cbedfc0d9ba5d3e57c79f21ba8c3e52",
+      "rows": 843
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_81102a00cf6a89c4.jsonl": {
+      "sha256": "7eb7915c86bd7b789768ce91756007158ed50fcdc0a0e3e54705043b5f603ad1",
+      "rows": 321
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "28479385323bc67b8ce2859d1ab4926dc5cde81c582319f485967a63be1c4ffd",
+      "rows": 29602
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_ce3dc5ca8a2158dd.jsonl": {
+      "sha256": "1e04b281af2b8dae6dec913f8c5b9badb8a90c6d3f4d8ff24905e06e409aeb67",
+      "rows": 473
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_f9ce7d27df5aca47.jsonl": {
+      "sha256": "49ee709731bca2563c2b5273d8c85d6885c1dfdb5470f7fecabb02e103ab9524",
+      "rows": 886
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_hu_accent_fecba68473243aae.jsonl": {
+      "sha256": "09e5b6a7c088dd77278a7dab4ec8611a14c2ecec2a7cd6be035261a68f57630e",
+      "rows": 206
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_1e140df2633341b3.jsonl": {
+      "sha256": "f643fff3707c024a981efa83c457c8bfc44163a59bce2015e1e18d44ca0130f1",
+      "rows": 2270
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_4a30ab73425c5b24.jsonl": {
+      "sha256": "10e8b6de183de5c9ff6fdf1a5f9fa5e63e5b29b167b232387a67cadc842a2bda",
+      "rows": 711
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_5f4dfad36fb632ba.jsonl": {
+      "sha256": "928545a59f0152a4e54f8359ab24368b3cc9bd25df930ae2598113d337e3a625",
+      "rows": 1574
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "a277f1fa9d2cab44cb8effc628714fe419231d89bffcdfa2fd5b6454e12a129a",
+      "rows": 2544
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_92769d776788107a.jsonl": {
+      "sha256": "38bc95ec46fab69199b07313917b990f949b4236287e99a6f30e45ac382631b4",
+      "rows": 208
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "8422034468dbd6c8fb55363f2a57d0222b2029a208591ef3aca6dc9940663cb7",
+      "rows": 155462
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_c002ca5d1baba65f.jsonl": {
+      "sha256": "967d432be71b74c76cb7b7769ed52fad404d39249b907dc58d213affcf22ec95",
+      "rows": 259
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_ce3596f33c50317c.jsonl": {
+      "sha256": "1592ded36d2fac258477342943391cf71c2e8d293d187c47d1503c10afb01a17",
+      "rows": 2174
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_it_accent_e1af08abaa3963e4.jsonl": {
+      "sha256": "0bfd01eafdb86133bc165412f2c608a77ad508ba91c36c187834ffcf63c04eec",
+      "rows": 2274
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_lt_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "6ad9d0535dd26eacc02fe4c19aac9b385c0895971098d6dbb24912643c8564fd",
+      "rows": 6443
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_lt_accent_c0454f276c1b494f.jsonl": {
+      "sha256": "44dd03657fbaa9dd619a2ad4917908300451a7438e0e5fb160f5b3933c56a4ed",
+      "rows": 1855
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_lv_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "54f96042bcc335db13fbb3ac287f0ec1aaa24a7962792b8cea14c424c2e528b1",
+      "rows": 2280
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_lv_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "7207dae6bebfba9460ed6be90a3dbd3b780e1636b58239020911db8666ff6042",
+      "rows": 11428
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_mt_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "eefe7bde434f9a2e78284be74c7bc3eadc46e2fb7c9a258cf2fb1d3dd2f719ab",
+      "rows": 1910
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_nl_accent_4b788edd5ff75160.jsonl": {
+      "sha256": "8bb0ac55089880d417af4f33a2191350a3c837b9a15e356bc52e7715c358d48b",
+      "rows": 427
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_nl_accent_8adb59a7d88960ba.jsonl": {
+      "sha256": "21aa511ea796db6d7d75b57c278490e857cc88be392de4255946334c4efd26b9",
+      "rows": 561
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_nl_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "5a6b635579f0ac92509e6c2e2410e41ff3ec2ec52c83e70d063f626b2e82e835",
+      "rows": 2460
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_nl_accent_b3b3528ac876ec2a.jsonl": {
+      "sha256": "65c25ac95aa97b10c2eafad3b2d3b35c65bee8df48429874cbd70bb600afbc34",
+      "rows": 1801
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_nl_accent_eb4acc613546044c.jsonl": {
+      "sha256": "e7ce977e201be895cce1f2825afb64c196784f26e9016a9761de535f2d5f4b00",
+      "rows": 37708
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pl_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "410cf2f4898aeab6e7145ff8c527274e788471af796069ba32d4738788be4227",
+      "rows": 512
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pl_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "7217efa71272df64171ba9e3c0ba8b1dd47bf0e933e40466190ab136b8051554",
+      "rows": 20517
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_2a8a3ac32de0e5af.jsonl": {
+      "sha256": "3c11d0712d9ca71a56a30176dd814d9f7710a083b935de8b71425823dcccea72",
+      "rows": 677
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_4e53e36451da9661.jsonl": {
+      "sha256": "8c030324408211edc4f942a5dad8837a511ec20bb2e5482357f77c46b2bc5286",
+      "rows": 231
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_6767725281bfd2e7.jsonl": {
+      "sha256": "a787c67bc26c1c8f00fc835e2ebfa3f818ec7c42f4487e30d6e4a6e626b43f96",
+      "rows": 288
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "4e47f75c7ce8c9f4c30d2ac4ec0b402c83b238c2b54e0b462dc6c470a517b3de",
+      "rows": 1657
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_9ca766f4e9fa7276.jsonl": {
+      "sha256": "4e0f963f6cd9b990b5e0cada36f4119b37953e523527d339c8a36671b4172284",
+      "rows": 518
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_ab76b32b4d4f795c.jsonl": {
+      "sha256": "0a516745179d29295a1dc83c22b8cab6e80374473dac7459c719c5bcc9991c61",
+      "rows": 234
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "8b92f484597952e642f1d49d950cb66637f3870cfe2945fdba4c22c2bc178436",
+      "rows": 16882
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_c56b3c4c1887eb61.jsonl": {
+      "sha256": "88ed126d5ea2cd13887bea0c01506976db6c13bb8b9efd9f77ca4c496daed54a",
+      "rows": 403
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_pt_accent_e74637f92b56690b.jsonl": {
+      "sha256": "5e788551d0decfbbe7c2dce694d9b9bff3c1a1d2700b5058645c3d99b01be4eb",
+      "rows": 268
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_ro_accent_46d37c056327a243.jsonl": {
+      "sha256": "db1712cc432b47cc4f3cfa47c51d8891174524647ec646e244bb05e4edc8ad18",
+      "rows": 281
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_ro_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "ceebc67366eba5cbd0a12ca793e636feb492bf6d2cff2a6c4ffac032d04944b3",
+      "rows": 32
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_ro_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "429036f79fc0359cb2b008646c21a799b92da829a0aae6e45aca900665a59710",
+      "rows": 4827
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_ru_accent_2de3ec781b061739.jsonl": {
+      "sha256": "8d37c5f42dba7ea5b40c1d5f0c7c071479dbe35f3ea1e182962ff0e691584248",
+      "rows": 201
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_ru_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "7e699e991aadefefb2f788280a3c33d7bc6a173b04605a3fdc1b941203819518",
+      "rows": 1102
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_ru_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "3bc8d9d8fbac32e935f112c553286d87997000822d2e076cc624e67396ba1512",
+      "rows": 23341
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sk_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "618f55bfe3402c1be308d6d1b1da9c253b444781b85356b81b38c052835f710a",
+      "rows": 3552
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sk_accent_c8fec55c02f8091a.jsonl": {
+      "sha256": "890372d5b2734e8885c74f2cdb353664820da9b54b39fc1105d72af28ea74b6f",
+      "rows": 391
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sk_accent_ec87c307f68c4c9d.jsonl": {
+      "sha256": "9d5cf20764fee07cdef6ebc352796e8c522315af936d159f2edd1caee43e2400",
+      "rows": 3401
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sl_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "f5aecb8f51767540401e26bb9b2e11fd70a5a54b9169e40c6cfc5e2d516d2a46",
+      "rows": 75
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sl_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "4f58ff03e9b69660f31efb857db7b6a7e412686b2ff3358037d6042b0a4f85c8",
+      "rows": 1326
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sv_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "9129200e606f28abb5620f05d5efb64300466290862d54de7ba354d4f29cc5d5",
+      "rows": 169
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sv_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "224d29b6e91a172abf99ca40b30375c32293c46357b29411b37fd6190effb2a1",
+      "rows": 6931
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_sv_accent_fef2e0b60c6f80e5.jsonl": {
+      "sha256": "c3518058a633fb20a9f37fc3c38696d5fb4ccfa939857ba13c628f7fcb045e3a",
+      "rows": 350
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_uk_accent_511e405e42c2ac20.jsonl": {
+      "sha256": "b531c52b19fba4424178b8d8a01bd786eaf64859ced867dd666646c80741cd62",
+      "rows": 1079
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_uk_accent_8032bdc87dc5c553.jsonl": {
+      "sha256": "1bcd9bdea5a272c20fd5e13eb8f84780442dac9390206415fe4ab3fd8d1d8f6c",
+      "rows": 389
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_uk_accent_9613c3a165b89d82.jsonl": {
+      "sha256": "0eb0f4b03946536ff89e6ac9e7cc502f60ab6a42549317d375229bbdd47e8389",
+      "rows": 406
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_uk_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "49fea55e8ffb1a524303f7690ed508397582110be347d699746bb2aff58e86a2",
+      "rows": 19638
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_uk_accent_d52816c07b3cce2c.jsonl": {
+      "sha256": "b17e50d62fc0b855221a445e6bb7881317efad42d1ddc2ad44068ddc37ac64bf",
+      "rows": 201
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/cv_uk_accent_e67740b8b8449ec5.jsonl": {
+      "sha256": "8e5d73a453a6c86eb9755fbbc144e787005d6855c472b1ed1e05d1d1f1231777",
+      "rows": 1309
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_bg_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "a59e61a049c29ea57660e571cacdb6fc398205e289b5626d63e513561217d7eb",
+      "rows": 2877
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_cs_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "47c48a07f15b94ef3415b3322699e0dc7bb1467d721f8faef5860a8bfa16ff60",
+      "rows": 2769
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_da_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "5292e3daf92be9e80088b41fd3e5baa626c0d24e96fe80b74620f12c148f6118",
+      "rows": 2427
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_de_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "a2dc0b4685c90b6b250efafe8196f4674c832ed6e9efd301a057e101bbbf0899",
+      "rows": 2952
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_el_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "366f4ae98a3a633f6bbd4050820a015b2394d54e5740b3785ce291e7e57fff77",
+      "rows": 3095
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_en_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "4b5f3e53006d80a81654e7fb9b54df6dd8c1e11ff922351e38b0728af0c3fc8e",
+      "rows": 2547
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_es_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "d0d5de7eb09fd9692cc964739843a85e466e4478d70185770e2e68a974c14b86",
+      "rows": 2755
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_et_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "369ad10b01e5e5efffd7d1bdaf35c37aa02e647f708ee0464662a410c8e5824d",
+      "rows": 2458
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_fi_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "d33888c64646ef0bc4862032aebb2775e639d11dd0702a9a2b7816f891b893ed",
+      "rows": 2613
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_fr_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "d93d5cc4f1291d82830d60cd83ad1c7f078608b2b965d6ef75dc5099e3bb2f0d",
+      "rows": 3135
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_hr_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "d0dfe4c449de5a46239d5ada8caebf529344a1ceed94c5966947407c6301587b",
+      "rows": 3320
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_hu_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "45ca7420655929e3bd24dd08a81078024fd6033f7265837f2a6f72ad7480f172",
+      "rows": 3040
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_it_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "6b2862e34cd11413df75ef06f008e2bbdc287c86ce3e44422f8eca80c3ed6c9e",
+      "rows": 2999
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_lt_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "1fb7aceb1aaf10b830fd624c6480094693a59f040823c51eb306a925e46ce058",
+      "rows": 2807
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_lv_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "4e89806c907d77c93edf817765b53f7ebc1fc79ce314e7a4b3053c4cb75a4df3",
+      "rows": 2054
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_mt_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "ee5dbc10cb128ded5a105e87f5778e208ba09792d5c81f1d53e93604d39055e3",
+      "rows": 2771
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_nl_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "e1fc06a6e3a053ff2b62ea08c0174d85b07eb16c4979919b9b93b2455582f687",
+      "rows": 2900
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_pl_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "7eb373755c433df3e4f2996114fd35130c767fb38beb14817a1798b449a84a2d",
+      "rows": 2781
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_pt_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "e0aeda88787ca1cee008485bd7241f9845debae2b4e69709ebc00d4b16dde1ad",
+      "rows": 2596
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_ro_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "21765f3405dd38ccb7d26e4b7d6eed2d9224f7b903f3fa319f75ad92ea901524",
+      "rows": 2799
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_ru_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "3bf8720d951c46c192058425dc3a2b039735e0921d2dd8609c11de93f53f1447",
+      "rows": 2484
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_sk_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "d70ff7531e21d559d7ea7c710acdec9d9ceb9006ac111ebb5f5a37d1f227a72d",
+      "rows": 1927
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_sl_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "9591b92b9c92cf48bc86f5a5ee07c725804234588591b3a0ab227f7c2ce728c1",
+      "rows": 2444
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_sv_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "87995178540027425f89687353c8ff97abd5f1cb183317c1e91465e08f252942",
+      "rows": 2214
+    },
+    "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/fleurs_uk_accent_b23a6a8439c0dde5.jsonl": {
+      "sha256": "527a95bb406333ab5cb876068cdad4d767d2a06437e79a6bf6dd719651e5d36a",
+      "rows": 2719
+    }
+  },
+  "interpretation": "Adapted after exposed regression results. Only existing audited training membership is used; this is not a new held-out experiment."
+}

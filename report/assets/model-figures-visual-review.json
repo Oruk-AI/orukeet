@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "figures": [
+    "kernel-fits",
+    "selection-profile",
+    "recognition-deltas",
+    "language-deltas",
+    "kernel-atlas"
+  ],
+  "reviewed_exports": {
+    "kernel-fits": {
+      "pdf": "b952a1d8e84032cd20cc452dfbea40c6d2c34cea7de4257b7a375ccac73b9e01",
+      "svg": "4f2b63601bb7b9543cee0dec0aaaecc06c1741798eda0c6aa5e2b4f39ed1191b",
+      "png": "53daf3dc1431660b7696c83d94e56543f8236563a81a4dd9fb75e3cab997fa52"
+    },
+    "selection-profile": {
+      "pdf": "0a2e8647a8a1a895e7a1e6d9f15779eac14c87f56e30eeeb85bc05ce720ba32f",
+      "svg": "9ddb7db5f54eb4f97294e31998ce06d99fdf18e9cbf88a906bef70bc99f4e19a",
+      "png": "6202432a630ef22fb54bf57c494437dcb8f526c26a9a7b6ecf1bcbdf2510a75d"
+    },
+    "recognition-deltas": {
+      "pdf": "62f0471788cb59e27fc317a004b34fe457a354ae511e01f0fc6d1efb8da87a0a",
+      "svg": "ab94addc78953dd3038cd30436aeb73f6580f1b62903180f6ba81551a3317595",
+      "png": "83890bae2503e59e918bf424cd841094302d5366e3a285523105db49f3e1fffc"
+    },
+    "language-deltas": {
+      "pdf": "7564f39e28ee6deae1d7ad4b82e3737b1dc703044b5992c5f9108cbf2e9ff1c0",
+      "svg": "cff05741bbe01c83ad5f839f99a40c2f189357e71bc6fddd8cd62c920116d693",
+      "png": "64e77e3423cd60952f31a4e80bb486a05a3325cd5a0b3d92bcf9581cf9de201b"
+    },
+    "kernel-atlas": {
+      "pdf": "73a8c7e2f1ea83f7bcc9eefcdbd1a53b6e95383a0b3799f45f75390d676be9b5",
+      "svg": "41b88f335fa6200353201a77a1c86d0d471fbee61a1a64a7a6c0bffaf2abda88",
+      "png": "2b8b24400ac7b9e8b6e4484eb0c6c36cca8f618167141d508a2b6468824888c3"
+    }
+  },
+  "checks": [
+    "Main figures inspected at final 5.5-inch manuscript width",
+    "All four rendered report pages inspected",
+    "Complete kernel atlas labels shortened to fit without reducing font size",
+    "All 20 language intervals retained without clipping",
+    "No plotted result inferred from Gabormer measurements"
+  ]
+}

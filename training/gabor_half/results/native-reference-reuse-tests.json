@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "tests": 10,
+  "scope": "Reject changed original-model identity, runtime, decoding, audio code, manifest identity, membership and row counts. Identical prediction files remain byte-exact; only descriptive precision scope may differ.",
+  "code_sha256": {
+    "reuse_native_reference.py": "414536eca11df3b71cf7fa1eadbd6a5c7600d6358d35836d34656aeadd8241ec",
+    "native_development.py": "2b91e1efc651981f7c08c0671845adaa51809fdefec32cb3fc87e81c97d6babd",
+    "native_full.py": "b8825e97e6b972209263baf592325be385856d602f704f1122b76e7da5f980bf",
+    "run_native_qualification.py": "e8db2cc8fb2b77397358cca79c47585ea020bde21f08086d271bb55de7d04908",
+    "test_reuse_native_reference.py": "e27b5aef25fa527ee6bca1b5a94f3d53ad90c4b68076de43d4e4e54a690dcde7"
+  }
+}

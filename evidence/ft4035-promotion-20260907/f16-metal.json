@@ -1,0 +1,665 @@
+{
+  "status": "passed",
+  "scope": "private compiled native sidecar prototype; not an Electron app benchmark or cross-platform package certification",
+  "created_at": "2026-09-07T17:34:16.036Z",
+  "platform": "darwin",
+  "arch": "arm64",
+  "os_release": "25.4.0",
+  "cpu": "Apple M5 Max",
+  "node": "v25.9.0",
+  "model_sha256": "7aa47ba826f7f9ac8bdfae20bfcc39b76c43387999f076bb2dae574ed0a0b73a",
+  "model_bytes": 1296681088,
+  "model_identity": {
+    "stage": "audited-native-candidate",
+    "source_model_sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+    "lineage_sha256": "ab64a6eb2dc28f3a176777aa04db7e9ea161770fb896f65e85025051cf7faf35",
+    "source_audit_sha256": "dac88b3fa2d17bd8b8e32ac0e9eaf4d24473b9ac2715f8d1601df3ff03cc751d"
+  },
+  "runtime_archive_sha256": "f1dff4f9dd9c96214f8cb78b982812459132df8a4ad1a42409fd94de4a366244",
+  "runtime_archive": "nemo-speech-0.1.0-macos-aarch64-metal.tar.gz",
+  "sidecar_sha256": "ead9469b56a94eb1aa939af7e98105d769b021465f4a78e7635609ccd06e82f6",
+  "device": "metal",
+  "checks": [
+    {
+      "name": "candidate_native_lineage_and_runtime_archive_hashes",
+      "passed": true
+    },
+    {
+      "name": "relocated_bin_lib_startup_without_loader_environment",
+      "passed": true,
+      "ready": {
+        "event": "ready",
+        "protocol_version": 1,
+        "device": "metal",
+        "runtime_version": "nemo-speech-asr 0.1.0"
+      },
+      "elapsed_ms": 1437.495584
+    },
+    {
+      "name": "unicode_model_cli_path_loaded",
+      "passed": true,
+      "filename": "模型 épreuve with spaces/Orukeet 🦜.gguf"
+    },
+    {
+      "name": "two_real_model_requests_same_process_unicode_audio_path",
+      "passed": true,
+      "results": [
+        {
+          "elapsed_ms": 277.4626669999998,
+          "audio_seconds": 11,
+          "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+          "words": [
+            {
+              "text": "And",
+              "start": 0.24,
+              "end": 0.56
+            },
+            {
+              "text": "so,",
+              "start": 0.56,
+              "end": 1.04
+            },
+            {
+              "text": "my",
+              "start": 1.04,
+              "end": 1.28
+            },
+            {
+              "text": "fellow",
+              "start": 1.28,
+              "end": 1.76
+            },
+            {
+              "text": "Americans,",
+              "start": 1.76,
+              "end": 3.28
+            },
+            {
+              "text": "ask",
+              "start": 3.28,
+              "end": 3.92
+            },
+            {
+              "text": "not",
+              "start": 4.24,
+              "end": 4.56
+            },
+            {
+              "text": "what",
+              "start": 5.2,
+              "end": 5.44
+            },
+            {
+              "text": "your",
+              "start": 5.68,
+              "end": 6
+            },
+            {
+              "text": "country",
+              "start": 6,
+              "end": 6.48
+            },
+            {
+              "text": "can",
+              "start": 6.48,
+              "end": 6.8
+            },
+            {
+              "text": "do",
+              "start": 6.8,
+              "end": 7.12
+            },
+            {
+              "text": "for",
+              "start": 7.12,
+              "end": 7.44
+            },
+            {
+              "text": "you,",
+              "start": 7.44,
+              "end": 8.16
+            },
+            {
+              "text": "ask",
+              "start": 8.16,
+              "end": 8.72
+            },
+            {
+              "text": "what",
+              "start": 8.72,
+              "end": 8.96
+            },
+            {
+              "text": "you",
+              "start": 8.96,
+              "end": 9.2
+            },
+            {
+              "text": "can",
+              "start": 9.2,
+              "end": 9.44
+            },
+            {
+              "text": "do",
+              "start": 9.44,
+              "end": 9.68
+            },
+            {
+              "text": "for",
+              "start": 9.68,
+              "end": 9.92
+            },
+            {
+              "text": "your",
+              "start": 9.92,
+              "end": 10.08
+            },
+            {
+              "text": "country.",
+              "start": 10.08,
+              "end": 10.8
+            }
+          ],
+          "final": true
+        },
+        {
+          "elapsed_ms": 52.41891600000008,
+          "audio_seconds": 11,
+          "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+          "words": [
+            {
+              "text": "And",
+              "start": 0.24,
+              "end": 0.56
+            },
+            {
+              "text": "so,",
+              "start": 0.56,
+              "end": 1.04
+            },
+            {
+              "text": "my",
+              "start": 1.04,
+              "end": 1.28
+            },
+            {
+              "text": "fellow",
+              "start": 1.28,
+              "end": 1.76
+            },
+            {
+              "text": "Americans,",
+              "start": 1.76,
+              "end": 3.28
+            },
+            {
+              "text": "ask",
+              "start": 3.28,
+              "end": 3.92
+            },
+            {
+              "text": "not",
+              "start": 4.24,
+              "end": 4.56
+            },
+            {
+              "text": "what",
+              "start": 5.2,
+              "end": 5.44
+            },
+            {
+              "text": "your",
+              "start": 5.68,
+              "end": 6
+            },
+            {
+              "text": "country",
+              "start": 6,
+              "end": 6.48
+            },
+            {
+              "text": "can",
+              "start": 6.48,
+              "end": 6.8
+            },
+            {
+              "text": "do",
+              "start": 6.8,
+              "end": 7.12
+            },
+            {
+              "text": "for",
+              "start": 7.12,
+              "end": 7.44
+            },
+            {
+              "text": "you,",
+              "start": 7.44,
+              "end": 8.16
+            },
+            {
+              "text": "ask",
+              "start": 8.16,
+              "end": 8.72
+            },
+            {
+              "text": "what",
+              "start": 8.72,
+              "end": 8.96
+            },
+            {
+              "text": "you",
+              "start": 8.96,
+              "end": 9.2
+            },
+            {
+              "text": "can",
+              "start": 9.2,
+              "end": 9.44
+            },
+            {
+              "text": "do",
+              "start": 9.44,
+              "end": 9.68
+            },
+            {
+              "text": "for",
+              "start": 9.68,
+              "end": 9.92
+            },
+            {
+              "text": "your",
+              "start": 9.92,
+              "end": 10.08
+            },
+            {
+              "text": "country.",
+              "start": 10.08,
+              "end": 10.8
+            }
+          ],
+          "final": true
+        }
+      ]
+    },
+    {
+      "name": "multilingual_fr_fr_repeats_without_added_word_errors",
+      "passed": true,
+      "fixture_sha256": "9da159e147d71fbe799a06415fdc91e0ba9e049f3d16f94cb88e4f29f4bf5f02",
+      "reference": "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "prior_fixture_text": "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "result": {
+        "audio_seconds": 9.42,
+        "text": "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+        "words": [
+          {
+            "text": "Les",
+            "start": 0,
+            "end": 0.16
+          },
+          {
+            "text": "voyageurs",
+            "start": 0.16,
+            "end": 0.56
+          },
+          {
+            "text": "à",
+            "start": 0.56,
+            "end": 0.72
+          },
+          {
+            "text": "destination",
+            "start": 0.72,
+            "end": 1.12
+          },
+          {
+            "text": "de",
+            "start": 1.12,
+            "end": 1.28
+          },
+          {
+            "text": "pays",
+            "start": 1.28,
+            "end": 1.52
+          },
+          {
+            "text": "où",
+            "start": 1.52,
+            "end": 1.68
+          },
+          {
+            "text": "les",
+            "start": 1.68,
+            "end": 1.84
+          },
+          {
+            "text": "taxes",
+            "start": 1.84,
+            "end": 2.08
+          },
+          {
+            "text": "sont",
+            "start": 2.08,
+            "end": 2.24
+          },
+          {
+            "text": "élevées",
+            "start": 2.24,
+            "end": 2.48
+          },
+          {
+            "text": "peuvent",
+            "start": 2.64,
+            "end": 2.88
+          },
+          {
+            "text": "parfois",
+            "start": 2.88,
+            "end": 3.12
+          },
+          {
+            "text": "faire",
+            "start": 3.12,
+            "end": 3.28
+          },
+          {
+            "text": "des",
+            "start": 3.28,
+            "end": 3.44
+          },
+          {
+            "text": "économies",
+            "start": 3.44,
+            "end": 3.92
+          },
+          {
+            "text": "considérables,",
+            "start": 3.92,
+            "end": 4.64
+          },
+          {
+            "text": "en",
+            "start": 4.64,
+            "end": 4.8
+          },
+          {
+            "text": "particulier",
+            "start": 4.8,
+            "end": 5.52
+          },
+          {
+            "text": "sur",
+            "start": 5.6,
+            "end": 5.92
+          },
+          {
+            "text": "des",
+            "start": 5.92,
+            "end": 6.08
+          },
+          {
+            "text": "produits",
+            "start": 6.08,
+            "end": 6.64
+          },
+          {
+            "text": "comme",
+            "start": 6.64,
+            "end": 6.88
+          },
+          {
+            "text": "les",
+            "start": 6.88,
+            "end": 7.04
+          },
+          {
+            "text": "boissons",
+            "start": 7.04,
+            "end": 7.52
+          },
+          {
+            "text": "alcoolisées",
+            "start": 7.52,
+            "end": 8.32
+          },
+          {
+            "text": "ou",
+            "start": 8.32,
+            "end": 8.4
+          },
+          {
+            "text": "le",
+            "start": 8.4,
+            "end": 8.56
+          },
+          {
+            "text": "tabac.",
+            "start": 8.56,
+            "end": 9.2
+          }
+        ],
+        "final": true
+      },
+      "reference_words": 29,
+      "prior_fixture_errors": 0,
+      "actual_errors": 0,
+      "reference_model_sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+      "scope": "Fixed qualitative fixture regression against the recorded Metal output; not a language benchmark.",
+      "normalization": "NFC, lowercase, Unicode punctuation/symbols replaced by spaces, whitespace tokenization"
+    },
+    {
+      "name": "multilingual_es_419_repeats_without_added_word_errors",
+      "passed": true,
+      "fixture_sha256": "25c2820fbfc09a588480efe521c5b31a4e1046756a0434da923d0faf9ff7bf49",
+      "reference": "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "prior_fixture_text": "Esto parece tener sentido ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "result": {
+        "audio_seconds": 7.68,
+        "text": "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+        "words": [
+          {
+            "text": "Esto",
+            "start": 0.32,
+            "end": 0.88
+          },
+          {
+            "text": "parece",
+            "start": 0.88,
+            "end": 1.36
+          },
+          {
+            "text": "tener",
+            "start": 1.36,
+            "end": 1.76
+          },
+          {
+            "text": "sentido,",
+            "start": 1.76,
+            "end": 2.4
+          },
+          {
+            "text": "ya",
+            "start": 2.4,
+            "end": 2.64
+          },
+          {
+            "text": "que",
+            "start": 2.64,
+            "end": 2.88
+          },
+          {
+            "text": "en",
+            "start": 2.88,
+            "end": 3.04
+          },
+          {
+            "text": "la",
+            "start": 3.04,
+            "end": 3.2
+          },
+          {
+            "text": "Tierra",
+            "start": 3.2,
+            "end": 3.6
+          },
+          {
+            "text": "no",
+            "start": 3.6,
+            "end": 3.76
+          },
+          {
+            "text": "se",
+            "start": 3.76,
+            "end": 3.92
+          },
+          {
+            "text": "percibe",
+            "start": 3.92,
+            "end": 4.48
+          },
+          {
+            "text": "su",
+            "start": 4.64,
+            "end": 4.88
+          },
+          {
+            "text": "movimiento,",
+            "start": 4.88,
+            "end": 5.52
+          },
+          {
+            "text": "¿cierto?",
+            "start": 5.52,
+            "end": 6.72
+          }
+        ],
+        "final": true
+      },
+      "reference_words": 15,
+      "prior_fixture_errors": 0,
+      "actual_errors": 0,
+      "reference_model_sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+      "scope": "Fixed qualitative fixture regression against the recorded Metal output; not a language benchmark.",
+      "normalization": "NFC, lowercase, Unicode punctuation/symbols replaced by spaces, whitespace tokenization"
+    },
+    {
+      "name": "multilingual_lv_lv_repeats_without_added_word_errors",
+      "passed": true,
+      "fixture_sha256": "0046336e59aca17a93029fcd1a6352751b118dab6ffb4fd1c215c7f048674e26",
+      "reference": "Tas mums ir devis vilcienus, automašīnas un daudzus citus transportlīdzekļus.",
+      "prior_fixture_text": "Tas mums ir devas vilcienus, automašīnas un daudzus citas transportlīdzekļus.",
+      "result": {
+        "audio_seconds": 7.14,
+        "text": "Tas mums ir devas vilcienus, automašīnas un daudzus citas transportlīdzekļus.",
+        "words": [
+          {
+            "text": "Tas",
+            "start": 0.88,
+            "end": 1.12
+          },
+          {
+            "text": "mums",
+            "start": 1.36,
+            "end": 1.52
+          },
+          {
+            "text": "ir",
+            "start": 1.68,
+            "end": 1.84
+          },
+          {
+            "text": "devas",
+            "start": 1.84,
+            "end": 2.32
+          },
+          {
+            "text": "vilcienus,",
+            "start": 2.32,
+            "end": 3.28
+          },
+          {
+            "text": "automašīnas",
+            "start": 3.28,
+            "end": 4.08
+          },
+          {
+            "text": "un",
+            "start": 4.16,
+            "end": 4.32
+          },
+          {
+            "text": "daudzus",
+            "start": 4.32,
+            "end": 4.8
+          },
+          {
+            "text": "citas",
+            "start": 4.8,
+            "end": 5.04
+          },
+          {
+            "text": "transportlīdzekļus.",
+            "start": 5.2,
+            "end": 6.96
+          }
+        ],
+        "final": true
+      },
+      "reference_words": 10,
+      "prior_fixture_errors": 2,
+      "actual_errors": 2,
+      "reference_model_sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+      "scope": "Fixed qualitative fixture regression against the recorded Metal output; not a language benchmark.",
+      "normalization": "NFC, lowercase, Unicode punctuation/symbols replaced by spaces, whitespace tokenization"
+    },
+    {
+      "name": "empty_returns_empty_text",
+      "passed": true
+    },
+    {
+      "name": "silence_returns_empty_text",
+      "passed": true
+    },
+    {
+      "name": "reject_bad-length",
+      "passed": true,
+      "error": "PCM byte count must be divisible by four"
+    },
+    {
+      "name": "reject_nan",
+      "passed": true,
+      "error": "PCM samples must be finite and between -1 and 1"
+    },
+    {
+      "name": "reject_out-of-range",
+      "passed": true,
+      "error": "PCM samples must be finite and between -1 and 1"
+    },
+    {
+      "name": "reject_too-long",
+      "passed": true,
+      "error": "PCM exceeds the 30 second request limit"
+    },
+    {
+      "name": "malformed_duplicate_oversized_and_invalid_id_requests_recover",
+      "passed": true
+    },
+    {
+      "name": "invalid_operation_path_and_rate_recover",
+      "passed": true
+    },
+    {
+      "name": "real_transcription_after_all_request_errors",
+      "passed": true
+    },
+    {
+      "name": "shutdown_exit_zero_and_json_only_stdout",
+      "passed": true
+    },
+    {
+      "name": "native_log_confirms_metal_gpu_backend",
+      "passed": true
+    }
+  ],
+  "measurement": "Sequential smoke-call wall time includes file read and JSON IPC; no comparative speed claim. Startup includes loading, without weight hashing."
+}

@@ -1,0 +1,67 @@
+{
+  "run": {
+    "plan_sha256": "2148fb606c2243808155ccf607717f93f5a364855bbf016f2c727ea6a99c8b6c",
+    "prepared_sha256": "d6760cc39161e34ae0db42dab53334c4fb923843ed4a8e973ccb59ac20baad41",
+    "parent_sha256": "2d843db6eb25e82e47c5f9a76c319d12178eed7b5f4f61d73b47e91ce16a37db",
+    "fit_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+    "batch_order_sha256": "0efb64532151b57eea2b709bd3b6fe916465551b856d6efa38619e0bc9acd798",
+    "source_sha256": {
+      "train.py": "5540d37c9edf10ad3e3e6a3c703ab1acd3411e80d7074afea3fd291ec0d65f4b",
+      "batches.py": "ed90d29681249a4e2219c6a3a6e525033951a77bebf6c91c132186c702ecda11",
+      "gabor/frozen.py": "88edc3a383a030ffc14ec6066fc7909446f34744c0bed8368cd454a13a190bd0",
+      "gabor/fit.py": "b67f7156cffdff14e83c932bb3a39fc89cb7653345c38582085e68d254f6a950",
+      "gabor/identity.py": "3abca045663752e54f088263b6df3fadae51a7ba25318ef9db349ca533b2ae1a"
+    },
+    "steps": 168,
+    "full_epoch_steps": 168,
+    "batches": 672,
+    "rows": 8817,
+    "unique_rows": 2939,
+    "data_passes": 3,
+    "smoke": false,
+    "parameter_tensors": 651,
+    "trainable_scalar_parameters": 626897542,
+    "frozen_gabor_rows": 12288,
+    "loss": "NeMo TDT, mean_volume over each accumulated target-token volume",
+    "augmentation": "none; dropout disabled; dither zero",
+    "batchnorm": "running statistics preserved; affine parameters trained",
+    "precision": "BF16 autocast; FP32 parameters and AdamW states",
+    "cuda": "13.2",
+    "torch": "2.12.0+cu132",
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "cudnn": 92000,
+    "torch_threads": 8,
+    "tf32_matmul": true,
+    "tf32_cudnn": true,
+    "versions": {
+      "nemo_toolkit": "3.0.0",
+      "numpy": "2.4.4",
+      "soundfile": "0.13.1",
+      "soxr": "1.0.0",
+      "transformers": "5.5.0",
+      "huggingface_hub": "1.9.2"
+    },
+    "all_remaining_parameters_in_optimizer": true,
+    "evaluation_data_used_for_training": true,
+    "optimizer_checkpoint_saved": false
+  },
+  "audit": {
+    "frozen_gabor_rows_unchanged": 12288,
+    "batchnorm_statistics_unchanged": true,
+    "floating_tensors_finite": true,
+    "tensor_keys_match_parent": true,
+    "changed_tensors": 651,
+    "seen_by_split": {
+      "librispeech_test_other": 8817
+    },
+    "seen_rows": 8817,
+    "exactly_one_pass": false,
+    "data_passes": 3,
+    "every_record_presentations": 3,
+    "unique_training_rows": 2939,
+    "actual_exposure_counts_sha256": "a0d569968e68855047f41368054fefba5dbaeaecc241b5f919b8e38867651d60",
+    "optimizer_steps": 168,
+    "checkpoint_path": "/dev/shm/orukeet-librispeech-ft-20260908/r2/checkpoints/orukeet-targeted-ft.nemo",
+    "checkpoint_sha256": "3e703fa07386d5fd04604ce8c4e5afa1d7f345dd5b6e8bdc0b92e8adba4dc7d8"
+  }
+}

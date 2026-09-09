@@ -1,0 +1,12 @@
+{
+  "figure": "gabor-fits.pdf",
+  "renderer": "pdftoppm -scale-to 1500",
+  "inspected": true,
+  "checks": [
+    "No clipping or overlap",
+    "Nine original taps are distinguished from the fitted continuous function",
+    "Kernel ranks and count data match the fit archive",
+    "Bar plot starts at zero; 512-kernel reference is labeled"
+  ],
+  "preview": "gabor-fits.png"
+}

@@ -1,0 +1,47 @@
+{
+  "config": {
+    "window_seconds": 180,
+    "max_cer": 0.2,
+    "max_wer": 0.35,
+    "min_prediction_words_for_repair": 8,
+    "min_prediction_chars_for_repair": 35,
+    "minimum_word_length_ratio": 0.7,
+    "maximum_word_length_ratio": 1.35,
+    "boundary_word_radius": 2,
+    "candidate_model_used": false,
+    "label_source": "Contiguous spans copied from published human transcripts"
+  },
+  "config_sha256": "d67a72a291703333ac32a157a9652de6afa0253b9085ef06f0315fb65852c802",
+  "script_sha256": "20e8233543fa1f6b8c07793c3939a76bf127dba91c444e97515c5a62b1998b3c",
+  "purpose": "Training-data alignment repair; original benchmark references remain unchanged.",
+  "sets": {
+    "eurospeech_el": {
+      "rows": 6730,
+      "accepted": 2405,
+      "quarantined": 4325,
+      "statuses": {
+        "realigned_human_span": 2349,
+        "quarantined_no_reliable_human_span": 4244,
+        "quarantined_insufficient_alignment_evidence": 81,
+        "assigned_pair_verified": 56
+      },
+      "teacher_prediction_file_sha256": "733b6e71ea579a0f945204b7a25d09cea04d62a8a8749c9960a12fcd9dcbf5a7",
+      "accepted_sha256": "939735ecbc0455bc2adeba6ff09ded8ae09f02448f8abc6aa89afb8b98a01cd0",
+      "quarantined_sha256": "4b1e9da39e4f6cb63ea189f1812defe78029924045af39aec0ced75f46a20bbb"
+    },
+    "eurospeech_it": {
+      "rows": 8714,
+      "accepted": 6331,
+      "quarantined": 2383,
+      "statuses": {
+        "quarantined_no_reliable_human_span": 2284,
+        "realigned_human_span": 2885,
+        "quarantined_insufficient_alignment_evidence": 99,
+        "assigned_pair_verified": 3446
+      },
+      "teacher_prediction_file_sha256": "23de9a0b331edaf241b9fb44c10ad515989040d217157910ae19faf47d187f83",
+      "accepted_sha256": "6a921cbf2851ee23153440774f6b9f888b772c47ea209f4ea8482a5dd1e76b19",
+      "quarantined_sha256": "3dfaf8d6318c5625976a9e78109f9e6d6b0b4970227709cdecbf937312af03cb"
+    }
+  }
+}

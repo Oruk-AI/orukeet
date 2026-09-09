@@ -1,0 +1,14 @@
+{
+  "parakeet": {
+    "path": "/home/nathanroll/parakeet-ft/models/parakeet-tdt-0.6b-v3/parakeet-tdt-0.6b-v3.nemo",
+    "sha256": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d"
+  },
+  "orukeet_ft4035": {
+    "path": "/dev/shm/orukeet-regression-ft-20260907/checkpoints/orukeet-regression-ft.nemo",
+    "sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945"
+  },
+  "orukeet_targeted": {
+    "path": "/dev/shm/orukeet-librispeech-ft-20260908/r1/checkpoints/orukeet-targeted-ft.nemo",
+    "sha256": "2d843db6eb25e82e47c5f9a76c319d12178eed7b5f4f61d73b47e91ce16a37db"
+  }
+}

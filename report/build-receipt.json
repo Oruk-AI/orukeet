@@ -1,0 +1,87 @@
+{
+  "status": "compiled-and-visually-reviewed",
+  "pages": 5,
+  "expected_pages": 5,
+  "pdf": "output/pdf/orukeet-technical-report.pdf",
+  "sha256": "401d162a87d4454b0f16998bf3501b9c84da909a7b5be353705528477d2eef62",
+  "compiler": "pdfTeX 3.141592653-2.6-1.40.28 (TeX Live 2025)",
+  "format": "Short technical report in the official NeurIPS 2026 preprint style",
+  "report_model": {
+    "name": "Orukeet",
+    "version": "librispeech-native-format-r3",
+    "sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+    "parent_sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+    "hf": {
+      "repo_id": "oruk/orukeet",
+      "revision": "555136b50265a132d4cea0d35560c26fc4f657ab",
+      "path": "orukeet-v0.1.0.nemo"
+    },
+    "freeze_audit": "evidence/librispeech-ft-20260908/r3/export-audit.json",
+    "archive_receipt": "evidence/librispeech-ft-20260908/r3/private-archive.json",
+    "evaluations": [
+      "evidence/standard-asr-r3-20260908/comparison.json",
+      "evidence/domains-r3-20260908/comparison.json"
+    ],
+    "publication_authorized": true,
+    "scope": "The manuscript, canonical NeMo source, Q8 and F16 exports, and OpenWhispr integration all share this exact r3 source checkpoint. Export hashes are pinned in src/orukeet/artifacts.json.",
+    "archive_hf": {
+      "repo_id": "oruk/orukeet-internal",
+      "revision": "294d5bbc2f4ba79cbcf07776c52f580ff053a60d",
+      "path": "experiments/librispeech-ft-20260908/r3/orukeet-targeted-ft.nemo"
+    }
+  },
+  "inputs_sha256": {
+    "evaluation/standard_asr/audit_predictions.py": "80a8c7911819129e39911cd4f78df326485a659a847522779cf40b3b2365eb3a",
+    "evaluation/standard_asr/build_current_report.py": "624b9781c023ea1cd4f1ad9a3c18f99e806027a228c5f24da9f466679578dd8f",
+    "evaluation/standard_asr/rescore.py": "47e77bad2d65f1eb6d7a29a156ba747807b4017d4fcedf8d3d2011c5a4e0ab82",
+    "evaluation/standard_asr/run.py": "1c8951a18eba92ae8fe12c537149c961ae0c0e6f748216e27488305b5a2806c2",
+    "evaluation/standard_asr/scoring.py": "3b2bd425a79a94b9afa294ba55efc6b9fb5943d7021ce27394dadf6c58082bd0",
+    "evaluation/standard_asr/vendor/LICENSE": "5ee13882fce0975f0ad3c3d5c2042af4896c2a669be2d6df5b3d256811267c85",
+    "evaluation/standard_asr/vendor/__init__.py": "8c39e42af3204c41c564c970e24525da160663836b54acc1b629e4342f862334",
+    "evaluation/standard_asr/vendor/english_abbreviations.py": "52997cc963e0bd6568d15554ad8d5fb0759f20f361483632a22f90d2d0e07db1",
+    "evaluation/standard_asr/vendor/multilingual.py": "4c8db6c4171c8c2f5567d2ed625a3a1f0d45156af45ca42d9555c0c9b61a29d5",
+    "evaluation/standard_asr/vendor/normalizer.py": "490b56393484ef386b486f3679cc2261264af280b3512154431e0bdcf2778295",
+    "evaluation/standard_asr/vendor/provenance.json": "f6fb39bc16cb4b52ac62882baab0f1925d7405ee8a98f0ae32419edf9275aa12",
+    "evidence/domains-r3-20260908/comparison.json": "617a2119027b9e706907fdeb8a5819babb55f1959456d677e744d2b57ddfd2be",
+    "evidence/domains-r3-20260908/hypotheses-audit.json": "66c748f9ea625cf38e9bf672628e95300a5919abbaf47ebfd7c4800f5b1f3116",
+    "evidence/domains-r3-20260908/numeric-evidence.jsonl.gz": "298f3164c745523f25b2e7df25492dab5b6607c149ea561d44af3720c29236df",
+    "evidence/librispeech-ft-20260908/r3/export-audit.json": "3d9f115d39758976836291bf2a99f96b0ea71c412f320e3d954b6ba66cfdf59d",
+    "evidence/librispeech-ft-20260908/r3/private-archive.json": "dd634067bcb59b0a705ed051850161c9257dc49ddfdfc011a506dd3fafc805ef",
+    "evidence/standard-asr-r3-20260908/comparison.json": "9b2702bfe9c7b107db1627df3cb71d24d25d4eb8da0ee8683b0bbf9f994ca7da",
+    "evidence/standard-asr-r3-20260908/hypotheses-audit.json": "a60177ac2ac1064b481cc85424d5ee989cca43112191ddae30d60b7f56ae57d3",
+    "evidence/standard-asr-r3-20260908/numeric-evidence.jsonl.gz": "3d1467e56efd6769da1f8cb74eef0c3eac7bf93fa8200c39538963a9d4b080c1",
+    "report/assets/affiliations/SOURCES.md": "0d77aeb9033fc456dc3d1a4d3b5cbf7bd67a3f43feaf4b97c5ed5fc7c44b579e",
+    "report/assets/affiliations/cambridge.pdf": "535e2f3382a9e63ef27fcd561e54cfc87d74f494c3a7f6dd072c2af2bfe7a738",
+    "report/assets/affiliations/cambridge.svg": "27381d019c0a54c53b7b746750dc148f35dca2a6fe96b39dff5f896b0e745902",
+    "report/assets/affiliations/hoid.pdf": "439f46cb03c498cbc0bb797d39ba31ce80d57742d3b699ae0a6ca5cf2fa1311a",
+    "report/assets/affiliations/hoid.svg": "49b5fc2265f1294abf6bb65f054078b640b9fbaed9780e2817ab6a103cd2eb72",
+    "report/assets/affiliations/openwhispr.pdf": "78e575011be731f9d07f665f1440a4582df27d577bbdb3805d2c7a17b40cacd7",
+    "report/assets/affiliations/openwhispr.svg": "29d50f34b1ffe4b11665aaeefdaf63a22796c53c38234cd9d6f06c5153c9e13a",
+    "report/assets/affiliations/stanford.png": "09434daceea1a4ab62da5db3cd9e81bbe1a7e034224f504d63fd3f12e51af74b",
+    "report/assets/kernel-fits.pdf": "b952a1d8e84032cd20cc452dfbea40c6d2c34cea7de4257b7a375ccac73b9e01",
+    "report/assets/model-figures-source.json": "cf07124f8e46464eca5036cd6be96e4d1ced9d3f936e514e9382518181de42b8",
+    "report/assets/oruk-lockup.png": "932df9164b237a1a31d1e636897d1766a15b8bac738acf81ee93de8ea2d6c18c",
+    "report/assets/selection-profile.pdf": "0a2e8647a8a1a895e7a1e6d9f15779eac14c87f56e30eeeb85bc05ce720ba32f",
+    "report/current-benchmark-validation.json": "cda67fa90a2d75c815ac48223224ef60205ec3ee841bad4b73dce1b273ebe8d9",
+    "report/current-benchmark-values.tex": "5eda781ff8966fc183d3a9c3a92e2dfe1840e8eddad292b891ef1976e63da9c7",
+    "report/current-domains-table.tex": "ca92fc7f970f7608e69628ca2240e51b514118e24071376634884643a530fd26",
+    "report/current-standard-table.tex": "46aeaa3d4bf92d81e1acfc2c54b0e46cc9be1a4639ac9d16597c97982206ba2b",
+    "report/model.json": "a0d6dece22d8eefbc35433a04376dd7415444a3c23ac7a7cb9ed179a8ec0d7c4",
+    "report/neurips_2026.sty": "c3fc2894e83d2517ca18b66741d6c595986d97957dc08ec08bb2125a7ec4555a",
+    "report/paper.tex": "0dcc45ad9c401a9fd4e4ab389890b7bc51d4c0f8c21d4b18a7628d16b124c6ad",
+    "report/references.bib": "e3229e1faad05e4975b231660184d126764f0c7a33bae9c31248d91859347d55",
+    "scripts/build_neurips_report.py": "d5735c4f770eb334ffbf80a0ec439f0c4fc5a6922d45c90258092c0b4046584e",
+    "training/gabor_half/fits/fits.npz": "52791beaf3219421e4ad3aa2e2591875b50dbfaa83a6309361c2df71db08de3d"
+  },
+  "publication_authorized": true,
+  "visual_review": {
+    "status": "passed",
+    "pages": 5,
+    "checks": [
+      "All five pages rendered and inspected",
+      "Current Oruk Signal affiliation logo",
+      "Two figures, readable paired benchmark tables, no clipping",
+      "Public checkpoint link and nine authors"
+    ]
+  }
+}

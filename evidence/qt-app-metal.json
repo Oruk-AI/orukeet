@@ -1,0 +1,22 @@
+{
+  "device": "metal",
+  "checks": [
+    "default Orukeet loads offline with verified cache",
+    "Unicode upload, Qt completion and durable SQLite history",
+    "48 kHz stereo resampling through upload",
+    "silence produces no transcript or history entry",
+    "corrupt upload reports failure; next upload recovers",
+    "batch upload persists both results",
+    "recording fixture, shared real preview decoder, retained audio",
+    "in-flight cancellation suppresses history; reload recovers",
+    "actual Qt main window and model manager render",
+    "meeting queue, real timestamps, silence, drain and shutdown"
+  ],
+  "microphone": "fixture",
+  "hotkeys": "disabled",
+  "clipboard_delivery": "disabled",
+  "decoder": "real Q8 model / persistent native worker",
+  "transcript": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+  "qt_platform": "offscreen",
+  "all_passed": true
+}

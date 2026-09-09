@@ -1,0 +1,680 @@
+{
+  "monsoon": {
+    "repository": "VoiceArena/MonsoonASR-Open-ASR-leaderboard-en-IN",
+    "revision": "bc1da7b42ef6e2853123c97bf6d22067e4802d11",
+    "files": [
+      {
+        "path": "data/test-00000-of-00004.parquet",
+        "bytes": 370699085,
+        "sha256": "846016798db9c9da90bcb363a42fabfd337151bdbd24a7e22c01e2adbe285ff7"
+      },
+      {
+        "path": "data/test-00001-of-00004.parquet",
+        "bytes": 378275699,
+        "sha256": "7eb224de9c58025b5d012b7871111bea190110fbe6ed1175894d315445843d62"
+      },
+      {
+        "path": "data/test-00002-of-00004.parquet",
+        "bytes": 392431264,
+        "sha256": "15e86e6eb95b7ff09a10b85e4250143e35f59163ee2c613c54e66c3697740bfe"
+      },
+      {
+        "path": "data/test-00003-of-00004.parquet",
+        "bytes": 428028551,
+        "sha256": "b69796b25358c1d7ca4bddecd5f69e375f32ac1bc8cb55181ee02c1953132207"
+      }
+    ]
+  },
+  "gigaspeechbench": {
+    "repository": "speechcolab/GigaSpeechBench",
+    "revision": "680d3057641b7507a1ef14974407c7b0a7964e64",
+    "files": [
+      {
+        "path": "CH-EN-Dialects/data/CHN-EN/audio.tar.gz",
+        "bytes": 1214784738,
+        "sha256": "23b0f9611ef38f63d4e9aba5447b0b52300249ee857cb9eadeb3af0d29ce6c95"
+      },
+      {
+        "path": "CH-EN-Dialects/data/CHN-EN/metadata.json",
+        "bytes": 2235036,
+        "sha256": null
+      },
+      {
+        "path": "CH-EN-Dialects/data/IND-EN/audio.tar.gz",
+        "bytes": 1302629114,
+        "sha256": "ab07804c5899f2d0c9a47cd7bfc92a72d3cfe466e0602e52b7f0b9d102664f9e"
+      },
+      {
+        "path": "CH-EN-Dialects/data/IND-EN/metadata.json",
+        "bytes": 2213128,
+        "sha256": null
+      },
+      {
+        "path": "CH-EN-Dialects/data/JPN-EN/audio.tar.gz",
+        "bytes": 1337538263,
+        "sha256": "3f651fe91fb460b0a535b96b2f9fd71c76bbdeb7f27f84f9cc567d447a5957a8"
+      },
+      {
+        "path": "CH-EN-Dialects/data/JPN-EN/metadata.json",
+        "bytes": 3122351,
+        "sha256": null
+      },
+      {
+        "path": "CH-EN-Dialects/data/PHL-EN/audio.tar.gz",
+        "bytes": 1171339674,
+        "sha256": "01c46f7768070ffc51619a0eb675bf7079d4efb7b75ea163363e0669a5337d8c"
+      },
+      {
+        "path": "CH-EN-Dialects/data/PHL-EN/metadata.json",
+        "bytes": 3131428,
+        "sha256": null
+      },
+      {
+        "path": "CH-EN-Dialects/data/SCT-EN/audio.tar.gz",
+        "bytes": 1439122002,
+        "sha256": "6b8a9bc2e9e7357552b427dc14d8a1d8f715cf507bb3483f535709b319a1c6c6"
+      },
+      {
+        "path": "CH-EN-Dialects/data/SCT-EN/metadata.json",
+        "bytes": 4464401,
+        "sha256": null
+      },
+      {
+        "path": "CH-EN-Dialects/data/SGP-EN/audio.tar.gz",
+        "bytes": 1366509418,
+        "sha256": "8f24d40de886283ae59529afcbb10dbfb8a03b05d2113971e9623737c2880de5"
+      },
+      {
+        "path": "CH-EN-Dialects/data/SGP-EN/metadata.json",
+        "bytes": 3434351,
+        "sha256": null
+      },
+      {
+        "path": "Vertical-Domain/data/AGR-EN/audio.tar.gz",
+        "bytes": 1191279234,
+        "sha256": "c7fa5e15d45adeac88557fb22dd4d8ee703155289b7cb1c46b1b76d58bd6fde5"
+      },
+      {
+        "path": "Vertical-Domain/data/AGR-EN/metadata.json",
+        "bytes": 2903595,
+        "sha256": null
+      },
+      {
+        "path": "Vertical-Domain/data/AIT-EN/audio.tar.gz",
+        "bytes": 1021684205,
+        "sha256": "af34b6d094db3ab913ee6872747cfd9b0df2f3398257d95e8123e0e39367933a"
+      },
+      {
+        "path": "Vertical-Domain/data/AIT-EN/metadata.json",
+        "bytes": 2525952,
+        "sha256": null
+      },
+      {
+        "path": "Vertical-Domain/data/ART-EN/audio.tar.gz",
+        "bytes": 1065199573,
+        "sha256": "15436b4661f9330080869ae0b5d9ae0f9fb6281b6868285d5ad9062c5fb817cb"
+      },
+      {
+        "path": "Vertical-Domain/data/ART-EN/metadata.json",
+        "bytes": 2568232,
+        "sha256": null
+      },
+      {
+        "path": "Vertical-Domain/data/BIO-EN/audio.tar.gz",
+        "bytes": 1037973408,
+        "sha256": "b26427bdab079e6af33b2d61e402aa9d6a6d9c8cf5a4fa53a5983cb1003c3554"
+      },
+      {
+        "path": "Vertical-Domain/data/BIO-EN/metadata.json",
+        "bytes": 2667605,
+        "sha256": null
+      },
+      {
+        "path": "Vertical-Domain/data/ECM-EN/audio.tar.gz",
+        "bytes": 1053451594,
+        "sha256": "2dede441c6355af288ba42d2012011502fbf20bea82629f55b22e85cf4fbb28f"
+      },
+      {
+        "path": "Vertical-Domain/data/ECM-EN/metadata.json",
+        "bytes": 2766605,
+        "sha256": null
+      },
+      {
+        "path": "Vertical-Domain/data/ENG-EN/audio.tar.gz",
+        "bytes": 1154961864,
+        "sha256": "45602a50d1bf66f939bee46a36b1e246cf1e306199d4ffc17407d2e3924ddc24"
+      },
+      {
+        "path": "Vertical-Domain/data/ENG-EN/metadata.json",
+        "bytes": 2959623,
+        "sha256": null
+      },
+      {
+        "path": "Vertical-Domain/data/ENT-EN/audio.tar.gz",
+        "bytes": 1160399178,
+        "sha256": "5a0abb4ae193515ea4c90d023474f8d316e3ffcbfe839572f5a33a854e1e1c26"
+      },
+      {
+        "path": "Vertical-Domain/data/ENT-EN/metadata.json",
+        "bytes": 3454608,
+        "sha256": null
+      },
+      {
+        "path": "Vertical-Domain/data/FIN-EN/audio.tar.gz",
+        "bytes": 1166826993,
+        "sha256": "2b44c3e632766c909d3ce1cc41e3be052a40837263fb3ac1561ccdb16e6a740a"
+      },
+      {
+        "path": "Vertical-Domain/data/FIN-EN/metadata.json",
+        "bytes": 2897505,
+        "sha256": null
+      },
+      {
+        "path": "Vertical-Domain/data/HUM-EN/audio.tar.gz",
+        "bytes": 1063657386,
+        "sha256": "da42a8865e8ea10e0323c291959a2576f688f1de04dec91207d0337d54bee5d6"
+      },
+      {
+        "path": "Vertical-Domain/data/HUM-EN/metadata.json",
+        "bytes": 2340542,
+        "sha256": null
+      },
+      {
+        "path": "Vertical-Domain/data/LAW-EN/audio.tar.gz",
+        "bytes": 1200876161,
+        "sha256": "a52ee0b944c2ccdd2439cae9499d18b08d6e09f0f3fa24c72766c88526aa20a7"
+      },
+      {
+        "path": "Vertical-Domain/data/LAW-EN/metadata.json",
+        "bytes": 3172069,
+        "sha256": null
+      },
+      {
+        "path": "Vertical-Domain/data/MED-EN/audio.tar.gz",
+        "bytes": 1094049025,
+        "sha256": "8b3aecc042fc83fdba9d508ad3341221f6df4c01a8dce19de420af17d956ede1"
+      },
+      {
+        "path": "Vertical-Domain/data/MED-EN/metadata.json",
+        "bytes": 2566994,
+        "sha256": null
+      },
+      {
+        "path": "Vertical-Domain/data/MIL-EN/audio.tar.gz",
+        "bytes": 1171241949,
+        "sha256": "8a68e040e21118bde74082fd28278e55bbafd24bc110788e704a166750075027"
+      },
+      {
+        "path": "Vertical-Domain/data/MIL-EN/metadata.json",
+        "bytes": 2687496,
+        "sha256": null
+      }
+    ]
+  },
+  "eurospeech": {
+    "repository": "disco-eth/EuroSpeech",
+    "revision": "7a55bbcee3933f5d9817bb2d4c37399d596f543d",
+    "files": [
+      {
+        "path": "bulgaria/test-00000-of-00007.parquet",
+        "bytes": 478141508,
+        "sha256": "f47159ea0d401be57d730d1225cfd8aa85f2b8f437a767fbaf777d708c3f7349"
+      },
+      {
+        "path": "bulgaria/test-00001-of-00007.parquet",
+        "bytes": 472056260,
+        "sha256": "b6226914607f4627583fab1db761c347b38fffb47999aebd246acf79542a4bab"
+      },
+      {
+        "path": "bulgaria/test-00002-of-00007.parquet",
+        "bytes": 470423476,
+        "sha256": "35570d3b0d8ca99d455f73c9e5eaef656e6c51c481ccc7227d4a61b7bcbf96f3"
+      },
+      {
+        "path": "bulgaria/test-00003-of-00007.parquet",
+        "bytes": 470425060,
+        "sha256": "d2a63404c22c5d6f2bb448cab66fc37bcdadd535aca90a91cc516a4a10e75fb0"
+      },
+      {
+        "path": "bulgaria/test-00004-of-00007.parquet",
+        "bytes": 471611554,
+        "sha256": "5d85fd99ba4bbecd985d87abbaef8481ef1e6f22e1ca1185b7839b8a2dc2de80"
+      },
+      {
+        "path": "bulgaria/test-00005-of-00007.parquet",
+        "bytes": 456913702,
+        "sha256": "a767f8cbb27c97c66d49999211bdbf28ccc72b253d11552cf674c8e38f8897ee"
+      },
+      {
+        "path": "bulgaria/test-00006-of-00007.parquet",
+        "bytes": 467614672,
+        "sha256": "ba4f835169f485306ba7daa22026786b88a61902ce4d043f3e2ba4e2a0b61e85"
+      },
+      {
+        "path": "croatia/test-00000-of-00010.parquet",
+        "bytes": 572068959,
+        "sha256": "1e2cdb2df224738d86c31801109e6e25c9a419b0725fb456d5110cbbb4b0638e"
+      },
+      {
+        "path": "croatia/test-00001-of-00010.parquet",
+        "bytes": 546735108,
+        "sha256": "2bd4b10a48daf0dca139383b4bd1245d4456c4e827b775a55fe6118414eec658"
+      },
+      {
+        "path": "croatia/test-00002-of-00010.parquet",
+        "bytes": 616750464,
+        "sha256": "dd41b644204b74638a3091f6992e897224160e728c7bcb159d8243ad284b2a52"
+      },
+      {
+        "path": "croatia/test-00003-of-00010.parquet",
+        "bytes": 776973389,
+        "sha256": "f1c4f79ee83cf245840759d9bf4098f50b2393455b528ff982f076b3b98562b8"
+      },
+      {
+        "path": "croatia/test-00004-of-00010.parquet",
+        "bytes": 762795069,
+        "sha256": "70456b7f5f59c31bb980672c8ae6336c59711b329b9e348ad0268cec75858456"
+      },
+      {
+        "path": "croatia/test-00005-of-00010.parquet",
+        "bytes": 788838706,
+        "sha256": "80714fc41a6600abff7204a810e32f35eb936dfb426dbdc56b7532bf21c2b7d2"
+      },
+      {
+        "path": "croatia/test-00006-of-00010.parquet",
+        "bytes": 507733360,
+        "sha256": "356a44825e552942d6eeeface2cd549acacbd8da3149dfd78b4aac6aae6da5d4"
+      },
+      {
+        "path": "croatia/test-00007-of-00010.parquet",
+        "bytes": 1006641813,
+        "sha256": "20ff310b75848a1f8dea02582753e89f0fa78fb4a4211862e79a54529e5a6c2a"
+      },
+      {
+        "path": "croatia/test-00008-of-00010.parquet",
+        "bytes": 762462027,
+        "sha256": "83f07d377f139784fe553cf020357179d8ce0410aecfa218f9617236c0990b7f"
+      },
+      {
+        "path": "croatia/test-00009-of-00010.parquet",
+        "bytes": 361355125,
+        "sha256": "b9909aaae921349648593f25b98b0056f29ffa34dec095451438a323172166cf"
+      },
+      {
+        "path": "estonia/test-00000-of-00004.parquet",
+        "bytes": 426881289,
+        "sha256": "92f2ebc112c34e19f9d06f89a645ad710058383b26f17f7a5e270824aa695ad2"
+      },
+      {
+        "path": "estonia/test-00001-of-00004.parquet",
+        "bytes": 429423724,
+        "sha256": "0141a88e3a36b7cf8871c8876d695659130431d8ec9fbdaaab292a17c4cd562f"
+      },
+      {
+        "path": "estonia/test-00002-of-00004.parquet",
+        "bytes": 429070667,
+        "sha256": "c65a15e385e32c3498456dd33f3ee598c1596e42039c8e2b5c33b0438fb4387e"
+      },
+      {
+        "path": "estonia/test-00003-of-00004.parquet",
+        "bytes": 422460903,
+        "sha256": "ff278ed46f9fa1c6237ba66c4825fbe9529a2ced022f2ddf6cf23cc2316be14b"
+      },
+      {
+        "path": "finland/test-00000-of-00003.parquet",
+        "bytes": 414616655,
+        "sha256": "e4ede3e22591bc2b417ed26cbe0b20a90d64bc24275b237bd69e2c3ce4c01f5f"
+      },
+      {
+        "path": "finland/test-00001-of-00003.parquet",
+        "bytes": 1103195989,
+        "sha256": "304ae772292da249811bc5e25fb236f520daec0e01c11c596030a5bf10cc0611"
+      },
+      {
+        "path": "finland/test-00002-of-00003.parquet",
+        "bytes": 671687875,
+        "sha256": "ead8f5c8ac6ffe575c938d4d74820deb68ee29e9fd2d10ea2b9ecb15837e9067"
+      },
+      {
+        "path": "france/test-00000-of-00001.parquet",
+        "bytes": 350230349,
+        "sha256": "9d44ba88a5a40891d24ad39275db285a5ebd10e3f5aa46274343137201f3ba98"
+      },
+      {
+        "path": "germany/test-00000-of-00005.parquet",
+        "bytes": 469982803,
+        "sha256": "03ddbbb60054590713eae44284d998c59c8c60248e6709d9ab390060d3f58b13"
+      },
+      {
+        "path": "germany/test-00001-of-00005.parquet",
+        "bytes": 471108941,
+        "sha256": "55bb3dde367503ad132230ef1ad8fd1c0780252bf20832ac735cca7d2982e17a"
+      },
+      {
+        "path": "germany/test-00002-of-00005.parquet",
+        "bytes": 473428806,
+        "sha256": "8fa8ac76a3caf44ee0db6e4a29df8548d39dd5d497e10d9d9f0c6b860fa6ebad"
+      },
+      {
+        "path": "germany/test-00003-of-00005.parquet",
+        "bytes": 467207768,
+        "sha256": "3d9e66e4c0cd2848a7bf7876babce1c1ad59c2c31a88f868a89ea3a5f9761b8e"
+      },
+      {
+        "path": "germany/test-00004-of-00005.parquet",
+        "bytes": 461068627,
+        "sha256": "b2a7369d8ed0a6eeae1e0486c82b84e2fb17397f6561a013084d74a111ac819b"
+      },
+      {
+        "path": "greece/test-00000-of-00007.parquet",
+        "bytes": 459603477,
+        "sha256": "7dc9366545a313d72a7f5a7c50712b691c82c77fae3a0cca184c89c189ce31d8"
+      },
+      {
+        "path": "greece/test-00001-of-00007.parquet",
+        "bytes": 458327687,
+        "sha256": "f7bd8d97ac0e297fba33d4ee078f44d543a80daf93df21a871fcd8055554b028"
+      },
+      {
+        "path": "greece/test-00002-of-00007.parquet",
+        "bytes": 464984236,
+        "sha256": "f226911ae3383c7a04898cc03c54738937f6a206b6440dada97af37db0b24a59"
+      },
+      {
+        "path": "greece/test-00003-of-00007.parquet",
+        "bytes": 461303792,
+        "sha256": "46508b21bd355e493576895214b7bb6245795e7011516cbd8424870033d543e3"
+      },
+      {
+        "path": "greece/test-00004-of-00007.parquet",
+        "bytes": 462876632,
+        "sha256": "08425fb21f7064e8526a1bfaf2b14df65e9d6018d4db125d8fb1f9aaf9d9a55e"
+      },
+      {
+        "path": "greece/test-00005-of-00007.parquet",
+        "bytes": 458253362,
+        "sha256": "31a098f5f78b2b671aeac66817de51f70c4bd4b23ccc76033db659d0e6e538a6"
+      },
+      {
+        "path": "greece/test-00006-of-00007.parquet",
+        "bytes": 460022037,
+        "sha256": "324cc56fbd93df22f9049e2aa747d91bc0050b422701235439158ed3fea10ef8"
+      },
+      {
+        "path": "italy/test-00000-of-00009.parquet",
+        "bytes": 460351886,
+        "sha256": "f74cd421a641e28f5ced77ee4753b32f4faff8072b34027c18749770c635efe9"
+      },
+      {
+        "path": "italy/test-00001-of-00009.parquet",
+        "bytes": 459917753,
+        "sha256": "03da28e240a0e0327c240339dad973c28620d47ebb2db6487bddf31eaf62b3f4"
+      },
+      {
+        "path": "italy/test-00002-of-00009.parquet",
+        "bytes": 469297595,
+        "sha256": "59348fecccabdc0167840ec093c40fd68429aef5936610981aba19d24ea5908f"
+      },
+      {
+        "path": "italy/test-00003-of-00009.parquet",
+        "bytes": 463441164,
+        "sha256": "be22efa95fc9b8a7035a60bc722dafa2d66c0ff715d19158c93296865b1c46fd"
+      },
+      {
+        "path": "italy/test-00004-of-00009.parquet",
+        "bytes": 457878837,
+        "sha256": "f7f3528ee6c90b211ef56cd08de6667f2f1b8f0d9768b4f72ef99da7b756dc8d"
+      },
+      {
+        "path": "italy/test-00005-of-00009.parquet",
+        "bytes": 461157186,
+        "sha256": "767dba88fdb75f27737be545891b56d07def09b84c4b256254b39d53e342ad79"
+      },
+      {
+        "path": "italy/test-00006-of-00009.parquet",
+        "bytes": 467631372,
+        "sha256": "714066ceb6c3cffa44b62296a395e7013d44b19577422d5746975fc71a4c6f02"
+      },
+      {
+        "path": "italy/test-00007-of-00009.parquet",
+        "bytes": 465740430,
+        "sha256": "55b3dd5f1c61796608b5ea06f0155e191a8189a8b852b90fda69f48026950b75"
+      },
+      {
+        "path": "italy/test-00008-of-00009.parquet",
+        "bytes": 457022696,
+        "sha256": "86999bd500c22614886c0283c3b659abe410513ac792afd6afeae74e4f8609b6"
+      },
+      {
+        "path": "latvia/test-00000-of-00004.parquet",
+        "bytes": 398690497,
+        "sha256": "8d283432aecb299ae8f8da1379d03a5eaaecc83b77c5f229d60bd139dfa5b2ac"
+      },
+      {
+        "path": "latvia/test-00001-of-00004.parquet",
+        "bytes": 402275705,
+        "sha256": "2583ff61deb2cba66baa5baf7e86c0b68ef3b22043ec5f9b989e73966bc86eb8"
+      },
+      {
+        "path": "latvia/test-00002-of-00004.parquet",
+        "bytes": 403703274,
+        "sha256": "ef3ccfd9b205dc06165cfdc8a9f06635578b62b8169b3244d1d77e74207892ce"
+      },
+      {
+        "path": "latvia/test-00003-of-00004.parquet",
+        "bytes": 397263572,
+        "sha256": "27f5bf3e0b7a8ccdbc177ddb73e0989cefff78c9ecfbe2095f9b10fdfb368407"
+      },
+      {
+        "path": "lithuania/test-00000-of-00008.parquet",
+        "bytes": 432078814,
+        "sha256": "0f78635aa12c8a11a51c7c302fc1dd05c717c2c7bf1a1bf64b8b4a95e5038f4a"
+      },
+      {
+        "path": "lithuania/test-00001-of-00008.parquet",
+        "bytes": 436746565,
+        "sha256": "f846a06d6536d2ebc21d0fdf799a1d86b649cff952b6bb678c694eb22fa9333e"
+      },
+      {
+        "path": "lithuania/test-00002-of-00008.parquet",
+        "bytes": 431814090,
+        "sha256": "d7f3d0a24d6e4984c65d4f8331faeb7514cbe614b7b5eae276fdbb2c1d61572c"
+      },
+      {
+        "path": "lithuania/test-00003-of-00008.parquet",
+        "bytes": 437427497,
+        "sha256": "0f980c038391a7ec8afe0295e588a8b42fd531958707c0390a092869533b5dc7"
+      },
+      {
+        "path": "lithuania/test-00004-of-00008.parquet",
+        "bytes": 434462750,
+        "sha256": "626e50627eca2be87f10f07b533346d9bd7ff67a6a6fdca446f25fc03d092c55"
+      },
+      {
+        "path": "lithuania/test-00005-of-00008.parquet",
+        "bytes": 425567550,
+        "sha256": "d7a6c8556087662a72a0fc52aafd36975608205f07c0f47e00781215eb0cf4a3"
+      },
+      {
+        "path": "lithuania/test-00006-of-00008.parquet",
+        "bytes": 435233455,
+        "sha256": "74afffe540786269ec1339dcc7b0bce4074911552dae6c5f2bf27b76df33dc58"
+      },
+      {
+        "path": "lithuania/test-00007-of-00008.parquet",
+        "bytes": 423584626,
+        "sha256": "8044866d24d9fe1af4c1725b793c131dd0337639b844564a7dc76ea90db49ba4"
+      },
+      {
+        "path": "malta/test-00000-of-00003.parquet",
+        "bytes": 520305060,
+        "sha256": "e046f050a1836ddc16967d0a4a394f0f3d37d893e38f5142a8fc88d72c97fa01"
+      },
+      {
+        "path": "malta/test-00001-of-00003.parquet",
+        "bytes": 560287805,
+        "sha256": "2c7291340d446fac92dd16c9f63f387e425496816de22ee527164734d5674b31"
+      },
+      {
+        "path": "malta/test-00002-of-00003.parquet",
+        "bytes": 276255891,
+        "sha256": "7d584f22cbcada2f4bb08c614287610bb818cf11863dde63fc9d4ff8bd99143e"
+      },
+      {
+        "path": "portugal/test-00000-of-00008.parquet",
+        "bytes": 444247998,
+        "sha256": "d80b2ba9b8e50aa00a16812f5fde3534b105d70a6988fe0cf2add1cc7e482a79"
+      },
+      {
+        "path": "portugal/test-00001-of-00008.parquet",
+        "bytes": 443829599,
+        "sha256": "a466ed93966ffd3c59dfc7c5f14e61dabbe8e0a8d5c71d01f5909f2ae3542cf2"
+      },
+      {
+        "path": "portugal/test-00002-of-00008.parquet",
+        "bytes": 444634363,
+        "sha256": "724af4ba9b91455d3711407c2440b4fdf80083fc2baf56d18647e641289f0dab"
+      },
+      {
+        "path": "portugal/test-00003-of-00008.parquet",
+        "bytes": 443225396,
+        "sha256": "f57c978a5e40e33b3958b357b949649c983e77d242be31dd52faeb8b83cce6e1"
+      },
+      {
+        "path": "portugal/test-00004-of-00008.parquet",
+        "bytes": 448580178,
+        "sha256": "daed16e4ac83a84ae6a4a6b0a63e02f6cd343ec446f620bfdfce0e3a3e128024"
+      },
+      {
+        "path": "portugal/test-00005-of-00008.parquet",
+        "bytes": 451300675,
+        "sha256": "34fecf9fd3543f391069ab6a6a0cb495a11897440442d17c1e520702fab1598c"
+      },
+      {
+        "path": "portugal/test-00006-of-00008.parquet",
+        "bytes": 446841737,
+        "sha256": "d0f93eda502ac888113980f0b1bc19d1303f6a0057e82fe122aeb1e3c41c7180"
+      },
+      {
+        "path": "portugal/test-00007-of-00008.parquet",
+        "bytes": 443241532,
+        "sha256": "374ad43fc22da5cf65a38ca4ed72c063caba089061e78512d865114cb085ea1a"
+      },
+      {
+        "path": "slovakia/test-00000-of-00005.parquet",
+        "bytes": 796773805,
+        "sha256": "f3a08d00b99c2017a6de07f8475b96cf4fc87f0d5585df2305163b4a5e1b7507"
+      },
+      {
+        "path": "slovakia/test-00001-of-00005.parquet",
+        "bytes": 562164186,
+        "sha256": "df4a2c9b36fa950e45eb697eb4c15d58672b95845c6449885c5c31ca1332d39e"
+      },
+      {
+        "path": "slovakia/test-00002-of-00005.parquet",
+        "bytes": 607802900,
+        "sha256": "2556c6139f4f178c8848491da5484225b081328b306c03644279517548ac5abf"
+      },
+      {
+        "path": "slovakia/test-00003-of-00005.parquet",
+        "bytes": 917296003,
+        "sha256": "5746e1e15454bbf1806b4c7aa734004e3a07db1bbf8e9345fd15aeeac3e3b7f5"
+      },
+      {
+        "path": "slovakia/test-00004-of-00005.parquet",
+        "bytes": 3870,
+        "sha256": "59a8c7f7f09c1a1a2a858816da8c786e28a446f413fe2754896e5c9162c19154"
+      },
+      {
+        "path": "slovenia/test-00000-of-00004.parquet",
+        "bytes": 425925222,
+        "sha256": "472b8246f8b3215f67d5b7c2b415cdda67bc9c443fe4223c93545f71b53a66ae"
+      },
+      {
+        "path": "slovenia/test-00001-of-00004.parquet",
+        "bytes": 424905258,
+        "sha256": "bb077951496cd138fa6b8647345cfdb093781137974251a817c38a76501804ed"
+      },
+      {
+        "path": "slovenia/test-00002-of-00004.parquet",
+        "bytes": 430813578,
+        "sha256": "3147f8dc6d0c6a8a0703b4a4146eb3ffdfc8fbff23acbb1928d1828a5216546c"
+      },
+      {
+        "path": "slovenia/test-00003-of-00004.parquet",
+        "bytes": 428948844,
+        "sha256": "951ab402dd01b19855d45a2184f27f0003d3df2740eaee6cf5a39ab79237d26f"
+      },
+      {
+        "path": "uk/test-00000-of-00007.parquet",
+        "bytes": 482137837,
+        "sha256": "e9d4789067ca76f04206b70d49e73e6c756bba774411f1267ec9a598e921bf73"
+      },
+      {
+        "path": "uk/test-00001-of-00007.parquet",
+        "bytes": 521295181,
+        "sha256": "8fbdb46777fa0a26797dfe91a0f045aec56e9267f4e0b2a0828910bed20d11e5"
+      },
+      {
+        "path": "uk/test-00002-of-00007.parquet",
+        "bytes": 487710714,
+        "sha256": "e3fd77fb876b8f75fa1192be69ec586c8021452bcfc26c2713170afdc42ebfb3"
+      },
+      {
+        "path": "uk/test-00003-of-00007.parquet",
+        "bytes": 569013965,
+        "sha256": "4eb0225a0c9d025f8c234d685db8f4736466df51d42e622a426f572fb6ce434e"
+      },
+      {
+        "path": "uk/test-00004-of-00007.parquet",
+        "bytes": 558000519,
+        "sha256": "2a6387597b94c7bb2e81451d1e10588d99208a6d92b8fe73a44b7859ac783a50"
+      },
+      {
+        "path": "uk/test-00005-of-00007.parquet",
+        "bytes": 500614936,
+        "sha256": "9560e99a16a76b608292a45860e22ea69b0255c2f65d9f71193557c9e6886ff8"
+      },
+      {
+        "path": "uk/test-00006-of-00007.parquet",
+        "bytes": 672514330,
+        "sha256": "7e2be0908eee930a4f6868525c3479b2447a5b4802471f51b4220412bec4ee79"
+      },
+      {
+        "path": "ukraine/test-00000-of-00007.parquet",
+        "bytes": 438655856,
+        "sha256": "ec3a983d22692bbb226a4df5c8a1db716d93c2d31df932e807e724e810d4276d"
+      },
+      {
+        "path": "ukraine/test-00001-of-00007.parquet",
+        "bytes": 432218332,
+        "sha256": "f59d9d959546c71d9100a871fcc70351f3a79728404c50b2db574424d44dca81"
+      },
+      {
+        "path": "ukraine/test-00002-of-00007.parquet",
+        "bytes": 443312751,
+        "sha256": "3684ca7d2f9b597e251ce6e88727cc9940f0a462aeaf124ef3d94f6c29dba31c"
+      },
+      {
+        "path": "ukraine/test-00003-of-00007.parquet",
+        "bytes": 442604846,
+        "sha256": "5cefa5a1853d5d5352ea0425f03bf3c043616d4f2789ea404dbedee135ccbe21"
+      },
+      {
+        "path": "ukraine/test-00004-of-00007.parquet",
+        "bytes": 444475879,
+        "sha256": "9189bb47a05ff68070b0ef586bc906249d15c0538d500b34733ef49199d80757"
+      },
+      {
+        "path": "ukraine/test-00005-of-00007.parquet",
+        "bytes": 439010277,
+        "sha256": "8c35ce80cfda6591515f4291677e8e1f82ae63ba4e1762ef4f232b5c820bfcb9"
+      },
+      {
+        "path": "ukraine/test-00006-of-00007.parquet",
+        "bytes": 447940925,
+        "sha256": "e4e33b3d598e4e30c945a7521727e281a95face9b6cc01f29354adc8b6729864"
+      }
+    ]
+  }
+}

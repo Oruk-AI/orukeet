@@ -1,0 +1,40 @@
+{
+  "label": "r7",
+  "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "initial_student_sha256": "8ba6d6ba01fa90798e5e4e4b4605d89d1b84f98f20e824a621999184a1f0cd3f",
+  "teacher_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "data_config_sha256": "568cd7444e7dcc04289b490ac093da4a66f8f1d50f96674ef684f4ff04b7a6c1",
+  "data_audit_sha256": "73f08d9950e838feb2eaba26514c7c559ce427b845c0951cefa7e6263ff9900d",
+  "launcher_sha256": "4be7284ae51d35b8eb3348cbdb30b79db789d133575c0518c85e74148777a1a8",
+  "command": [
+    "bash",
+    "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r7_20260906-launch.sh",
+    "++export_interval=100",
+    "++recovery_start_model=/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r6_20260906/step-0400.nemo",
+    "++recovery_start_audit=/home/nathanroll/parakeet-ft/gabor_half_20260906/r6-0400-audit.json",
+    "++model.train_ds.input_cfg=/home/nathanroll/parakeet-ft/gabor_half_20260906/language-recovery-input-r7.json",
+    "model.optim.lr=2e-6",
+    "model.optim.sched.min_lr=0.0",
+    "model.optim.sched.warmup_steps=10",
+    "++preserve_bn_statistics=true",
+    "++disable_dropout=true",
+    "++resume_keep=1",
+    "++layer_anchor_scale=5.0",
+    "++conv_anchor_scale=1.0",
+    "++asr_loss_scale=0.5",
+    "++recovery_layer_lrs.lower_encoder=2e-7",
+    "++recovery_layer_lrs.upper_encoder=2e-6",
+    "++recovery_layer_lrs.other=2e-7",
+    "++recovery_layer_lrs.decoder=5e-8",
+    "++recovery_layer_lrs.joint=5e-8",
+    "model.spec_augment.freq_masks=0",
+    "model.spec_augment.time_masks=0"
+  ],
+  "environment": {
+    "NAME": "orukeet_gabor_half_r7_20260906",
+    "STEPS": "300"
+  },
+  "rationale": "R6-0400 recovered the larger-suite English mean and all individual larger guards, but missed the primary mean by 0.029956 WER points and four development guards. Continue the same fixed Gabor model with more supervised weight, targeted existing training languages, and small head updates.",
+  "selection_rule": "Evaluate all three exports on unchanged development gates. Lowest development WER among passing exports, otherwise lowest for diagnosis only; then the unchanged larger regression. No promotion on a diagnostic result.",
+  "no_gate_changes": true
+}

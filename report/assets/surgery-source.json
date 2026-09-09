@@ -1,0 +1,8 @@
+{
+  "source": "training/gabor_half/fits/fits.npz",
+  "sha256": "52791beaf3219421e4ad3aa2e2591875b50dbfaa83a6309361c2df71db08de3d",
+  "median_selected_rank": 6144,
+  "median_original_flat_index": 2737,
+  "selected_count": 12288,
+  "caption": "Weight-fit measurements. The left example is rank 6,144 of the globally selected rows, normalized by original L2 norm. The right shows all layer counts; dashed line is 512, not a quota. No recognition accuracy is inferred."
+}

@@ -1,0 +1,22 @@
+{
+  "libri_en_dev_other": {
+    "rows": 2864,
+    "groups": 33,
+    "hours": 5.121184826388888,
+    "sha256": "d937553766f7a48be8d1b5e7593eac6edd51cff20c65d406fb95304bd2fa10a6"
+  },
+  "core_en_libri_test_clean": {
+    "rows": 2620,
+    "groups": 40,
+    "hours": 5.403466840277778,
+    "sha256": "0b353aca4f39c4cfe36d3759f8bb2285dbee298cd6bff0313588e65cecd46f72"
+  },
+  "learner_en_speechocean_official_test": {
+    "rows": 2500,
+    "groups": 125,
+    "excluded_previously_seen_speaker_rows": 0,
+    "transcript_overlap_rows": 52,
+    "hours": 2.691291111111111,
+    "sha256": "6be9b03d99c6f066246e799a9f31c5529c0854a83e21f8ab9701e464e1aaf2a9"
+  }
+}

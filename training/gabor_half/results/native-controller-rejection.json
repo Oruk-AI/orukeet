@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "checked_at": "2026-09-06T22:00:09.492653+00:00",
+  "rejected_source": "a2-0650",
+  "reason": "English macro WER exceeds original",
+  "native_output_created": false,
+  "inference_executed": false,
+  "scope": "Controller rejection check using the actual failed source result; not an accuracy benchmark"
+}

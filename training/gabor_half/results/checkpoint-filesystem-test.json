@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "same_filesystem": true,
+  "payload_bytes": 122880,
+  "sha256": "4142585016a3f4376fecf5bb845bdc6b7f26d9a1cb4a0e43ab4b4821fdb00b43",
+  "fsspec": "2025.12.0",
+  "purpose": "Keeping TMPDIR inside the bind-mounted experiment directory permits atomic rename instead of cross-filesystem copy. Applies to future training processes; the active R6 process retains its original temporary-directory setting."
+}

@@ -1,0 +1,73 @@
+{
+  "candidate_sha256": "f5111f6132144b5993edbd4e228df9f731cac64d54777416c77dc85e96b58b61",
+  "gguf_sha256": "dc8ca75792b45b2d69d4dcfb924cd5e801ac6633e881f3301a6926967cd0ee01",
+  "gguf_bytes": 726517920,
+  "converter_commit": "4f9676226f667d14608487df744f375db87127f8",
+  "librosa_version": "0.11.0",
+  "mel_filterbank_sha256": "f5608e00763a20a191022fbb00a43346db5f1ec06828a97a6f4157f7d02b76c8",
+  "fits_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+  "fitted_rows_exact_after_f16_rounding": 12288,
+  "depthwise_storage_dtype": "float16",
+  "export_precision": "q8_0_t16",
+  "scope": "Private experimental export; native precision requires separate ASR validation",
+  "transducer_precision_audit": {
+    "baseline_q8_sha256": "4a6c4863f3b4243a1292f277650e39ba2b2578be9a5e9406a5300c637431e29c",
+    "changed_tensors": [
+      {
+        "name": "decoder.prediction.dec_rnn.lstm.ih_l0.weight",
+        "old_type": "Q8_0",
+        "new_type": "F16",
+        "scalar_parameters": 1638400,
+        "source_f16_sha256": "fb4c187777461d4bc4af72e6a19292d09d13350b063a4975dd9e0db34744ca98"
+      },
+      {
+        "name": "decoder.prediction.dec_rnn.lstm.hh_l0.weight",
+        "old_type": "Q8_0",
+        "new_type": "F16",
+        "scalar_parameters": 1638400,
+        "source_f16_sha256": "eb051bbdb4cff0186becff072935c52358ddda83a63549ee1a7cd17c650cc665"
+      },
+      {
+        "name": "decoder.prediction.dec_rnn.lstm.ih_l1.weight",
+        "old_type": "Q8_0",
+        "new_type": "F16",
+        "scalar_parameters": 1638400,
+        "source_f16_sha256": "a5beb8fc1f3e694c4740bf65f0d5e779ded8222c2cc04d88a1fe7c8326217bd5"
+      },
+      {
+        "name": "decoder.prediction.dec_rnn.lstm.hh_l1.weight",
+        "old_type": "Q8_0",
+        "new_type": "F16",
+        "scalar_parameters": 1638400,
+        "source_f16_sha256": "7262c1038f7ef1a71988f09a74037d71b1400401b26204067ffa52fc18806b60"
+      },
+      {
+        "name": "joint.pred.weight",
+        "old_type": "Q8_0",
+        "new_type": "F16",
+        "scalar_parameters": 409600,
+        "source_f16_sha256": "c66e9991919e0b6014bb63dd94f80a9e24b24f164d41c78695233c087406722f"
+      },
+      {
+        "name": "joint.enc.weight",
+        "old_type": "Q8_0",
+        "new_type": "F16",
+        "scalar_parameters": 655360,
+        "source_f16_sha256": "2551dc42751784e0fc1e0d3d9a8add6a893620234b3d322f2bdc559037415a20"
+      },
+      {
+        "name": "joint.joint_net.2.weight",
+        "old_type": "Q8_0",
+        "new_type": "F16",
+        "scalar_parameters": 5246720,
+        "source_f16_sha256": "24ad18fd8193152b976b8b28d835df61bf7cba78764ff4b867e3aea1ea22cb8f"
+      }
+    ],
+    "unchanged_tensor_count": 694,
+    "unchanged_tensors_byte_exact": true,
+    "source_f16_tensors_byte_exact": true,
+    "size_increase_bytes": 12061216,
+    "policy": "Only the seven previously Q8 predictor/LSTM and joint linear matrices use F16 directly from the same trained source. All other tensor payloads and types remain byte-identical to the baseline Q8 export."
+  },
+  "mixed_export_code_sha256": "26571fae5dd9720d59de80905f57d165ee1a51083156d7e996a35702ed98d265"
+}

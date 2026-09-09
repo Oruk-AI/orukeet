@@ -1,0 +1,78 @@
+{
+  "rule": "Choose lowest development primary WER among qualified trained R2-R4 exports; if none qualify, measure the lowest-WER trained export as diagnostic only. No candidate selected using this larger evaluation.",
+  "selected": {
+    "label": "r2-0100",
+    "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r2_20260906/step-0100.nemo",
+    "decision": "/home/nathanroll/parakeet-ft/gabor_half_20260906/comparison-r2-0100.json",
+    "status": "fail",
+    "primary_wer": 10.031756622222023,
+    "candidate_sha256": "dad15e12231dc2463606bce04d95a157bf56a57fc09e84aafd5174c15b93a340"
+  },
+  "diagnostic_only": true,
+  "considered": [
+    {
+      "label": "r2-0100",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r2_20260906/step-0100.nemo",
+      "decision": "/home/nathanroll/parakeet-ft/gabor_half_20260906/comparison-r2-0100.json",
+      "status": "fail",
+      "primary_wer": 10.031756622222023,
+      "candidate_sha256": "dad15e12231dc2463606bce04d95a157bf56a57fc09e84aafd5174c15b93a340"
+    },
+    {
+      "label": "r2-0200",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r2_20260906/step-0200.nemo",
+      "decision": "/home/nathanroll/parakeet-ft/gabor_half_20260906/comparison-r2-0200.json",
+      "status": "fail",
+      "primary_wer": 10.050099039671053,
+      "candidate_sha256": "4eccfae9782b137015515bab1af0207636f75472c5bf98a5b113908a992a2461"
+    },
+    {
+      "label": "r3-0100",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r3_20260906/step-0100.nemo",
+      "decision": "/home/nathanroll/parakeet-ft/gabor_half_20260906/comparison-r3-0100.json",
+      "status": "fail",
+      "primary_wer": 10.159953624138884,
+      "candidate_sha256": "8ab2615ad2612691b19aad06df6897d408c60054762c4bed9414990618152cd8"
+    },
+    {
+      "label": "r3-0200",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r3_20260906/step-0200.nemo",
+      "decision": "/home/nathanroll/parakeet-ft/gabor_half_20260906/comparison-r3-0200.json",
+      "status": "fail",
+      "primary_wer": 10.190561179872752,
+      "candidate_sha256": "6bdebdf61d5dd74d8ac4995eee32a1aa97bf1b4d9e95214b23f187a329aae431"
+    },
+    {
+      "label": "r3-0300",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r3_20260906/step-0300.nemo",
+      "decision": "/home/nathanroll/parakeet-ft/gabor_half_20260906/comparison-r3-0300.json",
+      "status": "fail",
+      "primary_wer": 10.195388899298855,
+      "candidate_sha256": "f43c38822f791827351215d3180ce4cd9c6fde40771ca16fa77d5d369bbb1743"
+    },
+    {
+      "label": "r4-0100",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r4_20260906/step-0100.nemo",
+      "decision": "/home/nathanroll/parakeet-ft/gabor_half_20260906/comparison-r4-0100.json",
+      "status": "fail",
+      "primary_wer": 10.091351627523746,
+      "candidate_sha256": "6147cfb10cd9b6da32db788be33e69689fddefbd8e9e5cf088f18765b53b34f5"
+    },
+    {
+      "label": "r4-0200",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r4_20260906/step-0200.nemo",
+      "decision": "/home/nathanroll/parakeet-ft/gabor_half_20260906/comparison-r4-0200.json",
+      "status": "fail",
+      "primary_wer": 10.116074390511683,
+      "candidate_sha256": "c2d8160f157fd61b0bcd6296709e4bac56516efcd855787536ea70764e522cc2"
+    },
+    {
+      "label": "r4-0400",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r4_20260906/step-0400.nemo",
+      "decision": "/home/nathanroll/parakeet-ft/gabor_half_20260906/comparison-r4-0400.json",
+      "status": "fail",
+      "primary_wer": 10.077269269411644,
+      "candidate_sha256": "c8fa3d88c4d95867e95e801bf1254705a7b9aaa5deb268951aad3fbb5318ef77"
+    }
+  ]
+}

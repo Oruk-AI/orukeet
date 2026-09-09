@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "rows": 12006,
+  "roles": {
+    "training_exposed_fit_check": 6118,
+    "nontraining_control": 5888
+  },
+  "manifest_sha256": "de74268f6e85706671c936108d5c3cab2d73ae77f6abb9a589e3d7af556d2a1f",
+  "protocol_sha256": "d7206347f10c4071e0ef1c80923ef2ee2d29122ca7c5a44fcb7c01494829b22e"
+}

@@ -1,0 +1,300 @@
+{
+  "source_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "fits_sha256": "44ef0eb45fdd122a3900c97f1faf4ffedf567f27e9ad535f24687c36a8c7f704",
+  "trainable_parameters": 626897542,
+  "torch": "2.12.0+cu132",
+  "argv": [
+    "/home/nathanroll/parakeet-ft/gabor_half_20260906/train.py",
+    "--config-path=/home/nathanroll/parakeet-ft/Speech/examples/asr/conf/asr_finetune",
+    "--config-name=speech_to_text_finetune",
+    "name=orukeet_gabor_half_r1_20260906",
+    "init_from_nemo_model=/home/nathanroll/parakeet-ft/models/ft/stage3_baseblend_a075_20260905.nemo",
+    "model.tokenizer.update_tokenizer=false",
+    "++seed=20260906",
+    "++gabor_fits=/home/nathanroll/parakeet-ft/gabor_half_20260906/fit-full/fits.json",
+    "++recovery_output=/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r1_20260906",
+    "++export_interval=100",
+    "model.train_ds.manifest_filepath=null",
+    "++model.train_ds.use_lhotse=true",
+    "++model.train_ds.input_cfg=/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/input_cfg_with_accents.yaml",
+    "++model.train_ds.batch_duration=60",
+    "++model.train_ds.quadratic_duration=20",
+    "++model.train_ds.use_bucketing=true",
+    "++model.train_ds.num_buckets=20",
+    "++model.train_ds.bucket_buffer_size=10000",
+    "++model.train_ds.shuffle_buffer_size=10000",
+    "++model.train_ds.seed=20260906",
+    "++model.train_ds.shard_seed=20260906",
+    "++model.train_ds.pretokenize=false",
+    "model.train_ds.batch_size=null",
+    "model.train_ds.max_duration=20",
+    "model.train_ds.min_duration=0.4",
+    "model.train_ds.num_workers=4",
+    "model.train_ds.shuffle=true",
+    "model.validation_ds.manifest_filepath=null",
+    "model.test_ds.manifest_filepath=null",
+    "model.optim.name=adamw",
+    "model.optim.lr=2e-6",
+    "model.optim.betas=[0.9,0.98]",
+    "model.optim.weight_decay=1e-3",
+    "model.optim.sched.name=CosineAnnealing",
+    "model.optim.sched.warmup_steps=25",
+    "++model.optim.sched.max_steps=400",
+    "model.optim.sched.min_lr=5e-7",
+    "model.spec_augment.freq_masks=2",
+    "model.spec_augment.time_masks=2",
+    "trainer.devices=1",
+    "trainer.num_nodes=1",
+    "trainer.strategy=auto",
+    "trainer.precision=bf16-mixed",
+    "trainer.max_epochs=-1",
+    "trainer.max_steps=400",
+    "++trainer.limit_train_batches=1600",
+    "++trainer.limit_val_batches=0",
+    "trainer.check_val_every_n_epoch=1",
+    "++trainer.use_distributed_sampler=false",
+    "trainer.accumulate_grad_batches=4",
+    "trainer.gradient_clip_val=1.0",
+    "trainer.log_every_n_steps=10",
+    "trainer.num_sanity_val_steps=0",
+    "trainer.enable_progress_bar=false",
+    "++trainer.enable_checkpointing=false",
+    "exp_manager.exp_dir=/home/nathanroll/parakeet-ft/runs",
+    "exp_manager.name=orukeet_gabor_half_r1_20260906",
+    "exp_manager.resume_if_exists=false",
+    "exp_manager.resume_ignore_no_checkpoint=true",
+    "++exp_manager.ema.enable=false",
+    "exp_manager.create_checkpoint_callback=false",
+    "exp_manager.create_tensorboard_logger=true"
+  ],
+  "config": {
+    "name": "orukeet_gabor_half_r1_20260906",
+    "init_from_nemo_model": "/home/nathanroll/parakeet-ft/models/ft/stage3_baseblend_a075_20260905.nemo",
+    "model": {
+      "sample_rate": 16000,
+      "train_ds": {
+        "manifest_filepath": null,
+        "sample_rate": 16000,
+        "batch_size": null,
+        "shuffle": true,
+        "num_workers": 4,
+        "pin_memory": true,
+        "max_duration": 20,
+        "min_duration": 0.4,
+        "is_tarred": false,
+        "tarred_audio_filepaths": null,
+        "shuffle_n": 2048,
+        "bucketing_strategy": "fully_randomized",
+        "bucketing_batch_size": null,
+        "use_lhotse": true,
+        "input_cfg": "/home/nathanroll/parakeet-ft/manifests/balanced_global_20260905/input_cfg_with_accents.yaml",
+        "batch_duration": 60,
+        "quadratic_duration": 20,
+        "use_bucketing": true,
+        "num_buckets": 20,
+        "bucket_buffer_size": 10000,
+        "shuffle_buffer_size": 10000,
+        "seed": 20260906,
+        "shard_seed": 20260906,
+        "pretokenize": false
+      },
+      "validation_ds": {
+        "manifest_filepath": null,
+        "sample_rate": 16000,
+        "batch_size": 16,
+        "shuffle": false,
+        "use_start_end_token": false,
+        "num_workers": 8,
+        "pin_memory": true
+      },
+      "test_ds": {
+        "manifest_filepath": null,
+        "sample_rate": 16000,
+        "batch_size": 16,
+        "shuffle": false,
+        "use_start_end_token": false,
+        "num_workers": 8,
+        "pin_memory": true
+      },
+      "char_labels": {
+        "update_labels": false,
+        "labels": null
+      },
+      "tokenizer": {
+        "update_tokenizer": false,
+        "dir": null,
+        "type": "bpe"
+      },
+      "spec_augment": {
+        "_target_": "nemo.collections.asr.modules.SpectrogramAugmentation",
+        "freq_masks": 2,
+        "time_masks": 2,
+        "freq_width": 27,
+        "time_width": 0.05
+      },
+      "optim": {
+        "name": "adamw",
+        "lr": 2e-06,
+        "betas": [
+          0.9,
+          0.98
+        ],
+        "weight_decay": 0.001,
+        "sched": {
+          "name": "CosineAnnealing",
+          "warmup_steps": 25,
+          "warmup_ratio": null,
+          "min_lr": 5e-07,
+          "max_steps": 400
+        }
+      }
+    },
+    "trainer": {
+      "devices": 1,
+      "num_nodes": 1,
+      "max_epochs": -1,
+      "max_steps": 400,
+      "val_check_interval": 1.0,
+      "accelerator": "auto",
+      "strategy": "auto",
+      "accumulate_grad_batches": 4,
+      "gradient_clip_val": 1.0,
+      "precision": "bf16-mixed",
+      "log_every_n_steps": 10,
+      "enable_progress_bar": false,
+      "num_sanity_val_steps": 0,
+      "check_val_every_n_epoch": 1,
+      "sync_batchnorm": true,
+      "enable_checkpointing": false,
+      "logger": false,
+      "benchmark": false,
+      "limit_train_batches": 1600,
+      "limit_val_batches": 0,
+      "use_distributed_sampler": false
+    },
+    "exp_manager": {
+      "exp_dir": "/home/nathanroll/parakeet-ft/runs",
+      "name": "orukeet_gabor_half_r1_20260906",
+      "create_tensorboard_logger": true,
+      "create_checkpoint_callback": false,
+      "checkpoint_callback_params": {
+        "monitor": "val_wer",
+        "mode": "min",
+        "save_top_k": 5,
+        "always_save_nemo": true
+      },
+      "resume_if_exists": false,
+      "resume_ignore_no_checkpoint": true,
+      "create_wandb_logger": false,
+      "wandb_logger_kwargs": {
+        "name": null,
+        "project": null
+      },
+      "ema": {
+        "enable": false
+      }
+    },
+    "seed": 20260906,
+    "gabor_fits": "/home/nathanroll/parakeet-ft/gabor_half_20260906/fit-full/fits.json",
+    "recovery_output": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r1_20260906",
+    "export_interval": 100
+  },
+  "frozen_rows": {
+    "encoder.layers.0.conv.depthwise_conv.weight": {
+      "count": 700,
+      "hash": "b68019b40dae2eb6d4b53fc443d67147aa8db0c78a1cd86ba4b2334e426fbfee"
+    },
+    "encoder.layers.1.conv.depthwise_conv.weight": {
+      "count": 748,
+      "hash": "a1ac405baa890c87172db3c05a64338d6adf863b4404b851ca93989e147e804d"
+    },
+    "encoder.layers.10.conv.depthwise_conv.weight": {
+      "count": 389,
+      "hash": "680ed9b83c9301a3e9f75040ef7f554e5d24ae3fc1cca6f9d445b2b565542d37"
+    },
+    "encoder.layers.11.conv.depthwise_conv.weight": {
+      "count": 291,
+      "hash": "f4174db2e6175c537b9f5f608d5dd55a6bd95ad872683b6ba35609706d4b6acd"
+    },
+    "encoder.layers.12.conv.depthwise_conv.weight": {
+      "count": 194,
+      "hash": "f0a31cc5fee32cfe9a1dbba6a17060df5eeeaa880d8fd367e8a05bc26e54c340"
+    },
+    "encoder.layers.13.conv.depthwise_conv.weight": {
+      "count": 175,
+      "hash": "f64e3e8b04390015e94b85bb234821ae6284de2371bbaf81e28a562cd842cbb3"
+    },
+    "encoder.layers.14.conv.depthwise_conv.weight": {
+      "count": 238,
+      "hash": "9780d589db3a7e482ea272eaccf14a2895b7231d678c4b3a508599be003ba01e"
+    },
+    "encoder.layers.15.conv.depthwise_conv.weight": {
+      "count": 343,
+      "hash": "5043f2c56c23c50a8638c2ae728c0b1ff00d67f5db5e8a779b254c5693a1903b"
+    },
+    "encoder.layers.16.conv.depthwise_conv.weight": {
+      "count": 398,
+      "hash": "8dc6ac9bb13653c464eb76dfc0e961c9d9af3a89225c38544813fdec2d83d141"
+    },
+    "encoder.layers.17.conv.depthwise_conv.weight": {
+      "count": 455,
+      "hash": "d90eba2036f82d879145fa16a159dfd66c00e6fe5acfc8f903b6af58f1c28b8d"
+    },
+    "encoder.layers.18.conv.depthwise_conv.weight": {
+      "count": 439,
+      "hash": "9155d257346ab250897bf184858732a85e0f02688da3f5bb169b32c0ae04332f"
+    },
+    "encoder.layers.19.conv.depthwise_conv.weight": {
+      "count": 501,
+      "hash": "e440a69633a2a0421cd34213407840690a1406a3d164e7f845bf50b2b664caca"
+    },
+    "encoder.layers.2.conv.depthwise_conv.weight": {
+      "count": 707,
+      "hash": "490003ba6fd891228657433c7cb2ddb671b597f6fdb4f28368d0ab42dada85ff"
+    },
+    "encoder.layers.20.conv.depthwise_conv.weight": {
+      "count": 569,
+      "hash": "35963056c18d13e4b00318ed1cf4ae31cf05337526034e4bb416da3966ef958b"
+    },
+    "encoder.layers.21.conv.depthwise_conv.weight": {
+      "count": 560,
+      "hash": "1145e9f639dffffe63e2822503ea7fedc08bceb17fe08e470640a542a61d07b6"
+    },
+    "encoder.layers.22.conv.depthwise_conv.weight": {
+      "count": 635,
+      "hash": "8de4d7ff63f9414ecf9c38ab014fa07e67ac9d51c061b2701cc4c20899a4ff5c"
+    },
+    "encoder.layers.23.conv.depthwise_conv.weight": {
+      "count": 677,
+      "hash": "72297fa745fbdd9d83e6cbfcdb0db56e8f82156cd5234c9d532508fe2cab5b94"
+    },
+    "encoder.layers.3.conv.depthwise_conv.weight": {
+      "count": 677,
+      "hash": "ada45e32ee5aa4e96d3b299767711d0cf5113f1f5e70d44a00702af03fb7e704"
+    },
+    "encoder.layers.4.conv.depthwise_conv.weight": {
+      "count": 713,
+      "hash": "8c5632064911048f68fa831b9f5193d3e08ffc555c46af34658acc2f00548d03"
+    },
+    "encoder.layers.5.conv.depthwise_conv.weight": {
+      "count": 657,
+      "hash": "426833c342611258a556fc9b3eda5eb83e3d9ab2472e2b796824a2755320af6e"
+    },
+    "encoder.layers.6.conv.depthwise_conv.weight": {
+      "count": 583,
+      "hash": "93970ff16e85169fb80f5b0660a1513466b08631b144c1d20a86df5488889d74"
+    },
+    "encoder.layers.7.conv.depthwise_conv.weight": {
+      "count": 573,
+      "hash": "94898d1d72a93f40c68546b719c8417cd73eab247225fbff4920e867d799958b"
+    },
+    "encoder.layers.8.conv.depthwise_conv.weight": {
+      "count": 564,
+      "hash": "0a7b3fb0d99ed152770923ac42ca3a83429c13e0bc83628a1ab40d76b03f341f"
+    },
+    "encoder.layers.9.conv.depthwise_conv.weight": {
+      "count": 502,
+      "hash": "c1aab24f725e6831306ef7a0b7a5416d1ce96fac49d485d039e4e7e9ed4caaf1"
+    }
+  }
+}

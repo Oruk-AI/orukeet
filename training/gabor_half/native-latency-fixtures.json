@@ -1,0 +1,25 @@
+{
+  "scope": "The same four short fixtures used in the R2 paired latency comparison; not representative throughput or accuracy evidence",
+  "fixtures": [
+    {
+      "name": "jfk.wav",
+      "sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "duration_seconds": 11.0
+    },
+    {
+      "name": "fr_fr.source.wav",
+      "sha256": "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "duration_seconds": 9.42
+    },
+    {
+      "name": "es_419.source.wav",
+      "sha256": "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "duration_seconds": 7.68
+    },
+    {
+      "name": "lv_lv.source.wav",
+      "sha256": "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "duration_seconds": 7.14
+    }
+  ]
+}

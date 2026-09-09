@@ -1,0 +1,114 @@
+{
+  "status": "passed",
+  "kind": "real_native_file_transcription",
+  "private_review": true,
+  "started_utc": "2026-09-08T21:29:20.624013+00:00",
+  "ended_utc": "2026-09-08T21:29:20.701225+00:00",
+  "model": {
+    "name": "Orukeet r3",
+    "sha256": "93ce19c6d8244acbfea980eeaf970531d4f216171578ef8e041dcc2d070a45bd",
+    "bytes": 714456704,
+    "format": "Q8_0 GGUF"
+  },
+  "audio": {
+    "file": "demos/fixtures/jfk.wav",
+    "container_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+    "pcm_sha256": "a29462b8ebd467318000e683b9117ade46230d3255ed2024e7db894abd9b38c9",
+    "duration_s": 11.0,
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "encoding": "PCM16",
+    "native_fixture_source": "https://github.com/NVIDIA/NeMo-Speech.cpp/blob/4f9676226f667d14608487df744f375db87127f8/test_files/asr/wav/test/jfk.wav",
+    "upstream_notice": "https://github.com/NVIDIA/NeMo-Speech.cpp/blob/4f9676226f667d14608487df744f375db87127f8/THIRD_PARTY_NOTICES.md#whispercpp-sample-audio",
+    "archive_source": "https://www.jfklibrary.org/asset-viewer/archives/jfkwha-001",
+    "attribution": "John F. Kennedy, Inaugural Address, January 20, 1961. White House Audio Collection, JFK Library; sample via whisper.cpp and NVIDIA NeMo-Speech.cpp.",
+    "rights": "JFK Library identifies the official inaugural recording as Public Domain. The redistributed fixture is retained with upstream MIT notice; see demos/fixtures/SOURCE.md."
+  },
+  "environment": {
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "chip": "Apple M5 Max",
+    "device": "metal",
+    "python": "3.12.13",
+    "orukeet_version": "0.1.0rc1",
+    "packages": {
+      "numpy": "2.5.2",
+      "av": "18.1.0"
+    }
+  },
+  "runtime": {
+    "name": "NVIDIA NeMo-Speech.cpp",
+    "version": "v0.1.0",
+    "files_sha256": {
+      "lib/libggml-base.0.12.0.dylib": "2cff3ca311fb7f4dbc86ab385ee0030ee38ae5e0aebb4445784f50114b224a3c",
+      "lib/libggml-base.0.dylib": "2cff3ca311fb7f4dbc86ab385ee0030ee38ae5e0aebb4445784f50114b224a3c",
+      "lib/libggml-base.dylib": "2cff3ca311fb7f4dbc86ab385ee0030ee38ae5e0aebb4445784f50114b224a3c",
+      "lib/libggml-blas.0.12.0.dylib": "89278408b33a60ca0ef46d4dc6b506ffa4ea45f618097ec194db22a3ae03a35f",
+      "lib/libggml-blas.0.dylib": "89278408b33a60ca0ef46d4dc6b506ffa4ea45f618097ec194db22a3ae03a35f",
+      "lib/libggml-blas.dylib": "89278408b33a60ca0ef46d4dc6b506ffa4ea45f618097ec194db22a3ae03a35f",
+      "lib/libggml-cpu.0.12.0.dylib": "f60a8569814f9fcdda5fb56aac1302840894c50ae0c3ab619505ddd6f71f67b8",
+      "lib/libggml-cpu.0.dylib": "f60a8569814f9fcdda5fb56aac1302840894c50ae0c3ab619505ddd6f71f67b8",
+      "lib/libggml-cpu.dylib": "f60a8569814f9fcdda5fb56aac1302840894c50ae0c3ab619505ddd6f71f67b8",
+      "lib/libggml-metal.0.12.0.dylib": "26bbb62453b8705d3344b50b029f012169e6925030093fc7d24f23f0823d2c25",
+      "lib/libggml-metal.0.dylib": "26bbb62453b8705d3344b50b029f012169e6925030093fc7d24f23f0823d2c25",
+      "lib/libggml-metal.dylib": "26bbb62453b8705d3344b50b029f012169e6925030093fc7d24f23f0823d2c25",
+      "lib/libggml.0.12.0.dylib": "e0566fb0b7bc5a4bc76ee7ee7217ce5622c4e21f4c89d52b082735ca785e7e14",
+      "lib/libggml.0.dylib": "e0566fb0b7bc5a4bc76ee7ee7217ce5622c4e21f4c89d52b082735ca785e7e14",
+      "lib/libggml.dylib": "e0566fb0b7bc5a4bc76ee7ee7217ce5622c4e21f4c89d52b082735ca785e7e14",
+      "lib/libllama.0.0.0.dylib": "3e800f0252059efa40a47c18ddea27585ecd8ad29c94e54991b84c183611d5a7",
+      "lib/libllama.0.dylib": "3e800f0252059efa40a47c18ddea27585ecd8ad29c94e54991b84c183611d5a7",
+      "lib/libllama.dylib": "3e800f0252059efa40a47c18ddea27585ecd8ad29c94e54991b84c183611d5a7",
+      "lib/libnemo_speech_asr.dylib": "3a6b68f2f4cb9620e9131aff2a4570e283100cf48b22825323798b31feefb79f",
+      "lib/libnemo_speech_asr_c.1.dylib": "daf79cec8af12abf94d207236d9fb1558947396568d9be2691419cc04ef9d0bf",
+      "lib/libnemo_speech_asr_c.dylib": "daf79cec8af12abf94d207236d9fb1558947396568d9be2691419cc04ef9d0bf",
+      "lib/libnemo_speech_nmt.dylib": "9cfbc982b76cb2575e0b13b5ebab7a2e74a6f8209f29c21e809ddd69f757aca2",
+      "lib/libnemo_speech_nmt_c.1.dylib": "e297ba67e5ac356debae592151a76649ef6587e00f2785aba072aa7f567e5368",
+      "lib/libnemo_speech_nmt_c.dylib": "e297ba67e5ac356debae592151a76649ef6587e00f2785aba072aa7f567e5368",
+      "lib/libnemo_speech_tts.1.dylib": "4152e9d822e4074626c6bce90fd1465290552ced35d3244e670862d77d530583",
+      "lib/libnemo_speech_tts.dylib": "4152e9d822e4074626c6bce90fd1465290552ced35d3244e670862d77d530583"
+    }
+  },
+  "package_files_sha256": {
+    "__init__.py": "d82cec35d11031b0dad655070944e5542682fd9ef079b9a123e23c4fe5d67639",
+    "audio.py": "6914f603212fda9c52d579c5a82db45ff31f3257fee702f762dffb016d67476d",
+    "cli.py": "96abe4e4361f90839e5ab5bd493947e0544e0374d75c31af949901d9b616d10a",
+    "install.py": "5c2211ad366c80077845796a75b0e9f80d7cadd8b41a80358e0ac6da095ccc2f",
+    "model.py": "0c3c9184d5866aff187ac0862337793fe85b47747b5c9db568abb991e46f475a",
+    "nvidia.py": "1b42809e197447b8488e0c6756405977450140056ac4468c349eaf8cceebdd25",
+    "process.py": "478e1c0ca124ab0e5bd8723400dde6939acf6369cfb67478a62aea63d3ae36a4",
+    "worker.py": "4eac8ae5f2e22001a9b4d7103e33051cf05644d8fe9afa5c278f92e23da767c5"
+  },
+  "timing": {
+    "construction_including_hash_and_model_load_s": 1.0194617499946617,
+    "warmup_calls": 1,
+    "warmup_s": 0.6887591669801623,
+    "measured_calls": 1,
+    "measured_call_s": 0.07697083300445229,
+    "included": [
+      "local file decoding",
+      "resampling/windowing",
+      "temporary PCM write",
+      "worker IPC",
+      "native inference",
+      "result assembly"
+    ],
+    "excluded": [
+      "model hash/loading",
+      "fixture playback",
+      "video rendering",
+      "microphone capture",
+      "GUI/hotkey/paste"
+    ],
+    "interpretation": "One measured warm file transcription after one warmup; wall-clock call duration on the recorded device."
+  },
+  "result": {
+    "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+    "segments": [
+      {
+        "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+        "start": 0.24,
+        "end": 10.8
+      }
+    ],
+    "language": null
+  }
+}

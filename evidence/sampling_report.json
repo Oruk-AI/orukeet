@@ -1,0 +1,1304 @@
+{
+  "cv_bg_train": {
+    "hours": 7.143559999999997,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 5.168859999999998,
+        "probability": 0.6180118008409713,
+        "multiplier": 0.8541156812170438,
+        "manifest_sha256": "855e5d9750a1d095e8273a46ed090cdd3600ce1898b9d3a17a15b6b3c9601fc0"
+      },
+      "sofia accent": {
+        "hours": 1.974699999999999,
+        "probability": 0.38198819915902876,
+        "multiplier": 1.3818583177112838,
+        "manifest_sha256": "206dd381654a6f796b346e376d8b0a3755323ec1a25e8a9a76d12006b064cd3f"
+      }
+    }
+  },
+  "cv_cs_train": {
+    "hours": 27.887013888888852,
+    "excluded_global_heldout_speaker_rows": 645,
+    "accents": {
+      "unknown": {
+        "hours": 26.542673888888853,
+        "probability": 0.8553799981572465,
+        "multiplier": 0.89870349870344,
+        "manifest_sha256": "a8c438b590e7c23a1cbba8e47ab19d4d621a29acc9a58a2f3a48035129b44799"
+      },
+      "moravský ,bez přízvuku,hanácký": {
+        "hours": 0.5507300000000003,
+        "probability": 0.05924585567256773,
+        "multiplier": 3.0,
+        "manifest_sha256": "df585a5ccc65d479fccd2c2cb053a70cd4041ff1d6a790d75bd9f6504d6550e1"
+      },
+      "středočeský kraj / praha": {
+        "hours": 0.7936099999999999,
+        "probability": 0.08537414617018585,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "52397c3f2a3f425b1746b2fa8389d261efa8d65b67f083666d0d7bd903626858"
+      }
+    }
+  },
+  "cv_da_train": {
+    "hours": 3.802000000000006,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 3.204300000000006,
+        "probability": 0.6983767497673518,
+        "multiplier": 0.8286453835831447,
+        "manifest_sha256": "d988ea798aca35ad6ed73ae01fa480d51fa7a87d9b4764925317ef715962730b"
+      },
+      "sjælland/københavn": {
+        "hours": 0.5976999999999997,
+        "probability": 0.3016232502326483,
+        "multiplier": 1.9186407853179372,
+        "manifest_sha256": "ca14d2c6ec6488af8698b2cc54bea42ec8009066575b978d41a9d68956a506d6"
+      }
+    }
+  },
+  "cv_de_train": {
+    "hours": 485.7519938888836,
+    "excluded_global_heldout_speaker_rows": 10072,
+    "accents": {
+      "unknown": {
+        "hours": 221.43744805555082,
+        "probability": 0.3773363821469955,
+        "multiplier": 0.8277366886414774,
+        "manifest_sha256": "d0daf72e6d2da3570312487559e744df35a7c623726d7b9b4f6d9bcc1c9b33b8"
+      },
+      "deutschland deutsch": {
+        "hours": 220.71726916666614,
+        "probability": 0.37672227868101904,
+        "multiplier": 0.8290860008488421,
+        "manifest_sha256": "55f8f21317c9517efff6951abd25262401580f34c968a3ecab78814a6538fae9"
+      },
+      "schweizerdeutsch": {
+        "hours": 5.807649999999991,
+        "probability": 0.0358679948187418,
+        "multiplier": 3.0,
+        "manifest_sha256": "450fd1d2de213d78fe64a2e66549d9eb50951c6d6ddd7e8bfd19ca01a7382795"
+      },
+      "rare_annotated": {
+        "hours": 3.6094233333333254,
+        "probability": 0.02229176644919127,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "89e187848c3420a36cd80847130dca6a20031534020940d471fc35b6cc1767ad"
+      },
+      "österreichisches deutsch": {
+        "hours": 23.80914388888899,
+        "probability": 0.12373000688682578,
+        "multiplier": 2.5243283769312157,
+        "manifest_sha256": "4539b67a746d051145f8a679b372a232be5c540a02996a351fb3cd1ea02efdc1"
+      },
+      "russisch deutsch": {
+        "hours": 0.26127666666666666,
+        "probability": 0.001613642372776965,
+        "multiplier": 3.0,
+        "manifest_sha256": "2ba620c8890f2b447a9759847607d3e93a0b8036e15b9ea5250af8dc20bf88f2"
+      },
+      "amerikanisches deutsch": {
+        "hours": 0.41477999999999987,
+        "probability": 0.0025616775960875296,
+        "multiplier": 3.0,
+        "manifest_sha256": "8122517400971248269137de8b0fb11cee5ec661e552efa8ac6429d235c3b9a6"
+      },
+      "italienisch deutsch": {
+        "hours": 1.5543799999999994,
+        "probability": 0.009599837074609515,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "fdb9794378b073a5bf8ae582984d41ae9c20930d0eac2f48842935952434ce0d"
+      },
+      "französisch deutsch": {
+        "hours": 0.3941027777777779,
+        "probability": 0.002433975255290024,
+        "multiplier": 3.0,
+        "manifest_sha256": "4a7ab721a810b29c235c21559b8bf2f912b85c16ebcb37fa02fafc7755771580"
+      },
+      "deutschland deutsch,hochdeutsch": {
+        "hours": 0.5720000000000002,
+        "probability": 0.0035326669197214616,
+        "multiplier": 3.0,
+        "manifest_sha256": "286022dc9931084ce796c45946e07ae84cdc7823c826cf6304abcae11e078a22"
+      },
+      "deutschland deutsch,schweizerdeutsch": {
+        "hours": 0.7016666666666669,
+        "probability": 0.004333487101406571,
+        "multiplier": 3.0,
+        "manifest_sha256": "be0920f55955438d9995a8bf60bd71bd0974cfbdc0af3997a61d13e907dd2891"
+      },
+      "deutschland deutsch,österreichisches deutsch": {
+        "hours": 0.36269999999999986,
+        "probability": 0.002240031978641562,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "f96152f0c2cf7663c1cb81ba9090a8db06d818e26ff1849fa3ee377477eb0f88"
+      },
+      "deutschland deutsch,berliner deutsch": {
+        "hours": 0.1667200000000001,
+        "probability": 0.001029661239258675,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "9b7a160c105d1140f1de0d9dc590d3367602b96ff3d77c77b9c9b1710c3cf6f7"
+      },
+      "deutschland deutsch,leichter saarländische einschlag mit unschärfe bei ch und sch": {
+        "hours": 0.4593366666666667,
+        "probability": 0.0028368591736861134,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "91868bed7b01062d6f183e45f2f5a9d32a615a3950d521f490f1cf873608ff2b"
+      },
+      "kraichgauer": {
+        "hours": 0.33662,
+        "probability": 0.0020789621302738422,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "1952d67b579c8fa7d9bef516de1ebd347e5ecb459024a6d0bbbec423a3481e56"
+      },
+      "österreichisches deutsch,kärnten,steiermark": {
+        "hours": 0.48714999999999986,
+        "probability": 0.003008634073325715,
+        "multiplier": 3.0,
+        "manifest_sha256": "d26714b4fa6b106aa753ed876958cbfdb148c58dec4e4520a063e35d421e8935"
+      },
+      "deutschland ruhrgebiet": {
+        "hours": 0.35285,
+        "probability": 0.0021791984661253794,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "c6fef63b92137b01145c666e6cece0d71f19cdcf3bbdae78d4afb1882aef7c42"
+      },
+      "deutschland deutsch,brandenburger dialekt,berliner dialekt": {
+        "hours": 0.49842000000000003,
+        "probability": 0.003078237493230018,
+        "multiplier": 3.0,
+        "manifest_sha256": "fbd11b2dd68f6646424e285e6a6f1567e1df2f92ad7c018b4cb3f97637c7c23c"
+      },
+      "deutschland deutsch,ruhrgebiet deutsch,west deutsch": {
+        "hours": 0.5245600000000001,
+        "probability": 0.003239677901064842,
+        "multiplier": 3.0,
+        "manifest_sha256": "b5180ddb54c12ed9a2a11b316883159296fed670b3ae8e2cce4a51caa39c0a99"
+      },
+      "deutschland deutsch,alemanischer akzent,süddeutscher akzent": {
+        "hours": 1.1319166666666678,
+        "probability": 0.006990707280095664,
+        "multiplier": 3.0,
+        "manifest_sha256": "fcdd5b19423571d11520321f10dc9923d6a7d24353dba0237a05e8ef2d175136"
+      },
+      "deutschland deutsch,niederrhein": {
+        "hours": 0.9480699999999996,
+        "probability": 0.00585527189961595,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "ef8facd449327b6d54547b135306a98e8157a71a339aca504fa05868ff0deb57"
+      },
+      "belgisches deutsch,belgien,ostbelgien": {
+        "hours": 1.2045100000000002,
+        "probability": 0.0074390430620169526,
+        "multiplier": 3.0,
+        "manifest_sha256": "a2f2316a42cea35d85dc5aba0abe3b3c51c8b63846dfbdac5ec4cc487083d07e"
+      }
+    }
+  },
+  "cv_el_train": {
+    "hours": 1.8070966666666632,
+    "excluded_global_heldout_speaker_rows": 295,
+    "accents": {
+      "unknown": {
+        "hours": 1.8070966666666632,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "e5548685b8f71b33a52a7a54ad11c974b57f831787c5efb3f3c7764cc6c15713"
+      }
+    }
+  },
+  "cv_en_train": {
+    "hours": 607.202425833322,
+    "excluded_global_heldout_speaker_rows": 24813,
+    "accents": {
+      "unknown": {
+        "hours": 383.3189469444334,
+        "probability": 0.34823072029385294,
+        "multiplier": 0.5516203667927851,
+        "manifest_sha256": "7cb006e2d409dc602514627b003d81b3595d46d09c20ae288f2e6388dedaf894"
+      },
+      "united states english": {
+        "hours": 110.53057166666609,
+        "probability": 0.18699420423649485,
+        "multiplier": 1.027257280199283,
+        "manifest_sha256": "cbb36e08f6beca484eb329e156e0acce8612a6718f3f3280f97dc36327f0fa75"
+      },
+      "canadian english": {
+        "hours": 15.141716944444541,
+        "probability": 0.06921090046278873,
+        "multiplier": 2.775446589663848,
+        "manifest_sha256": "48dae781603c8e900f39e507f625dbad414948c40773eb0c8ec87efedfbdf448"
+      },
+      "england english": {
+        "hours": 31.976506388888787,
+        "probability": 0.10057787240045397,
+        "multiplier": 1.9098749364292968,
+        "manifest_sha256": "115e747b86f9b4fd92e65248e4c02e51cf7556291c31403e93aea23fd4c09c3e"
+      },
+      "india and south asia (india, pakistan, sri lanka)": {
+        "hours": 24.261073333333325,
+        "probability": 0.08760763231560167,
+        "multiplier": 2.192630397372379,
+        "manifest_sha256": "bde06b745e73f3e9e993244b541909d6fbf3dfa9622f258fc90ee631aa82f8ac"
+      },
+      "irish english": {
+        "hours": 3.001894999999994,
+        "probability": 0.014831437782285899,
+        "multiplier": 3.0,
+        "manifest_sha256": "494d0d26d429850d33304f3382db02087bd7946010bcf461a1f9ef7703ecb211"
+      },
+      "australian english": {
+        "hours": 10.568282222222246,
+        "probability": 0.05221462451036019,
+        "multiplier": 3.0,
+        "manifest_sha256": "2943a049d0c37b8a3925a443eb2695e9edf14371582550894341a1db2d82ae4e"
+      },
+      "southern african (south africa, zimbabwe, namibia)": {
+        "hours": 3.842230000000003,
+        "probability": 0.018983273962024823,
+        "multiplier": 3.0,
+        "manifest_sha256": "d337693d823046c09806b09dc01d4f35ffd5c05aee6ae45af5b69e03eefe8cc0"
+      },
+      "welsh english": {
+        "hours": 0.8801663888888887,
+        "probability": 0.004348630793170592,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "455d7e168570e5fda758241fc8df31d8b2d82fb18e92e7912d51253aa851a2f7"
+      },
+      "scottish english": {
+        "hours": 2.397897777777779,
+        "probability": 0.011847273705240462,
+        "multiplier": 3.0,
+        "manifest_sha256": "01c48446ba04871a145bcf0b98b77c9e420898b3ee19727af8e6f61c224afeec"
+      },
+      "filipino": {
+        "hours": 2.4524633333333323,
+        "probability": 0.012116865293979595,
+        "multiplier": 3.0,
+        "manifest_sha256": "f0f119d497435e753f1b8c45e4a6754d60c0ed54c990807ab39e4ae3f086d72c"
+      },
+      "hong kong english": {
+        "hours": 1.733559166666667,
+        "probability": 0.00856498142750766,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "5307a5f50801670ef2d070af34b1f96dbf759433b704de58383fa356370d542c"
+      },
+      "malaysian english": {
+        "hours": 1.3108833333333327,
+        "probability": 0.006476670435897627,
+        "multiplier": 3.0,
+        "manifest_sha256": "df8c6abd065bd1e8788c4e69e93f0a72c22b76d2e14f538350ffa88e105b0c44"
+      },
+      "singaporean english": {
+        "hours": 1.0762100000000003,
+        "probability": 0.005317221840095654,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "0a33dfbf68875b1db6df6fc8e4b4b9c5392ecd4f68148bbaabb5b6b35c1c44cb"
+      },
+      "new zealand english": {
+        "hours": 2.295706666666669,
+        "probability": 0.011342378928325516,
+        "multiplier": 3.0,
+        "manifest_sha256": "fb215924b8af4b6866d51073eaef2f2ed1ce8fd61ae86396fa59af3788038705"
+      },
+      "west indies and bermuda (bahamas, bermuda, jamaica, trinidad)": {
+        "hours": 0.46256333333333327,
+        "probability": 0.002285382832744023,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "6b1161207ca94540512dcbc517562de8376210ed2457f2d2708314ca59361f5f"
+      },
+      "rare_annotated": {
+        "hours": 11.37037333333348,
+        "probability": 0.05617750942477953,
+        "multiplier": 3.0,
+        "manifest_sha256": "87eb66b87505b6dd50c6756f4c5ce3d5085c7a3871bf042b8b73e57049b31d03"
+      },
+      "united states english,england english": {
+        "hours": 0.5813800000000005,
+        "probability": 0.002872419354396273,
+        "multiplier": 3.0,
+        "manifest_sha256": "67c98036d9320459943e675a07bbb3ff7aab30e6e0b8776f658f031783c820bb"
+      }
+    }
+  },
+  "cv_es_train": {
+    "hours": 346.1210247222208,
+    "excluded_global_heldout_speaker_rows": 5940,
+    "accents": {
+      "unknown": {
+        "hours": 95.68501361111018,
+        "probability": 0.18633484188429794,
+        "multiplier": 0.6740282932557123,
+        "manifest_sha256": "230e3accac0ff3c8322ad21a727a836cf729eccecbdf8180e21895df7ec4f2e7"
+      },
+      "españa: sur peninsular (andalucia, extremadura, murcia)": {
+        "hours": 8.911041388888888,
+        "probability": 0.05686386016105222,
+        "multiplier": 2.2086955597743634,
+        "manifest_sha256": "186fc289664ec0e18aba0d32cbd9ccd1e1dd528cb97580b5c153b97a09eb7200"
+      },
+      "españa: islas canarias": {
+        "hours": 2.8774566666666597,
+        "probability": 0.024940322556042015,
+        "multiplier": 3.0,
+        "manifest_sha256": "44ce538a4d1987fab0c90b686966606fb1860be116b7a238951564fda693098a"
+      },
+      "españa: centro-sur peninsular (madrid, toledo, castilla-la mancha)": {
+        "hours": 13.415293333333368,
+        "probability": 0.06977055767607444,
+        "multiplier": 1.8001139683080825,
+        "manifest_sha256": "7d7a45af093cec269163b7d0c4bc66042f33a8b4042b8d7819fd053981c9229e"
+      },
+      "méxico": {
+        "hours": 135.0511927777771,
+        "probability": 0.221371302223942,
+        "multiplier": 0.5673497611822012,
+        "manifest_sha256": "3efe1d3b7d42016245979f8cb2ff14b4f893c4b689b40b5572025d3bf6f80748"
+      },
+      "rioplatense: argentina, uruguay, este de bolivia, paraguay": {
+        "hours": 16.38347,
+        "probability": 0.07710367046447791,
+        "multiplier": 1.6289102022349067,
+        "manifest_sha256": "3e123fcaa92386f9aae426b3a7dc867fdc684774d00d9e65363a658f16926277"
+      },
+      "chileno: chile, cuyo": {
+        "hours": 6.025562777777772,
+        "probability": 0.04675961379121824,
+        "multiplier": 2.685970761224163,
+        "manifest_sha256": "0ec11e6fec4c61608397d048f9e2e72c1b773f892e7c8236692b546050a2cfd5"
+      },
+      "andino-pacífico: colombia, perú, ecuador, oeste de bolivia y venezuela andina": {
+        "hours": 20.624293055555682,
+        "probability": 0.08650906999706486,
+        "multiplier": 1.4518125724112811,
+        "manifest_sha256": "875f88a0b65d6680455a11abae7aa0a9e2320ecce2ec0b622be919752f2cee53"
+      },
+      "caribe: cuba, venezuela, puerto rico, república dominicana, panamá, colombia caribeña, méxico caribeño, costa del golfo de méxico": {
+        "hours": 13.359393333333337,
+        "probability": 0.06962504294674861,
+        "multiplier": 1.8038761648650654,
+        "manifest_sha256": "3f76f6540a0e7d7199c302edcc09af0ac67a390aee3526a531c02857767b62e9"
+      },
+      "américa central": {
+        "hours": 9.575423333333347,
+        "probability": 0.05894556019287357,
+        "multiplier": 2.13069406819431,
+        "manifest_sha256": "1055a6b0c1bced81cada5d25142a26990fb86e9716addac88d7e3f7f62434846"
+      },
+      "españa: norte peninsular (asturias, castilla y león, cantabria, país vasco, navarra, aragón, la rioja, guadalajara, cuenca)": {
+        "hours": 23.01381111111111,
+        "probability": 0.09138320378369366,
+        "multiplier": 1.3743768028382193,
+        "manifest_sha256": "5c5c6d92a479b1f8b7719a9dfc098daed61332797bb2119c80482030a7446392"
+      },
+      "rare_annotated": {
+        "hours": 0.898223333333333,
+        "probability": 0.007785340408496146,
+        "multiplier": 3.0,
+        "manifest_sha256": "277af465c7617058b6e7d1e779326b7a5721cb805ead1457671a1d9721734e85"
+      },
+      "ciudad de méxico": {
+        "hours": 0.3008500000000001,
+        "probability": 0.002607613914018489,
+        "multiplier": 3.0,
+        "manifest_sha256": "41d00951e03b52abea463994743ce85379f2affc424a4947b49c1e8742d36044"
+      }
+    }
+  },
+  "cv_et_train": {
+    "hours": 6.214295277777803,
+    "excluded_global_heldout_speaker_rows": 89,
+    "accents": {
+      "unknown": {
+        "hours": 6.184785277777803,
+        "probability": 0.9857538150276538,
+        "multiplier": 0.9904572273168382,
+        "manifest_sha256": "f376280b3c109068c540b6e15b38b37665e1d47305ccacd0f8204ab6de5ac598"
+      },
+      "rare_annotated": {
+        "hours": 0.02951,
+        "probability": 0.014246184972346186,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "22765926b83497930a72322570685fd7e55905975b235d0c13022c11491b28f5"
+      }
+    }
+  },
+  "cv_fi_train": {
+    "hours": 1.38378,
+    "excluded_global_heldout_speaker_rows": 950,
+    "accents": {
+      "unknown": {
+        "hours": 1.1966400000000001,
+        "probability": 0.716610047836885,
+        "multiplier": 0.8286791783625189,
+        "manifest_sha256": "d11926687601d6f2700c309dbfc6332742a42d1ee5d12fcfdfba7a78c29c1d91"
+      },
+      "rare_annotated": {
+        "hours": 0.18713999999999995,
+        "probability": 0.2833899521631151,
+        "multiplier": 2.09548652348122,
+        "manifest_sha256": "58f16bb1874c3df9a00cfa489a46c6f7baa17cb4ab641506f4b179c50d06c9ae"
+      }
+    }
+  },
+  "cv_fr_train": {
+    "hours": 438.2976238888867,
+    "excluded_global_heldout_speaker_rows": 12540,
+    "accents": {
+      "français de france": {
+        "hours": 212.85191777777737,
+        "probability": 0.38505248165456885,
+        "multiplier": 0.7928873253466016,
+        "manifest_sha256": "1b9cc541785f05c3c537a8943fa4700ba2f317a94a9e0ae923709b10f41bfd31"
+      },
+      "unknown": {
+        "hours": 188.54938611110916,
+        "probability": 0.36240460237456773,
+        "multiplier": 0.8424375140291749,
+        "manifest_sha256": "bae5afb322739bd8c35e7e13c96d10e881d5d46eca17af164860a640ddc66605"
+      },
+      "français de suisse": {
+        "hours": 4.8247308333333425,
+        "probability": 0.03302366180216709,
+        "multiplier": 3.0,
+        "manifest_sha256": "f029c4f45fd8db244fafa1bbcfc6f79b0dfa922916a62cb00dd4da971765646e"
+      },
+      "français de belgique": {
+        "hours": 8.163210000000008,
+        "probability": 0.05587443021641481,
+        "multiplier": 3.0,
+        "manifest_sha256": "ec29d592a94bd6454df8cb620d60440226958036557a613d21616aaffd9180dc"
+      },
+      "rare_annotated": {
+        "hours": 6.08154416666667,
+        "probability": 0.04162612687269605,
+        "multiplier": 3.0,
+        "manifest_sha256": "380a3cfd717426b6097650808a145f9a56c3fdfbd63d3f7fe0c53ccccae1b3d8"
+      },
+      "français de la réunion": {
+        "hours": 1.230003333333332,
+        "probability": 0.008418959626702093,
+        "multiplier": 3.0,
+        "manifest_sha256": "08b3921c50c6a747a1983693cdbc29d4ecf306ed46d7220de10fed1d9a3a1fdf"
+      },
+      "français d’algérie": {
+        "hours": 0.4653233333333337,
+        "probability": 0.0031849819025117393,
+        "multiplier": 3.0,
+        "manifest_sha256": "6d7355deda439c2ce926746cd2fc14b98674008ae4bcd051a6c14f2923015233"
+      },
+      "français du canada": {
+        "hours": 10.31659666666669,
+        "probability": 0.07061363857141555,
+        "multiplier": 3.0,
+        "manifest_sha256": "f27ec9f46a97469e42f9951ecfdf065978813c56309c0228c7fe0d499f478256"
+      },
+      "français des états-unis": {
+        "hours": 0.8090633333333336,
+        "probability": 0.005537766731346279,
+        "multiplier": 3.0,
+        "manifest_sha256": "60b9aa56a1c3a237a053f3aa2272e5deb70a16528c8163289589e53a7af9c730"
+      },
+      "français d’allemagne": {
+        "hours": 0.4976766666666667,
+        "probability": 0.0034064296008561065,
+        "multiplier": 3.0,
+        "manifest_sha256": "c6cd6a19785d492f5fb5d08e09ef311a953622b2e1aafee411ec8e49f9a64a10"
+      },
+      "français du royaume-uni": {
+        "hours": 0.28569833333333333,
+        "probability": 0.001955509118199744,
+        "multiplier": 3.0,
+        "manifest_sha256": "855d8e57517a0cc850fbc309199bee80de738f7921a5e16187d49367f4a131be"
+      },
+      "français du bénin": {
+        "hours": 1.2572833333333338,
+        "probability": 0.008605682062643822,
+        "multiplier": 3.0,
+        "manifest_sha256": "cf860445525534d003de1c27aa34199e8bf4ba98350efcd02001ff2a23d3c37a"
+      },
+      "français de france,sud ouest": {
+        "hours": 0.32242,
+        "probability": 0.002206856590774517,
+        "multiplier": 3.0,
+        "manifest_sha256": "05cbc16ad708ac1fc4cadba11af58a8faa8b3ea6d416dc008569ecd440379354"
+      },
+      "français de france,franche-comté": {
+        "hours": 0.37921999999999995,
+        "probability": 0.0025956335101839593,
+        "multiplier": 3.0,
+        "manifest_sha256": "1126943f78ca8023a7ec5821020af21e90dd13f4406a1961a15153a830315942"
+      },
+      "français de france,du sud de la france région occitanie": {
+        "hours": 0.43683999999999995,
+        "probability": 0.0029900230541341725,
+        "multiplier": 3.0,
+        "manifest_sha256": "ce83d4df8ebb9b05c819bc85e5ac13bb44f27f32a7c9733ca46767ee541b54ac"
+      },
+      "français de france,lorrain": {
+        "hours": 0.4709999999999997,
+        "probability": 0.0032238367789057657,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "50cf81def634b19b2acdb2c9e1b09e96558de9fd3978bfc675b57f53e0e5f15c"
+      },
+      "français de france,français d’haïti": {
+        "hours": 0.6429299999999999,
+        "probability": 0.004400639873167484,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "e16a6722c4bccdeb2676a7289552accf49e65f3754b3df7299f6f7eb4035f713"
+      },
+      "français de france,français d'influence suisse et belge": {
+        "hours": 0.7127799999999993,
+        "probability": 0.004878739658744057,
+        "multiplier": 3.0,
+        "manifest_sha256": "7e0035ebc95fbbb85beeef12e39df651b29b7c89c52bc185dde0b15dac31efa9"
+      }
+    }
+  },
+  "cv_hu_train": {
+    "hours": 52.552110277777054,
+    "excluded_global_heldout_speaker_rows": 2954,
+    "accents": {
+      "unknown": {
+        "hours": 42.697260277777055,
+        "probability": 0.47323698791392094,
+        "multiplier": 0.582463657259983,
+        "manifest_sha256": "28479385323bc67b8ce2859d1ab4926dc5cde81c582319f485967a63be1c4ffd"
+      },
+      "standard, kis pécsi beütéssel": {
+        "hours": 1.2452899999999996,
+        "probability": 0.07108886741661072,
+        "multiplier": 3.0,
+        "manifest_sha256": "49ee709731bca2563c2b5273d8c85d6885c1dfdb5470f7fecabb02e103ab9524"
+      },
+      "rare_annotated": {
+        "hours": 1.3049900000000008,
+        "probability": 0.07449691324109477,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "615019a151ec19f15e485858f95a9b644cbedfc0d9ba5d3e57c79f21ba8c3e52"
+      },
+      "nincs": {
+        "hours": 0.8476399999999994,
+        "probability": 0.04838854208820106,
+        "multiplier": 3.0,
+        "manifest_sha256": "230c6ef5652095a4019fe72b6ec626225caa142604eb59f4bf0df538737b4e48"
+      },
+      "budapesti": {
+        "hours": 2.7176900000000006,
+        "probability": 0.11939293685645432,
+        "multiplier": 2.3087073154289333,
+        "manifest_sha256": "0e6a8f262df025ae529edb88d0e9bcee57a7e88d843dba78dbf13240a234d5d1"
+      },
+      "hajdú-bihar megye": {
+        "hours": 0.4854,
+        "probability": 0.02770963891464868,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "7eb7915c86bd7b789768ce91756007158ed50fcdc0a0e3e54705043b5f603ad1"
+      },
+      "budapesti, enyhe salgótarjáni ízzel": {
+        "hours": 0.6704199999999996,
+        "probability": 0.03827172666081326,
+        "multiplier": 3.0,
+        "manifest_sha256": "1e04b281af2b8dae6dec913f8c5b9badb8a90c6d3f4d8ff24905e06e409aeb67"
+      },
+      "pesti, kissé raccsoló": {
+        "hours": 0.31214,
+        "probability": 0.01781888481833218,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "09e5b6a7c088dd77278a7dab4ec8611a14c2ecec2a7cd6be035261a68f57630e"
+      },
+      "szabolcsi,nyomott t, s hang,sárközi": {
+        "hours": 0.6595499999999999,
+        "probability": 0.03765119972426151,
+        "multiplier": 3.0,
+        "manifest_sha256": "f32aa825d76c512a2d161b4e90cdb4d72b761d56fcfad693d0c8cfaca6d86f57"
+      },
+      "hajdú-bihari": {
+        "hours": 1.6117300000000003,
+        "probability": 0.09194430236566255,
+        "multiplier": 2.9979383130757475,
+        "manifest_sha256": "983274a6fa09953d5e08f78fc4601d16f8b65ab6430af72d7b6b5de5a5283d24"
+      }
+    }
+  },
+  "cv_it_train": {
+    "hours": 246.51618194444657,
+    "excluded_global_heldout_speaker_rows": 4206,
+    "accents": {
+      "unknown": {
+        "hours": 228.50844333333544,
+        "probability": 0.7808532672897404,
+        "multiplier": 0.8423888557602013,
+        "manifest_sha256": "8422034468dbd6c8fb55363f2a57d0222b2029a208591ef3aca6dc9940663cb7"
+      },
+      "rare_annotated": {
+        "hours": 3.926646666666675,
+        "probability": 0.04778566626776121,
+        "multiplier": 3.0,
+        "manifest_sha256": "a277f1fa9d2cab44cb8effc628714fe419231d89bffcdfa2fd5b6454e12a129a"
+      },
+      "piemontese": {
+        "hours": 1.2343799999999987,
+        "probability": 0.015021894184757873,
+        "multiplier": 3.0,
+        "manifest_sha256": "10e8b6de183de5c9ff6fdf1a5f9fa5e63e5b29b167b232387a67cadc842a2bda"
+      },
+      "veneto": {
+        "hours": 2.2079800000000036,
+        "probability": 0.026870203601858246,
+        "multiplier": 3.0,
+        "manifest_sha256": "928545a59f0152a4e54f8359ab24368b3cc9bd25df930ae2598113d337e3a625"
+      },
+      "meridionale": {
+        "hours": 0.3396700000000001,
+        "probability": 0.004133643446699326,
+        "multiplier": 3.0,
+        "manifest_sha256": "38bc95ec46fab69199b07313917b990f949b4236287e99a6f30e45ac382631b4"
+      },
+      "comune,neutrale": {
+        "hours": 0.42640000000000017,
+        "probability": 0.005189111683906711,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "967d432be71b74c76cb7b7769ed52fad404d39249b907dc58d213affcf22ec95"
+      },
+      "romanesco": {
+        "hours": 3.5929566666666717,
+        "probability": 0.04372479694833615,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "0bfd01eafdb86133bc165412f2c608a77ad508ba91c36c187834ffcf63c04eec"
+      },
+      "trentino,lucano": {
+        "hours": 3.295315277777773,
+        "probability": 0.04010262432005846,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "f643fff3707c024a981efa83c457c8bfc44163a59bce2015e1e18d44ca0130f1"
+      },
+      "tendente al siculo, ma non marcato": {
+        "hours": 2.984389999999998,
+        "probability": 0.03631879225688165,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "1592ded36d2fac258477342943391cf71c2e8d293d187c47d1503c10afb01a17"
+      }
+    }
+  },
+  "cv_lt_train": {
+    "hours": 11.745043333333301,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 9.175183333333306,
+        "probability": 0.6539223578649217,
+        "multiplier": 0.8370782523610625,
+        "manifest_sha256": "6ad9d0535dd26eacc02fe4c19aac9b385c0895971098d6dbb24912643c8564fd"
+      },
+      "aukštaitis,kaunietis": {
+        "hours": 2.5698599999999963,
+        "probability": 0.34607764213507825,
+        "multiplier": 1.581680287476483,
+        "manifest_sha256": "44dd03657fbaa9dd619a2ad4917908300451a7438e0e5fb160f5b3933c56a4ed"
+      }
+    }
+  },
+  "cv_lv_train": {
+    "hours": 22.37420000000017,
+    "excluded_global_heldout_speaker_rows": 600,
+    "accents": {
+      "unknown": {
+        "hours": 18.61735000000016,
+        "probability": 0.690029357125749,
+        "multiplier": 0.8292724175139272,
+        "manifest_sha256": "7207dae6bebfba9460ed6be90a3dbd3b780e1636b58239020911db8666ff6042"
+      },
+      "rare_annotated": {
+        "hours": 3.756850000000003,
+        "probability": 0.30997064287425097,
+        "multiplier": 1.8460532514732058,
+        "manifest_sha256": "54f96042bcc335db13fbb3ac287f0ec1aaa24a7962792b8cea14c424c2e528b1"
+      }
+    }
+  },
+  "cv_mt_train": {
+    "hours": 2.3751066666666687,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 2.3751066666666687,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "eefe7bde434f9a2e78284be74c7bc3eadc46e2fb7c9a258cf2fb1d3dd2f719ab"
+      }
+    }
+  },
+  "cv_nl_train": {
+    "hours": 53.44593666666697,
+    "excluded_global_heldout_speaker_rows": 486,
+    "accents": {
+      "nederlands nederlands": {
+        "hours": 46.276370000000306,
+        "probability": 0.6158527049769261,
+        "multiplier": 0.7112663475158512,
+        "manifest_sha256": "e7ce977e201be895cce1f2825afb64c196784f26e9016a9761de535f2d5f4b00"
+      },
+      "surinaams nederlands": {
+        "hours": 0.628286666666666,
+        "probability": 0.03526666604714111,
+        "multiplier": 3.0,
+        "manifest_sha256": "8bb0ac55089880d417af4f33a2191350a3c837b9a15e356bc52e7715c358d48b"
+      },
+      "belgisch nederlands": {
+        "hours": 2.5903066666666663,
+        "probability": 0.14539776987099842,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "65c25ac95aa97b10c2eafad3b2d3b35c65bee8df48429874cbd70bb600afbc34"
+      },
+      "unknown": {
+        "hours": 3.219993333333333,
+        "probability": 0.16245186335914016,
+        "multiplier": 2.6964006138132715,
+        "manifest_sha256": "5a6b635579f0ac92509e6c2e2410e41ff3ec2ec52c83e70d063f626b2e82e835"
+      },
+      "nederlands nederlands,noord-brabants stadsaccent": {
+        "hours": 0.7309800000000007,
+        "probability": 0.04103099574579427,
+        "multiplier": 3.0,
+        "manifest_sha256": "21aa511ea796db6d7d75b57c278490e857cc88be392de4255946334c4efd26b9"
+      }
+    }
+  },
+  "cv_pl_train": {
+    "hours": 30.512571944444304,
+    "excluded_global_heldout_speaker_rows": 3091,
+    "accents": {
+      "unknown": {
+        "hours": 29.722521944444306,
+        "probability": 0.9223221823346965,
+        "multiplier": 0.94683829309796,
+        "manifest_sha256": "7217efa71272df64171ba9e3c0ba8b1dd47bf0e933e40466190ab136b8051554"
+      },
+      "rare_annotated": {
+        "hours": 0.7900499999999997,
+        "probability": 0.07767781766530349,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "410cf2f4898aeab6e7145ff8c527274e788471af796069ba32d4738788be4227"
+      }
+    }
+  },
+  "cv_pt_train": {
+    "hours": 24.130429999998558,
+    "excluded_global_heldout_speaker_rows": 1624,
+    "accents": {
+      "unknown": {
+        "hours": 19.389489999998563,
+        "probability": 0.48324856877705336,
+        "multiplier": 0.6014080701181433,
+        "manifest_sha256": "8b92f484597952e642f1d49d950cb66637f3870cfe2945fdba4c22c2bc178436"
+      },
+      "português do brasil,região sul do brasil": {
+        "hours": 0.7079900000000001,
+        "probability": 0.0880203958238675,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "3c11d0712d9ca71a56a30176dd814d9f7710a083b935de8b71425823dcccea72"
+      },
+      "brasileiro,sulista,catarinense,tubaronense": {
+        "hours": 0.6812899999999997,
+        "probability": 0.08470093570649678,
+        "multiplier": 3.0,
+        "manifest_sha256": "4e0f963f6cd9b990b5e0cada36f4119b37953e523527d339c8a36671b4172284"
+      },
+      "neutro": {
+        "hours": 0.5403900000000001,
+        "probability": 0.06718363493730103,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "88ed126d5ea2cd13887bea0c01506976db6c13bb8b9efd9f77ca4c496daed54a"
+      },
+      "rare_annotated": {
+        "hours": 1.7533200000000018,
+        "probability": 0.14531751976755464,
+        "multiplier": 1.9999624931697468,
+        "manifest_sha256": "4e47f75c7ce8c9f4c30d2ac4ec0b402c83b238c2b54e0b462dc6c470a517b3de"
+      },
+      "carioca": {
+        "hours": 0.26040999999999964,
+        "probability": 0.03237530371402605,
+        "multiplier": 3.0,
+        "manifest_sha256": "5e788551d0decfbbe7c2dce694d9b9bff3c1a1d2700b5058645c3d99b01be4eb"
+      },
+      "paulista": {
+        "hours": 0.25701999999999997,
+        "probability": 0.031953844171034085,
+        "multiplier": 3.0,
+        "manifest_sha256": "0a516745179d29295a1dc83c22b8cab6e80374473dac7459c719c5bcc9991c61"
+      },
+      "paranaense, mesclado com rondoniense,pai e mãe nordestinos, possuo pouquíssimo sotaque dessa região do brasil.": {
+        "hours": 0.2509200000000001,
+        "probability": 0.031195465642346414,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "8c030324408211edc4f942a5dad8837a511ec20bb2e5482357f77c46b2bc5286"
+      },
+      "interior do estado de são paulo": {
+        "hours": 0.28959999999999997,
+        "probability": 0.036004331460320095,
+        "multiplier": 3.0,
+        "manifest_sha256": "a787c67bc26c1c8f00fc835e2ebfa3f818ec7c42f4487e30d6e4a6e626b43f96"
+      }
+    }
+  },
+  "cv_ro_train": {
+    "hours": 5.7011066666666235,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 5.357926666666623,
+        "probability": 0.8194140085082883,
+        "multiplier": 0.8718982093819863,
+        "manifest_sha256": "429036f79fc0359cb2b008646c21a799b92da829a0aae6e45aca900665a59710"
+      },
+      "rare_annotated": {
+        "hours": 0.04499,
+        "probability": 0.02367435094472904,
+        "multiplier": 3.0,
+        "manifest_sha256": "ceebc67366eba5cbd0a12ca793e636feb492bf6d2cff2a6c4ffac032d04944b3"
+      },
+      "bucharest": {
+        "hours": 0.29818999999999984,
+        "probability": 0.15691164054698264,
+        "multiplier": 3.0,
+        "manifest_sha256": "db1712cc432b47cc4f3cfa47c51d8891174524647ec646e244bb05e4edc8ad18"
+      }
+    }
+  },
+  "cv_ru_train": {
+    "hours": 35.402407500000734,
+    "excluded_global_heldout_speaker_rows": 1866,
+    "accents": {
+      "unknown": {
+        "hours": 33.53897083333407,
+        "probability": 0.8420923774746143,
+        "multiplier": 0.8888793173811633,
+        "manifest_sha256": "3bc8d9d8fbac32e935f112c553286d87997000822d2e076cc624e67396ba1512"
+      },
+      "нижегородский": {
+        "hours": 0.2907466666666668,
+        "probability": 0.024637872438477027,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "8d37c5f42dba7ea5b40c1d5f0c7c071479dbe35f3ea1e182962ff0e691584248"
+      },
+      "rare_annotated": {
+        "hours": 1.5726900000000004,
+        "probability": 0.13326975008690872,
+        "multiplier": 3.0,
+        "manifest_sha256": "7e699e991aadefefb2f788280a3c33d7bc6a173b04605a3fdc1b941203819518"
+      }
+    }
+  },
+  "cv_sk_train": {
+    "hours": 8.925249999999977,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 3.8251399999999713,
+        "probability": 0.4143385025955441,
+        "multiplier": 0.9667815348695468,
+        "manifest_sha256": "618f55bfe3402c1be308d6d1b1da9c253b444781b85356b81b38c052835f710a"
+      },
+      "západoslovenský": {
+        "hours": 0.3718899999999997,
+        "probability": 0.1250015405730934,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "890372d5b2734e8885c74f2cdb353664820da9b54b39fc1105d72af28ea74b6f"
+      },
+      "štandardný": {
+        "hours": 4.7282200000000065,
+        "probability": 0.4606599568313624,
+        "multiplier": 0.869567253577266,
+        "manifest_sha256": "9d5cf20764fee07cdef6ebc352796e8c522315af936d159f2edd1caee43e2400"
+      }
+    }
+  },
+  "cv_sl_train": {
+    "hours": 1.4267533333333327,
+    "excluded_global_heldout_speaker_rows": 65,
+    "accents": {
+      "unknown": {
+        "hours": 1.3507933333333324,
+        "probability": 0.8402807306098227,
+        "multiplier": 0.8875327585270878,
+        "manifest_sha256": "4f58ff03e9b69660f31efb857db7b6a7e412686b2ff3358037d6042b0a4f85c8"
+      },
+      "rare_annotated": {
+        "hours": 0.07595999999999997,
+        "probability": 0.15971926939017728,
+        "multiplier": 3.0000000000000004,
+        "manifest_sha256": "f5aecb8f51767540401e26bb9b2e11fd70a5a54b9169e40c6cfc5e2d516d2a46"
+      }
+    }
+  },
+  "cv_sv_train": {
+    "hours": 8.242696666666763,
+    "excluded_global_heldout_speaker_rows": 680,
+    "accents": {
+      "unknown": {
+        "hours": 7.655466666666764,
+        "probability": 0.7862726154749543,
+        "multiplier": 0.8465854465654192,
+        "manifest_sha256": "224d29b6e91a172abf99ca40b30375c32293c46357b29411b37fd6190effb2a1"
+      },
+      "rare_annotated": {
+        "hours": 0.13627000000000003,
+        "probability": 0.04959663281717213,
+        "multiplier": 3.0,
+        "manifest_sha256": "9129200e606f28abb5620f05d5efb64300466290862d54de7ba354d4f29cc5d5"
+      },
+      "skånska": {
+        "hours": 0.45096,
+        "probability": 0.1641307517078736,
+        "multiplier": 3.0,
+        "manifest_sha256": "c3518058a633fb20a9f37fc3c38696d5fb4ccfa939857ba13c628f7fcb045e3a"
+      }
+    }
+  },
+  "cv_uk_train": {
+    "hours": 27.438808611110606,
+    "excluded_global_heldout_speaker_rows": 3702,
+    "accents": {
+      "unknown": {
+        "hours": 23.6062086111106,
+        "probability": 0.5934368772959927,
+        "multiplier": 0.6897846734793299,
+        "manifest_sha256": "49fea55e8ffb1a524303f7690ed508397582110be347d699746bb2aff58e86a2"
+      },
+      "rare_annotated": {
+        "hours": 0.46194000000000013,
+        "probability": 0.05050583717541038,
+        "multiplier": 3.0,
+        "manifest_sha256": "1bcd9bdea5a272c20fd5e13eb8f84780442dac9390206415fe4ab3fd8d1d8f6c"
+      },
+      "львівщина": {
+        "hours": 1.4672500000000008,
+        "probability": 0.14794948897915808,
+        "multiplier": 2.766779834527677,
+        "manifest_sha256": "8e5d73a453a6c86eb9755fbbc144e787005d6855c472b1ed1e05d1d1f1231777"
+      },
+      "проживаю в києві, але дитинство провів в одеській області": {
+        "hours": 0.23863999999999988,
+        "probability": 0.02609151184902785,
+        "multiplier": 3.0,
+        "manifest_sha256": "b17e50d62fc0b855221a445e6bb7881317efad42d1ddc2ad44068ddc37ac64bf"
+      },
+      "вимова типікова для луганської області": {
+        "hours": 0.47495,
+        "probability": 0.05192827502805809,
+        "multiplier": 3.0,
+        "manifest_sha256": "0eb0f4b03946536ff89e6ac9e7cc502f60ab6a42549317d375229bbdd47e8389"
+      },
+      "без акценту,не вимовляю твердої л": {
+        "hours": 1.1898200000000005,
+        "probability": 0.13008800967235307,
+        "multiplier": 2.9999999999999996,
+        "manifest_sha256": "b531c52b19fba4424178b8d8a01bd786eaf64859ced867dd666646c80741cd62"
+      }
+    }
+  },
+  "fleurs_bg_train": {
+    "hours": 8.891250000000007,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 8.891250000000007,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "a59e61a049c29ea57660e571cacdb6fc398205e289b5626d63e513561217d7eb"
+      }
+    }
+  },
+  "fleurs_cs_train": {
+    "hours": 8.17796666666668,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 8.17796666666668,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "47c48a07f15b94ef3415b3322699e0dc7bb1467d721f8faef5860a8bfa16ff60"
+      }
+    }
+  },
+  "fleurs_da_train": {
+    "hours": 7.2623833333333385,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 7.2623833333333385,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "5292e3daf92be9e80088b41fd3e5baa626c0d24e96fe80b74620f12c148f6118"
+      }
+    }
+  },
+  "fleurs_de_train": {
+    "hours": 8.788816666666643,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 8.788816666666643,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "a2dc0b4685c90b6b250efafe8196f4674c832ed6e9efd301a057e101bbbf0899"
+      }
+    }
+  },
+  "fleurs_el_train": {
+    "hours": 9.462766666666646,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 9.462766666666646,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "366f4ae98a3a633f6bbd4050820a015b2394d54e5740b3785ce291e7e57fff77"
+      }
+    }
+  },
+  "fleurs_en_train": {
+    "hours": 7.137916666666669,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 7.137916666666669,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "4b5f3e53006d80a81654e7fb9b54df6dd8c1e11ff922351e38b0728af0c3fc8e"
+      }
+    }
+  },
+  "fleurs_es_train": {
+    "hours": 8.549983333333326,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 8.549983333333326,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "d0d5de7eb09fd9692cc964739843a85e466e4478d70185770e2e68a974c14b86"
+      }
+    }
+  },
+  "fleurs_et_train": {
+    "hours": 7.01689999999999,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 7.01689999999999,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "369ad10b01e5e5efffd7d1bdaf35c37aa02e647f708ee0464662a410c8e5824d"
+      }
+    }
+  },
+  "fleurs_fi_train": {
+    "hours": 8.231555555555556,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 8.231555555555556,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "d33888c64646ef0bc4862032aebb2775e639d11dd0702a9a2b7816f891b893ed"
+      }
+    }
+  },
+  "fleurs_fr_train": {
+    "hours": 9.960416666666667,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 9.960416666666667,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "d93d5cc4f1291d82830d60cd83ad1c7f078608b2b965d6ef75dc5099e3bb2f0d"
+      }
+    }
+  },
+  "fleurs_hr_train": {
+    "hours": 10.865266666666686,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 10.865266666666686,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "d0dfe4c449de5a46239d5ada8caebf529344a1ceed94c5966947407c6301587b"
+      }
+    }
+  },
+  "fleurs_hu_train": {
+    "hours": 8.948961111111128,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 8.948961111111128,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "45ca7420655929e3bd24dd08a81078024fd6033f7265837f2a6f72ad7480f172"
+      }
+    }
+  },
+  "fleurs_it_train": {
+    "hours": 8.798100000000028,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 8.798100000000028,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "6b2862e34cd11413df75ef06f008e2bbdc287c86ce3e44422f8eca80c3ed6c9e"
+      }
+    }
+  },
+  "fleurs_lt_train": {
+    "hours": 8.89821666666668,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 8.89821666666668,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "1fb7aceb1aaf10b830fd624c6480094693a59f040823c51eb306a925e46ce058"
+      }
+    }
+  },
+  "fleurs_lv_train": {
+    "hours": 6.190316666666667,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 6.190316666666667,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "4e89806c907d77c93edf817765b53f7ebc1fc79ce314e7a4b3053c4cb75a4df3"
+      }
+    }
+  },
+  "fleurs_mt_train": {
+    "hours": 9.132133333333325,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 9.132133333333325,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "ee5dbc10cb128ded5a105e87f5778e208ba09792d5c81f1d53e93604d39055e3"
+      }
+    }
+  },
+  "fleurs_nl_train": {
+    "hours": 7.565766666666651,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 7.565766666666651,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "e1fc06a6e3a053ff2b62ea08c0174d85b07eb16c4979919b9b93b2455582f687"
+      }
+    }
+  },
+  "fleurs_pl_train": {
+    "hours": 8.79495,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 8.79495,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "7eb373755c433df3e4f2996114fd35130c767fb38beb14817a1798b449a84a2d"
+      }
+    }
+  },
+  "fleurs_pt_train": {
+    "hours": 8.89815000000001,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 8.89815000000001,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "e0aeda88787ca1cee008485bd7241f9845debae2b4e69709ebc00d4b16dde1ad"
+      }
+    }
+  },
+  "fleurs_ro_train": {
+    "hours": 9.557933333333331,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 9.557933333333331,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "21765f3405dd38ccb7d26e4b7d6eed2d9224f7b903f3fa319f75ad92ea901524"
+      }
+    }
+  },
+  "fleurs_ru_train": {
+    "hours": 7.562766666666664,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 7.562766666666664,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "3bf8720d951c46c192058425dc3a2b039735e0921d2dd8609c11de93f53f1447"
+      }
+    }
+  },
+  "fleurs_sk_train": {
+    "hours": 5.6901333333333355,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 5.6901333333333355,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "d70ff7531e21d559d7ea7c710acdec9d9ceb9006ac111ebb5f5a37d1f227a72d"
+      }
+    }
+  },
+  "fleurs_sl_train": {
+    "hours": 7.316899999999987,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 7.316899999999987,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "9591b92b9c92cf48bc86f5a5ee07c725804234588591b3a0ab227f7c2ce728c1"
+      }
+    }
+  },
+  "fleurs_sv_train": {
+    "hours": 7.241683333333348,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 7.241683333333348,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "87995178540027425f89687353c8ff97abd5f1cb183317c1e91465e08f252942"
+      }
+    }
+  },
+  "fleurs_uk_train": {
+    "hours": 8.45463333333331,
+    "excluded_global_heldout_speaker_rows": 0,
+    "accents": {
+      "unknown": {
+        "hours": 8.45463333333331,
+        "probability": 1.0,
+        "multiplier": 1.0,
+        "manifest_sha256": "527a95bb406333ab5cb876068cdad4d767d2a06437e79a6bf6dd719651e5d36a"
+      }
+    }
+  }
+}

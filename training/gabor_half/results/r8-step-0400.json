@@ -1,0 +1,7 @@
+{
+  "step": 400,
+  "sha256": "36bf8b847e6eb5a5ba9816cabe6bc02638e1ec6791ddbe880b4343c0fdedd515",
+  "frozen_rows_verified": 12288,
+  "frozen_coefficients": 110592,
+  "all_other_parameters_trainable": true
+}

@@ -1,0 +1,1 @@
+Global Gabor selection. (A) Empirical cumulative distribution of relative RMS fit error for all 24,576 original kernels; blue marks the selected half. Every kernel is included. (B) The resulting allocation across all 24 encoder layers. The dashed 512 line denotes half a layer; selection uses a single global ranking. Counts range from 175 to 748 per layer.

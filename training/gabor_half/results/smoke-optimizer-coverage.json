@@ -1,0 +1,6 @@
+{
+  "status": "pass",
+  "parameter_tensors": 651,
+  "trainable_scalar_parameters": 626897542,
+  "frozen_gabor_rows": 12288
+}

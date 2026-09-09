@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "comparison": "exact equality of primary, English, per-set/per-language metrics, sensitivity and bootstrap metadata",
+  "source_evidence_sha256": "bf822a6d8e9407419af44dd69b9c94c2f1138c8f433a80d3ab0a195bdb2b201c",
+  "q8_evidence_sha256": "44c7e408219ab55b94a1bd2f74cf01b20ac91d455c65015d9b171b48ba4df78a",
+  "replicates": 5000
+}

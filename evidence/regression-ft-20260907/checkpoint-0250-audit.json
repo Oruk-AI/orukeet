@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "step": 250,
+  "next_batch": 1000,
+  "seen_rows": 13832,
+  "optimizer_states": 651,
+  "all_optimizer_steps_match": true,
+  "coverage_matches_training_log": true,
+  "configuration_matches_running_job": true
+}

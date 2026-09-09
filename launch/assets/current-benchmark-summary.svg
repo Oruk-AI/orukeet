@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="288pt" viewBox="0 0 518.4 288" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-08T14:29:24.761350</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 288 
+L 518.4 288 
+L 518.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 51.84 218.88 
+L 250.184348 218.88 
+L 250.184348 86.4 
+L 51.84 86.4 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m2da3115102" d="M 0 0 
+L 0 3 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m2da3115102" x="92.846676" y="218.88" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle" x="92.846676" y="232.660273" transform="rotate(-0 92.846676 232.660273)">Parakeet</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m2da3115102" x="209.177672" y="218.88" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle" x="209.177672" y="232.665937" transform="rotate(-0 209.177672 232.665937)">Orukeet</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <path d="M 51.84 218.88 
+L 250.184348 218.88 
+" clip-path="url(#peaa854b6e8)" style="fill: none; stroke: #e5e8ea; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <defs>
+       <path id="m0f0df88238" d="M 0 0 
+L -3 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m0f0df88238" x="51.84" y="218.88" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: 'Arial'; text-anchor: end" x="45.34" y="222.520137" transform="rotate(-0 45.34 222.520137)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_5">
+      <path d="M 51.84 171.565714 
+L 250.184348 171.565714 
+" clip-path="url(#peaa854b6e8)" style="fill: none; stroke: #e5e8ea; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m0f0df88238" x="51.84" y="171.565714" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 10px; font-family: 'Arial'; text-anchor: end" x="45.34" y="175.205851" transform="rotate(-0 45.34 175.205851)">5</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7">
+      <path d="M 51.84 124.251429 
+L 250.184348 124.251429 
+" clip-path="url(#peaa854b6e8)" style="fill: none; stroke: #e5e8ea; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m0f0df88238" x="51.84" y="124.251429" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 10px; font-family: 'Arial'; text-anchor: end" x="45.34" y="127.891565" transform="rotate(-0 45.34 127.891565)">10</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 60.855652 218.88 
+L 124.8377 218.88 
+L 124.8377 114.707148 
+L 60.855652 114.707148 
+z
+" clip-path="url(#peaa854b6e8)" style="fill: #a8afb4"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 177.186648 218.88 
+L 241.168696 218.88 
+L 241.168696 125.711085 
+L 177.186648 125.711085 
+z
+" clip-path="url(#peaa854b6e8)" style="fill: #12617a"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 51.84 218.88 
+L 51.84 86.4 
+" style="fill: none; stroke: #272727; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 51.84 218.88 
+L 250.184348 218.88 
+" style="fill: none; stroke: #272727; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8.5px; font-family: 'Arial'; text-anchor: start; fill: #4d5d65" x="51.84" y="83.088" transform="rotate(-0 51.84 83.088)">20,146 clips · 25 complete splits</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #272727" x="92.846676" y="108.133921" transform="rotate(-0 92.846676 108.133921)">11.01</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #272727" x="209.177672" y="119.137858" transform="rotate(-0 209.177672 119.137858)">9.85</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #12617a" x="151.012174" y="259.9488" transform="rotate(-0 151.012174 259.9488)">10.6% relative WER reduction</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Arial'; text-anchor: start; fill: #272727" x="51.84" y="67.4" transform="rotate(-0 51.84 67.4)">FLEURS: 25 languages</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_7">
+    <path d="M 309.687652 218.88 
+L 508.032 218.88 
+L 508.032 86.4 
+L 309.687652 86.4 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_3">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m2da3115102" x="350.694328" y="218.88" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle" x="350.694328" y="232.660273" transform="rotate(-0 350.694328 232.660273)">Parakeet</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m2da3115102" x="467.025324" y="218.88" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 10px; font-family: 'Arial'; text-anchor: middle" x="467.025324" y="232.665937" transform="rotate(-0 467.025324 232.665937)">Orukeet</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_4">
+     <g id="line2d_11">
+      <path d="M 309.687652 218.88 
+L 508.032 218.88 
+" clip-path="url(#p85c9d0bdd6)" style="fill: none; stroke: #e5e8ea; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m0f0df88238" x="309.687652" y="218.88" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_13">
+      <path d="M 309.687652 171.565714 
+L 508.032 171.565714 
+" clip-path="url(#p85c9d0bdd6)" style="fill: none; stroke: #e5e8ea; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m0f0df88238" x="309.687652" y="171.565714" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_15">
+      <path d="M 309.687652 124.251429 
+L 508.032 124.251429 
+" clip-path="url(#p85c9d0bdd6)" style="fill: none; stroke: #e5e8ea; stroke-width: 0.6; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m0f0df88238" x="309.687652" y="124.251429" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="patch_8">
+    <path d="M 318.703304 218.88 
+L 382.685352 218.88 
+L 382.685352 128.906501 
+L 318.703304 128.906501 
+z
+" clip-path="url(#p85c9d0bdd6)" style="fill: #a8afb4"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 435.0343 218.88 
+L 499.016348 218.88 
+L 499.016348 135.212217 
+L 435.0343 135.212217 
+z
+" clip-path="url(#p85c9d0bdd6)" style="fill: #12617a"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 309.687652 218.88 
+L 309.687652 86.4 
+" style="fill: none; stroke: #272727; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 309.687652 218.88 
+L 508.032 218.88 
+" style="fill: none; stroke: #272727; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8.5px; font-family: 'Arial'; text-anchor: start; fill: #4d5d65" x="309.687652" y="83.088" transform="rotate(-0 309.687652 83.088)">5,120 clips · 20 splits</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #272727" x="350.694328" y="122.333274" transform="rotate(-0 350.694328 122.333274)">9.51</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Arial'; text-anchor: middle; fill: #272727" x="467.025324" y="128.63899" transform="rotate(-0 467.025324 128.63899)">8.84</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Arial'; text-anchor: middle; fill: #12617a" x="408.859826" y="259.9488" transform="rotate(-0 408.859826 259.9488)">7.0% relative WER reduction</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Arial'; text-anchor: start; fill: #272727" x="309.687652" y="67.4" transform="rotate(-0 309.687652 67.4)">English accents/domains</text>
+   </g>
+  </g>
+  <g id="text_18">
+   <text style="font-weight: 700; font-size: 16px; font-family: 'Arial'; text-anchor: start; fill: #272727" x="51.84" y="23.04" transform="rotate(-0 51.84 23.04)">Orukeet improves on Parakeet</text>
+  </g>
+  <g id="text_19">
+   <text style="font-size: 10px; font-family: 'Arial'; text-anchor: start; fill: #4d5d65" x="51.84" y="43.2" transform="rotate(-0 51.84 43.2)">Pooled word error rate (%) · lower is better</text>
+  </g>
+  <g id="text_20">
+   <text style="font-size: 7.5px; font-family: 'Arial'; text-anchor: start; fill: #272727" x="51.84" y="272.16" transform="rotate(-0 51.84 272.16)">r3 vs NVIDIA Parakeet TDT 0.6B v3 · matched NeMo greedy decoding</text>
+  </g>
+  <g id="text_21">
+   <text style="font-size: 7px; font-family: 'Arial'; text-anchor: start; fill: #272727" x="51.84" y="282.24" transform="rotate(-0 51.84 282.24)">Summed edit counts; FP32 weights / BF16 CUDA. Full split scores and protocol: docs/current-checkpoint-benchmarks.md</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="peaa854b6e8">
+   <rect x="51.84" y="86.4" width="198.344348" height="132.48"/>
+  </clipPath>
+  <clipPath id="p85c9d0bdd6">
+   <rect x="309.687652" y="86.4" width="198.344348" height="132.48"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,45 @@
+{
+  "status": "pass",
+  "suites": {
+    "development": {
+      "all_fields_exact": true,
+      "reference_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+      "candidate_sha256": "8ba6d6ba01fa90798e5e4e4b4605d89d1b84f98f20e824a621999184a1f0cd3f",
+      "registry_sha256": "11248b790ec2a756f296cf5fd41e29ffbb16d3ae5df87b527c5c0057d0327765",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.00627916029637,
+        "delta_pp": -0.07595586479189609
+      },
+      "status": "fail",
+      "failures": [
+        "cv_bg_dev_selection: regression 0.655738 pp exceeds 0.5",
+        "fleurs_et_dev_selection: regression 0.512492 pp exceeds 0.5",
+        "fleurs_hu_dev_selection: regression 0.554631 pp exceeds 0.5",
+        "fleurs_uk_dev_selection: regression 0.512528 pp exceeds 0.5"
+      ]
+    },
+    "larger": {
+      "all_fields_exact": true,
+      "reference_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+      "candidate_sha256": "8ba6d6ba01fa90798e5e4e4b4605d89d1b84f98f20e824a621999184a1f0cd3f",
+      "registry_sha256": "9628f7e1b6daced49c5ac330b9e81d440c33784f85002b924a5661a3b25d5d95",
+      "primary": {
+        "reference_wer": 15.371306565215429,
+        "candidate_wer": 15.401262655403656,
+        "delta_pp": 0.02995609018822698,
+        "relative_improvement": -0.0019488317444671388,
+        "paired_delta_95ci": [
+          -0.04592143548597231,
+          0.10493970975488776
+        ]
+      },
+      "status": "fail",
+      "failures": [
+        "Primary WER exceeds original"
+      ],
+      "release_qualified": false
+    }
+  },
+  "scope": "Stored-count statistics, not acoustic ASR inference."
+}

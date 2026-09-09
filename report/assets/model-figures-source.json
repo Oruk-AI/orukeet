@@ -1,0 +1,493 @@
+{
+  "model_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+  "inputs": {
+    "training/gabor_half/fits/fits.npz": "52791beaf3219421e4ad3aa2e2591875b50dbfaa83a6309361c2df71db08de3d",
+    "training/gabor_half/results/full-r15-0100.json": "8c3f166cec92ada017f2973bad18bc9b38edb5aca4a54c1f68e14fd4ffe84b94",
+    "report/make_model_figures.py": "d1619f159c0c11c7497498083843e0ea3f9352b299f4279551e8170de4eebe01"
+  },
+  "style": "academic-figures: final-size typography, restrained blue/gray/teal, vector export",
+  "design_precedent": {
+    "repository": "https://github.com/Nathan-Roll1/gabormer",
+    "manuscripts": [
+      "interspeech/paper/gabormer_interspeech/gabormer_interspeech.tex",
+      "colm/paper/gabormer_unified/gabormer_unified.tex"
+    ],
+    "adapted_ideas": [
+      "original/fitted kernel small multiples",
+      "fit distribution",
+      "layer-depth profile"
+    ],
+    "data": "All plotted measurements are Orukeet data. No Gabormer values or artwork copied."
+  },
+  "figures": {
+    "kernel-fits": {
+      "size_inches": [
+        5.5,
+        1.9
+      ],
+      "caption": "Four exact kernel replacements. Examples are ranks 1,537, 4,609, 7,680 and 10,752 of the selected 12,288, nearest the 12.5th, 37.5th, 62.5th and 87.5th fit-error percentiles. Each pair is divided by the original kernel L2 norm. Markers are the nine stored taps; connecting lines guide the eye. RMS percentages are relative to the original norm.",
+      "examples": [
+        {
+          "rank": 1537,
+          "layer_zero_based": 2,
+          "channel": 119,
+          "relative_rms_percent": 2.743456382851213
+        },
+        {
+          "rank": 4609,
+          "layer_zero_based": 22,
+          "channel": 341,
+          "relative_rms_percent": 5.048379586990088
+        },
+        {
+          "rank": 7680,
+          "layer_zero_based": 18,
+          "channel": 248,
+          "relative_rms_percent": 7.727121376538521
+        },
+        {
+          "rank": 10752,
+          "layer_zero_based": 6,
+          "channel": 1017,
+          "relative_rms_percent": 11.204069140642124
+        }
+      ],
+      "unit": "one temporal depthwise kernel",
+      "uncertainty": "Exact weights; no sampling interval.",
+      "sha256": {
+        "pdf": "b952a1d8e84032cd20cc452dfbea40c6d2c34cea7de4257b7a375ccac73b9e01",
+        "svg": "4f2b63601bb7b9543cee0dec0aaaecc06c1741798eda0c6aa5e2b4f39ed1191b",
+        "png": "53daf3dc1431660b7696c83d94e56543f8236563a81a4dd9fb75e3cab997fa52"
+      }
+    },
+    "selection-profile": {
+      "size_inches": [
+        5.5,
+        2.15
+      ],
+      "caption": "Global Gabor selection. (A) Empirical cumulative distribution of relative RMS fit error for all 24,576 original kernels; blue marks the selected half. Every kernel is included. (B) The resulting allocation across all 24 encoder layers. The dashed 512 line denotes half a layer; selection uses a single global ranking. Counts range from 175 to 748 per layer.",
+      "selected_count": 12288,
+      "total_count": 24576,
+      "cutoff_percent": 13.296859709168707,
+      "layer_counts": [
+        700,
+        748,
+        707,
+        677,
+        713,
+        657,
+        583,
+        573,
+        564,
+        502,
+        389,
+        291,
+        194,
+        175,
+        238,
+        343,
+        398,
+        455,
+        439,
+        501,
+        569,
+        560,
+        635,
+        677
+      ],
+      "uncertainty": "Complete kernel population; no sampling interval.",
+      "sha256": {
+        "pdf": "0a2e8647a8a1a895e7a1e6d9f15779eac14c87f56e30eeeb85bc05ce720ba32f",
+        "svg": "9ddb7db5f54eb4f97294e31998ce06d99fdf18e9cbf88a906bef70bc99f4e19a",
+        "png": "6202432a630ef22fb54bf57c494437dcb8f526c26a9a7b6ecf1bcbdf2510a75d"
+      }
+    },
+    "recognition-deltas": {
+      "size_inches": [
+        5.5,
+        1.75
+      ],
+      "caption": "Orukeet minus the pre-Gabor adaptation baseline under matched NeMo decoding. Points are macro WER differences; bars are 95% paired global-cluster bootstrap intervals (5,000 replicates, seed 20260905; 4,266 speaker or parallel-sentence clusters). Negative values mean lower WER. The primary endpoint uses 13,246 recordings and 20 fixed languages; English averages seven corpus WERs. Both systems were selected during the same adaptive campaign; intervals condition on those selections.",
+      "data": {
+        "primary": {
+          "reference_wer": 15.371306565215429,
+          "candidate_wer": 15.34088687521396,
+          "delta_pp": -0.03041969000146949,
+          "relative_improvement": 0.001978991823005316,
+          "paired_delta_95ci": [
+            -0.1410351508899022,
+            0.061823155508115304
+          ]
+        },
+        "english": {
+          "reference_wer": 9.360330471804506,
+          "candidate_wer": 9.359237881128971,
+          "delta_pp": -0.0010925906755350212,
+          "relative_improvement": 0.0001167256518160853,
+          "paired_delta_95ci": [
+            -0.049291283437256965,
+            0.04707342853436239
+          ]
+        }
+      },
+      "independent_unit": "Source-qualified speakers; shared parallel sentence IDs for FLEURS",
+      "replicates": 5000,
+      "sha256": {
+        "pdf": "62f0471788cb59e27fc317a004b34fe457a354ae511e01f0fc6d1efb8da87a0a",
+        "svg": "ab94addc78953dd3038cd30436aeb73f6580f1b62903180f6ba81551a3317595",
+        "png": "83890bae2503e59e918bf424cd841094302d5366e3a285523105db49f3e1fffc"
+      }
+    },
+    "language-deltas": {
+      "size_inches": [
+        5.5,
+        5.4
+      ],
+      "caption": "Per-language Orukeet WER change under matched NeMo decoding, with the same paired bootstrap as the macro comparison. All 20 primary languages and complete 95% intervals are shown, alphabetically. Languages share a scale. These marginal intervals are not adjusted for simultaneous inference.",
+      "data": {
+        "cs": {
+          "reference_wer": 11.087057368176898,
+          "candidate_wer": 11.264883253440544,
+          "delta_pp": 0.17782588526364584,
+          "paired_delta_95ci": [
+            0.046487744040169324,
+            0.33100222230040766
+          ],
+          "rows": 618
+        },
+        "da": {
+          "reference_wer": 24.8955459203784,
+          "candidate_wer": 24.666929444225463,
+          "delta_pp": -0.22861647615293634,
+          "paired_delta_95ci": [
+            -0.7915456521772453,
+            0.29458933204624366
+          ],
+          "rows": 635
+        },
+        "de": {
+          "reference_wer": 8.289022805151838,
+          "candidate_wer": 8.336287368545433,
+          "delta_pp": 0.04726456339359508,
+          "paired_delta_95ci": [
+            -0.03600124236927005,
+            0.139001899016581
+          ],
+          "rows": 1036
+        },
+        "en": {
+          "reference_wer": 6.186561104344295,
+          "candidate_wer": 6.227161997563947,
+          "delta_pp": 0.040600893219651546,
+          "paired_delta_95ci": [
+            -0.0250543055072794,
+            0.11067552841084288
+          ],
+          "rows": 1025
+        },
+        "es": {
+          "reference_wer": 5.858259898225146,
+          "candidate_wer": 5.862397087418808,
+          "delta_pp": 0.004137189193661683,
+          "paired_delta_95ci": [
+            -0.04850969273685689,
+            0.06322720898780393
+          ],
+          "rows": 1033
+        },
+        "fi": {
+          "reference_wer": 14.380776340110906,
+          "candidate_wer": 14.4547134935305,
+          "delta_pp": 0.07393715341959428,
+          "paired_delta_95ci": [
+            -0.13470003939532066,
+            0.24753818405096303
+          ],
+          "rows": 488
+        },
+        "fr": {
+          "reference_wer": 8.541712768311573,
+          "candidate_wer": 8.577118831599911,
+          "delta_pp": 0.035406063288338174,
+          "paired_delta_95ci": [
+            -0.0435854680347276,
+            0.12346240094497965
+          ],
+          "rows": 1016
+        },
+        "hr": {
+          "reference_wer": 18.61632214123551,
+          "candidate_wer": 18.610347711793523,
+          "delta_pp": -0.005974429441987894,
+          "paired_delta_95ci": [
+            -0.13763448381403434,
+            0.1381570654452181
+          ],
+          "rows": 642
+        },
+        "hu": {
+          "reference_wer": 16.10576923076923,
+          "candidate_wer": 16.158353365384617,
+          "delta_pp": 0.0525841346153868,
+          "paired_delta_95ci": [
+            -0.12125307165865014,
+            0.22175088328334605
+          ],
+          "rows": 638
+        },
+        "it": {
+          "reference_wer": 12.261909723669403,
+          "candidate_wer": 12.207727253782354,
+          "delta_pp": -0.05418246988704922,
+          "paired_delta_95ci": [
+            -0.23291848494299147,
+            0.11870121558172134
+          ],
+          "rows": 1026
+        },
+        "lt": {
+          "reference_wer": 28.081740276862227,
+          "candidate_wer": 27.620303230059328,
+          "delta_pp": -0.46143704680289943,
+          "paired_delta_95ci": [
+            -2.2434471825746565,
+            0.7894996879550652
+          ],
+          "rows": 84
+        },
+        "lv": {
+          "reference_wer": 20.553359683794465,
+          "candidate_wer": 20.41219649915302,
+          "delta_pp": -0.14116318464144584,
+          "paired_delta_95ci": [
+            -0.6161541697404739,
+            0.31487300593951373
+          ],
+          "rows": 427
+        },
+        "nl": {
+          "reference_wer": 10.70418449488723,
+          "candidate_wer": 10.725940967437813,
+          "delta_pp": 0.02175647255058344,
+          "paired_delta_95ci": [
+            -0.1126701201667522,
+            0.14785415081655787
+          ],
+          "rows": 673
+        },
+        "pl": {
+          "reference_wer": 5.455712451861361,
+          "candidate_wer": 5.500641848523748,
+          "delta_pp": 0.044929396662387155,
+          "paired_delta_95ci": [
+            -0.02018927584315764,
+            0.11494302426300214
+          ],
+          "rows": 1022
+        },
+        "pt": {
+          "reference_wer": 5.565978736710444,
+          "candidate_wer": 5.628517823639775,
+          "delta_pp": 0.06253908692933052,
+          "paired_delta_95ci": [
+            -0.12005252957810716,
+            0.27689221214989074
+          ],
+          "rows": 420
+        },
+        "ro": {
+          "reference_wer": 14.169147645826442,
+          "candidate_wer": 14.147094497739552,
+          "delta_pp": -0.022053148086889962,
+          "paired_delta_95ci": [
+            -0.15623518789188579,
+            0.11505959003916987
+          ],
+          "rows": 639
+        },
+        "ru": {
+          "reference_wer": 5.169561621174524,
+          "candidate_wer": 5.128205128205129,
+          "delta_pp": -0.041356492969395475,
+          "paired_delta_95ci": [
+            -0.31518400268930596,
+            0.1880351838474757
+          ],
+          "rows": 253
+        },
+        "sk": {
+          "reference_wer": 12.654815678274806,
+          "candidate_wer": 12.771382777211132,
+          "delta_pp": 0.11656709893632566,
+          "paired_delta_95ci": [
+            -0.050326789526338414,
+            0.29991279359415846
+          ],
+          "rows": 615
+        },
+        "sl": {
+          "reference_wer": 51.75879396984924,
+          "candidate_wer": 51.433638782146026,
+          "delta_pp": -0.32515518770321705,
+          "paired_delta_95ci": [
+            -1.2045514631636953,
+            0.516073698562175
+          ],
+          "rows": 328
+        },
+        "sv": {
+          "reference_wer": 27.08989944469458,
+          "candidate_wer": 27.083896142878583,
+          "delta_pp": -0.00600330181599773,
+          "paired_delta_95ci": [
+            -0.11988722473512176,
+            0.1147547081474553
+          ],
+          "rows": 628
+        }
+      },
+      "independent_unit": "Source-qualified speakers; shared parallel sentence IDs for FLEURS",
+      "sha256": {
+        "pdf": "7564f39e28ee6deae1d7ad4b82e3737b1dc703044b5992c5f9108cbf2e9ff1c0",
+        "svg": "cff05741bbe01c83ad5f839f99a40c2f189357e71bc6fddd8cd62c920116d693",
+        "png": "64e77e3423cd60952f31a4e80bb486a05a3325cd5a0b3d92bcf9581cf9de201b"
+      }
+    },
+    "kernel-atlas": {
+      "size_inches": [
+        7.0,
+        8.0
+      ],
+      "caption": "Layer atlas: the median selected fit-error row within each of the 24 layers. Original (gray circles) and frozen Gabor (blue crosses) taps share the original L2 normalization and common axes. All plotted samples come from the recorded fits; lines join discrete samples.",
+      "examples": [
+        {
+          "layer": 1,
+          "channel": 411,
+          "error_percent": 4.808574908575614
+        },
+        {
+          "layer": 2,
+          "channel": 235,
+          "error_percent": 3.6974837759188737
+        },
+        {
+          "layer": 3,
+          "channel": 69,
+          "error_percent": 4.28624639462823
+        },
+        {
+          "layer": 4,
+          "channel": 467,
+          "error_percent": 4.232227242800408
+        },
+        {
+          "layer": 5,
+          "channel": 7,
+          "error_percent": 4.896815610397718
+        },
+        {
+          "layer": 6,
+          "channel": 813,
+          "error_percent": 5.377686527351617
+        },
+        {
+          "layer": 7,
+          "channel": 510,
+          "error_percent": 5.511299263585478
+        },
+        {
+          "layer": 8,
+          "channel": 393,
+          "error_percent": 6.0199091632068935
+        },
+        {
+          "layer": 9,
+          "channel": 558,
+          "error_percent": 6.149495255970944
+        },
+        {
+          "layer": 10,
+          "channel": 478,
+          "error_percent": 7.336905281121791
+        },
+        {
+          "layer": 11,
+          "channel": 278,
+          "error_percent": 8.230807419395926
+        },
+        {
+          "layer": 12,
+          "channel": 144,
+          "error_percent": 8.348349271273877
+        },
+        {
+          "layer": 13,
+          "channel": 506,
+          "error_percent": 9.11105552284122
+        },
+        {
+          "layer": 14,
+          "channel": 681,
+          "error_percent": 9.599238530957573
+        },
+        {
+          "layer": 15,
+          "channel": 397,
+          "error_percent": 8.89095050720063
+        },
+        {
+          "layer": 16,
+          "channel": 969,
+          "error_percent": 8.75968011197192
+        },
+        {
+          "layer": 17,
+          "channel": 240,
+          "error_percent": 7.399901656916065
+        },
+        {
+          "layer": 18,
+          "channel": 561,
+          "error_percent": 6.485497128070223
+        },
+        {
+          "layer": 19,
+          "channel": 574,
+          "error_percent": 6.089518105141542
+        },
+        {
+          "layer": 20,
+          "channel": 80,
+          "error_percent": 6.612476904613199
+        },
+        {
+          "layer": 21,
+          "channel": 930,
+          "error_percent": 7.520982070424001
+        },
+        {
+          "layer": 22,
+          "channel": 851,
+          "error_percent": 7.041443182039135
+        },
+        {
+          "layer": 23,
+          "channel": 819,
+          "error_percent": 7.0331814150216525
+        },
+        {
+          "layer": 24,
+          "channel": 52,
+          "error_percent": 8.028077650199089
+        }
+      ],
+      "unit": "one selected kernel per layer",
+      "selection_rule": "lower median by global fit-error order within layer",
+      "sha256": {
+        "pdf": "73a8c7e2f1ea83f7bcc9eefcdbd1a53b6e95383a0b3799f45f75390d676be9b5",
+        "svg": "41b88f335fa6200353201a77a1c86d0d471fbee61a1a64a7a6c0bffaf2abda88",
+        "png": "2b8b24400ac7b9e8b6e4484eb0c6c36cca8f618167141d508a2b6468824888c3"
+      }
+    }
+  }
+}

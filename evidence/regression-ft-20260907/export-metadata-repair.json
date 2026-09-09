@@ -1,0 +1,30 @@
+{
+  "status": "pass",
+  "source_sha256": "41aed082b5d619b3518e94159b44027fd5d65dc9efce3b07875d716cb2da6eba",
+  "candidate_sha256": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+  "parent_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+  "script_sha256": "6231c0cac133cc038f53257fef2e09b8d9f61c3b3fc5e5fe7c42cbbe09699186",
+  "source_path": "/dev/shm/orukeet-regression-ft-20260907/checkpoints/orukeet-regression-ft.training-export.nemo",
+  "candidate_path": "/dev/shm/orukeet-regression-ft-20260907/checkpoints/orukeet-regression-ft.nemo",
+  "change": "Restore parent validation_ds metadata required by NeMo transcribe; manifest remains null.",
+  "all_non_config_members_byte_identical": true,
+  "all_other_config_values_equal": true,
+  "non_config_members": {
+    "./0ee587b5d4b94f48993dcccf9868ea77_tokenizer.vocab": {
+      "bytes": 101024,
+      "sha256": "41130ff456706304a1adec782ccc9e003c4d417e8e324353d281be958cac4e17"
+    },
+    "./902810505b78491d95378fa3000d1bc6_tokenizer.model": {
+      "bytes": 360916,
+      "sha256": "eacec2b0a77f336d4a2ca4a25a7047575d3c2b74de47e997f4c205126ed3135e"
+    },
+    "./ddbad8f2a94d4186963950e53809d27f_vocab.txt": {
+      "bytes": 46772,
+      "sha256": "3cde1409fd78783a79b29ed4d32da57c746993856f7c8263bcb905d2e5839db7"
+    },
+    "./model_weights.ckpt": {
+      "bytes": 2508655643,
+      "sha256": "322f272298da10c44f342334accde8bc9ca1a7d177ca2f420595d045197c48b3"
+    }
+  }
+}

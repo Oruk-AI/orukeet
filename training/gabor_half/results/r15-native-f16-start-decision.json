@@ -1,0 +1,24 @@
+{
+  "label": "r15-0100-f16",
+  "source_label": "r15-0100",
+  "source_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+  "prior_native_q8_development_sha256": "3b4d202e152c9cb2334f272a67cf743f30d089bf650f073c67c56ea2eaf70a4b",
+  "prior_native_q8_failures": [
+    "cv_lv_dev_selection: regression 0.501253 pp exceeds 0.5",
+    "cv_uk_dev_selection: regression 0.554017 pp exceeds 0.5",
+    "fleurs_lt_dev_selection: regression 0.500939 pp exceeds 0.5"
+  ],
+  "intervention": "Export the exact source-qualified checkpoint with the pinned converter in F16 instead of Q8. No source weights, fitted kernels, training, decoder settings, fixtures or gates change.",
+  "rationale": "Q8 improves the development mean but fails three language guards. Higher precision tests whether the same source model can preserve deployed recognition without another training run. This does not isolate all runtime differences from NeMo.",
+  "reference": "Original canonical pre-surgery Q8, unchanged",
+  "order": [
+    "F16 export and all-row exact F16 audit",
+    "paired full 5100-clip native development",
+    "only after development pass: paired 23038-clip larger native regression",
+    "only after all accuracy gates: matched short-fixture latency"
+  ],
+  "stopping_rule": "Stop on either native accuracy failure and preserve it. Do not promote on source or mean-only results.",
+  "size_speed_tradeoff": "F16 is larger and may be slower; deployment requires measured latency as well as accuracy.",
+  "default_changed": false,
+  "no_gate_changes": true
+}

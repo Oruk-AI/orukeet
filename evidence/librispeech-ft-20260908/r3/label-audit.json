@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "rows": 2939,
+  "all_original_normalized_words_preserved": true,
+  "methods": {
+    "native_lexically_exact": 1865,
+    "aligned_word_correction": 1074
+  },
+  "source_manifest_sha256": "8770c5a110b60d3adabf4a8e4826adb516664bd44a8c2352e1da57086f85e500",
+  "formatting_predictions_sha256": "434dfaf964ef74b6446513f641fa6a4c8c818dcf770de156a5ec206ab765c88b",
+  "targets_sha256": "980ba08a2a64630df97c58ea7e308792de130c0a6b7bc36a55f3a1ff65feebc1",
+  "script_sha256": "2e1c36b1c1d4719a079f6819e33242096fa5e0fc1530d913460e0feb495c2072",
+  "scorer_sha256": "3b2bd425a79a94b9afa294ba55efc6b9fb5943d7021ce27394dadf6c58082bd0",
+  "transformation": "Preserve native casing and punctuation where aligned; correct reference words; fall back to the reference if normalized words differ."
+}

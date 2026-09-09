@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "publication_authorized": false,
+  "checked_at_utc": "2026-09-08T21:30:30.135Z",
+  "scope": "Paired recognition through actual OpenWhispr ParakeetManager: original encoded audio, app FFmpeg normalization, segmentation, native/stock worker IPC and results. Real Electron, no mocked recognition. Separate managers keep both models warm; calls run sequentially with alternating first model. This measures file transcription, not physical microphone or paste.",
+  "base": "OpenWhispr/openwhispr v1.9.2",
+  "electron": "41.10.5",
+  "node": "24.18.0",
+  "hardware": {
+    "cpu": "Apple M5 Max",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "manifest_sha256": "b83e4cda874908919e9d0437542fd445a2bc82766f9016b1e1f46e08969e371d",
+  "harness_sha256": "0e0d6d40569e032fe138feb8abd56b31dafb4ab7d0ab8c813e357cb1f7041094",
+  "app_inputs_sha256": {
+    "src/helpers/parakeet.js": "c187c29249d7f56a83f2cb6751c1d65a4c4dd07f5619f6f4a625773ec763f96f",
+    "src/helpers/parakeetServer.js": "b0dabb9855199b728cd62c136477c18bb959e6c8ca23b03c4f3d514ae653f5c1",
+    "src/helpers/parakeetWsServer.js": "93bd75672599e9c68a98be40715051b80684e12102c40801befeeca053e1db55",
+    "src/helpers/orukeetNative.js": "e79d20d00feb3ff582f1899de49b455e47eecc723b820e7af469abc58ca70822",
+    "src/helpers/orukeetRuntime.js": "db848ca271a056da6702959f7a536f9f868131ff15eb8876bd0b69c64ce90c49",
+    "resources/orukeet/sidecar.cpp": "780fb08ad71faca3f662684e63b77aa9c13dd321ef269cca80f4c2df457b2903",
+    "src/models/modelRegistryData.json": "7c24272b0e02c79bbbaf80d9acf18ee6c55cbf880442a7e175d64cc1748a6d05"
+  },
+  "models": {
+    "parakeet-tdt-0.6b-v3": {
+      "name": "Parakeet TDT 0.6B",
+      "files": {
+        "encoder.int8.onnx": {
+          "bytes": 652184281,
+          "sha256": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247"
+        },
+        "decoder.int8.onnx": {
+          "bytes": 11845275,
+          "sha256": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e"
+        },
+        "joiner.int8.onnx": {
+          "bytes": 6355277,
+          "sha256": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3"
+        },
+        "tokens.txt": {
+          "bytes": 93939,
+          "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+        }
+      },
+      "load_and_warm_ms": 1852.5045409999998
+    },
+    "orukeet-v0.1.0rc1-q8": {
+      "name": "Orukeet",
+      "files": {
+        "orukeet-r3-93ce19c6-q8.gguf": {
+          "bytes": 714456704,
+          "sha256": "93ce19c6d8244acbfea980eeaf970531d4f216171578ef8e041dcc2d070a45bd"
+        }
+      },
+      "load_and_warm_ms": 1681.3692499999997
+    }
+  },
+  "raw_run_status": "completed_with_failures",
+  "empty_return_handling": "All empty recognizer outputs retained and scored. The API returns No audio detected for empty text; there were no other runtime errors.",
+  "raw_results_sha256": "a34158a9ce8c3322453a64ecafc3bc4a68b1b684f31bc5ba8e9bd9dd32ba8650"
+}

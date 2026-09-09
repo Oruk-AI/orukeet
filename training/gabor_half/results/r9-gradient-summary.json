@@ -1,0 +1,7 @@
+{
+  "status": "pass",
+  "trainable_parameter_tensors": 651,
+  "all_have_finite_gradients": true,
+  "frozen_rows_equal_r8_provenance": true,
+  "source": "r9-gradient-coverage.json"
+}

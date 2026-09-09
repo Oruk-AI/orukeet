@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-09-07T00:41:14.505262+00:00",
+  "label": "r15-0200",
+  "model_sha256": "f5111f6132144b5993edbd4e228df9f731cac64d54777416c77dc85e96b58b61",
+  "audit_sha256": "c067dbdcc46eb1672cb455fe1fe563f11edb8128ba18abbc2c57784faa081b3f",
+  "development_sha256": "2a0abf9da0b7846c528c05347cce399f96780876833571509ccdf260ffd850f2",
+  "new_training": false,
+  "prior_source_result_sha256": "8c3f166cec92ada017f2973bad18bc9b38edb5aca4a54c1f68e14fd4ffe84b94",
+  "prior_q8_failure_sha256": "3b4d202e152c9cb2334f272a67cf743f30d089bf650f073c67c56ea2eaf70a4b",
+  "prior_f16_failure_sha256": "a73da2576230d3abcf0db1d69af70fa2b2fcb5308a9393cea65bed918f133aaf",
+  "original_r15_selection_sha256": "9aab5cfc5e882d4f115f5b78f02128cbd5db4a420856f2f6ae8701f3ed67baeb",
+  "driver_sha256": "243e60f34936863be158e6ba23b2a322ade5f332e399ae0300659e0176066c9d",
+  "full_regression_sha256": "45329aacb626a1f30a18327f27a375bb3a1202397a6f6a8aceeea8e791c9cb97",
+  "rationale": "R15-100 passed source accuracy but its Q8 and F16 exports failed separate native gates. Evaluate the only other already-trained R15 export, step 200, once on the unchanged larger source regression. This is a new adaptive fallback after native results, not part of the original stop-at-first-source-pass selection. Preserve that original record.",
+  "stopping_rule": "If source accuracy fails, stop this fallback. If it passes, native Q8 qualification may proceed under the same accuracy gates. No training, fitted rows, evaluation membership, decoder, thresholds or defaults change."
+}

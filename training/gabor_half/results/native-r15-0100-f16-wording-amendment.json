@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-09-06T23:48:00.357231+00:00",
+  "before_sha256": "b13f49aa8c803eca733b87129e4beab0a3e757d4624d532e3875cbcba86431ad",
+  "after_sha256": "246283413a3fbeeba235d105ac9f96ba3da24fb31907622b3592daea0b319120",
+  "changed": "Scope strings label original Q8 and actual candidate precision instead of calling both files Q8. No decoding, model, metric, membership or acceptance code changes.",
+  "before_larger_phase": true
+}

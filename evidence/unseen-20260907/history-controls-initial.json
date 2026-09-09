@@ -1,0 +1,30 @@
+{
+  "method": "Feed known historical audio through the new audio-preparation fingerprint path, without ASR inference.",
+  "controls": [
+    {
+      "source": "english_dialects",
+      "stored_pcm_in_index": true,
+      "decoded_pcm_matches_stored": false,
+      "pcm_overlap_detected": false,
+      "source_row_id_found": true,
+      "initial_probe_audio_sha256": "faf1065620af07fa0d8e96db4d018c8563a5897847d93109a8aff8e44d352710"
+    },
+    {
+      "source": "speechocean762",
+      "stored_pcm_in_index": true,
+      "decoded_pcm_matches_stored": false,
+      "pcm_overlap_detected": false,
+      "source_row_id_found": true,
+      "initial_probe_audio_sha256": "86807ba12555ea1b05c793c408caf0974d665c6fb68d4c1aaa80a74dde48241e"
+    },
+    {
+      "source": "english_dialects",
+      "stored_pcm_in_index": true,
+      "decoded_pcm_matches_stored": false,
+      "pcm_overlap_detected": false,
+      "source_row_id_found": true,
+      "initial_probe_audio_sha256": "faf1065620af07fa0d8e96db4d018c8563a5897847d93109a8aff8e44d352710"
+    }
+  ],
+  "field_label_correction": "source_row_id_found names the original source-row-ID lookup. initial_probe_audio_sha256 retains the probe hash; the repaired receipt separately fingerprints the stored historical WAV file. Original values are unchanged."
+}

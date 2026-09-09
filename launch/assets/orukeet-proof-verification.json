@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "video_sha256": "eb3a1ef76ad6323f2927af85b5665edaa2d21b4f4bcbeda19e56e99a6dbe8176",
+  "receipt_sha256": "3b073e5afa28caeef717076ae07801189bc6c10df167f4ff8870e98f34b6f937",
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "duration_s": 28.0,
+  "bytes": 644895,
+  "codecs": [
+    "h264",
+    "aac",
+    "mov_text"
+  ],
+  "decoded_audio_correlation_at_expected_3s_offset": 0.9999898668690428,
+  "before_audio_rms": 2.919411379309622e-10,
+  "after_audio_rms": 3.523697387208813e-06,
+  "transcript_matches_receipt_and_captions": true,
+  "scope": "Metadata, exact identity linkage, decoded AAC alignment/content, caption text and local asset size. Visual layout reviewed separately in extracted video frames."
+}

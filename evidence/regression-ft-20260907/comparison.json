@@ -1,0 +1,2960 @@
+{
+  "status": "complete",
+  "models": {
+    "parakeet": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+    "parent": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+    "candidate": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945"
+  },
+  "manifest_sha256": "de74268f6e85706671c936108d5c3cab2d73ae77f6abb9a589e3d7af556d2a1f",
+  "script_sha256": "16f2be24ac0d115a6cd1921881e60be6f2549cdf05dbcd88d3247b19e2ed78f9",
+  "normalizer_sha256": "138b700db56379c5b1965c67c704b2f9ea37071bb0c959d64209ed82f305e0d2",
+  "matched_input": "Identical mono 16 kHz PCM16 FLAC files for all three models",
+  "precision": "BF16 autocast, original FP32 weights, TF32 matmul disabled",
+  "decoding": {
+    "strategy": "greedy_batch",
+    "model_type": "tdt",
+    "durations": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "greedy": {
+      "max_symbols": 10
+    },
+    "beam": {
+      "beam_size": 2,
+      "return_best_hypothesis": false,
+      "score_norm": true,
+      "tsd_max_sym_exp": 50,
+      "alsd_max_target_len": 2.0
+    }
+  },
+  "rows": 12006,
+  "failures": 0,
+  "sets": {
+    "gigaspeechbench_fin_en": {
+      "rows": 256,
+      "hours": 0.49037475694444416,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 6050,
+          "errors": 566,
+          "substitutions": 272,
+          "deletions": 168,
+          "insertions": 126,
+          "chars": 30719,
+          "char_errors": 1675,
+          "utterance_error": 157,
+          "wer": 9.355371900826446,
+          "cer": 5.452651453497835
+        },
+        "parent": {
+          "words": 6050,
+          "errors": 572,
+          "substitutions": 280,
+          "deletions": 190,
+          "insertions": 102,
+          "chars": 30719,
+          "char_errors": 1741,
+          "utterance_error": 160,
+          "wer": 9.454545454545455,
+          "cer": 5.667502197337153
+        },
+        "candidate": {
+          "words": 6050,
+          "errors": 464,
+          "substitutions": 240,
+          "deletions": 126,
+          "insertions": 98,
+          "chars": 30719,
+          "char_errors": 1127,
+          "utterance_error": 155,
+          "wer": 7.669421487603306,
+          "cer": 3.6687392167713795
+        },
+        "candidate_minus_parent_wer_pp": -1.785123966942149,
+        "candidate_minus_parakeet_wer_pp": -1.6859504132231402
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 5877,
+          "errors": 440,
+          "substitutions": 207,
+          "deletions": 110,
+          "insertions": 123,
+          "chars": 29811,
+          "char_errors": 1064,
+          "utterance_error": 146,
+          "wer": 7.486812999829845,
+          "cer": 3.5691523263224982
+        },
+        "parent": {
+          "words": 5877,
+          "errors": 420,
+          "substitutions": 206,
+          "deletions": 113,
+          "insertions": 101,
+          "chars": 29811,
+          "char_errors": 986,
+          "utterance_error": 144,
+          "wer": 7.1465033180193975,
+          "cer": 3.307503941498105
+        },
+        "candidate": {
+          "words": 5877,
+          "errors": 405,
+          "substitutions": 203,
+          "deletions": 107,
+          "insertions": 95,
+          "chars": 29811,
+          "char_errors": 952,
+          "utterance_error": 147,
+          "wer": 6.891271056661562,
+          "cer": 3.1934520814464458
+        },
+        "candidate_minus_parent_wer_pp": -0.2552322613578353,
+        "candidate_minus_parakeet_wer_pp": -0.5955419431682829
+      }
+    },
+    "lesbos_el": {
+      "rows": 230,
+      "hours": 0.1123247916666667,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 1131,
+          "errors": 1087,
+          "substitutions": 755,
+          "deletions": 232,
+          "insertions": 100,
+          "chars": 5811,
+          "char_errors": 4146,
+          "utterance_error": 229,
+          "wer": 96.10963748894784,
+          "cer": 71.34744450180692
+        },
+        "parent": {
+          "words": 1131,
+          "errors": 1059,
+          "substitutions": 748,
+          "deletions": 241,
+          "insertions": 70,
+          "chars": 5811,
+          "char_errors": 4208,
+          "utterance_error": 228,
+          "wer": 93.63395225464191,
+          "cer": 72.41438650834624
+        },
+        "candidate": {
+          "words": 1131,
+          "errors": 1059,
+          "substitutions": 664,
+          "deletions": 324,
+          "insertions": 71,
+          "chars": 5811,
+          "char_errors": 4248,
+          "utterance_error": 228,
+          "wer": 93.63395225464191,
+          "cer": 73.10273618998451
+        },
+        "candidate_minus_parent_wer_pp": 0.0,
+        "candidate_minus_parakeet_wer_pp": -2.475685234305928
+      }
+    },
+    "gigaspeechbench_ent_en": {
+      "rows": 256,
+      "hours": 0.28869338541666656,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 3777,
+          "errors": 460,
+          "substitutions": 250,
+          "deletions": 117,
+          "insertions": 93,
+          "chars": 17561,
+          "char_errors": 1332,
+          "utterance_error": 152,
+          "wer": 12.178978024887478,
+          "cer": 7.584989465292409
+        },
+        "parent": {
+          "words": 3777,
+          "errors": 435,
+          "substitutions": 235,
+          "deletions": 115,
+          "insertions": 85,
+          "chars": 17561,
+          "char_errors": 1270,
+          "utterance_error": 152,
+          "wer": 11.517077045274027,
+          "cer": 7.231934400091111
+        },
+        "candidate": {
+          "words": 3777,
+          "errors": 387,
+          "substitutions": 212,
+          "deletions": 102,
+          "insertions": 73,
+          "chars": 17561,
+          "char_errors": 1110,
+          "utterance_error": 142,
+          "wer": 10.246227164416203,
+          "cer": 6.320824554410341
+        },
+        "candidate_minus_parent_wer_pp": -1.2708498808578241,
+        "candidate_minus_parakeet_wer_pp": -1.932750860471275
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 3737,
+          "errors": 403,
+          "substitutions": 210,
+          "deletions": 109,
+          "insertions": 84,
+          "chars": 17535,
+          "char_errors": 1201,
+          "utterance_error": 134,
+          "wer": 10.784051378110783,
+          "cer": 6.84915882520673
+        },
+        "parent": {
+          "words": 3737,
+          "errors": 382,
+          "substitutions": 193,
+          "deletions": 105,
+          "insertions": 84,
+          "chars": 17535,
+          "char_errors": 1128,
+          "utterance_error": 136,
+          "wer": 10.222103291410223,
+          "cer": 6.432848588537211
+        },
+        "candidate": {
+          "words": 3737,
+          "errors": 342,
+          "substitutions": 180,
+          "deletions": 93,
+          "insertions": 69,
+          "chars": 17535,
+          "char_errors": 1004,
+          "utterance_error": 128,
+          "wer": 9.151725983409152,
+          "cer": 5.725691474194468
+        },
+        "candidate_minus_parent_wer_pp": -1.0703773080010706,
+        "candidate_minus_parakeet_wer_pp": -1.6323253947016312
+      }
+    },
+    "gigaspeechbench_agr_en": {
+      "rows": 256,
+      "hours": 0.40827331597222233,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 4766,
+          "errors": 412,
+          "substitutions": 178,
+          "deletions": 130,
+          "insertions": 104,
+          "chars": 23680,
+          "char_errors": 1273,
+          "utterance_error": 155,
+          "wer": 8.644565673520772,
+          "cer": 5.375844594594595
+        },
+        "parent": {
+          "words": 4766,
+          "errors": 421,
+          "substitutions": 189,
+          "deletions": 150,
+          "insertions": 82,
+          "chars": 23680,
+          "char_errors": 1282,
+          "utterance_error": 150,
+          "wer": 8.833403273185061,
+          "cer": 5.413851351351352
+        },
+        "candidate": {
+          "words": 4766,
+          "errors": 361,
+          "substitutions": 177,
+          "deletions": 96,
+          "insertions": 88,
+          "chars": 23680,
+          "char_errors": 968,
+          "utterance_error": 141,
+          "wer": 7.574485942089803,
+          "cer": 4.087837837837838
+        },
+        "candidate_minus_parent_wer_pp": -1.2589173310952582,
+        "candidate_minus_parakeet_wer_pp": -1.070079731430969
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 4682,
+          "errors": 318,
+          "substitutions": 132,
+          "deletions": 95,
+          "insertions": 91,
+          "chars": 23326,
+          "char_errors": 929,
+          "utterance_error": 135,
+          "wer": 6.791969243912858,
+          "cer": 3.982680270942296
+        },
+        "parent": {
+          "words": 4682,
+          "errors": 321,
+          "substitutions": 141,
+          "deletions": 109,
+          "insertions": 71,
+          "chars": 23326,
+          "char_errors": 930,
+          "utterance_error": 127,
+          "wer": 6.8560444254592054,
+          "cer": 3.986967332590243
+        },
+        "candidate": {
+          "words": 4682,
+          "errors": 295,
+          "substitutions": 143,
+          "deletions": 78,
+          "insertions": 74,
+          "chars": 23326,
+          "char_errors": 803,
+          "utterance_error": 118,
+          "wer": 6.300726185390858,
+          "cer": 3.4425105033010373
+        },
+        "candidate_minus_parent_wer_pp": -0.5553182400683472,
+        "candidate_minus_parakeet_wer_pp": -0.49124305852199956
+      }
+    },
+    "gigaspeechbench_ait_en": {
+      "rows": 256,
+      "hours": 0.5016255555555558,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 5402,
+          "errors": 668,
+          "substitutions": 316,
+          "deletions": 164,
+          "insertions": 188,
+          "chars": 27026,
+          "char_errors": 1598,
+          "utterance_error": 191,
+          "wer": 12.36579044798223,
+          "cer": 5.9128246873381185
+        },
+        "parent": {
+          "words": 5402,
+          "errors": 723,
+          "substitutions": 316,
+          "deletions": 281,
+          "insertions": 126,
+          "chars": 27026,
+          "char_errors": 1844,
+          "utterance_error": 197,
+          "wer": 13.383931877082562,
+          "cer": 6.823059276252498
+        },
+        "candidate": {
+          "words": 5402,
+          "errors": 599,
+          "substitutions": 295,
+          "deletions": 170,
+          "insertions": 134,
+          "chars": 27026,
+          "char_errors": 1434,
+          "utterance_error": 190,
+          "wer": 11.088485746019993,
+          "cer": 5.306001628061867
+        },
+        "candidate_minus_parent_wer_pp": -2.295446131062569,
+        "candidate_minus_parakeet_wer_pp": -1.2773047019622368
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 5162,
+          "errors": 544,
+          "substitutions": 249,
+          "deletions": 151,
+          "insertions": 144,
+          "chars": 26199,
+          "char_errors": 1312,
+          "utterance_error": 173,
+          "wer": 10.53855094924448,
+          "cer": 5.007824726134586
+        },
+        "parent": {
+          "words": 5162,
+          "errors": 565,
+          "substitutions": 259,
+          "deletions": 191,
+          "insertions": 115,
+          "chars": 26199,
+          "char_errors": 1419,
+          "utterance_error": 175,
+          "wer": 10.945370011623401,
+          "cer": 5.416237260964159
+        },
+        "candidate": {
+          "words": 5162,
+          "errors": 502,
+          "substitutions": 247,
+          "deletions": 141,
+          "insertions": 114,
+          "chars": 26199,
+          "char_errors": 1209,
+          "utterance_error": 172,
+          "wer": 9.724912824486633,
+          "cer": 4.614679949616398
+        },
+        "candidate_minus_parent_wer_pp": -1.220457187136768,
+        "candidate_minus_parakeet_wer_pp": -0.8136381247578459
+      }
+    },
+    "gigaspeechbench_art_en": {
+      "rows": 256,
+      "hours": 0.44630499999999995,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 4470,
+          "errors": 362,
+          "substitutions": 167,
+          "deletions": 94,
+          "insertions": 101,
+          "chars": 23502,
+          "char_errors": 990,
+          "utterance_error": 150,
+          "wer": 8.098434004474273,
+          "cer": 4.2124074546847075
+        },
+        "parent": {
+          "words": 4470,
+          "errors": 400,
+          "substitutions": 170,
+          "deletions": 152,
+          "insertions": 78,
+          "chars": 23502,
+          "char_errors": 1183,
+          "utterance_error": 156,
+          "wer": 8.94854586129754,
+          "cer": 5.033614160496979
+        },
+        "candidate": {
+          "words": 4470,
+          "errors": 309,
+          "substitutions": 157,
+          "deletions": 82,
+          "insertions": 70,
+          "chars": 23502,
+          "char_errors": 801,
+          "utterance_error": 140,
+          "wer": 6.912751677852349,
+          "cer": 3.4082205769721727
+        },
+        "candidate_minus_parent_wer_pp": -2.0357941834451907,
+        "candidate_minus_parakeet_wer_pp": -1.185682326621924
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 4336,
+          "errors": 263,
+          "substitutions": 117,
+          "deletions": 66,
+          "insertions": 80,
+          "chars": 22903,
+          "char_errors": 709,
+          "utterance_error": 119,
+          "wer": 6.06549815498155,
+          "cer": 3.0956643234510763
+        },
+        "parent": {
+          "words": 4336,
+          "errors": 280,
+          "substitutions": 114,
+          "deletions": 98,
+          "insertions": 68,
+          "chars": 22903,
+          "char_errors": 792,
+          "utterance_error": 123,
+          "wer": 6.4575645756457565,
+          "cer": 3.4580622625856874
+        },
+        "candidate": {
+          "words": 4336,
+          "errors": 232,
+          "substitutions": 117,
+          "deletions": 59,
+          "insertions": 56,
+          "chars": 22903,
+          "char_errors": 600,
+          "utterance_error": 113,
+          "wer": 5.350553505535055,
+          "cer": 2.6197441383224906
+        },
+        "candidate_minus_parent_wer_pp": -1.1070110701107012,
+        "candidate_minus_parakeet_wer_pp": -0.7149446494464948
+      }
+    },
+    "gigaspeechbench_phl_en": {
+      "rows": 256,
+      "hours": 0.3380872395833333,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 3616,
+          "errors": 555,
+          "substitutions": 272,
+          "deletions": 147,
+          "insertions": 136,
+          "chars": 17930,
+          "char_errors": 1708,
+          "utterance_error": 167,
+          "wer": 15.348451327433628,
+          "cer": 9.525934188510876
+        },
+        "parent": {
+          "words": 3616,
+          "errors": 550,
+          "substitutions": 265,
+          "deletions": 173,
+          "insertions": 112,
+          "chars": 17930,
+          "char_errors": 1729,
+          "utterance_error": 164,
+          "wer": 15.210176991150442,
+          "cer": 9.643056330172895
+        },
+        "candidate": {
+          "words": 3616,
+          "errors": 507,
+          "substitutions": 261,
+          "deletions": 126,
+          "insertions": 120,
+          "chars": 17930,
+          "char_errors": 1518,
+          "utterance_error": 159,
+          "wer": 14.021017699115044,
+          "cer": 8.466257668711657
+        },
+        "candidate_minus_parent_wer_pp": -1.1891592920353986,
+        "candidate_minus_parakeet_wer_pp": -1.327433628318584
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 3528,
+          "errors": 494,
+          "substitutions": 249,
+          "deletions": 116,
+          "insertions": 129,
+          "chars": 17518,
+          "char_errors": 1466,
+          "utterance_error": 159,
+          "wer": 14.002267573696145,
+          "cer": 8.36853522091563
+        },
+        "parent": {
+          "words": 3528,
+          "errors": 486,
+          "substitutions": 242,
+          "deletions": 134,
+          "insertions": 110,
+          "chars": 17518,
+          "char_errors": 1463,
+          "utterance_error": 155,
+          "wer": 13.775510204081632,
+          "cer": 8.351409978308027
+        },
+        "candidate": {
+          "words": 3528,
+          "errors": 462,
+          "substitutions": 246,
+          "deletions": 97,
+          "insertions": 119,
+          "chars": 17518,
+          "char_errors": 1355,
+          "utterance_error": 150,
+          "wer": 13.095238095238095,
+          "cer": 7.734901244434296
+        },
+        "candidate_minus_parent_wer_pp": -0.6802721088435373,
+        "candidate_minus_parakeet_wer_pp": -0.9070294784580497
+      }
+    },
+    "gigaspeechbench_sct_en": {
+      "rows": 256,
+      "hours": 0.23421114583333327,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 2915,
+          "errors": 689,
+          "substitutions": 416,
+          "deletions": 163,
+          "insertions": 110,
+          "chars": 13833,
+          "char_errors": 2091,
+          "utterance_error": 189,
+          "wer": 23.636363636363637,
+          "cer": 15.11602689221427
+        },
+        "parent": {
+          "words": 2915,
+          "errors": 735,
+          "substitutions": 407,
+          "deletions": 230,
+          "insertions": 98,
+          "chars": 13833,
+          "char_errors": 2347,
+          "utterance_error": 196,
+          "wer": 25.214408233276156,
+          "cer": 16.966673895756525
+        },
+        "candidate": {
+          "words": 2915,
+          "errors": 627,
+          "substitutions": 357,
+          "deletions": 173,
+          "insertions": 97,
+          "chars": 13833,
+          "char_errors": 1885,
+          "utterance_error": 186,
+          "wer": 21.50943396226415,
+          "cer": 13.626834381551364
+        },
+        "candidate_minus_parent_wer_pp": -3.7049742710120057,
+        "candidate_minus_parakeet_wer_pp": -2.126929674099486
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 2860,
+          "errors": 648,
+          "substitutions": 391,
+          "deletions": 154,
+          "insertions": 103,
+          "chars": 13690,
+          "char_errors": 2007,
+          "utterance_error": 180,
+          "wer": 22.657342657342657,
+          "cer": 14.660336011687363
+        },
+        "parent": {
+          "words": 2860,
+          "errors": 689,
+          "substitutions": 379,
+          "deletions": 212,
+          "insertions": 98,
+          "chars": 13690,
+          "char_errors": 2230,
+          "utterance_error": 185,
+          "wer": 24.09090909090909,
+          "cer": 16.28926223520818
+        },
+        "candidate": {
+          "words": 2860,
+          "errors": 593,
+          "substitutions": 336,
+          "deletions": 165,
+          "insertions": 92,
+          "chars": 13690,
+          "char_errors": 1839,
+          "utterance_error": 176,
+          "wer": 20.734265734265733,
+          "cer": 13.433162892622352
+        },
+        "candidate_minus_parent_wer_pp": -3.3566433566433567,
+        "candidate_minus_parakeet_wer_pp": -1.9230769230769234
+      }
+    },
+    "gigaspeechbench_sgp_en": {
+      "rows": 256,
+      "hours": 0.28441779513888893,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 3401,
+          "errors": 557,
+          "substitutions": 306,
+          "deletions": 158,
+          "insertions": 93,
+          "chars": 16624,
+          "char_errors": 1728,
+          "utterance_error": 172,
+          "wer": 16.377536018817995,
+          "cer": 10.39461020211742
+        },
+        "parent": {
+          "words": 3401,
+          "errors": 567,
+          "substitutions": 297,
+          "deletions": 190,
+          "insertions": 80,
+          "chars": 16624,
+          "char_errors": 1768,
+          "utterance_error": 176,
+          "wer": 16.671567186121727,
+          "cer": 10.635226179018288
+        },
+        "candidate": {
+          "words": 3401,
+          "errors": 524,
+          "substitutions": 280,
+          "deletions": 161,
+          "insertions": 83,
+          "chars": 16624,
+          "char_errors": 1573,
+          "utterance_error": 171,
+          "wer": 15.407233166715672,
+          "cer": 9.462223291626565
+        },
+        "candidate_minus_parent_wer_pp": -1.2643340194060553,
+        "candidate_minus_parakeet_wer_pp": -0.9703028521023231
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 3339,
+          "errors": 499,
+          "substitutions": 254,
+          "deletions": 147,
+          "insertions": 98,
+          "chars": 16334,
+          "char_errors": 1549,
+          "utterance_error": 160,
+          "wer": 14.94459418987721,
+          "cer": 9.483286396473613
+        },
+        "parent": {
+          "words": 3339,
+          "errors": 502,
+          "substitutions": 248,
+          "deletions": 168,
+          "insertions": 86,
+          "chars": 16334,
+          "char_errors": 1561,
+          "utterance_error": 161,
+          "wer": 15.03444144953579,
+          "cer": 9.556752785600588
+        },
+        "candidate": {
+          "words": 3339,
+          "errors": 467,
+          "substitutions": 232,
+          "deletions": 147,
+          "insertions": 88,
+          "chars": 16334,
+          "char_errors": 1406,
+          "utterance_error": 159,
+          "wer": 13.986223420185684,
+          "cer": 8.607811926043835
+        },
+        "candidate_minus_parent_wer_pp": -1.0482180293501049,
+        "candidate_minus_parakeet_wer_pp": -0.9583707696915251
+      }
+    },
+    "gigaspeechbench_law_en": {
+      "rows": 256,
+      "hours": 0.39185109374999993,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 4092,
+          "errors": 509,
+          "substitutions": 288,
+          "deletions": 126,
+          "insertions": 95,
+          "chars": 21261,
+          "char_errors": 1385,
+          "utterance_error": 159,
+          "wer": 12.438905180840665,
+          "cer": 6.514274963548281
+        },
+        "parent": {
+          "words": 4092,
+          "errors": 517,
+          "substitutions": 285,
+          "deletions": 158,
+          "insertions": 74,
+          "chars": 21261,
+          "char_errors": 1422,
+          "utterance_error": 163,
+          "wer": 12.634408602150538,
+          "cer": 6.688302525751376
+        },
+        "candidate": {
+          "words": 4092,
+          "errors": 474,
+          "substitutions": 267,
+          "deletions": 124,
+          "insertions": 83,
+          "chars": 21261,
+          "char_errors": 1266,
+          "utterance_error": 153,
+          "wer": 11.583577712609971,
+          "cer": 5.954564695922111
+        },
+        "candidate_minus_parent_wer_pp": -1.050830889540567,
+        "candidate_minus_parakeet_wer_pp": -0.8553274682306942
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 3999,
+          "errors": 445,
+          "substitutions": 248,
+          "deletions": 104,
+          "insertions": 93,
+          "chars": 20831,
+          "char_errors": 1160,
+          "utterance_error": 155,
+          "wer": 11.127781945486372,
+          "cer": 5.568623685852815
+        },
+        "parent": {
+          "words": 3999,
+          "errors": 442,
+          "substitutions": 243,
+          "deletions": 123,
+          "insertions": 76,
+          "chars": 20831,
+          "char_errors": 1149,
+          "utterance_error": 156,
+          "wer": 11.0527631907977,
+          "cer": 5.515817771590418
+        },
+        "candidate": {
+          "words": 3999,
+          "errors": 424,
+          "substitutions": 228,
+          "deletions": 112,
+          "insertions": 84,
+          "chars": 20831,
+          "char_errors": 1115,
+          "utterance_error": 148,
+          "wer": 10.602650662665667,
+          "cer": 5.352599491143008
+        },
+        "candidate_minus_parent_wer_pp": -0.45011252813203306,
+        "candidate_minus_parakeet_wer_pp": -0.5251312828207055
+      }
+    },
+    "gigaspeechbench_ecm_en": {
+      "rows": 256,
+      "hours": 0.4723599652777778,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 5958,
+          "errors": 652,
+          "substitutions": 336,
+          "deletions": 169,
+          "insertions": 147,
+          "chars": 30345,
+          "char_errors": 1956,
+          "utterance_error": 180,
+          "wer": 10.943269553541457,
+          "cer": 6.445872466633713
+        },
+        "parent": {
+          "words": 5958,
+          "errors": 690,
+          "substitutions": 349,
+          "deletions": 197,
+          "insertions": 144,
+          "chars": 30345,
+          "char_errors": 2101,
+          "utterance_error": 184,
+          "wer": 11.581067472306144,
+          "cer": 6.923710660734883
+        },
+        "candidate": {
+          "words": 5958,
+          "errors": 537,
+          "substitutions": 281,
+          "deletions": 124,
+          "insertions": 132,
+          "chars": 30345,
+          "char_errors": 1474,
+          "utterance_error": 166,
+          "wer": 9.013091641490433,
+          "cer": 4.857472400724996
+        },
+        "candidate_minus_parent_wer_pp": -2.56797583081571,
+        "candidate_minus_parakeet_wer_pp": -1.9301779120510236
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 5843,
+          "errors": 485,
+          "substitutions": 250,
+          "deletions": 106,
+          "insertions": 129,
+          "chars": 29666,
+          "char_errors": 1301,
+          "utterance_error": 153,
+          "wer": 8.30053054937532,
+          "cer": 4.385491808804693
+        },
+        "parent": {
+          "words": 5843,
+          "errors": 490,
+          "substitutions": 247,
+          "deletions": 114,
+          "insertions": 129,
+          "chars": 29666,
+          "char_errors": 1293,
+          "utterance_error": 156,
+          "wer": 8.386103029265788,
+          "cer": 4.35852491067215
+        },
+        "candidate": {
+          "words": 5843,
+          "errors": 456,
+          "substitutions": 237,
+          "deletions": 92,
+          "insertions": 127,
+          "chars": 29666,
+          "char_errors": 1207,
+          "utterance_error": 148,
+          "wer": 7.804210166010611,
+          "cer": 4.0686307557473205
+        },
+        "candidate_minus_parent_wer_pp": -0.5818928632551774,
+        "candidate_minus_parakeet_wer_pp": -0.4963203833647096
+      }
+    },
+    "gigaspeechbench_ind_en": {
+      "rows": 256,
+      "hours": 0.5177380729166665,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 5484,
+          "errors": 578,
+          "substitutions": 326,
+          "deletions": 190,
+          "insertions": 62,
+          "chars": 30387,
+          "char_errors": 1613,
+          "utterance_error": 160,
+          "wer": 10.539752005835156,
+          "cer": 5.308191002731431
+        },
+        "parent": {
+          "words": 5484,
+          "errors": 588,
+          "substitutions": 322,
+          "deletions": 210,
+          "insertions": 56,
+          "chars": 30387,
+          "char_errors": 1662,
+          "utterance_error": 158,
+          "wer": 10.722100656455142,
+          "cer": 5.469444170204364
+        },
+        "candidate": {
+          "words": 5484,
+          "errors": 487,
+          "substitutions": 278,
+          "deletions": 156,
+          "insertions": 53,
+          "chars": 30387,
+          "char_errors": 1128,
+          "utterance_error": 150,
+          "wer": 8.880379285193289,
+          "cer": 3.7121137328462828
+        },
+        "candidate_minus_parent_wer_pp": -1.841721371261853,
+        "candidate_minus_parakeet_wer_pp": -1.6593727206418674
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 5330,
+          "errors": 455,
+          "substitutions": 275,
+          "deletions": 129,
+          "insertions": 51,
+          "chars": 29433,
+          "char_errors": 1005,
+          "utterance_error": 145,
+          "wer": 8.536585365853659,
+          "cer": 3.4145347059423097
+        },
+        "parent": {
+          "words": 5330,
+          "errors": 463,
+          "substitutions": 279,
+          "deletions": 130,
+          "insertions": 54,
+          "chars": 29433,
+          "char_errors": 1036,
+          "utterance_error": 143,
+          "wer": 8.686679174484052,
+          "cer": 3.5198586620460026
+        },
+        "candidate": {
+          "words": 5330,
+          "errors": 413,
+          "substitutions": 252,
+          "deletions": 115,
+          "insertions": 46,
+          "chars": 29433,
+          "char_errors": 806,
+          "utterance_error": 137,
+          "wer": 7.74859287054409,
+          "cer": 2.7384228586960213
+        },
+        "candidate_minus_parent_wer_pp": -0.9380863039399623,
+        "candidate_minus_parakeet_wer_pp": -0.7879924953095694
+      }
+    },
+    "gigaspeechbench_eng_en": {
+      "rows": 256,
+      "hours": 0.46552720486111115,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 4659,
+          "errors": 380,
+          "substitutions": 195,
+          "deletions": 124,
+          "insertions": 61,
+          "chars": 23198,
+          "char_errors": 813,
+          "utterance_error": 142,
+          "wer": 8.15625670744795,
+          "cer": 3.5046124665919476
+        },
+        "parent": {
+          "words": 4659,
+          "errors": 440,
+          "substitutions": 224,
+          "deletions": 163,
+          "insertions": 53,
+          "chars": 23198,
+          "char_errors": 946,
+          "utterance_error": 152,
+          "wer": 9.444086713887101,
+          "cer": 4.077937753254591
+        },
+        "candidate": {
+          "words": 4659,
+          "errors": 261,
+          "substitutions": 145,
+          "deletions": 75,
+          "insertions": 41,
+          "chars": 23198,
+          "char_errors": 522,
+          "utterance_error": 117,
+          "wer": 5.602060528010303,
+          "cer": 2.2501939822398485
+        },
+        "candidate_minus_parent_wer_pp": -3.842026185876798,
+        "candidate_minus_parakeet_wer_pp": -2.554196179437647
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 4572,
+          "errors": 281,
+          "substitutions": 138,
+          "deletions": 89,
+          "insertions": 54,
+          "chars": 22588,
+          "char_errors": 549,
+          "utterance_error": 117,
+          "wer": 6.146106736657917,
+          "cer": 2.430494067646538
+        },
+        "parent": {
+          "words": 4572,
+          "errors": 303,
+          "substitutions": 151,
+          "deletions": 104,
+          "insertions": 48,
+          "chars": 22588,
+          "char_errors": 557,
+          "utterance_error": 125,
+          "wer": 6.6272965879265096,
+          "cer": 2.465911103240659
+        },
+        "candidate": {
+          "words": 4572,
+          "errors": 220,
+          "substitutions": 117,
+          "deletions": 65,
+          "insertions": 38,
+          "chars": 22588,
+          "char_errors": 454,
+          "utterance_error": 101,
+          "wer": 4.811898512685914,
+          "cer": 2.009916769966354
+        },
+        "candidate_minus_parent_wer_pp": -1.8153980752405952,
+        "candidate_minus_parakeet_wer_pp": -1.334208223972003
+      }
+    },
+    "gigaspeechbench_chn_en": {
+      "rows": 256,
+      "hours": 0.36592142361111124,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 2877,
+          "errors": 469,
+          "substitutions": 332,
+          "deletions": 72,
+          "insertions": 65,
+          "chars": 14291,
+          "char_errors": 1332,
+          "utterance_error": 179,
+          "wer": 16.30170316301703,
+          "cer": 9.320551395983486
+        },
+        "parent": {
+          "words": 2877,
+          "errors": 483,
+          "substitutions": 326,
+          "deletions": 102,
+          "insertions": 55,
+          "chars": 14291,
+          "char_errors": 1425,
+          "utterance_error": 178,
+          "wer": 16.78832116788321,
+          "cer": 9.971310615072424
+        },
+        "candidate": {
+          "words": 2877,
+          "errors": 440,
+          "substitutions": 300,
+          "deletions": 84,
+          "insertions": 56,
+          "chars": 14291,
+          "char_errors": 1250,
+          "utterance_error": 167,
+          "wer": 15.29370872436566,
+          "cer": 8.74676369743195
+        },
+        "candidate_minus_parent_wer_pp": -1.4946124435175516,
+        "candidate_minus_parakeet_wer_pp": -1.0079944386513713
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 2816,
+          "errors": 433,
+          "substitutions": 296,
+          "deletions": 75,
+          "insertions": 62,
+          "chars": 14060,
+          "char_errors": 1300,
+          "utterance_error": 170,
+          "wer": 15.376420454545455,
+          "cer": 9.246088193456615
+        },
+        "parent": {
+          "words": 2816,
+          "errors": 448,
+          "substitutions": 293,
+          "deletions": 95,
+          "insertions": 60,
+          "chars": 14060,
+          "char_errors": 1370,
+          "utterance_error": 167,
+          "wer": 15.909090909090908,
+          "cer": 9.743954480796585
+        },
+        "candidate": {
+          "words": 2816,
+          "errors": 409,
+          "substitutions": 271,
+          "deletions": 79,
+          "insertions": 59,
+          "chars": 14060,
+          "char_errors": 1211,
+          "utterance_error": 158,
+          "wer": 14.524147727272727,
+          "cer": 8.613086770981507
+        },
+        "candidate_minus_parent_wer_pp": -1.3849431818181817,
+        "candidate_minus_parakeet_wer_pp": -0.8522727272727284
+      }
+    },
+    "gigaspeechbench_hum_en": {
+      "rows": 256,
+      "hours": 0.5111050347222224,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 5158,
+          "errors": 483,
+          "substitutions": 234,
+          "deletions": 113,
+          "insertions": 136,
+          "chars": 27602,
+          "char_errors": 1468,
+          "utterance_error": 155,
+          "wer": 9.364094610314075,
+          "cer": 5.318455184406927
+        },
+        "parent": {
+          "words": 5158,
+          "errors": 474,
+          "substitutions": 236,
+          "deletions": 123,
+          "insertions": 115,
+          "chars": 27602,
+          "char_errors": 1432,
+          "utterance_error": 156,
+          "wer": 9.18960837533928,
+          "cer": 5.188029852909209
+        },
+        "candidate": {
+          "words": 5158,
+          "errors": 432,
+          "substitutions": 225,
+          "deletions": 86,
+          "insertions": 121,
+          "chars": 27602,
+          "char_errors": 1231,
+          "utterance_error": 147,
+          "wer": 8.375339278790229,
+          "cer": 4.459821752046953
+        },
+        "candidate_minus_parent_wer_pp": -0.8142690965490509,
+        "candidate_minus_parakeet_wer_pp": -0.988755331523846
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 5075,
+          "errors": 421,
+          "substitutions": 196,
+          "deletions": 99,
+          "insertions": 126,
+          "chars": 27339,
+          "char_errors": 1300,
+          "utterance_error": 142,
+          "wer": 8.295566502463053,
+          "cer": 4.75511174512601
+        },
+        "parent": {
+          "words": 5075,
+          "errors": 399,
+          "substitutions": 195,
+          "deletions": 89,
+          "insertions": 115,
+          "chars": 27339,
+          "char_errors": 1207,
+          "utterance_error": 139,
+          "wer": 7.862068965517241,
+          "cer": 4.4149383664362265
+        },
+        "candidate": {
+          "words": 5075,
+          "errors": 400,
+          "substitutions": 198,
+          "deletions": 83,
+          "insertions": 119,
+          "chars": 27339,
+          "char_errors": 1178,
+          "utterance_error": 139,
+          "wer": 7.8817733990147785,
+          "cer": 4.3088627967372615
+        },
+        "candidate_minus_parent_wer_pp": 0.019704433497537366,
+        "candidate_minus_parakeet_wer_pp": -0.4137931034482749
+      }
+    },
+    "gigaspeechbench_med_en": {
+      "rows": 256,
+      "hours": 0.5099035937499998,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 5370,
+          "errors": 344,
+          "substitutions": 179,
+          "deletions": 106,
+          "insertions": 59,
+          "chars": 29048,
+          "char_errors": 839,
+          "utterance_error": 130,
+          "wer": 6.405959031657356,
+          "cer": 2.8883227760947396
+        },
+        "parent": {
+          "words": 5370,
+          "errors": 361,
+          "substitutions": 187,
+          "deletions": 128,
+          "insertions": 46,
+          "chars": 29048,
+          "char_errors": 883,
+          "utterance_error": 132,
+          "wer": 6.722532588454376,
+          "cer": 3.0397961993941065
+        },
+        "candidate": {
+          "words": 5370,
+          "errors": 312,
+          "substitutions": 162,
+          "deletions": 104,
+          "insertions": 46,
+          "chars": 29048,
+          "char_errors": 683,
+          "utterance_error": 118,
+          "wer": 5.810055865921788,
+          "cer": 2.35128063894244
+        },
+        "candidate_minus_parent_wer_pp": -0.9124767225325883,
+        "candidate_minus_parakeet_wer_pp": -0.5959031657355682
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 5310,
+          "errors": 274,
+          "substitutions": 147,
+          "deletions": 78,
+          "insertions": 49,
+          "chars": 28697,
+          "char_errors": 548,
+          "utterance_error": 112,
+          "wer": 5.160075329566855,
+          "cer": 1.9096072760218838
+        },
+        "parent": {
+          "words": 5310,
+          "errors": 272,
+          "substitutions": 145,
+          "deletions": 85,
+          "insertions": 42,
+          "chars": 28697,
+          "char_errors": 527,
+          "utterance_error": 113,
+          "wer": 5.12241054613936,
+          "cer": 1.8364288950064467
+        },
+        "candidate": {
+          "words": 5310,
+          "errors": 264,
+          "substitutions": 144,
+          "deletions": 80,
+          "insertions": 40,
+          "chars": 28697,
+          "char_errors": 494,
+          "utterance_error": 108,
+          "wer": 4.971751412429379,
+          "cer": 1.7214342962679026
+        },
+        "candidate_minus_parent_wer_pp": -0.15065913370998096,
+        "candidate_minus_parakeet_wer_pp": -0.18832391713747576
+      }
+    },
+    "voxpopuli_hu": {
+      "rows": 256,
+      "hours": 0.7771814756944444,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 5597,
+          "errors": 773,
+          "substitutions": 562,
+          "deletions": 111,
+          "insertions": 100,
+          "chars": 40981,
+          "char_errors": 1683,
+          "utterance_error": 219,
+          "wer": 13.8109701625871,
+          "cer": 4.1067811912837655
+        },
+        "parent": {
+          "words": 5597,
+          "errors": 738,
+          "substitutions": 533,
+          "deletions": 106,
+          "insertions": 99,
+          "chars": 40981,
+          "char_errors": 1604,
+          "utterance_error": 216,
+          "wer": 13.185635161693764,
+          "cer": 3.9140089309680097
+        },
+        "candidate": {
+          "words": 5597,
+          "errors": 747,
+          "substitutions": 527,
+          "deletions": 125,
+          "insertions": 95,
+          "chars": 40981,
+          "char_errors": 1607,
+          "utterance_error": 214,
+          "wer": 13.346435590494908,
+          "cer": 3.9213293965496208
+        },
+        "candidate_minus_parent_wer_pp": 0.16080042880114398,
+        "candidate_minus_parakeet_wer_pp": -0.46453457209219273
+      }
+    },
+    "gigaspeechbench_jpn_en": {
+      "rows": 256,
+      "hours": 0.3127074826388888,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 2622,
+          "errors": 571,
+          "substitutions": 321,
+          "deletions": 121,
+          "insertions": 129,
+          "chars": 12616,
+          "char_errors": 1672,
+          "utterance_error": 173,
+          "wer": 21.777269260106788,
+          "cer": 13.25301204819277
+        },
+        "parent": {
+          "words": 2622,
+          "errors": 555,
+          "substitutions": 321,
+          "deletions": 131,
+          "insertions": 103,
+          "chars": 12616,
+          "char_errors": 1699,
+          "utterance_error": 172,
+          "wer": 21.16704805491991,
+          "cer": 13.467025998731769
+        },
+        "candidate": {
+          "words": 2622,
+          "errors": 506,
+          "substitutions": 291,
+          "deletions": 121,
+          "insertions": 94,
+          "chars": 12616,
+          "char_errors": 1489,
+          "utterance_error": 162,
+          "wer": 19.29824561403509,
+          "cer": 11.802473050095116
+        },
+        "candidate_minus_parent_wer_pp": -1.8688024408848207,
+        "candidate_minus_parakeet_wer_pp": -2.479023646071699
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 2576,
+          "errors": 513,
+          "substitutions": 297,
+          "deletions": 106,
+          "insertions": 110,
+          "chars": 12445,
+          "char_errors": 1500,
+          "utterance_error": 163,
+          "wer": 19.914596273291924,
+          "cer": 12.053033346725593
+        },
+        "parent": {
+          "words": 2576,
+          "errors": 503,
+          "substitutions": 294,
+          "deletions": 110,
+          "insertions": 99,
+          "chars": 12445,
+          "char_errors": 1514,
+          "utterance_error": 164,
+          "wer": 19.52639751552795,
+          "cer": 12.165528324628365
+        },
+        "candidate": {
+          "words": 2576,
+          "errors": 466,
+          "substitutions": 270,
+          "deletions": 107,
+          "insertions": 89,
+          "chars": 12445,
+          "char_errors": 1379,
+          "utterance_error": 151,
+          "wer": 18.09006211180124,
+          "cer": 11.08075532342306
+        },
+        "candidate_minus_parent_wer_pp": -1.4363354037267086,
+        "candidate_minus_parakeet_wer_pp": -1.824534161490682
+      }
+    },
+    "gigaspeechbench_mil_en": {
+      "rows": 256,
+      "hours": 0.545510017361111,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 6188,
+          "errors": 541,
+          "substitutions": 270,
+          "deletions": 227,
+          "insertions": 44,
+          "chars": 33570,
+          "char_errors": 1454,
+          "utterance_error": 160,
+          "wer": 8.742727860374918,
+          "cer": 4.331248138218648
+        },
+        "parent": {
+          "words": 6188,
+          "errors": 575,
+          "substitutions": 284,
+          "deletions": 250,
+          "insertions": 41,
+          "chars": 33570,
+          "char_errors": 1649,
+          "utterance_error": 165,
+          "wer": 9.29217840982547,
+          "cer": 4.912123920166816
+        },
+        "candidate": {
+          "words": 6188,
+          "errors": 393,
+          "substitutions": 218,
+          "deletions": 142,
+          "insertions": 33,
+          "chars": 33570,
+          "char_errors": 760,
+          "utterance_error": 147,
+          "wer": 6.351001939237233,
+          "cer": 2.2639261245159368
+        },
+        "candidate_minus_parent_wer_pp": -2.9411764705882364,
+        "candidate_minus_parakeet_wer_pp": -2.3917259211376853
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 6048,
+          "errors": 362,
+          "substitutions": 199,
+          "deletions": 123,
+          "insertions": 40,
+          "chars": 32571,
+          "char_errors": 574,
+          "utterance_error": 139,
+          "wer": 5.985449735449736,
+          "cer": 1.7623038899634644
+        },
+        "parent": {
+          "words": 6048,
+          "errors": 367,
+          "substitutions": 197,
+          "deletions": 129,
+          "insertions": 41,
+          "chars": 32571,
+          "char_errors": 614,
+          "utterance_error": 139,
+          "wer": 6.068121693121693,
+          "cer": 1.8851125234103958
+        },
+        "candidate": {
+          "words": 6048,
+          "errors": 333,
+          "substitutions": 186,
+          "deletions": 114,
+          "insertions": 33,
+          "chars": 32571,
+          "char_errors": 516,
+          "utterance_error": 131,
+          "wer": 5.505952380952381,
+          "cer": 1.584231371465414
+        },
+        "candidate_minus_parent_wer_pp": -0.5621693121693117,
+        "candidate_minus_parakeet_wer_pp": -0.4794973544973544
+      }
+    },
+    "voxpopuli_pl": {
+      "rows": 256,
+      "hours": 0.7600847395833332,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 5432,
+          "errors": 354,
+          "substitutions": 206,
+          "deletions": 76,
+          "insertions": 72,
+          "chars": 39743,
+          "char_errors": 1359,
+          "utterance_error": 142,
+          "wer": 6.516936671575847,
+          "cer": 3.4194700953627053
+        },
+        "parent": {
+          "words": 5432,
+          "errors": 353,
+          "substitutions": 202,
+          "deletions": 80,
+          "insertions": 71,
+          "chars": 39743,
+          "char_errors": 1394,
+          "utterance_error": 140,
+          "wer": 6.498527245949926,
+          "cer": 3.5075359182749164
+        },
+        "candidate": {
+          "words": 5432,
+          "errors": 348,
+          "substitutions": 192,
+          "deletions": 75,
+          "insertions": 81,
+          "chars": 39743,
+          "char_errors": 1386,
+          "utterance_error": 141,
+          "wer": 6.406480117820324,
+          "cer": 3.487406587323554
+        },
+        "candidate_minus_parent_wer_pp": -0.09204712812960203,
+        "candidate_minus_parakeet_wer_pp": -0.11045655375552244
+      }
+    },
+    "voxpopuli_ro": {
+      "rows": 256,
+      "hours": 0.811456440972222,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 7447,
+          "errors": 893,
+          "substitutions": 675,
+          "deletions": 144,
+          "insertions": 74,
+          "chars": 47152,
+          "char_errors": 2072,
+          "utterance_error": 218,
+          "wer": 11.99140593527595,
+          "cer": 4.394299287410926
+        },
+        "parent": {
+          "words": 7447,
+          "errors": 885,
+          "substitutions": 663,
+          "deletions": 151,
+          "insertions": 71,
+          "chars": 47152,
+          "char_errors": 2003,
+          "utterance_error": 216,
+          "wer": 11.883980126225326,
+          "cer": 4.247964031218188
+        },
+        "candidate": {
+          "words": 7447,
+          "errors": 870,
+          "substitutions": 636,
+          "deletions": 159,
+          "insertions": 75,
+          "chars": 47152,
+          "char_errors": 2009,
+          "utterance_error": 216,
+          "wer": 11.682556734255405,
+          "cer": 4.260688836104513
+        },
+        "candidate_minus_parent_wer_pp": -0.20142339196992154,
+        "candidate_minus_parakeet_wer_pp": -0.3088492010205446
+      }
+    },
+    "voxpopuli_es": {
+      "rows": 256,
+      "hours": 0.8307443402777775,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 7740,
+          "errors": 474,
+          "substitutions": 216,
+          "deletions": 151,
+          "insertions": 107,
+          "chars": 46958,
+          "char_errors": 1994,
+          "utterance_error": 121,
+          "wer": 6.124031007751938,
+          "cer": 4.246347800161847
+        },
+        "parent": {
+          "words": 7740,
+          "errors": 455,
+          "substitutions": 217,
+          "deletions": 131,
+          "insertions": 107,
+          "chars": 46958,
+          "char_errors": 1882,
+          "utterance_error": 122,
+          "wer": 5.8785529715762275,
+          "cer": 4.0078367903232675
+        },
+        "candidate": {
+          "words": 7740,
+          "errors": 487,
+          "substitutions": 224,
+          "deletions": 151,
+          "insertions": 112,
+          "chars": 46958,
+          "char_errors": 2035,
+          "utterance_error": 119,
+          "wer": 6.291989664082688,
+          "cer": 4.33365986626347
+        },
+        "candidate_minus_parent_wer_pp": 0.4134366925064601,
+        "candidate_minus_parakeet_wer_pp": 0.16795865633074936
+      }
+    },
+    "gigaspeechbench_bio_en": {
+      "rows": 256,
+      "hours": 0.5044194444444443,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 5001,
+          "errors": 378,
+          "substitutions": 194,
+          "deletions": 127,
+          "insertions": 57,
+          "chars": 28220,
+          "char_errors": 660,
+          "utterance_error": 132,
+          "wer": 7.558488302339532,
+          "cer": 2.3387668320340183
+        },
+        "parent": {
+          "words": 5001,
+          "errors": 389,
+          "substitutions": 200,
+          "deletions": 141,
+          "insertions": 48,
+          "chars": 28220,
+          "char_errors": 693,
+          "utterance_error": 134,
+          "wer": 7.778444311137773,
+          "cer": 2.455705173635719
+        },
+        "candidate": {
+          "words": 5001,
+          "errors": 339,
+          "substitutions": 187,
+          "deletions": 110,
+          "insertions": 42,
+          "chars": 28220,
+          "char_errors": 567,
+          "utterance_error": 124,
+          "wer": 6.778644271145771,
+          "cer": 2.0092133238837704
+        },
+        "candidate_minus_parent_wer_pp": -0.9998000399920022,
+        "candidate_minus_parakeet_wer_pp": -0.7798440311937611
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 4974,
+          "errors": 335,
+          "substitutions": 166,
+          "deletions": 115,
+          "insertions": 54,
+          "chars": 28032,
+          "char_errors": 548,
+          "utterance_error": 123,
+          "wer": 6.73502211499799,
+          "cer": 1.9549086757990868
+        },
+        "parent": {
+          "words": 4974,
+          "errors": 341,
+          "substitutions": 171,
+          "deletions": 122,
+          "insertions": 48,
+          "chars": 28032,
+          "char_errors": 564,
+          "utterance_error": 123,
+          "wer": 6.855649376759148,
+          "cer": 2.011986301369863
+        },
+        "candidate": {
+          "words": 4974,
+          "errors": 306,
+          "substitutions": 166,
+          "deletions": 100,
+          "insertions": 40,
+          "chars": 28032,
+          "char_errors": 506,
+          "utterance_error": 116,
+          "wer": 6.151990349819059,
+          "cer": 1.8050799086757991
+        },
+        "candidate_minus_parent_wer_pp": -0.7036590269400893,
+        "candidate_minus_parakeet_wer_pp": -0.583031765178931
+      }
+    },
+    "voxpopuli_it": {
+      "rows": 256,
+      "hours": 0.9244941145833331,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 8239,
+          "errors": 954,
+          "substitutions": 347,
+          "deletions": 401,
+          "insertions": 206,
+          "chars": 51717,
+          "char_errors": 4507,
+          "utterance_error": 179,
+          "wer": 11.579075130477,
+          "cer": 8.714735966896765
+        },
+        "parent": {
+          "words": 8239,
+          "errors": 971,
+          "substitutions": 341,
+          "deletions": 409,
+          "insertions": 221,
+          "chars": 51717,
+          "char_errors": 4602,
+          "utterance_error": 184,
+          "wer": 11.785410850831411,
+          "cer": 8.898427983061662
+        },
+        "candidate": {
+          "words": 8239,
+          "errors": 986,
+          "substitutions": 255,
+          "deletions": 494,
+          "insertions": 237,
+          "chars": 51717,
+          "char_errors": 4974,
+          "utterance_error": 183,
+          "wer": 11.967471780555893,
+          "cer": 9.617727246359998
+        },
+        "candidate_minus_parent_wer_pp": 0.18206092972448218,
+        "candidate_minus_parakeet_wer_pp": 0.388396650078894
+      }
+    },
+    "voxpopuli_nl": {
+      "rows": 256,
+      "hours": 0.5597956423611111,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 5453,
+          "errors": 568,
+          "substitutions": 288,
+          "deletions": 169,
+          "insertions": 111,
+          "chars": 33326,
+          "char_errors": 1890,
+          "utterance_error": 183,
+          "wer": 10.416284613973959,
+          "cer": 5.671247674488387
+        },
+        "parent": {
+          "words": 5453,
+          "errors": 565,
+          "substitutions": 292,
+          "deletions": 164,
+          "insertions": 109,
+          "chars": 33326,
+          "char_errors": 1859,
+          "utterance_error": 179,
+          "wer": 10.361269026224097,
+          "cer": 5.578227209986197
+        },
+        "candidate": {
+          "words": 5453,
+          "errors": 579,
+          "substitutions": 284,
+          "deletions": 182,
+          "insertions": 113,
+          "chars": 33326,
+          "char_errors": 1933,
+          "utterance_error": 183,
+          "wer": 10.618008435723455,
+          "cer": 5.800276060733362
+        },
+        "candidate_minus_parent_wer_pp": 0.2567394094993585,
+        "candidate_minus_parakeet_wer_pp": 0.20172382174949632
+      }
+    },
+    "golos_farfield_ru": {
+      "rows": 256,
+      "hours": 0.18247008680555554,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 1066,
+          "errors": 91,
+          "substitutions": 77,
+          "deletions": 6,
+          "insertions": 8,
+          "chars": 6941,
+          "char_errors": 180,
+          "utterance_error": 62,
+          "wer": 8.536585365853659,
+          "cer": 2.593286269989915
+        },
+        "parent": {
+          "words": 1066,
+          "errors": 93,
+          "substitutions": 78,
+          "deletions": 5,
+          "insertions": 10,
+          "chars": 6941,
+          "char_errors": 178,
+          "utterance_error": 62,
+          "wer": 8.72420262664165,
+          "cer": 2.564471978101138
+        },
+        "candidate": {
+          "words": 1066,
+          "errors": 111,
+          "substitutions": 87,
+          "deletions": 8,
+          "insertions": 16,
+          "chars": 6941,
+          "char_errors": 245,
+          "utterance_error": 70,
+          "wer": 10.412757973733584,
+          "cer": 3.529750756375162
+        },
+        "candidate_minus_parent_wer_pp": 1.688555347091933,
+        "candidate_minus_parakeet_wer_pp": 1.8761726078799246
+      }
+    },
+    "golos_crowd_ru": {
+      "rows": 256,
+      "hours": 0.29291835069444433,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 1304,
+          "errors": 41,
+          "substitutions": 36,
+          "deletions": 3,
+          "insertions": 2,
+          "chars": 8520,
+          "char_errors": 56,
+          "utterance_error": 33,
+          "wer": 3.144171779141104,
+          "cer": 0.6572769953051644
+        },
+        "parent": {
+          "words": 1304,
+          "errors": 39,
+          "substitutions": 35,
+          "deletions": 3,
+          "insertions": 1,
+          "chars": 8520,
+          "char_errors": 51,
+          "utterance_error": 34,
+          "wer": 2.9907975460122698,
+          "cer": 0.5985915492957746
+        },
+        "candidate": {
+          "words": 1304,
+          "errors": 49,
+          "substitutions": 40,
+          "deletions": 5,
+          "insertions": 4,
+          "chars": 8520,
+          "char_errors": 64,
+          "utterance_error": 37,
+          "wer": 3.7576687116564416,
+          "cer": 0.7511737089201878
+        },
+        "candidate_minus_parent_wer_pp": 0.7668711656441718,
+        "candidate_minus_parakeet_wer_pp": 0.6134969325153374
+      }
+    },
+    "monsoon_en_in": {
+      "rows": 256,
+      "hours": 0.6956833333333332,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 6222,
+          "errors": 366,
+          "substitutions": 210,
+          "deletions": 29,
+          "insertions": 127,
+          "chars": 31433,
+          "char_errors": 828,
+          "utterance_error": 162,
+          "wer": 5.882352941176471,
+          "cer": 2.634174275443006
+        },
+        "parent": {
+          "words": 6222,
+          "errors": 342,
+          "substitutions": 206,
+          "deletions": 49,
+          "insertions": 87,
+          "chars": 31433,
+          "char_errors": 779,
+          "utterance_error": 160,
+          "wer": 5.496624879459981,
+          "cer": 2.4782871504469823
+        },
+        "candidate": {
+          "words": 6222,
+          "errors": 335,
+          "substitutions": 205,
+          "deletions": 45,
+          "insertions": 85,
+          "chars": 31433,
+          "char_errors": 767,
+          "utterance_error": 156,
+          "wer": 5.384120861459338,
+          "cer": 2.440110711672446
+        },
+        "candidate_minus_parent_wer_pp": -0.11250401800064314,
+        "candidate_minus_parakeet_wer_pp": -0.4982320797171331
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 6185,
+          "errors": 306,
+          "substitutions": 144,
+          "deletions": 79,
+          "insertions": 83,
+          "chars": 31429,
+          "char_errors": 773,
+          "utterance_error": 150,
+          "wer": 4.947453516572352,
+          "cer": 2.4595119157466034
+        },
+        "parent": {
+          "words": 6185,
+          "errors": 298,
+          "substitutions": 145,
+          "deletions": 84,
+          "insertions": 69,
+          "chars": 31429,
+          "char_errors": 750,
+          "utterance_error": 154,
+          "wer": 4.8181083265966045,
+          "cer": 2.3863310954850614
+        },
+        "candidate": {
+          "words": 6185,
+          "errors": 288,
+          "substitutions": 144,
+          "deletions": 85,
+          "insertions": 59,
+          "chars": 31429,
+          "char_errors": 742,
+          "utterance_error": 147,
+          "wer": 4.65642683912692,
+          "cer": 2.360876897133221
+        },
+        "candidate_minus_parent_wer_pp": -0.1616814874696848,
+        "candidate_minus_parakeet_wer_pp": -0.29102667744543265
+      }
+    },
+    "nst_da_da": {
+      "rows": 256,
+      "hours": 0.3674177777777776,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 2583,
+          "errors": 863,
+          "substitutions": 472,
+          "deletions": 355,
+          "insertions": 36,
+          "chars": 13714,
+          "char_errors": 2640,
+          "utterance_error": 216,
+          "wer": 33.41076267905536,
+          "cer": 19.250401050021875
+        },
+        "parent": {
+          "words": 2583,
+          "errors": 856,
+          "substitutions": 467,
+          "deletions": 351,
+          "insertions": 38,
+          "chars": 13714,
+          "char_errors": 2654,
+          "utterance_error": 213,
+          "wer": 33.13975996902826,
+          "cer": 19.352486510135627
+        },
+        "candidate": {
+          "words": 2583,
+          "errors": 332,
+          "substitutions": 265,
+          "deletions": 45,
+          "insertions": 22,
+          "chars": 13714,
+          "char_errors": 636,
+          "utterance_error": 155,
+          "wer": 12.853271389856756,
+          "cer": 4.637596616596179
+        },
+        "candidate_minus_parent_wer_pp": -20.286488579171504,
+        "candidate_minus_parakeet_wer_pp": -20.5574912891986
+      }
+    },
+    "voxpopuli_cs": {
+      "rows": 256,
+      "hours": 0.6932252083333333,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 5408,
+          "errors": 441,
+          "substitutions": 269,
+          "deletions": 99,
+          "insertions": 73,
+          "chars": 35419,
+          "char_errors": 1393,
+          "utterance_error": 155,
+          "wer": 8.154585798816568,
+          "cer": 3.9329173607385868
+        },
+        "parent": {
+          "words": 5408,
+          "errors": 432,
+          "substitutions": 254,
+          "deletions": 109,
+          "insertions": 69,
+          "chars": 35419,
+          "char_errors": 1474,
+          "utterance_error": 153,
+          "wer": 7.988165680473373,
+          "cer": 4.1616081764024955
+        },
+        "candidate": {
+          "words": 5408,
+          "errors": 449,
+          "substitutions": 262,
+          "deletions": 121,
+          "insertions": 66,
+          "chars": 35419,
+          "char_errors": 1455,
+          "utterance_error": 155,
+          "wer": 8.302514792899409,
+          "cer": 4.107964651740591
+        },
+        "candidate_minus_parent_wer_pp": 0.3143491124260356,
+        "candidate_minus_parakeet_wer_pp": 0.14792899408284121
+      }
+    },
+    "nst_sv_sv": {
+      "rows": 256,
+      "hours": 0.35034722222222225,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 1994,
+          "errors": 421,
+          "substitutions": 327,
+          "deletions": 60,
+          "insertions": 34,
+          "chars": 11754,
+          "char_errors": 1463,
+          "utterance_error": 172,
+          "wer": 21.113340020060182,
+          "cer": 12.446826612217118
+        },
+        "parent": {
+          "words": 1994,
+          "errors": 398,
+          "substitutions": 289,
+          "deletions": 71,
+          "insertions": 38,
+          "chars": 11754,
+          "char_errors": 1403,
+          "utterance_error": 159,
+          "wer": 19.95987963891675,
+          "cer": 11.936362089501447
+        },
+        "candidate": {
+          "words": 1994,
+          "errors": 277,
+          "substitutions": 209,
+          "deletions": 26,
+          "insertions": 42,
+          "chars": 11754,
+          "char_errors": 430,
+          "utterance_error": 143,
+          "wer": 13.891675025075227,
+          "cer": 3.6583290794623107
+        },
+        "candidate_minus_parent_wer_pp": -6.068204613841523,
+        "candidate_minus_parakeet_wer_pp": -7.221664994984955
+      }
+    },
+    "eurospeech_lv": {
+      "rows": 256,
+      "hours": 1.0540805208333326,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 6437,
+          "errors": 3721,
+          "substitutions": 2704,
+          "deletions": 769,
+          "insertions": 248,
+          "chars": 44102,
+          "char_errors": 11751,
+          "utterance_error": 256,
+          "wer": 57.80643156750039,
+          "cer": 26.645050111106073
+        },
+        "parent": {
+          "words": 6437,
+          "errors": 2788,
+          "substitutions": 2135,
+          "deletions": 324,
+          "insertions": 329,
+          "chars": 44102,
+          "char_errors": 7305,
+          "utterance_error": 254,
+          "wer": 43.31210191082803,
+          "cer": 16.563874654210693
+        },
+        "candidate": {
+          "words": 6437,
+          "errors": 2988,
+          "substitutions": 2228,
+          "deletions": 443,
+          "insertions": 317,
+          "chars": 44102,
+          "char_errors": 8350,
+          "utterance_error": 255,
+          "wer": 46.41913935062917,
+          "cer": 18.93338170604508
+        },
+        "candidate_minus_parent_wer_pp": 3.1070374398011467,
+        "candidate_minus_parakeet_wer_pp": -11.387292216871217
+      }
+    },
+    "eurospeech_hr": {
+      "rows": 256,
+      "hours": 1.045452152777778,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 7517,
+          "errors": 997,
+          "substitutions": 504,
+          "deletions": 172,
+          "insertions": 321,
+          "chars": 45766,
+          "char_errors": 3976,
+          "utterance_error": 222,
+          "wer": 13.263269921511242,
+          "cer": 8.687672070969716
+        },
+        "parent": {
+          "words": 7517,
+          "errors": 980,
+          "substitutions": 502,
+          "deletions": 156,
+          "insertions": 322,
+          "chars": 45766,
+          "char_errors": 3866,
+          "utterance_error": 220,
+          "wer": 13.037115870693096,
+          "cer": 8.447318970414718
+        },
+        "candidate": {
+          "words": 7517,
+          "errors": 999,
+          "substitutions": 520,
+          "deletions": 149,
+          "insertions": 330,
+          "chars": 45766,
+          "char_errors": 3961,
+          "utterance_error": 223,
+          "wer": 13.289876280431024,
+          "cer": 8.654896648166762
+        },
+        "candidate_minus_parent_wer_pp": 0.25276040973792746,
+        "candidate_minus_parakeet_wer_pp": 0.026606358919782025
+      }
+    },
+    "eurospeech_fi": {
+      "rows": 256,
+      "hours": 1.0576934722222224,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 6347,
+          "errors": 1185,
+          "substitutions": 670,
+          "deletions": 215,
+          "insertions": 300,
+          "chars": 51093,
+          "char_errors": 4009,
+          "utterance_error": 232,
+          "wer": 18.670237907672917,
+          "cer": 7.846476033898969
+        },
+        "parent": {
+          "words": 6347,
+          "errors": 1112,
+          "substitutions": 618,
+          "deletions": 202,
+          "insertions": 292,
+          "chars": 51093,
+          "char_errors": 3827,
+          "utterance_error": 227,
+          "wer": 17.520088230660154,
+          "cer": 7.490262854011313
+        },
+        "candidate": {
+          "words": 6347,
+          "errors": 1114,
+          "substitutions": 604,
+          "deletions": 210,
+          "insertions": 300,
+          "chars": 51093,
+          "char_errors": 3942,
+          "utterance_error": 230,
+          "wer": 17.5515991807153,
+          "cer": 7.715342610533733
+        },
+        "candidate_minus_parent_wer_pp": 0.03151095005514648,
+        "candidate_minus_parakeet_wer_pp": -1.1186387269576166
+      }
+    },
+    "eurospeech_it": {
+      "rows": 256,
+      "hours": 1.0571320486111115,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 8128,
+          "errors": 865,
+          "substitutions": 382,
+          "deletions": 220,
+          "insertions": 263,
+          "chars": 50659,
+          "char_errors": 3208,
+          "utterance_error": 222,
+          "wer": 10.642224409448819,
+          "cer": 6.332537160228193
+        },
+        "parent": {
+          "words": 8128,
+          "errors": 998,
+          "substitutions": 388,
+          "deletions": 297,
+          "insertions": 313,
+          "chars": 50659,
+          "char_errors": 4057,
+          "utterance_error": 230,
+          "wer": 12.278543307086615,
+          "cer": 8.008448646834719
+        },
+        "candidate": {
+          "words": 8128,
+          "errors": 1003,
+          "substitutions": 396,
+          "deletions": 251,
+          "insertions": 356,
+          "chars": 50659,
+          "char_errors": 4165,
+          "utterance_error": 226,
+          "wer": 12.340059055118111,
+          "cer": 8.221638800607987
+        },
+        "candidate_minus_parent_wer_pp": 0.06151574803149629,
+        "candidate_minus_parakeet_wer_pp": 1.6978346456692925
+      }
+    },
+    "eurospeech_en": {
+      "rows": 256,
+      "hours": 1.0540027430555545,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 9701,
+          "errors": 2837,
+          "substitutions": 1046,
+          "deletions": 315,
+          "insertions": 1476,
+          "chars": 55495,
+          "char_errors": 10934,
+          "utterance_error": 250,
+          "wer": 29.244407793011028,
+          "cer": 19.702675916749257
+        },
+        "parent": {
+          "words": 9701,
+          "errors": 2651,
+          "substitutions": 1017,
+          "deletions": 329,
+          "insertions": 1305,
+          "chars": 55495,
+          "char_errors": 10260,
+          "utterance_error": 250,
+          "wer": 27.32707968250696,
+          "cer": 18.488152085773493
+        },
+        "candidate": {
+          "words": 9701,
+          "errors": 2775,
+          "substitutions": 1081,
+          "deletions": 302,
+          "insertions": 1392,
+          "chars": 55495,
+          "char_errors": 10880,
+          "utterance_error": 250,
+          "wer": 28.605298422843006,
+          "cer": 19.605369853139923
+        },
+        "candidate_minus_parent_wer_pp": 1.2782187403360474,
+        "candidate_minus_parakeet_wer_pp": -0.6391093701680219
+      },
+      "standard_english": {
+        "parakeet": {
+          "words": 9639,
+          "errors": 2477,
+          "substitutions": 845,
+          "deletions": 310,
+          "insertions": 1322,
+          "chars": 55385,
+          "char_errors": 9915,
+          "utterance_error": 251,
+          "wer": 25.697686482000208,
+          "cer": 17.901959014173514
+        },
+        "parent": {
+          "words": 9639,
+          "errors": 2403,
+          "substitutions": 831,
+          "deletions": 321,
+          "insertions": 1251,
+          "chars": 55385,
+          "char_errors": 9624,
+          "utterance_error": 250,
+          "wer": 24.92997198879552,
+          "cer": 17.37654599620836
+        },
+        "candidate": {
+          "words": 9639,
+          "errors": 2432,
+          "substitutions": 844,
+          "deletions": 305,
+          "insertions": 1283,
+          "chars": 55385,
+          "char_errors": 9732,
+          "utterance_error": 250,
+          "wer": 25.230833073970327,
+          "cer": 17.571544642051098
+        },
+        "candidate_minus_parent_wer_pp": 0.3008610851748088,
+        "candidate_minus_parakeet_wer_pp": -0.4668534080298805
+      }
+    },
+    "eurospeech_pt": {
+      "rows": 256,
+      "hours": 1.025162309027778,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 8186,
+          "errors": 1908,
+          "substitutions": 551,
+          "deletions": 567,
+          "insertions": 790,
+          "chars": 48112,
+          "char_errors": 8435,
+          "utterance_error": 241,
+          "wer": 23.30808697776692,
+          "cer": 17.53200864649152
+        },
+        "parent": {
+          "words": 8186,
+          "errors": 1919,
+          "substitutions": 531,
+          "deletions": 589,
+          "insertions": 799,
+          "chars": 48112,
+          "char_errors": 8548,
+          "utterance_error": 240,
+          "wer": 23.442462741265576,
+          "cer": 17.76687728633189
+        },
+        "candidate": {
+          "words": 8186,
+          "errors": 1985,
+          "substitutions": 588,
+          "deletions": 592,
+          "insertions": 805,
+          "chars": 48112,
+          "char_errors": 8958,
+          "utterance_error": 239,
+          "wer": 24.248717322257512,
+          "cer": 18.619055537080147
+        },
+        "candidate_minus_parent_wer_pp": 0.8062545809919364,
+        "candidate_minus_parakeet_wer_pp": 0.940630344490593
+      }
+    },
+    "eurospeech_el": {
+      "rows": 256,
+      "hours": 1.0396271527777774,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 7914,
+          "errors": 2063,
+          "substitutions": 1816,
+          "deletions": 130,
+          "insertions": 117,
+          "chars": 50648,
+          "char_errors": 4296,
+          "utterance_error": 256,
+          "wer": 26.06772807682588,
+          "cer": 8.482072342441953
+        },
+        "parent": {
+          "words": 7914,
+          "errors": 1480,
+          "substitutions": 1128,
+          "deletions": 147,
+          "insertions": 205,
+          "chars": 50648,
+          "char_errors": 3844,
+          "utterance_error": 253,
+          "wer": 18.701036138488753,
+          "cer": 7.589638287790239
+        },
+        "candidate": {
+          "words": 7914,
+          "errors": 1450,
+          "substitutions": 1074,
+          "deletions": 169,
+          "insertions": 207,
+          "chars": 50648,
+          "char_errors": 3892,
+          "utterance_error": 253,
+          "wer": 18.321961081627496,
+          "cer": 7.68441004580635
+        },
+        "candidate_minus_parent_wer_pp": -0.3790750568612573,
+        "candidate_minus_parakeet_wer_pp": -7.745766995198384
+      }
+    },
+    "eurospeech_uk": {
+      "rows": 256,
+      "hours": 1.0933650694444448,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 7235,
+          "errors": 1101,
+          "substitutions": 531,
+          "deletions": 173,
+          "insertions": 397,
+          "chars": 46747,
+          "char_errors": 4132,
+          "utterance_error": 230,
+          "wer": 15.21769177608846,
+          "cer": 8.839069886837658
+        },
+        "parent": {
+          "words": 7235,
+          "errors": 1017,
+          "substitutions": 489,
+          "deletions": 171,
+          "insertions": 357,
+          "chars": 46747,
+          "char_errors": 3731,
+          "utterance_error": 224,
+          "wer": 14.056668970283345,
+          "cer": 7.981260829571951
+        },
+        "candidate": {
+          "words": 7235,
+          "errors": 1283,
+          "substitutions": 607,
+          "deletions": 160,
+          "insertions": 516,
+          "chars": 46747,
+          "char_errors": 5297,
+          "utterance_error": 233,
+          "wer": 17.733241188666206,
+          "cer": 11.331208419791645
+        },
+        "candidate_minus_parent_wer_pp": 3.6765722183828604,
+        "candidate_minus_parakeet_wer_pp": 2.5155494125777462
+      }
+    },
+    "eurospeech_sk": {
+      "rows": 256,
+      "hours": 1.0663451041666667,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 7313,
+          "errors": 1361,
+          "substitutions": 927,
+          "deletions": 235,
+          "insertions": 199,
+          "chars": 45102,
+          "char_errors": 3711,
+          "utterance_error": 242,
+          "wer": 18.610693285929166,
+          "cer": 8.22801649594253
+        },
+        "parent": {
+          "words": 7313,
+          "errors": 1110,
+          "substitutions": 724,
+          "deletions": 191,
+          "insertions": 195,
+          "chars": 45102,
+          "char_errors": 3197,
+          "utterance_error": 231,
+          "wer": 15.178449336797485,
+          "cer": 7.088377455545209
+        },
+        "candidate": {
+          "words": 7313,
+          "errors": 1278,
+          "substitutions": 822,
+          "deletions": 199,
+          "insertions": 257,
+          "chars": 45102,
+          "char_errors": 4228,
+          "utterance_error": 234,
+          "wer": 17.475728155339805,
+          "cer": 9.374307126069798
+        },
+        "candidate_minus_parent_wer_pp": 2.2972788185423205,
+        "candidate_minus_parakeet_wer_pp": -1.1349651305893609
+      }
+    },
+    "eurospeech_de": {
+      "rows": 256,
+      "hours": 1.091228263888889,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 8458,
+          "errors": 1274,
+          "substitutions": 613,
+          "deletions": 243,
+          "insertions": 418,
+          "chars": 56900,
+          "char_errors": 5658,
+          "utterance_error": 235,
+          "wer": 15.062662567982974,
+          "cer": 9.943760984182777
+        },
+        "parent": {
+          "words": 8458,
+          "errors": 1140,
+          "substitutions": 498,
+          "deletions": 228,
+          "insertions": 414,
+          "chars": 56900,
+          "char_errors": 5259,
+          "utterance_error": 235,
+          "wer": 13.478363679356821,
+          "cer": 9.242530755711774
+        },
+        "candidate": {
+          "words": 8458,
+          "errors": 1045,
+          "substitutions": 466,
+          "deletions": 232,
+          "insertions": 347,
+          "chars": 56900,
+          "char_errors": 4804,
+          "utterance_error": 229,
+          "wer": 12.355166706077087,
+          "cer": 8.442882249560633
+        },
+        "candidate_minus_parent_wer_pp": -1.1231969732797342,
+        "candidate_minus_parakeet_wer_pp": -2.707495861905887
+      }
+    },
+    "eurospeech_bg": {
+      "rows": 256,
+      "hours": 1.0723538020833332,
+      "evaluation_role": "training_exposed_fit_check",
+      "legacy": {
+        "parakeet": {
+          "words": 7501,
+          "errors": 1107,
+          "substitutions": 681,
+          "deletions": 134,
+          "insertions": 292,
+          "chars": 46718,
+          "char_errors": 3238,
+          "utterance_error": 232,
+          "wer": 14.758032262365019,
+          "cer": 6.930947386446338
+        },
+        "parent": {
+          "words": 7501,
+          "errors": 1099,
+          "substitutions": 682,
+          "deletions": 128,
+          "insertions": 289,
+          "chars": 46718,
+          "char_errors": 3403,
+          "utterance_error": 225,
+          "wer": 14.65137981602453,
+          "cer": 7.28413031379768
+        },
+        "candidate": {
+          "words": 7501,
+          "errors": 1034,
+          "substitutions": 603,
+          "deletions": 129,
+          "insertions": 302,
+          "chars": 46718,
+          "char_errors": 3076,
+          "utterance_error": 227,
+          "wer": 13.784828689508066,
+          "cer": 6.58418596686502
+        },
+        "candidate_minus_parent_wer_pp": -0.8665511265164643,
+        "candidate_minus_parakeet_wer_pp": -0.9732035728569528
+      }
+    },
+    "eurospeech_fr": {
+      "rows": 256,
+      "hours": 1.0628877083333335,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 10608,
+          "errors": 2122,
+          "substitutions": 1263,
+          "deletions": 413,
+          "insertions": 446,
+          "chars": 62835,
+          "char_errors": 7448,
+          "utterance_error": 246,
+          "wer": 20.00377073906486,
+          "cer": 11.853266491604996
+        },
+        "parent": {
+          "words": 10608,
+          "errors": 1606,
+          "substitutions": 832,
+          "deletions": 291,
+          "insertions": 483,
+          "chars": 62835,
+          "char_errors": 6023,
+          "utterance_error": 241,
+          "wer": 15.139517345399698,
+          "cer": 9.585422137343837
+        },
+        "candidate": {
+          "words": 10608,
+          "errors": 1614,
+          "substitutions": 844,
+          "deletions": 279,
+          "insertions": 491,
+          "chars": 62835,
+          "char_errors": 6133,
+          "utterance_error": 242,
+          "wer": 15.214932126696832,
+          "cer": 9.760483806795575
+        },
+        "candidate_minus_parent_wer_pp": 0.07541478129713397,
+        "candidate_minus_parakeet_wer_pp": -4.788838612368027
+      }
+    },
+    "eurospeech_mt": {
+      "rows": 256,
+      "hours": 1.074667482638889,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 7827,
+          "errors": 3189,
+          "substitutions": 2047,
+          "deletions": 518,
+          "insertions": 624,
+          "chars": 46941,
+          "char_errors": 9028,
+          "utterance_error": 256,
+          "wer": 40.743579915676506,
+          "cer": 19.232653756843696
+        },
+        "parent": {
+          "words": 7827,
+          "errors": 3031,
+          "substitutions": 1942,
+          "deletions": 447,
+          "insertions": 642,
+          "chars": 46941,
+          "char_errors": 8447,
+          "utterance_error": 256,
+          "wer": 38.72492653634854,
+          "cer": 17.994929805500522
+        },
+        "candidate": {
+          "words": 7827,
+          "errors": 3241,
+          "substitutions": 2079,
+          "deletions": 538,
+          "insertions": 624,
+          "chars": 46941,
+          "char_errors": 9237,
+          "utterance_error": 256,
+          "wer": 41.4079468506452,
+          "cer": 19.67789352591551
+        },
+        "candidate_minus_parent_wer_pp": 2.6830203142966624,
+        "candidate_minus_parakeet_wer_pp": 0.6643669349686974
+      }
+    },
+    "eurospeech_et": {
+      "rows": 256,
+      "hours": 1.069578055555555,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 6816,
+          "errors": 2609,
+          "substitutions": 1722,
+          "deletions": 351,
+          "insertions": 536,
+          "chars": 47716,
+          "char_errors": 7007,
+          "utterance_error": 254,
+          "wer": 38.277582159624416,
+          "cer": 14.68480174364993
+        },
+        "parent": {
+          "words": 6816,
+          "errors": 2038,
+          "substitutions": 1251,
+          "deletions": 253,
+          "insertions": 534,
+          "chars": 47716,
+          "char_errors": 5495,
+          "utterance_error": 253,
+          "wer": 29.900234741784036,
+          "cer": 11.516053315449744
+        },
+        "candidate": {
+          "words": 6816,
+          "errors": 2060,
+          "substitutions": 1209,
+          "deletions": 285,
+          "insertions": 566,
+          "chars": 47716,
+          "char_errors": 6055,
+          "utterance_error": 253,
+          "wer": 30.22300469483568,
+          "cer": 12.689663844412776
+        },
+        "candidate_minus_parent_wer_pp": 0.3227699530516439,
+        "candidate_minus_parakeet_wer_pp": -8.054577464788736
+      }
+    },
+    "eurospeech_sl": {
+      "rows": 256,
+      "hours": 1.0421554166666671,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 7737,
+          "errors": 3996,
+          "substitutions": 3162,
+          "deletions": 467,
+          "insertions": 367,
+          "chars": 46542,
+          "char_errors": 8017,
+          "utterance_error": 256,
+          "wer": 51.647925552539746,
+          "cer": 17.225301877873747
+        },
+        "parent": {
+          "words": 7737,
+          "errors": 3771,
+          "substitutions": 3041,
+          "deletions": 380,
+          "insertions": 350,
+          "chars": 46542,
+          "char_errors": 7256,
+          "utterance_error": 255,
+          "wer": 48.73982163629314,
+          "cer": 15.590219586609944
+        },
+        "candidate": {
+          "words": 7737,
+          "errors": 4191,
+          "substitutions": 3331,
+          "deletions": 522,
+          "insertions": 338,
+          "chars": 46542,
+          "char_errors": 8363,
+          "utterance_error": 256,
+          "wer": 54.16828227995347,
+          "cer": 17.968716428172403
+        },
+        "candidate_minus_parent_wer_pp": 5.428460643660337,
+        "candidate_minus_parakeet_wer_pp": 2.520356727413727
+      }
+    },
+    "eurospeech_lt": {
+      "rows": 256,
+      "hours": 1.0921616319444443,
+      "evaluation_role": "nontraining_control",
+      "legacy": {
+        "parakeet": {
+          "words": 6394,
+          "errors": 2521,
+          "substitutions": 1826,
+          "deletions": 336,
+          "insertions": 359,
+          "chars": 45706,
+          "char_errors": 7374,
+          "utterance_error": 254,
+          "wer": 39.427588364091335,
+          "cer": 16.13354920579355
+        },
+        "parent": {
+          "words": 6394,
+          "errors": 2159,
+          "substitutions": 1476,
+          "deletions": 288,
+          "insertions": 395,
+          "chars": 45706,
+          "char_errors": 6712,
+          "utterance_error": 252,
+          "wer": 33.76603065373788,
+          "cer": 14.685161685555506
+        },
+        "candidate": {
+          "words": 6394,
+          "errors": 2288,
+          "substitutions": 1523,
+          "deletions": 338,
+          "insertions": 427,
+          "chars": 45706,
+          "char_errors": 7617,
+          "utterance_error": 253,
+          "wer": 35.78354707538317,
+          "cer": 16.6652080689625
+        },
+        "candidate_minus_parent_wer_pp": 2.01751642164529,
+        "candidate_minus_parakeet_wer_pp": -3.6440412887081663
+      }
+    }
+  },
+  "timings": {
+    "candidate": {
+      "seconds": 98.4349210979999,
+      "rows": 12006
+    }
+  },
+  "scope": "Fixed sample diagnostics. Training-exposed rows measure fit; they are not an unseen benchmark."
+}

@@ -1,0 +1,758 @@
+{
+  "run": "regression-ft-20260907",
+  "status": "preparing",
+  "parent_model": "Orukeet R15-0100",
+  "parent_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+  "selection_rule": "Union of complete-split corpus WER or CER regressions under either reported normalization. Include each selected full partition, not only mistaken utterances.",
+  "sets": [
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "eurospeech_bg",
+      "rows": 6892,
+      "hours": 28.765707065972222,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 7.253446867889225,
+          "orukeet": 7.482180941734256,
+          "delta_pp": 0.22873407384503164
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "eurospeech_el",
+      "rows": 6730,
+      "hours": 28.011912690972224,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 78.14772684073702,
+          "orukeet": 79.18992657229164,
+          "delta_pp": 1.0421997315546179
+        }
+      ],
+      "alignment_status": "repair_required"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "eurospeech_it",
+      "rows": 8714,
+      "hours": 36.354228229166665,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 64.73244818863787,
+          "orukeet": 64.83630613123735,
+          "delta_pp": 0.10385794259947545
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 48.33003770929953,
+          "orukeet": 48.43151982982952,
+          "delta_pp": 0.10148212052998673
+        }
+      ],
+      "alignment_status": "repair_required"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_agr_en",
+      "rows": 6665,
+      "hours": 10.318452430555554,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 8.066625257445487,
+          "orukeet": 8.257870476315015,
+          "delta_pp": 0.19124521886952728
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 4.8687444598326515,
+          "orukeet": 5.0582450070402425,
+          "delta_pp": 0.18950054720759102
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 6.469110330942913,
+          "orukeet": 6.469942263855843,
+          "delta_pp": 0.0008319329129298225
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 3.759626280226227,
+          "orukeet": 3.7651497272588808,
+          "delta_pp": 0.005523447032653728
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_ait_en",
+      "rows": 5468,
+      "hours": 10.457904166666667,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 11.595647992093676,
+          "orukeet": 12.482462255243675,
+          "delta_pp": 0.8868142631499989
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 5.70390438020825,
+          "orukeet": 6.366550814425289,
+          "delta_pp": 0.6626464342170388
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 9.59688649924837,
+          "orukeet": 9.991607566101946,
+          "delta_pp": 0.39472106685357566
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 4.604215371127995,
+          "orukeet": 4.89187609585038,
+          "delta_pp": 0.287660724722385
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_art_en",
+      "rows": 5712,
+      "hours": 10.114382864583334,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 7.6952965632467505,
+          "orukeet": 8.180988090843742,
+          "delta_pp": 0.48569152759699197
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 4.050386632839747,
+          "orukeet": 4.510440100006817,
+          "delta_pp": 0.46005346716706974
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 6.106664268369458,
+          "orukeet": 6.123652206933078,
+          "delta_pp": 0.01698793856362002
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 2.974067535802283,
+          "orukeet": 3.0308980543571638,
+          "delta_pp": 0.05683051855488097
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_bio_en",
+      "rows": 5297,
+      "hours": 10.504789756944446,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 7.499021526418787,
+          "orukeet": 7.8033268101761255,
+          "delta_pp": 0.3043052837573388
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 2.473587120576891,
+          "orukeet": 2.6337585176616347,
+          "delta_pp": 0.16017139708474382
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 6.517026643544065,
+          "orukeet": 6.631325871038941,
+          "delta_pp": 0.1142992274948762
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 1.9066309575750469,
+          "orukeet": 1.918185251547327,
+          "delta_pp": 0.011554293972280139
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_chn_en",
+      "rows": 6308,
+      "hours": 9.427544097222222,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 10.550916755274649,
+          "orukeet": 10.637275803813832,
+          "delta_pp": 0.08635904853918319
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_ecm_en",
+      "rows": 5659,
+      "hours": 10.570892968750002,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 11.025367195271812,
+          "orukeet": 11.387442214289894,
+          "delta_pp": 0.36207501901808214
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 6.25754474740837,
+          "orukeet": 6.619403136299028,
+          "delta_pp": 0.36185838889065813
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 9.08455677383386,
+          "orukeet": 9.100910611410518,
+          "delta_pp": 0.016353837576657426
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 4.791773491050327,
+          "orukeet": 4.799435377878365,
+          "delta_pp": 0.007661886828038256
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_eng_en",
+      "rows": 6648,
+      "hours": 11.598361961805555,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 7.5129600054658345,
+          "orukeet": 8.559154845376673,
+          "delta_pp": 1.0461948399108385
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 3.480922129517251,
+          "orukeet": 4.049847400734305,
+          "delta_pp": 0.5689252712170538
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 5.661737876392195,
+          "orukeet": 6.163014960123712,
+          "delta_pp": 0.5012770837315168
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 2.3402174498369734,
+          "orukeet": 2.4611194202264133,
+          "delta_pp": 0.12090197038943984
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_ent_en",
+      "rows": 8583,
+      "hours": 10.117495520833332,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 7.012303140516406,
+          "orukeet": 7.062006014719439,
+          "delta_pp": 0.04970287420303343
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_fin_en",
+      "rows": 6037,
+      "hours": 11.426505520833333,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 8.550359376458509,
+          "orukeet": 9.093193747352247,
+          "delta_pp": 0.542834370893738
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 4.762900772087173,
+          "orukeet": 5.332797878259269,
+          "delta_pp": 0.5698971061720961
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 6.910239194912128,
+          "orukeet": 6.961147427289764,
+          "delta_pp": 0.050908232377635976
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 3.360882489389852,
+          "orukeet": 3.407131852208228,
+          "delta_pp": 0.046249362818376216
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_hum_en",
+      "rows": 4971,
+      "hours": 10.02624967013889,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 8.058471519816244,
+          "orukeet": 8.330478934536883,
+          "delta_pp": 0.2720074147206386
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 4.338534676034582,
+          "orukeet": 4.5893538687642,
+          "delta_pp": 0.25081919272961795
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_ind_en",
+      "rows": 5503,
+      "hours": 11.078895017361111,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 9.893901492279824,
+          "orukeet": 10.22082291037695,
+          "delta_pp": 0.32692141809712716
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 4.831409489248349,
+          "orukeet": 5.182256881442304,
+          "delta_pp": 0.35084739219395455
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_law_en",
+      "rows": 7273,
+      "hours": 10.321348541666666,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 11.604350843043427,
+          "orukeet": 12.08557499076302,
+          "delta_pp": 0.4812241477195922
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 6.63994012880739,
+          "orukeet": 7.099339097926643,
+          "delta_pp": 0.4593989691192535
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 10.023775822671219,
+          "orukeet": 10.141267242097083,
+          "delta_pp": 0.11749141942586405
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 5.517503120739336,
+          "orukeet": 5.617870414671612,
+          "delta_pp": 0.10036729393227528
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_med_en",
+      "rows": 5168,
+      "hours": 10.308312795138889,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 6.6104388890420145,
+          "orukeet": 6.956809349246162,
+          "delta_pp": 0.3463704602041471
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 2.859283263955743,
+          "orukeet": 3.1016528589442856,
+          "delta_pp": 0.2423695949885425
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 5.4407835324128815,
+          "orukeet": 5.506884769716323,
+          "delta_pp": 0.06610123730344153
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 1.961651765658062,
+          "orukeet": 1.986686831898104,
+          "delta_pp": 0.025035066240041814
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_mil_en",
+      "rows": 5224,
+      "hours": 11.202737222222222,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 9.198696864329793,
+          "orukeet": 9.771951257713875,
+          "delta_pp": 0.5732543933840812
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 4.734977211300876,
+          "orukeet": 5.1864035882237856,
+          "delta_pp": 0.45142637692290943
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 5.987995082322879,
+          "orukeet": 6.099687422156867,
+          "delta_pp": 0.11169233983398819
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 1.7519672354703308,
+          "orukeet": 1.779990319298314,
+          "delta_pp": 0.02802308382798313
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_phl_en",
+      "rows": 8637,
+      "hours": 10.754581875,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 13.238157040882545,
+          "orukeet": 13.448005595961469,
+          "delta_pp": 0.2098485550789242
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 8.277858477221692,
+          "orukeet": 8.534269177563978,
+          "delta_pp": 0.2564107003422862
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 12.008163898002945,
+          "orukeet": 12.054667114475418,
+          "delta_pp": 0.04650321647247324
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 7.425633776568156,
+          "orukeet": 7.4901586397385245,
+          "delta_pp": 0.06452486317036854
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_sct_en",
+      "rows": 12829,
+      "hours": 11.231581006944444,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 27.168823252334377,
+          "orukeet": 27.655094067773128,
+          "delta_pp": 0.4862708154387505
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 17.480870139605305,
+          "orukeet": 18.006635148474434,
+          "delta_pp": 0.5257650088691292
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 26.144821807068567,
+          "orukeet": 26.63493158884296,
+          "delta_pp": 0.4901097817743931
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 17.05476685565545,
+          "orukeet": 17.475728155339805,
+          "delta_pp": 0.4209612996843539
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "primary",
+      "experiment_subdirectory": "",
+      "split": "gigaspeechbench_sgp_en",
+      "rows": 9480,
+      "hours": 10.753926284722223,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 15.256705269908332,
+          "orukeet": 15.757667207363538,
+          "delta_pp": 0.5009619374552052
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 9.523310165301618,
+          "orukeet": 9.925036741403746,
+          "delta_pp": 0.4017265761021278
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "wer",
+          "parakeet": 13.68630371524872,
+          "orukeet": 14.056369820418128,
+          "delta_pp": 0.37006610516940874
+        },
+        {
+          "scoring": "standard_english",
+          "metric": "cer",
+          "parakeet": 8.392480939004816,
+          "orukeet": 8.627921849919742,
+          "delta_pp": 0.23544091091492625
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "coverage",
+      "experiment_subdirectory": "coverage",
+      "split": "golos_crowd_ru",
+      "rows": 9896,
+      "hours": 11.113865329861111,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "wer",
+          "parakeet": 3.4230265507798547,
+          "orukeet": 3.4825574473151564,
+          "delta_pp": 0.059530896535301636
+        },
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 0.7665959381630797,
+          "orukeet": 0.7759927250682025,
+          "delta_pp": 0.0093967869051228
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "coverage",
+      "experiment_subdirectory": "coverage",
+      "split": "nst_da_da",
+      "rows": 54747,
+      "hours": 77.12340222222223,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 16.703976482102956,
+          "orukeet": 16.7390513078173,
+          "delta_pp": 0.03507482571434295
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "coverage",
+      "experiment_subdirectory": "coverage",
+      "split": "nst_sv_sv",
+      "rows": 27638,
+      "hours": 37.90326388888889,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 13.705870725135737,
+          "orukeet": 13.903235755836537,
+          "delta_pp": 0.1973650307007997
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    },
+    {
+      "phase": "followup",
+      "experiment_subdirectory": "alignment-followup",
+      "split": "lesbos_el",
+      "rows": 230,
+      "hours": 0.11232479166666667,
+      "reasons": [
+        {
+          "scoring": "legacy",
+          "metric": "cer",
+          "parakeet": 71.29581827568404,
+          "orukeet": 72.36276028222336,
+          "delta_pp": 1.0669420065393211
+        }
+      ],
+      "alignment_status": "no_known_alignment_defect"
+    }
+  ],
+  "selected_rows": 230309,
+  "selected_hours": 399.5986659201389,
+  "benchmark_inputs": {
+    "primary": {
+      "comparison_sha256": "cc024031468c602fb6c326943a2ea1b6dffa66440fcb4d04559d12bb83f05ed0",
+      "protocol_sha256": "b55f1ef30a1a131e7abf976e80e22b20efe8a4adac488999dafdc83a8ec86d11"
+    },
+    "coverage": {
+      "comparison_sha256": "298599ce854a9607a188f07becf9c75403a411542c6e960ded9c5d4b25ec8401",
+      "protocol_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb"
+    },
+    "followup": {
+      "comparison_sha256": "be523c66c6268d8526532d783a8aac468406b8011a7016dbaacf47a8adb16877",
+      "protocol_sha256": "80ea4332fc067ca98d0e1a1c2f781ba9c3bbed5aa46fb320a989b4a20c0ae9d1"
+    }
+  },
+  "training_scope": "One complete pass. Every Gabor row stays frozen; all other parameters train. All selected records become training-exposed.",
+  "proposed_optimizer": {
+    "name": "AdamW",
+    "peak_lr": 1e-06,
+    "end_lr": 1e-07,
+    "warmup_fraction": 0.03,
+    "betas": [
+      0.9,
+      0.98
+    ],
+    "weight_decay": 0.001,
+    "clip_grad_norm": 1.0
+  },
+  "batching": {
+    "max_padded_seconds": 120,
+    "max_utterances": 16,
+    "accumulate_batches": 4,
+    "order": "Globally shuffled duration buckets; each eligible UID exactly once."
+  },
+  "audio": "Mono 16k PCM16 FLAC cache; verify pre-quantization PCM against original benchmark receipts.",
+  "seed": 20260917,
+  "alignment_policy": "Repair known Greek/Italian EuroSpeech mismatches before supervised training; awaiting user preference.",
+  "canonical_release_replaced": false,
+  "publication_authorized": false
+}

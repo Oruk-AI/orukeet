@@ -1,0 +1,41 @@
+{
+  "platform": "Linux-6.8.0-1064-gcp-x86_64-with-glibc2.35",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "python": "3.12.14 (main, Sep  1 2026, 14:16:52) [Clang 22.1.3 ]",
+  "device": "cuda",
+  "model": "oruk-parakeet-v3-20260905.q8_0.gguf",
+  "model_sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+  "model_bytes": 714456736,
+  "runtime": "NVIDIA/NeMo-Speech.cpp v0.1.0",
+  "repeats": 10,
+  "results": [
+    {
+      "audio": "jfk.wav",
+      "audio_sha256": "59dfb9a4acb36fe2a2affc14bacbee2920ff435cb13cc314a08c13f66ba7860e",
+      "duration_s": 11.0,
+      "first_s": 0.560401948998333,
+      "warm_s": [
+        0.05645673000253737,
+        0.07201071699091699,
+        0.05886312000802718,
+        0.04719592600304168,
+        0.043141860005562194,
+        0.043894129994441755,
+        0.05873573799908627,
+        0.04312881799705792,
+        0.043697261993656866,
+        0.05756503899465315
+      ],
+      "warm_median_s": 0.05182632800278952,
+      "warm_p95_s": 0.06609429834861656,
+      "rtfx": 212.24733497244742,
+      "deterministic": true
+    }
+  ],
+  "load_s": 0.4842643939919071,
+  "peak_process_tree_rss_bytes": 402862080,
+  "hardware": "NVIDIA A100-SXM4-40GB",
+  "measurement": "File decode, quiet-point windows, and worker IPC; model loading, hotkey post-roll, paste, and text cleanup excluded from warm times.",
+  "date": "2026-09-05"
+}

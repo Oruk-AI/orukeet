@@ -1,0 +1,13 @@
+{
+  "reason": "First native count-bundle build compared a source-only narrative field to the native narrative and correctly stopped. Native statistic reproduction now omits only those two nonmetric prose fields; all counts, means, intervals, identities and gates remain compared exactly. Raw result hashes preserve the original narratives.",
+  "before_sha256": {
+    "training/gabor_half/package_metric_evidence.py": "2f3b8af76569b2b0d67d4257fbb8d3567dd5b02eec90ab06475b0fdfc3d624c3",
+    "training/gabor_half/reproduce_metric_evidence.py": "28126affd42a976938793e43b90a43e9b8b477ff9329cd93e2c3e6454d97fd31"
+  },
+  "failed_attempt": "metric-native-r15-0100-f16-scope-mismatch",
+  "evaluation_changed": false,
+  "after_sha256": {
+    "training/gabor_half/package_metric_evidence.py": "3842ddee6731d79b5165debc89ce3af3d2a7dd3864d4268b18057ec3b9fbabc9",
+    "training/gabor_half/reproduce_metric_evidence.py": "7a41e94cf9ad2b4431f71960896b32c694180180c2adc1dfedf1a08a715f0e38"
+  }
+}

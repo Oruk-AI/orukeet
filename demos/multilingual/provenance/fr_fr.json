@@ -1,0 +1,75 @@
+{
+  "dataset": "google/fleurs",
+  "provider": "Google / FLEURS authors",
+  "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+  "config": "fr_fr",
+  "split": "test",
+  "original_tsv_row_zero_based": 0,
+  "id": 1829,
+  "source_filename": "7105431834829365765.wav",
+  "reference_raw": "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+  "reference_normalized_by_provider": "les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables en particulier sur des produits comme les boissons alcoolisées ou le tabac",
+  "source_num_samples": 150720,
+  "tsv": {
+    "url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/fr_fr/test.tsv",
+    "source_file_sha256": "5d06d338b242e00786fcf12c4c92008b9f399d5a5c872c91dca90572e7869c0d",
+    "selected_row_file": "provenance/fr_fr-test-row-0.tsv",
+    "selected_row_sha256": "76e71baec21f8d775ad1a8e916279d8d33dca9a8be31e560ae2f218a69b3f67e",
+    "note": "Only the selected first row is distributed; the full TSV download is a private .tmp cache."
+  },
+  "archive": {
+    "url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/fr_fr/audio/test.tar.gz",
+    "member": "test/7105431834829365765.wav",
+    "provider_metadata": {
+      "type": "file",
+      "oid": "65ab8257d52eb99025fe3fa75f6489240ccf7679",
+      "size": 349036055,
+      "lfs": {
+        "oid": "d23690e102f373554d1b544cd2ff1e76e4fedeb04953c0b72751a1b7c518cfdd",
+        "size": 349036055,
+        "pointerSize": 134
+      },
+      "xetHash": "a9996ed8367bc7e17f745a23cfc948c5745fa941abb668af0ffb3596839d98a7",
+      "path": "data/fr_fr/audio/test.tar.gz",
+      "lastCommit": {
+        "id": "4683b04af03d2d9549064c7d72060a9a94bb6046",
+        "title": "streaming (#11)",
+        "date": "2023-02-07T14:10:57.000Z"
+      },
+      "securityFileStatus": {
+        "status": "queued",
+        "protectAiScan": {
+          "status": "unscanned"
+        },
+        "avScan": {
+          "status": "safe",
+          "message": "No security issues detected",
+          "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+        },
+        "pickleImportScan": {
+          "status": "unscanned",
+          "pickleImports": [],
+          "version": "0.0.0"
+        },
+        "virusTotalScan": {
+          "status": "queued",
+          "message": "QUEUED",
+          "reportLink": "https://www.virustotal.com/gui/file/d23690e102f373554d1b544cd2ff1e76e4fedeb04953c0b72751a1b7c518cfdd?utm_source=huggingface"
+        }
+      }
+    },
+    "verification_note": "Only the selected member was copied and hashed. The streamed archive was stopped after that member; its full advertised LFS hash was not locally verified.",
+    "members_scanned": 558
+  },
+  "audio": {
+    "local_file": "audio/fr_fr.source.wav",
+    "sha256": "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+    "bytes": 602938,
+    "changes": "None: original archive member copied byte-for-byte."
+  },
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech (2022), Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera and Ankur Bapna; distributed by Google.",
+  "card_url": "https://huggingface.co/datasets/google/fleurs/blob/70bb2e84b976b7e960aa89f1c648e09c59f894dd/README.md",
+  "retrieved_utc": "2026-09-06T04:57:03.081274+00:00"
+}

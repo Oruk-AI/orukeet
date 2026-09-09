@@ -1,0 +1,14 @@
+{
+  "step": 3,
+  "total_steps": 3,
+  "next_batch": 12,
+  "loss": 4.153310363969209,
+  "lr": 9.994579552923276e-07,
+  "gradient_norm": 40.53367614746094,
+  "seen_rows": 173,
+  "seen_by_split": {
+    "nst_da_da": 173
+  },
+  "elapsed_seconds": 13.815927607996855,
+  "cuda_peak_bytes": 18218985984
+}

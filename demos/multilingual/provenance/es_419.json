@@ -1,0 +1,75 @@
+{
+  "dataset": "google/fleurs",
+  "provider": "Google / FLEURS authors",
+  "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+  "config": "es_419",
+  "split": "test",
+  "original_tsv_row_zero_based": 0,
+  "id": 1770,
+  "source_filename": "7285658688146080595.wav",
+  "reference_raw": "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+  "reference_normalized_by_provider": "esto parece tener sentido ya que en la tierra no se percibe su movimiento ¿cierto?",
+  "source_num_samples": 122880,
+  "tsv": {
+    "url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/es_419/test.tsv",
+    "source_file_sha256": "d107a93a4f54a18ac25cd470bb4cdadce14fb075b0c1d1542258e274d209ec09",
+    "selected_row_file": "provenance/es_419-test-row-0.tsv",
+    "selected_row_sha256": "53ca0d10c461b65a69cea66e63fa3bfaa6deeddd41889bf96b94809cc8178140",
+    "note": "Only the selected first row is distributed; the full TSV download is a private .tmp cache."
+  },
+  "archive": {
+    "url": "https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/data/es_419/audio/test.tar.gz",
+    "member": "test/7285658688146080595.wav",
+    "provider_metadata": {
+      "type": "file",
+      "oid": "19103c0aba86016c609839a7997486937b703ac2",
+      "size": 582112372,
+      "lfs": {
+        "oid": "981802f6c828fd214fcf8bfc1036d80c9184b6eeb5650b3f7882f8affec046c9",
+        "size": 582112372,
+        "pointerSize": 134
+      },
+      "xetHash": "101f479ce7e6276a6acbee9edbd16eab1c3c6c342ddf8f94b310228cbf7f43ad",
+      "path": "data/es_419/audio/test.tar.gz",
+      "lastCommit": {
+        "id": "4683b04af03d2d9549064c7d72060a9a94bb6046",
+        "title": "streaming (#11)",
+        "date": "2023-02-07T14:10:57.000Z"
+      },
+      "securityFileStatus": {
+        "status": "safe",
+        "protectAiScan": {
+          "status": "unscanned"
+        },
+        "avScan": {
+          "status": "safe",
+          "message": "No security issues detected",
+          "reportLink": "https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface"
+        },
+        "pickleImportScan": {
+          "status": "unscanned",
+          "pickleImports": [],
+          "version": "0.0.0"
+        },
+        "virusTotalScan": {
+          "status": "unscanned",
+          "message": "File not scanned in VirusTotal",
+          "reportLink": "https://www.virustotal.com/gui/file/981802f6c828fd214fcf8bfc1036d80c9184b6eeb5650b3f7882f8affec046c9?utm_source=huggingface"
+        }
+      }
+    },
+    "verification_note": "Only the selected member was copied and hashed. The streamed archive was stopped after that member; its full advertised LFS hash was not locally verified.",
+    "members_scanned": 761
+  },
+  "audio": {
+    "local_file": "audio/es_419.source.wav",
+    "sha256": "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+    "bytes": 491578,
+    "changes": "None: original archive member copied byte-for-byte."
+  },
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech (2022), Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera and Ankur Bapna; distributed by Google.",
+  "card_url": "https://huggingface.co/datasets/google/fleurs/blob/70bb2e84b976b7e960aa89f1c648e09c59f894dd/README.md",
+  "retrieved_utc": "2026-09-06T04:57:43.385969+00:00"
+}

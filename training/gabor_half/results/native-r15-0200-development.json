@@ -1,0 +1,424 @@
+{
+  "status": "fail",
+  "limitations": "Paired native deployment regression on the same exposed 5,100 development recordings; not new model-selection evidence.",
+  "original_sha256": "8967e04bd73fd8e88bccbfe97d0ec952beac73b1b3b3cba4b5c03316fcd8baa0",
+  "candidate_sha256": "4a6c4863f3b4243a1292f277650e39ba2b2578be9a5e9406a5300c637431e29c",
+  "primary": {
+    "original_wer": 10.101759056329339,
+    "candidate_wer": 10.07654958803023,
+    "delta_pp": -0.025209468299107727
+  },
+  "cv_macro": {
+    "original_wer": 9.265543535232974,
+    "candidate_wer": 9.264034881769792,
+    "delta_pp": -0.0015086534631821118
+  },
+  "fleurs_macro": {
+    "original_wer": 10.937974577425704,
+    "candidate_wer": 10.88906429429067,
+    "delta_pp": -0.048910283135033344
+  },
+  "sets": {
+    "cv_bg_dev_selection": {
+      "original_wer": 17.37704918032787,
+      "candidate_wer": 17.26775956284153,
+      "delta_pp": -0.10928961748633981,
+      "rows": 100,
+      "words": 915
+    },
+    "cv_cs_dev_selection": {
+      "original_wer": 4.941860465116279,
+      "candidate_wer": 5.232558139534884,
+      "delta_pp": 0.29069767441860517,
+      "rows": 100,
+      "words": 688
+    },
+    "cv_da_dev_selection": {
+      "original_wer": 16.063348416289593,
+      "candidate_wer": 16.063348416289593,
+      "delta_pp": 0.0,
+      "rows": 100,
+      "words": 884
+    },
+    "cv_de_dev_selection": {
+      "original_wer": 4.928806133625411,
+      "candidate_wer": 5.257393209200438,
+      "delta_pp": 0.32858707557502687,
+      "rows": 100,
+      "words": 913
+    },
+    "cv_el_dev_selection": {
+      "original_wer": 11.450381679389313,
+      "candidate_wer": 9.465648854961833,
+      "delta_pp": -1.9847328244274802,
+      "rows": 100,
+      "words": 655
+    },
+    "cv_en_dev_selection": {
+      "original_wer": 5.7026476578411405,
+      "candidate_wer": 5.4989816700611,
+      "delta_pp": -0.20366598778004086,
+      "rows": 100,
+      "words": 982
+    },
+    "cv_es_dev_selection": {
+      "original_wer": 3.723404255319149,
+      "candidate_wer": 3.8297872340425534,
+      "delta_pp": 0.10638297872340452,
+      "rows": 100,
+      "words": 940
+    },
+    "cv_et_dev_selection": {
+      "original_wer": 22.274881516587676,
+      "candidate_wer": 21.80094786729858,
+      "delta_pp": -0.47393364928909776,
+      "rows": 100,
+      "words": 1266
+    },
+    "cv_fi_dev_selection": {
+      "original_wer": 8.358662613981762,
+      "candidate_wer": 8.662613981762918,
+      "delta_pp": 0.3039513677811563,
+      "rows": 100,
+      "words": 658
+    },
+    "cv_fr_dev_selection": {
+      "original_wer": 6.759443339960239,
+      "candidate_wer": 6.858846918489066,
+      "delta_pp": 0.0994035785288272,
+      "rows": 100,
+      "words": 1006
+    },
+    "cv_hu_dev_selection": {
+      "original_wer": 8.174386920980927,
+      "candidate_wer": 8.038147138964577,
+      "delta_pp": -0.13623978201635012,
+      "rows": 100,
+      "words": 734
+    },
+    "cv_it_dev_selection": {
+      "original_wer": 2.9531568228105907,
+      "candidate_wer": 3.258655804480652,
+      "delta_pp": 0.3054989816700613,
+      "rows": 100,
+      "words": 982
+    },
+    "cv_lt_dev_selection": {
+      "original_wer": 8.35820895522388,
+      "candidate_wer": 8.656716417910447,
+      "delta_pp": 0.29850746268656714,
+      "rows": 100,
+      "words": 670
+    },
+    "cv_lv_dev_selection": {
+      "original_wer": 20.30075187969925,
+      "candidate_wer": 20.67669172932331,
+      "delta_pp": 0.3759398496240607,
+      "rows": 100,
+      "words": 798
+    },
+    "cv_mt_dev_selection": {
+      "original_wer": 13.732394366197184,
+      "candidate_wer": 13.497652582159624,
+      "delta_pp": -0.23474178403755985,
+      "rows": 100,
+      "words": 852
+    },
+    "cv_nl_dev_selection": {
+      "original_wer": 2.7253668763102725,
+      "candidate_wer": 2.830188679245283,
+      "delta_pp": 0.10482180293501031,
+      "rows": 100,
+      "words": 954
+    },
+    "cv_pl_dev_selection": {
+      "original_wer": 1.4796547472256474,
+      "candidate_wer": 1.4796547472256474,
+      "delta_pp": 0.0,
+      "rows": 100,
+      "words": 811
+    },
+    "cv_pt_dev_selection": {
+      "original_wer": 6.687898089171974,
+      "candidate_wer": 6.8471337579617835,
+      "delta_pp": 0.1592356687898091,
+      "rows": 100,
+      "words": 628
+    },
+    "cv_ro_dev_selection": {
+      "original_wer": 5.156037991858887,
+      "candidate_wer": 5.291723202170964,
+      "delta_pp": 0.1356852103120767,
+      "rows": 100,
+      "words": 737
+    },
+    "cv_ru_dev_selection": {
+      "original_wer": 4.761904761904762,
+      "candidate_wer": 5.342624854819976,
+      "delta_pp": 0.5807200929152145,
+      "rows": 100,
+      "words": 861
+    },
+    "cv_sk_dev_selection": {
+      "original_wer": 6.601941747572815,
+      "candidate_wer": 6.796116504854369,
+      "delta_pp": 0.1941747572815533,
+      "rows": 100,
+      "words": 515
+    },
+    "cv_sl_dev_selection": {
+      "original_wer": 23.06338028169014,
+      "candidate_wer": 22.887323943661972,
+      "delta_pp": -0.1760563380281681,
+      "rows": 100,
+      "words": 568
+    },
+    "cv_sv_dev_selection": {
+      "original_wer": 13.88888888888889,
+      "candidate_wer": 13.472222222222221,
+      "delta_pp": -0.41666666666666785,
+      "rows": 100,
+      "words": 720
+    },
+    "cv_uk_dev_selection": {
+      "original_wer": 2.9085872576177287,
+      "candidate_wer": 3.3240997229916895,
+      "delta_pp": 0.4155124653739608,
+      "rows": 100,
+      "words": 722
+    },
+    "fleurs_bg_dev_selection": {
+      "original_wer": 11.68646080760095,
+      "candidate_wer": 11.68646080760095,
+      "delta_pp": 0.0,
+      "rows": 100,
+      "words": 2105
+    },
+    "fleurs_cs_dev_selection": {
+      "original_wer": 10.3954802259887,
+      "candidate_wer": 10.0,
+      "delta_pp": -0.3954802259887007,
+      "rows": 100,
+      "words": 1770
+    },
+    "fleurs_da_dev_selection": {
+      "original_wer": 15.199212985735366,
+      "candidate_wer": 15.395966551893753,
+      "delta_pp": 0.19675356615838702,
+      "rows": 100,
+      "words": 2033
+    },
+    "fleurs_de_dev_selection": {
+      "original_wer": 5.116959064327485,
+      "candidate_wer": 5.165692007797271,
+      "delta_pp": 0.04873294346978607,
+      "rows": 100,
+      "words": 2052
+    },
+    "fleurs_el_dev_selection": {
+      "original_wer": 25.97881160755412,
+      "candidate_wer": 25.103638876093967,
+      "delta_pp": -0.8751727314601538,
+      "rows": 100,
+      "words": 2171
+    },
+    "fleurs_en_dev_selection": {
+      "original_wer": 6.317335945151812,
+      "candidate_wer": 6.219392752203722,
+      "delta_pp": -0.09794319294809029,
+      "rows": 100,
+      "words": 2042
+    },
+    "fleurs_es_dev_selection": {
+      "original_wer": 3.063629222309505,
+      "candidate_wer": 3.1421838177533385,
+      "delta_pp": 0.07855459544383336,
+      "rows": 100,
+      "words": 2546
+    },
+    "fleurs_et_dev_selection": {
+      "original_wer": 13.965406790518898,
+      "candidate_wer": 13.90134529147982,
+      "delta_pp": -0.06406149903907732,
+      "rows": 100,
+      "words": 1561
+    },
+    "fleurs_fi_dev_selection": {
+      "original_wer": 12.96673455532926,
+      "candidate_wer": 13.102511880515953,
+      "delta_pp": 0.13577732518669272,
+      "rows": 100,
+      "words": 1473
+    },
+    "fleurs_fr_dev_selection": {
+      "original_wer": 4.891969017529556,
+      "candidate_wer": 4.973501834488381,
+      "delta_pp": 0.0815328169588252,
+      "rows": 100,
+      "words": 2453
+    },
+    "fleurs_hr_dev_selection": {
+      "original_wer": 8.643326039387308,
+      "candidate_wer": 8.424507658643327,
+      "delta_pp": -0.21881838074398097,
+      "rows": 100,
+      "words": 1828
+    },
+    "fleurs_hu_dev_selection": {
+      "original_wer": 12.423738214087631,
+      "candidate_wer": 12.479201331114808,
+      "delta_pp": 0.05546311702717688,
+      "rows": 100,
+      "words": 1803
+    },
+    "fleurs_it_dev_selection": {
+      "original_wer": 1.9888991674375578,
+      "candidate_wer": 2.127659574468085,
+      "delta_pp": 0.13876040703052728,
+      "rows": 100,
+      "words": 2162
+    },
+    "fleurs_lt_dev_selection": {
+      "original_wer": 18.659987476518474,
+      "candidate_wer": 18.597370068879147,
+      "delta_pp": -0.06261740763932622,
+      "rows": 100,
+      "words": 1597
+    },
+    "fleurs_lv_dev_selection": {
+      "original_wer": 19.915254237288135,
+      "candidate_wer": 19.915254237288135,
+      "delta_pp": 0.0,
+      "rows": 100,
+      "words": 1652
+    },
+    "fleurs_mt_dev_selection": {
+      "original_wer": 17.96669588080631,
+      "candidate_wer": 18.27344434706398,
+      "delta_pp": 0.3067484662576696,
+      "rows": 100,
+      "words": 2282
+    },
+    "fleurs_nl_dev_selection": {
+      "original_wer": 7.710171853228054,
+      "candidate_wer": 7.710171853228054,
+      "delta_pp": 0.0,
+      "rows": 100,
+      "words": 2153
+    },
+    "fleurs_pl_dev_selection": {
+      "original_wer": 6.8600111544896825,
+      "candidate_wer": 6.52537646402677,
+      "delta_pp": -0.33463469046291205,
+      "rows": 100,
+      "words": 1793
+    },
+    "fleurs_pt_dev_selection": {
+      "original_wer": 3.727272727272727,
+      "candidate_wer": 3.590909090909091,
+      "delta_pp": -0.13636363636363624,
+      "rows": 100,
+      "words": 2200
+    },
+    "fleurs_ro_dev_selection": {
+      "original_wer": 11.940298507462687,
+      "candidate_wer": 12.030755314337403,
+      "delta_pp": 0.09045680687471602,
+      "rows": 100,
+      "words": 2211
+    },
+    "fleurs_ru_dev_selection": {
+      "original_wer": 5.024848150193264,
+      "candidate_wer": 5.024848150193264,
+      "delta_pp": 0.0,
+      "rows": 100,
+      "words": 1811
+    },
+    "fleurs_sk_dev_selection": {
+      "original_wer": 7.292255511588468,
+      "candidate_wer": 7.122668174109666,
+      "delta_pp": -0.16958733747880217,
+      "rows": 100,
+      "words": 1769
+    },
+    "fleurs_sl_dev_selection": {
+      "original_wer": 21.49122807017544,
+      "candidate_wer": 21.43640350877193,
+      "delta_pp": -0.05482456140350678,
+      "rows": 100,
+      "words": 1824
+    },
+    "fleurs_sv_dev_selection": {
+      "original_wer": 13.275769023205612,
+      "candidate_wer": 13.32973556395035,
+      "delta_pp": 0.05396654074473872,
+      "rows": 100,
+      "words": 1853
+    },
+    "fleurs_uk_dev_selection": {
+      "original_wer": 6.947608200455581,
+      "candidate_wer": 6.947608200455581,
+      "delta_pp": 0.0,
+      "rows": 100,
+      "words": 1756
+    },
+    "english_dialects_dev": {
+      "original_wer": 6.61596958174905,
+      "candidate_wer": 6.5399239543726235,
+      "delta_pp": -0.07604562737642606,
+      "rows": 100,
+      "words": 1315
+    },
+    "speechocean762_dev": {
+      "original_wer": 37.26993865030675,
+      "candidate_wer": 36.34969325153374,
+      "delta_pp": -0.9202453987730053,
+      "rows": 100,
+      "words": 652
+    }
+  },
+  "failures": [
+    "cv_ru_dev_selection: regression 0.580720 pp exceeds 0.5"
+  ],
+  "registry_sha256": "249a56d2c2c8f688e4d0654810ae1be69bfe6c3a9b8afdbd051d1c1804895b85",
+  "protocol": {
+    "converter_commit": "4f9676226f667d14608487df744f375db87127f8",
+    "device": "cuda",
+    "runtime_library_sha256": {
+      "libatomic.so.1": "2bd070e46f561a6ff36e4e358f5b0eaf04fdbe37992db38223b13c760a4721ab",
+      "libcublas.so": "ca3aab8908ff4b68dc227c4fb9cdf143f5b4647e5aa24d92750820e87843205e",
+      "libcublas.so.12": "ca3aab8908ff4b68dc227c4fb9cdf143f5b4647e5aa24d92750820e87843205e",
+      "libcudart.so.12": "c3a75b33af334a3486d197dbd1584a2985183ba4688d237a2be5f2f679329920",
+      "libgcc_s.so.1": "489803ded8a4d803e2c792763a2767c12185f5764b7bba080742d14ef2452b27",
+      "libggml-base.so": "2bea93d67a6e4004d81782573060d6695f4c95ad26723345b05b4103056db6b1",
+      "libggml-base.so.0": "2bea93d67a6e4004d81782573060d6695f4c95ad26723345b05b4103056db6b1",
+      "libggml-base.so.0.12.0": "2bea93d67a6e4004d81782573060d6695f4c95ad26723345b05b4103056db6b1",
+      "libggml-cpu.so": "ab3d65fde5fc4adaac934850f389bccd0e7df4d23cf88730595df77ef6a614d1",
+      "libggml-cpu.so.0": "ab3d65fde5fc4adaac934850f389bccd0e7df4d23cf88730595df77ef6a614d1",
+      "libggml-cpu.so.0.12.0": "ab3d65fde5fc4adaac934850f389bccd0e7df4d23cf88730595df77ef6a614d1",
+      "libggml-cuda.so": "26e20aeae1e97eaf10bdb30d365ef08cd77f4d8668afdd07dde1e6027b8be5b2",
+      "libggml-cuda.so.0": "26e20aeae1e97eaf10bdb30d365ef08cd77f4d8668afdd07dde1e6027b8be5b2",
+      "libggml-cuda.so.0.12.0": "26e20aeae1e97eaf10bdb30d365ef08cd77f4d8668afdd07dde1e6027b8be5b2",
+      "libggml.so": "b4223b228fed742bd1075bf0b42792082aef1ef25a59429c1f816a57660bf118",
+      "libggml.so.0": "b4223b228fed742bd1075bf0b42792082aef1ef25a59429c1f816a57660bf118",
+      "libggml.so.0.12.0": "b4223b228fed742bd1075bf0b42792082aef1ef25a59429c1f816a57660bf118",
+      "libgomp.so.1": "98b21ff32bb07b53f1fb266d887d2db0086ea66c8ad03696a1db53f65321cd94",
+      "libllama.so": "5f9eadc35442a5f2fcb78ce5effff73c31b64d7474af798ef1fbe60b89e19952",
+      "libllama.so.0": "5f9eadc35442a5f2fcb78ce5effff73c31b64d7474af798ef1fbe60b89e19952",
+      "libllama.so.0.0.0": "5f9eadc35442a5f2fcb78ce5effff73c31b64d7474af798ef1fbe60b89e19952",
+      "libnemo_speech_asr.so": "dd496266c956d43c854c490d58bd422163b309b5a1b1ac72eec5c00365082c4e",
+      "libnemo_speech_asr_c.so": "4db4deb4fdaaf3a60bcf07d29c7dab78e0ff8601cc0ff5f5debe3484cd6156e3",
+      "libnemo_speech_asr_c.so.1": "4db4deb4fdaaf3a60bcf07d29c7dab78e0ff8601cc0ff5f5debe3484cd6156e3",
+      "libnemo_speech_nmt.so": "4d5769dd9795f34d7500f09435304c023d26a76050ac25d39966e53f40fc421d",
+      "libnemo_speech_nmt_c.so": "6dc34580f0982d4883a1423f6ba443690b7d5d75bbc6cc95fab21553d162c177",
+      "libnemo_speech_nmt_c.so.1": "6dc34580f0982d4883a1423f6ba443690b7d5d75bbc6cc95fab21553d162c177",
+      "libnemo_speech_tts.so": "e772c718d6d320caec30407a0f50c3c00fd517098b7f1c69b7306de1eb4cbe32",
+      "libnemo_speech_tts.so.1": "e772c718d6d320caec30407a0f50c3c00fd517098b7f1c69b7306de1eb4cbe32",
+      "libstdc++.so.6": "26916e7389a561537a0510661fc75538cea236139346f3dbe21bc64ba65605bf"
+    },
+    "decoder": "native TDT greedy defaults; automatic language; word offsets and punctuation enabled",
+    "evaluation_script_sha256": "714d78b4ba364065efda668d0a1860ce8833c00398df8c7e91d577ca994dc33a",
+    "binding_sha256": "1b42809e197447b8488e0c6756405977450140056ac4468c349eaf8cceebdd25",
+    "audio_path_sha256": "6914f603212fda9c52d579c5a82db45ff31f3257fee702f762dffb016d67476d"
+  }
+}

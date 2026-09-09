@@ -1,0 +1,60 @@
+{
+  "rule": "Audit and evaluate all three declared exports. Run development-passing exports on the larger regression in increasing development-WER order, stopping at the first full pass. If none passes development, evaluate the lowest-development-WER export once for diagnosis. Record all results and explicitly name larger comparisons not run.",
+  "candidates": [
+    {
+      "label": "r13-0100",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r13_20260906/step-0100.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.012671488552826,
+        "delta_pp": -0.06956353653543951
+      },
+      "failures": [
+        "cv_hu_dev_selection: regression 0.681199 pp exceeds 0.5",
+        "cv_sl_dev_selection: regression 0.704225 pp exceeds 0.5"
+      ]
+    },
+    {
+      "label": "r13-0200",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r13_20260906/step-0200.nemo",
+      "status": "fail",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.03360698924144,
+        "delta_pp": -0.04862803584682478
+      },
+      "failures": [
+        "cv_hu_dev_selection: regression 0.544959 pp exceeds 0.5"
+      ]
+    },
+    {
+      "label": "r13-0300",
+      "model": "/home/nathanroll/parakeet-ft/gabor_half_20260906/orukeet_gabor_half_r13_20260906/step-0300.nemo",
+      "status": "pass",
+      "primary": {
+        "original_wer": 10.082235025088266,
+        "candidate_wer": 10.009553561387207,
+        "delta_pp": -0.07268146370105676
+      },
+      "failures": []
+    }
+  ],
+  "larger_order": [
+    "r13-0300"
+  ],
+  "diagnostic_only": false,
+  "larger_results": [
+    {
+      "label": "r13-0300",
+      "source_qualified": false,
+      "comparison_sha256": "dedb5a3cb228e30523ffc35714a23b753105afb9ce87de6f983c957e0240a980"
+    }
+  ],
+  "source_qualified_selection": null,
+  "larger_comparisons_not_run": [
+    "r13-0100",
+    "r13-0200"
+  ],
+  "native_qualified": false
+}

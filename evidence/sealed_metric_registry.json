@@ -1,0 +1,857 @@
+{
+  "status": "sealed_before_confirmation_inference",
+  "sets": {
+    "accent_en_469b5f4bb597_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/accent_en_469b5f4bb597_confirmation.jsonl",
+      "source": "cv",
+      "language": "en",
+      "rows": 200,
+      "hours": 0.34377333333333315,
+      "groups": 107,
+      "manifest_sha256": "7c33e3c5034d355bcd230fefdf85ea72474102ca621fe1c16c61124133bfd7c0",
+      "multilingual_stratum": false
+    },
+    "accent_en_74d0bb6d856d_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/accent_en_74d0bb6d856d_confirmation.jsonl",
+      "source": "cv",
+      "language": "en",
+      "rows": 168,
+      "hours": 0.28150000000000003,
+      "groups": 69,
+      "manifest_sha256": "c2e033519be7b123d9eeae7cb82f62bb118f466950da0972b13db57b3511951d",
+      "multilingual_stratum": false
+    },
+    "accent_en_a163705d3331_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/accent_en_a163705d3331_confirmation.jsonl",
+      "source": "cv",
+      "language": "en",
+      "rows": 200,
+      "hours": 0.34312555555555563,
+      "groups": 163,
+      "manifest_sha256": "1049e4414c260d64146198c6f429da98afe465ddff9b6f43c8fd236427ac64d0",
+      "multilingual_stratum": false
+    },
+    "accent_en_fecbdec18469_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/accent_en_fecbdec18469_confirmation.jsonl",
+      "source": "cv",
+      "language": "en",
+      "rows": 53,
+      "hours": 0.07906333333333333,
+      "groups": 21,
+      "manifest_sha256": "5b953f9467e8c6c4e2f62817d43e18f1fa367147cdebe9af5a91703b29615129",
+      "multilingual_stratum": false
+    },
+    "core_en_libri_test_clean": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/core_en_libri_test_clean.jsonl",
+      "source": "librispeech",
+      "language": "en",
+      "rows": 2620,
+      "hours": 5.403466840277786,
+      "groups": 40,
+      "manifest_sha256": "0b353aca4f39c4cfe36d3759f8bb2285dbee298cd6bff0313588e65cecd46f72",
+      "multilingual_stratum": false
+    },
+    "cv_de_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/cv_de_confirmation.jsonl",
+      "source": "cv",
+      "language": "de",
+      "rows": 400,
+      "hours": 0.6892633333333336,
+      "groups": 362,
+      "manifest_sha256": "58105af82db92520c7904dfa76d00ecd9a6797094d52199ccfdab637024f71bf",
+      "multilingual_stratum": true
+    },
+    "cv_en_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/cv_en_confirmation.jsonl",
+      "source": "cv",
+      "language": "en",
+      "rows": 400,
+      "hours": 0.6599333333333343,
+      "groups": 393,
+      "manifest_sha256": "acaa8313dcbf424c0e9fd32b483919de397c2047e66b79dffe5c3ee6c5104cc8",
+      "multilingual_stratum": true
+    },
+    "cv_es_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/cv_es_confirmation.jsonl",
+      "source": "cv",
+      "language": "es",
+      "rows": 400,
+      "hours": 0.6745433333333334,
+      "groups": 372,
+      "manifest_sha256": "292419845f5a7121ac0da0a7b7eb15bcc3483ee4fa4113bbc0099d4ccc7340f4",
+      "multilingual_stratum": true
+    },
+    "cv_et_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/cv_et_confirmation.jsonl",
+      "source": "cv",
+      "language": "et",
+      "rows": 1,
+      "hours": 0.00215,
+      "groups": 1,
+      "manifest_sha256": "1af7b1a95b6a9d0aff0ceada6ffe32ba5d3404ec76e55e82962bd03768501638",
+      "multilingual_stratum": true
+    },
+    "cv_fr_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/cv_fr_confirmation.jsonl",
+      "source": "cv",
+      "language": "fr",
+      "rows": 400,
+      "hours": 0.6560036111111113,
+      "groups": 379,
+      "manifest_sha256": "ebd7569f6ece03375a899afa097d16e1303cd7432604cd3dc800212e72f843df",
+      "multilingual_stratum": true
+    },
+    "cv_it_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/cv_it_confirmation.jsonl",
+      "source": "cv",
+      "language": "it",
+      "rows": 400,
+      "hours": 0.6629658333333335,
+      "groups": 328,
+      "manifest_sha256": "c2c655d69f431b977bef1cf7470b2cd11a59add2da336916b5d2f2ab201f261d",
+      "multilingual_stratum": true
+    },
+    "cv_lv_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/cv_lv_confirmation.jsonl",
+      "source": "cv",
+      "language": "lv",
+      "rows": 400,
+      "hours": 0.632943333333334,
+      "groups": 343,
+      "manifest_sha256": "f81e930aba2fa6d42b9fb1bc8ddaa8a4ac89d4ee7e8717f28f033b4c9a863094",
+      "multilingual_stratum": true
+    },
+    "cv_nl_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/cv_nl_confirmation.jsonl",
+      "source": "cv",
+      "language": "nl",
+      "rows": 73,
+      "hours": 0.07976666666666665,
+      "groups": 20,
+      "manifest_sha256": "7e47ef33154aeee42953759b84a27fe612c4701a12e4285e73c614eb0f8cac81",
+      "multilingual_stratum": true
+    },
+    "cv_pl_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/cv_pl_confirmation.jsonl",
+      "source": "cv",
+      "language": "pl",
+      "rows": 400,
+      "hours": 0.5195433333333332,
+      "groups": 175,
+      "manifest_sha256": "07b613a8a71f45647dc9b0e66a34bf11d86e873f7e65af8f97c6d93f89dc61cd",
+      "multilingual_stratum": true
+    },
+    "cv_pt_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/cv_pt_confirmation.jsonl",
+      "source": "cv",
+      "language": "pt",
+      "rows": 400,
+      "hours": 0.5286000000000002,
+      "groups": 58,
+      "manifest_sha256": "4d76557d9cf5d1abb2702133dbfa383b8e00d1b78c4f3b1a34f0e2f79d2691cf",
+      "multilingual_stratum": true
+    },
+    "cv_ru_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/cv_ru_confirmation.jsonl",
+      "source": "cv",
+      "language": "ru",
+      "rows": 226,
+      "hours": 0.3422583333333335,
+      "groups": 24,
+      "manifest_sha256": "14d09bb9c8716c49edb9ee06eb85c5b812da2e494f94cfbf4e3fc94f6cde73f6",
+      "multilingual_stratum": true
+    },
+    "dialect_en_english_dialects_source_holdout": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/dialect_en_english_dialects_source_holdout.jsonl",
+      "source": "english_dialects",
+      "language": "en",
+      "rows": 2698,
+      "hours": 4.632675295138919,
+      "groups": 18,
+      "manifest_sha256": "5184e55c2a016cb4c2b1245a8d8132e56b5f37b5148dfad8401f44d35543b686",
+      "multilingual_stratum": false
+    },
+    "fleurs_bg_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_bg_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "bg",
+      "rows": 37,
+      "hours": 0.08301666666666667,
+      "groups": 16,
+      "manifest_sha256": "486c823a75511046aadd08068f8f2ca65d528c7e3ea08860bf49293a55702922",
+      "multilingual_stratum": true
+    },
+    "fleurs_cs_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_cs_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "cs",
+      "rows": 18,
+      "hours": 0.05808333333333333,
+      "groups": 12,
+      "manifest_sha256": "240cbec29af5ed1923caea97d4a3d1bab8b8c3e8510be8c61301017b4fe7c764",
+      "multilingual_stratum": true
+    },
+    "fleurs_da_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_da_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "da",
+      "rows": 35,
+      "hours": 0.10919999999999999,
+      "groups": 14,
+      "manifest_sha256": "5eb70ee3823796dcef9f3e0050277751fec10f840d2c2e501e49cf1c28f8aee6",
+      "multilingual_stratum": true
+    },
+    "fleurs_de_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_de_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "de",
+      "rows": 36,
+      "hours": 0.13491666666666668,
+      "groups": 20,
+      "manifest_sha256": "a0ee66134a8e68d4f897c28396dd0485457242a8f6ed9341754beaca6f2b14f5",
+      "multilingual_stratum": true
+    },
+    "fleurs_en_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_en_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "en",
+      "rows": 25,
+      "hours": 0.06832777777777779,
+      "groups": 12,
+      "manifest_sha256": "bdda10f4fb71b6113ce0944b758df3dcc345c708f3e0b4c48ccea3745919c1fd",
+      "multilingual_stratum": true
+    },
+    "fleurs_es_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_es_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "es",
+      "rows": 34,
+      "hours": 0.1424166666666666,
+      "groups": 14,
+      "manifest_sha256": "212e74528b89609700847524e20c25ac3ddd4387f25a6dc333b8bae8dac615ae",
+      "multilingual_stratum": true
+    },
+    "fleurs_et_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_et_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "et",
+      "rows": 31,
+      "hours": 0.09971666666666668,
+      "groups": 13,
+      "manifest_sha256": "989a7ea771322de990c4fadd82216537af44cc3f57630df70e9ca4b8ae3c6c0a",
+      "multilingual_stratum": true
+    },
+    "fleurs_fi_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_fi_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "fi",
+      "rows": 11,
+      "hours": 0.03775,
+      "groups": 6,
+      "manifest_sha256": "900fc23c5c9f12cab4e84e8400986196bc1a3a69f3d5658b83461dfc9508a643",
+      "multilingual_stratum": true
+    },
+    "fleurs_fr_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_fr_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "fr",
+      "rows": 16,
+      "hours": 0.04615,
+      "groups": 13,
+      "manifest_sha256": "5d1c9803c5c1fb9a69996971be4a041e902177f14ec1cfec4f7dff035a989388",
+      "multilingual_stratum": true
+    },
+    "fleurs_hr_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_hr_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "hr",
+      "rows": 42,
+      "hours": 0.11558333333333334,
+      "groups": 21,
+      "manifest_sha256": "3636189cc18433e14e369bc514a847360327c3872b4a5923156bfe5f4fa7cd23",
+      "multilingual_stratum": true
+    },
+    "fleurs_hu_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_hu_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "hu",
+      "rows": 38,
+      "hours": 0.12106666666666666,
+      "groups": 16,
+      "manifest_sha256": "01026c2e0cc6acf8e920b7b28268a0cb5e1f6d1bcc02cb0cb7b8def6ed2c7337",
+      "multilingual_stratum": true
+    },
+    "fleurs_it_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_it_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "it",
+      "rows": 27,
+      "hours": 0.1288,
+      "groups": 13,
+      "manifest_sha256": "6959506cf6ff6eab3fd7d1fc344f6d0d7e746b6c3e021dff3cc671846397104e",
+      "multilingual_stratum": true
+    },
+    "fleurs_lt_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_lt_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "lt",
+      "rows": 42,
+      "hours": 0.12169999999999999,
+      "groups": 18,
+      "manifest_sha256": "b4a6c9dfbefa6836ba0b6f8cec10446528f7935063613d2b84da81e62b33e6ba",
+      "multilingual_stratum": true
+    },
+    "fleurs_lv_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_lv_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "lv",
+      "rows": 27,
+      "hours": 0.09271666666666667,
+      "groups": 14,
+      "manifest_sha256": "9621e1bc3428699083dfa69ab2c97a0c8c4b8870cdcf7333e1e32e628150e213",
+      "multilingual_stratum": true
+    },
+    "fleurs_mt_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_mt_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "mt",
+      "rows": 21,
+      "hours": 0.08391666666666667,
+      "groups": 9,
+      "manifest_sha256": "59b781011ccb289399157948914de00ee38c5afab66a38f3f92baf47b55c2659",
+      "multilingual_stratum": true
+    },
+    "fleurs_nl_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_nl_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "nl",
+      "rows": 1,
+      "hours": 0.0038499999999999997,
+      "groups": 1,
+      "manifest_sha256": "de7166ae2b161e0f5948d453aa39664b78e5028aace5e40bb43d68154e974340",
+      "multilingual_stratum": true
+    },
+    "fleurs_pl_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_pl_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "pl",
+      "rows": 22,
+      "hours": 0.05081666666666666,
+      "groups": 12,
+      "manifest_sha256": "7cfe21b8e0b6b6c6ee221b22d36c29d49f0992fe5589c6f5371082327c126331",
+      "multilingual_stratum": true
+    },
+    "fleurs_pt_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_pt_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "pt",
+      "rows": 20,
+      "hours": 0.06249999999999999,
+      "groups": 9,
+      "manifest_sha256": "329735bfe97e48173ef214536dd3eb94c0a9bf5737b70409e6f8fb3ec0ebcc5c",
+      "multilingual_stratum": true
+    },
+    "fleurs_ro_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_ro_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "ro",
+      "rows": 39,
+      "hours": 0.11221666666666665,
+      "groups": 18,
+      "manifest_sha256": "293b0659b9a720f29ee3a72acc7df3018affa157f367203fee01249fee0396ae",
+      "multilingual_stratum": true
+    },
+    "fleurs_ru_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_ru_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "ru",
+      "rows": 27,
+      "hours": 0.08954999999999998,
+      "groups": 16,
+      "manifest_sha256": "b9d9f9d3f49c688136043de394ac1a6ac60b6aafd6209ccda9717df7f5bb04f4",
+      "multilingual_stratum": true
+    },
+    "fleurs_sk_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_sk_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "sk",
+      "rows": 33,
+      "hours": 0.0976,
+      "groups": 20,
+      "manifest_sha256": "4534a8738292f51faceb8a23b9afbb03c4dc6e69d26ea6fe4d95ecdcea2763b2",
+      "multilingual_stratum": true
+    },
+    "fleurs_sl_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_sl_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "sl",
+      "rows": 19,
+      "hours": 0.04781666666666665,
+      "groups": 13,
+      "manifest_sha256": "d2c3d7b107d16f08f0d7697240f672305a7c6070d92e8fd62ea9cf078a7a4864",
+      "multilingual_stratum": true
+    },
+    "fleurs_sv_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_sv_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "sv",
+      "rows": 28,
+      "hours": 0.09114999999999998,
+      "groups": 16,
+      "manifest_sha256": "17955f43382c6e8bee367822872704f3fb0d96bcae67191c8ef9000f94e6e04d",
+      "multilingual_stratum": true
+    },
+    "fleurs_uk_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/fleurs_uk_confirmation.jsonl",
+      "source": "fleurs",
+      "language": "uk",
+      "rows": 19,
+      "hours": 0.04935,
+      "groups": 10,
+      "manifest_sha256": "dd48debbcfc926d4d78615fe03636e46f03c5a668e77e8afd2e800d27a3a1942",
+      "multilingual_stratum": true
+    },
+    "ftspeech_da_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/ftspeech_da_confirmation.jsonl",
+      "source": "ftspeech",
+      "language": "da",
+      "rows": 600,
+      "hours": 1.2187805729166667,
+      "groups": 40,
+      "manifest_sha256": "83e620978eee4327dd089a3d8bd65f0235cc20f25ab8de060c95ee557db4a654",
+      "multilingual_stratum": true
+    },
+    "learner_en_speechocean_official_test": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/learner_en_speechocean_official_test.jsonl",
+      "source": "speechocean762",
+      "language": "en",
+      "rows": 2500,
+      "hours": 2.6912911111111093,
+      "groups": 125,
+      "manifest_sha256": "6be9b03d99c6f066246e799a9f31c5529c0854a83e21f8ab9701e464e1aaf2a9",
+      "multilingual_stratum": false
+    },
+    "parliamentaccent_en_voxpopuli_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/parliamentaccent_en_voxpopuli_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "en",
+      "rows": 1192,
+      "hours": 3.692928524305553,
+      "groups": 362,
+      "manifest_sha256": "f7ee5fdb9365bc0980c5ae9215e41df1f1c1ecd28c089a8380494d60392bfb2e",
+      "multilingual_stratum": false
+    },
+    "rixvox_sv_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/rixvox_sv_confirmation.jsonl",
+      "source": "rixvox",
+      "language": "sv",
+      "rows": 600,
+      "hours": 3.9687888194444403,
+      "groups": 26,
+      "manifest_sha256": "936e4c6ec4eb7fe4d1bb4597286014b9eb0e02f85ad03179973e5281a59ec740",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_cs_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_cs_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "cs",
+      "rows": 600,
+      "hours": 1.6661103819444443,
+      "groups": 48,
+      "manifest_sha256": "71cc4704f0ab217b059b086312bdbf9d382ae429b29a81bd2c2a67068b902db8",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_de_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_de_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "de",
+      "rows": 600,
+      "hours": 1.4773023958333327,
+      "groups": 122,
+      "manifest_sha256": "c21f96818bbf748f28935eab06f0c1c6bda12640df3956dab7f2b51d8630880f",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_en_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_en_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "en",
+      "rows": 600,
+      "hours": 1.687977447916665,
+      "groups": 285,
+      "manifest_sha256": "c0fd978569c26ba924030e730bf85dc24bebc20a97a8924814f2aee12edc3d89",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_es_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_es_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "es",
+      "rows": 599,
+      "hours": 1.9846247222222213,
+      "groups": 96,
+      "manifest_sha256": "bf811c12285d0fdd8734ec63671d0e798ff365231e2974685fc913f3c458ef6f",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_et_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_et_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "et",
+      "rows": 51,
+      "hours": 0.12909751736111108,
+      "groups": 6,
+      "manifest_sha256": "7c36dba2a13fd37f559d8989971b0a9b406704b37c076f247b6e30ea2550b9c5",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_fi_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_fi_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "fi",
+      "rows": 477,
+      "hours": 1.3199614930555559,
+      "groups": 26,
+      "manifest_sha256": "2e10418f7ad199384e70fff92fcbaa33cd25efc001a4789bea82fbbe1c0a15be",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_fr_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_fr_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "fr",
+      "rows": 600,
+      "hours": 1.7579131249999984,
+      "groups": 143,
+      "manifest_sha256": "59b943e6833c5670935932cde6d56b131a579909581e33443adf1e2f8e0c2125",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_hr_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_hr_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "hr",
+      "rows": 600,
+      "hours": 1.951593576388889,
+      "groups": 20,
+      "manifest_sha256": "9782f3ea9e89ee4d87447be4ff25564c1ff7e35990174f1ddb10f2049c37c01d",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_hu_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_hu_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "hu",
+      "rows": 600,
+      "hours": 1.7503291840277793,
+      "groups": 46,
+      "manifest_sha256": "da75fb001b1654db21a74401921503627c351bb79ec170c9a95e4e246e38fbc4",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_it_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_it_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "it",
+      "rows": 599,
+      "hours": 2.230644843750001,
+      "groups": 80,
+      "manifest_sha256": "1da7390f2d2dccb357db21183dcbc4962413de40b8218569e237e32b4360140b",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_lt_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_lt_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "lt",
+      "rows": 42,
+      "hours": 0.1212569097222222,
+      "groups": 7,
+      "manifest_sha256": "1588cc3f4d4be4031379d58282e4d4eb8bb9fea9f289686591a5eb70b21d2e1e",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_nl_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_nl_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "nl",
+      "rows": 600,
+      "hours": 1.3599682118055556,
+      "groups": 71,
+      "manifest_sha256": "aa474bc48fcf571014f4d5b3dc1755fc9dbdc83d7d2e1bfe6e7078b2cf8ef4b5",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_pl_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_pl_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "pl",
+      "rows": 600,
+      "hours": 1.663609149305556,
+      "groups": 88,
+      "manifest_sha256": "2cde25c911ce4cdbc6943172e2cc6d0979989568e6e378d64955649331a7d85d",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_ro_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_ro_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "ro",
+      "rows": 600,
+      "hours": 1.9219660937500012,
+      "groups": 49,
+      "manifest_sha256": "86f728cb075f226de8cc61e85a220fdbeccbf9bc7a82c9396b8c1547863b9bd5",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_sk_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_sk_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "sk",
+      "rows": 582,
+      "hours": 1.6748997048611105,
+      "groups": 25,
+      "manifest_sha256": "371563518c4e2d9f850196acd6c97ce155bba8b5ea27987277f706537ff4dfbc",
+      "multilingual_stratum": true
+    },
+    "voxpopuli_sl_confirmation": {
+      "path": "/home/nathanroll/parakeet-ft/manifests/goal_v2_confirmation/voxpopuli_sl_confirmation.jsonl",
+      "source": "voxpopuli",
+      "language": "sl",
+      "rows": 309,
+      "hours": 0.8175029513888893,
+      "groups": 10,
+      "manifest_sha256": "76ee72388d8810030551f01f352caddf63c96ab2fe6cc971b456cb7607784bbd",
+      "multilingual_stratum": true
+    }
+  },
+  "primary_languages": {
+    "cs": {
+      "sets": [
+        "fleurs_cs_confirmation",
+        "voxpopuli_cs_confirmation"
+      ],
+      "groups": 60
+    },
+    "da": {
+      "sets": [
+        "fleurs_da_confirmation",
+        "ftspeech_da_confirmation"
+      ],
+      "groups": 54
+    },
+    "de": {
+      "sets": [
+        "cv_de_confirmation",
+        "fleurs_de_confirmation",
+        "voxpopuli_de_confirmation"
+      ],
+      "groups": 504
+    },
+    "en": {
+      "sets": [
+        "cv_en_confirmation",
+        "fleurs_en_confirmation",
+        "voxpopuli_en_confirmation"
+      ],
+      "groups": 690
+    },
+    "es": {
+      "sets": [
+        "cv_es_confirmation",
+        "fleurs_es_confirmation",
+        "voxpopuli_es_confirmation"
+      ],
+      "groups": 482
+    },
+    "fi": {
+      "sets": [
+        "fleurs_fi_confirmation",
+        "voxpopuli_fi_confirmation"
+      ],
+      "groups": 32
+    },
+    "fr": {
+      "sets": [
+        "cv_fr_confirmation",
+        "fleurs_fr_confirmation",
+        "voxpopuli_fr_confirmation"
+      ],
+      "groups": 535
+    },
+    "hr": {
+      "sets": [
+        "fleurs_hr_confirmation",
+        "voxpopuli_hr_confirmation"
+      ],
+      "groups": 41
+    },
+    "hu": {
+      "sets": [
+        "fleurs_hu_confirmation",
+        "voxpopuli_hu_confirmation"
+      ],
+      "groups": 62
+    },
+    "it": {
+      "sets": [
+        "cv_it_confirmation",
+        "fleurs_it_confirmation",
+        "voxpopuli_it_confirmation"
+      ],
+      "groups": 421
+    },
+    "lt": {
+      "sets": [
+        "fleurs_lt_confirmation",
+        "voxpopuli_lt_confirmation"
+      ],
+      "groups": 25
+    },
+    "lv": {
+      "sets": [
+        "cv_lv_confirmation",
+        "fleurs_lv_confirmation"
+      ],
+      "groups": 357
+    },
+    "nl": {
+      "sets": [
+        "cv_nl_confirmation",
+        "voxpopuli_nl_confirmation"
+      ],
+      "groups": 91
+    },
+    "pl": {
+      "sets": [
+        "cv_pl_confirmation",
+        "fleurs_pl_confirmation",
+        "voxpopuli_pl_confirmation"
+      ],
+      "groups": 275
+    },
+    "pt": {
+      "sets": [
+        "cv_pt_confirmation",
+        "fleurs_pt_confirmation"
+      ],
+      "groups": 67
+    },
+    "ro": {
+      "sets": [
+        "fleurs_ro_confirmation",
+        "voxpopuli_ro_confirmation"
+      ],
+      "groups": 67
+    },
+    "ru": {
+      "sets": [
+        "cv_ru_confirmation",
+        "fleurs_ru_confirmation"
+      ],
+      "groups": 40
+    },
+    "sk": {
+      "sets": [
+        "fleurs_sk_confirmation",
+        "voxpopuli_sk_confirmation"
+      ],
+      "groups": 45
+    },
+    "sl": {
+      "sets": [
+        "fleurs_sl_confirmation",
+        "voxpopuli_sl_confirmation"
+      ],
+      "groups": 23
+    },
+    "sv": {
+      "sets": [
+        "fleurs_sv_confirmation",
+        "rixvox_sv_confirmation"
+      ],
+      "groups": 42
+    }
+  },
+  "families": {
+    "cv": [
+      "cv_de_confirmation",
+      "cv_en_confirmation",
+      "cv_es_confirmation",
+      "cv_fr_confirmation",
+      "cv_it_confirmation",
+      "cv_lv_confirmation",
+      "cv_nl_confirmation",
+      "cv_pl_confirmation",
+      "cv_pt_confirmation",
+      "cv_ru_confirmation"
+    ],
+    "fleurs": [
+      "fleurs_bg_confirmation",
+      "fleurs_cs_confirmation",
+      "fleurs_da_confirmation",
+      "fleurs_de_confirmation",
+      "fleurs_en_confirmation",
+      "fleurs_es_confirmation",
+      "fleurs_et_confirmation",
+      "fleurs_fi_confirmation",
+      "fleurs_fr_confirmation",
+      "fleurs_hr_confirmation",
+      "fleurs_hu_confirmation",
+      "fleurs_it_confirmation",
+      "fleurs_lt_confirmation",
+      "fleurs_lv_confirmation",
+      "fleurs_mt_confirmation",
+      "fleurs_pl_confirmation",
+      "fleurs_pt_confirmation",
+      "fleurs_ro_confirmation",
+      "fleurs_ru_confirmation",
+      "fleurs_sk_confirmation",
+      "fleurs_sl_confirmation",
+      "fleurs_sv_confirmation",
+      "fleurs_uk_confirmation"
+    ],
+    "ftspeech": [
+      "ftspeech_da_confirmation"
+    ],
+    "rixvox": [
+      "rixvox_sv_confirmation"
+    ],
+    "voxpopuli": [
+      "voxpopuli_cs_confirmation",
+      "voxpopuli_de_confirmation",
+      "voxpopuli_en_confirmation",
+      "voxpopuli_es_confirmation",
+      "voxpopuli_et_confirmation",
+      "voxpopuli_fi_confirmation",
+      "voxpopuli_fr_confirmation",
+      "voxpopuli_hr_confirmation",
+      "voxpopuli_hu_confirmation",
+      "voxpopuli_it_confirmation",
+      "voxpopuli_lt_confirmation",
+      "voxpopuli_nl_confirmation",
+      "voxpopuli_pl_confirmation",
+      "voxpopuli_ro_confirmation",
+      "voxpopuli_sk_confirmation",
+      "voxpopuli_sl_confirmation"
+    ]
+  },
+  "english_corpora": {
+    "common_voice": [
+      "accent_en_469b5f4bb597_confirmation",
+      "accent_en_74d0bb6d856d_confirmation",
+      "accent_en_a163705d3331_confirmation",
+      "accent_en_fecbdec18469_confirmation",
+      "cv_en_confirmation"
+    ],
+    "fleurs": [
+      "fleurs_en_confirmation"
+    ],
+    "voxpopuli": [
+      "voxpopuli_en_confirmation"
+    ],
+    "voxpopuli_accented": [
+      "parliamentaccent_en_voxpopuli_confirmation"
+    ],
+    "core": [
+      "core_en_libri_test_clean"
+    ],
+    "learner": [
+      "learner_en_speechocean_official_test"
+    ],
+    "dialect": [
+      "dialect_en_english_dialects_source_holdout"
+    ]
+  },
+  "total_rows": 23038,
+  "total_hours": 53.66633331597225,
+  "protocol_sha256": "7477292764c94a597e72238678115b22012a5c67fae630873cfe7552a677cbfe",
+  "confirmation_predictions_observed": false
+}

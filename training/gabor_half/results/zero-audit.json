@@ -1,0 +1,43 @@
+{
+  "status": "pass",
+  "original_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "candidate_sha256": "b2c7c0be6af1c20b247119d3e1ef18aa48c3ef8b97f63e1540fbf208eb155604",
+  "tokenizer_assets_equal": true,
+  "tensor_keys_equal": true,
+  "all_tensors_finite": true,
+  "frozen_gabor_rows_exact": 12288,
+  "changed_tensor_count": 24,
+  "changed_tensors": [
+    "encoder.layers.0.conv.depthwise_conv.weight",
+    "encoder.layers.1.conv.depthwise_conv.weight",
+    "encoder.layers.2.conv.depthwise_conv.weight",
+    "encoder.layers.3.conv.depthwise_conv.weight",
+    "encoder.layers.4.conv.depthwise_conv.weight",
+    "encoder.layers.5.conv.depthwise_conv.weight",
+    "encoder.layers.6.conv.depthwise_conv.weight",
+    "encoder.layers.7.conv.depthwise_conv.weight",
+    "encoder.layers.8.conv.depthwise_conv.weight",
+    "encoder.layers.9.conv.depthwise_conv.weight",
+    "encoder.layers.10.conv.depthwise_conv.weight",
+    "encoder.layers.11.conv.depthwise_conv.weight",
+    "encoder.layers.12.conv.depthwise_conv.weight",
+    "encoder.layers.13.conv.depthwise_conv.weight",
+    "encoder.layers.14.conv.depthwise_conv.weight",
+    "encoder.layers.15.conv.depthwise_conv.weight",
+    "encoder.layers.16.conv.depthwise_conv.weight",
+    "encoder.layers.17.conv.depthwise_conv.weight",
+    "encoder.layers.18.conv.depthwise_conv.weight",
+    "encoder.layers.19.conv.depthwise_conv.weight",
+    "encoder.layers.20.conv.depthwise_conv.weight",
+    "encoder.layers.21.conv.depthwise_conv.weight",
+    "encoder.layers.22.conv.depthwise_conv.weight",
+    "encoder.layers.23.conv.depthwise_conv.weight"
+  ],
+  "changed_groups": {
+    "encoder.layers.0.": 1,
+    "encoder.layers.23.": 1,
+    "encoder.pre_encode.": 0,
+    "decoder.": 0,
+    "joint.": 0
+  }
+}

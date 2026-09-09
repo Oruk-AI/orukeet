@@ -1,0 +1,232 @@
+{
+  "runtime": {
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "torch": "2.12.0+cu132",
+    "cuda": "13.2",
+    "cudnn": 92000,
+    "torch_threads": 8,
+    "tf32_matmul": false,
+    "tf32_cudnn": true,
+    "versions": {
+      "nemo_toolkit": "3.0.0",
+      "numpy": "2.4.4",
+      "soundfile": "0.13.1",
+      "transformers": "5.5.0"
+    }
+  },
+  "models_specification_sha256": "64923e839fd723bb3d83c74905df446a3948d0144a5a666a83bd3474558e464c",
+  "status": "complete",
+  "publication_authorized": false,
+  "rows": 4265,
+  "sets": {
+    "librispeech_test_other": {
+      "rows": 2939,
+      "hours": 5.341547256944444,
+      "language": "en",
+      "models": {
+        "parakeet": {
+          "words": 52841,
+          "errors": 1653,
+          "substitutions": 1374,
+          "deletions": 111,
+          "insertions": 168,
+          "chars": 271456,
+          "char_errors": 3572,
+          "utterance_error": 1003,
+          "wer": 3.12825268257603,
+          "cer": 1.315867028173995
+        },
+        "orukeet_ft4035": {
+          "words": 52841,
+          "errors": 1721,
+          "substitutions": 1437,
+          "deletions": 117,
+          "insertions": 167,
+          "chars": 271456,
+          "char_errors": 3788,
+          "utterance_error": 1001,
+          "wer": 3.256940633220416,
+          "cer": 1.3954379346929153
+        },
+        "orukeet_targeted": {
+          "words": 52841,
+          "errors": 1699,
+          "substitutions": 1427,
+          "deletions": 122,
+          "insertions": 150,
+          "chars": 271456,
+          "char_errors": 3734,
+          "utterance_error": 998,
+          "wer": 3.215306296247232,
+          "cer": 1.3755452080631851
+        }
+      }
+    },
+    "fleurs_fr": {
+      "rows": 676,
+      "hours": 1.9511333333333334,
+      "language": "fr",
+      "models": {
+        "parakeet": {
+          "words": 18135,
+          "errors": 852,
+          "substitutions": 676,
+          "deletions": 127,
+          "insertions": 49,
+          "chars": 104679,
+          "char_errors": 1755,
+          "utterance_error": 378,
+          "wer": 4.698097601323408,
+          "cer": 1.6765540366262575
+        },
+        "orukeet_ft4035": {
+          "words": 18131,
+          "errors": 912,
+          "substitutions": 704,
+          "deletions": 103,
+          "insertions": 105,
+          "chars": 104679,
+          "char_errors": 1806,
+          "utterance_error": 380,
+          "wer": 5.030059014946776,
+          "cer": 1.725274410340183
+        },
+        "orukeet_targeted": {
+          "words": 18130,
+          "errors": 936,
+          "substitutions": 720,
+          "deletions": 109,
+          "insertions": 107,
+          "chars": 104679,
+          "char_errors": 1851,
+          "utterance_error": 386,
+          "wer": 5.162713734142305,
+          "cer": 1.7682629753818817
+        }
+      }
+    },
+    "fleurs_el": {
+      "rows": 650,
+      "hours": 1.9061,
+      "language": "el",
+      "models": {
+        "parakeet": {
+          "words": 15147,
+          "errors": 3187,
+          "substitutions": 2687,
+          "deletions": 363,
+          "insertions": 137,
+          "chars": 94733,
+          "char_errors": 8531,
+          "utterance_error": 613,
+          "wer": 21.040470060077904,
+          "cer": 9.005309659780647
+        },
+        "orukeet_ft4035": {
+          "words": 15142,
+          "errors": 4750,
+          "substitutions": 4328,
+          "deletions": 276,
+          "insertions": 146,
+          "chars": 94733,
+          "char_errors": 9147,
+          "utterance_error": 646,
+          "wer": 31.369700171707834,
+          "cer": 9.655558253195824
+        },
+        "orukeet_targeted": {
+          "words": 15141,
+          "errors": 4752,
+          "substitutions": 4328,
+          "deletions": 274,
+          "insertions": 150,
+          "chars": 94733,
+          "char_errors": 9192,
+          "utterance_error": 646,
+          "wer": 31.384981176936794,
+          "cer": 9.703060179662842
+        }
+      }
+    }
+  },
+  "models": {
+    "parakeet": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+    "orukeet_ft4035": "0ccfefcd1894871cb0850bd3c464adf5397752840de2a76d1d2d075c4141a945",
+    "orukeet_targeted": "2d843db6eb25e82e47c5f9a76c319d12178eed7b5f4f61d73b47e91ce16a37db"
+  },
+  "manifest_sha256": "8770c5a110b60d3adabf4a8e4826adb516664bd44a8c2352e1da57086f85e500",
+  "script_sha256": "f0db5a772424f7c7c2f0c78151e0aa5f02d7eba5872ebb8467763cd84677b213",
+  "decoding_sha256": "dd264a738b97cabfd1755556df9e844fa04493843738a20deecd2c9c7721fb15",
+  "decoding": {
+    "strategy": "greedy_batch",
+    "model_type": "tdt",
+    "durations": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "greedy": {
+      "max_symbols": 10
+    },
+    "beam": {
+      "beam_size": 2,
+      "return_best_hypothesis": false,
+      "score_norm": true,
+      "tsd_max_sym_exp": 50,
+      "alsd_max_target_len": 2.0
+    }
+  },
+  "precision": "FP32 weights, BF16 CUDA autocast, TF32 matrix multiplication disabled",
+  "evaluation_data_used_for_training": true,
+  "training_splits": [
+    "librispeech_test_other"
+  ],
+  "selection_split": "librispeech_test_other",
+  "evaluation_interpretation": "LibriSpeech test-other is used for training and selection; French and Greek measure changes relative to the canonical parent.",
+  "baselines": "Both stock Parakeet and parent Orukeet freshly decoded under identical settings.",
+  "empty_output_handling": "Every manifest record is scored; empty hypotheses remain.",
+  "timings": {
+    "parakeet": {
+      "seconds": 33.127207254990935,
+      "rows": 4265
+    },
+    "orukeet_ft4035": {
+      "seconds": 30.739502151031047,
+      "rows": 4265
+    },
+    "orukeet_targeted": {
+      "seconds": 30.987496081972495,
+      "rows": 4265
+    }
+  },
+  "prediction_sha256": {
+    "parakeet": "716c6a95624560bffcc1f55b5bb21c1429680be5225f0e174ee36b9dc0b52eb2",
+    "orukeet_ft4035": "434dfaf964ef74b6446513f641fa6a4c8c818dcf770de156a5ec206ab765c88b",
+    "orukeet_targeted": "bf2e9e0c2a2e7fc9b401f33da4a4e50c0908fad50fb975515a199aa4537c49e9"
+  },
+  "scoring": {
+    "protocol": "Identical pinned normalization and compound-aware WER as the preceding full evaluation.",
+    "dependencies": {
+      "kaldialign": "0.12.0",
+      "num2words": "0.5.14",
+      "regex": "2026.9.3",
+      "rapidfuzz": "3.14.6"
+    },
+    "code_sha256": {
+      "training/targeted_ft/score.py": "c853db5c89adc96a25c1e14213a765f9f42d88c0cc7ac7334016639840337324",
+      "evaluation/standard_asr/scoring.py": "3b2bd425a79a94b9afa294ba55efc6b9fb5943d7021ce27394dadf6c58082bd0",
+      "evaluation/standard_asr/vendor/provenance.json": "f6fb39bc16cb4b52ac62882baab0f1925d7405ee8a98f0ae32419edf9275aa12",
+      "evaluation/standard_asr/vendor/LICENSE": "5ee13882fce0975f0ad3c3d5c2042af4896c2a669be2d6df5b3d256811267c85",
+      "evaluation/standard_asr/vendor/english_abbreviations.py": "52997cc963e0bd6568d15554ad8d5fb0759f20f361483632a22f90d2d0e07db1",
+      "evaluation/standard_asr/vendor/__init__.py": "8c39e42af3204c41c564c970e24525da160663836b54acc1b629e4342f862334",
+      "evaluation/standard_asr/vendor/multilingual.py": "4c8db6c4171c8c2f5567d2ed625a3a1f0d45156af45ca42d9555c0c9b61a29d5",
+      "evaluation/standard_asr/vendor/normalizer.py": "490b56393484ef386b486f3679cc2261264af280b3512154431e0bdcf2778295"
+    },
+    "reference_word_counts": "Non-English compound alignment can change reference token counts separately for each model.",
+    "cer": "Character distance before compound alignment, including normalized spaces.",
+    "inference_comparison_sha256": "1c9e2c17e854f40f0210a048da53d58bf8c06bb6a9a518173f60a3ba149aac43"
+  },
+  "numeric_evidence_sha256": "3852db71e9abd42d01dfd3f805dae5f72fd1ea45c1e3ec0c4baf5e86f8d7c786"
+}

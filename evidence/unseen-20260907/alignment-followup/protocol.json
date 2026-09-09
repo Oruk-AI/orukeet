@@ -1,0 +1,90 @@
+{
+  "status": "sealed_before_inference",
+  "seed": 20260909,
+  "bootstrap_replicates": 10000,
+  "models": {
+    "parakeet": "models/parakeet-tdt-0.6b-v3/parakeet-tdt-0.6b-v3.nemo",
+    "orukeet": "gabor_half_20260906/orukeet_gabor_half_r15_20260906/step-0100.nemo"
+  },
+  "orukeet_expected_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+  "decoding": {
+    "strategy": "greedy_batch",
+    "model_type": "tdt",
+    "durations": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "greedy": {
+      "max_symbols": 10
+    }
+  },
+  "precision": "FP32 model parameters, CUDA BF16 autocast",
+  "batch_size": 32,
+  "empty_reference_policy": "Official empty or punctuation-only references remain in complete-split scoring; any predicted words count as corpus-level insertions. These records are counted separately.",
+  "inference_scope": "Every segment in all pinned selected official splits, without sample caps or model-score-dependent filtering.",
+  "inference_failure_policy": "Retry failing batches in smaller batches with identical settings; permanent item failure recorded and scored as an empty hypothesis. Never silently drop a reference.",
+  "uncertainty": "Paired cluster bootstrap by source recording/session or speaker. Omit interval when fewer than 2 clusters; flag fewer than 20 independent clusters. No claim of unseen speakers across corpora.",
+  "selection_rule": "Two independent-language checks added after source alignment defects were observed in Greek and Italian EuroSpeech. Use the full Lesbos Greek-dialect test and Italian VoxPopuli validation with human references; no output from these partitions has been seen before sealing.",
+  "history_audit_sha256": "31d80e25793ae4f8be6c521b8a1b4f4ad0ae54919dc8803c2b5c79ffda6649d8",
+  "history_index_sha256": "93bd8c1e8df498f48c527d78a06a05e656febbb4c798d84a056db98fc1afdd95",
+  "parakeet_sha256": "3cbdc85877e668ca7b82d0d56770eb1fac76691f55d6b97545e8d61ca588d10d",
+  "orukeet_sha256": "4295a6d820a40b99786331d1c7a6b6c328916c8329b23d39415b0649a5d42811",
+  "created_utc": "2026-09-07T05:03:36.034691+00:00",
+  "suite": "reference_quality_followup",
+  "sets": {
+    "lesbos_el": {
+      "path": "/home/nathanroll/parakeet-ft/unseen_20260907/alignment-followup/metadata/manifests/lesbos_el.jsonl",
+      "sha256": "d99bef57e0308632bf5940a81f9ea71758fc7a1d6bcacf51a5c546f383d243be",
+      "rows": 230,
+      "hours": null,
+      "lang": "el",
+      "source": "lesbos",
+      "clusters": 12,
+      "cluster_metadata_available": true,
+      "strict_text_unseen_rows": 224,
+      "historically_evaluated_speaker_rows": 0,
+      "overlap_counts": {
+        "exact_historical_normalized_text": 6
+      }
+    },
+    "voxpopuli_it": {
+      "path": "/home/nathanroll/parakeet-ft/unseen_20260907/alignment-followup/metadata/manifests/voxpopuli_it.jsonl",
+      "sha256": "b5767f91792a41d2a71e04f905f9a2e351c7c548234e31b2bd4a6ec1a5bd6098",
+      "rows": 1257,
+      "hours": null,
+      "lang": "it",
+      "source": "voxpopuli",
+      "clusters": null,
+      "cluster_metadata_available": false,
+      "strict_text_unseen_rows": 1257,
+      "historically_evaluated_speaker_rows": 485,
+      "overlap_counts": {}
+    }
+  },
+  "sources_sha256": "cd26127411b0b04a8d696137cf28b1d4cfab26d722f950dafc31ebf6ff65be20",
+  "primary_protocol_sha256": "b55f1ef30a1a131e7abf976e80e22b20efe8a4adac488999dafdc83a8ec86d11",
+  "primary_metrics": [
+    "Per-split and per-language corpus WER/CER. This supplementary pass does not replace the original primary endpoints."
+  ],
+  "secondary_metrics": [
+    "Exact-reference-history-disjoint sensitivity analysis. Source speaker/recording-cluster uncertainty where grouping IDs are available."
+  ],
+  "excluded_rows": {},
+  "input_rows_by_split": {
+    "voxpopuli_it": 1257,
+    "lesbos_el": 230
+  },
+  "coverage_statement": "Supplementary post-diagnostic comparison, not a replacement for the sealed primary scores. The Greek corpus measures the Lesbos dialect, not standard Greek in general. Speaker identifiers are provided by the datasets; pretraining overlap and cross-corpus voice identity remain unaudited.",
+  "limitations": [
+    "VoxPopuli validation clips can have speakers previously heard in other VoxPopuli partitions; speaker familiarity is reported separately from record-level exclusion.",
+    "The Swedish NST mirror and Golos mirrors omit speaker/session identifiers. Their confidence intervals are not estimated.",
+    "The NST Swedish partition is the published mirror test partition; it is not asserted to be the original NST speaker-held-out test.",
+    "NVIDIA pretraining membership and cross-corpus acoustic near-duplicates remain unverified. Sources are not claimed to postdate pretraining.",
+    "The Golos parquet mirrors contain null references; unannotated rows are excluded before inference and counted explicitly. No reference is invented.",
+    "Durations are obtained from decoded audio, since these parquet metadata omit reliable durations."
+  ],
+  "preceding_coverage_protocol_sha256": "c3a87576963fdf142b8295226520071b027ec06c09ab3b3c598db2b2343d6efb"
+}

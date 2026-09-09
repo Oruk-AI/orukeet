@@ -1,0 +1,1182 @@
+{
+  "primary": {
+    "reference_wer": 15.371306565215429,
+    "candidate_wer": 15.354355615485753,
+    "delta_pp": -0.016950949729675813,
+    "relative_improvement": 0.0011027657055538986,
+    "paired_delta_95ci": [
+      -0.09742931442414102,
+      0.06580780247408077
+    ]
+  },
+  "english": {
+    "reference_wer": 9.360330471804506,
+    "candidate_wer": 9.333105299317719,
+    "delta_pp": -0.02722517248678713,
+    "relative_improvement": 0.0029085695818962254,
+    "paired_delta_95ci": [
+      -0.09868481772435321,
+      0.0342044656624602
+    ]
+  },
+  "posthoc_sensitivity": {
+    "interpretation": "Descriptive after evaluation; not a new selection gate.",
+    "leave_one_language_out": {
+      "cs": {
+        "reference_wer": 15.59679336505956,
+        "candidate_wer": 15.568777154516676,
+        "delta_pp": -0.028016210542883613,
+        "relative_improvement": 0.0017962801639500592,
+        "paired_delta_95ci": [
+          -0.11262995969953919,
+          0.05755393912677532
+        ]
+      },
+      "da": {
+        "reference_wer": 14.870030809680534,
+        "candidate_wer": 14.871688565644194,
+        "delta_pp": 0.0016577559636594685,
+        "relative_improvement": -0.00011148302144614597,
+        "paired_delta_95ci": [
+          -0.07595356337668879,
+          0.0809370327743732
+        ]
+      },
+      "de": {
+        "reference_wer": 15.744058342060878,
+        "candidate_wer": 15.722794775257736,
+        "delta_pp": -0.021263566803142453,
+        "relative_improvement": 0.0013505772362603086,
+        "paired_delta_95ci": [
+          -0.10620875544810328,
+          0.06442097056546359
+        ]
+      },
+      "en": {
+        "reference_wer": 15.85471422105075,
+        "candidate_wer": 15.83633689379294,
+        "delta_pp": -0.01837732725781116,
+        "relative_improvement": 0.0011591080735728898,
+        "paired_delta_95ci": [
+          -0.10289888293651703,
+          0.06881299665847423
+        ]
+      },
+      "es": {
+        "reference_wer": 15.871993231899125,
+        "candidate_wer": 15.853279139721854,
+        "delta_pp": -0.01871409217727127,
+        "relative_improvement": 0.0011790637699907736,
+        "paired_delta_95ci": [
+          -0.1034324396265454,
+          0.0679357399403657
+        ]
+      },
+      "fi": {
+        "reference_wer": 15.423439734957771,
+        "candidate_wer": 15.401705200851818,
+        "delta_pp": -0.02173453410595272,
+        "relative_improvement": 0.001409188513032622,
+        "paired_delta_95ci": [
+          -0.10523992247444183,
+          0.06341897265200572
+        ]
+      },
+      "fr": {
+        "reference_wer": 15.730758870315631,
+        "candidate_wer": 15.710120549814258,
+        "delta_pp": -0.02063832050137293,
+        "relative_improvement": 0.0013119723384940052,
+        "paired_delta_95ci": [
+          -0.10580172310131626,
+          0.06569283822577321
+        ]
+      },
+      "hr": {
+        "reference_wer": 15.200516271740687,
+        "candidate_wer": 15.182987610416923,
+        "delta_pp": -0.017528661323764183,
+        "relative_improvement": 0.0011531622354401527,
+        "paired_delta_95ci": [
+          -0.10171610861330983,
+          0.06699281678188584
+        ]
+      },
+      "hu": {
+        "reference_wer": 15.33265063544944,
+        "candidate_wer": 15.313621422171238,
+        "delta_pp": -0.01902921327820195,
+        "relative_improvement": 0.0012410909066307152,
+        "paired_delta_95ci": [
+          -0.10258767189933486,
+          0.06603111514566107
+        ]
+      },
+      "it": {
+        "reference_wer": 15.534959030559955,
+        "candidate_wer": 15.520406358975299,
+        "delta_pp": -0.014552671584656451,
+        "relative_improvement": 0.0009367692284240059,
+        "paired_delta_95ci": [
+          -0.09918924950948627,
+          0.06972091253999975
+        ]
+      },
+      "lt": {
+        "reference_wer": 14.702336369865595,
+        "candidate_wer": 14.670615458968108,
+        "delta_pp": -0.03172091089748719,
+        "relative_improvement": 0.0021575421823774033,
+        "paired_delta_95ci": [
+          -0.10640891314552144,
+          0.03949599228135098
+        ]
+      },
+      "lv": {
+        "reference_wer": 15.098566927395478,
+        "candidate_wer": 15.094097176751326,
+        "delta_pp": -0.00446975064415156,
+        "relative_improvement": 0.00029603807206635135,
+        "paired_delta_95ci": [
+          -0.08684401215924929,
+          0.07808357861757013
+        ]
+      },
+      "nl": {
+        "reference_wer": 15.61694456891691,
+        "candidate_wer": 15.597956386435646,
+        "delta_pp": -0.018988182481264104,
+        "relative_improvement": 0.001215870517915385,
+        "paired_delta_95ci": [
+          -0.10322056685392016,
+          0.06684478315479665
+        ]
+      },
+      "pl": {
+        "reference_wer": 15.893179939602481,
+        "candidate_wer": 15.873647759561383,
+        "delta_pp": -0.019532180041098357,
+        "relative_improvement": 0.001228966142416077,
+        "paired_delta_95ci": [
+          -0.10491370791794598,
+          0.06636608002731177
+        ]
+      },
+      "pt": {
+        "reference_wer": 15.887376450926217,
+        "candidate_wer": 15.864596049611084,
+        "delta_pp": -0.022780401315133147,
+        "relative_improvement": 0.0014338680389112124,
+        "paired_delta_95ci": [
+          -0.10752692865796062,
+          0.06235715455420457
+        ]
+      },
+      "ro": {
+        "reference_wer": 15.434578087288532,
+        "candidate_wer": 15.419056366319072,
+        "delta_pp": -0.015521720969459807,
+        "relative_improvement": 0.0010056459516857297,
+        "paired_delta_95ci": [
+          -0.09984018190194856,
+          0.06923846685313455
+        ]
+      },
+      "ru": {
+        "reference_wer": 15.908240509638635,
+        "candidate_wer": 15.89692737723414,
+        "delta_pp": -0.011313132404493942,
+        "relative_improvement": 0.0007111491932523251,
+        "paired_delta_95ci": [
+          -0.09398453314762292,
+          0.0726826828522257
+        ]
+      },
+      "sk": {
+        "reference_wer": 15.51427976979125,
+        "candidate_wer": 15.491835331959896,
+        "delta_pp": -0.022444437831353525,
+        "relative_improvement": 0.0014466954421601397,
+        "paired_delta_95ci": [
+          -0.10746312025327745,
+          0.06306408351113468
+        ]
+      },
+      "sl": {
+        "reference_wer": 13.45617564918207,
+        "candidate_wer": 13.459335391256063,
+        "delta_pp": 0.003159742073993499,
+        "relative_improvement": -0.00023481724350005173,
+        "paired_delta_95ci": [
+          -0.06697080901967128,
+          0.0748978298631141
+        ]
+      },
+      "sv": {
+        "reference_wer": 14.75453851892705,
+        "candidate_wer": 14.737327340455394,
+        "delta_pp": -0.017211178471656652,
+        "relative_improvement": 0.0011665006295912272,
+        "paired_delta_95ci": [
+          -0.1013364682439896,
+          0.0682767662147482
+        ]
+      }
+    },
+    "language_point_estimates_improved": 8,
+    "median_language_delta_pp": 0.019152614662615086
+  },
+  "families": {
+    "cv": {
+      "reference_wer": 5.6238747621633465,
+      "candidate_wer": 5.601455742537025,
+      "delta_pp": -0.0224190196263212,
+      "relative_improvement": 0.00398640093786462,
+      "paired_delta_95ci": [
+        -0.11070486327062944,
+        0.05463791956669482
+      ]
+    },
+    "fleurs": {
+      "reference_wer": 11.281155287727831,
+      "candidate_wer": 11.323321083766057,
+      "delta_pp": 0.04216579603822623,
+      "relative_improvement": -0.0037377196716807948,
+      "paired_delta_95ci": [
+        -0.1242302282633854,
+        0.23704235785417024
+      ]
+    },
+    "ftspeech": {
+      "reference_wer": 25.51285271707276,
+      "candidate_wer": 25.10257054341455,
+      "delta_pp": -0.41028217365821007,
+      "relative_improvement": 0.016081391532655087,
+      "paired_delta_95ci": [
+        -1.1589080745424254,
+        0.25894938173057575
+      ]
+    },
+    "rixvox": {
+      "reference_wer": 27.30546231309124,
+      "candidate_wer": 27.287152883735125,
+      "delta_pp": -0.01830942935611546,
+      "relative_improvement": 0.0006705409029950093,
+      "paired_delta_95ci": [
+        -0.1348460348975152,
+        0.10224235081422142
+      ]
+    },
+    "voxpopuli": {
+      "reference_wer": 16.4072810226073,
+      "candidate_wer": 16.440126056281542,
+      "delta_pp": 0.032845033674242075,
+      "relative_improvement": -0.0020018572016280434,
+      "paired_delta_95ci": [
+        -0.0943945695639979,
+        0.1544710518506377
+      ]
+    }
+  },
+  "metrics": {
+    "set:accent_en_469b5f4bb597_confirmation": {
+      "reference_wer": 6.595538312318138,
+      "candidate_wer": 6.644034917555771,
+      "delta_pp": 0.04849660523763344,
+      "paired_delta_95ci": [
+        -0.19436582188955867,
+        0.3087883498217627
+      ],
+      "rows": 200
+    },
+    "set:accent_en_74d0bb6d856d_confirmation": {
+      "reference_wer": 6.666666666666667,
+      "candidate_wer": 6.909090909090909,
+      "delta_pp": 0.2424242424242422,
+      "paired_delta_95ci": [
+        0.053731670107310635,
+        0.5017921146953405
+      ],
+      "rows": 168
+    },
+    "set:accent_en_a163705d3331_confirmation": {
+      "reference_wer": 5.804230201672405,
+      "candidate_wer": 5.951795376291195,
+      "delta_pp": 0.14756517461878982,
+      "paired_delta_95ci": [
+        0.0,
+        0.3468358709513304
+      ],
+      "rows": 200
+    },
+    "set:accent_en_fecbdec18469_confirmation": {
+      "reference_wer": 4.428044280442805,
+      "candidate_wer": 4.428044280442805,
+      "delta_pp": 0.0,
+      "paired_delta_95ci": [
+        -0.560237178983743,
+        0.5386117388590203
+      ],
+      "rows": 53
+    },
+    "set:core_en_libri_test_clean": {
+      "reference_wer": 2.1234939759036147,
+      "candidate_wer": 2.1253765060240966,
+      "delta_pp": 0.0018825301204818956,
+      "paired_delta_95ci": [
+        -0.030625734252106792,
+        0.03547800757809352
+      ],
+      "rows": 2620
+    },
+    "set:cv_de_confirmation": {
+      "reference_wer": 3.7695779134589857,
+      "candidate_wer": 3.8226705601274222,
+      "delta_pp": 0.053092646668436494,
+      "paired_delta_95ci": [
+        -0.1626490128370673,
+        0.2847605923142759
+      ],
+      "rows": 400
+    },
+    "set:cv_en_confirmation": {
+      "reference_wer": 5.973171349025563,
+      "candidate_wer": 5.998481397114655,
+      "delta_pp": 0.025310048089091985,
+      "paired_delta_95ci": [
+        -0.1620877310880078,
+        0.2173939311156408
+      ],
+      "rows": 400
+    },
+    "set:cv_es_confirmation": {
+      "reference_wer": 2.529469548133595,
+      "candidate_wer": 2.480353634577603,
+      "delta_pp": -0.04911591355599221,
+      "paired_delta_95ci": [
+        -0.14779970409225301,
+        0.04751892082650122
+      ],
+      "rows": 400
+    },
+    "set:cv_et_confirmation": {
+      "reference_wer": 14.285714285714286,
+      "candidate_wer": 14.285714285714286,
+      "delta_pp": 0.0,
+      "paired_delta_95ci": null,
+      "rows": 1
+    },
+    "set:cv_fr_confirmation": {
+      "reference_wer": 6.121495327102804,
+      "candidate_wer": 6.121495327102804,
+      "delta_pp": 0.0,
+      "paired_delta_95ci": [
+        -0.21362449560882982,
+        0.21681783810816302
+      ],
+      "rows": 400
+    },
+    "set:cv_it_confirmation": {
+      "reference_wer": 3.343621399176955,
+      "candidate_wer": 3.2150205761316872,
+      "delta_pp": -0.12860082304526754,
+      "paired_delta_95ci": [
+        -0.24836306163919622,
+        -0.025919830135617536
+      ],
+      "rows": 400
+    },
+    "set:cv_lv_confirmation": {
+      "reference_wer": 20.267188009123494,
+      "candidate_wer": 20.104268491365264,
+      "delta_pp": -0.16291951775822966,
+      "paired_delta_95ci": [
+        -0.667948161145763,
+        0.32951500458901223
+      ],
+      "rows": 400
+    },
+    "set:cv_nl_confirmation": {
+      "reference_wer": 2.484472049689441,
+      "candidate_wer": 2.484472049689441,
+      "delta_pp": 0.0,
+      "paired_delta_95ci": [
+        0.0,
+        0.0
+      ],
+      "rows": 73
+    },
+    "set:cv_pl_confirmation": {
+      "reference_wer": 0.7694998251136761,
+      "candidate_wer": 0.8744316194473593,
+      "delta_pp": 0.10493179433368316,
+      "paired_delta_95ci": [
+        0.0,
+        0.23809523809523808
+      ],
+      "rows": 400
+    },
+    "set:cv_pt_confirmation": {
+      "reference_wer": 5.42469664525339,
+      "candidate_wer": 5.56745182012848,
+      "delta_pp": 0.1427551748750897,
+      "paired_delta_95ci": [
+        -0.12048556106210123,
+        0.41861073907220253
+      ],
+      "rows": 400
+    },
+    "set:cv_ru_confirmation": {
+      "reference_wer": 5.555555555555555,
+      "candidate_wer": 5.345911949685535,
+      "delta_pp": -0.20964360587002062,
+      "paired_delta_95ci": [
+        -0.6945150590741817,
+        0.11112662942271857
+      ],
+      "rows": 226
+    },
+    "set:dialect_en_english_dialects_source_holdout": {
+      "reference_wer": 4.800064107700938,
+      "candidate_wer": 4.757325640409221,
+      "delta_pp": -0.042738467291717264,
+      "paired_delta_95ci": [
+        -0.092278753816149,
+        0.0034160608060300477
+      ],
+      "rows": 2698
+    },
+    "set:fleurs_bg_confirmation": {
+      "reference_wer": 10.743801652892563,
+      "candidate_wer": 10.578512396694215,
+      "delta_pp": -0.16528925619834745,
+      "paired_delta_95ci": [
+        -0.6116363976783373,
+        0.0
+      ],
+      "rows": 37
+    },
+    "set:fleurs_cs_confirmation": {
+      "reference_wer": 14.285714285714286,
+      "candidate_wer": 14.617940199335548,
+      "delta_pp": 0.3322259136212615,
+      "paired_delta_95ci": [
+        -0.7042875628328272,
+        1.7543859649122806
+      ],
+      "rows": 18
+    },
+    "set:fleurs_da_confirmation": {
+      "reference_wer": 14.959568733153638,
+      "candidate_wer": 15.22911051212938,
+      "delta_pp": 0.26954177897574105,
+      "paired_delta_95ci": [
+        0.0,
+        0.7168673149148528
+      ],
+      "rows": 35
+    },
+    "set:fleurs_de_confirmation": {
+      "reference_wer": 3.4571062740076823,
+      "candidate_wer": 3.329065300896287,
+      "delta_pp": -0.1280409731113954,
+      "paired_delta_95ci": [
+        -0.48724046287992695,
+        0.0
+      ],
+      "rows": 36
+    },
+    "set:fleurs_en_confirmation": {
+      "reference_wer": 3.6398467432950192,
+      "candidate_wer": 3.4482758620689653,
+      "delta_pp": -0.19157088122605392,
+      "paired_delta_95ci": [
+        -0.5899850184656121,
+        0.0
+      ],
+      "rows": 25
+    },
+    "set:fleurs_es_confirmation": {
+      "reference_wer": 2.4193548387096775,
+      "candidate_wer": 2.5089605734767026,
+      "delta_pp": 0.08960573476702516,
+      "paired_delta_95ci": [
+        0.0,
+        0.2912763023686296
+      ],
+      "rows": 34
+    },
+    "set:fleurs_et_confirmation": {
+      "reference_wer": 14.285714285714286,
+      "candidate_wer": 14.699792960662526,
+      "delta_pp": 0.41407867494823947,
+      "paired_delta_95ci": [
+        -0.6438114356915409,
+        1.8307685848046509
+      ],
+      "rows": 31
+    },
+    "set:fleurs_fi_confirmation": {
+      "reference_wer": 10.0,
+      "candidate_wer": 10.0,
+      "delta_pp": 0.0,
+      "paired_delta_95ci": [
+        -1.5873015873015872,
+        3.0303030303030303
+      ],
+      "rows": 11
+    },
+    "set:fleurs_fr_confirmation": {
+      "reference_wer": 6.6239316239316235,
+      "candidate_wer": 6.837606837606837,
+      "delta_pp": 0.2136752136752138,
+      "paired_delta_95ci": [
+        0.0,
+        0.7518796992481203
+      ],
+      "rows": 16
+    },
+    "set:fleurs_hr_confirmation": {
+      "reference_wer": 8.928571428571429,
+      "candidate_wer": 9.311224489795919,
+      "delta_pp": 0.38265306122448983,
+      "paired_delta_95ci": [
+        0.0,
+        0.8412419060268965
+      ],
+      "rows": 42
+    },
+    "set:fleurs_hu_confirmation": {
+      "reference_wer": 17.851739788199698,
+      "candidate_wer": 16.792738275340394,
+      "delta_pp": -1.0590015128593038,
+      "paired_delta_95ci": [
+        -2.161402757224083,
+        -0.2544207169774862
+      ],
+      "rows": 38
+    },
+    "set:fleurs_it_confirmation": {
+      "reference_wer": 2.918781725888325,
+      "candidate_wer": 2.7918781725888326,
+      "delta_pp": -0.12690355329949243,
+      "paired_delta_95ci": [
+        -0.4400561201494599,
+        0.0
+      ],
+      "rows": 27
+    },
+    "set:fleurs_lt_confirmation": {
+      "reference_wer": 21.09038737446198,
+      "candidate_wer": 21.52080344332855,
+      "delta_pp": 0.43041606886657036,
+      "paired_delta_95ci": [
+        -0.8526252502928199,
+        1.8434243994848911
+      ],
+      "rows": 42
+    },
+    "set:fleurs_lv_confirmation": {
+      "reference_wer": 22.41014799154334,
+      "candidate_wer": 21.56448202959831,
+      "delta_pp": -0.8456659619450306,
+      "paired_delta_95ci": [
+        -2.1505902405151187,
+        0.4425106037597524
+      ],
+      "rows": 27
+    },
+    "set:fleurs_mt_confirmation": {
+      "reference_wer": 16.2426614481409,
+      "candidate_wer": 16.634050880626223,
+      "delta_pp": 0.39138943248532243,
+      "paired_delta_95ci": [
+        -1.0416666666666667,
+        1.5028968332345782
+      ],
+      "rows": 21
+    },
+    "set:fleurs_nl_confirmation": {
+      "reference_wer": 5.0,
+      "candidate_wer": 5.0,
+      "delta_pp": 0.0,
+      "paired_delta_95ci": null,
+      "rows": 1
+    },
+    "set:fleurs_pl_confirmation": {
+      "reference_wer": 5.691056910569106,
+      "candidate_wer": 5.691056910569106,
+      "delta_pp": 0.0,
+      "paired_delta_95ci": [
+        0.0,
+        0.0
+      ],
+      "rows": 22
+    },
+    "set:fleurs_pt_confirmation": {
+      "reference_wer": 6.565656565656566,
+      "candidate_wer": 6.313131313131313,
+      "delta_pp": -0.2525252525252526,
+      "paired_delta_95ci": [
+        -0.7576116957046748,
+        0.0
+      ],
+      "rows": 20
+    },
+    "set:fleurs_ro_confirmation": {
+      "reference_wer": 10.108695652173912,
+      "candidate_wer": 10.76086956521739,
+      "delta_pp": 0.6521739130434785,
+      "paired_delta_95ci": [
+        0.17543091529173194,
+        1.1904761904761905
+      ],
+      "rows": 39
+    },
+    "set:fleurs_ru_confirmation": {
+      "reference_wer": 3.7254901960784315,
+      "candidate_wer": 3.9215686274509802,
+      "delta_pp": 0.19607843137254877,
+      "paired_delta_95ci": [
+        0.0,
+        0.6110135341342948
+      ],
+      "rows": 27
+    },
+    "set:fleurs_sk_confirmation": {
+      "reference_wer": 11.558669001751314,
+      "candidate_wer": 11.558669001751314,
+      "delta_pp": 0.0,
+      "paired_delta_95ci": [
+        -0.49182346765727203,
+        0.5277744728204184
+      ],
+      "rows": 33
+    },
+    "set:fleurs_sl_confirmation": {
+      "reference_wer": 31.94888178913738,
+      "candidate_wer": 31.94888178913738,
+      "delta_pp": 0.0,
+      "paired_delta_95ci": [
+        -1.1527654622035026,
+        0.8571428571428571
+      ],
+      "rows": 19
+    },
+    "set:fleurs_sv_confirmation": {
+      "reference_wer": 14.128440366972477,
+      "candidate_wer": 14.495412844036696,
+      "delta_pp": 0.36697247706421976,
+      "paired_delta_95ci": [
+        0.0,
+        1.0541230106447483
+      ],
+      "rows": 28
+    },
+    "set:fleurs_uk_confirmation": {
+      "reference_wer": 5.882352941176471,
+      "candidate_wer": 5.882352941176471,
+      "delta_pp": 0.0,
+      "paired_delta_95ci": [
+        -0.9303047811642351,
+        0.8849557522123894
+      ],
+      "rows": 19
+    },
+    "set:ftspeech_da_confirmation": {
+      "reference_wer": 25.51285271707276,
+      "candidate_wer": 25.10257054341455,
+      "delta_pp": -0.41028217365821007,
+      "paired_delta_95ci": [
+        -1.1589080745424254,
+        0.25894938173057575
+      ],
+      "rows": 600
+    },
+    "set:learner_en_speechocean_official_test": {
+      "reference_wer": 21.541416269128305,
+      "candidate_wer": 21.529025463106375,
+      "delta_pp": -0.01239080602192999,
+      "paired_delta_95ci": [
+        -0.23879599077442565,
+        0.2009305971369774
+      ],
+      "rows": 2500
+    },
+    "set:parliamentaccent_en_voxpopuli_confirmation": {
+      "reference_wer": 20.99335475618507,
+      "candidate_wer": 20.94655726453062,
+      "delta_pp": -0.046797491654448464,
+      "paired_delta_95ci": [
+        -0.19856631782557685,
+        0.10919371796002691
+      ],
+      "rows": 1192
+    },
+    "set:rixvox_sv_confirmation": {
+      "reference_wer": 27.30546231309124,
+      "candidate_wer": 27.287152883735125,
+      "delta_pp": -0.01830942935611546,
+      "paired_delta_95ci": [
+        -0.1348460348975152,
+        0.10224235081422142
+      ],
+      "rows": 600
+    },
+    "set:voxpopuli_cs_confirmation": {
+      "reference_wer": 11.010844613314335,
+      "candidate_wer": 11.200823240718753,
+      "delta_pp": 0.18997862740441818,
+      "paired_delta_95ci": [
+        0.06280478327575349,
+        0.3316702986726791
+      ],
+      "rows": 600
+    },
+    "set:voxpopuli_de_confirmation": {
+      "reference_wer": 9.96930037162708,
+      "candidate_wer": 10.05008886734529,
+      "delta_pp": 0.08078849571820967,
+      "paired_delta_95ci": [
+        -0.02756871511302157,
+        0.2013056743698912
+      ],
+      "rows": 600
+    },
+    "set:voxpopuli_en_confirmation": {
+      "reference_wer": 6.329197032368197,
+      "candidate_wer": 6.342328146543235,
+      "delta_pp": 0.013131114175037872,
+      "paired_delta_95ci": [
+        -0.05942495744070498,
+        0.08231158458517308
+      ],
+      "rows": 600
+    },
+    "set:voxpopuli_es_confirmation": {
+      "reference_wer": 6.77448243164937,
+      "candidate_wer": 6.8008217879155035,
+      "delta_pp": 0.02633935626613315,
+      "paired_delta_95ci": [
+        -0.034836822096814095,
+        0.09655489051593423
+      ],
+      "rows": 599
+    },
+    "set:voxpopuli_et_confirmation": {
+      "reference_wer": 23.779193205944797,
+      "candidate_wer": 24.097664543524417,
+      "delta_pp": 0.31847133757962,
+      "paired_delta_95ci": [
+        -1.146131805157593,
+        1.3740458015267176
+      ],
+      "rows": 51
+    },
+    "set:voxpopuli_fi_confirmation": {
+      "reference_wer": 14.463276836158192,
+      "candidate_wer": 14.538606403013183,
+      "delta_pp": 0.07532956685499137,
+      "paired_delta_95ci": [
+        -0.16981573549263865,
+        0.272296607345094
+      ],
+      "rows": 477
+    },
+    "set:voxpopuli_fr_confirmation": {
+      "reference_wer": 9.172409928839581,
+      "candidate_wer": 9.234044937524514,
+      "delta_pp": 0.06163500868493266,
+      "paired_delta_95ci": [
+        -0.027803777787131674,
+        0.16072372065514737
+      ],
+      "rows": 600
+    },
+    "set:voxpopuli_hr_confirmation": {
+      "reference_wer": 19.092390623041243,
+      "candidate_wer": 19.067318540804813,
+      "delta_pp": -0.02507208223643076,
+      "paired_delta_95ci": [
+        -0.13195178738565003,
+        0.08691762522893516
+      ],
+      "rows": 600
+    },
+    "set:voxpopuli_hu_confirmation": {
+      "reference_wer": 16.01454430479804,
+      "candidate_wer": 16.093589439569996,
+      "delta_pp": 0.07904513477195607,
+      "paired_delta_95ci": [
+        -0.10821197257139188,
+        0.26126063932519045
+      ],
+      "rows": 600
+    },
+    "set:voxpopuli_it_confirmation": {
+      "reference_wer": 14.438059740125277,
+      "candidate_wer": 14.391468654552984,
+      "delta_pp": -0.04659108557229352,
+      "paired_delta_95ci": [
+        -0.3269464505936635,
+        0.2196242549883387
+      ],
+      "rows": 599
+    },
+    "set:voxpopuli_lt_confirmation": {
+      "reference_wer": 34.02439024390244,
+      "candidate_wer": 34.146341463414636,
+      "delta_pp": 0.1219512195121979,
+      "paired_delta_95ci": [
+        -0.9146341463414634,
+        1.35462308714588
+      ],
+      "rows": 42
+    },
+    "set:voxpopuli_nl_confirmation": {
+      "reference_wer": 11.106884747052112,
+      "candidate_wer": 11.129707112970712,
+      "delta_pp": 0.022822365918599985,
+      "paired_delta_95ci": [
+        -0.1153095000030773,
+        0.15260647878217595
+      ],
+      "rows": 600
+    },
+    "set:voxpopuli_pl_confirmation": {
+      "reference_wer": 6.533354922279793,
+      "candidate_wer": 6.549546632124352,
+      "delta_pp": 0.0161917098445592,
+      "paired_delta_95ci": [
+        -0.053714209765338486,
+        0.09023183664816813
+      ],
+      "rows": 600
+    },
+    "set:voxpopuli_ro_confirmation": {
+      "reference_wer": 14.386107561853875,
+      "candidate_wer": 14.304797305145778,
+      "delta_pp": -0.08131025670809677,
+      "paired_delta_95ci": [
+        -0.2078006894589447,
+        0.044745776169587755
+      ],
+      "rows": 600
+    },
+    "set:voxpopuli_sk_confirmation": {
+      "reference_wer": 12.702394526795896,
+      "candidate_wer": 12.793614595210947,
+      "delta_pp": 0.09122006841505126,
+      "paired_delta_95ci": [
+        -0.05414313532888222,
+        0.24445309269585003
+      ],
+      "rows": 582
+    },
+    "set:voxpopuli_sl_confirmation": {
+      "reference_wer": 52.71966527196653,
+      "candidate_wer": 52.30125523012552,
+      "delta_pp": -0.41841004184100683,
+      "paired_delta_95ci": [
+        -1.3921191349612427,
+        0.492169965407663
+      ],
+      "rows": 309
+    },
+    "language:cs": {
+      "reference_wer": 11.087057368176898,
+      "candidate_wer": 11.280346373898253,
+      "delta_pp": 0.1932890057213541,
+      "paired_delta_95ci": [
+        0.06464991444390124,
+        0.33477166267204794
+      ],
+      "rows": 618
+    },
+    "language:da": {
+      "reference_wer": 24.8955459203784,
+      "candidate_wer": 24.525029562475364,
+      "delta_pp": -0.3705163579030355,
+      "paired_delta_95ci": [
+        -1.077730658219763,
+        0.2603954144521179
+      ],
+      "rows": 635
+    },
+    "language:de": {
+      "reference_wer": 8.289022805151838,
+      "candidate_wer": 8.354011579818032,
+      "delta_pp": 0.0649887746661939,
+      "paired_delta_95ci": [
+        -0.03114212533132329,
+        0.1648799008650383
+      ],
+      "rows": 1036
+    },
+    "language:en": {
+      "reference_wer": 6.186561104344295,
+      "candidate_wer": 6.196711327649208,
+      "delta_pp": 0.010150223304912664,
+      "paired_delta_95ci": [
+        -0.0574637402539282,
+        0.07652651963398971
+      ],
+      "rows": 1025
+    },
+    "language:es": {
+      "reference_wer": 5.858259898225146,
+      "candidate_wer": 5.874808654999793,
+      "delta_pp": 0.016548756774646733,
+      "paired_delta_95ci": [
+        -0.0357499186745056,
+        0.07403191721548207
+      ],
+      "rows": 1033
+    },
+    "language:fi": {
+      "reference_wer": 14.380776340110906,
+      "candidate_wer": 14.4547134935305,
+      "delta_pp": 0.07393715341959428,
+      "paired_delta_95ci": [
+        -0.16236775819969085,
+        0.2673536102941737
+      ],
+      "rows": 488
+    },
+    "language:fr": {
+      "reference_wer": 8.541712768311573,
+      "candidate_wer": 8.59482186324408,
+      "delta_pp": 0.05310909493250726,
+      "paired_delta_95ci": [
+        -0.030787049514940774,
+        0.1416846070298999
+      ],
+      "rows": 1016
+    },
+    "language:hr": {
+      "reference_wer": 18.61632214123551,
+      "candidate_wer": 18.610347711793523,
+      "delta_pp": -0.005974429441987894,
+      "paired_delta_95ci": [
+        -0.11091768501626237,
+        0.11025286445292842
+      ],
+      "rows": 642
+    },
+    "language:hu": {
+      "reference_wer": 16.10576923076923,
+      "candidate_wer": 16.12830528846154,
+      "delta_pp": 0.022536057692310152,
+      "paired_delta_95ci": [
+        -0.16823052351126663,
+        0.19671152178915985
+      ],
+      "rows": 638
+    },
+    "language:it": {
+      "reference_wer": 12.261909723669403,
+      "candidate_wer": 12.199391489184345,
+      "delta_pp": -0.06251823448505789,
+      "paired_delta_95ci": [
+        -0.29020446551549167,
+        0.1508770272443644
+      ],
+      "rows": 1026
+    },
+    "language:lt": {
+      "reference_wer": 28.081740276862227,
+      "candidate_wer": 28.345418589321028,
+      "delta_pp": 0.2636783124588007,
+      "paired_delta_95ci": [
+        -0.5333689839572192,
+        1.1677227119398863
+      ],
+      "rows": 84
+    },
+    "language:lv": {
+      "reference_wer": 20.553359683794465,
+      "candidate_wer": 20.299265951439864,
+      "delta_pp": -0.2540937323546011,
+      "paired_delta_95ci": [
+        -0.7347390947271251,
+        0.2076448923889894
+      ],
+      "rows": 427
+    },
+    "language:nl": {
+      "reference_wer": 10.70418449488723,
+      "candidate_wer": 10.725940967437813,
+      "delta_pp": 0.02175647255058344,
+      "paired_delta_95ci": [
+        -0.11092195015066528,
+        0.14570235996634104
+      ],
+      "rows": 673
+    },
+    "language:pl": {
+      "reference_wer": 5.455712451861361,
+      "candidate_wer": 5.487804878048781,
+      "delta_pp": 0.03209242618742003,
+      "paired_delta_95ci": [
+        -0.02759018692751177,
+        0.09525040343535443
+      ],
+      "rows": 1022
+    },
+    "language:pt": {
+      "reference_wer": 5.565978736710444,
+      "candidate_wer": 5.65978736710444,
+      "delta_pp": 0.09380863039399578,
+      "paired_delta_95ci": [
+        -0.14374404690610224,
+        0.3406785984946573
+      ],
+      "rows": 420
+    },
+    "language:ro": {
+      "reference_wer": 14.169147645826442,
+      "candidate_wer": 14.125041349652664,
+      "delta_pp": -0.04410629617377815,
+      "paired_delta_95ci": [
+        -0.16407033302572227,
+        0.08182800651842881
+      ],
+      "rows": 639
+    },
+    "language:ru": {
+      "reference_wer": 5.169561621174524,
+      "candidate_wer": 5.045492142266336,
+      "delta_pp": -0.1240694789081882,
+      "paired_delta_95ci": [
+        -0.4799739971555166,
+        0.14272461601196135
+      ],
+      "rows": 253
+    },
+    "language:sk": {
+      "reference_wer": 12.654815678274806,
+      "candidate_wer": 12.742241002477051,
+      "delta_pp": 0.08742532420224514,
+      "paired_delta_95ci": [
+        -0.0535308466167459,
+        0.2359297598979561
+      ],
+      "rows": 615
+    },
+    "language:sl": {
+      "reference_wer": 51.75879396984924,
+      "candidate_wer": 51.35973987584984,
+      "delta_pp": -0.3990540939994034,
+      "paired_delta_95ci": [
+        -1.3071992541444513,
+        0.45771130725364073
+      ],
+      "rows": 328
+    },
+    "language:sv": {
+      "reference_wer": 27.08989944469458,
+      "candidate_wer": 27.077892841062585,
+      "delta_pp": -0.01200660363199546,
+      "paired_delta_95ci": [
+        -0.12669207547366323,
+        0.10840819589921423
+      ],
+      "rows": 628
+    },
+    "english:common_voice": {
+      "reference_wer": 6.094940418050401,
+      "candidate_wer": 6.182848212541512,
+      "delta_pp": 0.08790779449111152,
+      "paired_delta_95ci": [
+        -0.019148330492765313,
+        0.19574249948505992
+      ],
+      "rows": 1021
+    },
+    "english:fleurs": {
+      "reference_wer": 3.6398467432950192,
+      "candidate_wer": 3.4482758620689653,
+      "delta_pp": -0.19157088122605392,
+      "paired_delta_95ci": [
+        -0.5899850184656121,
+        0.0
+      ],
+      "rows": 25
+    },
+    "english:voxpopuli": {
+      "reference_wer": 6.329197032368197,
+      "candidate_wer": 6.342328146543235,
+      "delta_pp": 0.013131114175037872,
+      "paired_delta_95ci": [
+        -0.05942495744070498,
+        0.08231158458517308
+      ],
+      "rows": 600
+    },
+    "english:voxpopuli_accented": {
+      "reference_wer": 20.99335475618507,
+      "candidate_wer": 20.94655726453062,
+      "delta_pp": -0.046797491654448464,
+      "paired_delta_95ci": [
+        -0.19856631782557685,
+        0.10919371796002691
+      ],
+      "rows": 1192
+    },
+    "english:core": {
+      "reference_wer": 2.1234939759036147,
+      "candidate_wer": 2.1253765060240966,
+      "delta_pp": 0.0018825301204818956,
+      "paired_delta_95ci": [
+        -0.030625734252106792,
+        0.03547800757809352
+      ],
+      "rows": 2620
+    },
+    "english:learner": {
+      "reference_wer": 21.541416269128305,
+      "candidate_wer": 21.529025463106375,
+      "delta_pp": -0.01239080602192999,
+      "paired_delta_95ci": [
+        -0.23879599077442565,
+        0.2009305971369774
+      ],
+      "rows": 2500
+    },
+    "english:dialect": {
+      "reference_wer": 4.800064107700938,
+      "candidate_wer": 4.757325640409221,
+      "delta_pp": -0.042738467291717264,
+      "paired_delta_95ci": [
+        -0.092278753816149,
+        0.0034160608060300477
+      ],
+      "rows": 2698
+    }
+  },
+  "reference_model_sha256": "313d615ca34c8ac3a183384e1f87e8274d748e5445af110013a335f02ae42e32",
+  "candidate_model_sha256": "f5111f6132144b5993edbd4e228df9f731cac64d54777416c77dc85e96b58b61",
+  "rows": 23038,
+  "hours": 53.66633331597225,
+  "bootstrap": {
+    "replicates": 5000,
+    "seed": 20260905,
+    "global_clusters": 4266,
+    "unit": "Source-qualified speakers; shared parallel sentence IDs for FLEURS"
+  },
+  "interpretation": "Matched NeMo/bf16 greedy decoding; existing exposed release recordings. Not an unseen-data or universal-accuracy claim.",
+  "status": "pass",
+  "failures": [],
+  "development_status": "pass",
+  "diagnostic_only": false,
+  "release_qualified": true,
+  "registry_sha256": "c6fee4d0cb2c2071d41148f545048d2791dcc23ec49db2dd299fbcaaa283b253",
+  "statistics_implementation_sha256": "347d8fef42c3409dd2d8fdd2dc3e82ffe167b7ab7f1624cef2a80bc46308c3a4",
+  "candidate_metric_implementation": {
+    "legacy_evaluator_sha256": "1986319e3387f526812955f7e892b45787a77b4651bb93fed32eb328e6da0db3",
+    "wrapper_sha256": "1a4a0f0d0aa9e80df3bd738849b27c2bca8c4099fd14dc8ebdfd40c895d93a4d",
+    "equivalence_receipt_sha256": "b8a339e367159926e8c456e77e952046db52432995af8deae615a88e5da8d514",
+    "rapidfuzz": "3.14.3",
+    "difference": "Verified equivalent integer word and character edit distance only"
+  }
+}
