@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "model": "Orukeet v0.1.0 (r3)",
+  "source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+  "q8_sha256": "93ce19c6d8244acbfea980eeaf970531d4f216171578ef8e041dcc2d070a45bd",
+  "upstream_release": "v1.9.2",
+  "pr_base": "a2d0ab2769f34f5ef87216cbd085968656e4c3ca",
+  "app_tests": {
+    "passed": 3794,
+    "failed": 0,
+    "skipped": 6,
+    "todo": 1
+  },
+  "package_tests": {
+    "passed": 26,
+    "failed": 0
+  },
+  "checks": [
+    "Fresh-profile defaults for dictation, meetings and uploads",
+    "Oruk Signal logo and recommended badge rendered",
+    "Model-card mouse and keyboard navigation",
+    "SHA-256 and length-checked Q8 installation",
+    "Real MediaRecorder to native ASR to SQLite history",
+    "Cancellation creates no saved transcript; next recording recovers",
+    "Native concurrent calls, worker reuse, silence and stop/restart",
+    "Metal and CPU runtime builds and actual inference",
+    "TypeScript, formatting, localization placeholders",
+    "All 74 paired scores reproduced",
+    "Five-page PDF and independently compiled arXiv source"
+  ],
+  "scope": "Recorded WAV supplies microphone input in the actual production app. OS-level shortcut and cross-application paste are not simulated by this receipt. Package security audit has zero high/critical issues and two existing moderate advisories in upstream dependencies.",
+  "local_evidence_sha256": {
+    "source-audit.json": "737ebaf68724362b8557d7bdcee933bc1ad51f602939a5d78f585afc807caddd",
+    "gui-preflight-4.json": "7cf4cb14d72168e807079428c0f1139a21547ee5b03f8e8a19b3c7284a01b828",
+    "gui-preflight-4.png": "d72d3f8464b9526840b2a0963f847748871fadb5267b8a1705a6cb5d5fc3db39",
+    "recording-preflight.json": "9a2cb1a0d72c2c5ebe5941be0b4eae3bd4913e060c113fbcecc03776c2cd8956",
+    "app-manager-node-final.json": "0829444810afd781d9db419c935701f4d31ec647124517c3b2d3b4c7a48f109b",
+    "hardware-cpu-final.json": "ffe48525d9c90db523fa6881202bcfdfff90eeb4720c3f7b82e4da288ceeca08"
+  }
+}
