@@ -2,7 +2,7 @@
 
 The integration adds **Oruk → Orukeet** as the recommended local model for new profiles. Existing model preferences are preserved. Dictation, meetings and uploads share the final Orukeet Q8 checkpoint.
 
-[Model card](MODEL_CARD.md) · [Paired recognition and latency](APP_BENCHMARKS.md) · [OpenWhispr](https://github.com/OpenWhispr/openwhispr)
+[Upstream PR #2085](https://github.com/OpenWhispr/openwhispr/pull/2085) · [Model card](MODEL_CARD.md) · [Paired recognition and latency](APP_BENCHMARKS.md) · [OpenWhispr](https://github.com/OpenWhispr/openwhispr)
 
 The work began from the latest released OpenWhispr, v1.9.2, and is rebased onto main for the upstream PR. The native worker automatically selects Metal on Apple silicon, CUDA on NVIDIA, Vulkan on supported AMD/Intel graphics, or CPU fallback. SDK binaries are pinned and checksum verified. The public model is downloaded directly from Hugging Face without an account.
 
