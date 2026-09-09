@@ -6,7 +6,7 @@
   "upstream_release": "v1.9.2",
   "pr_base": "a2d0ab2769f34f5ef87216cbd085968656e4c3ca",
   "app_tests": {
-    "passed": 3794,
+    "passed": 3795,
     "failed": 0,
     "skipped": 6,
     "todo": 1
@@ -26,15 +26,40 @@
     "Metal and CPU runtime builds and actual inference",
     "TypeScript, formatting, localization placeholders",
     "All 74 paired scores reproduced",
-    "Five-page PDF and independently compiled arXiv source"
+    "Five-page PDF and independently compiled arXiv source",
+    "Model-specific macOS gate keeps Orukeet selectable below the stock ONNX minimum"
   ],
-  "scope": "Recorded WAV supplies microphone input in the actual production app. OS-level shortcut and cross-application paste are not simulated by this receipt. Package security audit has zero high/critical issues and two existing moderate advisories in upstream dependencies.",
+  "scope": "Recorded WAV supplies microphone input in the actual production app. OS-level shortcut and cross-application paste are not simulated by this receipt. App security audit has zero high/critical issues and two existing moderate advisories in upstream dependencies.",
   "local_evidence_sha256": {
     "source-audit.json": "737ebaf68724362b8557d7bdcee933bc1ad51f602939a5d78f585afc807caddd",
     "gui-preflight-4.json": "7cf4cb14d72168e807079428c0f1139a21547ee5b03f8e8a19b3c7284a01b828",
     "gui-preflight-4.png": "d72d3f8464b9526840b2a0963f847748871fadb5267b8a1705a6cb5d5fc3db39",
     "recording-preflight.json": "9a2cb1a0d72c2c5ebe5941be0b4eae3bd4913e060c113fbcecc03776c2cd8956",
     "app-manager-node-final.json": "0829444810afd781d9db419c935701f4d31ec647124517c3b2d3b4c7a48f109b",
-    "hardware-cpu-final.json": "ffe48525d9c90db523fa6881202bcfdfff90eeb4720c3f7b82e4da288ceeca08"
+    "hardware-cpu-final.json": "ffe48525d9c90db523fa6881202bcfdfff90eeb4720c3f7b82e4da288ceeca08",
+    "gui-public.json": "6d67ea3bd0f4506bf01b53a9d2362bc0fc3a85e1e93516cb35e9bbb6b9990510",
+    "recording-public.json": "a707f61b63af6d2b14415d31a37ef8c4c4f25ca0b9be248d543d205299ba86cd",
+    "anonymous-transcription.json": "4649fec08facb78756433c1024d8ed2cb8cbfe529101692fdf8fecf95801dfcf",
+    "public-files-verification.json": "4b9c4399676a4e4d557e9e9976dd5117f8c00a49ed60d7d4388a94e74852c6a2"
+  },
+  "public_installation": {
+    "python_cli": "passed: fresh virtual environment, no credentials, public model/runtime downloads and actual transcription",
+    "openwhispr": "passed: fresh profile, public HTTPS download, correct checksum, two actual recordings and cancellation recovery",
+    "hf_files": "model card, BibTeX, report PDF, Oruk logo and wheel match reviewed hashes"
+  },
+  "package_ci": {
+    "status": "passed",
+    "platforms": [
+      "macos-14",
+      "windows-2022",
+      "ubuntu-22.04"
+    ],
+    "url": "https://github.com/Oruk-AI/orukeet/actions/runs/34316712109"
+  },
+  "compatibility_gui": {
+    "status": "passed",
+    "simulated_macos": "14.8",
+    "native_execution_host": "macOS 26",
+    "purpose": "Exercise the renderer and manager gating; actual macOS 14 native execution is tested separately in CI"
   }
 }
