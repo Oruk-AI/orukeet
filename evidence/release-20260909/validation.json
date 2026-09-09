@@ -61,5 +61,34 @@
     "simulated_macos": "14.8",
     "native_execution_host": "macOS 26",
     "purpose": "Exercise the renderer and manager gating; actual macOS 14 native execution is tested separately in CI"
-  }
+  },
+  "native_ci": {
+    "status": "passed",
+    "head_sha": "281b87f18f5f4ebe9c77862ca1348f209120077f",
+    "url": "https://github.com/Oruk-AI/openwhispr/actions/runs/34317715914",
+    "results": [
+      {
+        "platform": "darwin",
+        "success": true,
+        "median_ms": 9165.626604500005,
+        "hardware": "Apple M1 (Virtual)",
+        "receipt": "evidence/release-20260909/native-darwin.json"
+      },
+      {
+        "platform": "linux",
+        "success": true,
+        "median_ms": 1596.9878360000002,
+        "hardware": "AMD EPYC 9V45 96-Core Processor",
+        "receipt": "evidence/release-20260909/native-linux.json"
+      },
+      {
+        "platform": "win32",
+        "success": true,
+        "median_ms": 2523.2818000000007,
+        "hardware": "AMD EPYC 9V74 80-Core Processor                ",
+        "receipt": "evidence/release-20260909/native-win32.json"
+      }
+    ]
+  },
+  "openwhispr_pr": "https://github.com/OpenWhispr/openwhispr/pull/2085"
 }

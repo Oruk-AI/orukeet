@@ -1,0 +1,68 @@
+{
+  "upstream": "OpenWhispr/openwhispr",
+  "base": "main after v1.9.2",
+  "base_commit": "a2d0ab2769f34f5ef87216cbd085968656e4c3ca",
+  "scope": "Real OpenWhispr ParakeetManager backend under Electron 41.10.5. Decode/normalization, main-process dispatch, temporary PCM, worker IPC and native inference included. Model install/load excluded from warm timing. No GUI/microphone/hotkey/paste.",
+  "model": "orukeet-v0.1.0-q8",
+  "hardware": {
+    "platform": "win32",
+    "arch": "x64",
+    "cpu": "AMD EPYC 9V74 80-Core Processor                ",
+    "logical_cpus": 4,
+    "memory_bytes": 17174360064
+  },
+  "checks": [
+    "verified model installation",
+    "ten identical warm transcriptions reuse one worker",
+    "concurrent app calls are serialized without changing transcript",
+    "silence returns the app no-audio result",
+    "already-cancelled app call skips inference",
+    "in-flight cancellation kills worker and next call reloads",
+    "explicit shutdown leaves no native child"
+  ],
+  "calls": [
+    {
+      "ms": 2522.2795000000006,
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+    },
+    {
+      "ms": 2533.1600999999973,
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+    },
+    {
+      "ms": 2524.2841000000008,
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+    },
+    {
+      "ms": 2524.455600000001,
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+    },
+    {
+      "ms": 2520.0745000000024,
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+    },
+    {
+      "ms": 2524.4930999999997,
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+    },
+    {
+      "ms": 2516.474500000004,
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+    },
+    {
+      "ms": 2513.006000000001,
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+    },
+    {
+      "ms": 2513.5227000000014,
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+    },
+    {
+      "ms": 2532.1263000000035,
+      "text": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+    }
+  ],
+  "startup_ms": 7308.6266,
+  "median_ms": 2523.2818000000007,
+  "success": true
+}
