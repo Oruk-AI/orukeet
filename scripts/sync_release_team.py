@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 START, END = '<!-- orukeet-team:start -->', '<!-- orukeet-team:end -->'
 BRAND_START, BRAND_END = '<!-- orukeet-brand:start -->', '<!-- orukeet-brand:end -->'
 AFFILIATIONS = [
-    ('Oruk AI', 'oruk', 'report/assets/oruk-lockup.png', 184),
+    ('Oruk AI', 'oruk', 'docs/assets/team/oruk-primary.png', 184),
     ('Stanford University', 'stanford', 'report/assets/affiliations/stanford.png', 144),
     ('University of Cambridge', 'cambridge', 'report/assets/affiliations/cambridge.svg', 144),
     ('OpenWhispr', 'openwhispr', 'report/assets/affiliations/openwhispr.svg', 40),

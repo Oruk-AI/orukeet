@@ -66,10 +66,10 @@
       "name": "Oruk AI",
       "slug": "oruk",
       "primary": true,
-      "source": "report/assets/oruk-lockup.png",
-      "source_sha256": "932df9164b237a1a31d1e636897d1766a15b8bac738acf81ee93de8ea2d6c18c",
+      "source": "docs/assets/team/oruk-primary.png",
+      "source_sha256": "21431cdeea33309025d9ada2ce45961e5001ab87b62c484d7d749a99d27d139a",
       "web_asset": "docs/assets/team/oruk.png",
-      "web_asset_sha256": "717fb1a29a3faf8cf62baa924c65e77afb8fb82180e7398612a01a672af014da",
+      "web_asset_sha256": "aa518fc87b335cedf0959eb49c3a465166bc6d992fa23af94d35fdfec5e63acd",
       "display_width": 184
     },
     {
