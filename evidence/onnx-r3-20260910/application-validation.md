@@ -56,10 +56,10 @@ These are functional checks; runner timings are not cross-machine benchmarks.
 
 | Platform | Result | Receipt | Workflow |
 | --- | --- | --- | --- |
-| Windows x86-64 | Pass | [Receipt](app-ci-windows-x64.json) | [Windows job](https://github.com/Oruk-AI/openwhispr/actions/runs/34514441209) |
-| Linux x86-64 | Pass | [Receipt](app-ci-linux-x64.json) | [Linux job](https://github.com/Oruk-AI/openwhispr/actions/runs/34511677066) |
-| macOS Apple silicon | Pass | [Receipt](app-ci-macos-arm64.json) | [Apple silicon job](https://github.com/Oruk-AI/openwhispr/actions/runs/34511677066) |
-| macOS Intel | Pass | [Receipt](app-ci-macos-x64.json) | [Intel job](https://github.com/Oruk-AI/openwhispr/actions/runs/34512306785) |
+| Windows x86-64 | Pass | [Receipt](app-ci-windows-x64.json) | [Windows job](https://github.com/Oruk-AI/openwhispr/actions/runs/34514441209/job/102996253622) |
+| Linux x86-64 | Pass | [Receipt](app-ci-linux-x64.json) | [Linux job](https://github.com/Oruk-AI/openwhispr/actions/runs/34511677066/job/102987071861) |
+| macOS Apple silicon | Pass | [Receipt](app-ci-macos-arm64.json) | [Apple silicon job](https://github.com/Oruk-AI/openwhispr/actions/runs/34511677066/job/102987072265) |
+| macOS Intel | Pass | [Receipt](app-ci-macos-x64.json) | [Intel job](https://github.com/Oruk-AI/openwhispr/actions/runs/34512306785/job/102989173911) |
 
 The [fixed Windows bootstrap](app-windows-extraction-fixed.json) succeeds with
 the default PATH, followed by successful public model installation and every
