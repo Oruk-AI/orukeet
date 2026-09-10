@@ -1,0 +1,49 @@
+{
+  "source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+  "archive": "sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2",
+  "archive_bytes": 486807585,
+  "archive_sha256": "f9191f30178cc9122ce2f023bf9fefafc822028307b0efa4caff645ba3fe8d0a",
+  "extract_dir": "sherpa-onnx-orukeet-v0.1.0-int8",
+  "files": [
+    {
+      "path": "encoder.int8.onnx",
+      "bytes": 653182378,
+      "sha256": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487"
+    },
+    {
+      "path": "decoder.int8.onnx",
+      "bytes": 11845332,
+      "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+    },
+    {
+      "path": "joiner.int8.onnx",
+      "bytes": 6355335,
+      "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+    },
+    {
+      "path": "tokens.txt",
+      "bytes": 93939,
+      "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+    },
+    {
+      "path": "bpe.vocab",
+      "bytes": 117408,
+      "sha256": "41d5e71b3591642eff088151efd7acd4e750124cc0054c8ba9fa3245187a4804"
+    },
+    {
+      "path": "LICENSE-WEIGHTS",
+      "bytes": 20137,
+      "sha256": "23ee78c8bae49cf08ea2f0c84945c66b987ebe4520881fb51b3dad4fb43d07c2"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 5271,
+      "sha256": "440361d963edd9621e744f251332b47f2c4de2e2594ecfe42b215e3f6223fa44"
+    }
+  ],
+  "export_receipt_sha256": "9fc487cdfa076b4d210a526c68ff24ea9ff7ff9da78e058b21f7d610f95ccc6e",
+  "packager_sha256": "696bdc25140f834b7a1fbfee67d011e103078bafb8237e45bbdfeef46c0f4d20",
+  "optimization_receipt_sha256": "88b5d93fe5191290a65ee7730f803f0a6edf6125d8e0c98de39d98216e6b7472",
+  "original_encoder_sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a",
+  "optimized_encoder_sha256": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487"
+}

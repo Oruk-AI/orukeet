@@ -27,12 +27,7 @@ is the authority for those terms.
 The ONNX exporter follows sherpa-onnx's Parakeet TDT v3 conversion script.
 Its upstream reference and Apache-2.0 license are retained in
 [export/onnx](export/onnx/README.md). The ONNX archive includes the weight
-license and source attribution. The optimized ONNX encoder evaluates 24
-quantized depthwise convolutions with exactly equivalent FP32 arithmetic using
-standard runtime operators. This changes execution without retraining or
-changing the quantized values. Original export and separate optimization
-receipts are retained in `evidence/onnx-r3-20260910/` and
-`evidence/speed20260910/`.
+license and source attribution.
 
 Training data credits:
 
@@ -73,3 +68,18 @@ error counts and recording identifiers; dataset audio remains with its providers
 The paired ONNX application benchmark counts in `evidence/onnx-r3-20260910/`
 are also released under CC BY 4.0. These records contain numeric errors,
 timings and recording identifiers, without corpus audio or transcripts.
+
+## ONNX depthwise execution
+
+The sherpa-onnx INT8 package includes a deterministic graph optimization of r3.
+Twenty-four nine-tap depthwise integer convolutions are evaluated using centered
+FP32 convolution and cast back to INT32 before the original dequantization.
+The original quantized tensors, zero points, scales, tokenizer and TDT interface
+are retained. No model training or new inference dependency is introduced.
+
+Each centered input and weight lies between -255 and 255. A nine-tap partial
+sum has magnitude at most 585,225, within FP32's exact integer range. Recorded
+operator and complete-encoder comparisons using ONNX Runtime 1.27.0 produce
+bit-identical outputs. The optimizer and its conversion evidence are available
+in [Orukeet's repository](https://github.com/Oruk-AI/orukeet/tree/main/evidence/speed20260910).
+The model weight license remains CC BY-SA 4.0.

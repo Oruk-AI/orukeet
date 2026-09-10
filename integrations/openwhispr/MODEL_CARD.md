@@ -33,8 +33,8 @@ Select **Local → Oruk → Orukeet**, then **Download**. Orukeet is marked Reco
 | Measurement | Parakeet TDT v3 INT8 | Orukeet r3 INT8 |
 | --- | ---: | ---: |
 | WER, 640 English clips across ten corpora | 11.93% | 11.40% |
-| Warm file transcription, median | 536 ms | 537 ms |
-| Warm file transcription, 95th percentile | 1656 ms | 1584 ms |
+| Warm file transcription, median, paired 160-clip subset | 428 ms | 390 ms |
+| Warm file transcription, 95th percentile, same subset | 1097 ms | 1026 ms |
 
 Both models run through the same current OpenWhispr sherpa-onnx CPU path with four threads on Apple M5 Max. Calls include normalization, 15-second segmentation, WebSocket exchange and recognition. Every selected clip contributes to the WER, including empty outputs.
 
@@ -42,11 +42,11 @@ Both models run through the same current OpenWhispr sherpa-onnx CPU path with fo
 
 ## Runtime and model identity
 
-The standard encoder, decoder, joiner and token files load through OpenWhispr's existing Parakeet worker. Fitted Gabor kernels are ordinary convolution weights. The public ONNX archive is 486,664,389 bytes, pinned to an immutable Hugging Face revision; its [manifest](../../evidence/onnx-r3-20260910/package-manifest.json) records the payload hashes. The underlying NeMo source has SHA-256 `031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56`.
+The standard encoder, decoder, joiner and token files load through OpenWhispr's existing Parakeet worker. Fitted Gabor kernels are ordinary convolution weights. The optimized encoder uses equivalent FP32 arithmetic for 24 quantized depthwise convolutions, preserving their outputs exactly with existing ONNX Runtime operators. The public ONNX archive is 486,807,585 bytes, pinned to an immutable Hugging Face revision; its [manifest](../../evidence/speed20260910/package-manifest.json) records the payload hashes. The underlying NeMo source has SHA-256 `031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56`.
 
 Recognition runs locally after download. OpenWhispr supplies capture, endpointing, preview chunking, history and paste. The bundled sherpa runtime supports the app's Windows x64, Linux x64 and macOS arm64/x64 targets; macOS requires version 15.5 or later.
 
-The internal ID `orukeet-v0.1.0-q8` preserves earlier saved choices and now resolves to ONNX INT8. Earlier GGUF-only installations need the new Download step. Standard OpenWhispr build hooks supply the runtime.
+The internal ID `orukeet-v0.1.0-q8` preserves earlier saved choices and now resolves to ONNX INT8. Earlier GGUF-only installations need the new Download step. Users of the previous ONNX package from this PR should delete Orukeet and download it again to get the optimized export. Standard OpenWhispr build hooks supply the runtime.
 
 Supported languages: Bulgarian, Croatian, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hungarian, Italian, Latvian, Lithuanian, Maltese, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Spanish, Swedish and Ukrainian.
 

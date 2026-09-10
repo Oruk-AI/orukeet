@@ -1,0 +1,248 @@
+#!/usr/bin/env python3
+"""Isolated, exact-value ONNX ConvInteger rewrite experiments for Orukeet r3.
+
+This does not touch the checkpoint, published graphs, or application. Candidate
+graphs keep the original quantized tensors, zero points, graph I/O and metadata.
+"""
+import argparse
+import collections
+import copy
+import gc
+import hashlib
+import json
+import os
+from pathlib import Path
+import platform
+import statistics
+import time
+
+import numpy as np
+import onnx
+from onnx import TensorProto, helper, numpy_helper
+import onnxruntime as ort
+
+ENCODER_SHA = "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a"
+
+
+def sha(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for b in iter(lambda: f.read(8 * 1024 * 1024), b""):
+            h.update(b)
+    return h.hexdigest()
+
+
+def attrs(node):
+    return {a.name: helper.get_attribute_value(a) for a in node.attribute}
+
+
+def make_replacement(node, tensors, variant, prefix):
+    a = attrs(node)
+    w = numpy_helper.to_array(tensors[node.input[1]])
+    rank = w.ndim
+    group = a.get("group", 1)
+    nodes, constants = [], []
+
+    def const(label, value):
+        name = prefix + label
+        constants.append(numpy_helper.from_array(np.asarray(value), name))
+        return name
+
+    def op(kind, inputs, output, **kwargs):
+        nodes.append(helper.make_node(kind, inputs, [output], name=output + "_node", **kwargs))
+        return output
+
+    x, weight = node.input[:2]
+    xzp = node.input[2] if len(node.input) > 2 and node.input[2] else const("xzp", np.array(0, np.uint8))
+    wzp = node.input[3] if len(node.input) > 3 and node.input[3] else const("wzp", np.array(0, w.dtype))
+
+    if variant == "pointwise-matmul":
+        if group != 1 or any(v != 1 for v in w.shape[2:]) or any(a.get("pads", [0])) or any(v != 1 for v in a.get("strides", [1])):
+            return None
+        matrix = const("weight_matrix", np.ascontiguousarray(w.reshape(w.shape[0], w.shape[1]).T))
+        flat = x
+        if rank == 4:
+            flat = op("Reshape", [x, const("flat_shape", np.array([0, w.shape[1], -1], np.int64))], prefix + "flat")
+        xt = op("Transpose", [flat], prefix + "activation_transposed", perm=[0, 2, 1])
+        mm = op("MatMulInteger", [xt, matrix, xzp, wzp], prefix + "matmul")
+        if rank == 3:
+            op("Transpose", [mm], node.output[0], perm=[0, 2, 1])
+        else:
+            yt = op("Transpose", [mm], prefix + "output_transposed", perm=[0, 2, 1])
+            shape = op("Shape", [x], prefix + "input_shape")
+            shape = op("ScatterElements", [shape, const("channel_index", np.array([1], np.int64)), const("output_channels", np.array([w.shape[0]], np.int64))], prefix + "output_shape", axis=0)
+            op("Reshape", [yt, shape], node.output[0])
+    elif variant == "depthwise-fp32":
+        if rank != 3 or w.shape[1:] != (1, 9) or group != w.shape[0] or any(a.get("pads", [0])) or any(v != 1 for v in a.get("strides", [1])) or any(v != 1 for v in a.get("dilations", [1])):
+            return None
+        wz = numpy_helper.to_array(tensors[wzp]) if wzp in tensors else np.array(0, w.dtype)
+        centered_weight = const("weight_centered_float", w.astype(np.float32) - wz.astype(np.float32))
+        xf = op("Cast", [x], prefix + "activation_float", to=TensorProto.FLOAT)
+        zf = op("Cast", [xzp], prefix + "activation_zero_point_float", to=TensorProto.FLOAT)
+        xc = op("Sub", [xf, zf], prefix + "activation_centered_float")
+        yc = op("Conv", [xc, centered_weight], prefix + "sum_float", **a)
+        op("Cast", [yc], node.output[0], to=TensorProto.INT32)
+    else:
+        raise ValueError(variant)
+    return nodes, constants
+
+
+def session_options(threads=4, profile=None):
+    s = ort.SessionOptions()
+    s.intra_op_num_threads = threads
+    s.inter_op_num_threads = 1
+    s.log_severity_level = 3
+    if profile:
+        s.enable_profiling = True
+        s.profile_file_prefix = str(profile)
+    return s
+
+
+def operator_test(node, tensors, replacement, seed):
+    w = numpy_helper.to_array(tensors[node.input[1]])
+    x_name = node.input[0]
+    xzp_name = node.input[2]
+    wzp_name = node.input[3]
+    xzp_type = TensorProto.UINT8
+    x_type = TensorProto.UINT8
+    new_nodes, constants = replacement
+    old_constants = [copy.deepcopy(tensors[node.input[1]]), copy.deepcopy(tensors[wzp_name])]
+    inputs = [helper.make_tensor_value_info(x_name, x_type, [None] * w.ndim), helper.make_tensor_value_info(xzp_name, xzp_type, [])]
+    outputs = [helper.make_tensor_value_info(node.output[0], TensorProto.INT32, [None] * w.ndim)]
+
+    def model(nodes, initializers):
+        graph = helper.make_graph(nodes, "isolated-conv", inputs, outputs, initializer=initializers)
+        m = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 17)], ir_version=8)
+        onnx.checker.check_model(m)
+        return m.SerializeToString()
+
+    old = ort.InferenceSession(model([copy.deepcopy(node)], old_constants), sess_options=session_options(1), providers=["CPUExecutionProvider"])
+    new = ort.InferenceSession(model(new_nodes, old_constants + constants), sess_options=session_options(1), providers=["CPUExecutionProvider"])
+    rng = np.random.default_rng(seed)
+    channels = w.shape[1] * attrs(node).get("group", 1)
+    shapes = [(1, channels, 17), (2, channels, 37), (1, channels, 65)] if w.ndim == 3 else [(1, channels, 3, 5), (2, channels, 5, 7), (1, channels, 9, 3)]
+    checks = []
+    for shape, zp in zip(shapes, [0, 127, 255]):
+        x = rng.integers(0, 256, size=shape, dtype=np.uint8)
+        x.reshape(-1)[::17] = 0
+        x.reshape(-1)[::19] = 255
+        feed = {x_name: x, xzp_name: np.array(zp, dtype=np.uint8)}
+        a, b = old.run(None, feed)[0], new.run(None, feed)[0]
+        c = {"shape": shape, "activation_zero_point": zp, "exact": bool(np.array_equal(a, b)), "max_abs_error": int(np.abs(a.astype(np.int64) - b.astype(np.int64)).max())}
+        checks.append(c)
+        if not c["exact"]:
+            raise AssertionError({"node": node.name, "check": c})
+    return {"node": node.name, "weight_shape": list(w.shape), "checks": checks}
+
+
+def rewrite(source, output, variant):
+    m = onnx.load(str(source))
+    tensors = {t.name: t for t in m.graph.initializer}
+    replacements = []
+    new_nodes, new_constants = [], []
+    for index, node in enumerate(m.graph.node):
+        replacement = make_replacement(node, tensors, variant, f"orukeet_speed_{index}_") if node.op_type == "ConvInteger" else None
+        if replacement is None:
+            new_nodes.append(node)
+            continue
+        print(json.dumps({"phase": "operator-check", "variant": variant, "node": node.name}), flush=True)
+        replacements.append(operator_test(node, tensors, replacement, 20260910 + index))
+        new_nodes.extend(replacement[0])
+        new_constants.extend(replacement[1])
+    assert len(replacements) == (50 if variant == "pointwise-matmul" else 24), len(replacements)
+    del m.graph.node[:]
+    m.graph.node.extend(new_nodes)
+    m.graph.initializer.extend(new_constants)
+    onnx.save(m, str(output))
+    onnx.checker.check_model(str(output))
+    meta = {v.key: v.value for v in m.metadata_props}
+    result = {"variant": variant, "file": str(output), "bytes": output.stat().st_size, "sha256": sha(output), "metadata": meta, "operator_tests": replacements,
+              "original_quantized_initializers_retained": True, "nodes": len(m.graph.node), "operators": dict(collections.Counter(n.op_type for n in m.graph.node))}
+    del m, tensors, new_nodes, new_constants
+    gc.collect()
+    return result
+
+
+def summarize_profile(path):
+    events = json.loads(Path(path).read_text())
+    ops, names = collections.Counter(), collections.Counter()
+    for e in events:
+        if e.get("cat") == "Node" and e.get("name", "").endswith("_kernel_time"):
+            ops[e.get("args", {}).get("op_name", "unknown")] += e.get("dur", 0)
+            names[e["name"]] += e.get("dur", 0)
+    return {"file": str(path), "operator_total_us": dict(ops.most_common()), "top_nodes_us": names.most_common(30)}
+
+
+def compare(source, candidate, output_dir, threads, repeats):
+    sessions = {"original": ort.InferenceSession(str(source), sess_options=session_options(threads), providers=["CPUExecutionProvider"]),
+                "candidate": ort.InferenceSession(str(candidate), sess_options=session_options(threads), providers=["CPUExecutionProvider"])}
+    rng = np.random.default_rng(20260910)
+    results = []
+    for batch, frames in [(1, 257), (1, 481), (1, 1501), (2, 257)]:
+        feed = {"audio_signal": rng.standard_normal((batch, 128, frames), dtype=np.float32), "length": np.array([frames - i * 8 for i in range(batch)], dtype=np.int64)}
+        outputs = {}
+        for name, session in sessions.items():
+            for _ in range(2):
+                outputs[name] = session.run(None, feed)
+        err = outputs["original"][0] - outputs["candidate"][0]
+        equality = {"lengths_exact": bool(np.array_equal(outputs["original"][1], outputs["candidate"][1])), "encoder_bit_exact": bool(np.array_equal(outputs["original"][0], outputs["candidate"][0])),
+                    "max_abs_error": float(np.abs(err).max()), "relative_rms_error": float(np.linalg.norm(err) / max(np.linalg.norm(outputs["original"][0]), 1e-30))}
+        assert equality["lengths_exact"]
+        assert np.isfinite(outputs["candidate"][0]).all()
+        durations = {name: [] for name in sessions}
+        pairs = []
+        for repeat in range(repeats):
+            order = ["original", "candidate"] if repeat % 2 == 0 else ["candidate", "original"]
+            pair = {}
+            for name in order:
+                start = time.perf_counter()
+                sessions[name].run(None, feed)
+                pair[name] = (time.perf_counter() - start) * 1000
+                durations[name].append(pair[name])
+            pairs.append(pair)
+        medians = {name: statistics.median(values) for name, values in durations.items()}
+        result = {"batch": batch, "frames": frames, "equality": equality, "median_ms": medians, "speedup": medians["original"] / medians["candidate"], "interleaved_samples_ms": pairs}
+        results.append(result)
+        print(json.dumps({"phase": "encoder-check", **result}), flush=True)
+    del sessions
+    gc.collect()
+    profiles = {}
+    feed = {"audio_signal": rng.standard_normal((1, 128, 1501), dtype=np.float32), "length": np.array([1501], dtype=np.int64)}
+    for name, path in [("original", source), ("candidate", candidate)]:
+        s = ort.InferenceSession(str(path), sess_options=session_options(threads, output_dir / name), providers=["CPUExecutionProvider"])
+        s.run(None, feed)
+        s.run(None, feed)
+        profiles[name] = summarize_profile(s.end_profiling())
+        del s
+        gc.collect()
+    return {"cases": results, "profiles": profiles}
+
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("--source", type=Path, required=True)
+    p.add_argument("--output", type=Path, required=True)
+    p.add_argument("--variant", choices=["pointwise-matmul", "depthwise-fp32"], required=True)
+    p.add_argument("--threads", type=int, default=4)
+    p.add_argument("--repeats", type=int, default=8)
+    p.add_argument("--skip-rewrite", action="store_true")
+    a = p.parse_args()
+    assert sha(a.source) == ENCODER_SHA
+    a.output.mkdir(parents=True, exist_ok=True)
+    candidate = a.output / "encoder.int8.onnx"
+    receipt_path = a.output / "rewrite-receipt.json"
+    if a.skip_rewrite:
+        receipt = json.loads(receipt_path.read_text())
+    else:
+        assert not candidate.exists(), "Use an unused candidate directory"
+        receipt = rewrite(a.source, candidate, a.variant)
+        receipt.update({"source_encoder_sha256": ENCODER_SHA, "script_sha256": sha(Path(__file__)), "python": platform.python_version(), "onnx": onnx.__version__, "onnxruntime": ort.__version__, "numpy": np.__version__, "platform": platform.platform(), "cpu_count": os.cpu_count(), "threads": a.threads})
+        receipt_path.write_text(json.dumps(receipt, indent=2) + "\n")
+    receipt["comparison"] = compare(a.source, candidate, a.output, a.threads, a.repeats)
+    receipt["status"] = "completed"
+    receipt_path.write_text(json.dumps(receipt, indent=2) + "\n")
+    print(json.dumps({"phase": "complete", "receipt": str(receipt_path)}), flush=True)
+
+
+if __name__ == "__main__":
+    main()

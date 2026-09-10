@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+"""Read back the complete deterministic archive and verify every payload."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import tarfile
+
+def digest_stream(stream):
+    h = hashlib.sha256()
+    for block in iter(lambda: stream.read(8 * 1024 * 1024), b''):
+        h.update(block)
+    return h.hexdigest()
+
+p = argparse.ArgumentParser()
+p.add_argument('--archive', type=Path, required=True)
+p.add_argument('--manifest', type=Path, required=True)
+p.add_argument('--output', type=Path, required=True)
+a = p.parse_args()
+m = json.loads(a.manifest.read_text())
+assert a.archive.stat().st_size == m['archive_bytes']
+with a.archive.open('rb') as stream:
+    archive_hash = digest_stream(stream)
+assert archive_hash == m['archive_sha256']
+expected = {m['extract_dir']+'/'+row['path']:row for row in m['files']}
+rows = []
+with tarfile.open(a.archive, mode='r|bz2') as tar:
+    for index, info in enumerate(tar):
+        assert info.mtime == 0 and info.uid == 0 and info.gid == 0
+        assert info.uname == '' and info.gname == ''
+        if index == 0:
+            assert info.isdir() and info.name.rstrip('/') == m['extract_dir'] and info.mode == 0o755
+            continue
+        assert info.isfile() and not info.issym() and not info.islnk() and info.mode == 0o644
+        row = expected.pop(info.name)
+        assert info.size == row['bytes']
+        h = digest_stream(tar.extractfile(info))
+        assert h == row['sha256']
+        rows.append({'path': info.name, 'bytes': info.size, 'sha256': h})
+assert not expected and len(rows) == 7
+out = {'status':'pass', 'archive_sha256':archive_hash, 'archive_bytes':m['archive_bytes'],
+       'manifest_sha256':hashlib.sha256(a.manifest.read_bytes()).hexdigest(),
+       'members':rows, 'payload_bytes':sum(row['bytes'] for row in rows),
+       'canonical_seven_files':True, 'deterministic_tar_metadata':True,
+       'source_sha256':m['source_sha256'],'original_export_receipt_sha256':m['export_receipt_sha256'],
+       'optimization_receipt_sha256':m['optimization_receipt_sha256']}
+a.output.write_text(json.dumps(out,indent=2)+'\n')
+print(json.dumps({'status':'pass','archive_sha256':archive_hash,'payload_bytes':out['payload_bytes'],'receipt':str(a.output)}))

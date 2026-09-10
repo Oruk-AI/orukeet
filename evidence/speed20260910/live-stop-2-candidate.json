@@ -1,0 +1,135 @@
+{
+  "status": "passed",
+  "scope": "Actual production app with live preview enabled. Baseline executes exact c514 IPC source; candidate executes current IPC. Identical model/binary/capture fixture. All recognition and SQLite writes are real.",
+  "simulated_macos": null,
+  "electron": "41.10.5",
+  "checked_at_utc": "2026-09-10T19:02:45.326Z",
+  "variant": "candidate",
+  "ipc_source_sha256": "c4ab9c82e6f132f601ef1f26cf368660473d9b18639be196aa570e219697de2d",
+  "capture_start": 1789066967826,
+  "stop": 1789066979327,
+  "saved": 1789066980188,
+  "stop_to_saved_ms": 861,
+  "calls": [
+    {
+      "at": 1789066969332,
+      "type": "wav-preview",
+      "bytes": 46444,
+      "input_sha256": "029f8970138558a1ef49e6ced8fee3fe96e6d50a25ddab3526c47c8c78a32a21",
+      "text_sha256": "122a4347494ad69c3eb8e7e868792c3af83f0961e63245a9a9d1dc8244b4481f",
+      "success": true,
+      "finished_at": 1789066969471,
+      "ms": 139
+    },
+    {
+      "at": 1789066970832,
+      "type": "wav-preview",
+      "bytes": 48044,
+      "input_sha256": "47e42a653061d7f4b46ce9f043f8e13898d1789058e12008aa8f3104c4fbec41",
+      "text_sha256": "87f7dd4bfff532dc34b91b4ea3931f85ed08b687b593f6c1917dc324ff9f3d47",
+      "success": true,
+      "finished_at": 1789066970953,
+      "ms": 121
+    },
+    {
+      "at": 1789066972333,
+      "type": "wav-preview",
+      "bytes": 48044,
+      "input_sha256": "304d09545878542502f4ced2eaa064a2aa6e72544d03be6485256e0b52f91014",
+      "text_sha256": "06b1f48ae93c97f0a10e63ac5bb739fe7fde45c1e668a6c7d9f20a9f7b169e40",
+      "success": true,
+      "finished_at": 1789066972452,
+      "ms": 119
+    },
+    {
+      "at": 1789066973833,
+      "type": "wav-preview",
+      "bytes": 48044,
+      "input_sha256": "fead748e712882cfd082adc72c5a71aba9ee2b6a44722d98ae20ea1abfef7aba",
+      "text_sha256": "f36fc53038efb74038b85a51468492a3c0a26ead307b7c8905efdb3b7afd7a78",
+      "success": true,
+      "finished_at": 1789066973961,
+      "ms": 128
+    },
+    {
+      "at": 1789066975334,
+      "type": "wav-preview",
+      "bytes": 48044,
+      "input_sha256": "c5185cdc60e9873b7b98c0941cd3e1b928b0dd10861a7240753c453c54430877",
+      "text_sha256": "361632682fc7c9767f007a4c0d556344865c8d109f4629207e59ee0f7b8720a9",
+      "success": true,
+      "finished_at": 1789066975463,
+      "ms": 129
+    },
+    {
+      "at": 1789066976834,
+      "type": "wav-preview",
+      "bytes": 48044,
+      "input_sha256": "8028f0a8ad6d7fe6a399f996d0211e2bb2c76f42fb60849ffb27c233fb3cf8de",
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "success": true,
+      "finished_at": 1789066976960,
+      "ms": 126
+    },
+    {
+      "at": 1789066978335,
+      "type": "wav-preview",
+      "bytes": 48044,
+      "input_sha256": "625156a3eca1f44feee466baf62908db74e274bce2dbde32abe78a8f16eb28c4",
+      "text_sha256": "1cb405eefc817557c47e7bee4ac2436ac1302869ba6b52c9285cf1db5c76a091",
+      "success": true,
+      "finished_at": 1789066978464,
+      "ms": 129
+    },
+    {
+      "at": 1789066979342,
+      "type": "encoded-final",
+      "bytes": 184961,
+      "input_sha256": "864e40665b76175d4dadacec9529afd85641dfca3017a2b3e96510e868c4a9f1",
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "success": true,
+      "finished_at": 1789066980165,
+      "ms": 823
+    }
+  ],
+  "events": [
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789066965947
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789066967786
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789066967824
+    },
+    {
+      "state": "processing",
+      "inputKind": "dictation",
+      "at": 1789066979338
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789066980171
+    }
+  ],
+  "preview_calls_started_after_stop": 0,
+  "harness_sha256": "e13278fe61cc95fe802359f467e903abc795adb9d3da226affd28f812ec0b34c",
+  "final_identity": {
+    "text_identity": {
+      "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "characters": 108
+    },
+    "raw_text_identity": {
+      "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "characters": 108
+    }
+  },
+  "raw_receipt_sha256": "e947a088d5b4421ca964ae40e484027f6f5bfcfd798241deea3356c34071fa86"
+}

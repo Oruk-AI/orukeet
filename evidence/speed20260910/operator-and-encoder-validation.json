@@ -1,0 +1,1557 @@
+{
+  "variant": "depthwise-fp32",
+  "file": "/work/speed-20260910/depthwise-fp32/encoder.int8.onnx",
+  "bytes": 653182378,
+  "sha256": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487",
+  "metadata": {
+    "vocab_size": "8192",
+    "normalize_type": "per_feature",
+    "pred_rnn_layers": "2",
+    "pred_hidden": "640",
+    "subsampling_factor": "8",
+    "model_type": "EncDecRNNTBPEModel",
+    "version": "2",
+    "model_author": "NeMo",
+    "url": "https://huggingface.co/oruk/orukeet#parakeet-tdt-v3",
+    "comment": "Orukeet r3; standard Parakeet TDT v3 transducer graph",
+    "feat_dim": "128",
+    "orukeet_source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56"
+  },
+  "operator_tests": [
+    {
+      "node": "/layers.0/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.1/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.2/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.3/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.4/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.5/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.6/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.7/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.8/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.9/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.10/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.11/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.12/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.13/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.14/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.15/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.16/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.17/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.18/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.19/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.20/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.21/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.22/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    },
+    {
+      "node": "/layers.23/conv/depthwise_conv/Conv_quant",
+      "weight_shape": [
+        1024,
+        1,
+        9
+      ],
+      "checks": [
+        {
+          "shape": [
+            1,
+            1024,
+            17
+          ],
+          "activation_zero_point": 0,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            2,
+            1024,
+            37
+          ],
+          "activation_zero_point": 127,
+          "exact": true,
+          "max_abs_error": 0
+        },
+        {
+          "shape": [
+            1,
+            1024,
+            65
+          ],
+          "activation_zero_point": 255,
+          "exact": true,
+          "max_abs_error": 0
+        }
+      ]
+    }
+  ],
+  "original_quantized_initializers_retained": true,
+  "nodes": 6214,
+  "operators": {
+    "Constant": 1813,
+    "Transpose": 244,
+    "Cast": 514,
+    "Reshape": 312,
+    "ConstantOfShape": 68,
+    "Unsqueeze": 396,
+    "Add": 208,
+    "Concat": 238,
+    "Shape": 228,
+    "Gather": 185,
+    "Sub": 29,
+    "Slice": 123,
+    "Div": 27,
+    "Range": 5,
+    "Mul": 759,
+    "Equal": 18,
+    "Where": 90,
+    "Expand": 19,
+    "Less": 5,
+    "DynamicQuantizeLinear": 223,
+    "ConvInteger": 53,
+    "Relu": 3,
+    "MatMulInteger": 217,
+    "LayerNormalization": 120,
+    "Sigmoid": 96,
+    "Not": 2,
+    "Tile": 1,
+    "And": 2,
+    "MatMul": 72,
+    "Pad": 48,
+    "Squeeze": 24,
+    "Softmax": 24,
+    "Split": 24,
+    "Conv": 24
+  },
+  "source_encoder_sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a",
+  "script_sha256": "ae62cac3a6081208166e01c975cbe81e9a79586a7bd91f8a8e9f84a5e4196d13",
+  "python": "3.13.14",
+  "onnx": "1.21.0",
+  "onnxruntime": "1.27.0",
+  "numpy": "2.4.4",
+  "platform": "Linux-6.8.0-1064-gcp-x86_64-with-glibc2.39",
+  "cpu_count": 12,
+  "threads": 4,
+  "comparison": {
+    "cases": [
+      {
+        "batch": 1,
+        "frames": 257,
+        "equality": {
+          "lengths_exact": true,
+          "encoder_bit_exact": true,
+          "max_abs_error": 0.0,
+          "relative_rms_error": 0.0
+        },
+        "median_ms": {
+          "original": 257.72597300237976,
+          "candidate": 173.02454449236393
+        },
+        "speedup": 1.4895341800119806,
+        "interleaved_samples_ms": [
+          {
+            "original": 258.1838010228239,
+            "candidate": 176.24410596909001
+          },
+          {
+            "candidate": 168.96556701976806,
+            "original": 258.05975700495765
+          },
+          {
+            "original": 252.21887399675325,
+            "candidate": 176.5504110371694
+          },
+          {
+            "candidate": 169.33528997469693,
+            "original": 258.19381000474095
+          },
+          {
+            "original": 253.7220760132186,
+            "candidate": 178.75233094673604
+          },
+          {
+            "candidate": 169.80498301563784,
+            "original": 258.267386991065
+          },
+          {
+            "original": 254.01327502913773,
+            "candidate": 176.59467802150175
+          },
+          {
+            "candidate": 168.63616200862452,
+            "original": 257.3921889998019
+          }
+        ]
+      },
+      {
+        "batch": 1,
+        "frames": 481,
+        "equality": {
+          "lengths_exact": true,
+          "encoder_bit_exact": true,
+          "max_abs_error": 0.0,
+          "relative_rms_error": 0.0
+        },
+        "median_ms": {
+          "original": 429.68703401857056,
+          "candidate": 292.6049004890956
+        },
+        "speedup": 1.4684888506663392,
+        "interleaved_samples_ms": [
+          {
+            "original": 432.0028339861892,
+            "candidate": 293.4821560047567
+          },
+          {
+            "candidate": 287.1074850554578,
+            "original": 430.45182002242655
+          },
+          {
+            "original": 426.69332202058285,
+            "candidate": 296.16851097671315
+          },
+          {
+            "candidate": 290.0215120171197,
+            "original": 432.3409119970165
+          },
+          {
+            "original": 426.8582289805636,
+            "candidate": 294.88061799202114
+          },
+          {
+            "candidate": 291.1878649611026,
+            "original": 428.92224801471457
+          },
+          {
+            "original": 426.2733890209347,
+            "candidate": 295.9120240411721
+          },
+          {
+            "candidate": 291.7276449734345,
+            "original": 433.904922043439
+          }
+        ]
+      },
+      {
+        "batch": 1,
+        "frames": 1501,
+        "equality": {
+          "lengths_exact": true,
+          "encoder_bit_exact": true,
+          "max_abs_error": 0.0,
+          "relative_rms_error": 0.0
+        },
+        "median_ms": {
+          "original": 1221.4109105116222,
+          "candidate": 830.5687184911221
+        },
+        "speedup": 1.470571770064415,
+        "interleaved_samples_ms": [
+          {
+            "original": 1222.1451820223592,
+            "candidate": 832.835300010629
+          },
+          {
+            "candidate": 830.9611490112729,
+            "original": 1235.0927609950304
+          },
+          {
+            "original": 1210.2627370040864,
+            "candidate": 829.2046770220622
+          },
+          {
+            "candidate": 828.3025290002115,
+            "original": 1231.728643993847
+          },
+          {
+            "original": 1226.452739967499,
+            "candidate": 832.0818599895574
+          },
+          {
+            "candidate": 830.92910295818,
+            "original": 1220.6766390008852
+          },
+          {
+            "original": 1216.6832669754513,
+            "candidate": 830.2083340240642
+          },
+          {
+            "candidate": 827.9974500183016,
+            "original": 1210.6689210049808
+          }
+        ]
+      },
+      {
+        "batch": 2,
+        "frames": 257,
+        "equality": {
+          "lengths_exact": true,
+          "encoder_bit_exact": true,
+          "max_abs_error": 0.0,
+          "relative_rms_error": 0.0
+        },
+        "median_ms": {
+          "original": 477.9011589998845,
+          "candidate": 316.6683210001793
+        },
+        "speedup": 1.5091536705991313,
+        "interleaved_samples_ms": [
+          {
+            "original": 478.8489100174047,
+            "candidate": 319.49273898499086
+          },
+          {
+            "candidate": 315.0938489707187,
+            "original": 480.96550500486046
+          },
+          {
+            "original": 475.951439992059,
+            "candidate": 319.575154047925
+          },
+          {
+            "candidate": 314.8908319999464,
+            "original": 478.88506995514035
+          },
+          {
+            "original": 475.10177397634834,
+            "candidate": 318.24279302963987
+          },
+          {
+            "candidate": 314.4637320074253,
+            "original": 478.22962200734764
+          },
+          {
+            "original": 474.3133099982515,
+            "candidate": 318.2942100102082
+          },
+          {
+            "candidate": 312.671133026015,
+            "original": 477.57269599242136
+          }
+        ]
+      }
+    ],
+    "profiles": {
+      "original": {
+        "file": "/work/speed-20260910/depthwise-fp32/original_2026-09-10_19-03-30_048.json",
+        "operator_total_us": {
+          "ConvInteger": 1024308,
+          "DynamicQuantizeMatMul": 779112,
+          "MatMulIntegerToFloat": 233196,
+          "LayerNormalization": 90873,
+          "Cast": 86390,
+          "Mul": 52711,
+          "Expand": 42822,
+          "MatMul": 42207,
+          "Where": 41421,
+          "Transpose": 34041,
+          "Add": 22043,
+          "DynamicQuantizeLinear": 21334,
+          "Slice": 21221,
+          "Pad": 18719,
+          "QuickGelu": 15640,
+          "SkipLayerNormalization": 6265,
+          "Softmax": 5925,
+          "Split": 4225,
+          "Unsqueeze": 3950,
+          "Gather": 3934,
+          "Reshape": 3768,
+          "Concat": 3181,
+          "Relu": 3135,
+          "Sigmoid": 2394,
+          "Div": 2166,
+          "Shape": 2025,
+          "Squeeze": 467,
+          "Equal": 348,
+          "Range": 141,
+          "Less": 101,
+          "Sub": 83,
+          "And": 64,
+          "Not": 35,
+          "Tile": 28,
+          "ConstantOfShape": 19
+        },
+        "top_nodes_us": [
+          [
+            "/pre_encode/conv/conv.0/Conv_output_0_output_quantized_cast_kernel_time",
+            59772
+          ],
+          [
+            "/pre_encode/conv/conv.2/Conv_quant_kernel_time",
+            44551
+          ],
+          [
+            "/layers.20/conv/depthwise_conv/Conv_quant_kernel_time",
+            33167
+          ],
+          [
+            "/layers.16/conv/depthwise_conv/Conv_quant_kernel_time",
+            32956
+          ],
+          [
+            "/layers.6/conv/depthwise_conv/Conv_quant_kernel_time",
+            32909
+          ],
+          [
+            "/layers.18/conv/depthwise_conv/Conv_quant_kernel_time",
+            32846
+          ],
+          [
+            "/layers.19/conv/depthwise_conv/Conv_quant_kernel_time",
+            32841
+          ],
+          [
+            "/layers.23/conv/depthwise_conv/Conv_quant_kernel_time",
+            32841
+          ],
+          [
+            "/layers.9/conv/depthwise_conv/Conv_quant_kernel_time",
+            32820
+          ],
+          [
+            "/layers.21/conv/depthwise_conv/Conv_quant_kernel_time",
+            32814
+          ],
+          [
+            "/layers.7/conv/depthwise_conv/Conv_quant_kernel_time",
+            32809
+          ],
+          [
+            "/layers.1/conv/depthwise_conv/Conv_quant_kernel_time",
+            32804
+          ],
+          [
+            "/layers.11/conv/depthwise_conv/Conv_quant_kernel_time",
+            32800
+          ],
+          [
+            "/layers.4/conv/depthwise_conv/Conv_quant_kernel_time",
+            32796
+          ],
+          [
+            "/layers.13/conv/depthwise_conv/Conv_quant_kernel_time",
+            32796
+          ],
+          [
+            "/layers.0/conv/depthwise_conv/Conv_quant_kernel_time",
+            32789
+          ],
+          [
+            "/layers.15/conv/depthwise_conv/Conv_quant_kernel_time",
+            32785
+          ],
+          [
+            "/layers.3/conv/depthwise_conv/Conv_quant_kernel_time",
+            32782
+          ],
+          [
+            "/layers.14/conv/depthwise_conv/Conv_quant_kernel_time",
+            32782
+          ],
+          [
+            "/layers.12/conv/depthwise_conv/Conv_quant_kernel_time",
+            32777
+          ],
+          [
+            "/layers.8/conv/depthwise_conv/Conv_quant_kernel_time",
+            32776
+          ],
+          [
+            "/layers.22/conv/depthwise_conv/Conv_quant_kernel_time",
+            32776
+          ],
+          [
+            "/layers.10/conv/depthwise_conv/Conv_quant_kernel_time",
+            32751
+          ],
+          [
+            "/layers.2/conv/depthwise_conv/Conv_quant_kernel_time",
+            32740
+          ],
+          [
+            "/layers.17/conv/depthwise_conv/Conv_quant_kernel_time",
+            32739
+          ],
+          [
+            "/layers.5/conv/depthwise_conv/Conv_quant_kernel_time",
+            32725
+          ],
+          [
+            "/pre_encode/conv/conv.0/Conv_quant_kernel_time",
+            21311
+          ],
+          [
+            "/pre_encode/conv/Mul_7_kernel_time",
+            18702
+          ],
+          [
+            "/pre_encode/conv/conv.5/Conv_quant_kernel_time",
+            18208
+          ],
+          [
+            "/pre_encode/conv/Expand_6_kernel_time",
+            16778
+          ]
+        ]
+      },
+      "candidate": {
+        "file": "/work/speed-20260910/depthwise-fp32/candidate_2026-09-10_19-03-35_660.json",
+        "operator_total_us": {
+          "DynamicQuantizeMatMul": 778683,
+          "ConvInteger": 236835,
+          "MatMulIntegerToFloat": 233465,
+          "Cast": 94195,
+          "LayerNormalization": 90773,
+          "Mul": 53238,
+          "Expand": 43246,
+          "MatMul": 42228,
+          "Where": 40665,
+          "Transpose": 33860,
+          "Add": 21989,
+          "Slice": 21419,
+          "DynamicQuantizeLinear": 21303,
+          "Pad": 18594,
+          "QuickGelu": 14733,
+          "Conv": 8685,
+          "SkipLayerNormalization": 6340,
+          "Softmax": 5979,
+          "Split": 4071,
+          "Reshape": 3865,
+          "Unsqueeze": 3788,
+          "Gather": 3785,
+          "Relu": 3232,
+          "Concat": 3212,
+          "Sigmoid": 2364,
+          "Sub": 2257,
+          "Div": 2174,
+          "Shape": 1892,
+          "Squeeze": 445,
+          "Equal": 354,
+          "Range": 116,
+          "Less": 115,
+          "And": 57,
+          "Not": 38,
+          "Tile": 30,
+          "ConstantOfShape": 20
+        },
+        "top_nodes_us": [
+          [
+            "/pre_encode/conv/conv.0/Conv_output_0_output_quantized_cast_kernel_time",
+            61434
+          ],
+          [
+            "/pre_encode/conv/conv.2/Conv_quant_kernel_time",
+            44553
+          ],
+          [
+            "/pre_encode/conv/conv.0/Conv_quant_kernel_time",
+            21581
+          ],
+          [
+            "/pre_encode/conv/Mul_7_kernel_time",
+            19252
+          ],
+          [
+            "/pre_encode/conv/conv.5/Conv_quant_kernel_time",
+            18222
+          ],
+          [
+            "/pre_encode/conv/Expand_6_kernel_time",
+            16923
+          ],
+          [
+            "/pre_encode/conv/Expand_5_kernel_time",
+            16132
+          ],
+          [
+            "/pre_encode/conv/conv.3/Conv_quant_kernel_time",
+            10113
+          ],
+          [
+            "/pre_encode/out/MatMul_quant_kernel_time",
+            7752
+          ],
+          [
+            "/layers.10/feed_forward2/linear2/MatMul_quant_kernel_time",
+            7708
+          ],
+          [
+            "/layers.20/feed_forward1/linear2/MatMul_quant_kernel_time",
+            7673
+          ],
+          [
+            "/layers.5/feed_forward1/linear2/MatMul_quant_kernel_time",
+            7668
+          ],
+          [
+            "/layers.0/feed_forward2/linear2/MatMul_quant_kernel_time",
+            7665
+          ],
+          [
+            "/layers.6/feed_forward2/linear2/MatMul_quant_kernel_time",
+            7662
+          ],
+          [
+            "/layers.3/feed_forward2/linear2/MatMul_quant_kernel_time",
+            7660
+          ],
+          [
+            "/layers.0/feed_forward1/linear2/MatMul_quant_kernel_time",
+            7659
+          ],
+          [
+            "/layers.3/feed_forward1/linear2/MatMul_quant_kernel_time",
+            7657
+          ],
+          [
+            "/layers.1/feed_forward2/linear2/MatMul_quant_kernel_time",
+            7651
+          ],
+          [
+            "/layers.9/feed_forward2/linear2/MatMul_quant_kernel_time",
+            7649
+          ],
+          [
+            "/layers.8/feed_forward2/linear2/MatMul_quant_kernel_time",
+            7647
+          ],
+          [
+            "/layers.10/feed_forward1/linear2/MatMul_quant_kernel_time",
+            7647
+          ],
+          [
+            "/layers.16/feed_forward1/linear2/MatMul_quant_kernel_time",
+            7642
+          ],
+          [
+            "/layers.4/feed_forward2/linear2/MatMul_quant_kernel_time",
+            7639
+          ],
+          [
+            "/layers.8/feed_forward1/linear2/MatMul_quant_kernel_time",
+            7639
+          ],
+          [
+            "/layers.20/feed_forward2/linear2/MatMul_quant_kernel_time",
+            7638
+          ],
+          [
+            "/layers.22/feed_forward2/linear2/MatMul_quant_kernel_time",
+            7638
+          ],
+          [
+            "/layers.7/feed_forward1/linear2/MatMul_quant_kernel_time",
+            7636
+          ],
+          [
+            "/layers.13/feed_forward1/linear2/MatMul_quant_kernel_time",
+            7634
+          ],
+          [
+            "/layers.15/feed_forward1/linear2/MatMul_quant_kernel_time",
+            7633
+          ],
+          [
+            "/layers.17/feed_forward2/linear2/MatMul_quant_kernel_time",
+            7632
+          ]
+        ]
+      }
+    }
+  },
+  "status": "completed"
+}

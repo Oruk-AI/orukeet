@@ -1,0 +1,145 @@
+{
+  "status": "passed",
+  "scope": "Actual production app with live preview enabled. Baseline executes exact c514 IPC source; candidate executes current IPC. Identical model/binary/capture fixture. All recognition and SQLite writes are real.",
+  "simulated_macos": null,
+  "electron": "41.10.5",
+  "checked_at_utc": "2026-09-10T19:03:15.668Z",
+  "variant": "baseline",
+  "ipc_source_sha256": "712a7f77b183fabdcf03c812b13bcbced3f2b78400612b95926bffd72bfd7f7f",
+  "capture_start": 1789066998239,
+  "stop": 1789067009740,
+  "saved": 1789067010608,
+  "stop_to_saved_ms": 868,
+  "calls": [
+    {
+      "at": 1789066999698,
+      "type": "wav-preview",
+      "bytes": 46444,
+      "input_sha256": "a2250eda37a933e92b2c9b56bfb16d66b091aea86d5ec10c829149e0e09af365",
+      "text_sha256": "122a4347494ad69c3eb8e7e868792c3af83f0961e63245a9a9d1dc8244b4481f",
+      "success": true,
+      "finished_at": 1789066999842,
+      "ms": 144
+    },
+    {
+      "at": 1789067001197,
+      "type": "wav-preview",
+      "bytes": 48044,
+      "input_sha256": "47e42a653061d7f4b46ce9f043f8e13898d1789058e12008aa8f3104c4fbec41",
+      "text_sha256": "87f7dd4bfff532dc34b91b4ea3931f85ed08b687b593f6c1917dc324ff9f3d47",
+      "success": true,
+      "finished_at": 1789067001318,
+      "ms": 121
+    },
+    {
+      "at": 1789067002698,
+      "type": "wav-preview",
+      "bytes": 48044,
+      "input_sha256": "304d09545878542502f4ced2eaa064a2aa6e72544d03be6485256e0b52f91014",
+      "text_sha256": "06b1f48ae93c97f0a10e63ac5bb739fe7fde45c1e668a6c7d9f20a9f7b169e40",
+      "success": true,
+      "finished_at": 1789067002828,
+      "ms": 130
+    },
+    {
+      "at": 1789067004198,
+      "type": "wav-preview",
+      "bytes": 48044,
+      "input_sha256": "fead748e712882cfd082adc72c5a71aba9ee2b6a44722d98ae20ea1abfef7aba",
+      "text_sha256": "f36fc53038efb74038b85a51468492a3c0a26ead307b7c8905efdb3b7afd7a78",
+      "success": true,
+      "finished_at": 1789067004328,
+      "ms": 130
+    },
+    {
+      "at": 1789067005699,
+      "type": "wav-preview",
+      "bytes": 48044,
+      "input_sha256": "c5185cdc60e9873b7b98c0941cd3e1b928b0dd10861a7240753c453c54430877",
+      "text_sha256": "361632682fc7c9767f007a4c0d556344865c8d109f4629207e59ee0f7b8720a9",
+      "success": true,
+      "finished_at": 1789067005834,
+      "ms": 135
+    },
+    {
+      "at": 1789067007200,
+      "type": "wav-preview",
+      "bytes": 48044,
+      "input_sha256": "8028f0a8ad6d7fe6a399f996d0211e2bb2c76f42fb60849ffb27c233fb3cf8de",
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "success": true,
+      "finished_at": 1789067007328,
+      "ms": 128
+    },
+    {
+      "at": 1789067008700,
+      "type": "wav-preview",
+      "bytes": 48044,
+      "input_sha256": "625156a3eca1f44feee466baf62908db74e274bce2dbde32abe78a8f16eb28c4",
+      "text_sha256": "1cb405eefc817557c47e7bee4ac2436ac1302869ba6b52c9285cf1db5c76a091",
+      "success": true,
+      "finished_at": 1789067008827,
+      "ms": 127
+    },
+    {
+      "at": 1789067009756,
+      "type": "wav-preview",
+      "bytes": 34796,
+      "input_sha256": "d8861d294531b59208a2249f13bbf0805f88370005d827205fe84de60efb1442",
+      "text_sha256": "0f67514b901da8b9c613167848294cb0010b3c0e696732aa1a0c9737e5be69b1",
+      "success": true,
+      "finished_at": 1789067009899,
+      "ms": 143
+    },
+    {
+      "at": 1789067009757,
+      "type": "encoded-final",
+      "bytes": 185927,
+      "input_sha256": "3ccebe3fb18b00ac9ef88ce4120e83ed68213ce022c5b3efa3b0dd30858ae559",
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "success": true,
+      "finished_at": 1789067010590,
+      "ms": 833
+    }
+  ],
+  "events": [
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789066996380
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789066998154
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789066998189
+    },
+    {
+      "state": "processing",
+      "inputKind": "dictation",
+      "at": 1789067009754
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789067010592
+    }
+  ],
+  "preview_calls_started_after_stop": 1,
+  "harness_sha256": "e13278fe61cc95fe802359f467e903abc795adb9d3da226affd28f812ec0b34c",
+  "final_identity": {
+    "text_identity": {
+      "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "characters": 108
+    },
+    "raw_text_identity": {
+      "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "characters": 108
+    }
+  },
+  "raw_receipt_sha256": "1e970215df327b9f751ddabbc76b152affc139fe9b2134fa3e3f780662217eac"
+}

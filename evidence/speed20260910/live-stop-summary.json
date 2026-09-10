@@ -1,0 +1,117 @@
+{
+  "status": "passed",
+  "scope": "Production renderer, MediaRecorder, original Orukeet ONNX model, bundled sherpa worker, and SQLite history with live preview enabled. The input microphone is a fixed WAV fixture; recognition and database writes are real. Baseline executes the c5145570 IPC implementation; candidate skips the offline preview tail and guards stale completions. Both use the previous Orukeet encoder, not the optimized graph.",
+  "machine": {
+    "cpu": "Apple M5 Max",
+    "logical_cpus": 18,
+    "platform": "darwin",
+    "arch": "arm64",
+    "system_version": "26.4.1"
+  },
+  "electron": "41.10.5",
+  "model": {
+    "encoder.int8.onnx": {
+      "bytes": 652282402,
+      "sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a"
+    },
+    "decoder.int8.onnx": {
+      "bytes": 11845332,
+      "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+    },
+    "joiner.int8.onnx": {
+      "bytes": 6355335,
+      "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+    },
+    "tokens.txt": {
+      "bytes": 93939,
+      "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+    }
+  },
+  "capture_fixture_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+  "requested_capture_duration_seconds": 11.5,
+  "order": [
+    "baseline",
+    "candidate",
+    "candidate",
+    "baseline",
+    "baseline",
+    "candidate"
+  ],
+  "history_poll_interval_ms": 50,
+  "latency_resolution": "Stop-to-saved includes up to one 50 ms SQLite polling interval. No speedup percentage is inferred from the 7 ms median difference.",
+  "source_sha256": {
+    "baseline": "712a7f77b183fabdcf03c812b13bcbced3f2b78400612b95926bffd72bfd7f7f",
+    "candidate": "c4ab9c82e6f132f601ef1f26cf368660473d9b18639be196aa570e219697de2d"
+  },
+  "harness_sha256": "e13278fe61cc95fe802359f467e903abc795adb9d3da226affd28f812ec0b34c",
+  "all_six_final_transcripts_identical": true,
+  "all_six_raw_transcripts_identical": true,
+  "summary": {
+    "baseline": {
+      "recordings": 3,
+      "stop_to_saved": {
+        "calls": 3,
+        "median_ms": 868,
+        "p95_ms": 910.3,
+        "total_ms": 2647
+      },
+      "post_stop_preview_calls_per_recording": [
+        1,
+        1,
+        1
+      ],
+      "full_final_decodes_per_recording": [
+        1,
+        1,
+        1
+      ],
+      "final_decode_median_ms": 833
+    },
+    "candidate": {
+      "recordings": 3,
+      "stop_to_saved": {
+        "calls": 3,
+        "median_ms": 861,
+        "p95_ms": 908.7,
+        "total_ms": 2636
+      },
+      "post_stop_preview_calls_per_recording": [
+        0,
+        0,
+        0
+      ],
+      "full_final_decodes_per_recording": [
+        1,
+        1,
+        1
+      ],
+      "final_decode_median_ms": 823
+    }
+  },
+  "receipts": [
+    {
+      "file": "live-stop-0-baseline.json",
+      "sha256": "ac49be7850800531807964b59a50acf870910abe9efe200f59e28fe282724b65"
+    },
+    {
+      "file": "live-stop-1-candidate.json",
+      "sha256": "86e7ff1c5c2f3f5daa017668e9807da0ef1b8b7a7d09f68c3b09d5b2e3056d72"
+    },
+    {
+      "file": "live-stop-2-candidate.json",
+      "sha256": "3ccad21646139f1bf4b280afbd97544a4bcd859f6938d2943a945705cda1be1f"
+    },
+    {
+      "file": "live-stop-3-baseline.json",
+      "sha256": "c44f99827a8060dfb991cecf1cac30e3a4ed3a2cb0caf952174d92ca6519ddaf"
+    },
+    {
+      "file": "live-stop-4-baseline.json",
+      "sha256": "02284f25dfd586fab7e093eb949b601fc37ace7878b432766c754f1825c6a52e"
+    },
+    {
+      "file": "live-stop-5-candidate.json",
+      "sha256": "2ca8f9b5f9fedbd97894fcabe1d08ea64f21bcff0482f5f9c166af2971b934d7"
+    }
+  ]
+}

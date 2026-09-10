@@ -1,0 +1,199 @@
+{
+  "status": "passed",
+  "application_commit": "f2d1fa16eda2ba54992941bb7a5a8aa137a826dc",
+  "latest_release_included": "v1.9.2",
+  "upstream_main_included": "3b9e235c45012139a3fdb2fb3a36f429f1f6556b",
+  "tests": {
+    "passed": 4079,
+    "failed": 0,
+    "skipped": 6,
+    "todo": 1,
+    "database_tests_required": true
+  },
+  "checks": [
+    "typecheck",
+    "eslint",
+    "prettier",
+    "locale keys and placeholders",
+    "production renderer build",
+    "final changed-file regression tests",
+    "git diff --check"
+  ],
+  "log_sha256": {
+    "full-tests.log": "c7be5d7f50e2892f994a8f79d5e1881da1f194887721d13f7461fbbf431a07c2",
+    "quality.log": "2b128c298dbaa9fa4c41bd65641ea01af49926422cc83d618e2b7b31c2fe50ed",
+    "i18n.log": "57b62caa65a76879c60693d3ff8c432eb5acf3db73dd6c0705a39c1c5e094e55",
+    "build-final.log": "7b4bbcf8de0e8abcd2dfee1ef6b481b914689411deba9ed37b4cdbe4647eac6c",
+    "final-focused-tests.log": "3f3f041a1879a42b06fff0a62c23d84671b927bf148c9e11f6f42aaaa724e1d4"
+  },
+  "gui": {
+    "status": "passed",
+    "checks": [
+      "Fresh profile keeps upstream mode defaults",
+      "Local mode exposes Oruk with Recommended Orukeet",
+      "Download button installs the public ONNX archive and selects Orukeet through the existing backend",
+      "Oruk model card is visible in production settings",
+      "Mouse and keyboard activation reach the external-link IPC",
+      "React stops link events before document-level handlers",
+      "Provider and selected checkpoint remain unchanged",
+      "Real WAV capture transcribes through sherpa and saves history",
+      "Live recording cancellation creates no history entry",
+      "Recording and persistence recover after cancellation"
+    ],
+    "checked_at_utc": "2026-09-10T19:19:35.285Z",
+    "electron": "41.10.5",
+    "harness_sha256": "725fe4f8a3a0ff7139388930b31b56277e62da0195bff182c693bbb52a407217",
+    "screenshot_sha256": "79939f70dfb0a0cf7d980048c62a999f5ded054051e08ec02d987977b25f0966",
+    "model_files": {
+      "encoder.int8.onnx": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487",
+      "decoder.int8.onnx": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+      "joiner.int8.onnx": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+      "tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+    },
+    "recordings": [
+      {
+        "label": "first",
+        "stop_to_saved_ms": 725,
+        "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "raw_text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+      },
+      {
+        "label": "after-cancel",
+        "stop_to_saved_ms": 725,
+        "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "raw_text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+      }
+    ],
+    "scope": "Fresh profile; production renderer/preload/main process; anonymous registry download; file hashes checked; real MediaRecorder with WAV microphone fixture and live preview enabled; actual sherpa recognition and SQLite persistence. External navigation is intercepted; automatic paste disabled. Normal app.quit teardown.",
+    "normal_shutdown_process_exit_code": 0
+  },
+  "lifecycle": {
+    "status": "passed",
+    "checks": [
+      {
+        "label": "orukeet: load and warm existing offline sherpa",
+        "passed": true
+      },
+      {
+        "label": "parakeet: load and warm existing offline sherpa",
+        "passed": true
+      },
+      {
+        "label": "orukeet: ten identical warm calls reuse one process",
+        "passed": true
+      },
+      {
+        "label": "orukeet: French Spanish Latvian original-source WAV normalization",
+        "passed": true
+      },
+      {
+        "label": "orukeet: concurrent requests preserve transcripts",
+        "passed": true
+      },
+      {
+        "label": "orukeet: silence and empty input",
+        "passed": true
+      },
+      {
+        "label": "orukeet: pre-cancelled request skips recognition",
+        "passed": true
+      },
+      {
+        "label": "orukeet: in-flight cancellation and next request recover",
+        "passed": true
+      },
+      {
+        "label": "orukeet: 44-second segmented recording retains repeated speech",
+        "passed": true
+      },
+      {
+        "label": "orukeet: offline preview-sized prefixes and final recognition",
+        "passed": true
+      },
+      {
+        "label": "orukeet: explicit shutdown and restart",
+        "passed": true
+      },
+      {
+        "label": "parakeet: ten identical warm calls reuse one process",
+        "passed": true
+      },
+      {
+        "label": "parakeet: French Spanish Latvian original-source WAV normalization",
+        "passed": true
+      },
+      {
+        "label": "parakeet: concurrent requests preserve transcripts",
+        "passed": true
+      },
+      {
+        "label": "parakeet: silence and empty input",
+        "passed": true
+      },
+      {
+        "label": "parakeet: pre-cancelled request skips recognition",
+        "passed": true
+      },
+      {
+        "label": "parakeet: in-flight cancellation and next request recover",
+        "passed": true
+      },
+      {
+        "label": "parakeet: 44-second segmented recording retains repeated speech",
+        "passed": true
+      },
+      {
+        "label": "parakeet: offline preview-sized prefixes and final recognition",
+        "passed": true
+      },
+      {
+        "label": "parakeet: explicit shutdown and restart",
+        "passed": true
+      }
+    ],
+    "failures": [],
+    "script_sha256": "51d986f81b84182200b550cc0e48fe577bcd9c7241ded052ab8ca8cbc4847e01",
+    "source_sha256": {
+      "src/helpers/parakeet.js": "50ef68582a28f7bf2f044878ee81d525abf00c29a55ea85c145550921c612b03",
+      "src/helpers/parakeetServer.js": "003eea5ce5175044e745be8fd18b29c468af9941df60cfd50b88215de5ac4b52",
+      "src/helpers/parakeetWsServer.js": "197f546c0c38cd3c5b852e98eae5aa2cd6e2ee3574448094abb274ba520a95b7",
+      "src/helpers/parakeetModelInfo.js": "c11f0ac627ee95cb5f86254b1f4b30da19a40f2db8289cf9cec20664fc771098",
+      "src/models/modelRegistryData.json": "b88b844327e279cb50b4b94d911b713e8905bc2de139b1a03d57a2a5d920df8c"
+    },
+    "started_utc": "2026-09-10T19:17:37.614Z",
+    "finished_utc": "2026-09-10T19:18:15.229Z"
+  },
+  "artifact": {
+    "repo_id": "oruk/orukeet",
+    "parent": "2dc1ce8963e69d87efc27c2b7f38eadb6d6127c9",
+    "commit": "55a984d46f68323301837194ce647c702f55facc",
+    "url": "https://huggingface.co/oruk/orukeet/commit/55a984d46f68323301837194ce647c702f55facc",
+    "archive_url": "https://huggingface.co/oruk/orukeet/resolve/55a984d46f68323301837194ce647c702f55facc/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2",
+    "archive_sha256": "f9191f30178cc9122ce2f023bf9fefafc822028307b0efa4caff645ba3fe8d0a",
+    "archive_bytes": 486807585
+  },
+  "full_suite_before_final_registry_pin": true,
+  "registry_pin_followup_tests": {
+    "passed": 23,
+    "failed": 0,
+    "log_sha256": "3f3f041a1879a42b06fff0a62c23d84671b927bf148c9e11f6f42aaaa724e1d4"
+  },
+  "source_equivalence_evidence": "application-speed.json",
+  "unchanged_dependencies": {
+    "package.json": "f462d65e038823be7b8087efa451b81e7ce202f414a1dc36af398e155cee2fa5",
+    "package-lock.json": "ac817e0ec0fa5ecf2af7697c600ef164d41e96f8e2af6b847673b51329457c5b"
+  },
+  "dependency_comparison_base": "3b9e235c45012139a3fdb2fb3a36f429f1f6556b",
+  "cross_platform": {
+    "status": "passed",
+    "run_url": "https://github.com/Oruk-AI/openwhispr/actions/runs/34519797164",
+    "jobs_passed": 4,
+    "lifecycle_checks_passed": 64,
+    "transcript_comparisons_exact": 16,
+    "warm_repeats_per_variant_and_duration": 3,
+    "faster_median_pairs": 15,
+    "median_pairs": 16,
+    "windows_full_duration": "1555.13ms original;1555.57ms optimized; near tie at this sample size",
+    "evidence": "cross-platform-ci.json"
+  }
+}

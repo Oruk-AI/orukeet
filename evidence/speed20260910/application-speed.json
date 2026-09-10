@@ -1,0 +1,226 @@
+{
+  "status": "passed",
+  "started_utc": "2026-09-10T19:06:54.608Z",
+  "finished_utc": "2026-09-10T19:15:02.510Z",
+  "scope": "Warm OpenWhispr ParakeetManager file-transcription calls under Electron: production FFmpeg normalization, 15-second segmentation, local WebSocket exchange and sherpa-onnx recognition. Renderer capture, preview, history and paste are separate measurements.",
+  "machine": {
+    "cpu": "Apple M5 Max",
+    "logical_cpus": 18,
+    "platform": "darwin",
+    "arch": "arm64",
+    "system_version": "26.4.1"
+  },
+  "electron": "41.10.5",
+  "node": "24.18.0",
+  "runtime": {
+    "binary": "sherpa-onnx-ws-darwin-arm64",
+    "sha256": "eddbc8ef45868f4dbfcd2d931dd70c26407bdee93a770b892d6897da283df8b2",
+    "sherpa_onnx": "1.13.4",
+    "onnxruntime": "1.27.0",
+    "provider": "cpu",
+    "threads": 4
+  },
+  "source": {
+    "base_commit": "c51455702d58100f05104feca753667e7ccc11ea",
+    "working_tree_had_uncommitted_changes": true,
+    "identity_rule": "The recorded source hashes identify the executed working tree; base_commit alone does not identify the implementation.",
+    "sha256": {
+      "src/helpers/parakeet.js": "50ef68582a28f7bf2f044878ee81d525abf00c29a55ea85c145550921c612b03",
+      "src/helpers/parakeetServer.js": "003eea5ce5175044e745be8fd18b29c468af9941df60cfd50b88215de5ac4b52",
+      "src/helpers/parakeetWsServer.js": "197f546c0c38cd3c5b852e98eae5aa2cd6e2ee3574448094abb274ba520a95b7",
+      "src/helpers/parakeetModelInfo.js": "c11f0ac627ee95cb5f86254b1f4b30da19a40f2db8289cf9cec20664fc771098",
+      "src/models/modelRegistryData.json": "b88b844327e279cb50b4b94d911b713e8905bc2de139b1a03d57a2a5d920df8c"
+    },
+    "post_run_source_hash_matches": {
+      "src/helpers/parakeet.js": true,
+      "src/helpers/parakeetServer.js": true,
+      "src/helpers/parakeetWsServer.js": true,
+      "src/helpers/parakeetModelInfo.js": true,
+      "src/models/modelRegistryData.json": false
+    },
+    "post_run_registry_changes": [
+      "size",
+      "sizeMb",
+      "expectedSizeBytes",
+      "downloadUrl"
+    ],
+    "post_run_registry_runtime_contract_unchanged": true,
+    "post_run_registry_verification": "Reverting only the four Orukeet package size/download fields reproduces the recorded registry hash. The archive model files match the model hashes used in the run.",
+    "harness_sha256": "a6bcef61eaee4a3b40463dceea12f3d206d6056272b4639cf619e0f862c7d39d"
+  },
+  "models": {
+    "orukeet": {
+      "id": "orukeet-v0.1.0-q8",
+      "files": {
+        "encoder.int8.onnx": {
+          "bytes": 653182378,
+          "sha256": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487"
+        },
+        "decoder.int8.onnx": {
+          "bytes": 11845332,
+          "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+        },
+        "joiner.int8.onnx": {
+          "bytes": 6355335,
+          "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+        },
+        "tokens.txt": {
+          "bytes": 93939,
+          "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+        }
+      },
+      "load_and_warm_ms": 781.069125
+    },
+    "parakeet": {
+      "id": "parakeet-tdt-0.6b-v3",
+      "files": {
+        "encoder.int8.onnx": {
+          "bytes": 652184281,
+          "sha256": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247"
+        },
+        "decoder.int8.onnx": {
+          "bytes": 11845275,
+          "sha256": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e"
+        },
+        "joiner.int8.onnx": {
+          "bytes": 6355277,
+          "sha256": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3"
+        },
+        "tokens.txt": {
+          "bytes": 93939,
+          "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+        }
+      },
+      "load_and_warm_ms": 718.8880830000003
+    },
+    "orukeet_previous": {
+      "id": "orukeet-previous-validation",
+      "files": {
+        "encoder.int8.onnx": {
+          "bytes": 652282402,
+          "sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a"
+        },
+        "decoder.int8.onnx": {
+          "bytes": 11845332,
+          "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+        },
+        "joiner.int8.onnx": {
+          "bytes": 6355335,
+          "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+        },
+        "tokens.txt": {
+          "bytes": 93939,
+          "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+        }
+      },
+      "load_and_warm_ms": 750.5862920000004
+    }
+  },
+  "accuracy_equivalence": {
+    "optimized_clips": 640,
+    "matched_audio_and_references": 640,
+    "all_result_comparisons": {
+      "orukeet": 640,
+      "parakeet": 160,
+      "orukeet_previous": 160
+    },
+    "total_comparisons": 960,
+    "different_results": 0,
+    "compared_fields": [
+      "message",
+      "success",
+      "text",
+      "warning"
+    ],
+    "comparison": "Each freshly returned result is compared with the corresponding earlier 640-clip result, excluding elapsed time, harness model alias and label. The previous Orukeet control uses the earlier Orukeet result as its reference.",
+    "optimized_empty_transcripts_retained": 21,
+    "runtime_exceptions": 0,
+    "pooled_wer_percent": {
+      "parakeet": 11.92885617908617,
+      "orukeet": 11.397321884902382
+    },
+    "reference_words": 9783,
+    "word_errors": {
+      "parakeet": 1167,
+      "orukeet": 1115
+    },
+    "score_provenance": "The prior full-suite counts apply unchanged because all optimized returned text, status, warning, reference text and audio hashes match. Stock Parakeet and previous Orukeet are rerun on the 160-clip timing subset.",
+    "prior_score_record": "../onnx-r3-20260910/app-paired-640-scores.json"
+  },
+  "timing_protocol": {
+    "clips_per_model": 160,
+    "clips_per_corpus": {
+      "ami": 16,
+      "common_voice": 16,
+      "earnings22": 16,
+      "gigaspeech": 16,
+      "librispeech_test.clean": 16,
+      "librispeech_test.other": 16,
+      "spgispeech": 16,
+      "voxpopuli": 16,
+      "speechocean_test": 16,
+      "l2_arctic": 16
+    },
+    "audio_seconds_per_model": 990.3207427721088,
+    "selection": "The first 16 entries per corpus in the fixed 640-clip manifest, selected before timing; the manifest uses the original orukeet-app-eval-v1 hash ordering.",
+    "manifest_sha256": "b83e4cda874908919e9d0437542fd445a2bc82766f9016b1e1f46e08969e371d",
+    "calls": "One warm process per model. Calls are sequential. Base order is optimized Orukeet, stock Parakeet, previous Orukeet, rotated by the global manifest index modulo three on paired clips.",
+    "remaining_480_clips": "Optimized Orukeet only, for full-suite exactness; excluded from every paired latency statistic.",
+    "warmup": "All three models are loaded and run on the same speech fixture before the timed corpus. Loading and the three fixture calls are excluded.",
+    "percentiles": "Median and p95 use linear interpolation at index (N-1)*q in sorted call times.",
+    "real_time_factor": "Sum of call milliseconds / (1000 * sum of input audio seconds), including empty transcripts."
+  },
+  "latency": {
+    "parakeet": {
+      "calls": 160,
+      "median_ms": 428.4278330000161,
+      "p95_ms": 1097.2903776999992,
+      "total_ms": 83448.8028749999,
+      "audio_seconds": 990.3207427721088,
+      "real_time_factor": 0.08426441987008146,
+      "empty_transcripts": 2,
+      "runtime_exceptions": 0
+    },
+    "orukeet_previous": {
+      "calls": 160,
+      "median_ms": 431.6069584999932,
+      "p95_ms": 1100.0059124999505,
+      "total_ms": 83072.34999799993,
+      "audio_seconds": 990.3207427721088,
+      "real_time_factor": 0.08388428759501045,
+      "empty_transcripts": 0,
+      "runtime_exceptions": 0
+    },
+    "orukeet": {
+      "calls": 160,
+      "median_ms": 389.6639370000048,
+      "p95_ms": 1025.5665083499823,
+      "total_ms": 75854.93691799983,
+      "audio_seconds": 990.3207427721088,
+      "real_time_factor": 0.07659633252320502,
+      "empty_transcripts": 0,
+      "runtime_exceptions": 0
+    }
+  },
+  "optimized_vs_controls": {
+    "orukeet_previous": {
+      "median_latency_reduction_percent": 9.717874254334813,
+      "total_processing_time_reduction_percent": 8.688105103772637,
+      "throughput_ratio": 1.095147572105982
+    },
+    "parakeet": {
+      "median_latency_reduction_percent": 9.047940636482842,
+      "total_processing_time_reduction_percent": 9.10002983311231,
+      "throughput_ratio": 1.1001103720540846
+    }
+  },
+  "evidence": {
+    "raw_receipt_sha256": "6fea6c31b10fe32c5eb61c69eff7b0f885adb4c79294734a9f7c188e086f73d5",
+    "raw_results_sha256": "e15aa0ab8875d68016c56a5216c118b70b9ea5aa586375c7ce2a2384e9ccf167",
+    "prior_raw_results_sha256": "2185b0ce9611b5baafcedd812e75ce196a9e2713ea1c70ca07d54922bf1ecb9e",
+    "per_clip_record": "application-speed-clips.jsonl",
+    "per_clip_record_sha256": "9fc47e12016359847e0af653577865a25f25c29e98c82c57f9c5f4677cc0e261",
+    "review_script_sha256": "4fa4e89157a516491fae652d5a6d7554992994ff1ac3c32a2d5bdc0198a48222",
+    "omitted": "Raw transcript strings, reference strings and machine-local paths."
+  }
+}

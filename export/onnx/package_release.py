@@ -10,12 +10,31 @@ from export_orukeet import SOURCE_SHA256, sha256, write_json
 p = argparse.ArgumentParser(description=__doc__)
 p.add_argument("--model-dir", type=Path, required=True)
 p.add_argument("--export-receipt", type=Path, required=True)
+p.add_argument("--optimization-receipt", type=Path, help="Optional separately verified graph optimization receipt")
 p.add_argument("--archive", type=Path, required=True)
 p.add_argument("--manifest", type=Path, required=True)
 a = p.parse_args()
 receipt = json.loads(a.export_receipt.read_text())
 assert receipt["status"] == "pass" and receipt["source_sha256"] == SOURCE_SHA256
 expected = {g["file"]: g for g in receipt["graphs"] if ".int8.onnx" in g["file"]}
+optimization = None
+if a.optimization_receipt:
+    from optimize_for_sherpa import ORIGINAL_ENCODER_SHA256, OPTIMIZED_ENCODER_SHA256
+    optimization = json.loads(a.optimization_receipt.read_text())
+    assert optimization["status"] == "pass" and optimization["source_sha256"] == SOURCE_SHA256
+    assert optimization["parent_export_receipt_sha256"] == sha256(a.export_receipt)
+    assert expected["encoder.int8.onnx"]["sha256"] == ORIGINAL_ENCODER_SHA256
+    assert optimization["original_encoder_sha256"] == ORIGINAL_ENCODER_SHA256
+    assert optimization["optimized_encoder_sha256"] == OPTIMIZED_ENCODER_SHA256
+    assert optimization["validation"]["all_bit_exact"]
+    assert optimization["model_metadata_io_and_opsets_unchanged"]
+    optimized_info = optimization["optimized_graph"]
+    assert optimized_info["file"] == "encoder.int8.onnx"
+    assert optimized_info["sha256"] == OPTIMIZED_ENCODER_SHA256
+    assert optimized_info["metadata"] == expected["encoder.int8.onnx"]["metadata"]
+    for field in ["inputs", "outputs", "opset_imports", "ir_version"]:
+        assert optimized_info[field] == expected["encoder.int8.onnx"][field], field
+    expected["encoder.int8.onnx"] = optimized_info
 for name, info in expected.items():
     assert sha256(a.model_dir / name) == info["sha256"], name
     assert not info["external_files"], f"{name} must be a self-contained ONNX file"
@@ -42,5 +61,9 @@ manifest = {"source_sha256": SOURCE_SHA256, "archive": a.archive.name,
             "extract_dir": a.model_dir.name, "files": files,
             "export_receipt_sha256": sha256(a.export_receipt),
             "packager_sha256": sha256(Path(__file__))}
+if optimization:
+    manifest["optimization_receipt_sha256"] = sha256(a.optimization_receipt)
+    manifest["original_encoder_sha256"] = optimization["original_encoder_sha256"]
+    manifest["optimized_encoder_sha256"] = optimization["optimized_encoder_sha256"]
 write_json(a.manifest, manifest)
 print(json.dumps(manifest, indent=2), flush=True)

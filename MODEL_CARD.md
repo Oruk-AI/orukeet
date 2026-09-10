@@ -77,11 +77,13 @@ The API returns transcript text and segment times. Language detection, diarizati
 
 ## sherpa-onnx inference
 
-The [ONNX INT8 archive](https://huggingface.co/oruk/orukeet/resolve/74673cf049c0c18f2572dab89f716b077461c2ea/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2) uses the standard Parakeet TDT v3 layout: `encoder.int8.onnx`, `decoder.int8.onnx`, `joiner.int8.onnx` and `tokens.txt`. It also includes the BPE vocabulary, weight license and attribution. Gabor filters are ordinary convolution weights; the model uses sherpa-onnx's existing offline transducer loader.
+The [ONNX INT8 archive](https://huggingface.co/oruk/orukeet/resolve/55a984d46f68323301837194ce647c702f55facc/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2) uses the standard Parakeet TDT v3 layout: `encoder.int8.onnx`, `decoder.int8.onnx`, `joiner.int8.onnx` and `tokens.txt`. It also includes the BPE vocabulary, weight license and attribution. Gabor filters are ordinary convolution weights; the model uses sherpa-onnx's existing offline transducer loader.
+
+The optimized encoder evaluates 24 quantized depthwise convolutions with exactly equivalent FP32 arithmetic using operators already in ONNX Runtime. All 640 application-check transcripts match the previous export; the same 160-clip timing sample has a 390 ms median versus 432 ms before optimization and 428 ms for stock Parakeet on M5 Max. [Execution details and receipts](evidence/speed20260910/README.md).
 
 The OpenWhispr PR uses this format through its existing Parakeet worker. Choose **Local → Oruk → Orukeet**, then **Download**. Recognition runs locally after installation.
 
-Archive SHA-256: `c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95bf`.
+Archive SHA-256: `f9191f30178cc9122ce2f023bf9fefafc822028307b0efa4caff645ba3fe8d0a`.
 
 [Export and loader instructions](https://github.com/Oruk-AI/orukeet/blob/main/export/onnx/README.md) · [Conversion evidence](https://github.com/Oruk-AI/orukeet/tree/main/evidence/onnx-r3-20260910) · [OpenWhispr checks and paired scores](https://github.com/Oruk-AI/orukeet/blob/main/integrations/openwhispr/APP_BENCHMARKS.md)
 
@@ -92,9 +94,9 @@ Archive SHA-256: `c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95
 | NeMo source | `orukeet-v0.1.0.nemo` | 2,509,342,720 |
 | Native Q8 | `orukeet-v0.1.0-q8.gguf` | 714,456,704 |
 | Native F16 | `orukeet-v0.1.0-f16.gguf` | 1,296,681,088 |
-| ONNX INT8 archive | `onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2` | 486,664,389 |
+| ONNX INT8 archive | `onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2` | 486,807,585 |
 
-All formats derive from **r3**. NeMo and native files are pinned to revision `555136b50265a132d4cea0d35560c26fc4f657ab`; the ONNX archive is pinned to `74673cf049c0c18f2572dab89f716b077461c2ea`. The ONNX package occupies 670,718,459 bytes after extraction.
+All formats derive from **r3**. NeMo and native files are pinned to revision `555136b50265a132d4cea0d35560c26fc4f657ab`; the ONNX archive is pinned to `55a984d46f68323301837194ce647c702f55facc`. The ONNX package occupies 671,619,800 bytes after extraction.
 
 - NeMo SHA-256: `031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56`
 - Q8 SHA-256: `93ce19c6d8244acbfea980eeaf970531d4f216171578ef8e041dcc2d070a45bd`

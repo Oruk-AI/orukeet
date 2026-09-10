@@ -1,0 +1,293 @@
+{
+  "status": "passed",
+  "started_utc": "2026-09-10T18:59:38.671Z",
+  "scope": "Isolated process start plus one-second silent warm-up, toggling only --model-type=nemo_transducer. Five new process starts per model per setting, interleaved within each model and with order reversed on alternating pairs. Model files remain in the operating-system file cache; this is not reboot-cold disk loading. A real speech decode after each startup is a functional check, excluded from startup timing.",
+  "machine": {
+    "cpu": "Apple M5 Max",
+    "logical_cpus": 18,
+    "platform": "darwin",
+    "arch": "arm64",
+    "system_version": "26.4.1"
+  },
+  "model_versions": "Previous Orukeet ONNX encoder and stock Parakeet, before the depthwise graph optimization.",
+  "models": {
+    "orukeet_previous": {
+      "encoder.int8.onnx": {
+        "bytes": 652282402,
+        "sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a"
+      },
+      "decoder.int8.onnx": {
+        "bytes": 11845332,
+        "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+      },
+      "joiner.int8.onnx": {
+        "bytes": 6355335,
+        "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+      },
+      "tokens.txt": {
+        "bytes": 93939,
+        "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+      }
+    },
+    "parakeet": {
+      "encoder.int8.onnx": {
+        "bytes": 652184281,
+        "sha256": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247"
+      },
+      "decoder.int8.onnx": {
+        "bytes": 11845275,
+        "sha256": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e"
+      },
+      "joiner.int8.onnx": {
+        "bytes": 6355277,
+        "sha256": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3"
+      },
+      "tokens.txt": {
+        "bytes": 93939,
+        "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+      }
+    }
+  },
+  "source_identity": {
+    "harness_sha256_observed": "ccc4a331acfc19c5a51d421fe3e910ab7df86655364c9246b4e6772ef7cf0da7",
+    "raw_receipt_sha256": "6716958d4747351f209053e18ed1f78235c0add4ff7346211d11437b4a618afb",
+    "recorded_runtime_source_hashes": null,
+    "method": "The archived harness intercepts spawn, strips any model-type argument and conditionally appends the verified NeMo type. The raw startup receipt did not capture per-file runtime source hashes."
+  },
+  "summary": {
+    "orukeet-v0.1.0-q8": {
+      "metadata_detection": {
+        "calls": 5,
+        "median_ms": 2212.979458,
+        "p95_ms": 2458.2519497999992,
+        "total_ms": 10570.950082000003
+      },
+      "explicit_nemo_type": {
+        "calls": 5,
+        "median_ms": 1273.0030000000006,
+        "p95_ms": 1903.4404586,
+        "total_ms": 7400.664584000001
+      }
+    },
+    "parakeet-tdt-0.6b-v3": {
+      "metadata_detection": {
+        "calls": 5,
+        "median_ms": 2261.722458,
+        "p95_ms": 2628.8308913999995,
+        "total_ms": 11590.129749
+      },
+      "explicit_nemo_type": {
+        "calls": 5,
+        "median_ms": 1274.8721249999944,
+        "p95_ms": 1930.3002668,
+        "total_ms": 6794.872500999991
+      }
+    }
+  },
+  "speech_checks": {
+    "calls": 20,
+    "identical_transcripts": 20
+  },
+  "calls": [
+    {
+      "pair": 0,
+      "model": "orukeet-v0.1.0-q8",
+      "hint": false,
+      "start_and_warm_ms": 1788.293541,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 0,
+      "model": "orukeet-v0.1.0-q8",
+      "hint": true,
+      "start_and_warm_ms": 1909.965792,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 0,
+      "model": "parakeet-tdt-0.6b-v3",
+      "hint": false,
+      "start_and_warm_ms": 2261.722458,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 0,
+      "model": "parakeet-tdt-0.6b-v3",
+      "hint": true,
+      "start_and_warm_ms": 1321.0068339999998,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 1,
+      "model": "orukeet-v0.1.0-q8",
+      "hint": true,
+      "start_and_warm_ms": 1877.3391250000004,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 1,
+      "model": "orukeet-v0.1.0-q8",
+      "hint": false,
+      "start_and_warm_ms": 2212.979458,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 1,
+      "model": "parakeet-tdt-0.6b-v3",
+      "hint": true,
+      "start_and_warm_ms": 1178.9823749999996,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 1,
+      "model": "parakeet-tdt-0.6b-v3",
+      "hint": false,
+      "start_and_warm_ms": 2568.3226250000007,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 2,
+      "model": "orukeet-v0.1.0-q8",
+      "hint": false,
+      "start_and_warm_ms": 1769.902833,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 2,
+      "model": "orukeet-v0.1.0-q8",
+      "hint": true,
+      "start_and_warm_ms": 1273.0030000000006,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 2,
+      "model": "parakeet-tdt-0.6b-v3",
+      "hint": false,
+      "start_and_warm_ms": 2219.6207079999986,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 2,
+      "model": "parakeet-tdt-0.6b-v3",
+      "hint": true,
+      "start_and_warm_ms": 937.3875419999968,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 3,
+      "model": "orukeet-v0.1.0-q8",
+      "hint": true,
+      "start_and_warm_ms": 1239.844333000001,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 3,
+      "model": "orukeet-v0.1.0-q8",
+      "hint": false,
+      "start_and_warm_ms": 2302.612417000004,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 3,
+      "model": "parakeet-tdt-0.6b-v3",
+      "hint": true,
+      "start_and_warm_ms": 1274.8721249999944,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 3,
+      "model": "parakeet-tdt-0.6b-v3",
+      "hint": false,
+      "start_and_warm_ms": 2643.957957999999,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 4,
+      "model": "orukeet-v0.1.0-q8",
+      "hint": false,
+      "start_and_warm_ms": 2497.1618329999983,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 4,
+      "model": "orukeet-v0.1.0-q8",
+      "hint": true,
+      "start_and_warm_ms": 1100.512333999999,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 4,
+      "model": "parakeet-tdt-0.6b-v3",
+      "hint": false,
+      "start_and_warm_ms": 1896.5060000000012,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    },
+    {
+      "pair": 4,
+      "model": "parakeet-tdt-0.6b-v3",
+      "hint": true,
+      "start_and_warm_ms": 2082.623625,
+      "transcript_identity": {
+        "sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+        "characters": 108
+      }
+    }
+  ]
+}

@@ -8,7 +8,7 @@ The integration adds **Oruk → Orukeet** as a recommended local speech model. O
 
 In the PR build, open **Settings → Speech to Text → Local → Oruk**, choose **Orukeet**, and click **Download**. The model also appears in local onboarding. Existing choices and upstream onboarding mode defaults are preserved. The current Oruk Signal logo identifies the organization; the model card links to `oruk/orukeet`.
 
-The download is a public, immutable [486.7 MB ONNX INT8 archive](https://huggingface.co/oruk/orukeet/resolve/74673cf049c0c18f2572dab89f716b077461c2ea/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2) and occupies 670.7 MB after extraction. It contains the standard encoder, decoder, joiner and token files. The registry pins the Hugging Face revision and expected download length; archive and per-file hashes are recorded in the [manifest](../../evidence/onnx-r3-20260910/package-manifest.json).
+The download is a public, immutable [486.8 MB ONNX INT8 archive](https://huggingface.co/oruk/orukeet/resolve/55a984d46f68323301837194ce647c702f55facc/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2) and occupies 671.6 MB after extraction. It contains the standard encoder, decoder, joiner and token files. The registry pins the Hugging Face revision and expected download length; archive and per-file hashes are recorded in the [manifest](../../evidence/speed20260910/package-manifest.json).
 
 ## Build
 
@@ -30,13 +30,15 @@ Fresh Windows installation uses the app’s bundled JavaScript bzip2 extractor f
 
 Orukeet uses OpenWhispr's existing offline transducer loader, 128-bin features, 16 kHz mono audio and four CPU threads capped by available cores. Model loading, normalization, segmentation, previews, cancellation and process reuse follow the same path as stock Parakeet. On macOS, the bundled runtime requires macOS 15.5 or later; the same capability guard applies to both models.
 
+The optimized export uses exactly equivalent arithmetic for 24 depthwise convolutions. OpenWhispr passes the verified NeMo model type at startup to skip a second encoder load, benefiting both Parakeet and Orukeet. Stopping an offline recording now proceeds to the full final transcription without submitting another preview-only decode. [Measured improvements](APP_BENCHMARKS.md).
+
 The model is a full-context recognizer. OpenWhispr supplies capture, endpointing and preview chunking, along with history and paste.
 
-The internal model ID remains `orukeet-v0.1.0-q8` to preserve saved selections from earlier PR builds; its payload is now ONNX INT8. A previous GGUF file alone does not satisfy the required four-file installation check. Select Download once to install the ONNX package.
+The internal model ID remains `orukeet-v0.1.0-q8` to preserve saved selections from earlier PR builds; its payload is now ONNX INT8. A previous GGUF file alone does not satisfy the required four-file installation check. Select Download once to install the ONNX package. If you installed the earlier ONNX package from this PR, delete Orukeet in model settings and download it again to install the optimized export.
 
 Source checkpoint SHA-256: `031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56`.
 
-Archive SHA-256: `c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95bf`.
+Archive SHA-256: `f9191f30178cc9122ce2f023bf9fefafc822028307b0efa4caff645ba3fe8d0a`.
 
 [Reproduce the export](../../export/onnx/README.md) · [License and attribution](../../NOTICE.md)
 

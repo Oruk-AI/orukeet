@@ -1,0 +1,13 @@
+{
+  "source_model_metadata_opsets_producer_exact": true,
+  "source_graph_io_and_value_info_exact": true,
+  "source_node_count": 6118,
+  "candidate_node_count": 6214,
+  "source_initializer_count": 1229,
+  "candidate_initializer_count": 1253,
+  "actual_export_script": "evidence/speed20260910/rewrite-and-profile-executed.py.txt",
+  "script_sha256": "ae62cac3a6081208166e01c975cbe81e9a79586a7bd91f8a8e9f84a5e4196d13",
+  "checkpoint_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+  "candidate_sha256": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487",
+  "note": "Transport patch preserves original initializer field bytes and appends centered FP32 constants; it reconstructs the exact graph hash tested on the remote host."
+}

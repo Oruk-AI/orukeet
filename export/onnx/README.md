@@ -46,6 +46,38 @@ token files, and validation receipts. Keep every external encoder weight file
 beside `encoder.onnx` when using the FP32 graph. The release archive packages
 the three self-contained INT8 graphs.
 
+## Optimize and package
+
+The current release rewrites 24 quantized depthwise convolutions to equivalent
+centered FP32 arithmetic and casts each result back to INT32 before the existing
+dequantization. Their nine-term integer sums are exactly representable in FP32.
+The remaining encoder operations, decoder, joiner, tokens and metadata stay
+unchanged. These standard operators already exist in the Parakeet runtime.
+
+```sh
+python export/onnx/optimize_for_sherpa.py \
+  --model-dir /path/to/onnx-r3 \
+  --output /path/to/optimized/sherpa-onnx-orukeet-v0.1.0-int8 \
+  --export-receipt evidence/onnx-r3-20260910/export-receipt.json \
+  --validation-receipt evidence/speed20260910/operator-and-encoder-validation.json
+cp LICENSE-WEIGHTS \
+  /path/to/optimized/sherpa-onnx-orukeet-v0.1.0-int8/LICENSE-WEIGHTS
+cp evidence/speed20260910/NOTICE.md \
+  /path/to/optimized/sherpa-onnx-orukeet-v0.1.0-int8/NOTICE.md
+python export/onnx/package_release.py \
+  --model-dir /path/to/optimized/sherpa-onnx-orukeet-v0.1.0-int8 \
+  --export-receipt evidence/onnx-r3-20260910/export-receipt.json \
+  --optimization-receipt /path/to/optimized/sherpa-onnx-orukeet-v0.1.0-int8/optimization-receipt.json \
+  --archive /path/to/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2 \
+  --manifest /path/to/package-manifest.json
+```
+
+The optimizer verifies the original encoder and reproduces the validated graph
+hash. The packager preserves the original export receipt and records the separate
+optimization receipt. [Arithmetic, exactness checks and benchmark receipts](../../evidence/speed20260910/README.md)
+describe the optimized export. Its 640 application transcripts match the previous
+export exactly.
+
 ## Application layout
 
 ```text

@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+"""Compare the original and optimized graphs through Linux sherpa-onnx."""
+import gc
+import importlib.metadata
+import json
+from pathlib import Path
+import numpy as np
+import sherpa_onnx
+from smoke_sherpa import read_audio, sha256
+
+root = Path('/work')
+base = root / 'output'
+candidate = root / 'speed-release-final-20260910/sherpa-onnx-orukeet-v0.1.0-int8'
+audio = []
+for name in ['en.wav', 'de.wav', 'fr.wav', 'es.wav']:
+    p = root / 'audio' / name
+    samples, rate = read_audio(p)
+    audio.append((name, samples, rate, sha256(p)))
+audio.append(('silence-3s', np.zeros(48000, np.float32), 16000, None))
+results = {}
+for kind, encoder in [('original', base/'encoder.int8.onnx'), ('optimized', candidate/'encoder.int8.onnx')]:
+    r = sherpa_onnx.OfflineRecognizer.from_transducer(
+        encoder=str(encoder), decoder=str(base/'decoder.int8.onnx'), joiner=str(base/'joiner.int8.onnx'),
+        tokens=str(base/'tokens.txt'), num_threads=4, sample_rate=16000, feature_dim=128,
+        decoding_method='greedy_search', provider='cpu', model_type='nemo_transducer')
+    records = []
+    for name, samples, rate, digest in audio:
+        s = r.create_stream(); s.accept_waveform(rate, samples); r.decode_stream(s)
+        text = s.result.text
+        assert bool(text.strip()) == (name != 'silence-3s')
+        records.append({'file':name, 'audio_sha256':digest, 'text':text})
+    streams = []
+    for name, samples, rate, digest in audio[:2]:
+        s = r.create_stream(); s.accept_waveform(rate, samples); streams.append(s)
+    r.decode_streams(streams)
+    results[kind] = {'serial':records, 'batch_two':[s.result.text for s in streams]}
+    del r; gc.collect()
+assert results['original'] == results['optimized'], results
+out = {'status':'pass', 'sherpa_onnx':importlib.metadata.version('sherpa-onnx'), 'provider':'cpu', 'threads':4,
+       'source_encoder_sha256':sha256(base/'encoder.int8.onnx'), 'optimized_encoder_sha256':sha256(candidate/'encoder.int8.onnx'),
+       'serial_texts_exact':True, 'batch_two_texts_exact':True, 'results':results}
+path = root/'speed-release-final-20260910/linux-speech-equality.json'
+path.write_text(json.dumps(out,indent=2,ensure_ascii=False)+'\n')
+print(json.dumps({'status':'pass','serial_cases':5,'batch_two':True,'receipt':str(path)}))

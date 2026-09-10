@@ -1,0 +1,131 @@
+{
+  "status": "pass",
+  "source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+  "original_encoder_sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a",
+  "optimized_encoder_sha256": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487",
+  "parent_export_receipt_sha256": "9fc487cdfa076b4d210a526c68ff24ea9ff7ff9da78e058b21f7d610f95ccc6e",
+  "validation_receipt_sha256": "85295b7612fa7f3dc785c477d7beaae14a90470c7c74911edd15c4d41fdc0aec",
+  "optimizer_sha256": "d025489a7886020dbbfc5c0f9250f44ae3f372056290b42fa873bc1660e657a1",
+  "onnx": "1.21.0",
+  "numpy": "2.4.4",
+  "method": "24 centered-integer FP32 depthwise Conv substitutions with INT32 outputs",
+  "replaced_nodes": [
+    "/layers.0/conv/depthwise_conv/Conv_quant",
+    "/layers.1/conv/depthwise_conv/Conv_quant",
+    "/layers.2/conv/depthwise_conv/Conv_quant",
+    "/layers.3/conv/depthwise_conv/Conv_quant",
+    "/layers.4/conv/depthwise_conv/Conv_quant",
+    "/layers.5/conv/depthwise_conv/Conv_quant",
+    "/layers.6/conv/depthwise_conv/Conv_quant",
+    "/layers.7/conv/depthwise_conv/Conv_quant",
+    "/layers.8/conv/depthwise_conv/Conv_quant",
+    "/layers.9/conv/depthwise_conv/Conv_quant",
+    "/layers.10/conv/depthwise_conv/Conv_quant",
+    "/layers.11/conv/depthwise_conv/Conv_quant",
+    "/layers.12/conv/depthwise_conv/Conv_quant",
+    "/layers.13/conv/depthwise_conv/Conv_quant",
+    "/layers.14/conv/depthwise_conv/Conv_quant",
+    "/layers.15/conv/depthwise_conv/Conv_quant",
+    "/layers.16/conv/depthwise_conv/Conv_quant",
+    "/layers.17/conv/depthwise_conv/Conv_quant",
+    "/layers.18/conv/depthwise_conv/Conv_quant",
+    "/layers.19/conv/depthwise_conv/Conv_quant",
+    "/layers.20/conv/depthwise_conv/Conv_quant",
+    "/layers.21/conv/depthwise_conv/Conv_quant",
+    "/layers.22/conv/depthwise_conv/Conv_quant",
+    "/layers.23/conv/depthwise_conv/Conv_quant"
+  ],
+  "taps_per_kernel": 9,
+  "integer_product_magnitude_bound": 65025,
+  "integer_partial_sum_magnitude_bound": 585225,
+  "fp32_exact_integer_limit": 16777216,
+  "original_quantized_initializers_retained": true,
+  "dynamic_quantization_and_scales_unchanged": true,
+  "model_metadata_io_and_opsets_unchanged": true,
+  "new_runtime_dependencies": [],
+  "validation": {
+    "per_operator_cases": 72,
+    "full_encoder_cases": 4,
+    "all_bit_exact": true
+  },
+  "optimized_graph": {
+    "file": "encoder.int8.onnx",
+    "bytes": 653182378,
+    "sha256": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487",
+    "ir_version": 8,
+    "opset_imports": {
+      "ai.onnx": 17
+    },
+    "inputs": [
+      {
+        "name": "audio_signal",
+        "type": "FLOAT, audio_signal_dynamic_axes_1x128xaudio_signal_dynamic_axes_2"
+      },
+      {
+        "name": "length",
+        "type": "INT64, length_dynamic_axes_1"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "outputs",
+        "type": "FLOAT, Transposeoutputs_dim_0x1024xTransposeoutputs_dim_2"
+      },
+      {
+        "name": "encoded_lengths",
+        "type": "INT64, length_dynamic_axes_1"
+      }
+    ],
+    "metadata": {
+      "vocab_size": "8192",
+      "normalize_type": "per_feature",
+      "pred_rnn_layers": "2",
+      "pred_hidden": "640",
+      "subsampling_factor": "8",
+      "model_type": "EncDecRNNTBPEModel",
+      "version": "2",
+      "model_author": "NeMo",
+      "url": "https://huggingface.co/oruk/orukeet#parakeet-tdt-v3",
+      "comment": "Orukeet r3; standard Parakeet TDT v3 transducer graph",
+      "feat_dim": "128",
+      "orukeet_source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56"
+    },
+    "operators": [
+      "ai.onnx::Add",
+      "ai.onnx::And",
+      "ai.onnx::Cast",
+      "ai.onnx::Concat",
+      "ai.onnx::Constant",
+      "ai.onnx::ConstantOfShape",
+      "ai.onnx::Conv",
+      "ai.onnx::ConvInteger",
+      "ai.onnx::Div",
+      "ai.onnx::DynamicQuantizeLinear",
+      "ai.onnx::Equal",
+      "ai.onnx::Expand",
+      "ai.onnx::Gather",
+      "ai.onnx::LayerNormalization",
+      "ai.onnx::Less",
+      "ai.onnx::MatMul",
+      "ai.onnx::MatMulInteger",
+      "ai.onnx::Mul",
+      "ai.onnx::Not",
+      "ai.onnx::Pad",
+      "ai.onnx::Range",
+      "ai.onnx::Relu",
+      "ai.onnx::Reshape",
+      "ai.onnx::Shape",
+      "ai.onnx::Sigmoid",
+      "ai.onnx::Slice",
+      "ai.onnx::Softmax",
+      "ai.onnx::Split",
+      "ai.onnx::Squeeze",
+      "ai.onnx::Sub",
+      "ai.onnx::Tile",
+      "ai.onnx::Transpose",
+      "ai.onnx::Unsqueeze",
+      "ai.onnx::Where"
+    ],
+    "external_files": []
+  }
+}

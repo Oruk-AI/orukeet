@@ -1,0 +1,1011 @@
+{
+  "schema_version": 1,
+  "run_url": "https://github.com/Oruk-AI/openwhispr/actions/runs/34519797164",
+  "app_source_commit": "f2d1fa16eda2ba54992941bb7a5a8aa137a826dc",
+  "qa_source_commit": "518aa16931d1c1cfe9c86b3240ce8d14c479372f",
+  "runtime": "stock sherpa-onnx 1.13.4, CPU provider",
+  "package_lock_git_sha256": "ac817e0ec0fa5ecf2af7697c600ef164d41e96f8e2af6b847673b51329457c5b",
+  "comparison": "Original Orukeet ONNX archive versus optimized Orukeet ONNX archive at the same model checkpoint",
+  "method": {
+    "measured_repeats_per_artifact_and_duration": 3,
+    "warmup": "Server startup warmup and one same-duration transcription excluded from timing",
+    "ordering": "Artifact order alternates by duration; only one sherpa process is resident per block",
+    "thread_policy": "Unchanged production selection: max(1, min(4, floor(logical_cpus * 0.75)))",
+    "latency_boundary": "ParakeetManager.transcribeLocalParakeet call through its returned transcript",
+    "measurement_scope": "Three-repeat warm CI checks of a fixed speech fixture on the listed runner configurations",
+    "fixture": "Pinned public JFK fixture, mono PCM16 at 16 kHz; prefixes at 1.5/3/6 seconds and full audio"
+  },
+  "summary": {
+    "platforms_passed": 4,
+    "qualification_checks_passed": 64,
+    "exact_transcript_pairs": 16,
+    "optimized_faster_pairs": 15,
+    "comparison_pairs": 16
+  },
+  "platforms": [
+    {
+      "label": "Linux x64",
+      "runner": "ubuntu-22.04",
+      "job_url": "https://github.com/Oruk-AI/openwhispr/actions/runs/34519797164/job/103014173244",
+      "status": "passed",
+      "started_utc": "2026-09-10T19:21:21.983Z",
+      "finished_utc": "2026-09-10T19:24:41.541Z",
+      "hardware": {
+        "platform": "linux",
+        "arch": "x64",
+        "system_version": "6.8.0-1064-azure",
+        "cpu": "AMD EPYC 9V74 80-Core Processor",
+        "logical_cpus": 4,
+        "production_num_threads": 3,
+        "electron": "41.10.5",
+        "node": "24.18.0"
+      },
+      "binary": {
+        "filename": "sherpa-onnx-ws-linux-x64",
+        "sha256": "54e600dfbe3bc1d06dfbc8a06da99aa214e0906cf7f86f9269dc829bacf94ccc"
+      },
+      "package_lock_sha256": "ac817e0ec0fa5ecf2af7697c600ef164d41e96f8e2af6b847673b51329457c5b",
+      "package_lock_checkout_line_endings": "LF",
+      "fixture": {
+        "url": "https://raw.githubusercontent.com/Oruk-AI/orukeet/76ffba87962954b06d18f000c9609e336422fb20/demos/fixtures/jfk.wav",
+        "sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f"
+      },
+      "artifacts": {
+        "baseline": {
+          "release": {
+            "url": "https://huggingface.co/oruk/orukeet/resolve/74673cf049c0c18f2572dab89f716b077461c2ea/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2",
+            "extractDir": "sherpa-onnx-orukeet-v0.1.0-int8",
+            "bytes": 486664389,
+            "sha256": "c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95bf",
+            "files": {
+              "encoder.int8.onnx": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a",
+              "decoder.int8.onnx": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+              "joiner.int8.onnx": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+              "tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "archive_verified": {
+            "bytes": 486664389,
+            "sha256": "c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95bf"
+          },
+          "installed_files_verified": {
+            "encoder.int8.onnx": {
+              "bytes": 652282402,
+              "sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a"
+            },
+            "decoder.int8.onnx": {
+              "bytes": 11845332,
+              "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+            },
+            "joiner.int8.onnx": {
+              "bytes": 6355335,
+              "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+            },
+            "tokens.txt": {
+              "bytes": 93939,
+              "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "checks_passed": [
+            "registry selects the existing offline NeMo runtime",
+            "anonymous archive download and production extraction succeed",
+            "all graphs and tokens match the release manifest",
+            "repeated transcription reuses one process",
+            "concurrent requests preserve the transcript",
+            "already-cancelled requests reject",
+            "in-flight cancellation and the next decode recover",
+            "shutdown and restart recover"
+          ]
+        },
+        "optimized": {
+          "release": {
+            "url": "https://huggingface.co/oruk/orukeet/resolve/55a984d46f68323301837194ce647c702f55facc/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2",
+            "extractDir": "sherpa-onnx-orukeet-v0.1.0-int8",
+            "bytes": 486807585,
+            "sha256": "f9191f30178cc9122ce2f023bf9fefafc822028307b0efa4caff645ba3fe8d0a",
+            "files": {
+              "encoder.int8.onnx": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487",
+              "decoder.int8.onnx": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+              "joiner.int8.onnx": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+              "tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "archive_verified": {
+            "bytes": 486807585,
+            "sha256": "f9191f30178cc9122ce2f023bf9fefafc822028307b0efa4caff645ba3fe8d0a"
+          },
+          "installed_files_verified": {
+            "encoder.int8.onnx": {
+              "bytes": 653182378,
+              "sha256": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487"
+            },
+            "decoder.int8.onnx": {
+              "bytes": 11845332,
+              "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+            },
+            "joiner.int8.onnx": {
+              "bytes": 6355335,
+              "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+            },
+            "tokens.txt": {
+              "bytes": 93939,
+              "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "checks_passed": [
+            "registry selects the existing offline NeMo runtime",
+            "anonymous archive download and production extraction succeed",
+            "all graphs and tokens match the release manifest",
+            "repeated transcription reuses one process",
+            "concurrent requests preserve the transcript",
+            "already-cancelled requests reject",
+            "in-flight cancellation and the next decode recover",
+            "shutdown and restart recover"
+          ]
+        }
+      },
+      "measurements": [
+        {
+          "artifact": "baseline",
+          "audio_seconds": 1.5,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            293.4591669999936, 276.3355659999943, 291.034851000004
+          ],
+          "median_ms": 291.034851000004,
+          "transcript_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 1.5,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            278.07446699999855, 258.5506339999847, 253.25259799999185
+          ],
+          "median_ms": 258.5506339999847,
+          "transcript_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 3,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            428.1779309999838, 402.0965809999907, 403.4421679999796
+          ],
+          "median_ms": 403.4421679999796,
+          "transcript_sha256": "c9a5a35a0dbc8b896801e0b33e45f2fd2f74ba9748a7b454863f9c8baf85de05"
+        },
+        {
+          "artifact": "baseline",
+          "audio_seconds": 3,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            445.1740310000023, 439.90115499999956, 438.28974700000254
+          ],
+          "median_ms": 439.90115499999956,
+          "transcript_sha256": "c9a5a35a0dbc8b896801e0b33e45f2fd2f74ba9748a7b454863f9c8baf85de05"
+        },
+        {
+          "artifact": "baseline",
+          "audio_seconds": 6,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            829.3418419999944, 755.7366359999869, 776.3369260000181
+          ],
+          "median_ms": 776.3369260000181,
+          "transcript_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 6,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            710.3833910000103, 710.8112160000019, 698.7020709999779
+          ],
+          "median_ms": 710.3833910000103,
+          "transcript_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 11,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            1252.4649460000219, 1211.5397679999878, 1202.9983599999978
+          ],
+          "median_ms": 1211.5397679999878,
+          "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+        },
+        {
+          "artifact": "baseline",
+          "audio_seconds": 11,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            1344.2070639999874, 1302.438914999977, 1391.0544050000026
+          ],
+          "median_ms": 1344.2070639999874,
+          "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+        }
+      ],
+      "comparisons": [
+        {
+          "seconds": 1.5,
+          "input_sha256": "0e5e19033b3508fb604f1d1f8192ada2d8da26aec726965171937a4038a3b747",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 291.034851000004,
+          "optimized_median_ms": 258.5506339999847,
+          "speedup": 1.1256396725757833,
+          "latency_reduction_percent": 11.161624420031679,
+          "transcript_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad"
+        },
+        {
+          "seconds": 3,
+          "input_sha256": "2a4f43a0f9d12e4a3f53153734c9142ea5b194cd11237b80f7b00815a858ea34",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 439.90115499999956,
+          "optimized_median_ms": 403.4421679999796,
+          "speedup": 1.0903697974377875,
+          "latency_reduction_percent": 8.287995288400651,
+          "transcript_sha256": "c9a5a35a0dbc8b896801e0b33e45f2fd2f74ba9748a7b454863f9c8baf85de05"
+        },
+        {
+          "seconds": 6,
+          "input_sha256": "5f3ab0905c0f35286b129bd78bf4fef4406a3e72c949eef71f7fc281ffd2be0e",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 776.3369260000181,
+          "optimized_median_ms": 710.3833910000103,
+          "speedup": 1.0928421692224035,
+          "latency_reduction_percent": 8.495478289281621,
+          "transcript_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68"
+        },
+        {
+          "seconds": 11,
+          "input_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 1344.2070639999874,
+          "optimized_median_ms": 1211.5397679999878,
+          "speedup": 1.1095030468698581,
+          "latency_reduction_percent": 9.869558013273528,
+          "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+        }
+      ]
+    },
+    {
+      "label": "Windows x64",
+      "runner": "windows-2022",
+      "job_url": "https://github.com/Oruk-AI/openwhispr/actions/runs/34519797164/job/103014172838",
+      "status": "passed",
+      "started_utc": "2026-09-10T19:21:38.086Z",
+      "finished_utc": "2026-09-10T19:26:34.370Z",
+      "hardware": {
+        "platform": "win32",
+        "arch": "x64",
+        "system_version": "10.0.20348",
+        "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+        "logical_cpus": 4,
+        "production_num_threads": 3,
+        "electron": "41.10.5",
+        "node": "24.18.0"
+      },
+      "binary": {
+        "filename": "sherpa-onnx-ws-win32-x64.exe",
+        "sha256": "b969ecc407d7313b29029bfa7404b9c1538a5cc8da2ad60b4f4b458b6fc154f2"
+      },
+      "package_lock_sha256": "927a84ed7d5250f529889425b6ecfbf21c14d28323acec37b8a8cb35d75c8e01",
+      "package_lock_checkout_line_endings": "CRLF",
+      "fixture": {
+        "url": "https://raw.githubusercontent.com/Oruk-AI/orukeet/76ffba87962954b06d18f000c9609e336422fb20/demos/fixtures/jfk.wav",
+        "sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f"
+      },
+      "artifacts": {
+        "baseline": {
+          "release": {
+            "url": "https://huggingface.co/oruk/orukeet/resolve/74673cf049c0c18f2572dab89f716b077461c2ea/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2",
+            "extractDir": "sherpa-onnx-orukeet-v0.1.0-int8",
+            "bytes": 486664389,
+            "sha256": "c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95bf",
+            "files": {
+              "encoder.int8.onnx": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a",
+              "decoder.int8.onnx": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+              "joiner.int8.onnx": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+              "tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "archive_verified": {
+            "bytes": 486664389,
+            "sha256": "c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95bf"
+          },
+          "installed_files_verified": {
+            "encoder.int8.onnx": {
+              "bytes": 652282402,
+              "sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a"
+            },
+            "decoder.int8.onnx": {
+              "bytes": 11845332,
+              "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+            },
+            "joiner.int8.onnx": {
+              "bytes": 6355335,
+              "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+            },
+            "tokens.txt": {
+              "bytes": 93939,
+              "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "checks_passed": [
+            "registry selects the existing offline NeMo runtime",
+            "anonymous archive download and production extraction succeed",
+            "all graphs and tokens match the release manifest",
+            "repeated transcription reuses one process",
+            "concurrent requests preserve the transcript",
+            "already-cancelled requests reject",
+            "in-flight cancellation and the next decode recover",
+            "shutdown and restart recover"
+          ]
+        },
+        "optimized": {
+          "release": {
+            "url": "https://huggingface.co/oruk/orukeet/resolve/55a984d46f68323301837194ce647c702f55facc/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2",
+            "extractDir": "sherpa-onnx-orukeet-v0.1.0-int8",
+            "bytes": 486807585,
+            "sha256": "f9191f30178cc9122ce2f023bf9fefafc822028307b0efa4caff645ba3fe8d0a",
+            "files": {
+              "encoder.int8.onnx": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487",
+              "decoder.int8.onnx": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+              "joiner.int8.onnx": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+              "tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "archive_verified": {
+            "bytes": 486807585,
+            "sha256": "f9191f30178cc9122ce2f023bf9fefafc822028307b0efa4caff645ba3fe8d0a"
+          },
+          "installed_files_verified": {
+            "encoder.int8.onnx": {
+              "bytes": 653182378,
+              "sha256": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487"
+            },
+            "decoder.int8.onnx": {
+              "bytes": 11845332,
+              "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+            },
+            "joiner.int8.onnx": {
+              "bytes": 6355335,
+              "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+            },
+            "tokens.txt": {
+              "bytes": 93939,
+              "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "checks_passed": [
+            "registry selects the existing offline NeMo runtime",
+            "anonymous archive download and production extraction succeed",
+            "all graphs and tokens match the release manifest",
+            "repeated transcription reuses one process",
+            "concurrent requests preserve the transcript",
+            "already-cancelled requests reject",
+            "in-flight cancellation and the next decode recover",
+            "shutdown and restart recover"
+          ]
+        }
+      },
+      "measurements": [
+        {
+          "artifact": "baseline",
+          "audio_seconds": 1.5,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            592.9112000000023, 660.9137000000046, 385.05470000000787
+          ],
+          "median_ms": 592.9112000000023,
+          "transcript_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 1.5,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            451.96059999999125, 471.9202000000223, 670.1871000000101
+          ],
+          "median_ms": 471.9202000000223,
+          "transcript_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 3,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            480.40669999999227, 593.9101000000082, 592.7761000000173
+          ],
+          "median_ms": 592.7761000000173,
+          "transcript_sha256": "c9a5a35a0dbc8b896801e0b33e45f2fd2f74ba9748a7b454863f9c8baf85de05"
+        },
+        {
+          "artifact": "baseline",
+          "audio_seconds": 3,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            983.6700000000128, 845.3344999999972, 953.0745999999926
+          ],
+          "median_ms": 953.0745999999926,
+          "transcript_sha256": "c9a5a35a0dbc8b896801e0b33e45f2fd2f74ba9748a7b454863f9c8baf85de05"
+        },
+        {
+          "artifact": "baseline",
+          "audio_seconds": 6,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            1143.1549999999697, 1143.6339999999618, 1153.8868999999831
+          ],
+          "median_ms": 1143.6339999999618,
+          "transcript_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 6,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            1126.0761000000057, 982.8255999999819, 1124.949900000007
+          ],
+          "median_ms": 1124.949900000007,
+          "transcript_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 11,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            1878.618199999968, 1549.749700000044, 1555.5700999999535
+          ],
+          "median_ms": 1555.5700999999535,
+          "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+        },
+        {
+          "artifact": "baseline",
+          "audio_seconds": 11,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            1658.9508000000496, 1555.1318999999785, 1509.0533000000287
+          ],
+          "median_ms": 1555.1318999999785,
+          "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+        }
+      ],
+      "comparisons": [
+        {
+          "seconds": 1.5,
+          "input_sha256": "0e5e19033b3508fb604f1d1f8192ada2d8da26aec726965171937a4038a3b747",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 592.9112000000023,
+          "optimized_median_ms": 471.9202000000223,
+          "speedup": 1.2563802100439316,
+          "latency_reduction_percent": 20.40625982440195,
+          "transcript_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad"
+        },
+        {
+          "seconds": 3,
+          "input_sha256": "2a4f43a0f9d12e4a3f53153734c9142ea5b194cd11237b80f7b00815a858ea34",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 953.0745999999926,
+          "optimized_median_ms": 592.7761000000173,
+          "speedup": 1.6078154972846659,
+          "latency_reduction_percent": 37.803808851896605,
+          "transcript_sha256": "c9a5a35a0dbc8b896801e0b33e45f2fd2f74ba9748a7b454863f9c8baf85de05"
+        },
+        {
+          "seconds": 6,
+          "input_sha256": "5f3ab0905c0f35286b129bd78bf4fef4406a3e72c949eef71f7fc281ffd2be0e",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 1143.6339999999618,
+          "optimized_median_ms": 1124.949900000007,
+          "speedup": 1.016608828535346,
+          "latency_reduction_percent": 1.6337482096505984,
+          "transcript_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68"
+        },
+        {
+          "seconds": 11,
+          "input_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 1555.1318999999785,
+          "optimized_median_ms": 1555.5700999999535,
+          "speedup": 0.9997183026338864,
+          "latency_reduction_percent": -0.028177674187968016,
+          "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+        }
+      ]
+    },
+    {
+      "label": "Apple Silicon",
+      "runner": "macos-15",
+      "job_url": "https://github.com/Oruk-AI/openwhispr/actions/runs/34519797164/job/103014174819",
+      "status": "passed",
+      "started_utc": "2026-09-10T19:21:34.771Z",
+      "finished_utc": "2026-09-10T19:26:08.791Z",
+      "hardware": {
+        "platform": "darwin",
+        "arch": "arm64",
+        "system_version": "15.7.9",
+        "cpu": "Apple M1 (Virtual)",
+        "logical_cpus": 3,
+        "production_num_threads": 2,
+        "electron": "41.10.5",
+        "node": "24.18.0"
+      },
+      "binary": {
+        "filename": "sherpa-onnx-ws-darwin-arm64",
+        "sha256": "7d202bb8093ebface64acc73595908b18eb8c1431ff47330d110f16bb7a892a4"
+      },
+      "package_lock_sha256": "ac817e0ec0fa5ecf2af7697c600ef164d41e96f8e2af6b847673b51329457c5b",
+      "package_lock_checkout_line_endings": "LF",
+      "fixture": {
+        "url": "https://raw.githubusercontent.com/Oruk-AI/orukeet/76ffba87962954b06d18f000c9609e336422fb20/demos/fixtures/jfk.wav",
+        "sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f"
+      },
+      "artifacts": {
+        "baseline": {
+          "release": {
+            "url": "https://huggingface.co/oruk/orukeet/resolve/74673cf049c0c18f2572dab89f716b077461c2ea/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2",
+            "extractDir": "sherpa-onnx-orukeet-v0.1.0-int8",
+            "bytes": 486664389,
+            "sha256": "c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95bf",
+            "files": {
+              "encoder.int8.onnx": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a",
+              "decoder.int8.onnx": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+              "joiner.int8.onnx": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+              "tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "archive_verified": {
+            "bytes": 486664389,
+            "sha256": "c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95bf"
+          },
+          "installed_files_verified": {
+            "encoder.int8.onnx": {
+              "bytes": 652282402,
+              "sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a"
+            },
+            "decoder.int8.onnx": {
+              "bytes": 11845332,
+              "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+            },
+            "joiner.int8.onnx": {
+              "bytes": 6355335,
+              "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+            },
+            "tokens.txt": {
+              "bytes": 93939,
+              "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "checks_passed": [
+            "registry selects the existing offline NeMo runtime",
+            "anonymous archive download and production extraction succeed",
+            "all graphs and tokens match the release manifest",
+            "repeated transcription reuses one process",
+            "concurrent requests preserve the transcript",
+            "already-cancelled requests reject",
+            "in-flight cancellation and the next decode recover",
+            "shutdown and restart recover"
+          ]
+        },
+        "optimized": {
+          "release": {
+            "url": "https://huggingface.co/oruk/orukeet/resolve/55a984d46f68323301837194ce647c702f55facc/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2",
+            "extractDir": "sherpa-onnx-orukeet-v0.1.0-int8",
+            "bytes": 486807585,
+            "sha256": "f9191f30178cc9122ce2f023bf9fefafc822028307b0efa4caff645ba3fe8d0a",
+            "files": {
+              "encoder.int8.onnx": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487",
+              "decoder.int8.onnx": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+              "joiner.int8.onnx": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+              "tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "archive_verified": {
+            "bytes": 486807585,
+            "sha256": "f9191f30178cc9122ce2f023bf9fefafc822028307b0efa4caff645ba3fe8d0a"
+          },
+          "installed_files_verified": {
+            "encoder.int8.onnx": {
+              "bytes": 653182378,
+              "sha256": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487"
+            },
+            "decoder.int8.onnx": {
+              "bytes": 11845332,
+              "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+            },
+            "joiner.int8.onnx": {
+              "bytes": 6355335,
+              "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+            },
+            "tokens.txt": {
+              "bytes": 93939,
+              "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "checks_passed": [
+            "registry selects the existing offline NeMo runtime",
+            "anonymous archive download and production extraction succeed",
+            "all graphs and tokens match the release manifest",
+            "repeated transcription reuses one process",
+            "concurrent requests preserve the transcript",
+            "already-cancelled requests reject",
+            "in-flight cancellation and the next decode recover",
+            "shutdown and restart recover"
+          ]
+        }
+      },
+      "measurements": [
+        {
+          "artifact": "baseline",
+          "audio_seconds": 1.5,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            743.5253750000265, 791.9612079999933, 747.4604169999948
+          ],
+          "median_ms": 747.4604169999948,
+          "transcript_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 1.5,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            520.0224999999919, 569.0904169999994, 513.0578340000066
+          ],
+          "median_ms": 520.0224999999919,
+          "transcript_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 3,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            771.7030000000086, 732.9764999999898, 683.5472089999821
+          ],
+          "median_ms": 732.9764999999898,
+          "transcript_sha256": "c9a5a35a0dbc8b896801e0b33e45f2fd2f74ba9748a7b454863f9c8baf85de05"
+        },
+        {
+          "artifact": "baseline",
+          "audio_seconds": 3,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            1047.940333000006, 979.1754169999913, 879.3971250000177
+          ],
+          "median_ms": 979.1754169999913,
+          "transcript_sha256": "c9a5a35a0dbc8b896801e0b33e45f2fd2f74ba9748a7b454863f9c8baf85de05"
+        },
+        {
+          "artifact": "baseline",
+          "audio_seconds": 6,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            1540.9507080000185, 1606.1151250000112, 1630.8257079999894
+          ],
+          "median_ms": 1606.1151250000112,
+          "transcript_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 6,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            1549.903290999995, 1449.5747909999918, 1456.4812910000037
+          ],
+          "median_ms": 1456.4812910000037,
+          "transcript_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 11,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            3301.640207999997, 2687.3631659999955, 2578.855125000002
+          ],
+          "median_ms": 2687.3631659999955,
+          "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+        },
+        {
+          "artifact": "baseline",
+          "audio_seconds": 11,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            2746.695583999972, 2721.4904579999857, 2674.2599579999805
+          ],
+          "median_ms": 2721.4904579999857,
+          "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+        }
+      ],
+      "comparisons": [
+        {
+          "seconds": 1.5,
+          "input_sha256": "0e5e19033b3508fb604f1d1f8192ada2d8da26aec726965171937a4038a3b747",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 747.4604169999948,
+          "optimized_median_ms": 520.0224999999919,
+          "speedup": 1.4373616853117057,
+          "latency_reduction_percent": 30.42808847495191,
+          "transcript_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad"
+        },
+        {
+          "seconds": 3,
+          "input_sha256": "2a4f43a0f9d12e4a3f53153734c9142ea5b194cd11237b80f7b00815a858ea34",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 979.1754169999913,
+          "optimized_median_ms": 732.9764999999898,
+          "speedup": 1.3358892365580683,
+          "latency_reduction_percent": 25.14349448787313,
+          "transcript_sha256": "c9a5a35a0dbc8b896801e0b33e45f2fd2f74ba9748a7b454863f9c8baf85de05"
+        },
+        {
+          "seconds": 6,
+          "input_sha256": "5f3ab0905c0f35286b129bd78bf4fef4406a3e72c949eef71f7fc281ffd2be0e",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 1606.1151250000112,
+          "optimized_median_ms": 1456.4812910000037,
+          "speedup": 1.102736530104874,
+          "latency_reduction_percent": 9.316507370541471,
+          "transcript_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68"
+        },
+        {
+          "seconds": 11,
+          "input_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 2721.4904579999857,
+          "optimized_median_ms": 2687.3631659999955,
+          "speedup": 1.0126991738339508,
+          "latency_reduction_percent": 1.2539927119593952,
+          "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+        }
+      ]
+    },
+    {
+      "label": "Intel Mac",
+      "runner": "macos-15-intel",
+      "job_url": "https://github.com/Oruk-AI/openwhispr/actions/runs/34519797164/job/103014173382",
+      "status": "passed",
+      "started_utc": "2026-09-10T19:22:33.827Z",
+      "finished_utc": "2026-09-10T19:28:33.687Z",
+      "hardware": {
+        "platform": "darwin",
+        "arch": "x64",
+        "system_version": "15.7.9",
+        "cpu": "Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz",
+        "logical_cpus": 4,
+        "production_num_threads": 3,
+        "electron": "41.10.5",
+        "node": "24.18.0"
+      },
+      "binary": {
+        "filename": "sherpa-onnx-ws-darwin-x64",
+        "sha256": "5036b537d4f669cf2d0dc15b27c53afc500c140fad0c63c5bc8c6920db055191"
+      },
+      "package_lock_sha256": "ac817e0ec0fa5ecf2af7697c600ef164d41e96f8e2af6b847673b51329457c5b",
+      "package_lock_checkout_line_endings": "LF",
+      "fixture": {
+        "url": "https://raw.githubusercontent.com/Oruk-AI/orukeet/76ffba87962954b06d18f000c9609e336422fb20/demos/fixtures/jfk.wav",
+        "sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f"
+      },
+      "artifacts": {
+        "baseline": {
+          "release": {
+            "url": "https://huggingface.co/oruk/orukeet/resolve/74673cf049c0c18f2572dab89f716b077461c2ea/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2",
+            "extractDir": "sherpa-onnx-orukeet-v0.1.0-int8",
+            "bytes": 486664389,
+            "sha256": "c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95bf",
+            "files": {
+              "encoder.int8.onnx": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a",
+              "decoder.int8.onnx": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+              "joiner.int8.onnx": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+              "tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "archive_verified": {
+            "bytes": 486664389,
+            "sha256": "c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95bf"
+          },
+          "installed_files_verified": {
+            "encoder.int8.onnx": {
+              "bytes": 652282402,
+              "sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a"
+            },
+            "decoder.int8.onnx": {
+              "bytes": 11845332,
+              "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+            },
+            "joiner.int8.onnx": {
+              "bytes": 6355335,
+              "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+            },
+            "tokens.txt": {
+              "bytes": 93939,
+              "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "checks_passed": [
+            "registry selects the existing offline NeMo runtime",
+            "anonymous archive download and production extraction succeed",
+            "all graphs and tokens match the release manifest",
+            "repeated transcription reuses one process",
+            "concurrent requests preserve the transcript",
+            "already-cancelled requests reject",
+            "in-flight cancellation and the next decode recover",
+            "shutdown and restart recover"
+          ]
+        },
+        "optimized": {
+          "release": {
+            "url": "https://huggingface.co/oruk/orukeet/resolve/55a984d46f68323301837194ce647c702f55facc/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2",
+            "extractDir": "sherpa-onnx-orukeet-v0.1.0-int8",
+            "bytes": 486807585,
+            "sha256": "f9191f30178cc9122ce2f023bf9fefafc822028307b0efa4caff645ba3fe8d0a",
+            "files": {
+              "encoder.int8.onnx": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487",
+              "decoder.int8.onnx": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+              "joiner.int8.onnx": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+              "tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "archive_verified": {
+            "bytes": 486807585,
+            "sha256": "f9191f30178cc9122ce2f023bf9fefafc822028307b0efa4caff645ba3fe8d0a"
+          },
+          "installed_files_verified": {
+            "encoder.int8.onnx": {
+              "bytes": 653182378,
+              "sha256": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487"
+            },
+            "decoder.int8.onnx": {
+              "bytes": 11845332,
+              "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+            },
+            "joiner.int8.onnx": {
+              "bytes": 6355335,
+              "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+            },
+            "tokens.txt": {
+              "bytes": 93939,
+              "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+            }
+          },
+          "checks_passed": [
+            "registry selects the existing offline NeMo runtime",
+            "anonymous archive download and production extraction succeed",
+            "all graphs and tokens match the release manifest",
+            "repeated transcription reuses one process",
+            "concurrent requests preserve the transcript",
+            "already-cancelled requests reject",
+            "in-flight cancellation and the next decode recover",
+            "shutdown and restart recover"
+          ]
+        }
+      },
+      "measurements": [
+        {
+          "artifact": "baseline",
+          "audio_seconds": 1.5,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            245.43804500001715, 232.28888000000734, 331.4847609999706
+          ],
+          "median_ms": 245.43804500001715,
+          "transcript_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 1.5,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            177.25708900002064, 175.58008300000802, 160.48675699997693
+          ],
+          "median_ms": 175.58008300000802,
+          "transcript_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 3,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            1098.0646909999778, 1430.9733819999965, 842.6693540000124
+          ],
+          "median_ms": 1098.0646909999778,
+          "transcript_sha256": "c9a5a35a0dbc8b896801e0b33e45f2fd2f74ba9748a7b454863f9c8baf85de05"
+        },
+        {
+          "artifact": "baseline",
+          "audio_seconds": 3,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            776.3935320000164, 1440.5135070000542, 1404.290037000028
+          ],
+          "median_ms": 1404.290037000028,
+          "transcript_sha256": "c9a5a35a0dbc8b896801e0b33e45f2fd2f74ba9748a7b454863f9c8baf85de05"
+        },
+        {
+          "artifact": "baseline",
+          "audio_seconds": 6,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            1909.529375000042, 2569.134493999998, 3058.415896999999
+          ],
+          "median_ms": 2569.134493999998,
+          "transcript_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 6,
+          "artifact_order": ["baseline", "optimized"],
+          "warm_elapsed_ms": [
+            1232.9182600000058, 1166.3212809999823, 1232.7574069999973
+          ],
+          "median_ms": 1232.7574069999973,
+          "transcript_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68"
+        },
+        {
+          "artifact": "optimized",
+          "audio_seconds": 11,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            1979.2407109999913, 1852.1383630000055, 3295.98186
+          ],
+          "median_ms": 1979.2407109999913,
+          "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+        },
+        {
+          "artifact": "baseline",
+          "audio_seconds": 11,
+          "artifact_order": ["optimized", "baseline"],
+          "warm_elapsed_ms": [
+            2285.618373000005, 2883.7680040000123, 2671.961274000001
+          ],
+          "median_ms": 2671.961274000001,
+          "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+        }
+      ],
+      "comparisons": [
+        {
+          "seconds": 1.5,
+          "input_sha256": "0e5e19033b3508fb604f1d1f8192ada2d8da26aec726965171937a4038a3b747",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 245.43804500001715,
+          "optimized_median_ms": 175.58008300000802,
+          "speedup": 1.3978695123410207,
+          "latency_reduction_percent": 28.462564554734882,
+          "transcript_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad"
+        },
+        {
+          "seconds": 3,
+          "input_sha256": "2a4f43a0f9d12e4a3f53153734c9142ea5b194cd11237b80f7b00815a858ea34",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 1404.290037000028,
+          "optimized_median_ms": 1098.0646909999778,
+          "speedup": 1.2788773270918847,
+          "latency_reduction_percent": 21.806417330584825,
+          "transcript_sha256": "c9a5a35a0dbc8b896801e0b33e45f2fd2f74ba9748a7b454863f9c8baf85de05"
+        },
+        {
+          "seconds": 6,
+          "input_sha256": "5f3ab0905c0f35286b129bd78bf4fef4406a3e72c949eef71f7fc281ffd2be0e",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 2569.134493999998,
+          "optimized_median_ms": 1232.7574069999973,
+          "speedup": 2.084055207789965,
+          "latency_reduction_percent": 52.01662622649765,
+          "transcript_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68"
+        },
+        {
+          "seconds": 11,
+          "input_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+          "exact_transcript_match": true,
+          "baseline_median_ms": 2671.961274000001,
+          "optimized_median_ms": 1979.2407109999913,
+          "speedup": 1.3499930853029087,
+          "latency_reduction_percent": 25.925546516734787,
+          "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+        }
+      ]
+    }
+  ]
+}
