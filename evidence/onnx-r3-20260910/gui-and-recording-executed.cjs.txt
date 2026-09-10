@@ -1,0 +1,130 @@
+// Exercise the production model picker and its external-link IPC in an isolated profile.
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const { createRequire } = require('node:module');
+const args = {};
+for (const key of ['app-root','profile-root','audio','output','simulated-macos']) {
+ const i=process.argv.indexOf('--'+key);if(i!==-1)args[key]=process.argv[i+1];
+}
+for (const key of ['app-root','profile-root','audio','output']) assert(args[key],key);
+const root=path.resolve(args['app-root']);
+const requireApp = createRequire(path.join(root,'package.json'));
+const {app, BrowserWindow, shell, ipcMain} = requireApp('electron');
+if(args['simulated-macos']) process.getSystemVersion=()=>args['simulated-macos'];
+const profile=path.resolve(args['profile-root']);
+assert(profile.includes('openwhispr'),'Use a dedicated test profile');
+fs.mkdirSync(profile,{recursive:true});
+app.setPath('home',profile);
+for(const name of ['whisper-models','parakeet-models','diarization-models','models'])fs.mkdirSync(path.join(profile,'cache',name),{recursive:true});
+app.setPath('appData',profile);app.setPath('userData',path.join(profile,'OpenWhispr-development'));
+app.setAppPath(root);process.env.OPENWHISPR_CACHE_ROOT=path.join(profile,'cache');
+delete process.env.OPENWHISPR_ORUKEET_MODEL;process.env.NODE_ENV='production';process.env.OPENWHISPR_CHANNEL='development';
+app.commandLine.appendSwitch('no-sandbox');
+app.commandLine.appendSwitch('use-fake-device-for-media-stream');
+app.commandLine.appendSwitch('use-fake-ui-for-media-stream');
+app.commandLine.appendSwitch('use-file-for-fake-audio-capture', path.resolve(args.audio));
+const events=[];
+ipcMain.on('dictation-lifecycle-state-changed',(_e,state,inputKind)=>events.push({state,inputKind,at:Date.now()}));
+const opened=[];
+shell.openExternal=async url=>{opened.push(url);};
+const receipt={status:'running',publication_authorized:true,checks:[],external_urls:opened,
+ scope:'Production renderer and preload, real public archive download, unchanged sherpa-onnx worker, microphone WAV through MediaRecorder/normalization/ASR and saved history. Only external navigation and microphone input are controlled by the harness; ASR outputs are never mocked.',
+ simulated_macos:args['simulated-macos']||null,electron:process.versions.electron,checked_at_utc:new Date().toISOString()};
+const delay=ms=>new Promise(r=>setTimeout(r,ms));
+async function until(check,label,timeout=180000){const end=Date.now()+timeout;while(Date.now()<end){if(await check())return;await delay(50);}throw Error('Timed out: '+label);}
+require(path.join(root,'main.js'));
+(async()=>{
+ let panel;
+ try{
+  await app.whenReady();
+  console.log('HARNESS ready');
+  const timer=setInterval(()=>console.log('HARNESS windows',BrowserWindow.getAllWindows().map(w=>({url:w.webContents.getURL(),loading:w.webContents.isLoading(),destroyed:w.isDestroyed()}))),10000);timer.unref();
+  await until(()=>BrowserWindow.getAllWindows().some(w=>w.webContents.getURL().includes('index.html')&&!w.webContents.isLoading()),'initial app');
+  console.log('HARNESS initial loaded');
+  const initial=BrowserWindow.getAllWindows().find(w=>{const u=w.webContents.getURL();return u.endsWith('/index.html')&&!w.webContents.isLoading();});
+  assert(initial,'Actual dictation renderer must exist');
+  const seed=`for(const [key,value] of Object.entries({onboardingCompleted:'true',authenticationSkipped:'true',skipAuth:'true',uiLanguage:'en',accessibilitySkipped:'true',autoPasteEnabled:'false',keepTranscriptionInClipboard:'false',useCleanupModel:'false',autoLearnCorrections:'false'}))localStorage.setItem(key,value);for(const key of ['onboardingSessionV2','onboardingCurrentStep'])localStorage.removeItem(key);`;
+  await initial.webContents.executeJavaScript(seed);
+  await until(()=>BrowserWindow.getAllWindows().some(w=>w.webContents.getURL().includes('?panel=true')&&!w.webContents.isLoading()),'managed control panel');
+  panel=BrowserWindow.getAllWindows().find(w=>w.webContents.getURL().includes('?panel=true'));
+  await panel.webContents.executeJavaScript(seed);
+  const panelLoaded=new Promise(r=>panel.webContents.once('did-finish-load',r));panel.reload();await panelLoaded;
+  panel.setSize(1200,850);panel.show();
+  await until(()=>panel.webContents.executeJavaScript(`document.body.innerText.includes('Home')||Boolean(document.querySelector('[data-section-id="speechToText"]'))`),'control panel');
+  console.log('HARNESS managed panel ready');
+  await panel.webContents.executeJavaScript(`Array.from(document.querySelectorAll('button')).find(b=>b.innerText.trim()==='Remind Me Later')?.click()`);
+  panel.webContents.send('show-settings');
+  await until(()=>panel.webContents.executeJavaScript(`Boolean(document.querySelector('[data-section-id="speechToText"]'))`),'speech settings');
+  await panel.webContents.executeJavaScript(`document.querySelector('[data-section-id="speechToText"]').click()`);
+  await until(()=>panel.webContents.executeJavaScript(`Array.from(document.querySelectorAll('button')).some(b=>Array.from(b.querySelectorAll('span')).some(s=>s.textContent.trim()==='Local'))`),'local mode');
+  receipt.initial=await panel.webContents.executeJavaScript(`({local:localStorage.getItem('useLocalWhisper'),provider:localStorage.getItem('localTranscriptionProvider'),model:localStorage.getItem('parakeetModel')})`);
+  assert.notEqual(receipt.initial.local,'true');
+  await panel.webContents.executeJavaScript(`Array.from(document.querySelectorAll('button')).find(b=>Array.from(b.querySelectorAll('span')).some(s=>s.textContent.trim()==='Local')).click()`);
+  await until(()=>panel.webContents.executeJavaScript(`Array.from(document.querySelectorAll('button')).some(b=>b.innerText.trim()==='Oruk')`),'Oruk organization');
+  await panel.webContents.executeJavaScript(`Array.from(document.querySelectorAll('button')).find(b=>b.innerText.trim()==='Oruk').click()`);
+  await until(()=>panel.webContents.executeJavaScript(`Boolean(document.querySelector('a[href="https://huggingface.co/oruk/orukeet"]'))`),'Orukeet model card');
+  console.log('HARNESS card ready');
+  receipt.logos=await panel.webContents.executeJavaScript(`Array.from(document.querySelectorAll('img')).filter(i=>i.alt==='oruk icon').map(i=>({src:i.getAttribute('src'),complete:i.complete,width:i.naturalWidth,height:i.naturalHeight}))`);
+  assert(receipt.logos.length>0&&receipt.logos.every(i=>i.complete&&i.width>0),'Oruk logos must be loaded');
+  receipt.before=await panel.webContents.executeJavaScript(`({provider:localStorage.getItem('localTranscriptionProvider'),model:localStorage.getItem('parakeetModel')})`);
+  receipt.card=await panel.webContents.executeJavaScript(`(()=>{const a=document.querySelector('a[href="https://huggingface.co/oruk/orukeet"]');a.scrollIntoView({block:'center'});window.__cardBubbles=0;document.addEventListener('click',()=>window.__cardBubbles++);return {text:a.innerText,href:a.href,target:a.target,rel:a.rel,context:a.parentElement.innerText};})()`);
+  assert.equal(receipt.card.text,'Model card');assert.match(receipt.card.context,/Orukeet/);
+  const context=await panel.webContents.executeJavaScript(`document.querySelector('a[href="https://huggingface.co/oruk/orukeet"]').parentElement.innerText`);
+  assert.match(context,/Recommended/);
+  receipt.checks.push('Fresh profile keeps upstream mode defaults','Local mode exposes Oruk with Recommended Orukeet');
+  const installed=await panel.webContents.executeJavaScript(`window.electronAPI.listParakeetModels()`);
+  assert(!installed.models.find(m=>m.model==='orukeet-v0.1.0-q8')?.downloaded,'Profile must begin without a model');
+  await panel.webContents.executeJavaScript(`Array.from(document.querySelector('a[href="https://huggingface.co/oruk/orukeet"]').parentElement.querySelectorAll('button')).find(b=>b.innerText.trim()==='Download').click()`);
+  await until(()=>panel.webContents.executeJavaScript(`window.electronAPI.listParakeetModels().then(r=>r.models.some(m=>m.model==='orukeet-v0.1.0-q8'&&m.downloaded))`),'GUI model installation',600000);
+  receipt.install_source='anonymous public Hugging Face ONNX archive';
+  await until(()=>panel.webContents.executeJavaScript(`localStorage.getItem('parakeetModel')==='orukeet-v0.1.0-q8'`),'download selects installed Orukeet');
+  receipt.before=await panel.webContents.executeJavaScript(`({provider:localStorage.getItem('localTranscriptionProvider'),model:localStorage.getItem('parakeetModel')})`);
+  assert.equal(receipt.before.provider,'nvidia');
+  receipt.checks.push('Download button installs the public ONNX archive and selects Orukeet through the existing backend');
+
+  await panel.webContents.executeJavaScript(`document.querySelector('a[href="https://huggingface.co/oruk/orukeet"]').click()`);
+  await until(()=>opened.length===1,'mouse navigation');
+  await panel.webContents.executeJavaScript(`document.querySelector('a[href="https://huggingface.co/oruk/orukeet"]').focus()`);
+  assert(await panel.webContents.executeJavaScript(`document.activeElement.matches('a[href="https://huggingface.co/oruk/orukeet"]')`));
+  panel.webContents.sendInputEvent({type:'keyDown',keyCode:'Return'});
+  panel.webContents.sendInputEvent({type:'keyUp',keyCode:'Return'});
+  await until(()=>opened.length===2,'keyboard navigation');
+  receipt.after=await panel.webContents.executeJavaScript(`({provider:localStorage.getItem('localTranscriptionProvider'),model:localStorage.getItem('parakeetModel')})`);
+  assert.deepEqual(receipt.after,receipt.before);
+  assert.equal(await panel.webContents.executeJavaScript('window.__cardBubbles'),0);
+  assert.deepEqual(opened,['https://huggingface.co/oruk/orukeet','https://huggingface.co/oruk/orukeet']);
+  receipt.checks.push('Oruk model card is visible in production settings','Mouse and keyboard activation reach the external-link IPC','React stops link events before document-level handlers','Provider and selected checkpoint remain unchanged');
+  const screenshot=path.resolve(args.output).replace(/\.json$/,'.png');
+  fs.writeFileSync(screenshot,(await panel.webContents.capturePage()).toPNG());
+  receipt.screenshot=screenshot;receipt.screenshot_sha256=crypto.createHash('sha256').update(fs.readFileSync(screenshot)).digest('hex');
+  const Database = requireApp('better-sqlite3');
+  const db = new Database(path.join(profile,'OpenWhispr-development','transcriptions.db'),{readonly:true});
+  const count=()=>db.prepare('SELECT count(*) AS n FROM transcriptions').get().n;
+  const latest=()=>db.prepare('SELECT id,text,raw_text FROM transcriptions ORDER BY id DESC LIMIT 1').get();
+  await initial.webContents.executeJavaScript(`for(const [k,v] of Object.entries({autoPasteEnabled:'false',keepTranscriptionInClipboard:'false',useCleanupModel:'false',autoLearnCorrections:'false'}))localStorage.setItem(k,v);`);
+  const loaded=new Promise(r=>initial.webContents.once('did-finish-load',r));initial.reload();await loaded;await delay(2000);
+  async function record(label){
+    const ix=events.length,before=count();initial.webContents.send('start-dictation');
+    await until(()=>events.slice(ix).some(e=>e.state==='recording'),'capture starts');
+    await delay(11500);const stop=Date.now();initial.webContents.send('stop-dictation');
+    await until(()=>count()>before,'transcript saved');const savedAt=Date.now();
+    const result=latest();assert.match(result.text.toLowerCase(),/ask not what your country/);
+    await until(()=>events.slice(ix).some(e=>e.state==='idle'),'recording returns idle');
+    return {label,...result,stop_to_saved_ms:savedAt-stop,stop_to_idle_ms:Date.now()-stop};
+  }
+  try {
+    receipt.recordings=[await record('first')];
+    const before=count(),ix=events.length;initial.webContents.send('start-dictation');
+    await until(()=>events.slice(ix).some(e=>e.state==='recording'),'cancel capture starts');
+    await delay(1200);initial.webContents.send('cancel-dictation');
+    await until(()=>events.slice(ix).some(e=>e.state==='idle'),'cancel returns idle');await delay(500);assert.equal(count(),before);
+    receipt.recordings.push(await record('after-cancel'));
+    receipt.checks.push('Real WAV capture transcribes through sherpa and saves history','Live recording cancellation creates no history entry','Recording and persistence recover after cancellation');
+    receipt.events=events;receipt.status='passed';
+  } finally {db.close();}
+
+ }catch(error){receipt.status='failed';receipt.error=String(error);console.error(error);if(panel){receipt.visible_text=await panel.webContents.executeJavaScript('document.body.innerText').catch(()=>null);}}
+ finally{receipt.harness_sha256=crypto.createHash('sha256').update(fs.readFileSync(__filename)).digest('hex');fs.writeFileSync(args.output,JSON.stringify(receipt,null,2)+'\n');app.exit(receipt.status==='passed'?0:1);}
+})();

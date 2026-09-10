@@ -1,45 +1,45 @@
-# Orukeet in OpenWhispr: paired recognition
+# Orukeet in OpenWhispr: shared ONNX runtime
 
-Orukeet r3 scores **6.89% WER versus 11.93% for stock Parakeet TDT v3** through OpenWhispr's file-transcription pipeline: **42.2% fewer word errors**. The comparison includes 640 English clips, 64 from each of ten corpora, covering 65.8 minutes and 9,783 reference words. Orukeet has lower WER in 10 of ten corpora.
+Orukeet r3 INT8 scores **11.40% WER versus 11.93% for stock Parakeet TDT v3 INT8** through the same OpenWhispr file-transcription path. This is a **4.5% relative reduction** in word errors across 640 English clips from ten corpora. Orukeet has lower WER in 7 of ten corpora.
 
-| Corpus | Clips | Orukeet WER | Parakeet WER |
+## Recognition
+
+| Corpus | Clips | Parakeet WER | Orukeet WER |
 | --- | ---: | ---: | ---: |
-| AMI | 64 | 13.12% | 17.73% |
-| Common Voice | 64 | 7.31% | 10.96% |
-| Earnings22 | 64 | 11.73% | 31.45% |
-| GigaSpeech | 64 | 9.12% | 10.02% |
-| L2-ARCTIC | 64 | 5.20% | 6.88% |
-| LibriSpeech test-clean | 64 | 1.57% | 1.83% |
-| LibriSpeech test-other | 64 | 3.24% | 4.86% |
-| SpeechOcean test | 64 | 18.16% | 28.81% |
-| SPGISpeech | 64 | 4.26% | 13.06% |
-| VoxPopuli | 64 | 6.76% | 7.56% |
-| **Pooled** | **640** | **6.89%** | **11.93%** |
+| AMI | 64 | 17.73% | 17.38% |
+| Common Voice | 64 | 10.96% | 12.13% |
+| Earnings22 | 64 | 31.45% | 30.23% |
+| GigaSpeech | 64 | 10.02% | 9.26% |
+| L2-ARCTIC | 64 | 6.88% | 6.21% |
+| LibriSpeech test-clean | 64 | 1.83% | 2.35% |
+| LibriSpeech test-other | 64 | 4.86% | 4.69% |
+| SpeechOcean test | 64 | 28.81% | 21.79% |
+| SPGISpeech | 64 | 13.06% | 12.45% |
+| VoxPopuli | 64 | 7.56% | 7.90% |
+| **Pooled** | **640** | **11.93%** | **11.40%** |
 
-Both backends run in the integration against OpenWhispr/openwhispr v1.9.2. Orukeet uses r3 Q8 on Metal; stock Parakeet uses the release's INT8 ONNX models and unchanged sherpa-onnx CPU worker with four threads. Original encoded audio passes through app normalization, segmentation, worker IPC and result handling. Orukeet's pause-aware segmentation is included in the result.
+The fixed suite contains 64 clips per corpus, 65.8 minutes of audio and 9,783 normalized reference words. Selection uses the existing `orukeet-app-eval-v1` hash ordering, nonempty references and 0–120-second inputs. Both models receive every selected recording. Empty transcripts remain in scoring: 23 for Parakeet and 21 for Orukeet. Runtime exceptions: 0 and 0 respectively.
 
-The fixed hash selection, 0–120-second inputs, original references and audio hashes match the preceding app comparison. Both models receive every clip, in alternating order, with warm workers and serialized calls. The same Whisper English normalizer scores both outputs. Empty transcripts remain in the scores: two for Orukeet and 23 for Parakeet. These return the app's `No audio detected` response; no other runtime errors occurred.
+The same Whisper English normalizer and Levenshtein word counts score both outputs. Pooled WER sums errors and reference words. A paired utterance bootstrap with 10,000 resamples within corpus gives a 95% interval of [-0.96, -0.13] percentage points for Orukeet minus Parakeet.
 
-The pooled difference is -5.04 percentage points. A paired utterance bootstrap with 10,000 resamples within corpus gives a 95% interval of [-7.13, -3.20] points.
+## Runtime
 
-| Warm file-transcription timing on M5 Max | Orukeet | Parakeet |
+| Warm file transcription, M5 Max | Parakeet | Orukeet |
 | --- | ---: | ---: |
-| Median call | 58 ms | 481 ms |
-| 95th percentile | 96 ms | 1450 ms |
-| Processing / audio duration | 0.0097 | 0.0981 |
+| Median call | 536 ms | 537 ms |
+| 95th percentile | 1656 ms | 1584 ms |
+| Processing / audio duration | 0.1101 | 0.1100 |
 
-Timings include normalization, segmentation and recognition after loading. [Live recording measurements](#live-recording) use the production renderer separately.
+Measured on Apple M5 Max, macOS 26.4.1, using the current OpenWhispr main integration, Electron 41.10.5, sherpa-onnx 1.13.4 and ONNX Runtime 1.27.0. Both models use the unchanged offline CPU worker with four threads and the same 15-second segmentation. Timings include production audio normalization, segmentation, WebSocket calls and recognition.
 
-[Numerical counts](../../evidence/r3-promotion-20260908/paired-app-scores.json) · [Implementation hashes](../../evidence/r3-promotion-20260908/paired-app-provenance.json).
+Each model has a separate warm process. Calls are serialized and alternate which model goes first for each clip. Loading is recorded separately and excluded from these timings. This table measures file-transcription calls; microphone endpointing and the preview timer are separate application behavior.
 
-## Live recording
+[Numerical counts and timings](../../evidence/onnx-r3-20260910/app-paired-640-scores.json) · [Runtime provenance](../../evidence/onnx-r3-20260910/app-paired-640-receipt.json) · [Release checks](../../evidence/onnx-r3-20260910/application-validation.md)
 
-| Warm recording median, M5 Max | Orukeet | Stock Parakeet TDT v3 |
-| --- | ---: | ---: |
-| First live preview | 1.55 s | 1.64 s |
-| Preview processing | 40 ms | 131 ms |
-| Stop to saved transcript | 115 ms | 945 ms |
+## Integration checks
 
-Three recordings per model use the production renderer, MediaRecorder, normalization, model worker and SQLite history. The preview timer is 1.5 seconds. The Orukeet backend is Q8/Metal; stock Parakeet is the v1.9.2 INT8 ONNX/sherpa-onnx CPU implementation with four threads. These measurements compare the two application paths on Apple M5 Max. The final PR retains the same r3 model and native decoding path while integrating subsequent upstream provider and download changes.
+The production Mac model manager passes load, repeated process reuse, concurrent requests, silence, multilingual float-WAV normalization, long-audio segmentation, cancellation and recovery. The complete renderer test covers the Oruk picker and model-card link, anonymous public download, microphone capture from a fixed WAV, real recognition, saved history, capture cancellation and a successful next recording.
 
-[Model card](MODEL_CARD.md) · [General ASR benchmarks](../../docs/current-checkpoint-benchmarks.md)
+The [validation record](../../evidence/onnx-r3-20260910/application-validation.md) includes the final Windows, Linux and Mac CI outcomes and the picker screenshot.
+
+[Historical native Q8/Metal measurements](APP_BENCHMARKS_NATIVE.md) · [General ASR benchmarks](../../docs/current-checkpoint-benchmarks.md)

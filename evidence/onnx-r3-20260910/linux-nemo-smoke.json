@@ -1,0 +1,32 @@
+{
+  "source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+  "runtime": "NeMo",
+  "precision": "fp32",
+  "provider": "cpu",
+  "results": [
+    {
+      "file": "en.wav",
+      "sha256": "148b936b43ce7c546a866e64da059f0458aee2d65e617f16e9d94f06e8d99ed6",
+      "text": "Ask not what your country can do for you, ask what you can do for your country.",
+      "decode_seconds": 0.7435861700214446
+    },
+    {
+      "file": "de.wav",
+      "sha256": "36d3c4845b9808a1656a2a2e92d884590e2db94389e6fe559643291ae0cd3710",
+      "text": "Alles hat ein Ende, nur die Wurst hat zwei.",
+      "decode_seconds": 0.5797905719955452
+    },
+    {
+      "file": "fr.wav",
+      "sha256": "b59be4349b92d344fb903677165eaf4694025d1ab119c608726ecbcb3164b528",
+      "text": "Ne vous demandez pas ce que votre pays peut faire pour vous. Demandez-vous plutôt ce que vous pouvez faire pour lui.",
+      "decode_seconds": 0.7394040889921598
+    },
+    {
+      "file": "es.wav",
+      "sha256": "49fd2cfa4b62db7068143c582b35de9d31ec2733495ece3611105131d21de06c",
+      "text": "No preguntes qué puede hacer tu país por ti, pregunta qué puedes hacer quién por tu país.",
+      "decode_seconds": 0.5964636350399815
+    }
+  ]
+}

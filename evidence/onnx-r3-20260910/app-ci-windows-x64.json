@@ -1,0 +1,88 @@
+{
+  "started_utc": "2026-09-10T18:28:49.436Z",
+  "scope": "Real public model download, bundled sherpa-onnx binary and OpenWhispr ParakeetManager under Electron. Main-process lifecycle and inference; no microphone/UI simulation.",
+  "platform": "win32",
+  "arch": "x64",
+  "system_version": "10.0.20348",
+  "cpu": "AMD EPYC 9V74 80-Core Processor                ",
+  "electron": "41.10.5",
+  "node": "24.18.0",
+  "model": "orukeet-v0.1.0-q8",
+  "audio_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+  "checks": [
+    "registry selects existing offline runtime",
+    "public archive downloads and extracts through production manager",
+    "every installed graph and token file matches the release manifest",
+    "repeat transcription reuses one process",
+    "concurrent manager requests preserve transcript",
+    "already-cancelled request rejects",
+    "in-flight cancellation and next decode recover",
+    "shutdown and restart recover"
+  ],
+  "calls": [
+    {
+      "label": "warmup",
+      "ms": 1236.3257000000012,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+    },
+    {
+      "label": "repeat-0",
+      "ms": 1213.6534000000102,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+    },
+    {
+      "label": "repeat-1",
+      "ms": 1187.1515999999974,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+    },
+    {
+      "label": "repeat-2",
+      "ms": 1254.3641000000061,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+    },
+    {
+      "label": "concurrent-0",
+      "ms": 2179.647900000011,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+    },
+    {
+      "label": "concurrent-1",
+      "ms": 2179.4552000000112,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+    },
+    {
+      "label": "after-cancel",
+      "ms": 2107.798900000009,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+    },
+    {
+      "label": "after-restart",
+      "ms": 4992.161899999992,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+    }
+  ],
+  "files": {
+    "encoder.int8.onnx": {
+      "bytes": 652282402,
+      "sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a"
+    },
+    "decoder.int8.onnx": {
+      "bytes": 11845332,
+      "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+    },
+    "joiner.int8.onnx": {
+      "bytes": 6355335,
+      "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+    },
+    "tokens.txt": {
+      "bytes": 93939,
+      "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+    }
+  },
+  "load_and_warm_ms": 3913.1757999999973,
+  "binary": "sherpa-onnx-ws-win32-x64.exe",
+  "binary_sha256": "b969ecc407d7313b29029bfa7404b9c1538a5cc8da2ad60b4f4b458b6fc154f2",
+  "status": "passed",
+  "finished_utc": "2026-09-10T18:30:16.145Z",
+  "workflow_run": "https://github.com/Oruk-AI/openwhispr/actions/runs/34514441209"
+}

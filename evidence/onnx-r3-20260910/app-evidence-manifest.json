@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "scope": "Transcript-free publication copy. Raw results remain local; all selected per-clip edit counts are present.",
+  "files": {
+    "APP_BENCHMARKS_TABLE.md": {
+      "bytes": 522,
+      "sha256": "b460416bf82948a929926e6e69b7339293a63b67c60ea166a8e1078eb43496a6"
+    },
+    "REPRODUCE_APP.md": {
+      "bytes": 4456,
+      "sha256": "3160c8f42e2d3f381002142a58c942b00b03779b4f5bcc6b454cc67591ae6734"
+    },
+    "app-lifecycle.json": {
+      "bytes": 18576,
+      "sha256": "d7ccd67669c8115a3dab28a6e7f5f764d1dc1f3629d7f16b9969af9c776d67b3"
+    },
+    "app-macos-deployment-targets.txt": {
+      "bytes": 481,
+      "sha256": "e6ce5be64d510613febb704d4fa27b959266ba95a1c508a8f18aecda9d8d3ccb"
+    },
+    "app-macos-runtime.json": {
+      "bytes": 1889,
+      "sha256": "451f04d7b28096f907870c73649ff0fe0ca3b1469cae5a0449d6198c1c544ded"
+    },
+    "app-model-switch.json": {
+      "bytes": 1313,
+      "sha256": "308e3a99432224383b401b017afa960283f7ccc0287e12e53e12723c8aa57fd2"
+    },
+    "app-onnx-contract.json": {
+      "bytes": 13634,
+      "sha256": "3e0f56501defb43efeff657cb81c35d1bdfb10f86f8819dcbd37c63ea6e30df9"
+    },
+    "app-paired-640-counts.jsonl": {
+      "bytes": 246151,
+      "sha256": "bb29990d6d41cacb0a2660225faf73153127fa3b3fd59004683a60ad011b8391"
+    },
+    "app-paired-640-receipt.json": {
+      "bytes": 313256,
+      "sha256": "cbabaac4aac56ea6fbb3aa821c0fae213425d13eb368540bf56977fa2c011ba2"
+    },
+    "app-paired-640-scores.json": {
+      "bytes": 10379,
+      "sha256": "5883d4b2fa0be6756aeb63b6c9517ef2eb76cd6ad58318dee17f74eddf452613"
+    },
+    "current-source-equivalence.json": {
+      "bytes": 963,
+      "sha256": "c4b237f9f7625bdb59f15de5832db1105466edef4259f52c99d05f32d8973be6"
+    },
+    "lifecycle-executed.cjs.txt": {
+      "bytes": 12195,
+      "sha256": "1f6e85a5455abd7419b53d7f8f7857587f39e93e1c47c921363a665f2f6296a3"
+    },
+    "model-switch-executed.cjs.txt": {
+      "bytes": 3104,
+      "sha256": "ded4a75a7640604684f2abd59bd61167fcb3c8781df68c4c2d5e547cf0670301"
+    },
+    "portable-scorer-validation.json": {
+      "bytes": 626,
+      "sha256": "2073b4e7782123b52f6d7f5c5066a5dfb12826f52b830d0eb0658f6576aec1eb"
+    },
+    "qualify-executed.cjs.txt": {
+      "bytes": 12528,
+      "sha256": "b770a91f86fc02d5be6a997acac2bb3eda216231e21587fd942752dbbe5bb5dc"
+    },
+    "qualify-sherpa.cjs": {
+      "bytes": 12874,
+      "sha256": "51d986f81b84182200b550cc0e48fe577bcd9c7241ded052ab8ca8cbc4847e01"
+    },
+    "score-executed.py.txt": {
+      "bytes": 5838,
+      "sha256": "88d0f41cf6bfb18dfd31695ab18327b51442a7fcda2f67ccc61771e9473a15a8"
+    },
+    "score-paired-sherpa.py": {
+      "bytes": 6011,
+      "sha256": "e4f0f16fe8661078ade92daaa6a88d07e205d13cb6153127e8324defa3d12018"
+    }
+  }
+}

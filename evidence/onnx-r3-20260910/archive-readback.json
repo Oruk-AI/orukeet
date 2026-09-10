@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "archive_sha256": "c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95bf",
+  "archive_bytes": 486664389,
+  "checked_files": [
+    "sherpa-onnx-orukeet-v0.1.0-int8/encoder.int8.onnx",
+    "sherpa-onnx-orukeet-v0.1.0-int8/decoder.int8.onnx",
+    "sherpa-onnx-orukeet-v0.1.0-int8/joiner.int8.onnx",
+    "sherpa-onnx-orukeet-v0.1.0-int8/tokens.txt",
+    "sherpa-onnx-orukeet-v0.1.0-int8/bpe.vocab",
+    "sherpa-onnx-orukeet-v0.1.0-int8/LICENSE-WEIGHTS",
+    "sherpa-onnx-orukeet-v0.1.0-int8/NOTICE.md"
+  ],
+  "single_root": true,
+  "no_symlinks": true
+}

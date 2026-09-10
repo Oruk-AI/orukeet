@@ -1,0 +1,621 @@
+{
+  "started_utc": "2026-09-10T17:43:47.900Z",
+  "scope": "Real OpenWhispr ParakeetManager under Electron, production FFmpeg normalization, segmentation, local WebSocket and shipped sherpa-onnx inference. Isolated profile/model directory and explicit path to the unmodified shipped binary. No GUI, microphone, hotkey, saved history or paste is simulated.",
+  "status": "passed",
+  "commit": "440446feaaa94be6a9f80d30e4b6b40d3f3986ba",
+  "source_sha256": {
+    "src/helpers/parakeet.js": "50ef68582a28f7bf2f044878ee81d525abf00c29a55ea85c145550921c612b03",
+    "src/helpers/parakeetServer.js": "003eea5ce5175044e745be8fd18b29c468af9941df60cfd50b88215de5ac4b52",
+    "src/helpers/parakeetWsServer.js": "8ebafeace7803847aa9a34995fdb641714500682b61e5b0b085b17901f87ad3d",
+    "src/helpers/parakeetModelInfo.js": "e690919cf9880b4f46e035f7384fcf04ce0a551b7edf3c53016f2995bfc09f86",
+    "src/models/modelRegistryData.json": "f93ca7a4086d64af01c8bd3db5ce09ec17409a12f5fe980a78862662bdca1629"
+  },
+  "script_sha256": "1f6e85a5455abd7419b53d7f8f7857587f39e93e1c47c921363a665f2f6296a3",
+  "electron": "41.10.5",
+  "node": "24.18.0",
+  "machine": {
+    "cpu": "Apple M5 Max",
+    "logical_cpus": 18,
+    "platform": "darwin",
+    "arch": "arm64",
+    "system_version": "26.4.1"
+  },
+  "runtime": {
+    "binary": "sherpa-onnx-offline-websocket-server",
+    "sha256": "8b599656dc63413458c0a359b81406bad2482bd00a5f6549eb8f199d017e323b",
+    "sherpa_onnx": "1.13.4",
+    "onnxruntime": "1.27.0",
+    "provider": "cpu",
+    "threads": 4
+  },
+  "models": {
+    "orukeet": {
+      "id": "orukeet-v0.1.0-q8",
+      "files": {
+        "encoder.int8.onnx": {
+          "bytes": 652282402,
+          "sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a"
+        },
+        "decoder.int8.onnx": {
+          "bytes": 11845332,
+          "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca"
+        },
+        "joiner.int8.onnx": {
+          "bytes": 6355335,
+          "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3"
+        },
+        "tokens.txt": {
+          "bytes": 93939,
+          "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+        }
+      },
+      "load_and_warm_ms": 2741.311167,
+      "long_audio_seconds": 44
+    },
+    "parakeet": {
+      "id": "parakeet-tdt-0.6b-v3",
+      "files": {
+        "encoder.int8.onnx": {
+          "bytes": 652184281,
+          "sha256": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247"
+        },
+        "decoder.int8.onnx": {
+          "bytes": 11845275,
+          "sha256": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e"
+        },
+        "joiner.int8.onnx": {
+          "bytes": 6355277,
+          "sha256": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3"
+        },
+        "tokens.txt": {
+          "bytes": 93939,
+          "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+        }
+      },
+      "load_and_warm_ms": 2751.525124999999,
+      "long_audio_seconds": 44
+    }
+  },
+  "checks": [
+    {
+      "label": "orukeet: load and warm existing offline sherpa",
+      "passed": true
+    },
+    {
+      "label": "parakeet: load and warm existing offline sherpa",
+      "passed": true
+    },
+    {
+      "label": "orukeet: ten identical warm calls reuse one process",
+      "passed": true
+    },
+    {
+      "label": "orukeet: French Spanish Latvian original-source WAV normalization",
+      "passed": true
+    },
+    {
+      "label": "orukeet: concurrent requests preserve transcripts",
+      "passed": true
+    },
+    {
+      "label": "orukeet: silence and empty input",
+      "passed": true
+    },
+    {
+      "label": "orukeet: pre-cancelled request skips recognition",
+      "passed": true
+    },
+    {
+      "label": "orukeet: in-flight cancellation and next request recover",
+      "passed": true
+    },
+    {
+      "label": "orukeet: 44-second segmented recording retains repeated speech",
+      "passed": true
+    },
+    {
+      "label": "orukeet: offline preview-sized prefixes and final recognition",
+      "passed": true
+    },
+    {
+      "label": "orukeet: explicit shutdown and restart",
+      "passed": true
+    },
+    {
+      "label": "parakeet: ten identical warm calls reuse one process",
+      "passed": true
+    },
+    {
+      "label": "parakeet: French Spanish Latvian original-source WAV normalization",
+      "passed": true
+    },
+    {
+      "label": "parakeet: concurrent requests preserve transcripts",
+      "passed": true
+    },
+    {
+      "label": "parakeet: silence and empty input",
+      "passed": true
+    },
+    {
+      "label": "parakeet: pre-cancelled request skips recognition",
+      "passed": true
+    },
+    {
+      "label": "parakeet: in-flight cancellation and next request recover",
+      "passed": true
+    },
+    {
+      "label": "parakeet: 44-second segmented recording retains repeated speech",
+      "passed": true
+    },
+    {
+      "label": "parakeet: offline preview-sized prefixes and final recognition",
+      "passed": true
+    },
+    {
+      "label": "parakeet: explicit shutdown and restart",
+      "passed": true
+    }
+  ],
+  "calls": [
+    {
+      "model": "orukeet",
+      "label": "warmup-jfk",
+      "ms": 1218.042625,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "warmup-jfk",
+      "ms": 1451.9619999999995,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "repeat-0",
+      "ms": 1499.3335420000003,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "repeat-1",
+      "ms": 1447.7167499999996,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "repeat-2",
+      "ms": 1314.5904579999988,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "repeat-3",
+      "ms": 1925.9977080000008,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "repeat-4",
+      "ms": 1545.2355000000007,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "repeat-5",
+      "ms": 1685.527750000001,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "repeat-6",
+      "ms": 1532.4597499999982,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "repeat-7",
+      "ms": 1489.1942920000001,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "repeat-8",
+      "ms": 1390.4442919999965,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "repeat-9",
+      "ms": 1360.677584000001,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "fr_fr",
+      "ms": 2374.2622499999998,
+      "success": true,
+      "text_sha256": "23384efeef32718885bacd7e559525ce61fdff1163cf960b0877983a65fa340a",
+      "text_length": 188
+    },
+    {
+      "model": "orukeet",
+      "label": "es_419",
+      "ms": 896.0951660000028,
+      "success": true,
+      "text_sha256": "a1ca45140fcd0a4a0ceda1d2daafcaea18f8b04f49502164439968445c599bdb",
+      "text_length": 83
+    },
+    {
+      "model": "orukeet",
+      "label": "lv_lv",
+      "ms": 986.137999999999,
+      "success": true,
+      "text_sha256": "11df6b78144837920002c2a1034db98e1a67dcc2133ed4e5ba028a7b0a49f832",
+      "text_length": 74
+    },
+    {
+      "model": "orukeet",
+      "label": "concurrent-0",
+      "ms": 2359.631791,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "concurrent-1",
+      "ms": 2370.801166999998,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "silence",
+      "ms": 0.38237500000104774,
+      "success": false,
+      "message": "No audio detected"
+    },
+    {
+      "model": "orukeet",
+      "label": "empty",
+      "ms": 0.24995899999703397,
+      "error": {
+        "name": "Error",
+        "message": "Audio buffer is empty - no audio data received"
+      }
+    },
+    {
+      "model": "orukeet",
+      "label": "pre-cancelled",
+      "ms": 0.34712500000023283,
+      "error": {
+        "name": "AbortError",
+        "message": "Parakeet transcription cancelled"
+      }
+    },
+    {
+      "model": "orukeet",
+      "label": "cancelled-in-flight",
+      "ms": 23.715292000000773,
+      "error": {
+        "name": "AbortError",
+        "message": "parakeet-ws transcription cancelled"
+      }
+    },
+    {
+      "model": "orukeet",
+      "label": "after-cancel",
+      "ms": 2208.313916999996,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "long-repeated-jfk",
+      "ms": 5162.882875000003,
+      "success": true,
+      "text_sha256": "b253cd11f06f3990d9bcc5fb0601333249027fd238598f26c7e66abef7f4670c",
+      "text_length": 433
+    },
+    {
+      "model": "orukeet",
+      "label": "offline-prefix-1.5s",
+      "ms": 244.46812499999942,
+      "success": true,
+      "text_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad",
+      "text_length": 16
+    },
+    {
+      "model": "orukeet",
+      "label": "offline-prefix-3s",
+      "ms": 411.9552909999984,
+      "success": true,
+      "text_sha256": "c9a5a35a0dbc8b896801e0b33e45f2fd2f74ba9748a7b454863f9c8baf85de05",
+      "text_length": 28
+    },
+    {
+      "model": "orukeet",
+      "label": "offline-prefix-4.5s",
+      "ms": 573.2610000000059,
+      "success": true,
+      "text_sha256": "57abd92821e99c12239c8457b1d9b56e8be418eff5243d304172eb2da59ae2f5",
+      "text_length": 37
+    },
+    {
+      "model": "orukeet",
+      "label": "offline-prefix-6s",
+      "ms": 729.924874999997,
+      "success": true,
+      "text_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68",
+      "text_length": 46
+    },
+    {
+      "model": "orukeet",
+      "label": "final-after-prefixes",
+      "ms": 1223.4682079999984,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet",
+      "label": "after-restart",
+      "ms": 3455.8047080000033,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "repeat-0",
+      "ms": 1292.8082500000019,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "repeat-1",
+      "ms": 1442.2082080000037,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "repeat-2",
+      "ms": 1380.6906660000022,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "repeat-3",
+      "ms": 1303.513291999996,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "repeat-4",
+      "ms": 1206.8917500000025,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "repeat-5",
+      "ms": 1219.047375000002,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "repeat-6",
+      "ms": 1208.3244589999958,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "repeat-7",
+      "ms": 1256.0087090000015,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "repeat-8",
+      "ms": 1247.6594579999946,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "repeat-9",
+      "ms": 1289.8452499999985,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "fr_fr",
+      "ms": 1128.025207999999,
+      "success": true,
+      "text_sha256": "17ee3864b909ac8904f39012465eb1e25ff2748e704aa86b7b5447f639a283fd",
+      "text_length": 176
+    },
+    {
+      "model": "parakeet",
+      "label": "es_419",
+      "ms": 915.4017920000042,
+      "success": true,
+      "text_sha256": "330dd5249fdf037d712554100f86acc352cbf18a0f8da94ae00276e2f6856318",
+      "text_length": 84
+    },
+    {
+      "model": "parakeet",
+      "label": "lv_lv",
+      "ms": 907.8433749999967,
+      "success": true,
+      "text_sha256": "5fa422c54954fab75aa8b218f9d534b137a6d02d36bafe243d0b6c70faca8327",
+      "text_length": 76
+    },
+    {
+      "model": "parakeet",
+      "label": "concurrent-1",
+      "ms": 2331.0621670000037,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "concurrent-0",
+      "ms": 2338.488541999999,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "silence",
+      "ms": 0.28983299999526935,
+      "success": false,
+      "message": "No audio detected"
+    },
+    {
+      "model": "parakeet",
+      "label": "empty",
+      "ms": 0.08212500000081491,
+      "error": {
+        "name": "Error",
+        "message": "Audio buffer is empty - no audio data received"
+      }
+    },
+    {
+      "model": "parakeet",
+      "label": "pre-cancelled",
+      "ms": 0.09466700000484707,
+      "error": {
+        "name": "AbortError",
+        "message": "Parakeet transcription cancelled"
+      }
+    },
+    {
+      "model": "parakeet",
+      "label": "cancelled-in-flight",
+      "ms": 20.796625000002678,
+      "error": {
+        "name": "AbortError",
+        "message": "parakeet-ws transcription cancelled"
+      }
+    },
+    {
+      "model": "parakeet",
+      "label": "after-cancel",
+      "ms": 1973.7481659999976,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "long-repeated-jfk",
+      "ms": 5000.832999999999,
+      "success": true,
+      "text_sha256": "c144953b84833da4095c60c40feb2987542336033d2916e7774a78accb03083e",
+      "text_length": 435
+    },
+    {
+      "model": "parakeet",
+      "label": "offline-prefix-1.5s",
+      "ms": 230.83729199999652,
+      "success": true,
+      "text_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad",
+      "text_length": 16
+    },
+    {
+      "model": "parakeet",
+      "label": "offline-prefix-3s",
+      "ms": 409.2882499999978,
+      "success": true,
+      "text_sha256": "b9a1c060df58e560b9ee54ec0c0f76fa3c392a3cfcb4796305465bdd20a937fa",
+      "text_length": 27
+    },
+    {
+      "model": "parakeet",
+      "label": "offline-prefix-4.5s",
+      "ms": 600.0161670000089,
+      "success": true,
+      "text_sha256": "4273a332df1d034f4fa0ef4b1747d7a72f1df88ab4db6e49b394d1d1e687e2d8",
+      "text_length": 36
+    },
+    {
+      "model": "parakeet",
+      "label": "offline-prefix-6s",
+      "ms": 782.1224159999983,
+      "success": true,
+      "text_sha256": "ced035441c10e767c3ee4ef565ae6bafb42ddceabef2a73f08d9f7cd4ce72e68",
+      "text_length": 46
+    },
+    {
+      "model": "parakeet",
+      "label": "final-after-prefixes",
+      "ms": 1688.6064999999944,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet",
+      "label": "after-restart",
+      "ms": 4264.837874999997,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    }
+  ],
+  "failures": [],
+  "finished_utc": "2026-09-10T17:45:06.390Z",
+  "public_evidence": {
+    "raw_receipt_sha256": "7ebbc83000abc1bd61906230cf958a3637f82c0e60b795a9f3b725667360ef4f",
+    "omitted": "Raw returned transcripts and machine-local checkout/model/manifest paths. Inference outcomes, timings, checks and hashes are preserved."
+  }
+}

@@ -26,7 +26,7 @@ Orukeet is a 25-language speech recognizer built from NVIDIA Parakeet TDT 0.6B v
 
 Orukeet outperforms Parakeet on **61 of 74 tested splits**, including LibriSpeech test-clean (**1.46% vs. 1.53% WER**), test-other (**2.86% vs. 3.14%**), and FLEURS English (**3.82% vs. 4.28%**). Across all 25 FLEURS languages, pooled WER is **9.85% vs. 11.01%**, a **10.6% relative reduction**. Final adaptation and checkpoint selection use LibriSpeech test-other.
 
-Use Orukeet for recordings, media, batch transcription, server workers and interactive applications. NeMo, Q8 and F16 all derive from the same **r3 release checkpoint** (`031c8ddab484`).
+Use Orukeet for recordings, media, batch transcription, server workers and interactive applications. NeMo, ONNX INT8, native Q8 and native F16 all derive from the same **r3 release checkpoint** (`031c8ddab484`).
 
 [Model card](MODEL_CARD.md) · [Weights](https://huggingface.co/oruk/orukeet) · [Technical report](output/pdf/orukeet-technical-report.pdf)
 
@@ -77,6 +77,16 @@ Gabor recovery uses transducer loss, encoder matching and token/duration distill
 
 [Fit and freeze recipe](training/gabor_half/README.md) · [Final adaptation](training/librispeech_ft/README.md) · [Training lineage](training/README.md)
 
+## sherpa-onnx inference
+
+The [ONNX INT8 archive](https://huggingface.co/oruk/orukeet/resolve/74673cf049c0c18f2572dab89f716b077461c2ea/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2) uses the standard Parakeet TDT v3 layout: `encoder.int8.onnx`, `decoder.int8.onnx`, `joiner.int8.onnx` and `tokens.txt`. It also includes the BPE vocabulary, weight license and attribution. Gabor filters are ordinary convolution weights; the model uses sherpa-onnx's existing offline transducer loader.
+
+The OpenWhispr PR uses this format through its existing Parakeet worker. Choose **Local → Oruk → Orukeet**, then **Download**. Recognition runs locally after installation.
+
+Archive SHA-256: `c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95bf`.
+
+[Export and loader instructions](https://github.com/Oruk-AI/orukeet/blob/main/export/onnx/README.md) · [Conversion evidence](https://github.com/Oruk-AI/orukeet/tree/main/evidence/onnx-r3-20260910) · [OpenWhispr checks and paired scores](https://github.com/Oruk-AI/orukeet/blob/main/integrations/openwhispr/APP_BENCHMARKS.md)
+
 ## Model files
 
 | Format | File | Bytes |
@@ -84,8 +94,9 @@ Gabor recovery uses transducer loss, encoder matching and token/duration distill
 | NeMo source | `orukeet-v0.1.0.nemo` | 2,509,342,720 |
 | Native Q8 | `orukeet-v0.1.0-q8.gguf` | 714,456,704 |
 | Native F16 | `orukeet-v0.1.0-f16.gguf` | 1,296,681,088 |
+| ONNX INT8 archive | `onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2` | 486,664,389 |
 
-All three files derive from **r3**. Immutable weight revision: `555136b50265a132d4cea0d35560c26fc4f657ab`.
+All formats derive from **r3**. NeMo and native files are pinned to revision `555136b50265a132d4cea0d35560c26fc4f657ab`; the ONNX archive is pinned to `74673cf049c0c18f2572dab89f716b077461c2ea`. The ONNX package occupies 670,718,459 bytes after extraction.
 
 - NeMo SHA-256: `031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56`
 - Q8 SHA-256: `93ce19c6d8244acbfea980eeaf970531d4f216171578ef8e041dcc2d070a45bd`

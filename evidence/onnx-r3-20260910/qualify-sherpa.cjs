@@ -1,0 +1,186 @@
+// Independent qualification using unmodified OpenWhispr main-process modules.
+// The app profile, model links, scratch files, and receipts live in this directory.
+const fs = require('node:fs');
+const path = require('node:path');
+const os = require('node:os');
+const assert = require('node:assert/strict');
+const crypto = require('node:crypto');
+const { createRequire } = require('node:module');
+const { execFileSync } = require('node:child_process');
+const { performance } = require('node:perf_hooks');
+const args = {};
+for (let i = 1; i < process.argv.length; i++) {
+  if (process.argv[i].startsWith('--') && process.argv[i + 1] && !process.argv[i + 1].startsWith('--')) args[process.argv[i].slice(2)] = process.argv[++i];
+}
+const root = path.resolve(args['output-root'] || __dirname);
+assert(args.checkout, 'Supply --checkout with the OpenWhispr source directory');
+const checkout = path.resolve(args.checkout);
+const requireApp = createRequire(path.join(checkout, 'package.json'));
+const { app } = requireApp('electron');
+assert(app, 'Run with Electron, not Node');
+const runName = args.run || 'qualification';
+assert(/^[a-z0-9-]+$/i.test(runName));
+const runDir = path.join(root, runName);
+const profile = path.join(runDir, 'profile');
+const modelRoot = path.join(runDir, 'cache', 'parakeet-models');
+fs.mkdirSync(profile, { recursive: true });
+fs.mkdirSync(modelRoot, { recursive: true });
+fs.mkdirSync(path.join(runDir, 'temp'), { recursive: true });
+fs.copyFileSync(__filename, path.join(runDir, 'harness.cjs'));
+app.setPath('userData', profile);
+app.setPath('home', profile);
+app.setPath('temp', path.join(runDir, 'temp'));
+process.env.TMPDIR = path.join(runDir, 'temp');
+process.env.OPENWHISPR_CACHE_ROOT = path.join(runDir, 'cache');
+const ParakeetManager = requireApp('./src/helpers/parakeet');
+const modelInfo = requireApp('./src/helpers/parakeetModelInfo');
+const ffmpeg = requireApp('./src/helpers/ffmpegUtils');
+const binary = args.binary ? path.resolve(args.binary) : null;
+const config = [];
+if (args['model-dir']) config.push({ key: 'orukeet', id: args.model || 'orukeet-v0.1.0-q8', dir: path.resolve(args['model-dir']) });
+if (args['stock-dir']) config.push({ key: 'parakeet', id: 'parakeet-tdt-0.6b-v3', dir: path.resolve(args['stock-dir']) });
+assert(config.length, 'Supply --model-dir and/or --stock-dir');
+const hash = (p) => crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const provenanceFiles = ['src/helpers/parakeet.js', 'src/helpers/parakeetServer.js', 'src/helpers/parakeetWsServer.js', 'src/helpers/parakeetModelInfo.js', 'src/models/modelRegistryData.json'];
+const receipt = {
+  started_utc: new Date().toISOString(),
+  scope: 'Real OpenWhispr ParakeetManager under Electron, production FFmpeg normalization, segmentation, local WebSocket and shipped sherpa-onnx inference. Isolated profile/model directory and explicit path to the unmodified shipped binary. No GUI, microphone, hotkey, saved history or paste is simulated.',
+  paired_protocol: 'One warm manager/server per model. Calls run sequentially and alternate which model goes first for each clip. Timings include normalization, segmentation, IPC and recognition; model loading is recorded separately and excluded from warm call times.',
+  status: 'running',
+  checkout,
+  commit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: checkout, encoding: 'utf8' }).trim(),
+  source_sha256: Object.fromEntries(provenanceFiles.map(p => [p, hash(path.join(checkout, p))])),
+  script_sha256: hash(__filename),
+  electron: process.versions.electron,
+  node: process.versions.node,
+  machine: { cpu: os.cpus()[0].model, logical_cpus: os.cpus().length, platform: process.platform, arch: process.arch, system_version: process.getSystemVersion?.() },
+  runtime: { binary, sha256: binary ? hash(binary) : null, sherpa_onnx: '1.13.4', onnxruntime: '1.27.0', provider: 'cpu', threads: Math.max(1, Math.min(4, Math.floor(os.cpus().length * 0.75))) },
+  models: {}, checks: [], calls: [], failures: [],
+};
+const out = path.join(runDir, 'receipt.json');
+const save = () => fs.writeFileSync(out, JSON.stringify(receipt, null, 2) + '\n');
+function makeWav(pcm, sampleRate = 16000, channels = 1) {
+  const header = Buffer.alloc(44);
+  header.write('RIFF'); header.writeUInt32LE(36 + pcm.length, 4); header.write('WAVE', 8); header.write('fmt ', 12); header.writeUInt32LE(16, 16);
+  header.writeUInt16LE(1, 20); header.writeUInt16LE(channels, 22); header.writeUInt32LE(sampleRate, 24); header.writeUInt32LE(sampleRate * channels * 2, 28);
+  header.writeUInt16LE(channels * 2, 32); header.writeUInt16LE(16, 34); header.write('data', 36); header.writeUInt32LE(pcm.length, 40);
+  return Buffer.concat([header, pcm]);
+}
+async function call(m, audio, label, extra = {}) {
+  const t = performance.now();
+  try {
+    const result = await m.manager.transcribeLocalParakeet(audio, { model: m.id, ...extra });
+    const row = { model: m.key, label, ms: performance.now() - t, ...result };
+    receipt.calls.push(row);
+    return row;
+  } catch (e) {
+    receipt.calls.push({ model: m.key, label, ms: performance.now() - t, error: { name: e.name, message: e.message } });
+    throw e;
+  }
+}
+async function check(label, action) {
+  try { await action(); receipt.checks.push({ label, passed: true }); }
+  catch (e) { receipt.checks.push({ label, passed: false, error: e.stack }); receipt.failures.push({ label, error: e.stack }); }
+  save();
+}
+const fixtureRoot = path.resolve(args.fixtures || path.join(__dirname, '../../demos'));
+const jfk = fs.readFileSync(path.join(fixtureRoot, 'fixtures/jfk.wav'));
+const jfkMatch = (row) => { assert.equal(row.success, true); assert.match(row.text.toLowerCase(), /ask not what your country/); };
+const managers = [];
+(async () => {
+  await app.whenReady();
+  try {
+    for (const m of config) {
+      assert.equal(modelInfo.getModelRuntime(m.id), 'offline', m.id + ' must use the existing offline path');
+      const dest = path.join(modelRoot, m.id);
+      if (!fs.existsSync(dest)) fs.symlinkSync(m.dir, dest, process.platform === 'win32' ? 'junction' : 'dir');
+      assert.equal(fs.realpathSync(dest), fs.realpathSync(m.dir));
+      m.manager = new ParakeetManager();
+      if (binary) m.manager.serverManager.wsServer.cachedBinaryPaths.offline = binary;
+      const resolvedBinary = m.manager.serverManager.getBinaryPath('offline');
+      assert(resolvedBinary, 'Run npm run download:sherpa-onnx in the app checkout, or supply --binary');
+      receipt.runtime.binary = resolvedBinary;
+      receipt.runtime.sha256 = hash(resolvedBinary);
+      managers.push(m);
+      receipt.models[m.key] = { id: m.id, directory: m.dir, files: Object.fromEntries(modelInfo.getRequiredModelFiles(m.id).map(f => [f, { bytes: fs.statSync(path.join(m.dir, f)).size, sha256: hash(path.join(m.dir, f)) }])) };
+      await check(m.key + ': load and warm existing offline sherpa', async () => {
+        assert(m.manager.serverManager.isModelDownloaded(m.id));
+        const t = performance.now(); const loaded = await m.manager.startServer(m.id);
+        receipt.models[m.key].load_and_warm_ms = performance.now() - t;
+        assert.equal(loaded.success, true, loaded.reason);
+        jfkMatch(await call(m, jfk, 'warmup-jfk'));
+      });
+    }
+    if (receipt.failures.length) throw new Error('Model startup qualification failed');
+    if (args.mode !== 'benchmark') {
+      for (const m of managers) {
+        const child = m.manager.serverManager.wsServer.process;
+        await check(m.key + ': ten identical warm calls reuse one process', async () => {
+          const repeated = [];
+          for (let i = 0; i < 10; i++) { const r = await call(m, jfk, 'repeat-' + i); jfkMatch(r); repeated.push(r.text); }
+          assert.equal(new Set(repeated).size, 1); assert.equal(m.manager.serverManager.wsServer.process, child);
+        });
+        await check(m.key + ': French Spanish Latvian original-source WAV normalization', async () => {
+          for (const lang of ['fr_fr', 'es_419', 'lv_lv']) {
+            const p = path.join(fixtureRoot, 'multilingual/audio', lang + '.source.wav');
+            const r = await call(m, fs.readFileSync(p), lang); assert.equal(r.success, true); assert(r.text.length > 15);
+          }
+        });
+        await check(m.key + ': concurrent requests preserve transcripts', async () => {
+          const result = await Promise.all([call(m, jfk, 'concurrent-0'), call(m, jfk, 'concurrent-1')]);
+          result.forEach(jfkMatch); assert.equal(result[0].text, result[1].text);
+        });
+        await check(m.key + ': silence and empty input', async () => {
+          const silent = await call(m, makeWav(Buffer.alloc(32000)), 'silence'); assert.equal(silent.success, false); assert.equal(silent.message, 'No audio detected');
+          await assert.rejects(call(m, Buffer.alloc(0), 'empty'), /Audio buffer is empty/);
+        });
+        await check(m.key + ': pre-cancelled request skips recognition', async () => {
+          const a = new AbortController(); a.abort(); await assert.rejects(call(m, jfk, 'pre-cancelled', { signal: a.signal }), { name: 'AbortError' });
+        });
+        await check(m.key + ': in-flight cancellation and next request recover', async () => {
+          const a = new AbortController(); const active = call(m, jfk, 'cancelled-in-flight', { signal: a.signal });
+          setTimeout(() => a.abort(), 20); await assert.rejects(active, { name: 'AbortError' });
+          jfkMatch(await call(m, jfk, 'after-cancel'));
+        });
+        await check(m.key + ': 44-second segmented recording retains repeated speech', async () => {
+          const pcm = execFileSync(ffmpeg.getFFmpegPath(), ['-v', 'error', '-i', path.join(fixtureRoot, 'fixtures/jfk.wav'), '-f', 's16le', '-ac', '1', '-ar', '16000', '-'], { maxBuffer: 16e6 });
+          const long = makeWav(Buffer.concat([pcm, pcm, pcm, pcm])); const r = await call(m, long, 'long-repeated-jfk'); jfkMatch(r);
+          const count = (r.text.toLowerCase().match(/your country/g) || []).length; assert(count >= 4, 'Long segmentation lost most repetitions: ' + r.text);
+          receipt.models[m.key].long_audio_seconds = (long.length - 44) / 32000;
+        });
+        await check(m.key + ': offline preview-sized prefixes and final recognition', async () => {
+          const pcm = execFileSync(ffmpeg.getFFmpegPath(), ['-v', 'error', '-i', path.join(fixtureRoot, 'fixtures/jfk.wav'), '-f', 's16le', '-ac', '1', '-ar', '16000', '-'], { maxBuffer: 16e6 });
+          for (const seconds of [1.5, 3, 4.5, 6]) await call(m, makeWav(pcm.subarray(0, Math.min(pcm.length, seconds * 32000))), 'offline-prefix-' + seconds + 's');
+          jfkMatch(await call(m, jfk, 'final-after-prefixes'));
+        });
+        await check(m.key + ': explicit shutdown and restart', async () => {
+          await m.manager.stopServer(); assert.equal(m.manager.serverManager.wsServer.process, null);
+          jfkMatch(await call(m, jfk, 'after-restart')); assert.notEqual(m.manager.serverManager.wsServer.process, child);
+        });
+      }
+    }
+    if (args.manifest) {
+      const manifest = JSON.parse(fs.readFileSync(args.manifest));
+      receipt.manifest = { path: args.manifest, sha256: hash(args.manifest), selection: manifest.selection, clips: manifest.clips.length };
+      const journal = path.join(runDir, 'paired-results.jsonl');
+      assert(!fs.existsSync(journal), 'Use a new --run to preserve prior results');
+      for (let i = 0; i < manifest.clips.length; i++) {
+        const clip = manifest.clips[i]; assert.equal(hash(clip.path), clip.sha256);
+        const audio = fs.readFileSync(clip.path); const row = { id: clip.id, dataset: clip.dataset, reference: clip.reference, audio_seconds: clip.audio_seconds, audio_sha256: clip.sha256, results: {} };
+        for (const m of (i % 2 ? [...managers].reverse() : managers)) {
+          try { row.results[m.key] = await call(m, audio, clip.id); }
+          catch (e) { row.results[m.key] = { success: false, error: { name: e.name, message: e.message } }; }
+        }
+        fs.appendFileSync(journal, JSON.stringify(row) + '\n');
+        if ((i + 1) % 32 === 0) { console.log(JSON.stringify({ done: i + 1, total: manifest.clips.length })); save(); }
+      }
+      receipt.paired_results_sha256 = hash(journal);
+    }
+    receipt.status = receipt.failures.length ? 'completed_with_check_failures' : 'passed';
+  } catch (e) { receipt.status = 'failed'; receipt.fatal = e.stack; process.exitCode = 1; }
+  finally {
+    for (const m of managers) await m.manager.stopServer().catch(e => receipt.failures.push({ label: 'shutdown', error: e.stack }));
+    receipt.finished_utc = new Date().toISOString(); save(); console.log(JSON.stringify({ status: receipt.status, checks: receipt.checks.length, failures: receipt.failures.length, receipt: out }));
+    app.exit(receipt.status === 'passed' ? 0 : 1);
+  }
+})();

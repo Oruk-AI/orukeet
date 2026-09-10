@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "scope": "Runtime helpers must match the benchmark. Registry downloadURL/size may be pinned after the benchmark; actual model file hashes identify the executed ONNX graphs.",
+  "files_identical_to_benchmark": {
+    "src/helpers/parakeet.js": true,
+    "src/helpers/parakeetServer.js": true,
+    "src/helpers/parakeetWsServer.js": true,
+    "src/helpers/parakeetModelInfo.js": true,
+    "src/models/modelRegistryData.json": false
+  },
+  "current_registry_runtime_contract": {
+    "orukeet-v0.1.0-q8": {
+      "runtime": "offline",
+      "modelType": "transducer",
+      "files": [
+        "encoder.int8.onnx",
+        "decoder.int8.onnx",
+        "joiner.int8.onnx",
+        "tokens.txt"
+      ]
+    },
+    "parakeet-tdt-0.6b-v3": {
+      "runtime": "offline",
+      "modelType": "transducer",
+      "files": [
+        "encoder.int8.onnx",
+        "decoder.int8.onnx",
+        "joiner.int8.onnx",
+        "tokens.txt"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "checks": [
+    "Syntax checks for portable harness/scorer",
+    "Portable scorer reproduces all aggregate and per-clip numeric results exactly from existing640 outputs; no inference rerun"
+  ],
+  "compared_keys": [
+    "status",
+    "clips",
+    "datasets",
+    "models",
+    "overall",
+    "by_dataset",
+    "paired_stratified_bootstrap_95ci_wer_delta_pp",
+    "bootstrap",
+    "latency",
+    "rows"
+  ],
+  "original_scorer_sha256": "88d0f41cf6bfb18dfd31695ab18327b51442a7fcda2f67ccc61771e9473a15a8",
+  "portable_scorer_sha256": "e4f0f16fe8661078ade92daaa6a88d07e205d13cb6153127e8324defa3d12018"
+}

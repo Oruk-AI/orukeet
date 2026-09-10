@@ -1,0 +1,37 @@
+{
+  "source": "https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.13.4/sherpa-onnx-v1.13.4-osx-universal2-shared.tar.bz2",
+  "archive_sha256": "02b9b0cf30819a18c6d5cf861aebf32336cb79958ab97a2b248227059678058b",
+  "signing": "Same ad-hoc re-sign required by OpenWhispr downloader for upstream arm64 signature",
+  "files": [
+    {
+      "path": "sherpa-onnx-v1.13.4-osx-universal2-shared/bin/sherpa-onnx-offline-websocket-server",
+      "bytes": 5333520,
+      "sha256_before_signing": "1e19809a165762bfee24b4029cded9c88366fa2fc2b5911242845f685a64e9ed",
+      "sha256": "8b599656dc63413458c0a359b81406bad2482bd00a5f6549eb8f199d017e323b"
+    },
+    {
+      "path": "sherpa-onnx-v1.13.4-osx-universal2-shared/lib/libonnxruntime.1.27.0.dylib",
+      "bytes": 59581168,
+      "sha256_before_signing": "a95d3599c1d8e76570648e97cc4375756955d0a699e01cba0a1e9cf6db5db305",
+      "sha256": "7520de95ed7847dde19f23e5abb9dc7bc5e950d833e2ebd6ecd300af3bc8aaf4"
+    },
+    {
+      "path": "sherpa-onnx-v1.13.4-osx-universal2-shared/lib/libonnxruntime.dylib",
+      "bytes": 59581200,
+      "sha256_before_signing": "a95d3599c1d8e76570648e97cc4375756955d0a699e01cba0a1e9cf6db5db305",
+      "sha256": "f4336925d57a6ebda4e99a6a4c28358b3bb4b780222f398858c8d6e6d83b41c9"
+    },
+    {
+      "path": "sherpa-onnx-v1.13.4-osx-universal2-shared/lib/libsherpa-onnx-c-api.dylib",
+      "bytes": 8608352,
+      "sha256_before_signing": "7710492d16eff9094543baf46a6edd15952da1b06d690e700735c9d1f691f104",
+      "sha256": "c8b9fba08da7852c53be419fab387919452b3234f659a5a7f31c6bd3be669af5"
+    },
+    {
+      "path": "sherpa-onnx-v1.13.4-osx-universal2-shared/lib/libsherpa-onnx-cxx-api.dylib",
+      "bytes": 343664,
+      "sha256_before_signing": "cedeb94d8d8dfc67519e18890019522c8237064d7774e0bd7f24416cc5f924d5",
+      "sha256": "e95d8de2f3f319c6b1d1113e4662588b12ef57b6a407866ab2297da2eaba44cf"
+    }
+  ]
+}

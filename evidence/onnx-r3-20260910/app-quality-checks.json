@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "application_commit": "a9aec57d1ed94f0832d2aed9ca1f7fe1fe71b9b9",
+  "tested_at": "2026-09-10",
+  "node": "24.19.0",
+  "electron": "41.10.5",
+  "full_suite": {
+    "passed": 4056,
+    "failed": 0,
+    "skipped": 6,
+    "todo": 1,
+    "database_tests_required": true,
+    "skips": "Five Linux-only sandbox cases and one Windows-only live-helper probe on macOS.",
+    "todo_note": "Existing upstream sync pagination regression."
+  },
+  "commands": {
+    "REQUIRE_DB_TESTS=1 npm test": "passed",
+    "npm run quality-check": "passed",
+    "npm run i18n:check": "passed",
+    "npm run build:renderer": "passed",
+    "npm run compile:native": "passed"
+  },
+  "log_sha256": {
+    "full-tests.log": "30e4031d1466f7454886d28e89d7dec9cd56b941f2035ce718cf53c5093fa1b9",
+    "final-quality-check.log": "5cd81fae5eb7427abdfb05886406957e23222c7539f8e8b5decff4fe10d766c9",
+    "final-i18n-check.log": "57b62caa65a76879c60693d3ff8c432eb5acf3db73dd6c0705a39c1c5e094e55",
+    "final-renderer-build.log": "bc030a3da81d6829fa9d68545b3644ef2e18e193fd132c6e7e62021e391e188f",
+    "native-helpers-build.log": "c5db3b5da127959cc83c2d67c905fcc25aa55483e298932a023931134a2adc02"
+  },
+  "post_merge_checks": {
+    "application_commit": "8cf135baed562addb4c471f98f7a078d8865f497",
+    "upstream_main": "3b9e235c45012139a3fdb2fb3a36f429f1f6556b",
+    "targeted_tests": {
+      "passed": 15,
+      "failed": 0
+    },
+    "quality_check": "passed",
+    "i18n_check": "passed",
+    "renderer_build": "passed",
+    "log_sha256": {
+      "post-merge-quality.log": "dddf7a7d86f4baf412653affba760d5c820c908e199184477066f31bc7592cbf",
+      "post-merge-tests.log": "723bb83addfc15753b3cd5ccb148d8aee79508c5fd20c3cff3ebca17ec3f4a65",
+      "post-merge-i18n.log": "57b62caa65a76879c60693d3ff8c432eb5acf3db73dd6c0705a39c1c5e094e55",
+      "post-merge-renderer-build.log": "b8843cc0b1ad4a2dccacc103bffc65292206e78755b3fe0c114fc758d06d6ca9"
+    }
+  },
+  "windows_extraction_fix": {
+    "application_commit": "c51455702d58100f05104feca753667e7ccc11ea",
+    "regression_tests": {
+      "passed": 47,
+      "failed": 0
+    },
+    "quality_check": "passed",
+    "scope": "Shared archive extraction and runtime bootstrap only; no inference changes or dependencies.",
+    "log_sha256": {
+      "windows-fix-regressions.log": "82779742b73a489ffa8f9c8ee5fa6c1246107c44117234fe5a5333a634ad4fa6",
+      "windows-fix-quality.log": "a33019bc7e1f877bf5dd28f3b6b101854f63ed6a9ba3778a9f7e4064c8b72653"
+    }
+  }
+}

@@ -1,0 +1,100 @@
+"""Score every selected paired sherpa call using the previous app metric."""
+import argparse
+import hashlib
+import importlib.metadata
+import json
+from pathlib import Path
+import statistics
+import sys
+
+import numpy as np
+import whisper_normalizer.english
+
+METRICS = Path('/Users/nathanroll/Documents/orukeet-public/evaluation/unseen/metrics.py')
+sys.path.insert(0, str(METRICS.parent))
+from metrics import ENGLISH, counts
+
+MODELS = ('parakeet', 'orukeet')
+
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def aggregate(rows):
+    result = {}
+    for model in MODELS:
+        total = {key: sum(row['counts'][model][key] for row in rows) for key in rows[0]['counts'][model]}
+        total['wer'] = 100 * total['errors'] / total['words']
+        total['cer'] = 100 * total['char_errors'] / total['chars']
+        result[model] = total
+    result['orukeet_minus_parakeet_wer_pp'] = result['orukeet']['wer'] - result['parakeet']['wer']
+    result['relative_word_error_reduction_percent'] = 100 * (1 - result['orukeet']['errors'] / result['parakeet']['errors'])
+    return result
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('run', type=Path)
+    parser.add_argument('--manifest', type=Path, default=Path('/Users/nathanroll/Documents/orukeet/.tmp/app-flow/eval-manifest.json'))
+    args = parser.parse_args()
+    manifest = json.loads(args.manifest.read_text())
+    receipt = json.loads((args.run / 'receipt.json').read_text())
+    data = [json.loads(line) for line in (args.run / 'paired-results.jsonl').read_text().splitlines()]
+    assert receipt['status'] == 'passed', receipt['status']
+    assert receipt['manifest']['sha256'] == sha(args.manifest)
+    assert receipt['paired_results_sha256'] == sha(args.run / 'paired-results.jsonl')
+    assert [r['id'] for r in data] == [c['id'] for c in manifest['clips']]
+    assert len({r['id'] for r in data}) == len(data)
+    scored = []
+    for row, clip in zip(data, manifest['clips'], strict=True):
+        assert row['reference'] == clip['reference']
+        assert row['audio_sha256'] == clip['sha256']
+        assert set(row['results']) == set(MODELS)
+        values = {model: counts(row['reference'], row['results'][model].get('text', ''), ENGLISH) for model in MODELS}
+        assert values['parakeet']['words'] == values['orukeet']['words']
+        scored.append(dict(id=row['id'], dataset=row['dataset'], audio_seconds=row['audio_seconds'], counts=values))
+    groups = {name: [r for r in scored if r['dataset'] == name] for name in sorted({r['dataset'] for r in scored})}
+    rng = np.random.default_rng(20260910)
+    bootstrap = np.zeros((10000, 3))
+    for rows in groups.values():
+        values = np.array([[r['counts']['parakeet']['words'], r['counts']['parakeet']['errors'], r['counts']['orukeet']['errors']] for r in rows])
+        indices = rng.integers(0, len(rows), (10000, len(rows)))
+        bootstrap += values[indices].sum(axis=1)
+    deltas = 100 * (bootstrap[:, 2] - bootstrap[:, 1]) / bootstrap[:, 0]
+    latency = {}
+    for model in MODELS:
+        values = [r['results'][model]['ms'] for r in data if 'ms' in r['results'][model]]
+        latency[model] = dict(
+            median_ms=statistics.median(values), p95_ms=float(np.percentile(values, 95)),
+            total_ms=sum(values), timed_calls=len(values), total_audio_seconds=sum(r['audio_seconds'] for r in data),
+            empty_transcripts=sum(not r['results'][model].get('text', '').strip() for r in data),
+            unsuccessful_api_returns=sum(not r['results'][model].get('success', False) for r in data),
+            runtime_errors=sum(bool(r['results'][model].get('error')) for r in data),
+        )
+        latency[model]['real_time_factor'] = latency[model]['total_ms'] / 1000 / latency[model]['total_audio_seconds']
+    out = dict(
+        status='passed' if not any(l['runtime_errors'] for l in latency.values()) else 'runtime_errors_retained',
+        clips=len(data), datasets=len(groups), models=MODELS,
+        scope='Matched current OpenWhispr offline CPU paths; every selected source input, including empty results, retained. 15-second production segmentation for both models.',
+        normalizer='Standard Whisper English normalizer used by prior app comparison; identical normalization and Levenshtein word errors for both outputs.',
+        scorer_sha256=sha(__file__), metric_sha256=sha(METRICS), manifest_sha256=sha(args.manifest),
+        metric_packages={name: importlib.metadata.version(name) for name in ['whisper-normalizer', 'rapidfuzz', 'numpy']},
+        english_normalizer_sha256=sha(whisper_normalizer.english.__file__),
+        raw_results_sha256=sha(args.run / 'paired-results.jsonl'), receipt_sha256=sha(args.run / 'receipt.json'),
+        overall=aggregate(scored), by_dataset={name: aggregate(rows) for name, rows in groups.items()},
+        paired_stratified_bootstrap_95ci_wer_delta_pp=np.percentile(deltas, [2.5, 97.5]).tolist(),
+        bootstrap=dict(seed=20260910, resamples=10000, unit='utterance', strata='dataset'),
+        latency=latency, rows=scored,
+    )
+    (args.run / 'scores.json').write_text(json.dumps(out, indent=2, ensure_ascii=False) + '\n')
+    table = ['| Corpus | Clips | Parakeet WER | Orukeet WER |', '| --- | ---: | ---: | ---: |']
+    for name, value in out['by_dataset'].items():
+        table.append(f"| {name} | {len(groups[name])} | {value['parakeet']['wer']:.2f}% | {value['orukeet']['wer']:.2f}% |")
+    table.append(f"| **Pooled** | **{len(data)}** | **{out['overall']['parakeet']['wer']:.2f}%** | **{out['overall']['orukeet']['wer']:.2f}%** |")
+    (args.run / 'scores.md').write_text('\n'.join(table) + '\n')
+    print(json.dumps({k: v for k, v in out.items() if k not in ['rows', 'by_dataset']}, indent=2))
+
+
+if __name__ == '__main__':
+    main()

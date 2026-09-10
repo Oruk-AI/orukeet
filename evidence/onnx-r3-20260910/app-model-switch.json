@@ -1,0 +1,35 @@
+{
+  "scope": "Sequential model switches through one unmodified production manager and one server slot; diagnostic timing excluded.",
+  "checks": [
+    {
+      "model": "orukeet-v0.1.0-q8",
+      "prior_process_exited": false,
+      "pid": 88134,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "parakeet-tdt-0.6b-v3",
+      "prior_process_exited": true,
+      "pid": 88229,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    },
+    {
+      "model": "orukeet-v0.1.0-q8",
+      "prior_process_exited": true,
+      "pid": 88294,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_length": 108
+    }
+  ],
+  "started_utc": "2026-09-10T18:05:00.287Z",
+  "script_sha256": "ded4a75a7640604684f2abd59bd61167fcb3c8781df68c4c2d5e547cf0670301",
+  "status": "passed",
+  "final_process": null,
+  "finished_utc": "2026-09-10T18:05:07.032Z",
+  "public_evidence": {
+    "raw_receipt_sha256": "4ad77c06f79672607ec6247b70a199e027d4ad9ce3a6d55f2e166439673d77a7",
+    "omitted": "Raw returned transcripts and machine-local checkout/model/manifest paths. Inference outcomes, timings, checks and hashes are preserved."
+  }
+}

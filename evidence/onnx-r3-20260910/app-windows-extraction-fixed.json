@@ -1,0 +1,63 @@
+{
+  "started_utc": "2026-09-10T18:28:16.701Z",
+  "stages": [
+    {
+      "label": "tar-version-0",
+      "executable": "C:\\Windows\\System32\\tar.exe",
+      "arguments": [
+        "--version"
+      ],
+      "cwd": "D:\\a\\openwhispr\\openwhispr",
+      "started_utc": "2026-09-10T18:28:16.957Z",
+      "timed_out": false,
+      "pid": 3792,
+      "exit_code": 0,
+      "elapsed_seconds": 0.08
+    },
+    {
+      "label": "tar-version-1",
+      "executable": "C:\\Program Files\\Git\\usr\\bin\\tar.exe",
+      "arguments": [
+        "--version"
+      ],
+      "cwd": "D:\\a\\openwhispr\\openwhispr",
+      "started_utc": "2026-09-10T18:28:17.038Z",
+      "timed_out": false,
+      "pid": 5228,
+      "exit_code": 0,
+      "elapsed_seconds": 0.021
+    },
+    {
+      "label": "original-npm-download",
+      "executable": "C:\\hostedtoolcache\\windows\\node\\24.20.0\\x64\\node.exe",
+      "arguments": [
+        "C:\\hostedtoolcache\\windows\\node\\24.20.0\\x64\\node_modules\\npm\\bin\\npm-cli.js",
+        "run",
+        "download:sherpa-onnx"
+      ],
+      "cwd": "D:\\a\\openwhispr\\openwhispr",
+      "started_utc": "2026-09-10T18:28:17.060Z",
+      "timed_out": false,
+      "pid": 6332,
+      "exit_code": 0,
+      "elapsed_seconds": 30.433
+    }
+  ],
+  "status": "passed",
+  "tar_paths": [
+    "C:\\Windows\\System32\\tar.exe",
+    "C:\\Program Files\\Git\\usr\\bin\\tar.exe"
+  ],
+  "install_marker": {
+    "version": "1.13.4",
+    "libraries": [
+      "ow-onnxrt.dll",
+      "onnxruntime_providers_shared.dll",
+      "sherpa-onnx-c-api.dll",
+      "sherpa-onnx-cxx-api.dll"
+    ],
+    "onnxRuntime": "ow-onnxrt.dll"
+  },
+  "finished_utc": "2026-09-10T18:28:47.493Z",
+  "workflow_run": "https://github.com/Oruk-AI/openwhispr/actions/runs/34514441209"
+}

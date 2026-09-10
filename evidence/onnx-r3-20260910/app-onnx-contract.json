@@ -1,0 +1,529 @@
+{
+  "status": "passed",
+  "scope": "Static and ONNX checker validation of the full four-file candidate against the exact app baseline. Runtime verification is a separate receipt.",
+  "onnx_checker_version": "1.19.0",
+  "checks": [
+    "encoder metadata matches the stock NeMo transducer/TDT contract",
+    "encoder URL metadata explicitly triggers sherpa TDT duration decoding",
+    "encoder.int8.onnx: input/output count, dtype, rank and fixed dimensions match stock",
+    "decoder.int8.onnx: input/output count, dtype, rank and fixed dimensions match stock",
+    "joiner.int8.onnx: input/output count, dtype, rank and fixed dimensions match stock",
+    "joiner retains 8193 symbol logits and 5 TDT duration logits",
+    "token vocabulary is byte-identical to stock Parakeet TDT v3"
+  ],
+  "stock": {
+    "encoder.int8.onnx": {
+      "bytes": 652184281,
+      "sha256": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247",
+      "checker": "passed",
+      "ir_version": 8,
+      "opsets": {
+        "ai.onnx": 17
+      },
+      "metadata": {
+        "vocab_size": "8192",
+        "normalize_type": "per_feature",
+        "pred_rnn_layers": "2",
+        "pred_hidden": "640",
+        "subsampling_factor": "8",
+        "model_type": "EncDecRNNTBPEModel",
+        "version": "2",
+        "model_author": "NeMo",
+        "url": "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3",
+        "comment": "Only the transducer branch is exported",
+        "feat_dim": "128"
+      },
+      "inputs": [
+        {
+          "name": "audio_signal",
+          "dtype": 1,
+          "shape": [
+            "audio_signal_dynamic_axes_1",
+            128,
+            "audio_signal_dynamic_axes_2"
+          ]
+        },
+        {
+          "name": "length",
+          "dtype": 7,
+          "shape": [
+            "length_dynamic_axes_1"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "outputs",
+          "dtype": 1,
+          "shape": [
+            "Transposeoutputs_dim_0",
+            1024,
+            "Transposeoutputs_dim_2"
+          ]
+        },
+        {
+          "name": "encoded_lengths",
+          "dtype": 7,
+          "shape": [
+            "length_dynamic_axes_1"
+          ]
+        }
+      ],
+      "operators": {
+        "ai.onnx:Constant": 1661,
+        "ai.onnx:Transpose": 244,
+        "ai.onnx:Cast": 426,
+        "ai.onnx:Reshape": 295,
+        "ai.onnx:ConstantOfShape": 51,
+        "ai.onnx:Unsqueeze": 328,
+        "ai.onnx:Add": 205,
+        "ai.onnx:Concat": 221,
+        "ai.onnx:DynamicQuantizeLinear": 223,
+        "ai.onnx:Div": 27,
+        "ai.onnx:Mul": 733,
+        "ai.onnx:ConvInteger": 77,
+        "ai.onnx:Slice": 123,
+        "ai.onnx:Floor": 3,
+        "ai.onnx:Relu": 3,
+        "ai.onnx:Shape": 175,
+        "ai.onnx:Gather": 149,
+        "ai.onnx:Equal": 1,
+        "ai.onnx:Where": 73,
+        "ai.onnx:MatMulInteger": 217,
+        "ai.onnx:LayerNormalization": 120,
+        "ai.onnx:Sub": 2,
+        "ai.onnx:Range": 1,
+        "ai.onnx:Expand": 2,
+        "ai.onnx:Less": 1,
+        "ai.onnx:Sigmoid": 96,
+        "ai.onnx:Not": 2,
+        "ai.onnx:Tile": 1,
+        "ai.onnx:And": 2,
+        "ai.onnx:MatMul": 72,
+        "ai.onnx:Pad": 48,
+        "ai.onnx:Squeeze": 24,
+        "ai.onnx:Softmax": 24,
+        "ai.onnx:Split": 24
+      },
+      "external_weights": []
+    },
+    "decoder.int8.onnx": {
+      "bytes": 11845275,
+      "sha256": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e",
+      "checker": "passed",
+      "ir_version": 8,
+      "opsets": {
+        "ai.onnx": 17,
+        "com.microsoft": 1
+      },
+      "metadata": {
+        "onnx.infer": "onnxruntime.quant"
+      },
+      "inputs": [
+        {
+          "name": "targets",
+          "dtype": 6,
+          "shape": [
+            "targets_dynamic_axes_1",
+            "targets_dynamic_axes_2"
+          ]
+        },
+        {
+          "name": "target_length",
+          "dtype": 6,
+          "shape": [
+            "target_length_dynamic_axes_1"
+          ]
+        },
+        {
+          "name": "states.1",
+          "dtype": 1,
+          "shape": [
+            2,
+            "states.1_dim_1",
+            640
+          ]
+        },
+        {
+          "name": "onnx::Slice_3",
+          "dtype": 1,
+          "shape": [
+            2,
+            1,
+            640
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "outputs",
+          "dtype": 1,
+          "shape": [
+            "targets_dynamic_axes_1",
+            640,
+            "targets_dynamic_axes_2"
+          ]
+        },
+        {
+          "name": "prednet_lengths",
+          "dtype": 6,
+          "shape": [
+            "target_length_dynamic_axes_1"
+          ]
+        },
+        {
+          "name": "states",
+          "dtype": 1,
+          "shape": [
+            2,
+            "states_dynamic_axes_1",
+            640
+          ]
+        },
+        {
+          "name": "162",
+          "dtype": 1,
+          "shape": [
+            2,
+            "Concat162_dim_1",
+            640
+          ]
+        }
+      ],
+      "operators": {
+        "ai.onnx:Constant": 14,
+        "ai.onnx:Identity": 1,
+        "ai.onnx:Cast": 1,
+        "ai.onnx:Slice": 4,
+        "ai.onnx:Gather": 1,
+        "ai.onnx:Transpose": 2,
+        "ai.onnx:DequantizeLinear": 1,
+        "com.microsoft:DynamicQuantizeLSTM": 2,
+        "ai.onnx:Squeeze": 2,
+        "ai.onnx:Concat": 2
+      },
+      "external_weights": []
+    },
+    "joiner.int8.onnx": {
+      "bytes": 6355277,
+      "sha256": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3",
+      "checker": "passed",
+      "ir_version": 8,
+      "opsets": {
+        "ai.onnx": 17
+      },
+      "metadata": {
+        "onnx.infer": "onnxruntime.quant"
+      },
+      "inputs": [
+        {
+          "name": "encoder_outputs",
+          "dtype": 1,
+          "shape": [
+            "encoder_outputs_dynamic_axes_1",
+            1024,
+            "encoder_outputs_dynamic_axes_2"
+          ]
+        },
+        {
+          "name": "decoder_outputs",
+          "dtype": 1,
+          "shape": [
+            "decoder_outputs_dynamic_axes_1",
+            640,
+            "decoder_outputs_dynamic_axes_2"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "outputs",
+          "dtype": 1,
+          "shape": [
+            "Addoutputs_dim_0",
+            "Addoutputs_dim_1",
+            "Addoutputs_dim_2",
+            8198
+          ]
+        }
+      ],
+      "operators": {
+        "ai.onnx:Constant": 2,
+        "ai.onnx:Transpose": 2,
+        "ai.onnx:DynamicQuantizeLinear": 3,
+        "ai.onnx:Mul": 6,
+        "ai.onnx:MatMulInteger": 3,
+        "ai.onnx:Cast": 3,
+        "ai.onnx:Add": 4,
+        "ai.onnx:Unsqueeze": 2,
+        "ai.onnx:Relu": 1
+      },
+      "external_weights": []
+    },
+    "tokens.txt": {
+      "bytes": 93939,
+      "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d",
+      "entries": 8193,
+      "blank_id": 8192,
+      "blank_entry": "<blk> 8192"
+    }
+  },
+  "candidate": {
+    "encoder.int8.onnx": {
+      "bytes": 652282402,
+      "sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a",
+      "checker": "passed",
+      "ir_version": 8,
+      "opsets": {
+        "ai.onnx": 17
+      },
+      "metadata": {
+        "vocab_size": "8192",
+        "normalize_type": "per_feature",
+        "pred_rnn_layers": "2",
+        "pred_hidden": "640",
+        "subsampling_factor": "8",
+        "model_type": "EncDecRNNTBPEModel",
+        "version": "2",
+        "model_author": "NeMo",
+        "url": "https://huggingface.co/oruk/orukeet#parakeet-tdt-v3",
+        "comment": "Orukeet r3; standard Parakeet TDT v3 transducer graph",
+        "feat_dim": "128",
+        "orukeet_source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56"
+      },
+      "inputs": [
+        {
+          "name": "audio_signal",
+          "dtype": 1,
+          "shape": [
+            "audio_signal_dynamic_axes_1",
+            128,
+            "audio_signal_dynamic_axes_2"
+          ]
+        },
+        {
+          "name": "length",
+          "dtype": 7,
+          "shape": [
+            "length_dynamic_axes_1"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "outputs",
+          "dtype": 1,
+          "shape": [
+            "Transposeoutputs_dim_0",
+            1024,
+            "Transposeoutputs_dim_2"
+          ]
+        },
+        {
+          "name": "encoded_lengths",
+          "dtype": 7,
+          "shape": [
+            "length_dynamic_axes_1"
+          ]
+        }
+      ],
+      "operators": {
+        "ai.onnx:Constant": 1813,
+        "ai.onnx:Transpose": 244,
+        "ai.onnx:Cast": 442,
+        "ai.onnx:Reshape": 312,
+        "ai.onnx:ConstantOfShape": 68,
+        "ai.onnx:Unsqueeze": 396,
+        "ai.onnx:Add": 208,
+        "ai.onnx:Concat": 238,
+        "ai.onnx:Shape": 228,
+        "ai.onnx:Gather": 185,
+        "ai.onnx:Sub": 5,
+        "ai.onnx:Slice": 123,
+        "ai.onnx:Div": 27,
+        "ai.onnx:Range": 5,
+        "ai.onnx:Mul": 759,
+        "ai.onnx:Equal": 18,
+        "ai.onnx:Where": 90,
+        "ai.onnx:Expand": 19,
+        "ai.onnx:Less": 5,
+        "ai.onnx:DynamicQuantizeLinear": 223,
+        "ai.onnx:ConvInteger": 77,
+        "ai.onnx:Relu": 3,
+        "ai.onnx:MatMulInteger": 217,
+        "ai.onnx:LayerNormalization": 120,
+        "ai.onnx:Sigmoid": 96,
+        "ai.onnx:Not": 2,
+        "ai.onnx:Tile": 1,
+        "ai.onnx:And": 2,
+        "ai.onnx:MatMul": 72,
+        "ai.onnx:Pad": 48,
+        "ai.onnx:Squeeze": 24,
+        "ai.onnx:Softmax": 24,
+        "ai.onnx:Split": 24
+      },
+      "external_weights": []
+    },
+    "decoder.int8.onnx": {
+      "bytes": 11845332,
+      "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+      "checker": "passed",
+      "ir_version": 8,
+      "opsets": {
+        "ai.onnx": 17,
+        "com.microsoft": 1
+      },
+      "metadata": {
+        "orukeet_source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56"
+      },
+      "inputs": [
+        {
+          "name": "targets",
+          "dtype": 6,
+          "shape": [
+            "targets_dynamic_axes_1",
+            "targets_dynamic_axes_2"
+          ]
+        },
+        {
+          "name": "target_length",
+          "dtype": 6,
+          "shape": [
+            "target_length_dynamic_axes_1"
+          ]
+        },
+        {
+          "name": "states.1",
+          "dtype": 1,
+          "shape": [
+            2,
+            "states.1_dim_1",
+            640
+          ]
+        },
+        {
+          "name": "onnx::Slice_3",
+          "dtype": 1,
+          "shape": [
+            2,
+            1,
+            640
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "outputs",
+          "dtype": 1,
+          "shape": [
+            "targets_dynamic_axes_1",
+            640,
+            "targets_dynamic_axes_2"
+          ]
+        },
+        {
+          "name": "prednet_lengths",
+          "dtype": 6,
+          "shape": [
+            "target_length_dynamic_axes_1"
+          ]
+        },
+        {
+          "name": "states",
+          "dtype": 1,
+          "shape": [
+            2,
+            "states_dynamic_axes_1",
+            640
+          ]
+        },
+        {
+          "name": "162",
+          "dtype": 1,
+          "shape": [
+            2,
+            "Concat162_dim_1",
+            640
+          ]
+        }
+      ],
+      "operators": {
+        "ai.onnx:Constant": 14,
+        "ai.onnx:Identity": 1,
+        "ai.onnx:Cast": 1,
+        "ai.onnx:Slice": 4,
+        "ai.onnx:Gather": 1,
+        "ai.onnx:Transpose": 2,
+        "ai.onnx:DequantizeLinear": 1,
+        "com.microsoft:DynamicQuantizeLSTM": 2,
+        "ai.onnx:Squeeze": 2,
+        "ai.onnx:Concat": 2
+      },
+      "external_weights": []
+    },
+    "joiner.int8.onnx": {
+      "bytes": 6355335,
+      "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+      "checker": "passed",
+      "ir_version": 8,
+      "opsets": {
+        "ai.onnx": 17
+      },
+      "metadata": {
+        "orukeet_source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56"
+      },
+      "inputs": [
+        {
+          "name": "encoder_outputs",
+          "dtype": 1,
+          "shape": [
+            "encoder_outputs_dynamic_axes_1",
+            1024,
+            "encoder_outputs_dynamic_axes_2"
+          ]
+        },
+        {
+          "name": "decoder_outputs",
+          "dtype": 1,
+          "shape": [
+            "decoder_outputs_dynamic_axes_1",
+            640,
+            "decoder_outputs_dynamic_axes_2"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "outputs",
+          "dtype": 1,
+          "shape": [
+            "Addoutputs_dim_0",
+            "Addoutputs_dim_1",
+            "Addoutputs_dim_2",
+            8198
+          ]
+        }
+      ],
+      "operators": {
+        "ai.onnx:Constant": 2,
+        "ai.onnx:Transpose": 2,
+        "ai.onnx:DynamicQuantizeLinear": 3,
+        "ai.onnx:Mul": 6,
+        "ai.onnx:MatMulInteger": 3,
+        "ai.onnx:Cast": 3,
+        "ai.onnx:Add": 4,
+        "ai.onnx:Unsqueeze": 2,
+        "ai.onnx:Relu": 1
+      },
+      "external_weights": []
+    },
+    "tokens.txt": {
+      "bytes": 93939,
+      "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d",
+      "entries": 8193,
+      "blank_id": 8192,
+      "blank_entry": "<blk> 8192"
+    }
+  },
+  "script_sha256": "e26c49911f63de9744b833c9c5f393364f1bc9e3d65865a58cfdac0602bc707b"
+}

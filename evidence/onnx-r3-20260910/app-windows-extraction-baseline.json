@@ -1,0 +1,184 @@
+{
+  "started_utc": "2026-09-10T18:23:27.442Z",
+  "stages": [
+    {
+      "label": "tar-version-0",
+      "executable": "C:\\Windows\\System32\\tar.exe",
+      "arguments": [
+        "--version"
+      ],
+      "cwd": "D:\\a\\openwhispr\\openwhispr",
+      "started_utc": "2026-09-10T18:23:27.795Z",
+      "timed_out": false,
+      "pid": 1180,
+      "exit_code": 0,
+      "elapsed_seconds": 0.112
+    },
+    {
+      "label": "tar-version-1",
+      "executable": "C:\\Program Files\\Git\\usr\\bin\\tar.exe",
+      "arguments": [
+        "--version"
+      ],
+      "cwd": "D:\\a\\openwhispr\\openwhispr",
+      "started_utc": "2026-09-10T18:23:27.909Z",
+      "timed_out": false,
+      "pid": 5304,
+      "exit_code": 0,
+      "elapsed_seconds": 0.025
+    },
+    {
+      "label": "original-npm-download",
+      "executable": "C:\\hostedtoolcache\\windows\\node\\24.20.0\\x64\\node.exe",
+      "arguments": [
+        "C:\\hostedtoolcache\\windows\\node\\24.20.0\\x64\\node_modules\\npm\\bin\\npm-cli.js",
+        "run",
+        "download:sherpa-onnx"
+      ],
+      "cwd": "D:\\a\\openwhispr\\openwhispr",
+      "started_utc": "2026-09-10T18:23:27.935Z",
+      "timed_out": true,
+      "pid": 5152,
+      "processes_on_timeout": [
+        {
+          "ProcessId": 5152,
+          "ParentProcessId": 1760,
+          "Name": "node.exe",
+          "ExecutablePath": "C:\\hostedtoolcache\\windows\\node\\24.20.0\\x64\\node.exe",
+          "CommandLine": "C:\\hostedtoolcache\\windows\\node\\24.20.0\\x64\\node.exe C:\\hostedtoolcache\\windows\\node\\24.20.0\\x64\\node_modules\\npm\\bin\\npm-cli.js run download:sherpa-onnx"
+        },
+        {
+          "ProcessId": 5808,
+          "ParentProcessId": 5152,
+          "Name": "conhost.exe",
+          "ExecutablePath": "C:\\Windows\\system32\\conhost.exe",
+          "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4"
+        },
+        {
+          "ProcessId": 6412,
+          "ParentProcessId": 5152,
+          "Name": "cmd.exe",
+          "ExecutablePath": "C:\\Windows\\system32\\cmd.exe",
+          "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c node scripts/download-sherpa-onnx.js --current"
+        },
+        {
+          "ProcessId": 6540,
+          "ParentProcessId": 6412,
+          "Name": "node.exe",
+          "ExecutablePath": "C:\\hostedtoolcache\\windows\\node\\24.20.0\\x64\\node.exe",
+          "CommandLine": "node  scripts/download-sherpa-onnx.js --current"
+        },
+        {
+          "ProcessId": 6644,
+          "ParentProcessId": 6540,
+          "Name": "tar.exe",
+          "ExecutablePath": "C:\\Windows\\system32\\tar.exe",
+          "CommandLine": "tar -xjf sherpa-onnx-v1.13.4-win-x64-shared-MD-Release.tar.bz2 -C temp-sherpa-win32-x64"
+        },
+        {
+          "ProcessId": 1204,
+          "ParentProcessId": 6644,
+          "Name": "bzip2.exe",
+          "ExecutablePath": "C:\\Program Files\\Git\\mingw64\\bin\\bzip2.exe",
+          "CommandLine": "bzip2 -d"
+        }
+      ],
+      "kill_output": "SUCCESS: The process with PID 1204 (child process of PID 6644) has been terminated.\r\nSUCCESS: The process with PID 6644 (child process of PID 6540) has been terminated.\r\nSUCCESS: The process with PID 6540 (child process of PID 6412) has been terminated.\r\nSUCCESS: The process with PID 5808 (child process of PID 5152) has been terminated.\r\nSUCCESS: The process with PID 6412 (child process of PID 5152) has been terminated.\r\nSUCCESS: The process with PID 5152 (child process of PID 1760) has been terminated.\r\n",
+      "exit_code": 1,
+      "elapsed_seconds": 107.186
+    },
+    {
+      "label": "direct-system32-extract",
+      "executable": "C:\\Windows\\System32\\tar.exe",
+      "arguments": [
+        "-xjf",
+        "sherpa-onnx-v1.13.4-win-x64-shared-MD-Release.tar.bz2",
+        "-C",
+        "diagnostic-extract-system32"
+      ],
+      "cwd": "D:\\a\\openwhispr\\openwhispr\\resources\\bin",
+      "started_utc": "2026-09-10T18:25:15.147Z",
+      "timed_out": true,
+      "pid": 6444,
+      "processes_on_timeout": [
+        {
+          "ProcessId": 6444,
+          "ParentProcessId": 1760,
+          "Name": "tar.exe",
+          "ExecutablePath": "C:\\Windows\\System32\\tar.exe",
+          "CommandLine": "C:\\Windows\\System32\\tar.exe -xjf sherpa-onnx-v1.13.4-win-x64-shared-MD-Release.tar.bz2 -C diagnostic-extract-system32"
+        },
+        {
+          "ProcessId": 4896,
+          "ParentProcessId": 6444,
+          "Name": "conhost.exe",
+          "ExecutablePath": "C:\\Windows\\system32\\conhost.exe",
+          "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4"
+        },
+        {
+          "ProcessId": 1636,
+          "ParentProcessId": 6444,
+          "Name": "bzip2.exe",
+          "ExecutablePath": "C:\\Program Files\\Git\\mingw64\\bin\\bzip2.exe",
+          "CommandLine": "bzip2 -d"
+        }
+      ],
+      "kill_output": "SUCCESS: The process with PID 4896 (child process of PID 6444) has been terminated.\r\nSUCCESS: The process with PID 1636 (child process of PID 6444) has been terminated.\r\nSUCCESS: The process with PID 6444 (child process of PID 1760) has been terminated.\r\n",
+      "exit_code": 1,
+      "elapsed_seconds": 60.419
+    },
+    {
+      "label": "direct-git-extract",
+      "executable": "C:\\Program Files\\Git\\usr\\bin\\tar.exe",
+      "arguments": [
+        "-xjf",
+        "sherpa-onnx-v1.13.4-win-x64-shared-MD-Release.tar.bz2",
+        "-C",
+        "diagnostic-extract-git"
+      ],
+      "cwd": "D:\\a\\openwhispr\\openwhispr\\resources\\bin",
+      "started_utc": "2026-09-10T18:26:15.566Z",
+      "timed_out": false,
+      "pid": 2732,
+      "exit_code": 0,
+      "elapsed_seconds": 2.379
+    },
+    {
+      "label": "download-with-git",
+      "executable": "C:\\hostedtoolcache\\windows\\node\\24.20.0\\x64\\node.exe",
+      "arguments": [
+        "scripts/download-sherpa-onnx.js",
+        "--current"
+      ],
+      "cwd": "D:\\a\\openwhispr\\openwhispr",
+      "started_utc": "2026-09-10T18:26:17.946Z",
+      "timed_out": false,
+      "pid": 3400,
+      "exit_code": 0,
+      "elapsed_seconds": 30.247
+    }
+  ],
+  "status": "passed",
+  "tar_paths": [
+    "C:\\Windows\\System32\\tar.exe",
+    "C:\\Program Files\\Git\\usr\\bin\\tar.exe"
+  ],
+  "archive": {
+    "bytes": 20034576,
+    "sha256": "d4dacc8be5afe03f22ade4d50cfd587c03a625eaca8c41f2d99a24d3db463eab"
+  },
+  "selected_path_prefix": "C:\\Program Files\\Git\\usr\\bin",
+  "install_marker": {
+    "version": "1.13.4",
+    "libraries": [
+      "ow-onnxrt.dll",
+      "onnxruntime_providers_shared.dll",
+      "sherpa-onnx-c-api.dll",
+      "sherpa-onnx-cxx-api.dll"
+    ],
+    "onnxRuntime": "ow-onnxrt.dll"
+  },
+  "finished_utc": "2026-09-10T18:26:48.194Z",
+  "scope": "Controlled reproduction of the inherited Windows extraction hang. A passing diagnostic means the controls completed; timed-out stages are explicitly retained.",
+  "workflow_run": "https://github.com/Oruk-AI/openwhispr/actions/runs/34513923602"
+}

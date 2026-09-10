@@ -4,16 +4,16 @@ Orukeet is an adaptation of **NVIDIA Parakeet TDT 0.6B v3**. NVIDIA retains
 copyright in its model and upstream work. The base weights are distributed
 under [CC BY 4.0](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3).
 Oruk AI's changes comprise multilingual/accent continuation training, parameter
-blending, fitted and frozen Gabor-kernel replacement and recovery, native
+blending, fitted and frozen Gabor-kernel replacement and recovery, native and ONNX
 export, application integration and evaluation. [Model stages](https://github.com/Oruk-AI/orukeet/blob/main/release/model-stages.json)
 identifies r3 as the source of every current Orukeet download and records its ancestry.
 
-The r3 NeMo, Q8 GGUF and F16 GGUF weights, and their fitted Gabor kernels,
+The r3 NeMo, ONNX INT8, Q8 GGUF and F16 GGUF weights, and their fitted Gabor kernels,
 are designated **CC BY-SA 4.0**.
 The complete license is in [LICENSE-WEIGHTS](LICENSE-WEIGHTS). This permits
 commercial use and modification, with attribution and applicable ShareAlike
 requirements. Earlier checkpoints retain their source notices and are not
-silently relicensed by this file. Orukeet v0.1.0 distributes the final r3 checkpoint in all three formats.
+silently relicensed by this file. Orukeet v0.1.0 distributes the final r3 checkpoint in all four formats.
 
 Python and integration code in this repository is MIT unless a file specifies
 otherwise. The native bindings, audio windowing and worker transport derive
@@ -23,6 +23,11 @@ its bundled dependencies retain their own notices, including Apache-2.0 and
 MIT components. Keep the SDK's license files when redistributing it. The
 [pinned source](https://github.com/NVIDIA/NeMo-Speech.cpp/tree/4f9676226f667d14608487df744f375db87127f8)
 is the authority for those terms.
+
+The ONNX exporter follows sherpa-onnx's Parakeet TDT v3 conversion script.
+Its upstream reference and Apache-2.0 license are retained in
+[export/onnx](export/onnx/README.md). The ONNX archive includes the weight
+license and source attribution.
 
 Training data credits:
 
@@ -59,3 +64,7 @@ or transcripts, which are not included in that archive.
 The r3 numeric benchmark records in `evidence/standard-asr-r3-20260908/` and
 `evidence/domains-r3-20260908/` are released under CC BY 4.0. They contain
 error counts and recording identifiers; dataset audio remains with its providers.
+
+The paired ONNX application benchmark counts in `evidence/onnx-r3-20260910/`
+are also released under CC BY 4.0. These records contain numeric errors,
+timings and recording identifiers, without corpus audio or transcripts.

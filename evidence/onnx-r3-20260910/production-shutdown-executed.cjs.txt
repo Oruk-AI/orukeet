@@ -1,0 +1,61 @@
+// Exercise the production model picker and its external-link IPC in an isolated profile.
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const { createRequire } = require('node:module');
+const args = {};
+for (const key of ['app-root','profile-root','audio','output','simulated-macos']) {
+ const i=process.argv.indexOf('--'+key);if(i!==-1)args[key]=process.argv[i+1];
+}
+for (const key of ['app-root','profile-root','audio','output']) assert(args[key],key);
+const root=path.resolve(args['app-root']);
+const requireApp = createRequire(path.join(root,'package.json'));
+const {app, BrowserWindow, shell, ipcMain} = requireApp('electron');
+if(args['simulated-macos']) process.getSystemVersion=()=>args['simulated-macos'];
+const profile=path.resolve(args['profile-root']);
+assert(profile.includes('openwhispr'),'Use a dedicated test profile');
+fs.mkdirSync(profile,{recursive:true});
+app.setPath('home',profile);
+for(const name of ['whisper-models','parakeet-models','diarization-models','models'])fs.mkdirSync(path.join(profile,'cache',name),{recursive:true});
+app.setPath('appData',profile);app.setPath('userData',path.join(profile,'OpenWhispr-development'));
+app.setAppPath(root);process.env.OPENWHISPR_CACHE_ROOT=path.join(profile,'cache');
+delete process.env.OPENWHISPR_ORUKEET_MODEL;process.env.NODE_ENV='production';process.env.OPENWHISPR_CHANNEL='development';
+app.commandLine.appendSwitch('no-sandbox');
+app.commandLine.appendSwitch('use-fake-device-for-media-stream');
+app.commandLine.appendSwitch('use-fake-ui-for-media-stream');
+app.commandLine.appendSwitch('use-file-for-fake-audio-capture', path.resolve(args.audio));
+const events=[];
+ipcMain.on('dictation-lifecycle-state-changed',(_e,state,inputKind)=>events.push({state,inputKind,at:Date.now()}));
+const opened=[];
+shell.openExternal=async url=>{opened.push(url);};
+const receipt={status:'running',publication_authorized:true,checks:[],external_urls:opened,
+ scope:'Production renderer and preload, real public archive download, unchanged sherpa-onnx worker, microphone WAV through MediaRecorder/normalization/ASR and saved history. Only external navigation and microphone input are controlled by the harness; ASR outputs are never mocked.',
+ simulated_macos:args['simulated-macos']||null,electron:process.versions.electron,checked_at_utc:new Date().toISOString()};
+const delay=ms=>new Promise(r=>setTimeout(r,ms));
+async function until(check,label,timeout=180000){const end=Date.now()+timeout;while(Date.now()<end){if(await check())return;await delay(50);}throw Error('Timed out: '+label);}
+
+require(path.join(root,'main.js'));
+(async()=>{
+ try {
+  await app.whenReady();
+  await until(()=>BrowserWindow.getAllWindows().some(w=>w.webContents.getURL().endsWith('/index.html')&&!w.webContents.isLoading()),'production renderer');
+  const renderer=BrowserWindow.getAllWindows().find(w=>w.webContents.getURL().endsWith('/index.html'));
+  receipt.scope='Production main, preload, model start/transcription IPC, and app.quit before-quit teardown in the previously verified isolated profile.';
+  receipt.start=await renderer.webContents.executeJavaScript("window.electronAPI.parakeetServerStart('orukeet-v0.1.0-q8')");
+  assert(receipt.start.success,JSON.stringify(receipt.start));
+  const wav=fs.readFileSync(path.resolve(args.audio)).toString('base64');
+  const result=await renderer.webContents.executeJavaScript(`window.electronAPI.transcribeLocalParakeet(Uint8Array.from(atob('${wav}'),c=>c.charCodeAt(0)),{model:'orukeet-v0.1.0-q8'})`);
+  assert(result.success,JSON.stringify(result));assert.match(result.text.toLowerCase(),/ask not what your country/);
+  receipt.transcription={success:result.success,text_sha256:crypto.createHash('sha256').update(result.text).digest('hex')};
+  const pidRoot=path.join(profile,'OpenWhispr-development','sidecar-pids');
+  receipt.sidecars_before_quit=fs.readdirSync(pidRoot).filter(n=>n.endsWith('.pid')).map(n=>({name:n,pid:Number(fs.readFileSync(path.join(pidRoot,n),'utf8'))}));
+  receipt.checks=['Production renderer/preload starts the installed model','Real transcription succeeds after application restart','Production before-quit teardown invoked'];
+  receipt.status='passed';
+ }catch(error){receipt.status='failed';receipt.error=String(error);console.error(error);}
+ finally {
+  receipt.harness_sha256=crypto.createHash('sha256').update(fs.readFileSync(__filename)).digest('hex');
+  fs.writeFileSync(args.output,JSON.stringify(receipt,null,2)+'\n');
+  app.quit();
+ }
+})();

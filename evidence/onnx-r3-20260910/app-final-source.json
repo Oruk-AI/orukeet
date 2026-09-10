@@ -1,0 +1,23 @@
+{
+  "application_commit": "c51455702d58100f05104feca753667e7ccc11ea",
+  "upstream_base": "3b9e235c45012139a3fdb2fb3a36f429f1f6556b",
+  "release_included": "v1.9.2",
+  "file_sha256": {
+    "src/helpers/parakeet.js": "50ef68582a28f7bf2f044878ee81d525abf00c29a55ea85c145550921c612b03",
+    "src/helpers/parakeetServer.js": "003eea5ce5175044e745be8fd18b29c468af9941df60cfd50b88215de5ac4b52",
+    "src/helpers/parakeetWsServer.js": "8ebafeace7803847aa9a34995fdb641714500682b61e5b0b085b17901f87ad3d",
+    "src/helpers/parakeetModelInfo.js": "e690919cf9880b4f46e035f7384fcf04ce0a551b7edf3c53016f2995bfc09f86",
+    "src/helpers/parakeetCapability.js": "3ad61b89d806d4347092a683d20b5811ede8a766e004ebdee16ae9eca6bb2b8a",
+    "src/helpers/systemTar.js": "aeb7071a57e97a4ab75e875afb95f019561eb2e6f3acb73abdc30db3435fcf3e",
+    "scripts/download-sherpa-onnx.js": "a4a2a87762b8f0439bd3bed8fc7f5fe4c96a79e6060e493084fd8a059d26df94",
+    "src/models/modelRegistryData.json": "1238c237fdb97f003f99b6c73644e53a4dedecabe7d6dcbee7eb18be279952f8",
+    "src/assets/icons/providers/oruk.webp": "a7038ceff428f8e08155b197c4f6595ae8d6276d6cc4c627f2d8fa4b7fab153f"
+  },
+  "benchmark_inference_files_identical": {
+    "src/helpers/parakeet.js": true,
+    "src/helpers/parakeetServer.js": true,
+    "src/helpers/parakeetWsServer.js": true,
+    "src/helpers/parakeetModelInfo.js": true
+  },
+  "windows_change": "Windows bzip2 extraction bypasses the system tar path and uses existing bundled dependencies; inference files are unchanged."
+}

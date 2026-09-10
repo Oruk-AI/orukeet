@@ -1,0 +1,147 @@
+{
+  "status": "passed",
+  "publication_authorized": true,
+  "checks": [
+    "Fresh profile keeps upstream mode defaults",
+    "Local mode exposes Oruk with Recommended Orukeet",
+    "Download button installs the public ONNX archive and selects Orukeet through the existing backend",
+    "Oruk model card is visible in production settings",
+    "Mouse and keyboard activation reach the external-link IPC",
+    "React stops link events before document-level handlers",
+    "Provider and selected checkpoint remain unchanged",
+    "Real WAV capture transcribes through sherpa and saves history",
+    "Live recording cancellation creates no history entry",
+    "Recording and persistence recover after cancellation"
+  ],
+  "external_urls": [
+    "https://huggingface.co/oruk/orukeet",
+    "https://huggingface.co/oruk/orukeet"
+  ],
+  "scope": "Production renderer and preload, real public archive download, unchanged sherpa-onnx worker, microphone WAV through MediaRecorder/normalization/ASR and saved history. Only external navigation and microphone input are controlled by the harness; ASR outputs are never mocked.",
+  "simulated_macos": null,
+  "electron": "41.10.5",
+  "checked_at_utc": "2026-09-10T18:15:19.112Z",
+  "initial": {
+    "local": null,
+    "provider": null,
+    "model": null
+  },
+  "logos": [
+    {
+      "src": "oruk-ER-Yu_fS.webp",
+      "complete": true,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "src": "oruk-ER-Yu_fS.webp",
+      "complete": true,
+      "width": 256,
+      "height": 256
+    }
+  ],
+  "before": {
+    "provider": "nvidia",
+    "model": "orukeet-v0.1.0-q8"
+  },
+  "card": {
+    "text": "Model card",
+    "href": "https://huggingface.co/oruk/orukeet",
+    "target": "_blank",
+    "rel": "noopener noreferrer",
+    "context": "Orukeet\n671MB\nRecommended\nDownload\nModel card"
+  },
+  "install_source": "anonymous public Hugging Face ONNX archive",
+  "after": {
+    "provider": "nvidia",
+    "model": "orukeet-v0.1.0-q8"
+  },
+  "screenshot": "app-model-picker.png",
+  "screenshot_sha256": "eecf703d7ebecc8f0c8ef94684114e4d30ad0ba6fa88b3842f3298b280d8c9c7",
+  "recordings": [
+    {
+      "label": "first",
+      "id": 1,
+      "stop_to_saved_ms": 975,
+      "stop_to_idle_ms": 976,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+    },
+    {
+      "label": "after-cancel",
+      "id": 2,
+      "stop_to_saved_ms": 1073,
+      "stop_to_idle_ms": 1073,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+    }
+  ],
+  "events": [
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789064119953
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789064227975
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789064229898
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789064229939
+    },
+    {
+      "state": "processing",
+      "inputKind": "dictation",
+      "at": 1789064241480
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789064242400
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789064242517
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789064242520
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789064243746
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789064244379
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789064244379
+    },
+    {
+      "state": "processing",
+      "inputKind": "dictation",
+      "at": 1789064255909
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789064256959
+    }
+  ],
+  "harness_sha256": "713f1290a85ceff1362c2c6746bb987f79d1b0217096c97537aadc1e08e599b0",
+  "audio_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+  "executed_source": "gui-and-recording-executed.cjs.txt"
+}

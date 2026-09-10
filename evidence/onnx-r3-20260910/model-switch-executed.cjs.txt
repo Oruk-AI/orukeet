@@ -1,0 +1,56 @@
+// One actual manager switching between the two installed standard ONNX models.
+const fs = require('node:fs');
+const path = require('node:path');
+const assert = require('node:assert/strict');
+const crypto = require('node:crypto');
+const { createRequire } = require('node:module');
+const root = __dirname;
+const checkout = '/Users/nathanroll/Documents/openwhispr-orukeet-sherpa';
+const req = createRequire(path.join(checkout, 'package.json'));
+const { app } = req('electron');
+const run = path.join(root, 'model-switch');
+const profile = path.join(run, 'profile');
+fs.mkdirSync(profile, { recursive: true });
+app.setPath('userData', profile);
+app.setPath('home', profile);
+process.env.OPENWHISPR_CACHE_ROOT = path.join(run, 'cache');
+const cache = path.join(run, 'cache/parakeet-models');
+fs.mkdirSync(cache, { recursive: true });
+const models = {
+  'orukeet-v0.1.0-q8': '/Users/nathanroll/Documents/orukeet-public/artifacts/onnx-r3-20260910/sherpa-onnx-orukeet-v0.1.0-int8',
+  'parakeet-tdt-0.6b-v3': '/Users/nathanroll/Documents/orukeet/.tmp/r3-release-20260908/openwhispr-realtime/cache/parakeet-models/parakeet-tdt-0.6b-v3',
+};
+for (const [name, target] of Object.entries(models)) if (!fs.existsSync(path.join(cache, name))) fs.symlinkSync(target, path.join(cache, name), 'dir');
+const Manager = req('./src/helpers/parakeet');
+const m = new Manager();
+m.serverManager.wsServer.cachedBinaryPaths.offline = path.join(root, 'sherpa-onnx-v1.13.4-osx-universal2-shared/bin/sherpa-onnx-offline-websocket-server');
+const audio = fs.readFileSync('/Users/nathanroll/Documents/orukeet-public/demos/fixtures/jfk.wav');
+const result = { scope: 'Sequential model switches through one unmodified production manager and one server slot; diagnostic timing excluded.', checks: [], started_utc: new Date().toISOString(), script_sha256: crypto.createHash('sha256').update(fs.readFileSync(__filename)).digest('hex') };
+(async () => {
+  await app.whenReady();
+  try {
+    let prior = null;
+    for (const model of ['orukeet-v0.1.0-q8', 'parakeet-tdt-0.6b-v3', 'orukeet-v0.1.0-q8']) {
+      const r = await m.transcribeLocalParakeet(audio, { model });
+      assert.equal(r.success, true);
+      assert.match(r.text.toLowerCase(), /ask not what your country/);
+      const ws = m.serverManager.wsServer;
+      assert.equal(ws.modelName, model);
+      if (prior) {
+        assert.notEqual(ws.process.pid, prior);
+        assert.throws(() => process.kill(prior, 0), { code: 'ESRCH' });
+      }
+      result.checks.push({ model, text: r.text, prior_process_exited: !!prior, pid: ws.process.pid });
+      prior = ws.process.pid;
+    }
+    result.status = 'passed';
+  } catch (e) { result.status = 'failed'; result.error = e.stack; }
+  finally {
+    await m.stopServer();
+    result.final_process = m.serverManager.wsServer.process;
+    result.finished_utc = new Date().toISOString();
+    fs.writeFileSync(path.join(run, 'receipt.json'), JSON.stringify(result, null, 2) + '\n');
+    console.log(JSON.stringify({ status: result.status, checks: result.checks.length }));
+    app.exit(result.status === 'passed' ? 0 : 1);
+  }
+})();

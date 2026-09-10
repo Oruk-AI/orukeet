@@ -22,32 +22,33 @@ Pavle Padjin<sup>5</sup> · Vladimir Zeljkovic<sup>5</sup> · Calbert Graham<sup
 </table>
 <!-- orukeet-team:end -->
 
-Orukeet is Oruk's 25-language speech recognizer, adapted from NVIDIA Parakeet TDT 0.6B v3 with 12,288 fitted, frozen Gabor kernels. The OpenWhispr integration uses the Q8 export of the r3 release checkpoint for dictation, file uploads and meetings.
+Orukeet is Oruk's 25-language speech recognizer, adapted from NVIDIA Parakeet TDT 0.6B v3 with 12,288 fitted, frozen Gabor kernels. The OpenWhispr PR uses the ONNX INT8 export of the r3 release checkpoint for dictation, file uploads and meetings.
 
-Fresh profiles select **Oruk → Orukeet**. Installation verifies the 714,456,704-byte model against SHA-256 `93ce19c6d8244acbfea980eeaf970531d4f216171578ef8e041dcc2d070a45bd`. A checkpoint-specific filename refreshes earlier Orukeet caches. The underlying NeMo source has SHA-256 `031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56`.
+Select **Local → Oruk → Orukeet**, then **Download**. Orukeet is marked Recommended and carries the current Oruk Signal logo. Existing model choices and upstream mode defaults are preserved.
 
-[General ASR model card](https://huggingface.co/oruk/orukeet) · [Technical report](../../output/pdf/orukeet-technical-report.pdf) · [Integration](README.md)
+[General ASR model card](https://huggingface.co/oruk/orukeet) · [Technical report](../../output/pdf/orukeet-technical-report.pdf) · [Integration and installation](README.md)
 
 ## Recognition and responsiveness
 
-| Measurement | Orukeet r3 | Stock Parakeet TDT v3 |
+| Measurement | Parakeet TDT v3 INT8 | Orukeet r3 INT8 |
 | --- | ---: | ---: |
-| WER, 640 English clips across ten corpora | 6.89% | 11.93% |
-| First live preview, median | 1.55 s | 1.64 s |
-| Preview processing, median | 40 ms | 131 ms |
-| Stop to saved transcript, median | 115 ms | 945 ms |
+| WER, 640 English clips across ten corpora | 11.93% | 11.40% |
+| Warm file transcription, median | 536 ms | 537 ms |
+| Warm file transcription, 95th percentile | 1656 ms | 1584 ms |
 
-The app comparison runs both backends inside the integration against OpenWhispr v1.9.2. Orukeet uses Q8 on Metal; stock Parakeet uses the release's INT8 ONNX models and sherpa-onnx CPU worker with four threads. The paired recognition test scores every selected clip, including empty outputs. Live timings use three warm recordings per model through the production renderer on Apple M5 Max, with the app's 1.5-second preview timer.
+Both models run through the same current OpenWhispr sherpa-onnx CPU path with four threads on Apple M5 Max. Calls include normalization, 15-second segmentation, WebSocket exchange and recognition. Every selected clip contributes to the WER, including empty outputs.
 
-[Every corpus score](APP_BENCHMARKS.md) · [Benchmark protocol](APP_BENCHMARKS.md)
+[All ten corpus scores, timing protocol and provenance](APP_BENCHMARKS.md)
 
-## Hardware and use
+## Runtime and model identity
 
-The persistent worker selects Metal on Apple silicon, CUDA on NVIDIA, or Vulkan on supported AMD and Intel graphics, with automatic CPU fallback. Audio passes through the app's normalization and pause-aware segmentation. Recognition runs locally after installation. OpenWhispr provides capture, endpointing, history and paste; the model supplies recognition.
+The standard encoder, decoder, joiner and token files load through OpenWhispr's existing Parakeet worker. Fitted Gabor kernels are ordinary convolution weights. The public ONNX archive is 486,664,389 bytes, pinned to an immutable Hugging Face revision; its [manifest](../../evidence/onnx-r3-20260910/package-manifest.json) records the payload hashes. The underlying NeMo source has SHA-256 `031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56`.
 
-The source model supports Bulgarian, Croatian, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hungarian, Italian, Latvian, Lithuanian, Maltese, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Spanish, Swedish and Ukrainian.
+Recognition runs locally after download. OpenWhispr supplies capture, endpointing, preview chunking, history and paste. The bundled sherpa runtime supports the app's Windows x64, Linux x64 and macOS arm64/x64 targets; macOS requires version 15.5 or later.
 
-Select **Oruk → Orukeet** in local speech settings and click Download. The installer fetches and verifies the public Q8 file. [Build instructions](README.md) cover native acceleration and device overrides.
+The internal ID `orukeet-v0.1.0-q8` preserves earlier saved choices and now resolves to ONNX INT8. Earlier GGUF-only installations need the new Download step. Standard OpenWhispr build hooks supply the runtime.
+
+Supported languages: Bulgarian, Croatian, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hungarian, Italian, Latvian, Lithuanian, Maltese, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Spanish, Swedish and Ukrainian.
 
 Code is MIT. Model weights and fitted kernels are CC BY-SA 4.0, with NVIDIA's attribution retained. [License and data provenance](../../NOTICE.md).
 

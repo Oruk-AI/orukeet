@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "scope": "Deterministic archive rebuilt on Linux from the same seven exported payload files",
+  "python": "3.10.12",
+  "platform": "Linux x86_64",
+  "archive_bytes": 486664389,
+  "archive_sha256": "c4ad85bbfb0835167c097dedcec0bb3f50cc468edfe7e690442e2221427b95bf",
+  "package_manifest_sha256": "5106910f9d1d5dc5ca3dc83ae350ad2267851730a96c928e192eb2d61eebaa04",
+  "matches_macos_archive_byte_for_byte": true,
+  "matches_macos_manifest_byte_for_byte": true
+}

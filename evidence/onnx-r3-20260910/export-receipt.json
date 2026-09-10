@@ -1,0 +1,756 @@
+{
+  "source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+  "source_bytes": 2509342720,
+  "upstream_exporter_commit": "11afbd009a7f8c08f4bcf2fc1b265d0df4670fbf",
+  "exporter_sha256": "3786c4a3a62fcc21ca1a7be2a68dc49f814c544e9133b663e932bf4d144cdf74",
+  "python": "3.13.14",
+  "platform": "Linux-6.8.0-1064-gcp-x86_64-with-glibc2.39",
+  "packages": {
+    "onnxruntime": "1.27.0",
+    "torch": "2.12.0+cu132",
+    "nemo-toolkit": "3.0.0",
+    "onnx": "1.21.0",
+    "numpy": "2.4.4",
+    "onnxscript": "0.7.0"
+  },
+  "threads": 4,
+  "opset": 17,
+  "exporter": "legacy TorchScript",
+  "quantization": {
+    "encoder": "dynamic QUInt8",
+    "decoder": "dynamic QInt8",
+    "joiner": "dynamic QInt8"
+  },
+  "gabor_audit": {
+    "fitted_rows_exact": 12288,
+    "coefficients_exact": 110592,
+    "fits_sha256": "82c7a5926c2a620a042b0dab2fab8be97a585b3601d45e0697ea19dc32579a44",
+    "stored_shape": [
+      1024,
+      1,
+      9
+    ],
+    "storage": "ordinary torch Conv1d weight tensors; no custom Gabor operator"
+  },
+  "tdt_durations": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "numerical_checks": [
+    {
+      "precision": "fp32",
+      "feature_frames": 257,
+      "shape": [
+        1,
+        1024,
+        33
+      ],
+      "finite": true,
+      "max_abs_error": 8.963979780673981e-07,
+      "mean_abs_error": 6.769577964860218e-08,
+      "relative_rms_error": 1.0946298971248325e-05
+    },
+    {
+      "precision": "fp32",
+      "feature_frames": 481,
+      "shape": [
+        1,
+        1024,
+        61
+      ],
+      "finite": true,
+      "max_abs_error": 1.8402934074401855e-06,
+      "mean_abs_error": 1.3499440854047862e-07,
+      "relative_rms_error": 2.410371962469071e-05
+    },
+    {
+      "precision": "int8",
+      "feature_frames": 257,
+      "shape": [
+        1,
+        1024,
+        33
+      ],
+      "finite": true,
+      "max_abs_error": 0.054060641676187515,
+      "mean_abs_error": 0.005456020589917898,
+      "relative_rms_error": 0.8703601360321045
+    },
+    {
+      "precision": "int8",
+      "feature_frames": 481,
+      "shape": [
+        1,
+        1024,
+        61
+      ],
+      "finite": true,
+      "max_abs_error": 0.047022782266139984,
+      "mean_abs_error": 0.004713952541351318,
+      "relative_rms_error": 0.8060028553009033
+    }
+  ],
+  "graphs": [
+    {
+      "file": "encoder.onnx",
+      "bytes": 2139122,
+      "sha256": "f006f87c86ffa32784fc19386416533d80eb9d993948a62c04fd0db8f63adb80",
+      "ir_version": 8,
+      "opset_imports": {
+        "ai.onnx": 17
+      },
+      "inputs": [
+        {
+          "name": "audio_signal",
+          "type": "FLOAT, audio_signal_dynamic_axes_1x128xaudio_signal_dynamic_axes_2"
+        },
+        {
+          "name": "length",
+          "type": "INT64, length_dynamic_axes_1"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "outputs",
+          "type": "FLOAT, Transposeoutputs_dim_0x1024xTransposeoutputs_dim_2"
+        },
+        {
+          "name": "encoded_lengths",
+          "type": "INT64, length_dynamic_axes_1"
+        }
+      ],
+      "metadata": {
+        "vocab_size": "8192",
+        "normalize_type": "per_feature",
+        "pred_rnn_layers": "2",
+        "pred_hidden": "640",
+        "subsampling_factor": "8",
+        "model_type": "EncDecRNNTBPEModel",
+        "version": "2",
+        "model_author": "NeMo",
+        "url": "https://huggingface.co/oruk/orukeet#parakeet-tdt-v3",
+        "comment": "Orukeet r3; standard Parakeet TDT v3 transducer graph",
+        "feat_dim": "128",
+        "orukeet_source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56"
+      },
+      "operators": [
+        "ai.onnx::Add",
+        "ai.onnx::And",
+        "ai.onnx::Cast",
+        "ai.onnx::Concat",
+        "ai.onnx::Constant",
+        "ai.onnx::ConstantOfShape",
+        "ai.onnx::Conv",
+        "ai.onnx::Div",
+        "ai.onnx::Equal",
+        "ai.onnx::Expand",
+        "ai.onnx::Gather",
+        "ai.onnx::LayerNormalization",
+        "ai.onnx::Less",
+        "ai.onnx::MatMul",
+        "ai.onnx::Mul",
+        "ai.onnx::Not",
+        "ai.onnx::Pad",
+        "ai.onnx::Range",
+        "ai.onnx::Relu",
+        "ai.onnx::Reshape",
+        "ai.onnx::Shape",
+        "ai.onnx::Sigmoid",
+        "ai.onnx::Slice",
+        "ai.onnx::Softmax",
+        "ai.onnx::Split",
+        "ai.onnx::Squeeze",
+        "ai.onnx::Sub",
+        "ai.onnx::Tile",
+        "ai.onnx::Transpose",
+        "ai.onnx::Unsqueeze",
+        "ai.onnx::Where"
+      ],
+      "external_files": [
+        "layers.0.conv.pointwise_conv1.weight",
+        "layers.0.conv.pointwise_conv2.weight",
+        "layers.1.conv.pointwise_conv1.weight",
+        "layers.1.conv.pointwise_conv2.weight",
+        "layers.10.conv.pointwise_conv1.weight",
+        "layers.10.conv.pointwise_conv2.weight",
+        "layers.11.conv.pointwise_conv1.weight",
+        "layers.11.conv.pointwise_conv2.weight",
+        "layers.12.conv.pointwise_conv1.weight",
+        "layers.12.conv.pointwise_conv2.weight",
+        "layers.13.conv.pointwise_conv1.weight",
+        "layers.13.conv.pointwise_conv2.weight",
+        "layers.14.conv.pointwise_conv1.weight",
+        "layers.14.conv.pointwise_conv2.weight",
+        "layers.15.conv.pointwise_conv1.weight",
+        "layers.15.conv.pointwise_conv2.weight",
+        "layers.16.conv.pointwise_conv1.weight",
+        "layers.16.conv.pointwise_conv2.weight",
+        "layers.17.conv.pointwise_conv1.weight",
+        "layers.17.conv.pointwise_conv2.weight",
+        "layers.18.conv.pointwise_conv1.weight",
+        "layers.18.conv.pointwise_conv2.weight",
+        "layers.19.conv.pointwise_conv1.weight",
+        "layers.19.conv.pointwise_conv2.weight",
+        "layers.2.conv.pointwise_conv1.weight",
+        "layers.2.conv.pointwise_conv2.weight",
+        "layers.20.conv.pointwise_conv1.weight",
+        "layers.20.conv.pointwise_conv2.weight",
+        "layers.21.conv.pointwise_conv1.weight",
+        "layers.21.conv.pointwise_conv2.weight",
+        "layers.22.conv.pointwise_conv1.weight",
+        "layers.22.conv.pointwise_conv2.weight",
+        "layers.23.conv.pointwise_conv1.weight",
+        "layers.23.conv.pointwise_conv2.weight",
+        "layers.3.conv.pointwise_conv1.weight",
+        "layers.3.conv.pointwise_conv2.weight",
+        "layers.4.conv.pointwise_conv1.weight",
+        "layers.4.conv.pointwise_conv2.weight",
+        "layers.5.conv.pointwise_conv1.weight",
+        "layers.5.conv.pointwise_conv2.weight",
+        "layers.6.conv.pointwise_conv1.weight",
+        "layers.6.conv.pointwise_conv2.weight",
+        "layers.7.conv.pointwise_conv1.weight",
+        "layers.7.conv.pointwise_conv2.weight",
+        "layers.8.conv.pointwise_conv1.weight",
+        "layers.8.conv.pointwise_conv2.weight",
+        "layers.9.conv.pointwise_conv1.weight",
+        "layers.9.conv.pointwise_conv2.weight",
+        "onnx__Conv_6774",
+        "onnx__Conv_6777",
+        "onnx__Conv_6780",
+        "onnx__Conv_6783",
+        "onnx__Conv_6786",
+        "onnx__Conv_6789",
+        "onnx__Conv_6792",
+        "onnx__Conv_6795",
+        "onnx__Conv_6798",
+        "onnx__Conv_6801",
+        "onnx__Conv_6804",
+        "onnx__Conv_6807",
+        "onnx__Conv_6810",
+        "onnx__Conv_6813",
+        "onnx__Conv_6816",
+        "onnx__Conv_6819",
+        "onnx__Conv_6822",
+        "onnx__Conv_6825",
+        "onnx__Conv_6828",
+        "onnx__Conv_6831",
+        "onnx__Conv_6834",
+        "onnx__Conv_6837",
+        "onnx__Conv_6840",
+        "onnx__Conv_6843",
+        "onnx__MatMul_6846",
+        "onnx__MatMul_6862",
+        "onnx__MatMul_6863",
+        "onnx__MatMul_6864",
+        "onnx__MatMul_6874",
+        "onnx__MatMul_6875",
+        "onnx__MatMul_6876",
+        "onnx__MatMul_6964",
+        "onnx__MatMul_6970",
+        "onnx__MatMul_6971",
+        "onnx__MatMul_6972",
+        "onnx__MatMul_6973",
+        "onnx__MatMul_6974",
+        "onnx__MatMul_6984",
+        "onnx__MatMul_6985",
+        "onnx__MatMul_6986",
+        "onnx__MatMul_7002",
+        "onnx__MatMul_7008",
+        "onnx__MatMul_7009",
+        "onnx__MatMul_7010",
+        "onnx__MatMul_7011",
+        "onnx__MatMul_7012",
+        "onnx__MatMul_7022",
+        "onnx__MatMul_7023",
+        "onnx__MatMul_7024",
+        "onnx__MatMul_7040",
+        "onnx__MatMul_7046",
+        "onnx__MatMul_7047",
+        "onnx__MatMul_7048",
+        "onnx__MatMul_7049",
+        "onnx__MatMul_7050",
+        "onnx__MatMul_7060",
+        "onnx__MatMul_7061",
+        "onnx__MatMul_7062",
+        "onnx__MatMul_7078",
+        "onnx__MatMul_7084",
+        "onnx__MatMul_7085",
+        "onnx__MatMul_7086",
+        "onnx__MatMul_7087",
+        "onnx__MatMul_7088",
+        "onnx__MatMul_7098",
+        "onnx__MatMul_7099",
+        "onnx__MatMul_7100",
+        "onnx__MatMul_7116",
+        "onnx__MatMul_7122",
+        "onnx__MatMul_7123",
+        "onnx__MatMul_7124",
+        "onnx__MatMul_7125",
+        "onnx__MatMul_7126",
+        "onnx__MatMul_7136",
+        "onnx__MatMul_7137",
+        "onnx__MatMul_7138",
+        "onnx__MatMul_7154",
+        "onnx__MatMul_7160",
+        "onnx__MatMul_7161",
+        "onnx__MatMul_7162",
+        "onnx__MatMul_7163",
+        "onnx__MatMul_7164",
+        "onnx__MatMul_7174",
+        "onnx__MatMul_7175",
+        "onnx__MatMul_7176",
+        "onnx__MatMul_7192",
+        "onnx__MatMul_7198",
+        "onnx__MatMul_7199",
+        "onnx__MatMul_7200",
+        "onnx__MatMul_7201",
+        "onnx__MatMul_7202",
+        "onnx__MatMul_7212",
+        "onnx__MatMul_7213",
+        "onnx__MatMul_7214",
+        "onnx__MatMul_7230",
+        "onnx__MatMul_7236",
+        "onnx__MatMul_7237",
+        "onnx__MatMul_7238",
+        "onnx__MatMul_7239",
+        "onnx__MatMul_7240",
+        "onnx__MatMul_7250",
+        "onnx__MatMul_7251",
+        "onnx__MatMul_7252",
+        "onnx__MatMul_7268",
+        "onnx__MatMul_7274",
+        "onnx__MatMul_7275",
+        "onnx__MatMul_7276",
+        "onnx__MatMul_7277",
+        "onnx__MatMul_7278",
+        "onnx__MatMul_7288",
+        "onnx__MatMul_7289",
+        "onnx__MatMul_7290",
+        "onnx__MatMul_7306",
+        "onnx__MatMul_7312",
+        "onnx__MatMul_7313",
+        "onnx__MatMul_7314",
+        "onnx__MatMul_7315",
+        "onnx__MatMul_7316",
+        "onnx__MatMul_7326",
+        "onnx__MatMul_7327",
+        "onnx__MatMul_7328",
+        "onnx__MatMul_7344",
+        "onnx__MatMul_7350",
+        "onnx__MatMul_7351",
+        "onnx__MatMul_7352",
+        "onnx__MatMul_7353",
+        "onnx__MatMul_7354",
+        "onnx__MatMul_7364",
+        "onnx__MatMul_7365",
+        "onnx__MatMul_7366",
+        "onnx__MatMul_7382",
+        "onnx__MatMul_7388",
+        "onnx__MatMul_7389",
+        "onnx__MatMul_7390",
+        "onnx__MatMul_7391",
+        "onnx__MatMul_7392",
+        "onnx__MatMul_7402",
+        "onnx__MatMul_7403",
+        "onnx__MatMul_7404",
+        "onnx__MatMul_7420",
+        "onnx__MatMul_7426",
+        "onnx__MatMul_7427",
+        "onnx__MatMul_7428",
+        "onnx__MatMul_7429",
+        "onnx__MatMul_7430",
+        "onnx__MatMul_7440",
+        "onnx__MatMul_7441",
+        "onnx__MatMul_7442",
+        "onnx__MatMul_7458",
+        "onnx__MatMul_7464",
+        "onnx__MatMul_7465",
+        "onnx__MatMul_7466",
+        "onnx__MatMul_7467",
+        "onnx__MatMul_7468",
+        "onnx__MatMul_7478",
+        "onnx__MatMul_7479",
+        "onnx__MatMul_7480",
+        "onnx__MatMul_7496",
+        "onnx__MatMul_7502",
+        "onnx__MatMul_7503",
+        "onnx__MatMul_7504",
+        "onnx__MatMul_7505",
+        "onnx__MatMul_7506",
+        "onnx__MatMul_7516",
+        "onnx__MatMul_7517",
+        "onnx__MatMul_7518",
+        "onnx__MatMul_7534",
+        "onnx__MatMul_7540",
+        "onnx__MatMul_7541",
+        "onnx__MatMul_7542",
+        "onnx__MatMul_7543",
+        "onnx__MatMul_7544",
+        "onnx__MatMul_7554",
+        "onnx__MatMul_7555",
+        "onnx__MatMul_7556",
+        "onnx__MatMul_7572",
+        "onnx__MatMul_7578",
+        "onnx__MatMul_7579",
+        "onnx__MatMul_7580",
+        "onnx__MatMul_7581",
+        "onnx__MatMul_7582",
+        "onnx__MatMul_7592",
+        "onnx__MatMul_7593",
+        "onnx__MatMul_7594",
+        "onnx__MatMul_7610",
+        "onnx__MatMul_7616",
+        "onnx__MatMul_7617",
+        "onnx__MatMul_7618",
+        "onnx__MatMul_7619",
+        "onnx__MatMul_7620",
+        "onnx__MatMul_7630",
+        "onnx__MatMul_7631",
+        "onnx__MatMul_7632",
+        "onnx__MatMul_7648",
+        "onnx__MatMul_7654",
+        "onnx__MatMul_7655",
+        "onnx__MatMul_7656",
+        "onnx__MatMul_7657",
+        "onnx__MatMul_7658",
+        "onnx__MatMul_7668",
+        "onnx__MatMul_7669",
+        "onnx__MatMul_7670",
+        "onnx__MatMul_7686",
+        "onnx__MatMul_7692",
+        "onnx__MatMul_7693",
+        "onnx__MatMul_7694",
+        "onnx__MatMul_7695",
+        "onnx__MatMul_7696",
+        "onnx__MatMul_7706",
+        "onnx__MatMul_7707",
+        "onnx__MatMul_7708",
+        "onnx__MatMul_7724",
+        "onnx__MatMul_7730",
+        "onnx__MatMul_7731",
+        "onnx__MatMul_7732",
+        "onnx__MatMul_7733",
+        "onnx__MatMul_7734",
+        "onnx__MatMul_7744",
+        "onnx__MatMul_7745",
+        "onnx__MatMul_7746",
+        "onnx__MatMul_7762",
+        "onnx__MatMul_7768",
+        "onnx__MatMul_7769",
+        "onnx__MatMul_7770",
+        "onnx__MatMul_7771",
+        "onnx__MatMul_7772",
+        "onnx__MatMul_7782",
+        "onnx__MatMul_7783",
+        "onnx__MatMul_7784",
+        "onnx__MatMul_7800",
+        "onnx__MatMul_7806",
+        "onnx__MatMul_7807",
+        "onnx__MatMul_7808",
+        "onnx__MatMul_7809",
+        "onnx__MatMul_7810",
+        "onnx__MatMul_7820",
+        "onnx__MatMul_7821",
+        "onnx__MatMul_7822",
+        "onnx__MatMul_7838",
+        "onnx__MatMul_7844",
+        "onnx__MatMul_7845",
+        "pre_encode.conv.0.weight",
+        "pre_encode.conv.2.weight",
+        "pre_encode.conv.3.weight",
+        "pre_encode.conv.5.weight",
+        "pre_encode.conv.6.weight"
+      ]
+    },
+    {
+      "file": "encoder.int8.onnx",
+      "bytes": 652282402,
+      "sha256": "d10711f1b8f3a516e2d7a93adb219caf8aba2b55295305db92f3e80e78c1499a",
+      "ir_version": 8,
+      "opset_imports": {
+        "ai.onnx": 17
+      },
+      "inputs": [
+        {
+          "name": "audio_signal",
+          "type": "FLOAT, audio_signal_dynamic_axes_1x128xaudio_signal_dynamic_axes_2"
+        },
+        {
+          "name": "length",
+          "type": "INT64, length_dynamic_axes_1"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "outputs",
+          "type": "FLOAT, Transposeoutputs_dim_0x1024xTransposeoutputs_dim_2"
+        },
+        {
+          "name": "encoded_lengths",
+          "type": "INT64, length_dynamic_axes_1"
+        }
+      ],
+      "metadata": {
+        "vocab_size": "8192",
+        "normalize_type": "per_feature",
+        "pred_rnn_layers": "2",
+        "pred_hidden": "640",
+        "subsampling_factor": "8",
+        "model_type": "EncDecRNNTBPEModel",
+        "version": "2",
+        "model_author": "NeMo",
+        "url": "https://huggingface.co/oruk/orukeet#parakeet-tdt-v3",
+        "comment": "Orukeet r3; standard Parakeet TDT v3 transducer graph",
+        "feat_dim": "128",
+        "orukeet_source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56"
+      },
+      "operators": [
+        "ai.onnx::Add",
+        "ai.onnx::And",
+        "ai.onnx::Cast",
+        "ai.onnx::Concat",
+        "ai.onnx::Constant",
+        "ai.onnx::ConstantOfShape",
+        "ai.onnx::ConvInteger",
+        "ai.onnx::Div",
+        "ai.onnx::DynamicQuantizeLinear",
+        "ai.onnx::Equal",
+        "ai.onnx::Expand",
+        "ai.onnx::Gather",
+        "ai.onnx::LayerNormalization",
+        "ai.onnx::Less",
+        "ai.onnx::MatMul",
+        "ai.onnx::MatMulInteger",
+        "ai.onnx::Mul",
+        "ai.onnx::Not",
+        "ai.onnx::Pad",
+        "ai.onnx::Range",
+        "ai.onnx::Relu",
+        "ai.onnx::Reshape",
+        "ai.onnx::Shape",
+        "ai.onnx::Sigmoid",
+        "ai.onnx::Slice",
+        "ai.onnx::Softmax",
+        "ai.onnx::Split",
+        "ai.onnx::Squeeze",
+        "ai.onnx::Sub",
+        "ai.onnx::Tile",
+        "ai.onnx::Transpose",
+        "ai.onnx::Unsqueeze",
+        "ai.onnx::Where"
+      ],
+      "external_files": []
+    },
+    {
+      "file": "decoder.onnx",
+      "bytes": 47233744,
+      "sha256": "f9dff1b32ad6b4212c7b5a2459b78c76230e668afb85bf68ae1a2478e36b6c72",
+      "ir_version": 8,
+      "opset_imports": {
+        "ai.onnx": 17
+      },
+      "inputs": [
+        {
+          "name": "targets",
+          "type": "INT32, targets_dynamic_axes_1xtargets_dynamic_axes_2"
+        },
+        {
+          "name": "target_length",
+          "type": "INT32, target_length_dynamic_axes_1"
+        },
+        {
+          "name": "states.1",
+          "type": "FLOAT, 2xstates.1_dim_1x640"
+        },
+        {
+          "name": "onnx::Slice_3",
+          "type": "FLOAT, 2x1x640"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "outputs",
+          "type": "FLOAT, targets_dynamic_axes_1x640xtargets_dynamic_axes_2"
+        },
+        {
+          "name": "prednet_lengths",
+          "type": "INT32, target_length_dynamic_axes_1"
+        },
+        {
+          "name": "states",
+          "type": "FLOAT, 2xstates_dynamic_axes_1x640"
+        },
+        {
+          "name": "162",
+          "type": "FLOAT, 2xConcat162_dim_1x640"
+        }
+      ],
+      "metadata": {},
+      "operators": [
+        "ai.onnx::Cast",
+        "ai.onnx::Concat",
+        "ai.onnx::Constant",
+        "ai.onnx::Gather",
+        "ai.onnx::Identity",
+        "ai.onnx::LSTM",
+        "ai.onnx::Slice",
+        "ai.onnx::Squeeze",
+        "ai.onnx::Transpose"
+      ],
+      "external_files": []
+    },
+    {
+      "file": "decoder.int8.onnx",
+      "bytes": 11845332,
+      "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+      "ir_version": 8,
+      "opset_imports": {
+        "ai.onnx": 17,
+        "com.microsoft": 1
+      },
+      "inputs": [
+        {
+          "name": "targets",
+          "type": "INT32, targets_dynamic_axes_1xtargets_dynamic_axes_2"
+        },
+        {
+          "name": "target_length",
+          "type": "INT32, target_length_dynamic_axes_1"
+        },
+        {
+          "name": "states.1",
+          "type": "FLOAT, 2xstates.1_dim_1x640"
+        },
+        {
+          "name": "onnx::Slice_3",
+          "type": "FLOAT, 2x1x640"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "outputs",
+          "type": "FLOAT, targets_dynamic_axes_1x640xtargets_dynamic_axes_2"
+        },
+        {
+          "name": "prednet_lengths",
+          "type": "INT32, target_length_dynamic_axes_1"
+        },
+        {
+          "name": "states",
+          "type": "FLOAT, 2xstates_dynamic_axes_1x640"
+        },
+        {
+          "name": "162",
+          "type": "FLOAT, 2xConcat162_dim_1x640"
+        }
+      ],
+      "metadata": {
+        "orukeet_source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56"
+      },
+      "operators": [
+        "ai.onnx::Cast",
+        "ai.onnx::Concat",
+        "ai.onnx::Constant",
+        "ai.onnx::DequantizeLinear",
+        "ai.onnx::Gather",
+        "ai.onnx::Identity",
+        "ai.onnx::Slice",
+        "ai.onnx::Squeeze",
+        "ai.onnx::Transpose",
+        "com.microsoft::DynamicQuantizeLSTM"
+      ],
+      "external_files": []
+    },
+    {
+      "file": "joiner.onnx",
+      "bytes": 25286331,
+      "sha256": "af5e1526243fda8d347549fabf467acf702f4fe05d6006dc7fea8c39e129d2cd",
+      "ir_version": 8,
+      "opset_imports": {
+        "ai.onnx": 17
+      },
+      "inputs": [
+        {
+          "name": "encoder_outputs",
+          "type": "FLOAT, encoder_outputs_dynamic_axes_1x1024xencoder_outputs_dynamic_axes_2"
+        },
+        {
+          "name": "decoder_outputs",
+          "type": "FLOAT, decoder_outputs_dynamic_axes_1x640xdecoder_outputs_dynamic_axes_2"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "outputs",
+          "type": "FLOAT, Addoutputs_dim_0xAddoutputs_dim_1xAddoutputs_dim_2x8198"
+        }
+      ],
+      "metadata": {},
+      "operators": [
+        "ai.onnx::Add",
+        "ai.onnx::Constant",
+        "ai.onnx::MatMul",
+        "ai.onnx::Relu",
+        "ai.onnx::Transpose",
+        "ai.onnx::Unsqueeze"
+      ],
+      "external_files": []
+    },
+    {
+      "file": "joiner.int8.onnx",
+      "bytes": 6355335,
+      "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+      "ir_version": 8,
+      "opset_imports": {
+        "ai.onnx": 17
+      },
+      "inputs": [
+        {
+          "name": "encoder_outputs",
+          "type": "FLOAT, encoder_outputs_dynamic_axes_1x1024xencoder_outputs_dynamic_axes_2"
+        },
+        {
+          "name": "decoder_outputs",
+          "type": "FLOAT, decoder_outputs_dynamic_axes_1x640xdecoder_outputs_dynamic_axes_2"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "outputs",
+          "type": "FLOAT, Addoutputs_dim_0xAddoutputs_dim_1xAddoutputs_dim_2x8198"
+        }
+      ],
+      "metadata": {
+        "orukeet_source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56"
+      },
+      "operators": [
+        "ai.onnx::Add",
+        "ai.onnx::Cast",
+        "ai.onnx::Constant",
+        "ai.onnx::DynamicQuantizeLinear",
+        "ai.onnx::MatMulInteger",
+        "ai.onnx::Mul",
+        "ai.onnx::Relu",
+        "ai.onnx::Transpose",
+        "ai.onnx::Unsqueeze"
+      ],
+      "external_files": []
+    }
+  ],
+  "tokens": {
+    "count": 8193,
+    "blank_id": 8192,
+    "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+  },
+  "status": "pass",
+  "metadata_finalization": {
+    "reason": "sherpa-onnx 1.13.4 identifies TDT by 'tdt' in encoder metadata URL",
+    "graph_nodes_and_tensors_unchanged": true,
+    "script_sha256": "312e9847c7df54c005a74fba0c87a82d40f1483bbdeec2f912ab6858e15ac59c",
+    "original_exporter_sha256": "c77ad5d6f2e3f913ec0f308494311fe67a745ed567a53385d9792ab90c5ae1d9"
+  }
+}
