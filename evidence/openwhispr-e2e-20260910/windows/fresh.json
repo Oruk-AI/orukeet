@@ -1,0 +1,236 @@
+{
+  "status": "passed",
+  "phase": "fresh",
+  "checked_at_utc": "2026-09-10T20:07:32.597Z",
+  "platform": "win32",
+  "arch": "x64",
+  "electron": "41.10.5",
+  "node": "24.18.0",
+  "harness_sha256": "9c3442ebee50e8c23a6ad452e972e5ac2eaf01696cfc7ea1ef45b952583c97f0",
+  "scope": "Unchanged main.js, built renderer, preload, MediaRecorder and real sherpa-onnx. Isolated profile; fake WAV microphone; UI model download; live preview; real SQLite history and clipboard. No ASR or history mocks. Start/stop/cancel use the renderer's production dictation events. A separate native paste probe delivers the actual recorded transcript to a scratch textarea through the existing Windows helper. Physical global shortcuts are not exercised.",
+  "checks": [
+    "Fresh profile preserves upstream defaults; Local → Oruk is selected through the actual settings controls",
+    "Current Oruk logo loads and the Orukeet card is marked Recommended",
+    "UI Download installs the anonymous public Hugging Face ONNX archive",
+    "All four installed model files exactly match the optimized public artifact",
+    "Mouse and keyboard open the correct model card through IPC without changing the selection",
+    "Real MediaRecorder capture yields visible live preview before stop, final ASR text, a SQLite row and exact clipboard delivery",
+    "Two immediately consecutive successful recordings both show actual live and final text while the first preview is still open",
+    "Cancel creates no history row; the next recording restores visible preview, ASR, history and clipboard delivery"
+  ],
+  "initial_selection": {
+    "local": null,
+    "provider": null,
+    "model": null,
+    "clipboard": "true",
+    "paste": "false",
+    "preview": "true"
+  },
+  "logos": [
+    {
+      "src": "file:///D:/a/openwhispr/openwhispr/src/dist/assets/oruk-ER-Yu_fS.webp",
+      "complete": true,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "src": "file:///D:/a/openwhispr/openwhispr/src/dist/assets/oruk-ER-Yu_fS.webp",
+      "complete": true,
+      "width": 256,
+      "height": 256
+    }
+  ],
+  "card": {
+    "text": "Model card",
+    "href": "https://huggingface.co/oruk/orukeet",
+    "context": "Orukeet\n672MB\nRecommended\nDownload\nModel card"
+  },
+  "selection": {
+    "local": "true",
+    "provider": "nvidia",
+    "model": "orukeet-v0.1.0-q8",
+    "clipboard": "true",
+    "paste": "false",
+    "preview": "true"
+  },
+  "model_sha256": {
+    "encoder.int8.onnx": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487",
+    "decoder.int8.onnx": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+    "joiner.int8.onnx": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+    "tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+  },
+  "external_urls": [
+    "https://huggingface.co/oruk/orukeet",
+    "https://huggingface.co/oruk/orukeet"
+  ],
+  "screenshot": "fresh-model-picker.png",
+  "screenshot_sha256": "09a71fd4ba6a6b3927ae965d901913c2e1a27d01967c09f5fa3de5cce7b30436",
+  "initial_history": [],
+  "recordings": [
+    {
+      "label": "first",
+      "id": 1,
+      "characters": 108,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "raw_text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "stop_to_saved_ms": 1588,
+      "stop_to_idle_ms": 1590,
+      "live_preview_events_before_stop": 7,
+      "first_preview_after_recording_ms": 1873,
+      "visible_live_preview_characters": 17,
+      "visible_live_preview_sha256": "122a4347494ad69c3eb8e7e868792c3af83f0961e63245a9a9d1dc8244b4481f",
+      "clipboard_matches_saved_text": true,
+      "final_preview_matches_saved_text": true,
+      "active_backend_model": "orukeet-v0.1.0-q8",
+      "previous_preview_still_visible_at_start": null
+    },
+    {
+      "label": "immediate-next-success",
+      "id": 2,
+      "characters": 108,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "raw_text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "stop_to_saved_ms": 1436,
+      "stop_to_idle_ms": 1439,
+      "live_preview_events_before_stop": 7,
+      "first_preview_after_recording_ms": 1901,
+      "visible_live_preview_characters": 16,
+      "visible_live_preview_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad",
+      "clipboard_matches_saved_text": true,
+      "final_preview_matches_saved_text": true,
+      "active_backend_model": "orukeet-v0.1.0-q8",
+      "previous_preview_still_visible_at_start": true
+    },
+    {
+      "label": "after-cancel",
+      "id": 3,
+      "characters": 108,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "raw_text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "stop_to_saved_ms": 1438,
+      "stop_to_idle_ms": 1444,
+      "live_preview_events_before_stop": 7,
+      "first_preview_after_recording_ms": 1897,
+      "visible_live_preview_characters": 16,
+      "visible_live_preview_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad",
+      "clipboard_matches_saved_text": true,
+      "final_preview_matches_saved_text": true,
+      "active_backend_model": "orukeet-v0.1.0-q8",
+      "previous_preview_still_visible_at_start": null
+    }
+  ],
+  "final_history": [
+    {
+      "id": 1,
+      "characters": 108,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "raw_text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+    },
+    {
+      "id": 2,
+      "characters": 108,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "raw_text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+    },
+    {
+      "id": 3,
+      "characters": 108,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "raw_text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8"
+    }
+  ],
+  "events": [
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070854375
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070941410
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789070943229
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789070945534
+    },
+    {
+      "state": "processing",
+      "inputKind": "dictation",
+      "at": 1789070957112
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070958589
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789070958743
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789070958745
+    },
+    {
+      "state": "processing",
+      "inputKind": "dictation",
+      "at": 1789070970282
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070971642
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789070971786
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789070971788
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070973059
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789070973926
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789070973927
+    },
+    {
+      "state": "processing",
+      "inputKind": "dictation",
+      "at": 1789070985484
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070986841
+    }
+  ],
+  "sidecars_before_quit": [
+    {
+      "name": "parakeet.pid",
+      "pid": 5340
+    }
+  ],
+  "normal_quit_requested": true
+}

@@ -1,0 +1,518 @@
+// QA entry point only: load the unchanged production app with isolated user data.
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+const crypto = require("node:crypto");
+const { createRequire } = require("node:module");
+const args = {};
+for (const key of ["app-root", "profile-root", "audio", "output", "phase"]) {
+  const index = process.argv.indexOf(`--${key}`);
+  assert(index >= 0, `Missing --${key}`);
+  args[key] = process.argv[index + 1];
+}
+const root = path.resolve(args["app-root"]);
+const profile = path.resolve(args["profile-root"]);
+const output = path.resolve(args.output);
+const phase = args.phase;
+assert(["fresh", "restart"].includes(phase));
+assert(profile.includes("openwhispr-windows-e2e"), "Dedicated QA profile required");
+const requireApp = createRequire(path.join(root, "package.json"));
+const { app, BrowserWindow, shell, ipcMain, clipboard } = requireApp("electron");
+const sha = (value) => crypto.createHash("sha256").update(value).digest("hex");
+fs.mkdirSync(profile, { recursive: true });
+fs.mkdirSync(path.dirname(output), { recursive: true });
+app.setPath("home", profile);
+app.setPath("appData", profile);
+app.setPath("userData", path.join(profile, "OpenWhispr-development"));
+app.setAppPath(root);
+for (const name of ["whisper-models", "parakeet-models", "diarization-models", "models"]) {
+  fs.mkdirSync(path.join(profile, "cache", name), { recursive: true });
+}
+process.env.OPENWHISPR_CACHE_ROOT = path.join(profile, "cache");
+delete process.env.OPENWHISPR_ORUKEET_MODEL;
+process.env.NODE_ENV = "production";
+process.env.OPENWHISPR_CHANNEL = "development";
+app.commandLine.appendSwitch("no-sandbox");
+app.commandLine.appendSwitch("use-fake-device-for-media-stream");
+app.commandLine.appendSwitch("use-fake-ui-for-media-stream");
+app.commandLine.appendSwitch("use-file-for-fake-audio-capture", path.resolve(args.audio));
+const events = [];
+const opened = [];
+ipcMain.on("dictation-lifecycle-state-changed", (_event, state, inputKind) => {
+  events.push({ state, inputKind, at: Date.now() });
+});
+// Keep the real renderer/preload/open-external IPC and capture its OS-navigation
+// boundary. Windows routes these HTTPS URLs through explorer.exe, not shell.
+const observeExternalURL = async (url) => opened.push(url);
+shell.openExternal = observeExternalURL;
+require(path.join(root, "src/helpers/externalUrlOpener.js")).openExternalUrl = observeExternalURL;
+const receipt = {
+  status: "running",
+  phase,
+  checked_at_utc: new Date().toISOString(),
+  platform: process.platform,
+  arch: process.arch,
+  electron: process.versions.electron,
+  node: process.versions.node,
+  harness_sha256: sha(fs.readFileSync(__filename)),
+  scope:
+    "Unchanged main.js, built renderer, preload, MediaRecorder and real sherpa-onnx. Isolated profile; fake WAV microphone; UI model download; live preview; real SQLite history and clipboard. No ASR or history mocks. Start/stop/cancel use the renderer's production dictation events. A separate native paste probe delivers the actual recorded transcript to a scratch textarea through the existing Windows helper. Physical global shortcuts are not exercised.",
+  checks: [],
+};
+const save = () => fs.writeFileSync(output, `${JSON.stringify(receipt, null, 2)}\n`);
+const progress = (stage) => console.log(`ORUKEET_QA ${JSON.stringify({ phase, stage })}`);
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+async function until(check, label, timeout = 180000) {
+  const end = Date.now() + timeout;
+  while (Date.now() < end) {
+    if (await check()) return;
+    await delay(75);
+  }
+  throw new Error(`Timed out: ${label}`);
+}
+const stateJS = `({local:localStorage.getItem('useLocalWhisper'),provider:localStorage.getItem('localTranscriptionProvider'),model:localStorage.getItem('parakeetModel'),clipboard:localStorage.getItem('keepTranscriptionInClipboard'),paste:localStorage.getItem('autoPasteEnabled'),preview:localStorage.getItem('showTranscriptionPreview')})`;
+const expectedHashes = {
+  "encoder.int8.onnx": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487",
+  "decoder.int8.onnx": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+  "joiner.int8.onnx": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+  "tokens.txt": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d",
+};
+app.on("before-quit", () => {
+  receipt.normal_quit_requested = true;
+  save();
+});
+require(path.join(root, "main.js"));
+
+(async () => {
+  let panel;
+  let db;
+  try {
+    await app.whenReady();
+    progress("app-ready");
+    await until(
+      () =>
+        BrowserWindow.getAllWindows().some(
+          (window) =>
+            window.webContents.getURL().endsWith("/index.html") && !window.webContents.isLoading()
+        ),
+      "dictation renderer"
+    );
+    const initial = BrowserWindow.getAllWindows().find(
+      (window) =>
+        window.webContents.getURL().endsWith("/index.html") && !window.webContents.isLoading()
+    );
+    const seed = `for(const [key,value] of Object.entries({onboardingCompleted:'true',authenticationSkipped:'true',skipAuth:'true',uiLanguage:'en',accessibilitySkipped:'true',autoPasteEnabled:'false',keepTranscriptionInClipboard:'true',useCleanupModel:'false',autoLearnCorrections:'false',showTranscriptionPreview:'true'}))localStorage.setItem(key,value);for(const key of ['onboardingSessionV2','onboardingCurrentStep'])localStorage.removeItem(key);`;
+    if (phase === "fresh") await initial.webContents.executeJavaScript(seed);
+    await until(
+      () =>
+        BrowserWindow.getAllWindows().some(
+          (window) =>
+            window.webContents.getURL().includes("?panel=true") && !window.webContents.isLoading()
+        ),
+      "managed control panel"
+    );
+    panel = BrowserWindow.getAllWindows().find((window) =>
+      window.webContents.getURL().includes("?panel=true")
+    );
+    if (phase === "fresh") {
+      await panel.webContents.executeJavaScript(seed);
+      const loaded = new Promise((resolve) => panel.webContents.once("did-finish-load", resolve));
+      panel.reload();
+      await loaded;
+    }
+    panel.setSize(1200, 850);
+    panel.show();
+    await until(
+      () =>
+        panel.webContents.executeJavaScript(
+          `document.body.innerText.includes('Home')||Boolean(document.querySelector('[data-section-id="speechToText"]'))`
+        ),
+      "control panel ready"
+    );
+    await panel.webContents.executeJavaScript(
+      `Array.from(document.querySelectorAll('button')).find(b=>b.innerText.trim()==='Remind Me Later')?.click()`
+    );
+    panel.webContents.send("show-settings");
+    await until(
+      () =>
+        panel.webContents.executeJavaScript(
+          `Boolean(document.querySelector('[data-section-id="speechToText"]'))`
+        ),
+      "settings navigation"
+    );
+    await panel.webContents.executeJavaScript(
+      `document.querySelector('[data-section-id="speechToText"]').click()`
+    );
+    await until(
+      () =>
+        panel.webContents.executeJavaScript(
+          `Array.from(document.querySelectorAll('button')).some(b=>Array.from(b.querySelectorAll('span')).some(s=>s.textContent.trim()==='Local'))`
+        ),
+      "local mode control"
+    );
+    receipt.initial_selection = await panel.webContents.executeJavaScript(stateJS);
+    if (phase === "fresh") {
+      assert.notEqual(receipt.initial_selection.local, "true");
+      await panel.webContents.executeJavaScript(
+        `Array.from(document.querySelectorAll('button')).find(b=>Array.from(b.querySelectorAll('span')).some(s=>s.textContent.trim()==='Local')).click()`
+      );
+      await until(
+        () =>
+          panel.webContents.executeJavaScript(
+            `Array.from(document.querySelectorAll('button')).some(b=>b.innerText.trim()==='Oruk')`
+          ),
+        "Oruk organization control"
+      );
+      await panel.webContents.executeJavaScript(
+        `Array.from(document.querySelectorAll('button')).find(b=>b.innerText.trim()==='Oruk').click()`
+      );
+      receipt.checks.push(
+        "Fresh profile preserves upstream defaults; Local → Oruk is selected through the actual settings controls"
+      );
+    } else {
+      assert.equal(receipt.initial_selection.local, "true");
+      assert.equal(receipt.initial_selection.provider, "nvidia");
+      assert.equal(receipt.initial_selection.model, "orukeet-v0.1.0-q8");
+      assert.equal(receipt.initial_selection.clipboard, "true");
+      assert.equal(receipt.initial_selection.paste, "false");
+      assert.equal(receipt.initial_selection.preview, "true");
+      receipt.checks.push(
+        "A second app process restores Local → Oruk, the selected checkpoint, preview and clipboard preferences without reseeding settings"
+      );
+    }
+    await until(
+      () =>
+        panel.webContents.executeJavaScript(
+          `Boolean(document.querySelector('a[href="https://huggingface.co/oruk/orukeet"]'))`
+        ),
+      "Orukeet model card"
+    );
+    receipt.logos = await panel.webContents.executeJavaScript(
+      `Array.from(document.querySelectorAll('img')).filter(i=>i.alt==='oruk icon').map(i=>({src:i.getAttribute('src'),complete:i.complete,width:i.naturalWidth,height:i.naturalHeight}))`
+    );
+    assert(
+      receipt.logos.length > 0 && receipt.logos.every((logo) => logo.complete && logo.width > 0)
+    );
+    receipt.card = await panel.webContents.executeJavaScript(
+      `(()=>{const a=document.querySelector('a[href="https://huggingface.co/oruk/orukeet"]');a.scrollIntoView({block:'center'});return {text:a.innerText,href:a.href,context:a.parentElement.innerText}})()`
+    );
+    assert.equal(receipt.card.text, "Model card");
+    assert.match(receipt.card.context, /Orukeet/);
+    assert.match(receipt.card.context, /Recommended/);
+    receipt.checks.push("Current Oruk logo loads and the Orukeet card is marked Recommended");
+    const installed = await panel.webContents.executeJavaScript(
+      "window.electronAPI.listParakeetModels()"
+    );
+    const downloaded = installed.models.some(
+      (model) => model.model === "orukeet-v0.1.0-q8" && model.downloaded
+    );
+    if (phase === "fresh" && process.env.ORUKEET_QA_REUSED_MODEL === "1") {
+      assert.equal(downloaded, true, "Restored model must be discovered by the production manager");
+      await panel.webContents.executeJavaScript(
+        `document.querySelector('a[href="https://huggingface.co/oruk/orukeet"]').parentElement.click()`
+      );
+      receipt.checks.push(
+        "A fresh profile discovers the previously hash-verified QA model cache; the installed Orukeet card selects it"
+      );
+    } else if (phase === "fresh") {
+      assert.equal(downloaded, false, "Fresh profile must have no installed model");
+      progress("public-download-started");
+      await panel.webContents.executeJavaScript(
+        `Array.from(document.querySelector('a[href="https://huggingface.co/oruk/orukeet"]').parentElement.querySelectorAll('button')).find(b=>b.innerText.trim()==='Download').click()`
+      );
+      await until(
+        () =>
+          panel.webContents.executeJavaScript(
+            `window.electronAPI.listParakeetModels().then(r=>r.models.some(m=>m.model==='orukeet-v0.1.0-q8'&&m.downloaded))`
+          ),
+        "UI public model download",
+        600000
+      );
+      receipt.checks.push("UI Download installs the anonymous public Hugging Face ONNX archive");
+    } else {
+      assert.equal(downloaded, true, "Model must persist across app restart");
+      receipt.checks.push("Downloaded model is found on restart without another download");
+    }
+    await until(
+      () =>
+        panel.webContents.executeJavaScript(
+          `localStorage.getItem('parakeetModel')==='orukeet-v0.1.0-q8'`
+        ),
+      "installed model selection"
+    );
+    receipt.selection = await panel.webContents.executeJavaScript(stateJS);
+    assert.equal(receipt.selection.provider, "nvidia");
+    const modelDir = path.join(profile, "cache", "parakeet-models", "orukeet-v0.1.0-q8");
+    receipt.model_sha256 = Object.fromEntries(
+      Object.keys(expectedHashes).map((name) => [
+        name,
+        sha(fs.readFileSync(path.join(modelDir, name))),
+      ])
+    );
+    assert.deepEqual(receipt.model_sha256, expectedHashes);
+    receipt.checks.push(
+      "All four installed model files exactly match the optimized public artifact"
+    );
+    progress("model-installed-and-verified");
+    await panel.webContents.executeJavaScript(
+      `window.__cardBubbles=0;document.addEventListener('click',()=>window.__cardBubbles++);document.querySelector('a[href="https://huggingface.co/oruk/orukeet"]').click()`
+    );
+    await until(() => opened.length === 1, "model card mouse navigation");
+    progress("model-card-mouse-passed");
+    panel.show();
+    panel.focus();
+    panel.webContents.focus();
+    await until(() => panel.isFocused(), "model card window focus", 10000);
+    await panel.webContents.executeJavaScript(
+      `document.querySelector('a[href="https://huggingface.co/oruk/orukeet"]').focus()`
+    );
+    assert(
+      await panel.webContents.executeJavaScript(
+        `document.activeElement.matches('a[href="https://huggingface.co/oruk/orukeet"]')`
+      )
+    );
+    panel.webContents.sendInputEvent({ type: "keyDown", keyCode: "Return" });
+    panel.webContents.sendInputEvent({ type: "keyUp", keyCode: "Return" });
+    await until(() => opened.length === 2, "model card keyboard navigation", 10000);
+    progress("model-card-keyboard-passed");
+    assert.equal(await panel.webContents.executeJavaScript("window.__cardBubbles"), 0);
+    assert.deepEqual(await panel.webContents.executeJavaScript(stateJS), receipt.selection);
+    assert.deepEqual(opened, [
+      "https://huggingface.co/oruk/orukeet",
+      "https://huggingface.co/oruk/orukeet",
+    ]);
+    receipt.external_urls = opened;
+    receipt.checks.push(
+      "Mouse and keyboard open the correct model card through IPC without changing the selection"
+    );
+    const screenshot = `${phase}-model-picker.png`;
+    fs.writeFileSync(
+      path.join(path.dirname(output), screenshot),
+      (await panel.webContents.capturePage()).toPNG()
+    );
+    receipt.screenshot = screenshot;
+    receipt.screenshot_sha256 = sha(fs.readFileSync(path.join(path.dirname(output), screenshot)));
+    const Database = requireApp("better-sqlite3");
+    db = new Database(path.join(profile, "OpenWhispr-development", "transcriptions.db"), {
+      readonly: true,
+    });
+    const rows = () => db.prepare("SELECT id,text,raw_text FROM transcriptions ORDER BY id").all();
+    const summary = (row) => ({
+      id: row.id,
+      characters: row.text.length,
+      text_sha256: sha(row.text),
+      raw_text_sha256: sha(row.raw_text || ""),
+    });
+    receipt.initial_history = rows().map(summary);
+    if (phase === "fresh") assert.equal(receipt.initial_history.length, 0);
+    else {
+      const prior = JSON.parse(
+        fs.readFileSync(path.join(path.dirname(output), "fresh.json"), "utf8")
+      );
+      assert.deepEqual(receipt.initial_history, prior.final_history);
+      receipt.checks.push(
+        "SQLite history from the first process survives a normal shutdown and restart exactly"
+      );
+    }
+    const loaded = new Promise((resolve) => initial.webContents.once("did-finish-load", resolve));
+    initial.reload();
+    await loaded;
+    await delay(2000);
+    await initial.webContents.executeJavaScript(
+      `window.__orukeetQA={previews:[],finals:[]};for(const method of ['onPreviewText','onPreviewAppend'])window.electronAPI[method](text=>{if(typeof text==='string'&&text.trim())window.__orukeetQA.previews.push({type:method,text,at:Date.now()})});window.electronAPI.onPreviewResult(payload=>{if(payload?.text)window.__orukeetQA.finals.push({text:payload.text,at:Date.now()})});void 0;`
+    );
+    async function record(label) {
+      progress(`recording-${label}`);
+      const eventIndex = events.length;
+      const before = rows().length;
+      const previewIndex = await initial.webContents.executeJavaScript(
+        "window.__orukeetQA.previews.length"
+      );
+      const finalIndex = await initial.webContents.executeJavaScript(
+        "window.__orukeetQA.finals.length"
+      );
+      clipboard.writeText(`orukeet-e2e-${phase}-${label}-pending`);
+      const previousPreviewStillVisible =
+        label === "immediate-next-success"
+          ? await initial.webContents.executeJavaScript(
+              `Boolean(document.querySelector('main[aria-label="Preview"][aria-hidden="false"] p')?.innerText.trim())`
+            )
+          : null;
+      if (label === "immediate-next-success")
+        assert.equal(
+          previousPreviewStillVisible,
+          true,
+          "The previous final preview must still be open when the rapid next recording starts"
+        );
+      initial.webContents.send("start-dictation");
+      await until(
+        () => events.slice(eventIndex).some((event) => event.state === "recording"),
+        "MediaRecorder capture starts"
+      );
+      const started = Date.now();
+      await until(
+        () =>
+          initial.webContents.executeJavaScript(
+            `window.__orukeetQA.previews.length>${previewIndex}`
+          ),
+        "real preview text before stop",
+        45000
+      );
+      let visible;
+      await until(
+        async () => {
+          visible = await initial.webContents.executeJavaScript(
+            `(()=>{const p=document.querySelector('main[aria-label="Preview"][aria-hidden="false"] p');return p?.innerText.trim()||''})()`
+          );
+          const received = await initial.webContents.executeJavaScript(
+            `window.__orukeetQA.previews.slice(${previewIndex})`
+          );
+          const normalize = (text) => text.trim().toLowerCase().replace(/\s+/g, " ");
+          return (
+            Boolean(visible) &&
+            received.some((event) =>
+              normalize(visible).includes(normalize(event.text).slice(0, 20))
+            )
+          );
+        },
+        "visible live transcript DOM before stop",
+        10000
+      );
+      await delay(Math.max(0, 11500 - (Date.now() - started)));
+      const live = await initial.webContents.executeJavaScript(
+        `window.__orukeetQA.previews.slice(${previewIndex})`
+      );
+      assert(live.some((event) => event.text.trim().length > 0));
+      const stopped = Date.now();
+      initial.webContents.send("stop-dictation");
+      await until(() => rows().length === before + 1, "real transcript saved to SQLite");
+      const saved = Date.now();
+      const row = rows().at(-1);
+      assert.match(row.text.toLowerCase(), /ask not what your country/);
+      await until(
+        () => clipboard.readText() === row.text,
+        "clipboard delivery matches saved text",
+        15000
+      );
+      await until(
+        () =>
+          initial.webContents.executeJavaScript(
+            `window.__orukeetQA.finals.slice(${finalIndex}).some(event=>event.text===${JSON.stringify(row.text)})`
+          ),
+        "final preview IPC matches this saved transcript",
+        10000
+      );
+      await until(
+        () =>
+          initial.webContents.executeJavaScript(
+            `document.querySelector('main[aria-label="Preview"][aria-hidden="false"] p')?.innerText.trim()===${JSON.stringify(row.text.trim())}`
+          ),
+        "visible final preview matches this saved transcript",
+        10000
+      );
+      await until(
+        () => events.slice(eventIndex).some((event) => event.state === "idle"),
+        "recording returns idle"
+      );
+      const backend = await initial.webContents.executeJavaScript(
+        "window.electronAPI.parakeetServerStatus()"
+      );
+      assert.equal(backend.running, true);
+      assert.equal(backend.modelName, "orukeet-v0.1.0-q8");
+      return {
+        label,
+        ...summary(row),
+        stop_to_saved_ms: saved - stopped,
+        stop_to_idle_ms: Date.now() - stopped,
+        live_preview_events_before_stop: live.length,
+        first_preview_after_recording_ms: live[0].at - started,
+        visible_live_preview_characters: visible.length,
+        visible_live_preview_sha256: sha(visible),
+        clipboard_matches_saved_text: true,
+        final_preview_matches_saved_text: true,
+        active_backend_model: backend.modelName,
+        previous_preview_still_visible_at_start: previousPreviewStillVisible,
+      };
+    }
+    receipt.recordings = [await record(phase === "fresh" ? "first" : "after-restart")];
+    // Do not dismiss or wait for the first final preview to fade. The next
+    // successful recording must replace that still-open preview in place.
+    receipt.recordings.push(await record("immediate-next-success"));
+    receipt.checks.push(
+      "Real MediaRecorder capture yields visible live preview before stop, final ASR text, a SQLite row and exact clipboard delivery"
+    );
+    receipt.checks.push(
+      "Two immediately consecutive successful recordings both show actual live and final text while the first preview is still open"
+    );
+    if (phase === "fresh") {
+      const before = rows().length;
+      const eventIndex = events.length;
+      initial.webContents.send("start-dictation");
+      await until(
+        () => events.slice(eventIndex).some((event) => event.state === "recording"),
+        "cancel test capture starts"
+      );
+      await delay(1200);
+      initial.webContents.send("cancel-dictation");
+      await until(
+        () => events.slice(eventIndex).some((event) => event.state === "idle"),
+        "cancel returns idle"
+      );
+      await delay(750);
+      assert.equal(rows().length, before);
+      receipt.recordings.push(await record("after-cancel"));
+      receipt.checks.push(
+        "Cancel creates no history row; the next recording restores visible preview, ASR, history and clipboard delivery"
+      );
+    }
+    if (phase === "restart") {
+      progress("native-paste-probe");
+      receipt.native_paste = await require("./orukeet-windows-native-paste.cjs")({
+        electron: requireApp("electron"),
+        appRoot: root,
+        managedWindow: initial,
+        transcript: rows().at(-1).text,
+        focusDrift: true,
+      });
+      assert.equal(
+        receipt.native_paste.status,
+        "passed",
+        receipt.native_paste.error || receipt.native_paste.reason
+      );
+      receipt.checks.push(
+        "The Windows native helper restores a captured scratch target after focus drift, pastes the actual decoded transcript with trusted DOM events, and restores the clipboard"
+      );
+    }
+    receipt.final_history = rows().map(summary);
+    receipt.events = events;
+    const sidecarDir = path.join(profile, "OpenWhispr-development", "sidecar-pids");
+    receipt.sidecars_before_quit = fs.existsSync(sidecarDir)
+      ? fs
+          .readdirSync(sidecarDir)
+          .filter((name) => name.endsWith(".pid"))
+          .map((name) => ({
+            name,
+            pid: Number(fs.readFileSync(path.join(sidecarDir, name), "utf8").trim()),
+          }))
+      : [];
+    receipt.status = "passed";
+  } catch (error) {
+    receipt.status = "failed";
+    receipt.error = { message: error.message, stack: error.stack };
+    if (panel && !panel.isDestroyed()) {
+      receipt.failure_ui = await panel.webContents
+        .executeJavaScript(
+          `({title:document.title,buttons:Array.from(document.querySelectorAll('button')).map(b=>b.innerText.trim()).filter(Boolean),hasModelCard:Boolean(document.querySelector('a[href="https://huggingface.co/oruk/orukeet"]'))})`
+        )
+        .catch(() => null);
+    }
+    progress(`failed: ${error.message}`);
+  } finally {
+    if (db) db.close();
+    save();
+    process.stdin.setEncoding("utf8");
+    process.stdin.once("data", () => app.quit());
+    progress("ready-to-quit");
+    setTimeout(() => app.quit(), 30000).unref();
+  }
+})();

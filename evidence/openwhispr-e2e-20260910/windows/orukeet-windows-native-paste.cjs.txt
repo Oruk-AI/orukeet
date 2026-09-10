@@ -1,0 +1,187 @@
+// Optional QA module. Invoke after the main Windows GUI run, with the real
+// managed renderer and a transcript produced by that run. No production edits.
+// The probe is deliberately restricted to ephemeral Windows GitHub runners.
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+const crypto = require("node:crypto");
+const { execFile } = require("node:child_process");
+const { promisify } = require("node:util");
+const run = promisify(execFile);
+const sha = (value) => crypto.createHash("sha256").update(value).digest("hex");
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function until(check, label, timeout = 5000) {
+  const end = Date.now() + timeout;
+  while (Date.now() < end) {
+    if (await check()) return;
+    await delay(50);
+  }
+  throw new Error(`Timed out: ${label}`);
+}
+
+function hwnd(window) {
+  const bytes = window.getNativeWindowHandle();
+  return bytes.length >= 8 ? bytes.readBigUInt64LE() : BigInt(bytes.readUInt32LE());
+}
+
+module.exports = async function probeWindowsNativePaste({
+  electron,
+  appRoot,
+  managedWindow,
+  transcript,
+  focusDrift = true,
+}) {
+  const receipt = {
+    status: "not-run",
+    scope:
+      "Actual production captureDictationTarget and pasteText IPC deliver a previously decoded transcript through the Windows clipboard/paste helper to an isolated textarea. DOM readback and trusted native paste/input events verify delivery. This does not itself record audio or simulate the global dictation shortcut.",
+    harness_sha256: sha(fs.readFileSync(__filename)),
+  };
+  if (process.platform !== "win32" || process.env.GITHUB_ACTIONS !== "true") {
+    return { ...receipt, reason: "Run only in an ephemeral Windows GitHub Actions job." };
+  }
+  assert(transcript && typeof transcript === "string", "Pass a real recorded transcript");
+  const { BrowserWindow, clipboard } = electron;
+  const ClipboardManager = require(path.join(appRoot, "src/helpers/clipboard.js"));
+  const helper = new ClipboardManager().resolveWindowsFastPasteBinary();
+  if (!helper) return { ...receipt, reason: "Production Windows paste helper is unavailable." };
+  const { stdout: capabilities } = await run(helper, ["--capabilities"], {
+    windowsHide: true,
+    timeout: 2000,
+    encoding: "utf8",
+  });
+  receipt.helper_sha256 = sha(fs.readFileSync(helper));
+  receipt.capabilities = capabilities.trim().split(/\s+/);
+  if (focusDrift && !receipt.capabilities.includes("focus-restore-v1")) {
+    return { ...receipt, reason: "Installed helper does not advertise native target restoration." };
+  }
+  const originalClipboard = clipboard.readText();
+  const sentinel = `orukeet-native-paste-${crypto.randomUUID()}`;
+  const windows = [];
+  const makeWindow = async (title) => {
+    const window = new BrowserWindow({
+      width: 640,
+      height: 360,
+      show: false,
+      title,
+      webPreferences: {
+        nodeIntegration: false,
+        contextIsolation: true,
+        sandbox: true,
+        partition: `orukeet-native-paste-${crypto.randomUUID()}`,
+      },
+    });
+    windows.push(window);
+    await window.loadURL(
+      "data:text/html;charset=utf-8," +
+        encodeURIComponent(
+          '<!doctype html><meta charset="utf-8"><title>' +
+            title +
+            "</title>" +
+            '<textarea id="target" aria-label="Orukeet native paste target" style="width:95%;height:280px"></textarea>'
+        )
+    );
+    await window.webContents.executeJavaScript(`
+      window.__nativePasteEvents=[];
+      for(const type of ['paste','input']) document.querySelector('#target').addEventListener(type,event=>{
+        window.__nativePasteEvents.push({type,isTrusted:event.isTrusted,inputType:event.inputType||null});
+      });
+    `);
+    return window;
+  };
+  const focus = async (window) => {
+    window.show();
+    window.focus();
+    window.webContents.focus();
+    await window.webContents.executeJavaScript("document.querySelector('#target').focus()");
+    await until(
+      async () =>
+        window.isFocused() &&
+        window.webContents.executeJavaScript(
+          "document.hasFocus() && document.activeElement.id==='target'"
+        ),
+      "scratch target focus"
+    );
+  };
+  try {
+    const target = await makeWindow("Orukeet native paste target");
+    await focus(target);
+    const detected = await run(helper, ["--detect-only"], {
+      windowsHide: true,
+      timeout: 2000,
+      encoding: "utf8",
+    });
+    const match = detected.stdout.match(/^TARGET\s+(\S+)/m);
+    if (!match || BigInt("0x" + match[1].replace(/^0x/i, "")) !== hwnd(target)) {
+      return {
+        ...receipt,
+        reason: "Runner did not grant the scratch window native foreground focus.",
+      };
+    }
+    const captured = await managedWindow.webContents.executeJavaScript(
+      "window.electronAPI.captureDictationTarget()"
+    );
+    assert.equal(captured.success, true);
+    clipboard.writeText(sentinel);
+    let decoy;
+    if (focusDrift) {
+      decoy = await makeWindow("Orukeet focus drift control");
+      await focus(decoy);
+    }
+    const expected = require(path.join(appRoot, "src/helpers/smartSpacing.js")).applySmartSpacing(
+      transcript
+    );
+    const started = Date.now();
+    const pasted = await managedWindow.webContents.executeJavaScript(
+      `window.electronAPI.pasteText(${JSON.stringify(transcript)},{restoreClipboard:true})`
+    );
+    receipt.ipc_result = pasted;
+    assert.equal(pasted.success, true);
+    assert.equal(pasted.pasted, true);
+    await until(
+      () =>
+        target.webContents.executeJavaScript(
+          `document.querySelector('#target').value===${JSON.stringify(expected)}`
+        ),
+      "native pasted text reaches captured target"
+    );
+    receipt.delivery_ms = Date.now() - started;
+    const observed = await target.webContents.executeJavaScript(
+      "({value:document.querySelector('#target').value,events:window.__nativePasteEvents})"
+    );
+    assert(observed.events.some((event) => event.type === "paste" && event.isTrusted));
+    assert(
+      observed.events.some(
+        (event) =>
+          event.type === "input" && event.isTrusted && event.inputType === "insertFromPaste"
+      )
+    );
+    if (decoy)
+      assert.equal(
+        await decoy.webContents.executeJavaScript("document.querySelector('#target').value"),
+        ""
+      );
+    await until(() => clipboard.readText() === sentinel, "production clipboard restoration");
+    Object.assign(receipt, {
+      status: "passed",
+      focus_drift: focusDrift,
+      transcript_sha256: sha(transcript),
+      expected_paste_sha256: sha(expected),
+      observed_paste_sha256: sha(observed.value),
+      pasted_characters: observed.value.length,
+      native_events: observed.events,
+      clipboard_restored: true,
+      decoy_unchanged: decoy ? true : null,
+    });
+  } catch (error) {
+    receipt.status = "failed";
+    receipt.error = error.message;
+  } finally {
+    // This module runs only in a disposable runner. Restore its prior text
+    // clipboard and close only the two windows created by this probe.
+    clipboard.writeText(originalClipboard);
+    for (const window of windows) if (!window.isDestroyed()) window.destroy();
+  }
+  return receipt;
+};

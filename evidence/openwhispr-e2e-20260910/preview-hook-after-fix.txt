@@ -1,0 +1,14 @@
+✔ rapid consecutive recordings update an already-visible final transcript panel (234.300833ms)
+✔ a new recording during panel entrance keeps text buffered until the surface is ready (29.855292ms)
+✔ closing a held final releases the hold before the next final result (26.815333ms)
+✔ replacing a held final with an error releases the hold before the next result (23.088208ms)
+✔ a new recording releases a hold inherited from the prior session (26.938875ms)
+✔ hovering a final transcript pauses its active hide countdown and leaving restarts it (21.379ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 505.467709

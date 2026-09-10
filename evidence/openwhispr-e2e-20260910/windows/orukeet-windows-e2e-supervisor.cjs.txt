@@ -1,0 +1,225 @@
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+const os = require("node:os");
+const crypto = require("node:crypto");
+const { spawn, spawnSync } = require("node:child_process");
+const root = path.resolve(__dirname, "../..");
+const output = path.join(root, "qa-artifacts");
+const profile = fs.mkdtempSync(path.join(os.tmpdir(), "openwhispr-windows-e2e-"));
+const audio = path.join(profile, "jfk.wav");
+const modelCache = path.join(root, "qa-model-cache");
+const profileModel = path.join(profile, "cache", "parakeet-models", "orukeet-v0.1.0-q8");
+const sha = (value) => crypto.createHash("sha256").update(value).digest("hex");
+const expectedSource = "2516b0c03816fc8cd216becd3ccad249d3c63a7d";
+const receipt = {
+  status: "running",
+  checked_at_utc: new Date().toISOString(),
+  source_commit: expectedSource,
+  qa_commit: process.env.GITHUB_SHA || null,
+  ci_run: process.env.GITHUB_RUN_ID || null,
+  platform: process.platform,
+  arch: process.arch,
+  cpu: os.cpus()[0]?.model,
+  logical_cpus: os.cpus().length,
+  memory_bytes: os.totalmem(),
+  harness_sha256: sha(fs.readFileSync(__filename)),
+  phases: [],
+};
+fs.mkdirSync(output, { recursive: true });
+const save = () =>
+  fs.writeFileSync(path.join(output, "supervisor.json"), `${JSON.stringify(receipt, null, 2)}\n`);
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+function processSnapshot() {
+  const result = spawnSync(
+    "powershell.exe",
+    [
+      "-NoProfile",
+      "-NonInteractive",
+      "-Command",
+      "Get-CimInstance Win32_Process | Select-Object ProcessId,ParentProcessId,Name | ConvertTo-Json -Compress",
+    ],
+    { encoding: "utf8", timeout: 15000 }
+  );
+  assert.equal(result.status, 0, `Process inspection failed: ${result.stderr}`);
+  const parsed = JSON.parse(result.stdout);
+  return Array.isArray(parsed) ? parsed : [parsed];
+}
+function descendants(processes, pid) {
+  const pids = new Set([pid]);
+  let changed = true;
+  while (changed) {
+    changed = false;
+    for (const process of processes) {
+      if (pids.has(process.ParentProcessId) && !pids.has(process.ProcessId)) {
+        pids.add(process.ProcessId);
+        changed = true;
+      }
+    }
+  }
+  return processes.filter((process) => pids.has(process.ProcessId));
+}
+async function runPhase(phase) {
+  const resultFile = path.join(output, `${phase}.json`);
+  const electron = require("electron");
+  const child = spawn(
+    electron,
+    [
+      path.join(__dirname, "orukeet-windows-e2e.cjs"),
+      "--app-root",
+      root,
+      "--profile-root",
+      profile,
+      "--audio",
+      audio,
+      "--output",
+      resultFile,
+      "--phase",
+      phase,
+    ],
+    {
+      cwd: root,
+      env: {
+        ...process.env,
+        ELECTRON_ENABLE_LOGGING: "0",
+        ORUKEET_QA_REUSED_MODEL: receipt.reused_cached_model ? "1" : "0",
+      },
+      stdio: ["pipe", "pipe", "pipe"],
+    }
+  );
+  const phaseReceipt = {
+    phase,
+    pid: child.pid,
+    started_at_utc: new Date().toISOString(),
+    markers: [],
+  };
+  receipt.phases.push(phaseReceipt);
+  save();
+  let tail = "";
+  let ready = false;
+  let closeResult;
+  let descendantsAtQuit = [];
+  let quitError;
+  const closed = new Promise((resolve) =>
+    child.once("close", (code, signal) => {
+      closeResult = { code, signal };
+      resolve(closeResult);
+    })
+  );
+  child.on("error", (error) => {
+    phaseReceipt.spawn_error = error.message;
+  });
+  // Application output can contain fixture transcripts. Keep only QA markers in public artifacts.
+  child.stderr.on("data", () => {});
+  child.stdout.on("data", (chunk) => {
+    tail += chunk.toString();
+    const lines = tail.split(/\r?\n/);
+    tail = lines.pop();
+    for (const line of lines) {
+      if (!line.startsWith("ORUKEET_QA ")) continue;
+      const marker = JSON.parse(line.slice("ORUKEET_QA ".length));
+      phaseReceipt.markers.push(marker);
+      console.log(`${phase}: ${marker.stage}`);
+      if (marker.stage === "ready-to-quit") {
+        ready = true;
+        try {
+          descendantsAtQuit = descendants(processSnapshot(), child.pid);
+          phaseReceipt.processes_before_quit = descendantsAtQuit;
+          child.stdin.write("quit\n");
+        } catch (error) {
+          quitError = error;
+          child.stdin.write("quit\n");
+        }
+      }
+    }
+  });
+  const deadline = Date.now() + 20 * 60 * 1000;
+  while (!closeResult && Date.now() < deadline) await Promise.race([closed, delay(1000)]);
+  if (!closeResult) {
+    phaseReceipt.timeout = true;
+    phaseReceipt.processes_at_timeout = descendants(processSnapshot(), child.pid);
+    spawnSync("taskkill.exe", ["/PID", String(child.pid), "/T", "/F"], {
+      encoding: "utf8",
+      timeout: 15000,
+    });
+    await Promise.race([closed, delay(10000)]);
+    save();
+    throw new Error(`${phase} timed out; only its own Electron process tree was terminated`);
+  }
+  phaseReceipt.exit = closeResult;
+  phaseReceipt.completed_at_utc = new Date().toISOString();
+  assert(ready, `${phase} exited before finishing the renderer test`);
+  assert.ifError(quitError);
+  assert.equal(closeResult.code, 0);
+  assert.equal(closeResult.signal, null);
+  const phaseResult = JSON.parse(fs.readFileSync(resultFile, "utf8"));
+  assert.equal(phaseResult.status, "passed", phaseResult.error?.message);
+  assert.equal(phaseResult.normal_quit_requested, true);
+  let alive = [];
+  const exitDeadline = Date.now() + 15000;
+  do {
+    const pids = new Set(descendantsAtQuit.map((process) => process.ProcessId));
+    alive = processSnapshot().filter((process) => pids.has(process.ProcessId));
+    if (alive.length) await delay(500);
+  } while (alive.length && Date.now() < exitDeadline);
+  phaseReceipt.processes_remaining_after_quit = alive;
+  phaseReceipt.normal_shutdown_passed = alive.length === 0;
+  save();
+  assert.equal(
+    alive.length,
+    0,
+    "All app, worker, renderer and native sidecar processes must exit normally"
+  );
+  assert(
+    phaseResult.sidecars_before_quit.some((sidecar) =>
+      descendantsAtQuit.some((process) => process.ProcessId === sidecar.pid)
+    ),
+    "Real registered native sidecar must be included in the shutdown check"
+  );
+}
+(async () => {
+  try {
+    assert.equal(process.platform, "win32");
+    const diff = spawnSync("git", ["diff", "--name-only", expectedSource, "HEAD"], {
+      cwd: root,
+      encoding: "utf8",
+    });
+    assert.equal(diff.status, 0);
+    receipt.qa_only_files = diff.stdout.trim().split(/\r?\n/).filter(Boolean);
+    assert(
+      receipt.qa_only_files.every(
+        (file) =>
+          file.startsWith("scripts/qa/") || file === ".github/workflows/orukeet-windows-e2e.yml"
+      ),
+      "Production source must remain exactly 2516b0c0"
+    );
+    const fixtureURL =
+      "https://raw.githubusercontent.com/Oruk-AI/orukeet/76ffba87962954b06d18f000c9609e336422fb20/demos/fixtures/jfk.wav";
+    const response = await fetch(fixtureURL, { signal: AbortSignal.timeout(60000) });
+    assert.equal(response.status, 200);
+    const wav = Buffer.from(await response.arrayBuffer());
+    receipt.fixture_sha256 = sha(wav);
+    assert.equal(
+      receipt.fixture_sha256,
+      "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f"
+    );
+    fs.writeFileSync(audio, wav);
+    receipt.reused_cached_model = fs.existsSync(path.join(modelCache, "encoder.int8.onnx"));
+    if (receipt.reused_cached_model) {
+      fs.cpSync(modelCache, profileModel, { recursive: true });
+    }
+    await runPhase("fresh");
+    // The app harness has verified every hash and completed real recording.
+    fs.cpSync(profileModel, modelCache, { recursive: true });
+    await runPhase("restart");
+    receipt.status = "passed";
+    console.log("Both Windows renderer phases and normal process-tree shutdown checks passed.");
+  } catch (error) {
+    receipt.status = "failed";
+    receipt.error = { message: error.message, stack: error.stack };
+    console.error(error);
+    process.exitCode = 1;
+  } finally {
+    save();
+  }
+})();

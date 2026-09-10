@@ -1,0 +1,2 @@
+# Preserve executed Windows checkout bytes for receipt hashes.
+windows/*.cjs.txt -text whitespace=cr-at-eol

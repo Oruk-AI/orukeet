@@ -1,0 +1,12 @@
+Command: REQUIRE_DB_TESTS=1 npm test
+Node 24.19.0
+Source: 2516b0c03816fc8cd216becd3ccad249d3c63a7d
+
+ℹ tests 4091
+ℹ suites 7
+ℹ pass 4084
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 6
+ℹ todo 1
+ℹ duration_ms 54303.325083

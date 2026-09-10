@@ -1,0 +1,213 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-09-10T20:07:32.152Z",
+  "source_commit": "2516b0c03816fc8cd216becd3ccad249d3c63a7d",
+  "qa_commit": "e91c07c5d8e9a20d578471d3dcdb57aa35c204a0",
+  "ci_run": "34524247481",
+  "platform": "win32",
+  "arch": "x64",
+  "cpu": "AMD EPYC 7763 64-Core Processor                ",
+  "logical_cpus": 4,
+  "memory_bytes": 17174360064,
+  "harness_sha256": "c8c2a5b06aa8d90441afe2cf9df998ed8b5191c31286ee77064cceb4d8f6bc88",
+  "phases": [
+    {
+      "phase": "fresh",
+      "pid": 3944,
+      "started_at_utc": "2026-09-10T20:07:32.438Z",
+      "markers": [
+        {
+          "phase": "fresh",
+          "stage": "app-ready"
+        },
+        {
+          "phase": "fresh",
+          "stage": "public-download-started"
+        },
+        {
+          "phase": "fresh",
+          "stage": "model-installed-and-verified"
+        },
+        {
+          "phase": "fresh",
+          "stage": "model-card-mouse-passed"
+        },
+        {
+          "phase": "fresh",
+          "stage": "model-card-keyboard-passed"
+        },
+        {
+          "phase": "fresh",
+          "stage": "recording-first"
+        },
+        {
+          "phase": "fresh",
+          "stage": "recording-immediate-next-success"
+        },
+        {
+          "phase": "fresh",
+          "stage": "recording-after-cancel"
+        },
+        {
+          "phase": "fresh",
+          "stage": "ready-to-quit"
+        }
+      ],
+      "processes_before_quit": [
+        {
+          "ProcessId": 3944,
+          "ParentProcessId": 3876,
+          "Name": "electron.exe"
+        },
+        {
+          "ProcessId": 4560,
+          "ParentProcessId": 3944,
+          "Name": "electron.exe"
+        },
+        {
+          "ProcessId": 5888,
+          "ParentProcessId": 3944,
+          "Name": "electron.exe"
+        },
+        {
+          "ProcessId": 4280,
+          "ParentProcessId": 3944,
+          "Name": "electron.exe"
+        },
+        {
+          "ProcessId": 7300,
+          "ParentProcessId": 3944,
+          "Name": "electron.exe"
+        },
+        {
+          "ProcessId": 5196,
+          "ParentProcessId": 3944,
+          "Name": "electron.exe"
+        },
+        {
+          "ProcessId": 3376,
+          "ParentProcessId": 3944,
+          "Name": "electron.exe"
+        },
+        {
+          "ProcessId": 5340,
+          "ParentProcessId": 3944,
+          "Name": "sherpa-onnx-ws-win32-x64.exe"
+        },
+        {
+          "ProcessId": 1444,
+          "ParentProcessId": 5340,
+          "Name": "conhost.exe"
+        }
+      ],
+      "exit": {
+        "code": 0,
+        "signal": null
+      },
+      "completed_at_utc": "2026-09-10T20:10:17.057Z",
+      "processes_remaining_after_quit": [],
+      "normal_shutdown_passed": true
+    },
+    {
+      "phase": "restart",
+      "pid": 3548,
+      "started_at_utc": "2026-09-10T20:10:17.594Z",
+      "markers": [
+        {
+          "phase": "restart",
+          "stage": "app-ready"
+        },
+        {
+          "phase": "restart",
+          "stage": "model-installed-and-verified"
+        },
+        {
+          "phase": "restart",
+          "stage": "model-card-mouse-passed"
+        },
+        {
+          "phase": "restart",
+          "stage": "model-card-keyboard-passed"
+        },
+        {
+          "phase": "restart",
+          "stage": "recording-after-restart"
+        },
+        {
+          "phase": "restart",
+          "stage": "recording-immediate-next-success"
+        },
+        {
+          "phase": "restart",
+          "stage": "native-paste-probe"
+        },
+        {
+          "phase": "restart",
+          "stage": "ready-to-quit"
+        }
+      ],
+      "processes_before_quit": [
+        {
+          "ProcessId": 3548,
+          "ParentProcessId": 3876,
+          "Name": "electron.exe"
+        },
+        {
+          "ProcessId": 1356,
+          "ParentProcessId": 3548,
+          "Name": "electron.exe"
+        },
+        {
+          "ProcessId": 6088,
+          "ParentProcessId": 3548,
+          "Name": "electron.exe"
+        },
+        {
+          "ProcessId": 3252,
+          "ParentProcessId": 3548,
+          "Name": "electron.exe"
+        },
+        {
+          "ProcessId": 1908,
+          "ParentProcessId": 3548,
+          "Name": "electron.exe"
+        },
+        {
+          "ProcessId": 7308,
+          "ParentProcessId": 3548,
+          "Name": "sherpa-onnx-ws-win32-x64.exe"
+        },
+        {
+          "ProcessId": 1392,
+          "ParentProcessId": 7308,
+          "Name": "conhost.exe"
+        },
+        {
+          "ProcessId": 7044,
+          "ParentProcessId": 3548,
+          "Name": "electron.exe"
+        },
+        {
+          "ProcessId": 3848,
+          "ParentProcessId": 3548,
+          "Name": "electron.exe"
+        }
+      ],
+      "exit": {
+        "code": 0,
+        "signal": null
+      },
+      "completed_at_utc": "2026-09-10T20:11:20.999Z",
+      "processes_remaining_after_quit": [],
+      "normal_shutdown_passed": true
+    }
+  ],
+  "qa_only_files": [
+    ".github/workflows/orukeet-windows-e2e.yml",
+    "scripts/qa/orukeet-windows-e2e-supervisor.cjs",
+    "scripts/qa/orukeet-windows-e2e.cjs",
+    "scripts/qa/orukeet-windows-native-paste.cjs"
+  ],
+  "fixture_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+  "reused_cached_model": false
+}

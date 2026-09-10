@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "hf_revision": "55a984d46f68323301837194ce647c702f55facc",
+  "model_files": {
+    "encoder.int8.onnx": {
+      "bytes": 653182378,
+      "sha256": "7b55f2a504a20a8e462899f5befd45f4a1784948d76ed0127902d9cf39405487",
+      "matches_published_release": true
+    },
+    "decoder.int8.onnx": {
+      "bytes": 11845332,
+      "sha256": "c185c2afb4c77c94bb1314807ecb3dc1623057a3dc540b83e10301af9bf4cfca",
+      "matches_published_release": true
+    },
+    "joiner.int8.onnx": {
+      "bytes": 6355335,
+      "sha256": "1a7e90abf7172d926dd7e2edac2a5d5035c24dfb641a15e131d57b6a5f63cdd3",
+      "matches_published_release": true
+    },
+    "tokens.txt": {
+      "bytes": 93939,
+      "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d",
+      "matches_published_release": true
+    }
+  },
+  "platform": "macOS-26.4.1-arm64-arm-64bit-Mach-O"
+}

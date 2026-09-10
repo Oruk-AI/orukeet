@@ -1,0 +1,1546 @@
+{
+  "status": "passed",
+  "stage": "extended",
+  "started_utc": "2026-09-10T20:05:24.263Z",
+  "app_commit": "2516b0c03816fc8cd216becd3ccad249d3c63a7d",
+  "checks": [
+    {
+      "label": "Prior selection and dictation history survive full restart",
+      "passed": true
+    },
+    {
+      "label": "Orukeet preview, final, history and OS clipboard",
+      "passed": true
+    },
+    {
+      "label": "Immediate next Orukeet recording",
+      "passed": true
+    },
+    {
+      "label": "Cancel recording creates no history row",
+      "passed": true
+    },
+    {
+      "label": "Orukeet after cancellation",
+      "passed": true
+    },
+    {
+      "label": "Switch to stock Parakeet",
+      "passed": true
+    },
+    {
+      "label": "Switch back to Orukeet",
+      "passed": true
+    },
+    {
+      "label": "English file upload and open saved note",
+      "passed": true
+    },
+    {
+      "label": "English FLAC upload and open saved note",
+      "passed": true
+    },
+    {
+      "label": "English long-file upload and open saved note",
+      "passed": true
+    },
+    {
+      "label": "French float-WAV upload and open saved note",
+      "passed": true
+    },
+    {
+      "label": "Silent file rejected without note",
+      "passed": true
+    },
+    {
+      "label": "Cancel active file upload",
+      "passed": true
+    },
+    {
+      "label": "English upload after cancellation and open saved note",
+      "passed": true
+    }
+  ],
+  "recordings": [
+    {
+      "label": "Orukeet preview, final, history and OS clipboard",
+      "model": "orukeet-v0.1.0-q8",
+      "renderer_preview_events": [
+        {
+          "type": "onPreviewText",
+          "at": 1789070726976,
+          "characters": 0
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070729483,
+          "characters": 16
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070730096,
+          "characters": 8
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070731598,
+          "characters": 8
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070733102,
+          "characters": 10
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070734600,
+          "characters": 23
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070736102,
+          "characters": 12
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070737605,
+          "characters": 24
+        },
+        {
+          "type": "onPreviewResult",
+          "at": 1789070739148,
+          "characters": 108
+        }
+      ],
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "visible_preview_sha256": "7cb2cd41371fc9841b9e99eebce964d9eb4cc76087cfba3eb85ce6e6671d9629",
+      "visible_preview_characters": 107,
+      "stop_to_saved_ms": 807,
+      "first_preview_ms": 2623,
+      "live_preview_updates": 7,
+      "clipboard_exact": true,
+      "clipboard_transition_from_unique_sentinel": true,
+      "final_preview_exact": true,
+      "final_preview_dom_exact": true,
+      "visible_preview_matches_recognition": true
+    },
+    {
+      "label": "Immediate next Orukeet recording",
+      "model": "orukeet-v0.1.0-q8",
+      "renderer_preview_events": [
+        {
+          "type": "onPreviewText",
+          "at": 1789070739252,
+          "characters": 0
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070740878,
+          "characters": 16
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070742370,
+          "characters": 8
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070743874,
+          "characters": 8
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070745380,
+          "characters": 12
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070746878,
+          "characters": 23
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070748386,
+          "characters": 12
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070749889,
+          "characters": 28
+        },
+        {
+          "type": "onPreviewResult",
+          "at": 1789070751463,
+          "characters": 108
+        }
+      ],
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "visible_preview_sha256": "9f90fa3db5e1f7312d1643cfeb232a6d75d25c9fa49476a49a5e53fb5fdac2f0",
+      "visible_preview_characters": 113,
+      "stop_to_saved_ms": 805,
+      "first_preview_ms": 1706,
+      "live_preview_updates": 7,
+      "clipboard_exact": true,
+      "clipboard_transition_from_unique_sentinel": true,
+      "final_preview_exact": true,
+      "final_preview_dom_exact": true,
+      "visible_preview_matches_recognition": true
+    },
+    {
+      "label": "Orukeet after cancellation",
+      "model": "orukeet-v0.1.0-q8",
+      "renderer_preview_events": [
+        {
+          "type": "onPreviewText",
+          "at": 1789070753805,
+          "characters": 0
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070755470,
+          "characters": 16
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070756945,
+          "characters": 10
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070758433,
+          "characters": 8
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070759932,
+          "characters": 12
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070761439,
+          "characters": 23
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070762930,
+          "characters": 12
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070764440,
+          "characters": 28
+        },
+        {
+          "type": "onPreviewResult",
+          "at": 1789070766191,
+          "characters": 108
+        }
+      ],
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "visible_preview_sha256": "89d403deaabc9ac475f27104ebe934425304e1009cc126dedcba576540628860",
+      "visible_preview_characters": 115,
+      "stop_to_saved_ms": 964,
+      "first_preview_ms": 1733,
+      "live_preview_updates": 7,
+      "clipboard_exact": true,
+      "clipboard_transition_from_unique_sentinel": true,
+      "final_preview_exact": true,
+      "final_preview_dom_exact": true,
+      "visible_preview_matches_recognition": true
+    },
+    {
+      "label": "Switch to stock Parakeet",
+      "model": "parakeet-tdt-0.6b-v3",
+      "renderer_preview_events": [
+        {
+          "type": "onPreviewText",
+          "at": 1789070766603,
+          "characters": 0
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070771282,
+          "characters": 7
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070772732,
+          "characters": 12
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070775740,
+          "characters": 12
+        },
+        {
+          "type": "onPreviewResult",
+          "at": 1789070778970,
+          "characters": 108
+        }
+      ],
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "visible_preview_sha256": "198e5928c34aebc3932828eac7b91938245b97aeab7a4b7a5dce4c6a5991f447",
+      "visible_preview_characters": 33,
+      "stop_to_saved_ms": 1057,
+      "first_preview_ms": 4851,
+      "live_preview_updates": 3,
+      "clipboard_exact": true,
+      "clipboard_transition_from_unique_sentinel": true,
+      "final_preview_exact": true,
+      "final_preview_dom_exact": true,
+      "visible_preview_matches_recognition": true
+    },
+    {
+      "label": "Switch back to Orukeet",
+      "model": "orukeet-v0.1.0-q8",
+      "renderer_preview_events": [
+        {
+          "type": "onPreviewText",
+          "at": 1789070779281,
+          "characters": 0
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070782022,
+          "characters": 17
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070782424,
+          "characters": 8
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070783906,
+          "characters": 8
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070785428,
+          "characters": 16
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070786926,
+          "characters": 23
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070788415,
+          "characters": 12
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070789902,
+          "characters": 24
+        },
+        {
+          "type": "onPreviewResult",
+          "at": 1789070791570,
+          "characters": 108
+        }
+      ],
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "visible_preview_sha256": "ba3fd1525c4bcde17879d5387af1f15e4f7e134ea98e46f5296606c77ba9d826",
+      "visible_preview_characters": 114,
+      "stop_to_saved_ms": 936,
+      "first_preview_ms": 2850,
+      "live_preview_updates": 7,
+      "clipboard_exact": true,
+      "clipboard_transition_from_unique_sentinel": true,
+      "final_preview_exact": true,
+      "final_preview_dom_exact": true,
+      "visible_preview_matches_recognition": true
+    }
+  ],
+  "uploads": [
+    {
+      "label": "English file upload",
+      "file_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "note_id": 11,
+      "saved_content_matches_inference": true,
+      "source_file_verified": true,
+      "content_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "transcript_characters": 108,
+      "model": "orukeet-v0.1.0-q8"
+    },
+    {
+      "label": "English FLAC upload",
+      "file_sha256": "225b0f8849e43b52d229bfb8aadf1d997e0c8477c9c5bab2a82d20b90c92e1cb",
+      "note_id": 12,
+      "saved_content_matches_inference": true,
+      "source_file_verified": true,
+      "content_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "transcript_characters": 108,
+      "model": "orukeet-v0.1.0-q8"
+    },
+    {
+      "label": "English long-file upload",
+      "file_sha256": "ea785dcfe09f596d84acc95dfcdb811edb277ff7b77dc5acc1cc305b14b726fe",
+      "note_id": 13,
+      "saved_content_matches_inference": true,
+      "source_file_verified": true,
+      "content_sha256": "b0258c337a8fb5d2e0c752e316b06a9370b4b2f3f26eb0ad6632e9c04e889653",
+      "transcript_sha256": "b0258c337a8fb5d2e0c752e316b06a9370b4b2f3f26eb0ad6632e9c04e889653",
+      "transcript_characters": 877,
+      "model": "orukeet-v0.1.0-q8"
+    },
+    {
+      "label": "French float-WAV upload",
+      "file_sha256": "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "note_id": 14,
+      "saved_content_matches_inference": true,
+      "source_file_verified": true,
+      "content_sha256": "23384efeef32718885bacd7e559525ce61fdff1163cf960b0877983a65fa340a",
+      "transcript_sha256": "23384efeef32718885bacd7e559525ce61fdff1163cf960b0877983a65fa340a",
+      "transcript_characters": 188,
+      "model": "orukeet-v0.1.0-q8"
+    },
+    {
+      "label": "Cancel active file upload",
+      "backend_aborted": true,
+      "new_notes": 0
+    },
+    {
+      "label": "English upload after cancellation",
+      "file_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "note_id": 15,
+      "saved_content_matches_inference": true,
+      "source_file_verified": true,
+      "content_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "transcript_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "transcript_characters": 108,
+      "model": "orukeet-v0.1.0-q8"
+    }
+  ],
+  "calls": [
+    {
+      "at": 1789070728479,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 46444,
+      "success": true,
+      "text_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad",
+      "text_characters": 16,
+      "text_words": 4,
+      "warning": null,
+      "finished_at": 1789070729483,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070729978,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "87f7dd4bfff532dc34b91b4ea3931f85ed08b687b593f6c1917dc324ff9f3d47",
+      "text_characters": 8,
+      "text_words": 1,
+      "warning": null,
+      "finished_at": 1789070730096,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070731479,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "06b1f48ae93c97f0a10e63ac5bb739fe7fde45c1e668a6c7d9f20a9f7b169e40",
+      "text_characters": 8,
+      "text_words": 2,
+      "warning": null,
+      "finished_at": 1789070731598,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070732981,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "f36fc53038efb74038b85a51468492a3c0a26ead307b7c8905efdb3b7afd7a78",
+      "text_characters": 10,
+      "text_words": 2,
+      "warning": null,
+      "finished_at": 1789070733101,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070734482,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "361632682fc7c9767f007a4c0d556344865c8d109f4629207e59ee0f7b8720a9",
+      "text_characters": 23,
+      "text_words": 5,
+      "warning": null,
+      "finished_at": 1789070734600,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070735984,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "text_characters": 12,
+      "text_words": 3,
+      "warning": null,
+      "finished_at": 1789070736102,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070737484,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "f55df81b6af10852d984d12598596039648b63247be6d9729124b64bc3d99166",
+      "text_characters": 24,
+      "text_words": 5,
+      "warning": null,
+      "finished_at": 1789070737604,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070738383,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 183979,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "text_words": 22,
+      "warning": null,
+      "finished_at": 1789070739147,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070740753,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad",
+      "text_characters": 16,
+      "text_words": 4,
+      "warning": null,
+      "finished_at": 1789070740878,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070742254,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "87f7dd4bfff532dc34b91b4ea3931f85ed08b687b593f6c1917dc324ff9f3d47",
+      "text_characters": 8,
+      "text_words": 1,
+      "warning": null,
+      "finished_at": 1789070742370,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070743754,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "06b1f48ae93c97f0a10e63ac5bb739fe7fde45c1e668a6c7d9f20a9f7b169e40",
+      "text_characters": 8,
+      "text_words": 2,
+      "warning": null,
+      "finished_at": 1789070743874,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070745255,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "942e4e8e8da40f3a27c65794117d2fd73613bda3f9cf00ae20bf3cbd1c6045ba",
+      "text_characters": 12,
+      "text_words": 3,
+      "warning": null,
+      "finished_at": 1789070745380,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070746756,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "361632682fc7c9767f007a4c0d556344865c8d109f4629207e59ee0f7b8720a9",
+      "text_characters": 23,
+      "text_words": 5,
+      "warning": null,
+      "finished_at": 1789070746878,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070748258,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "text_characters": 12,
+      "text_words": 3,
+      "warning": null,
+      "finished_at": 1789070748386,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070749758,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "66155172056680b95edf2eefcbded48744afbe10c78cda59cac8eda40ca84bdb",
+      "text_characters": 28,
+      "text_words": 6,
+      "warning": null,
+      "finished_at": 1789070749889,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070750688,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 184643,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "text_words": 22,
+      "warning": null,
+      "finished_at": 1789070751463,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070753095,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad",
+      "text_characters": 16,
+      "text_words": 4,
+      "warning": null,
+      "finished_at": 1789070753212,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070755307,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad",
+      "text_characters": 16,
+      "text_words": 4,
+      "warning": null,
+      "finished_at": 1789070755470,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070756807,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "c57512ec95c43778a0222d13824790b269754bebe4918d06157e9e1fb0e9ccda",
+      "text_characters": 10,
+      "text_words": 1,
+      "warning": null,
+      "finished_at": 1789070756945,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070758308,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "06b1f48ae93c97f0a10e63ac5bb739fe7fde45c1e668a6c7d9f20a9f7b169e40",
+      "text_characters": 8,
+      "text_words": 2,
+      "warning": null,
+      "finished_at": 1789070758433,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070759809,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "942e4e8e8da40f3a27c65794117d2fd73613bda3f9cf00ae20bf3cbd1c6045ba",
+      "text_characters": 12,
+      "text_words": 3,
+      "warning": null,
+      "finished_at": 1789070759932,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070761310,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "361632682fc7c9767f007a4c0d556344865c8d109f4629207e59ee0f7b8720a9",
+      "text_characters": 23,
+      "text_words": 5,
+      "warning": null,
+      "finished_at": 1789070761439,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070762811,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "text_characters": 12,
+      "text_words": 3,
+      "warning": null,
+      "finished_at": 1789070762930,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070764311,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "66155172056680b95edf2eefcbded48744afbe10c78cda59cac8eda40ca84bdb",
+      "text_characters": 28,
+      "text_words": 6,
+      "warning": null,
+      "finished_at": 1789070764440,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070765255,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 184643,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "text_words": 22,
+      "warning": null,
+      "finished_at": 1789070766189,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070768105,
+      "model": "parakeet-tdt-0.6b-v3",
+      "bytes": 48044,
+      "success": false,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text_characters": 0,
+      "text_words": 0,
+      "warning": null,
+      "finished_at": 1789070769555,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070769606,
+      "model": "parakeet-tdt-0.6b-v3",
+      "bytes": 48044,
+      "success": false,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text_characters": 0,
+      "text_words": 0,
+      "warning": null,
+      "finished_at": 1789070769960,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070771107,
+      "model": "parakeet-tdt-0.6b-v3",
+      "bytes": 46444,
+      "success": true,
+      "text_sha256": "273b5463fa027fa94979a17ff3a68b5ed52855e879640acc29a0d39dad919b97",
+      "text_characters": 7,
+      "text_words": 2,
+      "warning": null,
+      "finished_at": 1789070771282,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070772608,
+      "model": "parakeet-tdt-0.6b-v3",
+      "bytes": 49644,
+      "success": true,
+      "text_sha256": "942e4e8e8da40f3a27c65794117d2fd73613bda3f9cf00ae20bf3cbd1c6045ba",
+      "text_characters": 12,
+      "text_words": 3,
+      "warning": null,
+      "finished_at": 1789070772732,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070774109,
+      "model": "parakeet-tdt-0.6b-v3",
+      "bytes": 48044,
+      "success": false,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text_characters": 0,
+      "text_words": 0,
+      "warning": null,
+      "finished_at": 1789070774370,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070775611,
+      "model": "parakeet-tdt-0.6b-v3",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "text_characters": 12,
+      "text_words": 3,
+      "warning": null,
+      "finished_at": 1789070775740,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070777112,
+      "model": "parakeet-tdt-0.6b-v3",
+      "bytes": 48044,
+      "success": false,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text_characters": 0,
+      "text_words": 0,
+      "warning": null,
+      "finished_at": 1789070777374,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070777953,
+      "model": "parakeet-tdt-0.6b-v3",
+      "bytes": 183013,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "text_words": 22,
+      "warning": null,
+      "finished_at": 1789070778969,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070780781,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "122a4347494ad69c3eb8e7e868792c3af83f0961e63245a9a9d1dc8244b4481f",
+      "text_characters": 17,
+      "text_words": 4,
+      "warning": null,
+      "finished_at": 1789070782022,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070782283,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "87f7dd4bfff532dc34b91b4ea3931f85ed08b687b593f6c1917dc324ff9f3d47",
+      "text_characters": 8,
+      "text_words": 1,
+      "warning": null,
+      "finished_at": 1789070782424,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070783783,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "06b1f48ae93c97f0a10e63ac5bb739fe7fde45c1e668a6c7d9f20a9f7b169e40",
+      "text_characters": 8,
+      "text_words": 2,
+      "warning": null,
+      "finished_at": 1789070783906,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070785283,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "b9c85828c5d5046fbd7de69140526feb7c59375d3f7c4c54e5fd714b2894903e",
+      "text_characters": 16,
+      "text_words": 3,
+      "warning": null,
+      "finished_at": 1789070785428,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070786784,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "361632682fc7c9767f007a4c0d556344865c8d109f4629207e59ee0f7b8720a9",
+      "text_characters": 23,
+      "text_words": 5,
+      "warning": null,
+      "finished_at": 1789070786926,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070788284,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "text_characters": 12,
+      "text_words": 3,
+      "warning": null,
+      "finished_at": 1789070788415,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070789785,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "f55df81b6af10852d984d12598596039648b63247be6d9729124b64bc3d99166",
+      "text_characters": 24,
+      "text_words": 5,
+      "warning": null,
+      "finished_at": 1789070789902,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070790687,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 184643,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "text_words": 22,
+      "warning": null,
+      "finished_at": 1789070791570,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070792437,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 352044,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "text_words": 22,
+      "warning": null,
+      "finished_at": 1789070793336,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070794338,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 203267,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "text_words": 22,
+      "warning": null,
+      "finished_at": 1789070795429,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070796145,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 2816044,
+      "success": true,
+      "text_sha256": "b0258c337a8fb5d2e0c752e316b06a9370b4b2f3f26eb0ad6632e9c04e889653",
+      "text_characters": 877,
+      "text_words": 177,
+      "warning": null,
+      "finished_at": 1789070804433,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070805150,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 602938,
+      "success": true,
+      "text_sha256": "23384efeef32718885bacd7e559525ce61fdff1163cf960b0877983a65fa340a",
+      "text_characters": 188,
+      "text_words": 29,
+      "warning": null,
+      "finished_at": 1789070806001,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070806714,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 96044,
+      "success": false,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text_characters": 0,
+      "text_words": 0,
+      "warning": null,
+      "finished_at": 1789070806715,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070807049,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 2816044,
+      "error": "AbortError",
+      "finished_at": 1789070807060,
+      "signal_aborted": true
+    },
+    {
+      "at": 1789070808094,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 352044,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "text_words": 22,
+      "warning": null,
+      "finished_at": 1789070809364,
+      "signal_aborted": false
+    }
+  ],
+  "previews": [
+    {
+      "method": "showTranscriptionPreview",
+      "at": 1789070726975,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "characters": 0
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070729483,
+      "text_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad",
+      "characters": 16
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070730096,
+      "text_sha256": "87f7dd4bfff532dc34b91b4ea3931f85ed08b687b593f6c1917dc324ff9f3d47",
+      "characters": 8
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070731598,
+      "text_sha256": "06b1f48ae93c97f0a10e63ac5bb739fe7fde45c1e668a6c7d9f20a9f7b169e40",
+      "characters": 8
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070733101,
+      "text_sha256": "f36fc53038efb74038b85a51468492a3c0a26ead307b7c8905efdb3b7afd7a78",
+      "characters": 10
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070734600,
+      "text_sha256": "361632682fc7c9767f007a4c0d556344865c8d109f4629207e59ee0f7b8720a9",
+      "characters": 23
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070736102,
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "characters": 12
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070737604,
+      "text_sha256": "f55df81b6af10852d984d12598596039648b63247be6d9729124b64bc3d99166",
+      "characters": 24
+    },
+    {
+      "method": "completeTranscriptionPreview",
+      "at": 1789070739148,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "characters": 108
+    },
+    {
+      "method": "showTranscriptionPreview",
+      "at": 1789070739251,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "characters": 0
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070740878,
+      "text_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad",
+      "characters": 16
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070742370,
+      "text_sha256": "87f7dd4bfff532dc34b91b4ea3931f85ed08b687b593f6c1917dc324ff9f3d47",
+      "characters": 8
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070743874,
+      "text_sha256": "06b1f48ae93c97f0a10e63ac5bb739fe7fde45c1e668a6c7d9f20a9f7b169e40",
+      "characters": 8
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070745380,
+      "text_sha256": "942e4e8e8da40f3a27c65794117d2fd73613bda3f9cf00ae20bf3cbd1c6045ba",
+      "characters": 12
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070746878,
+      "text_sha256": "361632682fc7c9767f007a4c0d556344865c8d109f4629207e59ee0f7b8720a9",
+      "characters": 23
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070748386,
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "characters": 12
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070749889,
+      "text_sha256": "66155172056680b95edf2eefcbded48744afbe10c78cda59cac8eda40ca84bdb",
+      "characters": 28
+    },
+    {
+      "method": "completeTranscriptionPreview",
+      "at": 1789070751463,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "characters": 108
+    },
+    {
+      "method": "showTranscriptionPreview",
+      "at": 1789070751594,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "characters": 0
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070753212,
+      "text_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad",
+      "characters": 16
+    },
+    {
+      "method": "showTranscriptionPreview",
+      "at": 1789070753805,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "characters": 0
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070755470,
+      "text_sha256": "f26e2ff53a3c8760d6cff75d185d95a0dece78f174be8bb30adc611a34849fad",
+      "characters": 16
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070756945,
+      "text_sha256": "c57512ec95c43778a0222d13824790b269754bebe4918d06157e9e1fb0e9ccda",
+      "characters": 10
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070758433,
+      "text_sha256": "06b1f48ae93c97f0a10e63ac5bb739fe7fde45c1e668a6c7d9f20a9f7b169e40",
+      "characters": 8
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070759932,
+      "text_sha256": "942e4e8e8da40f3a27c65794117d2fd73613bda3f9cf00ae20bf3cbd1c6045ba",
+      "characters": 12
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070761439,
+      "text_sha256": "361632682fc7c9767f007a4c0d556344865c8d109f4629207e59ee0f7b8720a9",
+      "characters": 23
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070762930,
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "characters": 12
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070764440,
+      "text_sha256": "66155172056680b95edf2eefcbded48744afbe10c78cda59cac8eda40ca84bdb",
+      "characters": 28
+    },
+    {
+      "method": "completeTranscriptionPreview",
+      "at": 1789070766190,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "characters": 108
+    },
+    {
+      "method": "showTranscriptionPreview",
+      "at": 1789070766603,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "characters": 0
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070771282,
+      "text_sha256": "273b5463fa027fa94979a17ff3a68b5ed52855e879640acc29a0d39dad919b97",
+      "characters": 7
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070772732,
+      "text_sha256": "942e4e8e8da40f3a27c65794117d2fd73613bda3f9cf00ae20bf3cbd1c6045ba",
+      "characters": 12
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070775740,
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "characters": 12
+    },
+    {
+      "method": "completeTranscriptionPreview",
+      "at": 1789070778970,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "characters": 108
+    },
+    {
+      "method": "showTranscriptionPreview",
+      "at": 1789070779279,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "characters": 0
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070782022,
+      "text_sha256": "122a4347494ad69c3eb8e7e868792c3af83f0961e63245a9a9d1dc8244b4481f",
+      "characters": 17
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070782424,
+      "text_sha256": "87f7dd4bfff532dc34b91b4ea3931f85ed08b687b593f6c1917dc324ff9f3d47",
+      "characters": 8
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070783906,
+      "text_sha256": "06b1f48ae93c97f0a10e63ac5bb739fe7fde45c1e668a6c7d9f20a9f7b169e40",
+      "characters": 8
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070785428,
+      "text_sha256": "b9c85828c5d5046fbd7de69140526feb7c59375d3f7c4c54e5fd714b2894903e",
+      "characters": 16
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070786926,
+      "text_sha256": "361632682fc7c9767f007a4c0d556344865c8d109f4629207e59ee0f7b8720a9",
+      "characters": 23
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070788415,
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "characters": 12
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070789902,
+      "text_sha256": "f55df81b6af10852d984d12598596039648b63247be6d9729124b64bc3d99166",
+      "characters": 24
+    },
+    {
+      "method": "completeTranscriptionPreview",
+      "at": 1789070791570,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "characters": 108
+    }
+  ],
+  "events": [
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070725147
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789070726937
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789070726970
+    },
+    {
+      "state": "processing",
+      "inputKind": "dictation",
+      "at": 1789070738380
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070739153
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789070739242
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789070739245
+    },
+    {
+      "state": "processing",
+      "inputKind": "dictation",
+      "at": 1789070750687
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070751469
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789070751587
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789070751589
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070753309
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789070753800
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789070753800
+    },
+    {
+      "state": "processing",
+      "inputKind": "dictation",
+      "at": 1789070765253
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070766192
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789070766531
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789070766597
+    },
+    {
+      "state": "processing",
+      "inputKind": "dictation",
+      "at": 1789070777952
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070778977
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789070779266
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789070779271
+    },
+    {
+      "state": "processing",
+      "inputKind": "dictation",
+      "at": 1789070790685
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070791578
+    }
+  ],
+  "scope": "Actual production Electron renderer, preload, main process, FFmpeg, sherpa-onnx and SQLite. Existing isolated profile from the public GUI installation. WAV supplies MediaRecorder microphone input; the OS file chooser selects controlled fixtures. No recognition, persistence or clipboard result is mocked. Native global-hotkey and paste injection are separate from this test. Guest account and clipboard/preview preferences are test fixtures. The separate restart phase does not reseed preferences.",
+  "source_sha256": {
+    "main.js": "82303e356bcb4ce21c021dbab2ca9e7e326a6dd5264108de22a6fee4fada3b73",
+    "preload.js": "d2ff0837b93e8f9b3baed38b0cbe8fc31f3c39d47ea0ba066095e24810a37f7e",
+    "src/helpers/ipcHandlers.js": "c4ab9c82e6f132f601ef1f26cf368660473d9b18639be196aa570e219697de2d",
+    "src/helpers/parakeet.js": "e53957f2f17237c2cfc889f2f9d9e5c28c0f5784ec65079779c6236ac7a90791",
+    "src/helpers/parakeetWsServer.js": "197f546c0c38cd3c5b852e98eae5aa2cd6e2ee3574448094abb274ba520a95b7",
+    "src/models/modelRegistryData.json": "4996f1ecac1634bbe8f7d58ce67a7edbaba2db719b70f3ed1c0e620985da198b",
+    "src/hooks/useAudioRecording.js": "d8ca16f0f0a87ce42f8c1f3ec81be61f73e312e2c88b44de91870675d1009d61",
+    "src/hooks/useLiveTranscriptPanel.js": "e57bc8a50f05b105b221e7933168396942301d95b34ac2e6fa7e0466fe055030",
+    "src/components/dictation/LiveTranscriptPanel.tsx": "c9482b8f05d7262be25a2349fff04db16d3858c5554a4eff19d9c092029be484",
+    "src/dist/index.html": "324ea504ef9b0a8823fc624a822fc2a5c37eacd9beba7ff7486269b55613a9c0",
+    "src/services/fileTranscription.ts": "1028edaaca7957768f0e0f359557e4ad0f16afb17cdbf50466aceeedafc1f072"
+  },
+  "build_assets_sha256": {
+    "ChatView-BlM-B6Xe.js": "c1a5579ca4b676aad5ba8cb83eafd9afc303b32730a4d88d023cf9e9728908ad",
+    "CommandSearch-BELcZx9g.js": "5898148ea6b8c6ef8bfb32a3cbf2b1278e70b52b8d8995016ba6ec0723a6ad02",
+    "ControlPanel-gdqctjbl.js": "3dd25ea2a85d916c3d8bd6a5d8facb5b469006e644f2a3656ef5f0e8b29aed24",
+    "CopyableCommand-B5a5tBAz.js": "a490f6f2db00832a4ab9298404f41aedb6fb7eaa028eb1342666aa03644a0f09",
+    "DictionaryView-Dcx9aXUB.js": "d427ee48591cc0bdf78e316f4cd5a84cf271e8e947289bf0fa1de03e6b768716",
+    "InsightsView-IxH_CEj5.js": "30cb81638bba2e4e5c2efbbecef89760730d2c9639d28a534e5f47600714c828",
+    "IntegrationsView-D7-wedGl.js": "e673af5b0d291a3f1885ab659f3d6f49241ee6f4d9798326ff03940a9a2422c9",
+    "InviteTeammateDialog-Bf-hYU6D.js": "d753b85514346dbb5c62405a58519903100b779cccab01fdee87c189a82fa65c",
+    "LeaderboardService-9nswICI6.js": "4a3f1acba657370fe348c97ddac07498701f9329b9eb0c654a992e95b60031aa",
+    "LeaderboardView-DXyMcXLt.js": "33cf06a60bbb25b76ef461baae18f3ddb631c86caa9d8a692ae2de53685f9b3d",
+    "LinuxPttSetupInfo-Bxi908z0.js": "c729a15da2f91aa69d1053d526083287d8718669114a2964d450ca26b69441a3",
+    "MemberAvatar-CuejuEL_.js": "e4e5c8961214a35e0e6e391a50400d2a67257714088e8b01894e1128fa95b582",
+    "NotesService-uxUADzjn.js": "62280094ea4fd71c8b0d287f1d331ee8be4c3eb08d5f45afeac9bec1f886943e",
+    "OnboardingFlow-DnehObcP.js": "d3c5d89359a47dc4d61136668e8da28baa62ee937baeeb666e780b465356c514",
+    "PersonalNotesView-ByGDbc1p.js": "31b7b74d77b5ff141b5024100e7b6d629ca4b89ded05eee5cad0cad5f71a42ed",
+    "ReasoningService-CAkdNQeM.js": "02c44de851d3556cdde0db8f96c18d4413abaa5d03f450d4a6a84b662df1b933",
+    "ReferralModal-_z6ZB2yl.js": "6d7cb43aac5d6db6127811721ab0980bad26c247afcebbfe9d1e7e365fad4326",
+    "SettingsModal-h57YIuVd.js": "a25697929b894d0fe9468bae6fb9a80752606683ccc9e7347c9ef53e7f95e805",
+    "SyncService-B26b5Kd-.js": "a2e40557d27c53db41708fecd0fd97582da1eb6d23343e27f2a4ff9bcbb6c8f2",
+    "TeamRosterSection-Dds03EUB.js": "45c11397066f6ddedd7b739f06a0dcf3d2bb431815d3547102468aaaa6a09741",
+    "UploadAudioView-yYuRfhBd.js": "97579e52bf40bf1fa6bb37a8aca19d44539029192b36ae42a1a6a6324d55705a",
+    "actionProcessingStore-DkF79HCh.js": "f3024510a5f551f66d4023f015f6fe095bc3422c5b9620bd873c50110a0e4cac",
+    "auth-6a-0DjoZ.js": "3ee5c4bfa69960c69ac943beaaccb0f19a21d86c06713693d82c247b5152e2d8",
+    "authRequestContext-DzHVZs_u.js": "65f71caf913ca6ec0f4237be960a02af2b2b8aa2061a463a4187da999a6d7733",
+    "badge-BLssi6BB.js": "86654f2e20d92781ac6a22a4f48f64c0907568c3827ee341f60b3b5954fbc3e1",
+    "cloudApi-CKVAMB99.js": "bc01e1f19e1d876a3c9b2a042ec2244580326187292903f3a8923ecd0fac8d24",
+    "dateFormatting-D1ExS0RD.js": "222e513da9266b19cfac37c2dcdaa9f6d16595b0e27ea7632b21a41fe2c82ee5",
+    "dateGrouping-DTX0OJ4V.js": "f9c2e674d847a35c5d632ad202de8d4bbcfaddb0421f13250f607e9b9c4839f5",
+    "dist-BpX9kK3_.js": "e954397dd20ef26a330ed81eaeb5360370b55a8b0e5fabd19725a563a29f75c2",
+    "dist-BqnV5Ymv.js": "aca3a0c2dd6b9575f5a58a7f944c7716b6472cfa1cc9f436c510f8c707d32a3e",
+    "dist-C1RJhgYD.js": "267d780972577dc3c449ef4134bc5aff52bece580b0159ec6040377192a00f64",
+    "dist-DsO4Pq6M.js": "69ef5b74711a6496b1a296cd360cccb42c58b0a529fcf712d5a975cef6a12559",
+    "dropdown-menu-ymMAEeLs.js": "b52fd468ae399006a65d710d78318357c4186e4b6ba4f2eef4ceaa20a5d0f3d6",
+    "enterpriseIdentityStore-B5PbwZGR.js": "d2bc1f025c7ea50f77135ae784db2d03dca79d68edcbb6707e5ea62b3bb1e12e",
+    "errors-DJx3PGlS.js": "661b42b114ec80e44e1f8504a82224ac109f85cb273f8225bda5d951ceadb0b8",
+    "esm-VJGWWVJV.js": "10edbd0554f81e0a031ec185e60627a883b1f1d4ebb3274eae7b2f02453f2356",
+    "full-DL0Kq1X0.js": "965432c93fc0b131d4d61cbb06a3c6974126fdbec8454e73d1d1af63df399acc",
+    "generateTitle-_wwGrznm.js": "9d0a3b2dd9aceeba430f9f3823b0b6f584dee0d5c5855e3974cb536b1fa78dea",
+    "google-calendar-D4mNAmIX.js": "3f79b583cf9af912bdae404a4edd76455b42bba7f91ae7026feffc837602c739",
+    "index-CrfVKj3x.js": "2eb8ebdf615302fd41e584d3e4f1468305c2bb70b55a167f40a32225132a6f4f",
+    "index.browser-zk1-mpb9.js": "127895d1fe2123544271a8bd6071075d964c77745286c5a1c4182022f8b26814",
+    "initReactI18next-CunpV_Wf.js": "470da6e32d251303e7851c26bbe4bc7a2c4ed0ea9c530281966903ea747a5b74",
+    "label-CEbIY9jk.js": "d461b4530f722318fdc3385ac534d7c2747ffe7d0bc2ce980cd06bf52a21ae1d",
+    "languageRegistry-DACGb3IV.js": "61886a327668b68aa911ea112113593fce73fa12da1fa37157aad480c101ecd0",
+    "logger-BGhU901e.js": "9b4c77b493662acb1f3bf3a41248a970d0d09730ac52330cd152fbe2f2e3d7ea",
+    "managedTranscription-Dh59QBC3.js": "b0ea7a1813e9696a0078897a5d1e7bbc4bce8d2b8f1f0a218ebda4c49e9f84e9",
+    "membershipActions-Gao_HlSk.js": "997ff7db37dfb94412582686b96386c81e717bfc671401c90a3d96a50b10f1d5",
+    "noteStore-Do_jSYRL.js": "30d5c05769dd6181d21537ef9b1b43219cc1617daedfd0d7338faa13d67dcd64",
+    "pinned-tls-fetch.browser-DsN643-q.js": "7a1818a23941c624eb04dfef90201285a5b3876ed375ff2efeaf54dcc062f597",
+    "pinned-ws.browser-RXnyQIa8.js": "6d794eae014d329d0c1ee6c2078cb8a9d694a12afda1228a4c313dc82d77f93f",
+    "platform-6r5ZzUFA.js": "08ddb029294523a3094e34a17373fe03b3e08f2b989a9eb856a28c67295400f1",
+    "policyStore-C-RJe6CO.js": "107ea752504f66a934fcdc7b546d1a319ce56cd7d8acf9f1087d8244731caae8",
+    "popover-C5jpEyHe.js": "db0d275ce9c91a95926affae9e0eb1f5edd6c64049193434dd54d7a13620d407",
+    "preload-helper-HclGiUj8.js": "bba5840eec0028b00854bcd58fba80694d02d41e98417656424c05b26db7120c",
+    "realtime.browser-Dvs7FL0_.js": "64c920623e3dc83880d55be2b7d96ff46ce130c2cbeb4a1de8e0ae3a4f2864ed",
+    "rolldown-runtime-QTnfLwEv.js": "5db5ba82eef00d1dee7e86e663098c9427d01183a88d357437daff295aec3e75",
+    "select-eZVD3-XP.js": "924476fc724a43cc28ff2c592bfb74e80f54a43116425e288cc8f24c8945715f",
+    "settingsStore-ddB4PT2O.js": "001e82933d875a05e068d9f8edd9ed112722c7d60bf08534921d5f0d4f21788f",
+    "skeleton-DIN3KOMF.js": "ddd85bae9da4176f7ba30c7a5d662facc793e9d7426e02ea46184ceff08561b4",
+    "snippets-BBjt6tWU.js": "b401939a58d2349f0ad477ab0007a4a469fb2175e4537cf9b4867cc92227f0fe",
+    "spaceRosterCache-CXd2glRA.js": "52947c6c4b998cecc737c9a1b0f61dda598abeeeb4a65757492ae4aac2e73f8f",
+    "subscriptionFlag-BjJlLi2R.js": "25df7845cf54f8c11ddd2dc9e115583cbb421c646104b520070cc2813df6f8df",
+    "tabs-Bf3_LHVK.js": "5e6604e074652de3e299f8e40e19894d706fc68cc17867ba33dd232f7df8b4f0",
+    "textarea-DKK58ZKx.js": "2b2e9821f2562de56ee6e6a97e7ee0499e09f77a1ab0a3789f5b2b801702a251",
+    "toggle-DkiALo50.js": "1d1ae2ca0cca1e337ef5fdcdece55593b50c431b6dd3d707f24db25f444a924b",
+    "tooltip-C9oh9F3l.js": "41df0b2e280314e00c9af2c84acae2c1c226a8ab90e5d77529ab6f14046a3b2c",
+    "tuf-GGk_YvdK.js": "019a4f6543e3fdc8bad3a3899b1b36c0de5e402be4ca5af373a2d8ffc6431086",
+    "tuf-root-B-bYCXnX.js": "e559f637e55579935e9a29bd3777717a245374cd1ce763a75ffd024f741a96a1",
+    "upsell-Bv_mJcSd.js": "658b5ae252fbf712d243fd6ddab681bf37d68230e066821a103257dbdabcc633",
+    "useInsightsSyncOptIn-tPumbxJs.js": "b07af3ed3e75a60b4dd71e9a42940a837ff6e68b7d375c539877f129c63c1494",
+    "useLeaderboardParticipation-iJskxIvb.js": "b4d3c080bfdd6e7715934b1f4abde5b4ae08187f7c504f4069c1c4d47216bdfb",
+    "useRequiredLocalModels-gjaymHKt.js": "ba3081f64edf559749ebee463e8a6f90d3aae6dc51a2dd853f2b5db5ba19aa00",
+    "useStartOnboarding-BnuLDJJv.js": "48f74b2e836dd47b8b7c89535b86ce924ec04842e61114072e47752f047acc35",
+    "useTranslation-BYPGAwif.js": "9a538f9360bd5b0438b1eb4bbf2e4cc907308ab74e4990fb31d1577dfc63b713",
+    "useUsage-2rmAOXtZ.js": "8389f71ff538f6bea3dd53605757db1ed406285c6f315ae05616347774459948",
+    "useWorkspace-_eRrzW68.js": "fdf42054d089480e66363846d4328f54c567c40a8d1e66417a7d0fd5f4ebe214",
+    "utils-B6KiDbIe.js": "4aa4469f22e93217839b25f2a62b9c9d9462d3126248636dad12a088cafd17a9",
+    "vendor-icons-OsJ3ZGDK.js": "dff7059fe03e2e9018791f6c21b3e31b0046ff1406134158f78d06012a4652b9",
+    "vendor-radix-BGI3O8-b.js": "cd4acdc143833fa51a1fbad14b148ca260dfd3d0d64b293a22c122fd7da95778"
+  },
+  "initial": {
+    "transcriptions": 12,
+    "notes": 10,
+    "settings": {
+      "model": "parakeet-tdt-0.6b-v3",
+      "provider": "nvidia",
+      "uploadModel": "orukeet-v0.1.0-q8"
+    }
+  },
+  "screenshots": [
+    {
+      "file": "extended-upload-model.png",
+      "sha256": "77129adccb8fedd3e4f59e0bd41ae4dcd9c17e7156b261cd47c8244ed6850fac"
+    },
+    {
+      "file": "extended-English-file-upload.png",
+      "sha256": "39e8dce88697c577d73fea2296b4fce2f78a1a9949f3dd27ae4fa25007a8b399"
+    },
+    {
+      "file": "extended-English-file-upload-note.png",
+      "sha256": "e583a3527383d91d7c367eb7de2a42420d3dd70eb3e403beb2307b2cb9ca6907"
+    },
+    {
+      "file": "extended-English-FLAC-upload.png",
+      "sha256": "aa0e99de146c4c5b23079f39e8192a141fd52c2d3c46e21330fe697f876a8c0b"
+    },
+    {
+      "file": "extended-English-FLAC-upload-note.png",
+      "sha256": "5731ee1b286714040393f36f634507ba71356c40556c2ef4f062cd8e5c453308"
+    },
+    {
+      "file": "extended-English-long-file-upload.png",
+      "sha256": "51116093e09c9c3d5dd2d370ca6d0d32d68a531c0fa733a8ee9e1f5142ed6d27"
+    },
+    {
+      "file": "extended-English-long-file-upload-note.png",
+      "sha256": "b91a7471b609f69e227e692c5649a76949eb3f9f748af31485c420a72a5e574c"
+    },
+    {
+      "file": "extended-French-float-WAV-upload.png",
+      "sha256": "ca1773ff8ae0d77c1783b9a1f627f45c70f3e41e24297c12e1030ac6346e4e6d"
+    },
+    {
+      "file": "extended-French-float-WAV-upload-note.png",
+      "sha256": "5465024f11ebb75dfa1c50b8882171d125a7ba4eddc89d6a5ea5ac4c2d83c921"
+    },
+    {
+      "file": "extended-silence.png",
+      "sha256": "50878dac0422de0c5aad9ba2ac4677e26ba4455949e2b3947702766708f5a62c"
+    },
+    {
+      "file": "extended-English-upload-after-cancellation.png",
+      "sha256": "7eba2f0f1b138669290ae3ca57f2f45ad727124b85486eb65a7580523b2583c4"
+    },
+    {
+      "file": "extended-English-upload-after-cancellation-note.png",
+      "sha256": "a78208065aed940b6f6daa95aab54f0877c6345ab4a8df3d726be4b8d2b6a3ec"
+    }
+  ],
+  "final": {
+    "transcriptions": 17,
+    "notes": 15,
+    "history_digest": "937943972510f2252b748455f9127e2ae4b1e23c359e9f4c15cb33d5c779b2d7",
+    "notes_digest": "efde111c936dc19537f6f9171730d0b83a85439f797626462f5c395ff364f787",
+    "auth": {
+      "completed": "true",
+      "guest": "true"
+    }
+  },
+  "clipboard_restored": true,
+  "finished_utc": "2026-09-10T20:06:50.033Z",
+  "harness_sha256": "ccf043121694a759fe8281a5d69352a123084ff962b344e5841dcf4a64984f6e"
+}

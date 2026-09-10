@@ -1,0 +1,384 @@
+{
+  "status": "passed",
+  "stage": "restart",
+  "started_utc": "2026-09-10T20:07:08.990Z",
+  "app_commit": "2516b0c03816fc8cd216becd3ccad249d3c63a7d",
+  "checks": [
+    {
+      "label": "Prior selection and dictation history survive full restart",
+      "passed": true
+    },
+    {
+      "label": "Upload selection and every saved note survive full restart",
+      "passed": true
+    },
+    {
+      "label": "Dictation after restart",
+      "passed": true
+    }
+  ],
+  "recordings": [
+    {
+      "label": "Dictation after restart",
+      "model": "orukeet-v0.1.0-q8",
+      "renderer_preview_events": [
+        {
+          "type": "onPreviewText",
+          "at": 1789070831296,
+          "characters": 0
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070832919,
+          "characters": 17
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070834417,
+          "characters": 8
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070835913,
+          "characters": 8
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070837414,
+          "characters": 10
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070838917,
+          "characters": 23
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070840414,
+          "characters": 12
+        },
+        {
+          "type": "onPreviewAppend",
+          "at": 1789070841917,
+          "characters": 28
+        },
+        {
+          "type": "onPreviewResult",
+          "at": 1789070843464,
+          "characters": 108
+        }
+      ],
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "visible_preview_sha256": "47633b88ca320ee4e779bb5445655f5525c04aa2803e817c1935bba6d41bec3d",
+      "visible_preview_characters": 112,
+      "stop_to_saved_ms": 803,
+      "first_preview_ms": 1734,
+      "live_preview_updates": 7,
+      "clipboard_exact": true,
+      "clipboard_transition_from_unique_sentinel": true,
+      "final_preview_exact": true,
+      "final_preview_dom_exact": true,
+      "visible_preview_matches_recognition": true
+    }
+  ],
+  "uploads": [],
+  "calls": [
+    {
+      "at": 1789070832797,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 46444,
+      "success": true,
+      "text_sha256": "122a4347494ad69c3eb8e7e868792c3af83f0961e63245a9a9d1dc8244b4481f",
+      "text_characters": 17,
+      "text_words": 4,
+      "warning": null,
+      "finished_at": 1789070832919,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070834297,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "87f7dd4bfff532dc34b91b4ea3931f85ed08b687b593f6c1917dc324ff9f3d47",
+      "text_characters": 8,
+      "text_words": 1,
+      "warning": null,
+      "finished_at": 1789070834417,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070835797,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "06b1f48ae93c97f0a10e63ac5bb739fe7fde45c1e668a6c7d9f20a9f7b169e40",
+      "text_characters": 8,
+      "text_words": 2,
+      "warning": null,
+      "finished_at": 1789070835913,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070837299,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "f36fc53038efb74038b85a51468492a3c0a26ead307b7c8905efdb3b7afd7a78",
+      "text_characters": 10,
+      "text_words": 2,
+      "warning": null,
+      "finished_at": 1789070837414,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070838800,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "361632682fc7c9767f007a4c0d556344865c8d109f4629207e59ee0f7b8720a9",
+      "text_characters": 23,
+      "text_words": 5,
+      "warning": null,
+      "finished_at": 1789070838917,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070840300,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "text_characters": 12,
+      "text_words": 3,
+      "warning": null,
+      "finished_at": 1789070840414,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070841801,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 48044,
+      "success": true,
+      "text_sha256": "1cb405eefc817557c47e7bee4ac2436ac1302869ba6b52c9285cf1db5c76a091",
+      "text_characters": 28,
+      "text_words": 6,
+      "warning": null,
+      "finished_at": 1789070841917,
+      "signal_aborted": false
+    },
+    {
+      "at": 1789070842702,
+      "model": "orukeet-v0.1.0-q8",
+      "bytes": 183979,
+      "success": true,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "text_characters": 108,
+      "text_words": 22,
+      "warning": null,
+      "finished_at": 1789070843463,
+      "signal_aborted": false
+    }
+  ],
+  "previews": [
+    {
+      "method": "showTranscriptionPreview",
+      "at": 1789070831295,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "characters": 0
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070832919,
+      "text_sha256": "122a4347494ad69c3eb8e7e868792c3af83f0961e63245a9a9d1dc8244b4481f",
+      "characters": 17
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070834417,
+      "text_sha256": "87f7dd4bfff532dc34b91b4ea3931f85ed08b687b593f6c1917dc324ff9f3d47",
+      "characters": 8
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070835913,
+      "text_sha256": "06b1f48ae93c97f0a10e63ac5bb739fe7fde45c1e668a6c7d9f20a9f7b169e40",
+      "characters": 8
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070837414,
+      "text_sha256": "f36fc53038efb74038b85a51468492a3c0a26ead307b7c8905efdb3b7afd7a78",
+      "characters": 10
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070838917,
+      "text_sha256": "361632682fc7c9767f007a4c0d556344865c8d109f4629207e59ee0f7b8720a9",
+      "characters": 23
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070840414,
+      "text_sha256": "04000ed07cd184d77d900a2cce47da059d177afa3fb247630f3d7ac709e5c4ff",
+      "characters": 12
+    },
+    {
+      "method": "appendTranscriptionPreview",
+      "at": 1789070841917,
+      "text_sha256": "1cb405eefc817557c47e7bee4ac2436ac1302869ba6b52c9285cf1db5c76a091",
+      "characters": 28
+    },
+    {
+      "method": "completeTranscriptionPreview",
+      "at": 1789070843464,
+      "text_sha256": "d5607440635b0e07910c345a7a1e249dbb6fbe00077c97e610e812f520d902a8",
+      "characters": 108
+    }
+  ],
+  "events": [
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070829923
+    },
+    {
+      "state": "preparing",
+      "inputKind": "dictation",
+      "at": 1789070831253
+    },
+    {
+      "state": "recording",
+      "inputKind": "dictation",
+      "at": 1789070831290
+    },
+    {
+      "state": "processing",
+      "inputKind": "dictation",
+      "at": 1789070842701
+    },
+    {
+      "state": "idle",
+      "inputKind": "dictation",
+      "at": 1789070843466
+    }
+  ],
+  "scope": "Actual production Electron renderer, preload, main process, FFmpeg, sherpa-onnx and SQLite. Existing isolated profile from the public GUI installation. WAV supplies MediaRecorder microphone input; the OS file chooser selects controlled fixtures. No recognition, persistence or clipboard result is mocked. Native global-hotkey and paste injection are separate from this test.",
+  "source_sha256": {
+    "main.js": "82303e356bcb4ce21c021dbab2ca9e7e326a6dd5264108de22a6fee4fada3b73",
+    "preload.js": "d2ff0837b93e8f9b3baed38b0cbe8fc31f3c39d47ea0ba066095e24810a37f7e",
+    "src/helpers/ipcHandlers.js": "c4ab9c82e6f132f601ef1f26cf368660473d9b18639be196aa570e219697de2d",
+    "src/helpers/parakeet.js": "e53957f2f17237c2cfc889f2f9d9e5c28c0f5784ec65079779c6236ac7a90791",
+    "src/helpers/parakeetWsServer.js": "197f546c0c38cd3c5b852e98eae5aa2cd6e2ee3574448094abb274ba520a95b7",
+    "src/models/modelRegistryData.json": "4996f1ecac1634bbe8f7d58ce67a7edbaba2db719b70f3ed1c0e620985da198b",
+    "src/hooks/useAudioRecording.js": "d8ca16f0f0a87ce42f8c1f3ec81be61f73e312e2c88b44de91870675d1009d61",
+    "src/hooks/useLiveTranscriptPanel.js": "e57bc8a50f05b105b221e7933168396942301d95b34ac2e6fa7e0466fe055030",
+    "src/components/dictation/LiveTranscriptPanel.tsx": "c9482b8f05d7262be25a2349fff04db16d3858c5554a4eff19d9c092029be484",
+    "src/dist/index.html": "324ea504ef9b0a8823fc624a822fc2a5c37eacd9beba7ff7486269b55613a9c0",
+    "src/services/fileTranscription.ts": "1028edaaca7957768f0e0f359557e4ad0f16afb17cdbf50466aceeedafc1f072"
+  },
+  "build_assets_sha256": {
+    "ChatView-BlM-B6Xe.js": "c1a5579ca4b676aad5ba8cb83eafd9afc303b32730a4d88d023cf9e9728908ad",
+    "CommandSearch-BELcZx9g.js": "5898148ea6b8c6ef8bfb32a3cbf2b1278e70b52b8d8995016ba6ec0723a6ad02",
+    "ControlPanel-gdqctjbl.js": "3dd25ea2a85d916c3d8bd6a5d8facb5b469006e644f2a3656ef5f0e8b29aed24",
+    "CopyableCommand-B5a5tBAz.js": "a490f6f2db00832a4ab9298404f41aedb6fb7eaa028eb1342666aa03644a0f09",
+    "DictionaryView-Dcx9aXUB.js": "d427ee48591cc0bdf78e316f4cd5a84cf271e8e947289bf0fa1de03e6b768716",
+    "InsightsView-IxH_CEj5.js": "30cb81638bba2e4e5c2efbbecef89760730d2c9639d28a534e5f47600714c828",
+    "IntegrationsView-D7-wedGl.js": "e673af5b0d291a3f1885ab659f3d6f49241ee6f4d9798326ff03940a9a2422c9",
+    "InviteTeammateDialog-Bf-hYU6D.js": "d753b85514346dbb5c62405a58519903100b779cccab01fdee87c189a82fa65c",
+    "LeaderboardService-9nswICI6.js": "4a3f1acba657370fe348c97ddac07498701f9329b9eb0c654a992e95b60031aa",
+    "LeaderboardView-DXyMcXLt.js": "33cf06a60bbb25b76ef461baae18f3ddb631c86caa9d8a692ae2de53685f9b3d",
+    "LinuxPttSetupInfo-Bxi908z0.js": "c729a15da2f91aa69d1053d526083287d8718669114a2964d450ca26b69441a3",
+    "MemberAvatar-CuejuEL_.js": "e4e5c8961214a35e0e6e391a50400d2a67257714088e8b01894e1128fa95b582",
+    "NotesService-uxUADzjn.js": "62280094ea4fd71c8b0d287f1d331ee8be4c3eb08d5f45afeac9bec1f886943e",
+    "OnboardingFlow-DnehObcP.js": "d3c5d89359a47dc4d61136668e8da28baa62ee937baeeb666e780b465356c514",
+    "PersonalNotesView-ByGDbc1p.js": "31b7b74d77b5ff141b5024100e7b6d629ca4b89ded05eee5cad0cad5f71a42ed",
+    "ReasoningService-CAkdNQeM.js": "02c44de851d3556cdde0db8f96c18d4413abaa5d03f450d4a6a84b662df1b933",
+    "ReferralModal-_z6ZB2yl.js": "6d7cb43aac5d6db6127811721ab0980bad26c247afcebbfe9d1e7e365fad4326",
+    "SettingsModal-h57YIuVd.js": "a25697929b894d0fe9468bae6fb9a80752606683ccc9e7347c9ef53e7f95e805",
+    "SyncService-B26b5Kd-.js": "a2e40557d27c53db41708fecd0fd97582da1eb6d23343e27f2a4ff9bcbb6c8f2",
+    "TeamRosterSection-Dds03EUB.js": "45c11397066f6ddedd7b739f06a0dcf3d2bb431815d3547102468aaaa6a09741",
+    "UploadAudioView-yYuRfhBd.js": "97579e52bf40bf1fa6bb37a8aca19d44539029192b36ae42a1a6a6324d55705a",
+    "actionProcessingStore-DkF79HCh.js": "f3024510a5f551f66d4023f015f6fe095bc3422c5b9620bd873c50110a0e4cac",
+    "auth-6a-0DjoZ.js": "3ee5c4bfa69960c69ac943beaaccb0f19a21d86c06713693d82c247b5152e2d8",
+    "authRequestContext-DzHVZs_u.js": "65f71caf913ca6ec0f4237be960a02af2b2b8aa2061a463a4187da999a6d7733",
+    "badge-BLssi6BB.js": "86654f2e20d92781ac6a22a4f48f64c0907568c3827ee341f60b3b5954fbc3e1",
+    "cloudApi-CKVAMB99.js": "bc01e1f19e1d876a3c9b2a042ec2244580326187292903f3a8923ecd0fac8d24",
+    "dateFormatting-D1ExS0RD.js": "222e513da9266b19cfac37c2dcdaa9f6d16595b0e27ea7632b21a41fe2c82ee5",
+    "dateGrouping-DTX0OJ4V.js": "f9c2e674d847a35c5d632ad202de8d4bbcfaddb0421f13250f607e9b9c4839f5",
+    "dist-BpX9kK3_.js": "e954397dd20ef26a330ed81eaeb5360370b55a8b0e5fabd19725a563a29f75c2",
+    "dist-BqnV5Ymv.js": "aca3a0c2dd6b9575f5a58a7f944c7716b6472cfa1cc9f436c510f8c707d32a3e",
+    "dist-C1RJhgYD.js": "267d780972577dc3c449ef4134bc5aff52bece580b0159ec6040377192a00f64",
+    "dist-DsO4Pq6M.js": "69ef5b74711a6496b1a296cd360cccb42c58b0a529fcf712d5a975cef6a12559",
+    "dropdown-menu-ymMAEeLs.js": "b52fd468ae399006a65d710d78318357c4186e4b6ba4f2eef4ceaa20a5d0f3d6",
+    "enterpriseIdentityStore-B5PbwZGR.js": "d2bc1f025c7ea50f77135ae784db2d03dca79d68edcbb6707e5ea62b3bb1e12e",
+    "errors-DJx3PGlS.js": "661b42b114ec80e44e1f8504a82224ac109f85cb273f8225bda5d951ceadb0b8",
+    "esm-VJGWWVJV.js": "10edbd0554f81e0a031ec185e60627a883b1f1d4ebb3274eae7b2f02453f2356",
+    "full-DL0Kq1X0.js": "965432c93fc0b131d4d61cbb06a3c6974126fdbec8454e73d1d1af63df399acc",
+    "generateTitle-_wwGrznm.js": "9d0a3b2dd9aceeba430f9f3823b0b6f584dee0d5c5855e3974cb536b1fa78dea",
+    "google-calendar-D4mNAmIX.js": "3f79b583cf9af912bdae404a4edd76455b42bba7f91ae7026feffc837602c739",
+    "index-CrfVKj3x.js": "2eb8ebdf615302fd41e584d3e4f1468305c2bb70b55a167f40a32225132a6f4f",
+    "index.browser-zk1-mpb9.js": "127895d1fe2123544271a8bd6071075d964c77745286c5a1c4182022f8b26814",
+    "initReactI18next-CunpV_Wf.js": "470da6e32d251303e7851c26bbe4bc7a2c4ed0ea9c530281966903ea747a5b74",
+    "label-CEbIY9jk.js": "d461b4530f722318fdc3385ac534d7c2747ffe7d0bc2ce980cd06bf52a21ae1d",
+    "languageRegistry-DACGb3IV.js": "61886a327668b68aa911ea112113593fce73fa12da1fa37157aad480c101ecd0",
+    "logger-BGhU901e.js": "9b4c77b493662acb1f3bf3a41248a970d0d09730ac52330cd152fbe2f2e3d7ea",
+    "managedTranscription-Dh59QBC3.js": "b0ea7a1813e9696a0078897a5d1e7bbc4bce8d2b8f1f0a218ebda4c49e9f84e9",
+    "membershipActions-Gao_HlSk.js": "997ff7db37dfb94412582686b96386c81e717bfc671401c90a3d96a50b10f1d5",
+    "noteStore-Do_jSYRL.js": "30d5c05769dd6181d21537ef9b1b43219cc1617daedfd0d7338faa13d67dcd64",
+    "pinned-tls-fetch.browser-DsN643-q.js": "7a1818a23941c624eb04dfef90201285a5b3876ed375ff2efeaf54dcc062f597",
+    "pinned-ws.browser-RXnyQIa8.js": "6d794eae014d329d0c1ee6c2078cb8a9d694a12afda1228a4c313dc82d77f93f",
+    "platform-6r5ZzUFA.js": "08ddb029294523a3094e34a17373fe03b3e08f2b989a9eb856a28c67295400f1",
+    "policyStore-C-RJe6CO.js": "107ea752504f66a934fcdc7b546d1a319ce56cd7d8acf9f1087d8244731caae8",
+    "popover-C5jpEyHe.js": "db0d275ce9c91a95926affae9e0eb1f5edd6c64049193434dd54d7a13620d407",
+    "preload-helper-HclGiUj8.js": "bba5840eec0028b00854bcd58fba80694d02d41e98417656424c05b26db7120c",
+    "realtime.browser-Dvs7FL0_.js": "64c920623e3dc83880d55be2b7d96ff46ce130c2cbeb4a1de8e0ae3a4f2864ed",
+    "rolldown-runtime-QTnfLwEv.js": "5db5ba82eef00d1dee7e86e663098c9427d01183a88d357437daff295aec3e75",
+    "select-eZVD3-XP.js": "924476fc724a43cc28ff2c592bfb74e80f54a43116425e288cc8f24c8945715f",
+    "settingsStore-ddB4PT2O.js": "001e82933d875a05e068d9f8edd9ed112722c7d60bf08534921d5f0d4f21788f",
+    "skeleton-DIN3KOMF.js": "ddd85bae9da4176f7ba30c7a5d662facc793e9d7426e02ea46184ceff08561b4",
+    "snippets-BBjt6tWU.js": "b401939a58d2349f0ad477ab0007a4a469fb2175e4537cf9b4867cc92227f0fe",
+    "spaceRosterCache-CXd2glRA.js": "52947c6c4b998cecc737c9a1b0f61dda598abeeeb4a65757492ae4aac2e73f8f",
+    "subscriptionFlag-BjJlLi2R.js": "25df7845cf54f8c11ddd2dc9e115583cbb421c646104b520070cc2813df6f8df",
+    "tabs-Bf3_LHVK.js": "5e6604e074652de3e299f8e40e19894d706fc68cc17867ba33dd232f7df8b4f0",
+    "textarea-DKK58ZKx.js": "2b2e9821f2562de56ee6e6a97e7ee0499e09f77a1ab0a3789f5b2b801702a251",
+    "toggle-DkiALo50.js": "1d1ae2ca0cca1e337ef5fdcdece55593b50c431b6dd3d707f24db25f444a924b",
+    "tooltip-C9oh9F3l.js": "41df0b2e280314e00c9af2c84acae2c1c226a8ab90e5d77529ab6f14046a3b2c",
+    "tuf-GGk_YvdK.js": "019a4f6543e3fdc8bad3a3899b1b36c0de5e402be4ca5af373a2d8ffc6431086",
+    "tuf-root-B-bYCXnX.js": "e559f637e55579935e9a29bd3777717a245374cd1ce763a75ffd024f741a96a1",
+    "upsell-Bv_mJcSd.js": "658b5ae252fbf712d243fd6ddab681bf37d68230e066821a103257dbdabcc633",
+    "useInsightsSyncOptIn-tPumbxJs.js": "b07af3ed3e75a60b4dd71e9a42940a837ff6e68b7d375c539877f129c63c1494",
+    "useLeaderboardParticipation-iJskxIvb.js": "b4d3c080bfdd6e7715934b1f4abde5b4ae08187f7c504f4069c1c4d47216bdfb",
+    "useRequiredLocalModels-gjaymHKt.js": "ba3081f64edf559749ebee463e8a6f90d3aae6dc51a2dd853f2b5db5ba19aa00",
+    "useStartOnboarding-BnuLDJJv.js": "48f74b2e836dd47b8b7c89535b86ce924ec04842e61114072e47752f047acc35",
+    "useTranslation-BYPGAwif.js": "9a538f9360bd5b0438b1eb4bbf2e4cc907308ab74e4990fb31d1577dfc63b713",
+    "useUsage-2rmAOXtZ.js": "8389f71ff538f6bea3dd53605757db1ed406285c6f315ae05616347774459948",
+    "useWorkspace-_eRrzW68.js": "fdf42054d089480e66363846d4328f54c567c40a8d1e66417a7d0fd5f4ebe214",
+    "utils-B6KiDbIe.js": "4aa4469f22e93217839b25f2a62b9c9d9462d3126248636dad12a088cafd17a9",
+    "vendor-icons-OsJ3ZGDK.js": "dff7059fe03e2e9018791f6c21b3e31b0046ff1406134158f78d06012a4652b9",
+    "vendor-radix-BGI3O8-b.js": "cd4acdc143833fa51a1fbad14b148ca260dfd3d0d64b293a22c122fd7da95778"
+  },
+  "initial": {
+    "transcriptions": 17,
+    "notes": 15,
+    "settings": {
+      "model": "orukeet-v0.1.0-q8",
+      "provider": "nvidia",
+      "uploadModel": "orukeet-v0.1.0-q8"
+    }
+  },
+  "final": {
+    "transcriptions": 18,
+    "notes": 15,
+    "history_digest": "acf6940edfd215f19754daab6aa2e51f034bcb37d24db287e01da15f0029a061",
+    "notes_digest": "efde111c936dc19537f6f9171730d0b83a85439f797626462f5c395ff364f787",
+    "auth": {
+      "completed": "true",
+      "guest": "true"
+    }
+  },
+  "clipboard_restored": true,
+  "finished_utc": "2026-09-10T20:07:23.492Z",
+  "harness_sha256": "ccf043121694a759fe8281a5d69352a123084ff962b344e5841dcf4a64984f6e"
+}

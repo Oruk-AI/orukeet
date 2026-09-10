@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "source_commit": "2516b0c03816fc8cd216becd3ccad249d3c63a7d",
+  "node": "24.19.0",
+  "require_db_tests": true,
+  "full_suite": {
+    "tests": 4091,
+    "pass": 4084,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 6,
+    "todo": 1
+  },
+  "format_lint_typecheck": "passed",
+  "production_renderer_build": "passed",
+  "latest_release": "v1.9.2",
+  "package_manifests_unchanged_from_upstream": true,
+  "log_sha256": {
+    "full-tests-final.log": "797fcc84de76275091397093bc6fc4be07c1a7debd519b72de9e043ca4f52d85",
+    "quality-final.log": "5326dddcb67e233c3264f7ac6d039ecd21301a2e21878028a44c718c21b0badc",
+    "build-final.log": "7a37f8a413c2e3d414274552b4039378b67520c74dab07b2be4344b6dc9d23a6"
+  },
+  "electron_native_dependency_restored": {
+    "electron": "41.10.5",
+    "node_module_abi": 145,
+    "sqlite_integrity": "ok"
+  }
+}
