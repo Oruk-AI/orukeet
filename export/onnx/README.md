@@ -32,9 +32,20 @@ python export/onnx/export_orukeet.py \
 ```
 
 The code follows the [upstream sherpa Parakeet TDT v3 exporter](https://github.com/k2-fsa/sherpa-onnx/blob/11afbd009a7f8c08f4bcf2fc1b265d0df4670fbf/scripts/nemo/parakeet-tdt-0.6b-v3/export_onnx.py).
-It uses NeMo's legacy ONNX exporter with opset 17, then dynamic unsigned INT8
-encoder quantization and signed INT8 decoder/joiner quantization. The released
-NeMo parameters are never modified. Encoder outputs at two different sequence
+It uses NeMo's legacy ONNX exporter with opset 17, then dynamic INT8
+quantization: the encoder through `quantize_encoder_sme.py` (symmetric, signed,
+per-output-channel weights emitted as `com.microsoft.DynamicQuantizeMatMul`
+nodes, each layer's Q/K/V projections merged into one GEMM; depthwise and 2-D
+subsampling convolutions stay in FP32), the decoder and joiner through
+`quantize_dynamic` with signed INT8. The released NeMo parameters are never
+modified.
+
+The encoder form matters for ONNX Runtime's CPU provider: only symmetric int8
+weights in the fused `DynamicQuantizeMatMul` op are routed to the KleidiAI SME2
+kernels on Apple M4/M5 and to the I8MM kernels on M2/M3; the previous asymmetric
+unsigned export always fell back to the older NEON dot-product path. Same 8-bit
+weights, same dynamic activation quantization, same operator set on every
+platform (the op is a standard CPU contrib op on x86 as well). Encoder outputs at two different sequence
 lengths are checked against PyTorch before the receipt is marked successful.
 The original upstream script is retained as
 `upstream_export_onnx.reference.txt`, with its Apache-2.0 license, for comparison
@@ -48,7 +59,12 @@ the three self-contained INT8 graphs.
 
 ## Optimize and package
 
-The current release rewrites 24 quantized depthwise convolutions to equivalent
+With `quantize_encoder_sme.py` the depthwise convolutions are never quantized,
+so the `optimize_for_sherpa.py` rewrite below is a no-op for that export and
+its hash pins (and those in `package_release.py`) must be regenerated from the
+new export receipt.
+
+The previous release rewrites 24 quantized depthwise convolutions to equivalent
 centered FP32 arithmetic and casts each result back to INT32 before the existing
 dequantization. Their nine-term integer sums are exactly representable in FP32.
 The remaining encoder operations, decoder, joiner, tokens and metadata stay

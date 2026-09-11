@@ -8,6 +8,8 @@ quantization, kernel, and numerical checks. It never changes a checkpoint.
 """
 
 import argparse
+import subprocess
+import sys
 import gc
 import gzip
 import hashlib
@@ -110,7 +112,8 @@ def main():
                             if d.metadata["Name"].lower().replace("-", "_") in
                             {"nemo_toolkit", "torch", "onnx", "onnxruntime", "numpy", "onnxscript"}},
                "threads": a.threads, "opset": 17, "exporter": "legacy TorchScript",
-               "quantization": {"encoder": "dynamic QUInt8", "decoder": "dynamic QInt8", "joiner": "dynamic QInt8"}}
+               "quantization": {"encoder": "dynamic QInt8 symmetric per-channel, DynamicQuantizeMatMul (quantize_encoder_sme.py)",
+                                "decoder": "dynamic QInt8", "joiner": "dynamic QInt8"}}
     if not a.skip_export:
         import nemo.collections.asr as nemo_asr
         print("Loading released r3 checkpoint on CPU", flush=True)
@@ -157,8 +160,16 @@ def main():
     for name in ["encoder", "decoder", "joiner"]:
         path = Path(f"{name}.int8.onnx")
         print(f"Quantizing {name}", flush=True)
-        quantize_dynamic(f"{name}.onnx", str(path),
-                         weight_type=QuantType.QUInt8 if name == "encoder" else QuantType.QInt8)
+        if name == "encoder":
+            # Symmetric int8 per-channel weights emitted directly as
+            # com.microsoft.DynamicQuantizeMatMul (see quantize_encoder_sme.py).
+            # Same 8-bit dynamic quantization, but in the form ONNX Runtime's CPU
+            # provider routes to its SME2 (Apple M4/M5) and I8MM (M2/M3) GEMM
+            # kernels; asymmetric uint8 weights are never eligible for those.
+            subprocess.run([sys.executable, str(Path(__file__).with_name("quantize_encoder_sme.py")),
+                            "encoder.onnx", str(path)], check=True)
+        else:
+            quantize_dynamic(f"{name}.onnx", str(path), weight_type=QuantType.QInt8)
         if name == "encoder":
             set_metadata(path, metadata)
             set_metadata(Path("encoder.onnx"), metadata)
