@@ -32,8 +32,12 @@ python export/onnx/export_orukeet.py \
 ```
 
 The code follows the [upstream sherpa Parakeet TDT v3 exporter](https://github.com/k2-fsa/sherpa-onnx/blob/11afbd009a7f8c08f4bcf2fc1b265d0df4670fbf/scripts/nemo/parakeet-tdt-0.6b-v3/export_onnx.py).
-It uses NeMo's legacy ONNX exporter with opset 17, then dynamic unsigned INT8
-encoder quantization and signed INT8 decoder/joiner quantization. The released
+It uses NeMo's legacy ONNX exporter with opset 17, then dynamic INT8
+quantization: the encoder through `quantize_encoder_sme.py` (symmetric int8
+per-channel weights as `com.microsoft.DynamicQuantizeMatMul` nodes, Q/K/V merged
+per layer, convolutions kept in FP32; this is the form ONNX Runtime routes to
+its SME2/I8MM kernels on Apple silicon, and a standard CPU op everywhere else),
+the decoder and joiner through `quantize_dynamic` with signed INT8. The released
 NeMo parameters are never modified. Encoder outputs at two different sequence
 lengths are checked against PyTorch before the receipt is marked successful.
 The original upstream script is retained as
@@ -48,7 +52,19 @@ the three self-contained INT8 graphs.
 
 ## Optimize and package
 
-The current release rewrites 24 quantized depthwise convolutions to equivalent
+`optimize_for_sherpa.py` is pinned to the previous release's encoder and does
+not apply to the `quantize_encoder_sme.py` export (its convolutions are already
+FP32). Package that export directly, without `--optimization-receipt`:
+
+```sh
+python export/onnx/package_release.py \
+  --model-dir /path/to/onnx-r3/sherpa-onnx-orukeet-v0.1.0-int8 \
+  --export-receipt /path/to/onnx-r3/export-receipt.json \
+  --archive /path/to/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2 \
+  --manifest /path/to/package-manifest.json
+```
+
+The previous release rewrites 24 quantized depthwise convolutions to equivalent
 centered FP32 arithmetic and casts each result back to INT32 before the existing
 dequantization. Their nine-term integer sums are exactly representable in FP32.
 The remaining encoder operations, decoder, joiner, tokens and metadata stay

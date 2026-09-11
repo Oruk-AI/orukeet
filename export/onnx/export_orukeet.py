@@ -8,6 +8,8 @@ quantization, kernel, and numerical checks. It never changes a checkpoint.
 """
 
 import argparse
+import subprocess
+import sys
 import gc
 import gzip
 import hashlib
@@ -79,6 +81,10 @@ def audit_gabor(model, fits):
             "storage": "ordinary torch Conv1d weight tensors; no custom Gabor operator"}
 
 
+QUANTIZATION = {"encoder": "dynamic QInt8 symmetric per-channel, DynamicQuantizeMatMul (quantize_encoder_sme.py)",
+                "decoder": "dynamic QInt8", "joiner": "dynamic QInt8"}
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--source", type=Path, required=True)
@@ -110,7 +116,7 @@ def main():
                             if d.metadata["Name"].lower().replace("-", "_") in
                             {"nemo_toolkit", "torch", "onnx", "onnxruntime", "numpy", "onnxscript"}},
                "threads": a.threads, "opset": 17, "exporter": "legacy TorchScript",
-               "quantization": {"encoder": "dynamic QUInt8", "decoder": "dynamic QInt8", "joiner": "dynamic QInt8"}}
+               "quantization": QUANTIZATION}
     if not a.skip_export:
         import nemo.collections.asr as nemo_asr
         print("Loading released r3 checkpoint on CPU", flush=True)
@@ -153,12 +159,21 @@ def main():
         gc.collect()
     else:
         receipt = json.loads(Path("source-audit.json").read_text())
+        # A resumed export may reuse an audit written by an earlier exporter;
+        # the quantization and exporter provenance must describe this run.
+        receipt["exporter_sha256"] = sha256(Path(__file__))
+        receipt["quantization"] = QUANTIZATION
     metadata = json.loads(Path("metadata.json").read_text())
     for name in ["encoder", "decoder", "joiner"]:
         path = Path(f"{name}.int8.onnx")
         print(f"Quantizing {name}", flush=True)
-        quantize_dynamic(f"{name}.onnx", str(path),
-                         weight_type=QuantType.QUInt8 if name == "encoder" else QuantType.QInt8)
+        if name == "encoder":
+            # Symmetric int8 DynamicQuantizeMatMul form; see quantize_encoder_sme.py.
+            quantizer = Path(__file__).with_name("quantize_encoder_sme.py")
+            receipt["encoder_quantizer_sha256"] = sha256(quantizer)
+            subprocess.run([sys.executable, str(quantizer), "encoder.onnx", str(path)], check=True)
+        else:
+            quantize_dynamic(f"{name}.onnx", str(path), weight_type=QuantType.QInt8)
         if name == "encoder":
             set_metadata(path, metadata)
             set_metadata(Path("encoder.onnx"), metadata)
