@@ -32,6 +32,8 @@ Use Orukeet for recordings, media, batch transcription, server workers and inter
 
 ## Run speech recognition
 
+[Follow the local deployment tutorial](https://oruk.ai/guides/orukeet-local-transcription) for a fresh Python environment, a supplied recording, actual output and a reusable file runner. The tutorial includes the tested package version and artifact hashes.
+
 Use Python 3.12+ in an activated virtual environment. Install the prebuilt
 v0.1.1 package and download its verified model and native runtime:
 
