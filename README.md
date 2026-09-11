@@ -54,6 +54,10 @@ Automatic selection installs the **optimized Metal runtime on Apple silicon**,
 CUDA on a detected NVIDIA device, or CPU. The installer verifies the Q8 weights
 and SDK hashes. Installing the prebuilt SDK requires no CMake, Ninja or compiler.
 
+Model weights come from [oruk/orukeet on Hugging Face](https://huggingface.co/oruk/orukeet),
+at pinned revisions. GitHub hosts the Python package and native SDKs. Cached
+weights are reused, and transcription runs offline.
+
 Use the saved installation receipt to transcribe locally:
 
 ```python
@@ -127,6 +131,19 @@ Gabor recovery uses transducer loss, encoder matching and token/duration distill
 [Fit and freeze recipe](training/gabor_half/README.md) · [Final adaptation](training/librispeech_ft/README.md) · [Training lineage](training/README.md)
 
 ## sherpa-onnx inference
+
+From this repository checkout, download the pinned archive and its verification
+manifest from Hugging Face:
+
+```sh
+python -m pip install "huggingface-hub>=0.34,<2"
+python examples/download_onnx.py --cache ./orukeet-cache
+tar -xjf ./orukeet-cache/models/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2
+```
+
+The downloader verifies the manifest's SHA-256, then checks the archive's size
+and SHA-256 against it. Repeat runs reuse the Hub cache; add `--local-files-only`
+for an offline check. [Download sources and counting](docs/usage.md#download-sources-and-counting).
 
 The [ONNX INT8 archive](https://huggingface.co/oruk/orukeet/resolve/55a984d46f68323301837194ce647c702f55facc/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2) uses the standard Parakeet TDT v3 layout: `encoder.int8.onnx`, `decoder.int8.onnx`, `joiner.int8.onnx` and `tokens.txt`. It also includes the BPE vocabulary, weight license and attribution. Gabor filters are ordinary convolution weights; the model uses sherpa-onnx's existing offline transducer loader.
 

@@ -79,6 +79,9 @@ The API returns transcript text and segment times. Language detection, diarizati
 
 The [ONNX INT8 archive](https://huggingface.co/oruk/orukeet/resolve/55a984d46f68323301837194ce647c702f55facc/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2) uses the standard Parakeet TDT v3 layout: `encoder.int8.onnx`, `decoder.int8.onnx`, `joiner.int8.onnx` and `tokens.txt`. It also includes the BPE vocabulary, weight license and attribution. Gabor filters are ordinary convolution weights; the model uses sherpa-onnx's existing offline transducer loader.
 
+Use the [verified download quickstart](README.md#sherpa-onnx-inference) to fetch
+the archive and its checksum manifest from Hugging Face, with offline cache reuse.
+
 The optimized encoder evaluates 24 quantized depthwise convolutions with exactly equivalent FP32 arithmetic using operators already in ONNX Runtime. All 640 application-check transcripts match the previous export; the same 160-clip timing sample has a 390 ms median versus 432 ms before optimization and 428 ms for stock Parakeet on M5 Max. [Execution details and receipts](evidence/speed20260910/README.md).
 
 The OpenWhispr PR uses this format through its existing Parakeet worker. Choose **Local → Oruk → Orukeet**, then **Download**. Recognition runs locally after installation.
