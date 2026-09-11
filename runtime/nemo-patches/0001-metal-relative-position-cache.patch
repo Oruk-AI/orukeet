@@ -1,0 +1,173 @@
+diff --git a/src/asr/encoder/rel_pos_attention.cpp b/src/asr/encoder/rel_pos_attention.cpp
+index f7fceda..aa482bd 100644
+--- a/src/asr/encoder/rel_pos_attention.cpp
++++ b/src/asr/encoder/rel_pos_attention.cpp
+@@ -11,7 +11,10 @@
+ #include <ggml-backend.h>
+ #include <ggml.h>
+ 
++#include <algorithm>
+ #include <cmath>
++#include <cstdlib>
++#include <cstring>
+ #include <stdexcept>
+ #include <vector>
+ 
+@@ -151,6 +154,33 @@ RelPositionMultiHeadAttention::define_tensors(Session* session) {
+     }
+     linear_pos->define_tensors(session);
+     linear_out->define_tensors(session);
++    pos_cache_frames_ = 0;
++    const auto prefix = name.find(".layers.");
++    if (!std::getenv("NEMO_SPEECH_METAL_POS_CACHE_DISABLE") && session->params.use_gpu &&
++        n_feat >= 64 && prefix != std::string::npos &&
++        session->gguf_loader->get_tensor_type(name + ".linear_pos.weight") == GGML_TYPE_Q8_0) {
++        pe_cache_source_ = name.substr(0, prefix) + ".pos_enc.pe";
++        auto pe = session->model_tensor_container->get_tensor_by_name(pe_cache_source_);
++        auto dev = ggml_backend_buft_get_device(pe.buft);
++        const bool metal = dev && std::strncmp(ggml_backend_dev_name(dev), "MTL", 3) == 0;
++        const uint32_t layers = metal ? session->gguf_loader->get_u32("asr.encoder.n_layers") : 0;
++        if (layers > 0 && pe.tensor->type == GGML_TYPE_F32 && pe.tensor->ne[0] == n_feat) {
++            // PE and its projection are independent of the audio. Cache a
++            // bounded central window, retaining the normal path outside it.
++            // At most 128 MiB across all encoder layers; 512 frames cover
++            // about 41 seconds for the 8x-subsampled Orukeet encoder.
++            constexpr uint64_t max_cache_bytes = 128ull * 1024 * 1024;
++            const uint64_t bytes_per_position = uint64_t(n_feat) * sizeof(float) * layers;
++            const int64_t budget_frames = (max_cache_bytes / bytes_per_position + 1) / 2;
++            pos_cache_frames_ = std::min<int64_t>({512, (pe.tensor->ne[1] + 1) / 2, budget_frames});
++            if (pos_cache_frames_ < 5)
++                pos_cache_frames_ = 0;
++            if (pos_cache_frames_ > 0) {
++                session->model_tensor_container->create_tensor_2d(
++                    name + ".pos_projected", GGML_TYPE_F32, n_feat, 2 * pos_cache_frames_ - 1);
++            }
++        }
++    }
+ }
+ 
+ TensorBag
+@@ -213,9 +243,31 @@ RelPositionMultiHeadAttention::build_graph_masked(
+         bf_ctx.ctx, pos_emb_tensor.tensor, pos_emb_tensor.tensor->ne[0],
+         pos_emb_tensor.tensor->ne[1], pos_emb_tensor.tensor->ne[2], 1);
+     linear_pos_input_bag.add_tensor(ggml_bf_tensor(pos_emb_reshaped, bf_ctx.buft));
+-    auto pos_linear_out =
+-        linear_pos->build_graph(session, linear_pos_input_bag, session_tensor_container);
+-    auto pos_linear_out_tensor = pos_linear_out.get_tensor(0);
++    ggml_bf_tensor pos_linear_out_tensor(nullptr, nullptr);
++    bool use_pos_cache = false;
++    // For fewer than nine position columns Metal uses a vector kernel with
++    // different rounding. Keep those tiny inputs on their original path.
++    if (pos_cache_frames_ > 0 && qlen >= 5 && qlen <= pos_cache_frames_) {
++        auto pe = session->model_tensor_container->get_tensor_by_name(pe_cache_source_);
++        const auto* supplied = pos_emb_tensor.tensor;
++        const size_t expected_offset = ((pe.tensor->ne[1] + 1) / 2 - qlen) * pe.tensor->nb[1];
++        use_pos_cache = supplied->view_src == pe.tensor && supplied->view_offs == expected_offset &&
++                        supplied->type == GGML_TYPE_F32 && supplied->ne[0] == n_feat &&
++                        supplied->nb[0] == sizeof(float) && supplied->nb[1] == pe.tensor->nb[1] &&
++                        supplied->ne[1] == 2 * qlen - 1 && supplied->ne[2] == 1 &&
++                        supplied->ne[3] == 1;
++    }
++    if (use_pos_cache) {
++        auto cached = session->model_tensor_container->get_tensor_by_name(name + ".pos_projected");
++        auto view = ggml_view_2d(
++            bf_ctx.ctx, cached.tensor, n_feat, 2 * qlen - 1, cached.tensor->nb[1],
++            (pos_cache_frames_ - qlen) * cached.tensor->nb[1]);
++        pos_linear_out_tensor = ggml_bf_tensor(view, cached.buft);
++    } else {
++        pos_linear_out_tensor =
++            linear_pos->build_graph(session, linear_pos_input_bag, session_tensor_container)
++                .get_tensor(0);
++    }
+     auto p = ggml_reshape_3d(
+         bf_ctx.ctx, pos_linear_out_tensor.tensor, d_k, n_head, pos_linear_out_tensor.tensor->ne[1]);
+ 
+@@ -271,10 +323,12 @@ RelPositionMultiHeadAttention::build_graph_masked(
+         // Every reshape and view must retain the B stride.
+         const int64_t T = input_tensor.tensor->ne[1];
+         const int64_t B = input_tensor.tensor->ne[2];
+-        auto qh = ggml_cont(bf_ctx.ctx, ggml_permute(bf_ctx.ctx, q_multi_head, 0, 2, 1, 3));
+-        auto kh = ggml_cont(bf_ctx.ctx, k_multi_head);
+-        auto vh = ggml_cont(bf_ctx.ctx, ggml_permute(bf_ctx.ctx, v_reshaped, 0, 2, 1, 3));
+-        auto ph = ggml_cont(bf_ctx.ctx, ggml_permute(bf_ctx.ctx, p, 0, 2, 1, 3));
++        // The reduction dimension is contiguous in these views. ADD and
++        // MUL_MAT accept their row/head strides, avoiding four staging copies.
++        auto qh = ggml_permute(bf_ctx.ctx, q_multi_head, 0, 2, 1, 3);
++        auto kh = k_multi_head;
++        auto vh = ggml_permute(bf_ctx.ctx, v_reshaped, 0, 2, 1, 3);
++        auto ph = ggml_permute(bf_ctx.ctx, p, 0, 2, 1, 3);
+         auto bu = ggml_reshape_4d(bf_ctx.ctx, pos_bias_u_tensor.tensor, d_k, 1, n_head, 1);
+         auto bv = ggml_reshape_4d(bf_ctx.ctx, pos_bias_v_tensor.tensor, d_k, 1, n_head, 1);
+         auto qu = ggml_add(bf_ctx.ctx, qh, bu);
+@@ -283,22 +337,14 @@ RelPositionMultiHeadAttention::build_graph_masked(
+         auto matrix_ac = ggml_mul_mat(bf_ctx.ctx, kh, qu);  // [T,T,H,B]
+         auto matrix_bd = ggml_mul_mat(bf_ctx.ctx, ph, qv);  // [2T-1,T,H,B]
+ 
+-        // Portable one-row left pad followed by the Transformer-XL relative shift.
+-        auto first_row = ggml_view_4d(
+-            bf_ctx.ctx, matrix_bd, 1, T, n_head, B, matrix_bd->nb[1], matrix_bd->nb[2],
+-            matrix_bd->nb[3], 0);
+-        auto zero_row = ggml_scale(bf_ctx.ctx, ggml_cont(bf_ctx.ctx, first_row), 0.0f);
+-        matrix_bd = ggml_concat(bf_ctx.ctx, zero_row, matrix_bd, 0);  // [2T,T,H,B]
+-        matrix_bd = ggml_reshape_4d(bf_ctx.ctx, matrix_bd, T, 2 * T, n_head, B);
+-        matrix_bd = ggml_view_4d(
+-            bf_ctx.ctx, matrix_bd, T, 2 * T - 1, n_head, B, matrix_bd->nb[1], matrix_bd->nb[2],
+-            matrix_bd->nb[3], matrix_bd->nb[1]);
+-        matrix_bd = ggml_cont(bf_ctx.ctx, matrix_bd);
+-        matrix_bd = ggml_reshape_4d(bf_ctx.ctx, matrix_bd, 2 * T - 1, T, n_head, B);
++        // Transformer-XL shift: output[k,q] = input[T-1-q+k,q].
++        // Removing one element from the query stride expresses the same
++        // mapping without padding or intermediate copies. Retain head/batch
++        // strides from the original [2T-1,T,H,B] matrix.
++        const size_t element_size = ggml_element_size(matrix_bd);
+         matrix_bd = ggml_view_4d(
+-            bf_ctx.ctx, matrix_bd, T, T, n_head, B, matrix_bd->nb[1], matrix_bd->nb[2],
+-            matrix_bd->nb[3], 0);
+-        matrix_bd = ggml_cont(bf_ctx.ctx, matrix_bd);
++            bf_ctx.ctx, matrix_bd, T, T, n_head, B, matrix_bd->nb[1] - element_size,
++            matrix_bd->nb[2], matrix_bd->nb[3], (T - 1) * element_size);
+ 
+         auto scores = ggml_scale_inplace(
+             bf_ctx.ctx, ggml_add(bf_ctx.ctx, matrix_ac, matrix_bd), scale_factor);
+@@ -403,6 +449,28 @@ RelPositionMultiHeadAttention::set_data(Session* session) {
+     }
+     linear_pos->set_data(session);
+     linear_out->set_data(session);
++    if (pos_cache_frames_ > 0) {
++        auto pe = session->model_tensor_container->get_tensor_by_name(pe_cache_source_);
++        auto weight =
++            session->model_tensor_container->get_tensor_by_name(name + ".linear_pos.weight");
++        auto target = session->model_tensor_container->get_tensor_by_name(name + ".pos_projected");
++        ggml_context_ptr ctx(ggml_init({65536, nullptr, true}));
++        ggml_backend_ptr backend(
++            ggml_backend_dev_init(ggml_backend_buft_get_device(pe.buft), nullptr));
++        if (!ctx || !backend)
++            throw std::runtime_error("positional projection initialization failed");
++        const size_t offset = ((pe.tensor->ne[1] + 1) / 2 - pos_cache_frames_) * pe.tensor->nb[1];
++        auto slice = ggml_view_2d(
++            ctx.get(), pe.tensor, n_feat, 2 * pos_cache_frames_ - 1, pe.tensor->nb[1], offset);
++        auto projected = ggml_mul_mat(ctx.get(), weight.tensor, slice);
++        auto copy = ggml_cpy(ctx.get(), projected, target.tensor);
++        auto graph = ggml_new_graph_custom(ctx.get(), 32, false);
++        ggml_build_forward_expand(graph, copy);
++        ggml_backend_buffer_ptr buffer(ggml_backend_alloc_ctx_tensors(ctx.get(), backend.get()));
++        if (!buffer || ggml_backend_graph_compute(backend.get(), graph) != GGML_STATUS_SUCCESS) {
++            throw std::runtime_error("positional projection precompute failed");
++        }
++    }
+ }
+ 
+ }  // namespace ggml_runtime
+diff --git a/src/asr/encoder/rel_pos_attention.h b/src/asr/encoder/rel_pos_attention.h
+index e20ef0d..9f2d43a 100644
+--- a/src/asr/encoder/rel_pos_attention.h
++++ b/src/asr/encoder/rel_pos_attention.h
+@@ -87,6 +87,8 @@ class RelPositionMultiHeadAttention : public Module {
+     int n_feat;
+     int d_k;
+     bool use_bias;
++    int pos_cache_frames_ = 0;
++    std::string pe_cache_source_;
+     Linear* linear_out;
+     Linear* linear_pos;
+ };

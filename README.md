@@ -44,6 +44,9 @@ Use Python 3.12+. The installer fetches the pinned Q8 weights and a hash-checked
 
 [OpenWhispr integration](integrations/openwhispr/README.md) · [Usage and application workers](docs/usage.md) · [NeMo inference and fine-tuning](docs/gabor-source.md)
 
+For the optimized Apple silicon runtime, [build the Metal SDK from source](runtime/README.md).
+The kernel patches, attention/cache changes and pinned build script live in `runtime/`.
+
 ## Evaluation
 
 Both models decode identical recordings with NeMo greedy-batch TDT, FP32 weights and BF16 CUDA autocast. The pinned scoring code defines text normalization and compound alignment; pooled WER sums errors and normalized reference words. Lower is better.

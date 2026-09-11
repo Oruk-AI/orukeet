@@ -4,3 +4,5 @@
 *.csv whitespace=cr-at-eol
 *.json whitespace=cr-at-eol
 integrations/openwhispr/*.patch text eol=lf
+# Preserve unified-diff context lines and the locked patch bytes on every OS.
+runtime/**/*.patch text eol=lf whitespace=-blank-at-eol

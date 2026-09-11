@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "origin_pr": "https://github.com/hoid-ai/NeMo-Speech.cpp/pull/2",
+  "origin_commit": "ed05e13681b330b080edb797cb87b055540c3666",
+  "sources": {
+    "nemo": {
+      "repository": "https://github.com/NVIDIA/NeMo-Speech.cpp.git",
+      "commit": "a5b6953c4a579a2bbd1c0913ad8a85c2a4d99953"
+    },
+    "ggml": {
+      "repository": "https://github.com/ggml-org/ggml.git",
+      "commit": "c03b4e2bcece5134827881af90242086daf75be5"
+    },
+    "sentencepiece": {
+      "repository": "https://github.com/google/sentencepiece.git",
+      "commit": "17d7580d6407802f85855d2cc9190634e2c95624"
+    }
+  },
+  "patches": {
+    "ggml": [
+      {
+        "path": "ggml-patches/0021-metal-asr-kernels.patch",
+        "sha256": "b4aa8f61d3913ab88dcb47511bb7c05cc66710c215b545dd3b482aaa66b8aff1"
+      },
+      {
+        "path": "ggml-patches/0022-metal-asr-fusions.patch",
+        "sha256": "8a07b43643a4fcea9662b6fb0ac425545e3b29eb45a32c27d885edb1eedb655e"
+      }
+    ],
+    "nemo": [
+      {
+        "path": "nemo-patches/0001-metal-relative-position-cache.patch",
+        "sha256": "2104a85b61809a9b1fd5c29a020f8b94033211d610b8fa146e5a15633437e940"
+      }
+    ]
+  }
+}
