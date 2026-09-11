@@ -179,16 +179,16 @@
   "asr-nvidia-metal": {
     "platforms": {
       "macos_arm64": {
-        "version": "0.1.0-native",
+        "version": "0.1.1",
         "component_api": 1,
-        "install_bytes": 21148144,
         "platform": "macos_arm64",
+        "install_bytes": 4942227,
         "archives": [
           {
-            "name": "nemo-speech-0.1.0-macos-aarch64-metal.tar.gz",
-            "url": "https://github.com/NVIDIA/NeMo-Speech.cpp/releases/download/v0.1.0/nemo-speech-0.1.0-macos-aarch64-metal.tar.gz",
-            "sha256": "f1dff4f9dd9c96214f8cb78b982812459132df8a4ad1a42409fd94de4a366244",
-            "size_bytes": 3465028,
+            "name": "nemo-speech-orukeet-0.1.1-macos-arm64-metal.tar.gz",
+            "url": "https://github.com/Oruk-AI/orukeet/releases/download/v0.1.1/nemo-speech-orukeet-0.1.1-macos-arm64-metal.tar.gz",
+            "sha256": "f25624b34764b75cf0441833fe42595302f271ba6c0b51ade9c97917ca0137f3",
+            "size_bytes": 1628922,
             "extract": "native-tar"
           }
         ]

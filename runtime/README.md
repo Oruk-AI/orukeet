@@ -89,10 +89,10 @@ Python constructor. Model weights are separate from the SDK and are not
 downloaded by the build script. The existing optional integration test uses
 `ORUKEET_TEST_RUNTIME` to select this SDK; see [Contributing](../CONTRIBUTING.md).
 
-This source-build integration does not change `orukeet install` or
-[`native_runtimes.json`](../src/orukeet/native_runtimes.json). Switching the
-installer to a published optimized SDK is a separate follow-up. Local builds
-do not depend on that publication.
+Package version 0.1.1 selects the optimized SDK through
+[`native_runtimes.json`](../src/orukeet/native_runtimes.json). Its release archive
+must be published before that installer entry can be used. Local builds do
+not depend on publication. See [release preparation](RELEASE.md).
 
 ## Source pins and patch order
 

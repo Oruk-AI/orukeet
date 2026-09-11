@@ -1,5 +1,7 @@
 include runtime/README.md
+include runtime/RELEASE.md
 include runtime/build-metal.py
+include runtime/package-metal.py
 include runtime/sources.lock.json
 recursive-include runtime/ggml-patches *.patch
 recursive-include runtime/nemo-patches *.patch
