@@ -60,9 +60,17 @@ the three self-contained INT8 graphs.
 ## Optimize and package
 
 With `quantize_encoder_sme.py` the depthwise convolutions are never quantized,
-so the `optimize_for_sherpa.py` rewrite below is a no-op for that export and
-its hash pins (and those in `package_release.py`) must be regenerated from the
-new export receipt.
+so the `optimize_for_sherpa.py` step below does not apply (it is pinned to the
+previous release's encoder hash and would refuse the new graph). Package the
+export directly, without `--optimization-receipt`:
+
+```sh
+python export/onnx/package_release.py \
+  --model-dir /path/to/onnx-r3/sherpa-onnx-orukeet-v0.1.0-int8 \
+  --export-receipt /path/to/onnx-r3/export-receipt.json \
+  --archive /path/to/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2 \
+  --manifest /path/to/package-manifest.json
+```
 
 The previous release rewrites 24 quantized depthwise convolutions to equivalent
 centered FP32 arithmetic and casts each result back to INT32 before the existing
