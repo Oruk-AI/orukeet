@@ -1,8 +1,8 @@
 # Orukeet Metal runtime
 
-This directory owns Orukeet's Metal optimization patches and the script that
+This directory contains Orukeet's Metal optimization patches and the script that
 applies them to pinned NeMo-Speech.cpp and ggml sources, then builds a native
-ASR SDK. No Hoid SDK release or adjacent source checkout is required.
+ASR SDK.
 
 The execution path is:
 
@@ -120,40 +120,44 @@ then applies these patches with `git apply --index`, without merging conflicts:
    against NeMo: attention views, relative-shift views, and precomputed
    constant positional projections.
 
-The ggml patches are copied byte-for-byte from
-[Hoid PR #2](https://github.com/hoid-ai/NeMo-Speech.cpp/pull/2), at
-`ed05e13681b330b080edb797cb87b055540c3666`. The NeMo patch is the exact diff
-of `rel_pos_attention.cpp` and `.h` from the baseline to that commit.
-The manifest verifies every local patch's SHA-256 before any source fetch.
+The NeMo patch modifies `rel_pos_attention.cpp` and `.h` in the pinned source
+tree. The manifest verifies every local patch's SHA-256 before any source fetch.
 
-The CMake flag `NEMO_SPEECH_GGML_PATCHED=OFF` matches the qualified Metal
-build: it selects the portable ASR graph instead of CUDA-specific fused
-operations. It does **not** disable the applied Metal backend patches.
+The build sets `NEMO_SPEECH_GGML_PATCHED=OFF` to select the portable ASR
+graph. Metal kernel optimizations remain active in the patched ggml backend.
 
-## Optimizations and evidence
+## Positional cache
 
-The positional cache precomputes constants, not audio-dependent activations.
-It uses 95.9 MiB for Orukeet Q8, with a 128 MiB total cap, and applies to
-5–512 encoder frames (about 41 seconds at this model's subsampling rate).
-Other eligible-size checks and fallback paths remain in the patches.
+The positional cache precomputes audio-independent positional projections.
+It has a 128 MiB total cap across encoder layers and supports eligible inputs
+of 5–512 encoder frames (up to about 41 seconds at Orukeet's subsampling rate).
+Inputs outside the supported shapes use the existing attention path.
 Set `NEMO_SPEECH_METAL_POS_CACHE_DISABLE=1` before starting the worker to
 disable the positional cache.
 
-The original M4 Pro qualification measured native median latency falling
-from 154.2 ms to 88.9 ms across 24 English clips of 5–30 seconds. The
-full-model audit found matching transcripts and all tested final scores
-within `atol=rtol=1e-5`. Scaled kernel stress cases had exceptions at tighter
-tolerances; the numerical report preserves those limits. These measurements
-describe the qualified PR build, not every machine or a newly compiled SDK.
+## Validate the SDK
 
-- [Performance and reproduction commands](https://github.com/hoid-ai/NeMo-Speech.cpp/blob/ed05e13681b330b080edb797cb87b055540c3666/docs/development/orukeet-metal-followup-benchmark.md)
-- [Full-model numerical audit](https://github.com/hoid-ai/NeMo-Speech.cpp/blob/ed05e13681b330b080edb797cb87b055540c3666/docs/development/orukeet-model-numerics.md)
-- [Kernel numerical audit and limits](https://github.com/hoid-ai/NeMo-Speech.cpp/blob/ed05e13681b330b080edb797cb87b055540c3666/docs/development/orukeet-metal-numerics.md)
+From the repository root, install the development dependencies and run the
+native integration test against the built SDK, a local Q8 GGUF model, and the
+bundled JFK audio fixture:
 
-## Attribution
+```sh
+python -m pip install -e '.[dev,eval]'
 
-These optimizations originate in Hoid's NeMo-Speech.cpp contribution. NeMo's
-source retains NVIDIA's Apache-2.0 notices and Jason Ni's MIT attribution
+ORUKEET_TEST_MODEL=/path/to/orukeet-v0.1.0-q8.gguf \
+ORUKEET_TEST_RUNTIME="$PWD/build/metal/sdk" \
+ORUKEET_TEST_AUDIO="$PWD/demos/fixtures/jfk.wav" \
+ORUKEET_TEST_DEVICE=metal \
+python -m pytest -q tests/test_inference.py::test_released_model_offline_reuse_and_silence
+```
+
+This test checks repeatable offline transcription, reuse of the worker process,
+segment timestamp bounds, and silence handling. For SDK packaging and installer
+validation, see [release preparation](RELEASE.md).
+
+## Licenses
+
+NeMo's source retains NVIDIA's Apache-2.0 notices and Jason Ni's MIT attribution
 for code derived from parakeet.cpp. The NeMo patch remains under those source
 terms; see [NeMo's license](https://github.com/NVIDIA/NeMo-Speech.cpp/blob/a5b6953c4a579a2bbd1c0913ad8a85c2a4d99953/LICENSE) and the fetched source's
 `THIRD_PARTY_NOTICES.md`. The ggml patches retain ggml's

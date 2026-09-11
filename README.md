@@ -32,19 +32,39 @@ Use Orukeet for recordings, media, batch transcription, server workers and inter
 
 ## Run speech recognition
 
+Use Python 3.12+ in an activated virtual environment. Install the prebuilt
+v0.1.1 package and download its verified model and native runtime:
+
 ```sh
-git clone https://github.com/Oruk-AI/orukeet.git
-cd orukeet
-python -m pip install -e .
+python -m pip install --upgrade \
+  https://github.com/Oruk-AI/orukeet/releases/download/v0.1.1/orukeet-0.1.1-py3-none-any.whl
 orukeet install --device auto --cache ./orukeet-cache --output installation.json
-python examples/transcribe.py recording.wav --installation installation.json
 ```
 
-Use Python 3.12+. The installer fetches the pinned Q8 weights and a hash-checked NeMo-Speech.cpp runtime. Automatic selection uses Metal on Apple silicon, CUDA on a detected NVIDIA device, or CPU. A persistent worker keeps the model loaded across files. Input is decoded to mono 16 kHz and split into bounded windows for long recordings.
+Automatic selection installs the **optimized Metal runtime on Apple silicon**,
+CUDA on a detected NVIDIA device, or CPU. The installer verifies the Q8 weights
+and SDK hashes. Installing the prebuilt SDK requires no CMake, Ninja or compiler.
+
+Use the saved installation receipt to transcribe locally:
+
+```python
+import json
+from pathlib import Path
+from orukeet import Orukeet
+
+config = json.loads(Path("installation.json").read_text(encoding="utf-8-sig"))
+with Orukeet(config["model"], config["runtime"], device=config["device"]) as asr:
+    print(asr.transcribe("recording.wav")["text"])
+```
+
+A persistent worker keeps the model loaded across files. Input is decoded to
+mono 16 kHz and split into bounded windows for long recordings. Existing users
+should upgrade the package and rerun `orukeet install` to regenerate their
+installation receipt with the new runtime.
 
 [OpenWhispr integration](integrations/openwhispr/README.md) · [Usage and application workers](docs/usage.md) · [NeMo inference and fine-tuning](docs/gabor-source.md)
 
-For the optimized Apple silicon runtime, [build the Metal SDK from source](runtime/README.md).
+To compile the runtime yourself, [build the Metal SDK from source](runtime/README.md).
 The kernel patches, attention/cache changes and pinned build script live in `runtime/`.
 
 ## Evaluation

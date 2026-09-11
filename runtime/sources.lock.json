@@ -1,7 +1,5 @@
 {
   "schema_version": 1,
-  "origin_pr": "https://github.com/hoid-ai/NeMo-Speech.cpp/pull/2",
-  "origin_commit": "ed05e13681b330b080edb797cb87b055540c3666",
   "sources": {
     "nemo": {
       "repository": "https://github.com/NVIDIA/NeMo-Speech.cpp.git",

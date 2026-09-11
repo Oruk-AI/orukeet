@@ -24,7 +24,7 @@ MIT components. Keep the SDK's license files when redistributing it. The
 [pinned source](https://github.com/NVIDIA/NeMo-Speech.cpp/tree/4f9676226f667d14608487df744f375db87127f8)
 is the authority for those terms.
 
-The optional [Metal source build](runtime/README.md) carries Hoid's ggml
+The optional [Metal source build](runtime/README.md) includes ggml
 kernel and NeMo attention/cache patches, with pinned sources and attribution
 in `runtime/`. Those patches retain the source projects' MIT and Apache-2.0
 terms; they are separate from the fitted Gabor model weights.

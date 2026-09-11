@@ -80,12 +80,11 @@ With Python 3.12+ in an activated virtual environment:
 python -m pip install --upgrade \
   https://github.com/Oruk-AI/orukeet/releases/download/v0.1.1/orukeet-0.1.1-py3-none-any.whl
 orukeet install --device auto --cache ./orukeet-cache --output installation.json
-python examples/transcribe.py recording.wav --installation installation.json
 ```
 
-The last command uses `examples/transcribe.py` from a source checkout. An
-application can instead pass the receipt's `model`, `runtime` and `device`
-values to the `Orukeet` constructor. No CMake, Ninja or compiler is needed for
+Pass the receipt's `model`, `runtime` and `device` values to the `Orukeet`
+constructor, as shown in the [quickstart](../README.md#run-speech-recognition).
+No source checkout, CMake, Ninja or compiler is needed for
 prebuilt installation. Downloading the SDK and the Q8 weights happens during
 installation; recognition then runs locally.
 

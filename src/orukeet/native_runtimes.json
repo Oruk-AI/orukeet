@@ -182,13 +182,13 @@
         "version": "0.1.1",
         "component_api": 1,
         "platform": "macos_arm64",
-        "install_bytes": 4942227,
+        "install_bytes": 4942092,
         "archives": [
           {
             "name": "nemo-speech-orukeet-0.1.1-macos-arm64-metal.tar.gz",
             "url": "https://github.com/Oruk-AI/orukeet/releases/download/v0.1.1/nemo-speech-orukeet-0.1.1-macos-arm64-metal.tar.gz",
-            "sha256": "f25624b34764b75cf0441833fe42595302f271ba6c0b51ade9c97917ca0137f3",
-            "size_bytes": 1628922,
+            "sha256": "aaf30beadcdb6ac2b6004bbe20d4a7601aa640c3f67be0e4668370a76fddcbc1",
+            "size_bytes": 1628856,
             "extract": "native-tar"
           }
         ]
