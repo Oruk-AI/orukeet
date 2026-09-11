@@ -30,6 +30,13 @@ Use Orukeet for recordings, media, batch transcription, server workers and inter
 
 [Model card](MODEL_CARD.md) · [Weights](https://huggingface.co/oruk/orukeet) · [Technical report](output/pdf/orukeet-technical-report.pdf)
 
+## Use Orukeet in a desktop app
+
+[OpenWhispr 1.10.0](https://github.com/OpenWhispr/openwhispr/releases/tag/v1.10.0)
+ships Orukeet as its recommended local model. In the local model picker, choose
+**Oruk → Orukeet** and download the model. This integration uses the ONNX export
+through OpenWhispr’s existing sherpa-onnx runtime.
+
 ## Run speech recognition
 
 [Follow the local deployment tutorial](https://oruk.ai/guides/orukeet-local-transcription) for a fresh Python environment, a supplied recording, actual output and a reusable file runner. The tutorial includes the tested package version and artifact hashes.
