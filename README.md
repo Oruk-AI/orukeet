@@ -67,6 +67,23 @@ installation receipt with the new runtime.
 To compile the runtime yourself, [build the Metal SDK from source](runtime/README.md).
 The kernel patches, attention/cache changes and pinned build script live in `runtime/`.
 
+## Metal performance
+
+**Hoid developed Orukeet's Metal kernel and attention/cache optimizations.**
+On Apple M4 Pro with 24 GiB RAM, the patches reduced warm native median latency
+by **42.4% (1.74× speedup)** while preserving every transcript in a fixed
+24-clip LibriSpeech test-clean benchmark.
+
+| Warm median latency, Q8/Metal | Before optimization | Optimized | Speedup |
+| --- | ---: | ---: | ---: |
+| Native recognition | 154.2 ms | **88.9 ms** | **1.74×** |
+| OpenWhispr native backend | 166.0 ms | **100.3 ms** | **1.65×** |
+
+These measurements use 5–30-second clips, exclude model loading and warmup,
+and describe the patch benchmark. The packaged v0.1.1 SDK has separate
+installation and transcript checks; its full timed benchmark has not been
+rerun. [Measurement details and results](runtime/README.md#performance).
+
 ## Evaluation
 
 Both models decode identical recordings with NeMo greedy-batch TDT, FP32 weights and BF16 CUDA autocast. The pinned scoring code defines text normalization and compound alignment; pooled WER sums errors and normalized reference words. Lower is better.

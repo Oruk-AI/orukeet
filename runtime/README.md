@@ -2,7 +2,7 @@
 
 This directory contains Orukeet's Metal optimization patches and the script that
 applies them to pinned NeMo-Speech.cpp and ggml sources, then builds a native
-ASR SDK.
+ASR SDK. Hoid developed the Metal kernel and attention/cache optimizations.
 
 The execution path is:
 
@@ -19,6 +19,49 @@ loads `lib/libnemo_speech_asr_c.dylib` from the supplied runtime directory.
 The SDK retains C ABI version 1 and SDK version 0.1.0. Its embedded Metal
 shader source includes the patches below. These changes apply to native
 GGUF inference; the sherpa-onnx export uses a separate runtime.
+
+## Performance
+
+Measured on 10 September 2026 with Orukeet r3 Q8 on Apple M4 Pro
+(12 CPU cores, 24 GiB RAM), macOS 26.5, using Metal. Before and after runs
+used the same model and audio on battery power with the same power settings.
+The baseline uses the pinned NeMo runtime with its 20 existing ggml patches;
+the optimized build adds the kernel and attention/cache patches in this directory.
+
+| Warm latency | Before optimization | Optimized | Reduction |
+| --- | ---: | ---: | ---: |
+| Native median | 154.2 ms | **88.9 ms** | **42.4%** |
+| Native p95 | 280.8 ms | **156.1 ms** | **44.4%** |
+| OpenWhispr native backend median | 166.0 ms | **100.3 ms** | **39.6%** |
+| OpenWhispr native backend p95 | 295.0 ms | **170.1 ms** | **42.3%** |
+
+Median speedups are **1.74× native** and **1.65× through the OpenWhispr
+native backend**. The first kernel pass reached 111.4 ms native / 122.6 ms
+backend; the subsequent fusions and attention/cache changes reached the
+final values above. Native throughput rose from 94.2 to 162.6 audio seconds
+per second of processing.
+
+The fixed suite contains 24 LibriSpeech test-clean clips from 24 speakers,
+5–30 seconds each, totaling 364.285 seconds and 916 reference words.
+Each run warms every clip once, then measures sequential, batch-size-one
+requests for 120 seconds. Model loading and warmup are excluded. Native
+timing covers the audio frontend, encoder and decoder. Backend timing adds
+audio conversion, temporary PCM files and worker IPC; microphone capture,
+UI and paste are outside the measurement. These backend timings describe
+the native integration used for this benchmark. The current OpenWhispr
+ONNX/CPU path has [separate measurements](../integrations/openwhispr/APP_BENCHMARKS.md).
+
+Every measured transcript matches the baseline. WER remains **2.40%**
+(22 errors / 916 words), scored once per unique clip using symmetric
+Unicode, case and punctuation normalization without number rewriting.
+The positional cache adds **95.9 MiB** for this model, within its 128 MiB cap.
+
+[Benchmark summary](benchmarks/metal-m4-pro.json) records the hardware,
+protocol, model hash, timing statistics and error counts. These are historical
+patch measurements, not a new timing result for the packaged v0.1.1 SDK.
+That candidate passed installation, offline reuse, worker reuse and all
+48 transcript comparisons across these 24 clips; its full timed benchmark
+has not been rerun. Latency depends on the machine and workload.
 
 ## Build
 

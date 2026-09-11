@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "description": "Historical Orukeet Q8 Metal patch benchmark; not a timed benchmark of the v0.1.1 release archive.",
+  "date_utc": "2026-09-10",
+  "optimizations_by": "Hoid",
+  "hardware": {
+    "cpu": "Apple M4 Pro",
+    "logical_cpus": 12,
+    "memory_bytes": 25769803776,
+    "macos": "26.5",
+    "arch": "arm64"
+  },
+  "power": {
+    "source": "battery",
+    "power_mode": 0,
+    "settings_equal_across_runs": true
+  },
+  "model": {
+    "id": "orukeet-v0.1.0-q8",
+    "sha256": "93ce19c6d8244acbfea980eeaf970531d4f216171578ef8e041dcc2d070a45bd",
+    "bytes": 714456704,
+    "url": "https://huggingface.co/oruk/orukeet/resolve/555136b50265a132d4cea0d35560c26fc4f657ab/orukeet-v0.1.0-q8.gguf"
+  },
+  "corpus": {
+    "name": "LibriSpeech test-clean",
+    "url": "https://www.openslr.org/resources/12/test-clean.tar.gz",
+    "source": "https://www.openslr.org/12",
+    "license": "CC BY 4.0",
+    "md5": "32fa31d27d2e1cad72775fee3f4849a9",
+    "checksum_source": "https://www.openslr.org/resources/12/md5sum.txt",
+    "selection_version": "orukeet-quick-v1",
+    "unique_clips": 24,
+    "unique_speakers": 24,
+    "unique_audio_seconds": 364.285,
+    "reference_words": 916
+  },
+  "protocol": {
+    "measurement_window_seconds": 120,
+    "warmup": "One request per clip, excluded from timing.",
+    "request_order": "Sequential cycling through the fixed clip order.",
+    "batch_size": 1,
+    "native_timing": "Synchronous recognition call including frontend, encoder and decoder.",
+    "backend_timing": "OpenWhispr native backend: recognition plus audio conversion, temporary PCM files and worker IPC.",
+    "excluded": "Model loading, warmup, microphone capture, UI and paste.",
+    "accuracy": "Scored once per unique clip; NFKC, lowercase, curly-apostrophe normalization, punctuation replaced by spaces; numbers are not rewritten.",
+    "percentiles": "Nearest rank; median is the mean of the middle pair for even sample counts."
+  },
+  "runs": {
+    "baseline": {
+      "started_at": "2026-09-10T07:27:27.504Z",
+      "source_receipt_sha256": "e9f9eb49d8f02555322af093590e48b6673f0eccbf1c208db09d783fa8a2b4b1",
+      "measured_seconds": 120.05335320900001,
+      "request_count": 691,
+      "native": {
+        "count": 691,
+        "median_ms": 154.242083,
+        "p95_ms": 280.825708,
+        "p99_ms": 283.683166,
+        "min_ms": 55.418542,
+        "max_ms": 316.540125,
+        "mean_ms": 161.13787445007236,
+        "audio_seconds_per_second": 94.18927892900558,
+        "real_time_factor": 0.010616919583318417
+      },
+      "openwhispr_native_backend": {
+        "count": 691,
+        "median_ms": 165.97550000000047,
+        "p95_ms": 295.01445800000147,
+        "p99_ms": 303.23904199999924,
+        "min_ms": 65.15679199999977,
+        "max_ms": 331.5163750000065,
+        "mean_ms": 173.723707057887,
+        "audio_seconds_per_second": 87.36550963391322,
+        "real_time_factor": 0.011446164558420015
+      },
+      "accuracy": {
+        "reference_words": 916,
+        "substitutions": 16,
+        "deletions": 4,
+        "insertions": 2,
+        "errors": 22,
+        "wer_percent": 2.4017467248908297
+      }
+    },
+    "first_kernel_pass": {
+      "started_at": "2026-09-10T07:42:20.480Z",
+      "source_receipt_sha256": "88bbbf1dfa3761224ae5aca09d6823e7be420aacade9c7c5c4217119e5703ebf",
+      "measured_seconds": 120.02411525000002,
+      "request_count": 938,
+      "native": {
+        "count": 938,
+        "median_ms": 111.430271,
+        "p95_ms": 198.573167,
+        "p99_ms": 200.925541,
+        "min_ms": 42.248042,
+        "max_ms": 217.149417,
+        "mean_ms": 116.2952321748401,
+        "audio_seconds_per_second": 130.46376148959865,
+        "real_time_factor": 0.007664963730788384
+      },
+      "openwhispr_native_backend": {
+        "count": 938,
+        "median_ms": 122.63664599999902,
+        "p95_ms": 212.1342089999962,
+        "p99_ms": 216.31029200000194,
+        "min_ms": 51.50291599999764,
+        "max_ms": 237.84824999999546,
+        "mean_ms": 127.94735296695075,
+        "audio_seconds_per_second": 118.58247225133996,
+        "real_time_factor": 0.00843294949931945
+      },
+      "accuracy": {
+        "reference_words": 916,
+        "substitutions": 16,
+        "deletions": 4,
+        "insertions": 2,
+        "errors": 22,
+        "wer_percent": 2.4017467248908297
+      }
+    },
+    "optimized": {
+      "started_at": "2026-09-10T10:22:52.528Z",
+      "source_receipt_sha256": "f9ed46c917b91d41c55fcf9ff8eaa977fe26e016ae15cdfa7ca5a659d9d8ce5b",
+      "measured_seconds": 120.051234583,
+      "request_count": 1139,
+      "native": {
+        "count": 1139,
+        "median_ms": 88.874875,
+        "p95_ms": 156.100209,
+        "p99_ms": 159.115709,
+        "min_ms": 34.640875,
+        "max_ms": 172.023709,
+        "mean_ms": 93.35380682704113,
+        "audio_seconds_per_second": 162.61701571090998,
+        "real_time_factor": 0.00614941797836049
+      },
+      "openwhispr_native_backend": {
+        "count": 1139,
+        "median_ms": 100.32629199999792,
+        "p95_ms": 170.07795899999473,
+        "p99_ms": 172.64504200000374,
+        "min_ms": 43.742417000001296,
+        "max_ms": 272.1724580000009,
+        "mean_ms": 105.3872253740124,
+        "audio_seconds_per_second": 144.04893399166846,
+        "real_time_factor": 0.006942085389245839
+      },
+      "accuracy": {
+        "reference_words": 916,
+        "substitutions": 16,
+        "deletions": 4,
+        "insertions": 2,
+        "errors": 22,
+        "wer_percent": 2.4017467248908297
+      }
+    }
+  },
+  "comparison": {
+    "native": {
+      "median_speedup": 1.735497045706112,
+      "median_latency_reduction_percent": 42.37961957502869,
+      "p95_latency_reduction_percent": 44.41384654142847
+    },
+    "openwhispr_native_backend": {
+      "median_speedup": 1.6543569655699415,
+      "median_latency_reduction_percent": 39.55355338589271,
+      "p95_latency_reduction_percent": 42.34928004782942
+    }
+  },
+  "all_measured_transcripts_match_baseline": true,
+  "positional_cache": {
+    "persistent_bytes": 100564992,
+    "budget_bytes": 134217728
+  }
+}
