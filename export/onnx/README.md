@@ -6,6 +6,12 @@ Orukeet's Gabor filters are stored as ordinary `Conv1d` weights. The export does
 not require a custom frontend, an Orukeet-specific ONNX operator, or a new application
 runtime.
 
+To use the released weights, run `python examples/download_onnx.py --cache
+./orukeet-cache` from the repository root after installing `huggingface-hub`.
+This downloads the pinned archive and its manifest from Hugging Face and checks
+their hashes. See the [inference quickstart](../../README.md#sherpa-onnx-inference).
+The export steps below are for rebuilding the graphs from the source checkpoint.
+
 The checkpoint is pinned to SHA-256
 `031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56`.
 Before conversion, the script checks all 12,288 selected filters against the

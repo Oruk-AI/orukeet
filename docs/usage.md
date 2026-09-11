@@ -110,3 +110,23 @@ export; start adaptation from the source checkpoint in the NeMo stack.
 ## Model and format measurements
 
 All current downloads derive from r3. The [model card](../MODEL_CARD.md) and [report](technical-report.md) describe the source and native measurements, language set and input/output behavior.
+
+## Download sources and counting
+
+All released weights are hosted by [oruk/orukeet on Hugging Face](https://huggingface.co/oruk/orukeet).
+The native installer and `orukeet fetch source`, `orukeet fetch q8`, and
+`orukeet fetch f16` use `hf_hub_download` with pinned revisions and SHA-256 checks.
+GitHub supplies the Python package and native SDK, which contain no model weights.
+
+For ONNX, use [the repository downloader](../examples/download_onnx.py) as shown
+in the [quickstart](../README.md#sherpa-onnx-inference). It downloads the pinned
+`onnx/manifest.json` and uses it to verify the archive. The manifest also provides
+hashes for each extracted file.
+
+[Hugging Face counts downloads on its servers](https://huggingface.co/docs/hub/models-download-stats).
+GGUF downloads are counted directly; the repository's NeMo library metadata
+counts `.nemo` and `.json` files, including the ONNX manifest. A direct ONNX
+archive download without that manifest is not covered by these published rules.
+Repository clones and Python package installs alone are not model downloads.
+Cached weights and offline transcription remain available without forced
+downloads or requests made only to increment a counter.

@@ -76,17 +76,20 @@ def test_explicit_gpu_is_not_replaced(monkeypatch):
     assert install.resolve_device('cuda') == 'cuda'
 
 
-def test_fetch_checks_exact_artifact(tmp_path, monkeypatch):
+@pytest.mark.parametrize('artifact', ['source', 'q8', 'f16'])
+def test_fetch_checks_exact_artifact(tmp_path, monkeypatch, artifact):
     import huggingface_hub
     bad = tmp_path / 'bad.gguf'
     bad.write_bytes(b'incorrect')
     def download(repo, path, **kwargs):
         assert repo == 'oruk/orukeet'
-        assert len(kwargs['revision']) == 40
+        assert kwargs['revision'] == '555136b50265a132d4cea0d35560c26fc4f657ab'
+        assert path == {'source': 'orukeet-v0.1.0.nemo', 'q8': 'orukeet-v0.1.0-q8.gguf',
+                        'f16': 'orukeet-v0.1.0-f16.gguf'}[artifact]
         return str(bad)
     monkeypatch.setattr(huggingface_hub, 'hf_hub_download', download)
     with pytest.raises(ValueError, match='size mismatch'):
-        install.fetch('q8', tmp_path)
+        install.fetch(artifact, tmp_path)
 
 
 def test_historical_training_archives_are_not_current_model_downloads(tmp_path, monkeypatch):
