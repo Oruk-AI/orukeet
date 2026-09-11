@@ -155,9 +155,9 @@ describe the qualified PR build, not every machine or a newly compiled SDK.
 These optimizations originate in Hoid's NeMo-Speech.cpp contribution. NeMo's
 source retains NVIDIA's Apache-2.0 notices and Jason Ni's MIT attribution
 for code derived from parakeet.cpp. The NeMo patch remains under those source
-terms; see [Apache-2.0](licenses/Apache-2.0.txt) and the fetched source's
+terms; see [NeMo's license](https://github.com/NVIDIA/NeMo-Speech.cpp/blob/a5b6953c4a579a2bbd1c0913ad8a85c2a4d99953/LICENSE) and the fetched source's
 `THIRD_PARTY_NOTICES.md`. The ggml patches retain ggml's
-[MIT license](licenses/ggml-MIT.txt). The build script follows Orukeet's
+[MIT license](https://github.com/ggml-org/ggml/blob/c03b4e2bcece5134827881af90242086daf75be5/LICENSE). The build script follows Orukeet's
 [MIT license](../LICENSE).
 
 The installed SDK preserves NeMo and ggml license files and adds the notices
