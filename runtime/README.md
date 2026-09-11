@@ -32,24 +32,18 @@ the optimized build adds the kernel and attention/cache patches in this director
 | --- | ---: | ---: | ---: |
 | Native median | 154.2 ms | **88.9 ms** | **42.4%** |
 | Native p95 | 280.8 ms | **156.1 ms** | **44.4%** |
-| OpenWhispr native backend median | 166.0 ms | **100.3 ms** | **39.6%** |
-| OpenWhispr native backend p95 | 295.0 ms | **170.1 ms** | **42.3%** |
 
-Median speedups are **1.74× native** and **1.65× through the OpenWhispr
-native backend**. The first kernel pass reached 111.4 ms native / 122.6 ms
-backend; the subsequent fusions and attention/cache changes reached the
-final values above. Native throughput rose from 94.2 to 162.6 audio seconds
-per second of processing.
+The native median speedup is **1.74×**. The first kernel pass reached
+111.4 ms; the subsequent fusions and attention/cache changes reduced it
+to 88.9 ms. Native throughput rose from 94.2 to 162.6 audio seconds per
+second of processing.
 
 The fixed suite contains 24 LibriSpeech test-clean clips from 24 speakers,
 5–30 seconds each, totaling 364.285 seconds and 916 reference words.
 Each run warms every clip once, then measures sequential, batch-size-one
 requests for 120 seconds. Model loading and warmup are excluded. Native
-timing covers the audio frontend, encoder and decoder. Backend timing adds
-audio conversion, temporary PCM files and worker IPC; microphone capture,
-UI and paste are outside the measurement. These backend timings describe
-the native integration used for this benchmark. The current OpenWhispr
-ONNX/CPU path has [separate measurements](../integrations/openwhispr/APP_BENCHMARKS.md).
+timing covers the audio frontend, encoder and decoder. File decoding,
+worker IPC and other application overhead are outside this measurement.
 
 Every measured transcript matches the baseline. WER remains **2.40%**
 (22 errors / 916 words), scored once per unique clip using symmetric

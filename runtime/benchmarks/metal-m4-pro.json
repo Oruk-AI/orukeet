@@ -40,8 +40,7 @@
     "request_order": "Sequential cycling through the fixed clip order.",
     "batch_size": 1,
     "native_timing": "Synchronous recognition call including frontend, encoder and decoder.",
-    "backend_timing": "OpenWhispr native backend: recognition plus audio conversion, temporary PCM files and worker IPC.",
-    "excluded": "Model loading, warmup, microphone capture, UI and paste.",
+    "excluded": "Model loading, warmup, file decoding, worker IPC and other application overhead.",
     "accuracy": "Scored once per unique clip; NFKC, lowercase, curly-apostrophe normalization, punctuation replaced by spaces; numbers are not rewritten.",
     "percentiles": "Nearest rank; median is the mean of the middle pair for even sample counts."
   },
@@ -61,17 +60,6 @@
         "mean_ms": 161.13787445007236,
         "audio_seconds_per_second": 94.18927892900558,
         "real_time_factor": 0.010616919583318417
-      },
-      "openwhispr_native_backend": {
-        "count": 691,
-        "median_ms": 165.97550000000047,
-        "p95_ms": 295.01445800000147,
-        "p99_ms": 303.23904199999924,
-        "min_ms": 65.15679199999977,
-        "max_ms": 331.5163750000065,
-        "mean_ms": 173.723707057887,
-        "audio_seconds_per_second": 87.36550963391322,
-        "real_time_factor": 0.011446164558420015
       },
       "accuracy": {
         "reference_words": 916,
@@ -98,17 +86,6 @@
         "audio_seconds_per_second": 130.46376148959865,
         "real_time_factor": 0.007664963730788384
       },
-      "openwhispr_native_backend": {
-        "count": 938,
-        "median_ms": 122.63664599999902,
-        "p95_ms": 212.1342089999962,
-        "p99_ms": 216.31029200000194,
-        "min_ms": 51.50291599999764,
-        "max_ms": 237.84824999999546,
-        "mean_ms": 127.94735296695075,
-        "audio_seconds_per_second": 118.58247225133996,
-        "real_time_factor": 0.00843294949931945
-      },
       "accuracy": {
         "reference_words": 916,
         "substitutions": 16,
@@ -134,17 +111,6 @@
         "audio_seconds_per_second": 162.61701571090998,
         "real_time_factor": 0.00614941797836049
       },
-      "openwhispr_native_backend": {
-        "count": 1139,
-        "median_ms": 100.32629199999792,
-        "p95_ms": 170.07795899999473,
-        "p99_ms": 172.64504200000374,
-        "min_ms": 43.742417000001296,
-        "max_ms": 272.1724580000009,
-        "mean_ms": 105.3872253740124,
-        "audio_seconds_per_second": 144.04893399166846,
-        "real_time_factor": 0.006942085389245839
-      },
       "accuracy": {
         "reference_words": 916,
         "substitutions": 16,
@@ -160,11 +126,6 @@
       "median_speedup": 1.735497045706112,
       "median_latency_reduction_percent": 42.37961957502869,
       "p95_latency_reduction_percent": 44.41384654142847
-    },
-    "openwhispr_native_backend": {
-      "median_speedup": 1.6543569655699415,
-      "median_latency_reduction_percent": 39.55355338589271,
-      "p95_latency_reduction_percent": 42.34928004782942
     }
   },
   "all_measured_transcripts_match_baseline": true,

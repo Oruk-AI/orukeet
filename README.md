@@ -62,7 +62,7 @@ mono 16 kHz and split into bounded windows for long recordings. Existing users
 should upgrade the package and rerun `orukeet install` to regenerate their
 installation receipt with the new runtime.
 
-[OpenWhispr integration](integrations/openwhispr/README.md) · [Usage and application workers](docs/usage.md) · [NeMo inference and fine-tuning](docs/gabor-source.md)
+[Usage and application workers](docs/usage.md) · [NeMo inference and fine-tuning](docs/gabor-source.md)
 
 To compile the runtime yourself, [build the Metal SDK from source](runtime/README.md).
 The kernel patches, attention/cache changes and pinned build script live in `runtime/`.
@@ -74,10 +74,10 @@ On Apple M4 Pro with 24 GiB RAM, the patches reduced warm native median latency
 by **42.4% (1.74× speedup)** while preserving every transcript in a fixed
 24-clip LibriSpeech test-clean benchmark.
 
-| Warm median latency, Q8/Metal | Before optimization | Optimized | Speedup |
+| Warm native latency, Q8/Metal | Before optimization | Optimized | Reduction |
 | --- | ---: | ---: | ---: |
-| Native recognition | 154.2 ms | **88.9 ms** | **1.74×** |
-| OpenWhispr native backend | 166.0 ms | **100.3 ms** | **1.65×** |
+| Median | 154.2 ms | **88.9 ms** | **42.4%** |
+| p95 | 280.8 ms | **156.1 ms** | **44.4%** |
 
 These measurements use 5–30-second clips, exclude model loading and warmup,
 and describe the patch benchmark. The packaged v0.1.1 SDK has separate
@@ -121,13 +121,11 @@ Gabor recovery uses transducer loss, encoder matching and token/duration distill
 
 The [ONNX INT8 archive](https://huggingface.co/oruk/orukeet/resolve/55a984d46f68323301837194ce647c702f55facc/onnx/sherpa-onnx-orukeet-v0.1.0-int8.tar.bz2) uses the standard Parakeet TDT v3 layout: `encoder.int8.onnx`, `decoder.int8.onnx`, `joiner.int8.onnx` and `tokens.txt`. It also includes the BPE vocabulary, weight license and attribution. Gabor filters are ordinary convolution weights; the model uses sherpa-onnx's existing offline transducer loader.
 
-The optimized encoder evaluates 24 quantized depthwise convolutions with exactly equivalent FP32 arithmetic using operators already in ONNX Runtime. All 640 application-check transcripts match the previous export; the same 160-clip timing sample has a 390 ms median versus 432 ms before optimization and 428 ms for stock Parakeet on M5 Max. [Execution details and receipts](evidence/speed20260910/README.md).
-
-The OpenWhispr PR uses this format through its existing Parakeet worker. Choose **Local → Oruk → Orukeet**, then **Download**. Recognition runs locally after installation.
+The optimized encoder evaluates 24 quantized depthwise convolutions with exactly equivalent FP32 arithmetic using operators already in ONNX Runtime. [Execution details and receipts](evidence/speed20260910/README.md).
 
 Archive SHA-256: `f9191f30178cc9122ce2f023bf9fefafc822028307b0efa4caff645ba3fe8d0a`.
 
-[Export and loader instructions](https://github.com/Oruk-AI/orukeet/blob/main/export/onnx/README.md) · [Conversion evidence](https://github.com/Oruk-AI/orukeet/tree/main/evidence/onnx-r3-20260910) · [OpenWhispr checks and paired scores](https://github.com/Oruk-AI/orukeet/blob/main/integrations/openwhispr/APP_BENCHMARKS.md)
+[Export and loader instructions](https://github.com/Oruk-AI/orukeet/blob/main/export/onnx/README.md) · [Conversion evidence](https://github.com/Oruk-AI/orukeet/tree/main/evidence/onnx-r3-20260910)
 
 ## Model files
 
