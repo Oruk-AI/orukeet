@@ -168,11 +168,7 @@ def main():
         path = Path(f"{name}.int8.onnx")
         print(f"Quantizing {name}", flush=True)
         if name == "encoder":
-            # Symmetric int8 per-channel weights emitted directly as
-            # com.microsoft.DynamicQuantizeMatMul (see quantize_encoder_sme.py).
-            # Same 8-bit dynamic quantization, but in the form ONNX Runtime's CPU
-            # provider routes to its SME2 (Apple M4/M5) and I8MM (M2/M3) GEMM
-            # kernels; asymmetric uint8 weights are never eligible for those.
+            # Symmetric int8 DynamicQuantizeMatMul form; see quantize_encoder_sme.py.
             quantizer = Path(__file__).with_name("quantize_encoder_sme.py")
             receipt["encoder_quantizer_sha256"] = sha256(quantizer)
             subprocess.run([sys.executable, str(quantizer), "encoder.onnx", str(path)], check=True)

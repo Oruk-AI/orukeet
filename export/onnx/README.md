@@ -33,19 +33,12 @@ python export/onnx/export_orukeet.py \
 
 The code follows the [upstream sherpa Parakeet TDT v3 exporter](https://github.com/k2-fsa/sherpa-onnx/blob/11afbd009a7f8c08f4bcf2fc1b265d0df4670fbf/scripts/nemo/parakeet-tdt-0.6b-v3/export_onnx.py).
 It uses NeMo's legacy ONNX exporter with opset 17, then dynamic INT8
-quantization: the encoder through `quantize_encoder_sme.py` (symmetric, signed,
-per-output-channel weights emitted as `com.microsoft.DynamicQuantizeMatMul`
-nodes, each layer's Q/K/V projections merged into one GEMM; depthwise and 2-D
-subsampling convolutions stay in FP32), the decoder and joiner through
-`quantize_dynamic` with signed INT8. The released NeMo parameters are never
-modified.
-
-The encoder form matters for ONNX Runtime's CPU provider: only symmetric int8
-weights in the fused `DynamicQuantizeMatMul` op are routed to the KleidiAI SME2
-kernels on Apple M4/M5 and to the I8MM kernels on M2/M3; the previous asymmetric
-unsigned export always fell back to the older NEON dot-product path. Same 8-bit
-weights, same dynamic activation quantization, same operator set on every
-platform (the op is a standard CPU contrib op on x86 as well). Encoder outputs at two different sequence
+quantization: the encoder through `quantize_encoder_sme.py` (symmetric int8
+per-channel weights as `com.microsoft.DynamicQuantizeMatMul` nodes, Q/K/V merged
+per layer, convolutions kept in FP32; this is the form ONNX Runtime routes to
+its SME2/I8MM kernels on Apple silicon, and a standard CPU op everywhere else),
+the decoder and joiner through `quantize_dynamic` with signed INT8. The released
+NeMo parameters are never modified. Encoder outputs at two different sequence
 lengths are checked against PyTorch before the receipt is marked successful.
 The original upstream script is retained as
 `upstream_export_onnx.reference.txt`, with its Apache-2.0 license, for comparison
@@ -59,10 +52,9 @@ the three self-contained INT8 graphs.
 
 ## Optimize and package
 
-With `quantize_encoder_sme.py` the depthwise convolutions are never quantized,
-so the `optimize_for_sherpa.py` step below does not apply (it is pinned to the
-previous release's encoder hash and would refuse the new graph). Package the
-export directly, without `--optimization-receipt`:
+`optimize_for_sherpa.py` is pinned to the previous release's encoder and does
+not apply to the `quantize_encoder_sme.py` export (its convolutions are already
+FP32). Package that export directly, without `--optimization-receipt`:
 
 ```sh
 python export/onnx/package_release.py \
