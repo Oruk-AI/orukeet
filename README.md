@@ -41,6 +41,8 @@ through OpenWhispr’s existing sherpa-onnx runtime.
 
 [Follow the local deployment tutorial](https://oruk.ai/guides/orukeet-local-transcription) for a fresh Python environment, a supplied recording, actual output and a reusable file runner. The tutorial includes the tested package version and artifact hashes.
 
+[Watch the 39-second recorded example](https://oruk.ai/guides/orukeet-local-transcription#watch) to hear the input and inspect the native Q8 / Metal output. The walkthrough is edited for readability; it is not a speed or accuracy benchmark.
+
 Use Python 3.12+ in an activated virtual environment. Install the prebuilt
 v0.1.1 package and download its verified model and native runtime:
 
