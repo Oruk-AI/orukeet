@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "orukeet"
-version = "0.1.0"
+version = "0.1.1"
 description = "Multilingual Parakeet ASR with fitted, frozen Gabor kernels and native inference"
 readme = "README.md"
 requires-python = ">=3.12"

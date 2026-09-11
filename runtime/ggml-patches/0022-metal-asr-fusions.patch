@@ -1,0 +1,609 @@
+diff --git a/src/ggml-metal/ggml-metal-device.cpp b/src/ggml-metal/ggml-metal-device.cpp
+index e288a27..be83c59 100644
+--- a/src/ggml-metal/ggml-metal-device.cpp
++++ b/src/ggml-metal/ggml-metal-device.cpp
+@@ -809,7 +809,9 @@ ggml_metal_pipeline_with_params ggml_metal_library_get_pipeline_mul_mv(ggml_meta
+             } break;
+         case GGML_TYPE_Q8_0:
+             {
+-                nsg = N_SG_Q8_0;
++                // Short recurrent projections have few quantization blocks.
++                // One SIMD group avoids a shared-memory reduction across groups.
++                nsg = ne00 <= 1024 ? 1 : N_SG_Q8_0;
+                 nr0 = N_R0_Q8_0;
+                 smem = 32*sizeof(float)*N_R0_Q8_0;
+             } break;
+diff --git a/src/ggml-metal/ggml-metal-ops.cpp b/src/ggml-metal/ggml-metal-ops.cpp
+index 1400289..f46af6c 100644
+--- a/src/ggml-metal/ggml-metal-ops.cpp
++++ b/src/ggml-metal/ggml-metal-ops.cpp
+@@ -96,6 +96,12 @@ struct ggml_metal_op {
+         return ggml_can_fuse_ext(gf, idxs.data() + i0, ops, n_ops);
+     }
+ 
++    bool has_single_use(const ggml_tensor * t) const {
++        size_t h = ggml_hash_find(&gf->visited_hash_set, t);
++        return !(t->flags & GGML_TENSOR_FLAG_OUTPUT) &&
++            ggml_bitset_get(gf->visited_hash_set.used, h) && gf->use_counts[h] == 1;
++    }
++
+     ggml_metal_device_t  dev;
+     ggml_metal_library_t lib;
+     ggml_metal_encoder_t enc;
+@@ -1849,7 +1855,90 @@ int ggml_metal_op_set(ggml_metal_op_t ctx, int idx) {
+     return 1;
+ }
+ 
++static int ggml_metal_try_lstm(ggml_metal_op_t ctx, int idx) {
++    if (!ctx->use_fusion || idx + 13 > ctx->n_nodes()) {
++        return 0;
++    }
++    const ggml_op pattern[] = { GGML_OP_CONT, GGML_OP_UNARY, GGML_OP_CONT, GGML_OP_UNARY,
++        GGML_OP_MUL, GGML_OP_CONT, GGML_OP_UNARY, GGML_OP_CONT, GGML_OP_UNARY,
++        GGML_OP_MUL, GGML_OP_ADD, GGML_OP_UNARY, GGML_OP_MUL };
++    ggml_tensor * nodes[13];
++    const int64_t hidden = ctx->node(idx)->ne[0];
++    if (hidden <= 0 || hidden > UINT32_MAX/4) return 0;
++    // The Metal graph optimizer can move the independent i-gate copy before
++    // f*c_prev. Match both topological orders using the same dependency checks.
++    const bool reordered = ctx->node(idx + 4)->op == GGML_OP_CONT;
++    for (int i = 0; i < 13; ++i) {
++        const int at = reordered && (i == 4 || i == 5) ? 9 - i : i;
++        nodes[i] = ctx->node(idx + at);
++        if (nodes[i]->op != pattern[i] || nodes[i]->type != GGML_TYPE_F32 ||
++            nodes[i]->ne[0] != hidden || ggml_nelements(nodes[i]) != hidden ||
++            !ggml_is_contiguous(nodes[i]) || (i != 10 && i != 12 && !ctx->has_single_use(nodes[i]))) return 0;
++    }
++    auto unary = [&](int at, int src, ggml_unary_op kind) {
++        return nodes[at]->src[0] == nodes[src] && ggml_get_unary_op(nodes[at]) == kind;
++    };
++    auto binary = [&](int at, int left, int right) {
++        return nodes[at]->src[0] == nodes[left] && nodes[at]->src[1] == nodes[right];
++    };
++    if (!unary(1, 0, GGML_UNARY_OP_SIGMOID) || !unary(3, 2, GGML_UNARY_OP_SIGMOID) ||
++        !unary(6, 5, GGML_UNARY_OP_SIGMOID) || !unary(8, 7, GGML_UNARY_OP_TANH) ||
++        !unary(11, 10, GGML_UNARY_OP_TANH) || nodes[4]->src[0] != nodes[3] ||
++        !binary(9, 6, 8) || !binary(10, 4, 9) || !binary(12, 1, 11)) return 0;
++    auto first_view = nodes[0]->src[0];
++    auto gates = first_view ? first_view->view_src : nullptr;
++    auto previous = nodes[4]->src[1];
++    if (!gates || gates->type != GGML_TYPE_F32 || gates->ne[0] != 4*hidden ||
++        ggml_nelements(gates) != 4*hidden || !ggml_is_contiguous(gates) ||
++        !previous || previous->type != GGML_TYPE_F32 || ggml_nelements(previous) != hidden ||
++        !ggml_is_contiguous(previous)) return 0;
++    const int copies[] = { 0, 2, 5, 7 };
++    const int offsets[] = { 3, 1, 0, 2 };
++    for (int i = 0; i < 4; ++i) {
++        auto view = nodes[copies[i]]->src[0];
++        if (!view || view->op != GGML_OP_VIEW || view->view_src != gates || view->src[0] != gates ||
++            view->view_offs != offsets[i]*hidden*sizeof(float) || view->ne[0] != hidden ||
++            ggml_nelements(view) != hidden || !ggml_is_contiguous(view) ||
++            !ctx->has_single_use(view)) return 0;
++    }
++    auto overlaps = [](const ggml_tensor * a, const ggml_tensor * b) {
++        const uintptr_t a0 = (uintptr_t) a->data;
++        const uintptr_t b0 = (uintptr_t) b->data;
++        return a0 < b0 + ggml_nbytes(b) && b0 < a0 + ggml_nbytes(a);
++    };
++    auto h = nodes[12];
++    auto c = nodes[10];
++    if (overlaps(h, c)) return 0;
++    for (auto output : { h, c }) {
++        // Reusing one complete gate or the previous state is safe: each lane
++        // reads all its inputs before writing. Shifted overlap is not safe.
++        if (overlaps(output, previous) && output->data != previous->data) return 0;
++        const intptr_t shift = (intptr_t) output->data - (intptr_t) gates->data;
++        if (overlaps(output, gates) && shift % (hidden*int64_t(sizeof(float))) != 0) return 0;
++    }
++    ggml_metal_op_concurrency_reset(ctx);
++    for (auto output : { h, c }) {
++        ggml_tensor fused = *output;
++        fused.src[0] = gates;
++        fused.src[1] = previous;
++        ggml_metal_op_concurrency_add(ctx, &fused);
++    }
++    auto fast = ggml_metal_get_pipeline_named(ctx->lib, "kernel_lstm_gates_f32");
++    uint32_t n = hidden;
++    const int nth = std::min(256, ggml_metal_pipeline_max_theads_per_threadgroup(fast));
++    ggml_metal_encoder_set_pipeline(ctx->enc, fast);
++    ggml_metal_encoder_set_bytes(ctx->enc, &n, sizeof(n), 0);
++    ggml_metal_encoder_set_buffer(ctx->enc, ggml_metal_get_buffer_id(gates), 1);
++    ggml_metal_encoder_set_buffer(ctx->enc, ggml_metal_get_buffer_id(previous), 2);
++    ggml_metal_encoder_set_buffer(ctx->enc, ggml_metal_get_buffer_id(h), 3);
++    ggml_metal_encoder_set_buffer(ctx->enc, ggml_metal_get_buffer_id(c), 4);
++    ggml_metal_encoder_dispatch_threadgroups(ctx->enc, (n + nth - 1)/nth, 1, 1, nth, 1, 1);
++    return 13;
++}
++
+ int ggml_metal_op_cpy(ggml_metal_op_t ctx, int idx) {
++    const int lstm = ggml_metal_try_lstm(ctx, idx);
++    if (lstm) return lstm;
+     ggml_tensor * op = ctx->node(idx);
+ 
+     ggml_metal_library_t lib = ctx->lib;
+@@ -3671,6 +3760,103 @@ int ggml_metal_op_im2col(ggml_metal_op_t ctx, int idx) {
+         /*.KHW  =*/ KH * KW,
+     };
+ 
++    if (ctx->use_fusion && idx + 1 < ctx->n_nodes() &&
++        op->type == GGML_TYPE_F16 && op->src[1]->type == GGML_TYPE_F32 &&
++        op->src[1]->nb[0] == sizeof(float) && (!is_2D || op->src[1]->nb[1] == IW*sizeof(float)) &&
++        IC == 1 && KH*KW > 0 && KH*KW < 32 && ggml_nelements(op) <= UINT32_MAX &&
++        s0 > 0 && d0 > 0 && p0 >= 0 && p1 >= 0 && (!is_2D || (s1 > 0 && d1 > 0)) &&
++        int64_t(OW - 1)*s0 + int64_t(KW - 1)*d0 <= INT32_MAX &&
++        int64_t(OH - 1)*s1 + int64_t(KH - 1)*d1 <= INT32_MAX) {
++        ggml_tensor * mm = ctx->node(idx + 1);
++        auto one_use = [&](const ggml_tensor * t) {
++            return ctx->has_single_use(t);
++        };
++        auto lowered_view = [&](const ggml_tensor * t) {
++            return (t == op && one_use(op)) || (t && t->op == GGML_OP_RESHAPE && t->src[0] == op && t->view_src == op &&
++                t->view_offs == 0 && ggml_is_contiguous(t) && one_use(t) && one_use(op));
++        };
++        ggml_tensor * weight = nullptr;
++        uint64_t channel_stride = args.ofs0;
++        if (mm->op == GGML_OP_MUL_MAT && mm->type == GGML_TYPE_F32 && ggml_is_contiguous(mm) &&
++            mm->src[0]->type == GGML_TYPE_F16 && mm->src[1]->type == GGML_TYPE_F16) {
++            if (lowered_view(mm->src[1]) && mm->src[0]->ne[0] == KH*KW &&
++                mm->src[0]->ne[1] == 1 && mm->src[0]->ne[2] == N && mm->src[0]->ne[3] == 1 &&
++                mm->src[1]->ne[1] == int64_t(OW)*OH && mm->src[1]->ne[2] == N && mm->src[1]->ne[3] == 1) {
++                weight = mm->src[0];
++            } else if (lowered_view(mm->src[0]) && mm->src[0]->ne[1] == int64_t(OW)*OH &&
++                mm->src[0]->ne[2] == N && mm->src[0]->ne[3] == 1 && mm->src[1]->ne[0] == KH*KW &&
++                mm->src[1]->ne[1] == 1 && mm->src[1]->ne[2] == N && mm->src[1]->ne[3] == 1) {
++                weight = mm->src[1];
++            } else if (N == 1 && lowered_view(mm->src[0]) && mm->src[0]->ne[1] == int64_t(OW)*OH &&
++                mm->src[0]->ne[2] == 1 && mm->src[0]->ne[3] == 1 && mm->src[1]->ne[0] == KH*KW &&
++                mm->src[1]->ne[2] == 1 && mm->src[1]->ne[3] == 1) {
++                weight = mm->src[1];
++                channel_stride = 0;
++            }
++        }
++        if (weight && ggml_is_contiguous(weight) && ggml_nelements(mm) <= UINT32_MAX) {
++            auto overlaps = [](const ggml_tensor * a, const ggml_tensor * b) {
++                const uintptr_t a0 = (uintptr_t) a->data;
++                const uintptr_t b0 = (uintptr_t) b->data;
++                return a0 < b0 + ggml_nbytes(b) && b0 < a0 + ggml_nbytes(a);
++            };
++            // The graph allocator can reuse the input after IM2COL. Fusion extends
++            // its lifetime through MUL_MAT, so an aliased destination needs scratch.
++            const bool scratch = overlaps(mm, op->src[1]);
++            if (overlaps(mm, weight) || (scratch &&
++                (ggml_nbytes(op) < ggml_nbytes(mm) || overlaps(op, op->src[1]) ||
++                 overlaps(op, weight) || overlaps(op, mm)))) {
++                weight = nullptr;
++            }
++            if (weight) {
++                auto fast = ggml_metal_get_pipeline_named(lib, "kernel_im2col_f16_dot");
++                ggml_metal_kargs_im2col_flat flat = { args, (uint32_t)OW, (uint32_t)OH, (uint32_t)ggml_nelements(mm) };
++                flat.base.ofs0 = channel_stride;
++                ggml_tensor fused = *mm;
++                fused.src[0] = op->src[1];
++                fused.src[1] = weight;
++                if (scratch) {
++                    fused.data = op->data;
++                    fused.buffer = op->buffer;
++                    fused.view_src = op->view_src;
++                    fused.view_offs = op->view_offs;
++                }
++                ggml_metal_op_concurrency_reset(ctx);
++                ggml_metal_op_concurrency_add(ctx, &fused);
++                ggml_metal_encoder_set_pipeline(enc, fast);
++                ggml_metal_encoder_set_bytes(enc, &flat, sizeof(flat), 0);
++                ggml_metal_encoder_set_buffer(enc, ggml_metal_get_buffer_id(op->src[1]), 1);
++                ggml_metal_encoder_set_buffer(enc, ggml_metal_get_buffer_id(weight), 2);
++                ggml_metal_encoder_set_buffer(enc, ggml_metal_get_buffer_id(&fused), 3);
++                const int nth = std::min(256, ggml_metal_pipeline_max_theads_per_threadgroup(fast));
++                ggml_metal_encoder_dispatch_threadgroups(enc, (uint64_t(flat.n) + nth - 1)/nth, 1, 1, nth, 1, 1);
++                if (scratch) {
++                    ggml_metal_op_concurrency_reset(ctx);
++                    auto from = ggml_metal_get_buffer_id(&fused);
++                    auto to = ggml_metal_get_buffer_id(mm);
++                    const bool dense = from.offs % 16 == 0 && to.offs % 16 == 0;
++                    auto copy = ggml_metal_get_pipeline_named(lib, dense ? "kernel_cpy_f32_dense" : "kernel_cpy_f32_flat");
++                    ggml_metal_kargs_cpy copy_args = {};
++                    copy_args.ne00 = flat.n;
++                    copy_args.ne01 = copy_args.ne02 = copy_args.ne03 = 1;
++                    copy_args.nb00 = sizeof(float);
++                    ggml_metal_encoder_set_pipeline(enc, copy);
++                    ggml_metal_encoder_set_bytes(enc, &copy_args, sizeof(copy_args), 0);
++                    ggml_metal_encoder_set_buffer(enc, from, 1);
++                    ggml_metal_encoder_set_buffer(enc, to, 2);
++                    const int copy_nth = std::min(256, ggml_metal_pipeline_max_theads_per_threadgroup(copy));
++                    const uint64_t nvec = dense ? (uint64_t(flat.n) + 3)/4 : flat.n;
++                    ggml_metal_encoder_dispatch_threadgroups(enc, (nvec + copy_nth - 1)/copy_nth, 1, 1, copy_nth, 1, 1);
++                    ggml_tensor copied = *mm;
++                    copied.src[0] = &fused;
++                    copied.src[1] = nullptr;
++                    ggml_metal_op_concurrency_add(ctx, &copied);
++                }
++                return 2;
++            }
++        }
++    }
++
+     // The original launch assigns KH*KW*N threads per (channel,y,x).
+     // In a batch-one 1x1 convolution this is one thread per threadgroup.
+     // Fill consecutive lowered elements with full SIMD groups instead.
+diff --git a/src/ggml-metal/ggml-metal.metal b/src/ggml-metal/ggml-metal.metal
+index c9f1d43..af5297a 100644
+--- a/src/ggml-metal/ggml-metal.metal
++++ b/src/ggml-metal/ggml-metal.metal
+@@ -4725,6 +4725,32 @@ kernel void kernel_im2col_flat(
+ template [[host_name("kernel_im2col_flat_f32")]] kernel decltype(kernel_im2col_flat<float>) kernel_im2col_flat<float>;
+ template [[host_name("kernel_im2col_flat_f16")]] kernel decltype(kernel_im2col_flat<half>) kernel_im2col_flat<half>;
+ 
++kernel void kernel_im2col_f16_dot(
++        constant ggml_metal_kargs_im2col_flat & flat,
++        device const float * x,
++        device const half * weights,
++        device float * dst,
++        uint index [[thread_position_in_grid]]) {
++    if (index >= flat.n) return;
++    constant auto & args = flat.base;
++    const uint channel = index/(flat.OW*flat.OH);
++    const uint ow = index%flat.OW;
++    const uint oh = (index/flat.OW)%flat.OH;
++    float sum = 0.0f;
++    for (int kh = 0; kh < args.KH; ++kh) {
++        const int ih = int(oh)*args.s1 + kh*args.d1 - args.p1;
++        for (int kw = 0; kw < args.KW; ++kw) {
++            const int iw = int(ow)*args.s0 + kw*args.d0 - args.p0;
++            half v = 0.0h;
++            if (iw >= 0 && iw < args.IW && ih >= 0 && ih < args.IH) {
++                v = half(x[channel*args.ofs0 + uint64_t(ih)*args.IW + iw]);
++            }
++            sum += float(v)*float(weights[channel*args.KHW + kh*args.KW + kw]);
++        }
++    }
++    dst[index] = sum;
++}
++
+ // TODO: obsolete -- remove
+ //typedef void (im2col_ext_t)(
+ //        constant ggml_metal_kargs_im2col & args,
+@@ -7380,6 +7406,27 @@ kernel void kernel_cpy_t_t(
+     }
+ }
+ 
++kernel void kernel_lstm_gates_f32(
++        constant uint & hidden,
++        device const float * gates,
++        device const float * previous,
++        device float * out_h,
++        device float * out_c,
++        uint index [[thread_position_in_grid]]) {
++#pragma clang fp contract(off)
++    if (index >= hidden) return;
++    const float i = 1.0f/(1.0f + exp(-gates[index]));
++    const float f = 1.0f/(1.0f + exp(-gates[hidden + index]));
++    const float g = precise::tanh(gates[2*hidden + index]);
++    const float o = 1.0f/(1.0f + exp(-gates[3*hidden + index]));
++    const float fc = f*previous[index];
++    const float ig = i*g;
++    const float c = fc + ig;
++    const float h = o*precise::tanh(c);
++    out_h[index] = h;
++    out_c[index] = c;
++}
++
+ kernel void kernel_cpy_f32_dense(
+         constant ggml_metal_kargs_cpy & args,
+         device const float * src,
+diff --git a/tests/test-backend-ops.cpp b/tests/test-backend-ops.cpp
+index c567546..a8b007f 100644
+--- a/tests/test-backend-ops.cpp
++++ b/tests/test-backend-ops.cpp
+@@ -5159,6 +5159,244 @@ struct test_im2col : public test_case {
+     }
+ };
+ 
++// Whole convolution graphs exercise Metal IM2COL/MUL_MAT fusion, including
++// allocator reuse that is absent from individual-op comparison tests.
++struct test_short_conv_fusion : public test_case {
++    const int dims;
++    const int64_t width;
++    const int64_t kernel_size;
++    const int mode;  // 0: regular, 1: reuse input, 2: output lowered data, 3: second consumer
++    const ggml_type weight_type;
++    const int stride;
++    const int dilation;
++    const int output_channels;
++    ggml_tensor * lowered = nullptr;
++    ggml_tensor * mm = nullptr;
++    ggml_tensor * out = nullptr;
++
++    test_short_conv_fusion(int dims, int64_t width, int64_t kernel_size, int mode,
++                          ggml_type weight_type = GGML_TYPE_F16, int stride = 1,
++                          int dilation = 1, int output_channels = 1)
++        : dims(dims), width(width), kernel_size(kernel_size), mode(mode), weight_type(weight_type),
++          stride(stride), dilation(dilation), output_channels(output_channels) {}
++
++    std::string op_desc(ggml_tensor *) override { return "SHORT_CONV_FUSION"; }
++    std::string vars() override { return VARS_TO_STR8(dims, width, kernel_size, mode, weight_type, stride, dilation, output_channels); }
++    bool run_whole_graph() override { return true; }
++    double max_nmse_err() override { return 1e-7; }
++
++    ggml_tensor * build_graph(ggml_context * ctx) override {
++        const int64_t channels = dims == 0 ? 1 : 9;
++        const int64_t height = dims == 1 ? 1 : 17;
++        const int padding = dilation*(kernel_size/2);
++        auto input = ggml_new_tensor_4d(ctx, GGML_TYPE_F32, width, height, channels, 1);
++        // A non-leaf input can be reclaimed after its last consumer.
++        input = ggml_scale(ctx, input, 0.75f);
++        if (dims == 1) {
++            auto weights = ggml_new_tensor_3d(ctx, weight_type, kernel_size, 1, channels);
++            auto flat = ggml_reshape_2d(ctx, input, width, channels);
++            out = ggml_conv_1d_dw(ctx, weights, flat, stride, padding, dilation);
++        } else {
++            auto weights = ggml_new_tensor_4d(ctx, weight_type, kernel_size, kernel_size, 1,
++                dims == 0 ? output_channels : channels);
++            out = dims == 0
++                ? ggml_conv_2d(ctx, weights, input, stride, stride, padding, padding, dilation, dilation)
++                : ggml_conv_2d_dw(ctx, weights, input, stride, stride, padding, padding, dilation, dilation);
++        }
++        for (auto t = ggml_get_first_tensor(ctx); t; t = ggml_get_next_tensor(ctx, t)) {
++            if (t->op == GGML_OP_IM2COL) lowered = t;
++            if (t->op == GGML_OP_MUL_MAT) mm = t;
++        }
++        GGML_ASSERT(lowered && mm);
++        if (mode == 2) ggml_set_output(lowered);
++        if (mode == 3) out = ggml_add(ctx, out, ggml_sum(ctx, ggml_cast(ctx, lowered, GGML_TYPE_F32)));
++        ggml_set_name(out, "out");
++        return out;
++    }
++
++    void initialize_tensors(ggml_context * ctx) override {
++        test_case::initialize_tensors(ctx);
++        if (mode != 1) return;
++        auto input = lowered->src[1];
++        GGML_ASSERT(ggml_nbytes(mm) <= ggml_nbytes(input));
++        mm->buffer = input->buffer;
++        mm->data = input->data;
++        for (auto t = ggml_get_first_tensor(ctx); t; t = ggml_get_next_tensor(ctx, t)) {
++            if (t->view_src == mm) {
++                t->buffer = mm->buffer;
++                t->data = (char *) mm->data + t->view_offs;
++            }
++        }
++    }
++
++    std::vector<ggml_tensor *> fusion_test_nodes() override {
++        return mode == 2 ? std::vector<ggml_tensor *>{out, lowered} : std::vector<ggml_tensor *>{out};
++    }
++};
++
++struct test_lstm_gates_fusion : public test_case {
++    const int64_t hidden;
++    const int64_t batch;
++    const int mode;  // 0: regular, 1: exposed intermediate, 2: gate reuse, 3: shifted reuse
++    const bool reordered;
++    ggml_tensor * gates = nullptr;
++    ggml_tensor * h = nullptr;
++    ggml_tensor * c = nullptr;
++    ggml_tensor * ig = nullptr;
++    ggml_tensor * out = nullptr;
++    ggml_tensor * fc_node = nullptr;
++    ggml_tensor * i_copy = nullptr;
++
++    test_lstm_gates_fusion(int64_t hidden, int64_t batch, int mode, bool reordered = false)
++        : hidden(hidden), batch(batch), mode(mode), reordered(reordered) {}
++
++    std::string op_desc(ggml_tensor *) override { return "LSTM_GATES_FUSION"; }
++    std::string vars() override { return VARS_TO_STR4(hidden, batch, mode, reordered); }
++    bool run_whole_graph() override { return true; }
++    double max_nmse_err() override { return 1e-7; }
++
++    ggml_tensor * build_graph(ggml_context * ctx) override {
++        auto input = ggml_new_tensor_2d(ctx, GGML_TYPE_F32, 4*hidden, batch);
++        gates = ggml_scale(ctx, input, 5.0f);
++        auto previous = ggml_new_tensor_2d(ctx, GGML_TYPE_F32, hidden, batch);
++        auto gate = [&](int index) {
++            return ggml_cont(ctx, ggml_view_2d(ctx, gates, hidden, batch, gates->nb[1],
++                index*hidden*sizeof(float)));
++        };
++        auto i = ggml_sigmoid(ctx, gate(0));
++        i_copy = i->src[0];
++        auto f = ggml_sigmoid(ctx, gate(1));
++        auto g = ggml_tanh(ctx, gate(2));
++        auto o = ggml_sigmoid(ctx, gate(3));
++        auto fc = ggml_mul(ctx, f, previous);
++        fc_node = fc;
++        ig = ggml_mul(ctx, i, g);
++        c = ggml_add(ctx, fc, ig);
++        h = ggml_mul(ctx, o, ggml_tanh(ctx, c));
++        out = ggml_concat(ctx, h, c, 0);
++        if (mode == 1) ggml_set_output(ig);
++        return out;
++    }
++
++    void initialize_tensors(ggml_context * ctx) override {
++        test_case::initialize_tensors(ctx);
++        if (reordered) {
++            auto nodes = ggml_graph_nodes(gf);
++            const int count = ggml_graph_n_nodes(gf);
++            auto fc_at = std::find(nodes, nodes + count, fc_node);
++            auto copy_at = std::find(nodes, nodes + count, i_copy);
++            GGML_ASSERT(fc_at < copy_at && copy_at < nodes + count);
++            std::rotate(fc_at, fc_at + 1, copy_at + 1);
++        }
++        if (mode < 2) return;
++        GGML_ASSERT(batch == 1);
++        h->buffer = gates->buffer;
++        h->data = (char *) gates->data + (mode == 3 ? sizeof(float) : 0);
++        if (mode == 2) {
++            c->buffer = gates->buffer;
++            c->data = (char *) gates->data + hidden*sizeof(float);
++        }
++    }
++
++    std::vector<ggml_tensor *> fusion_test_nodes() override {
++        return mode == 1 ? std::vector<ggml_tensor *>{out, ig} : std::vector<ggml_tensor *>{out};
++    }
++};
++
++// Compare the relative-shift view with the pad/reshape/crop construction.
++// Both backends must produce an exactly zero difference, not just agree on it.
++struct test_relative_shift_view : public test_case {
++    const int64_t length;
++    const int64_t heads;
++    const int64_t batch;
++
++    test_relative_shift_view(int64_t length, int64_t heads, int64_t batch)
++        : length(length), heads(heads), batch(batch) {}
++    std::string op_desc(ggml_tensor *) override { return "RELATIVE_SHIFT_VIEW"; }
++    std::string vars() override { return VARS_TO_STR3(length, heads, batch); }
++    bool run_whole_graph() override { return true; }
++    double max_nmse_err() override { return 0.0; }
++    double err(const float * a, const float * b, size_t n) override {
++        double result = 0;
++        for (size_t i = 0; i < n; ++i) result = std::max(result, double(std::max(std::abs(a[i]), std::abs(b[i]))));
++        return result;
++    }
++
++    ggml_tensor * build_graph(ggml_context * ctx) override {
++        auto source = ggml_new_tensor_4d(ctx, GGML_TYPE_F32, 2*length - 1, length, heads, batch);
++        auto row = ggml_view_4d(ctx, source, 1, length, heads, batch,
++            source->nb[1], source->nb[2], source->nb[3], 0);
++        auto zero = ggml_scale(ctx, ggml_cont(ctx, row), 0.0f);
++        auto padded = ggml_concat(ctx, zero, source, 0);
++        auto reshaped = ggml_reshape_4d(ctx, padded, length, 2*length, heads, batch);
++        auto cropped = ggml_view_4d(ctx, reshaped, length, 2*length - 1, heads, batch,
++            reshaped->nb[1], reshaped->nb[2], reshaped->nb[3], reshaped->nb[1]);
++        auto shifted = ggml_reshape_4d(ctx, ggml_cont(ctx, cropped), 2*length - 1, length, heads, batch);
++        auto reference = ggml_view_4d(ctx, shifted, length, length, heads, batch,
++            shifted->nb[1], shifted->nb[2], shifted->nb[3], 0);
++        auto view = ggml_view_4d(ctx, source, length, length, heads, batch,
++            source->nb[1] - sizeof(float), source->nb[2], source->nb[3], (length - 1)*sizeof(float));
++        return ggml_sub(ctx, ggml_cont(ctx, view), reference);
++    }
++};
++
++// Q/K/P matrix products accept rows interleaved across attention heads; V's
++// transpose can gather directly from the QKV tensor. Compare with staging.
++struct test_attention_input_views : public test_relative_shift_view {
++    using test_relative_shift_view::test_relative_shift_view;
++    std::string op_desc(ggml_tensor *) override { return "ATTENTION_INPUT_VIEWS"; }
++
++    ggml_tensor * build_graph(ggml_context * ctx) override {
++        const int64_t dk = 128;
++        const int64_t features = dk*heads;
++        auto qkv = ggml_new_tensor_3d(ctx, GGML_TYPE_F32, 3*features, length, batch);
++        auto slice = [&](int index) {
++            auto view = ggml_view_4d(ctx, qkv, dk, heads, length, batch,
++                dk*sizeof(float), qkv->nb[1], qkv->nb[2], index*features*sizeof(float));
++            return ggml_permute(ctx, view, 0, 2, 1, 3);
++        };
++        auto q = slice(0);
++        auto k = slice(1);
++        auto v = slice(2);
++        auto pos = ggml_new_tensor_3d(ctx, GGML_TYPE_F32, dk, heads, 2*length - 1);
++        auto p = ggml_permute(ctx, pos, 0, 2, 1, 3);
++        auto bias = ggml_new_tensor_4d(ctx, GGML_TYPE_F32, dk, 1, heads, 1);
++        auto ref_q = ggml_add(ctx, ggml_cont(ctx, q), bias);
++        auto fast_q = ggml_add(ctx, q, bias);
++        auto ref_ac = ggml_mul_mat(ctx, ggml_cont(ctx, k), ref_q);
++        auto fast_ac = ggml_mul_mat(ctx, k, fast_q);
++        auto ref_bd = ggml_mul_mat(ctx, ggml_cont(ctx, p), ref_q);
++        auto fast_bd = ggml_mul_mat(ctx, p, fast_q);
++        auto ref_v = ggml_cont(ctx, ggml_permute(ctx, ggml_cont(ctx, v), 1, 0, 2, 3));
++        auto fast_v = ggml_cont(ctx, ggml_permute(ctx, v, 1, 0, 2, 3));
++        auto flatten_diff = [&](ggml_tensor * a, ggml_tensor * b) {
++            auto diff = ggml_sub(ctx, a, b);
++            return ggml_reshape_1d(ctx, diff, ggml_nelements(diff));
++        };
++        return ggml_concat(ctx, ggml_concat(ctx, flatten_diff(fast_ac, ref_ac),
++            flatten_diff(fast_bd, ref_bd), 0), flatten_diff(fast_v, ref_v), 0);
++    }
++};
++
++struct test_pos_projection_cache : public test_relative_shift_view {
++    test_pos_projection_cache(int64_t length, int64_t features)
++        : test_relative_shift_view(length, features, 1) {}
++    std::string op_desc(ggml_tensor *) override { return "POS_PROJECTION_CACHE"; }
++    std::string vars() override { return "length=" + std::to_string(length) + ",features=" + std::to_string(heads); }
++
++    ggml_tensor * build_graph(ggml_context * ctx) override {
++        const int64_t features = heads;
++        auto pe = ggml_new_tensor_2d(ctx, GGML_TYPE_F32, features, 1023);
++        auto weight = ggml_new_tensor_2d(ctx, GGML_TYPE_Q8_0, features, features);
++        auto cached = ggml_mul_mat(ctx, weight, pe);
++        const size_t start = (1023 - length)/2;
++        auto input_view = ggml_view_2d(ctx, pe, features, length, pe->nb[1], start*pe->nb[1]);
++        auto direct = ggml_mul_mat(ctx, weight, input_view);
++        auto cached_view = ggml_view_2d(ctx, cached, features, length, cached->nb[1], start*cached->nb[1]);
++        return ggml_sub(ctx, direct, cached_view);
++    }
++};
++
+ // GGML_OP_IM2COL_3D
+ struct test_im2col_3d : public test_case {
+     const ggml_type type_input;
+@@ -7801,6 +8039,52 @@ static std::vector<std::unique_ptr<test_case>> make_test_cases_eval() {
+     test_cases.emplace_back(new test_im2col(GGML_TYPE_F32, GGML_TYPE_F16, GGML_TYPE_F16, {5, 5, 1, 32}, {3, 4, 1, 32}, 1, 1, 0, 0, 1, 1, true));
+     test_cases.emplace_back(new test_im2col(GGML_TYPE_F32, GGML_TYPE_F32, GGML_TYPE_F32, {2, 2, 1536, 729}, {2, 2, 1536, 4096}, 1, 1, 0, 0, 1, 1, true));
+ 
++    for (int dims : {0, 1, 2}) {
++        for (int64_t width : {1, 17, 65}) {
++            for (int64_t kernel_size : {1, 3, 5}) {
++                for (int mode : {0, 1, 2, 3}) {
++                    test_cases.emplace_back(new test_short_conv_fusion(dims, width, kernel_size, mode));
++                }
++            }
++        }
++    }
++    for (int64_t kernel_size : {9, 31}) {
++        test_cases.emplace_back(new test_short_conv_fusion(1, 65, kernel_size, 0));
++        test_cases.emplace_back(new test_short_conv_fusion(1, 65, kernel_size, 1));
++    }
++    test_cases.emplace_back(new test_short_conv_fusion(0, 17, 3, 0, GGML_TYPE_F32));
++    for (int dims : {0, 1, 2}) {
++        for (int mode : {0, 1, 2, 3}) {
++            test_cases.emplace_back(new test_short_conv_fusion(dims, 65, 3, mode, GGML_TYPE_F16, 2, 2));
++        }
++    }
++    for (int mode : {0, 2, 3}) {
++        test_cases.emplace_back(new test_short_conv_fusion(0, 17, 3, mode, GGML_TYPE_F16, 1, 1, 9));
++    }
++    for (int64_t hidden : {1, 5, 31, 32, 33, 640}) {
++        for (int mode : {0, 1, 2, 3}) {
++            test_cases.emplace_back(new test_lstm_gates_fusion(hidden, 1, mode));
++            test_cases.emplace_back(new test_lstm_gates_fusion(hidden, 1, mode, true));
++        }
++        test_cases.emplace_back(new test_lstm_gates_fusion(hidden, 3, 0));
++        test_cases.emplace_back(new test_lstm_gates_fusion(hidden, 3, 0, true));
++    }
++
++    for (int64_t length : {1, 2, 7, 17, 123, 321}) {
++        for (int64_t heads : {1, 8}) {
++            for (int64_t batch : {1, 2}) {
++                test_cases.emplace_back(new test_relative_shift_view(length, heads, batch));
++                test_cases.emplace_back(new test_attention_input_views(length, heads, batch));
++            }
++        }
++    }
++
++    for (int64_t features : {128, 1024}) {
++        for (int64_t length : {9, 245, 641}) {
++            test_cases.emplace_back(new test_pos_projection_cache(length, features));
++        }
++    }
++
+     // im2col 3D
+     test_cases.emplace_back(new test_im2col_3d(GGML_TYPE_F32, GGML_TYPE_F32, GGML_TYPE_F32));
+     test_cases.emplace_back(new test_im2col_3d(GGML_TYPE_F32, GGML_TYPE_F16, GGML_TYPE_F32));
+@@ -8289,6 +8573,14 @@ static std::vector<std::unique_ptr<test_case>> make_test_cases_eval() {
+     test_cases.emplace_back(new test_gla(GGML_TYPE_F32, 32, 64, 128, 4));
+ 
+     // FWHT tests
++    // Decoder projections and the short-Q8 SIMD-group boundary.
++    for (int64_t m : {640, 2560, 8198}) {
++        test_cases.emplace_back(new test_mul_mat(GGML_TYPE_Q8_0, GGML_TYPE_F32, m, 1, 640));
++    }
++    for (int64_t k : {32, 128, 1024, 1056}) {
++        test_cases.emplace_back(new test_mul_mat(GGML_TYPE_Q8_0, GGML_TYPE_F32, 129, 1, k));
++    }
++
+     // The short-K, one-row F16 path must retain dot-product precision,
+     // partial output tiles, strided rows, and asymmetric batch broadcasting.
+     for (int k : {1, 9, 31, 32}) {

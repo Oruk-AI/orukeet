@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 — unreleased
+
+- Build and package the optimized Metal SDK from pinned sources and patches in this repository.
+- Point Apple silicon runtime installation at the Orukeet-hosted SDK release, with a pinned archive hash.
+- Keep the r3 model weights and CPU, CUDA, and Vulkan runtime selections unchanged.
+
 ## 0.1.0 — 2026-09-09
 
 - Release the final r3 checkpoint as NeMo, native Q8 and native F16, with pinned hashes.

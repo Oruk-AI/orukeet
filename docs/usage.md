@@ -44,8 +44,8 @@ source. All three contain r3.
 
 ## Files and batch jobs
 
-Follow the [installation quickstart](../README.md#run-speech-recognition), then
-pass several files to the bundled runner:
+Follow the [installation quickstart](../README.md#run-speech-recognition).
+From a source checkout, you can pass several files to the example runner:
 
 ```sh
 python examples/transcribe.py interview.wav lecture.flac --installation installation.json
