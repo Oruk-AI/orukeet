@@ -21,6 +21,11 @@ def runtime(tmp_path):
     return root
 
 
+def test_pinned_runtime_manifest_is_valid(runtime):
+    # Manifest paths use forward slashes even on a Windows checkout.
+    assert builder.load_lock(runtime)['schema_version'] == 1
+
+
 def test_changed_patch_is_rejected(runtime):
     patch = next((runtime / 'ggml-patches').glob('*.patch'))
     patch.write_bytes(patch.read_bytes() + b'\n')

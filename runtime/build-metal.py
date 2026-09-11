@@ -45,7 +45,7 @@ def load_lock(root=ROOT):
             raise ValueError('Source revisions must be full Git commit hashes')
     for kind, patches in lock['patches'].items():
         expected = [item['path'] for item in patches]
-        actual = sorted(str(p.relative_to(root)) for p in (root / f'{kind}-patches').glob('*.patch'))
+        actual = sorted(p.relative_to(root).as_posix() for p in (root / f'{kind}-patches').glob('*.patch'))
         if expected != actual:
             raise ValueError(f'{kind} patch list differs from sources.lock.json')
         for item in patches:
