@@ -1,0 +1,3773 @@
+{
+  "source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+  "reference_repo": "FluidInference/parakeet-tdt-0.6b-v3-coreml",
+  "reference_revision": "7dd20fe6b1797d35f5e3307e8b1732d9a178edfe",
+  "torch": "2.7.0",
+  "coremltools": "9.0",
+  "components": {
+    "Encoder": {
+      "graph_sha256": "cfec08b0fb04d25f7f61203e02571091e53d22fc85c47c5cc9699019d2ab0d2a",
+      "graph_byte_identical": true,
+      "weights_sha256": "e1d0b032dbfd879a01d8d4e5cd61d91828ba2d189e711407456dfcc30d699376",
+      "tensors": [
+        {
+          "name": "module_pre_encode_conv_0_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2304,
+          "max_abs_error": 0.06256425380706787,
+          "rmse": 0.009618620259180382
+        },
+        {
+          "name": "module_pre_encode_conv_0_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 256
+        },
+        {
+          "name": "module_pre_encode_conv_2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2304,
+          "max_abs_error": 0.054384469985961914,
+          "rmse": 0.012804778560360618
+        },
+        {
+          "name": "module_pre_encode_conv_2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 256
+        },
+        {
+          "name": "module_pre_encode_conv_3_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 65536,
+          "max_abs_error": 0.5886068344116211,
+          "rmse": 0.019700051725779
+        },
+        {
+          "name": "module_pre_encode_conv_3_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 256
+        },
+        {
+          "name": "module_pre_encode_conv_5_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2304,
+          "max_abs_error": 0.04104757308959961,
+          "rmse": 0.010045978915961732
+        },
+        {
+          "name": "module_pre_encode_conv_5_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 256
+        },
+        {
+          "name": "module_pre_encode_conv_6_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 65536,
+          "max_abs_error": 0.3914620876312256,
+          "rmse": 0.017459167967130755
+        },
+        {
+          "name": "module_pre_encode_conv_6_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 256
+        },
+        {
+          "name": "module_pre_encode_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.441955089569092,
+          "rmse": 0.012706080284996766
+        },
+        {
+          "name": "module_pre_encode_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_0_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_0_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_0_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 5.641605377197266,
+          "rmse": 0.016879577986499923
+        },
+        {
+          "name": "module_layers_0_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.320791244506836,
+          "rmse": 0.02124691087715219
+        },
+        {
+          "name": "module_layers_0_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_0_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_0_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.36413609981536865,
+          "rmse": 0.003871603830721211
+        },
+        {
+          "name": "module_layers_0_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.4298548698425293,
+          "rmse": 0.01117716408514899
+        },
+        {
+          "name": "module_layers_0_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.7714362144470215,
+          "rmse": 0.019991015831880093
+        },
+        {
+          "name": "module_layers_0_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_0_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_273_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 5.571113586425781,
+          "rmse": 0.6522393700790133
+        },
+        {
+          "name": "module_layers_0_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.1676111221313477,
+          "rmse": 0.019167444133373592
+        },
+        {
+          "name": "module_layers_0_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_0_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_0_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 1.7010412216186523,
+          "rmse": 0.016134143469543876
+        },
+        {
+          "name": "const_248_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.6788835525512695,
+          "rmse": 0.06328912957954977
+        },
+        {
+          "name": "const_249_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_0_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.7617111206054688,
+          "rmse": 0.023119614283404158
+        },
+        {
+          "name": "module_layers_0_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_0_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_0_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.0269384384155273,
+          "rmse": 0.016634506255930662
+        },
+        {
+          "name": "module_layers_0_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 6.715145111083984,
+          "rmse": 0.021766510928392005
+        },
+        {
+          "name": "module_layers_0_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_0_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_1_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_1_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_1_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 4.506626129150391,
+          "rmse": 0.01694032570761165
+        },
+        {
+          "name": "module_layers_1_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.662785530090332,
+          "rmse": 0.015227137844969239
+        },
+        {
+          "name": "module_layers_1_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_1_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_1_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.4475386142730713,
+          "rmse": 0.005856293290132191
+        },
+        {
+          "name": "module_layers_1_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.9019012451171875,
+          "rmse": 0.023504986997334564
+        },
+        {
+          "name": "module_layers_1_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6181180477142334,
+          "rmse": 0.009474111585740293
+        },
+        {
+          "name": "module_layers_1_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_1_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_436_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 6.908576965332031,
+          "rmse": 0.8235916578953871
+        },
+        {
+          "name": "module_layers_1_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6007914543151855,
+          "rmse": 0.01085619083043339
+        },
+        {
+          "name": "module_layers_1_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_1_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_1_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 2.316009521484375,
+          "rmse": 0.014679134642126172
+        },
+        {
+          "name": "const_250_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.40279579162597656,
+          "rmse": 0.0267033120650307
+        },
+        {
+          "name": "const_251_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_1_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.3910622596740723,
+          "rmse": 0.015530882113973842
+        },
+        {
+          "name": "module_layers_1_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_1_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_1_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.3750743865966797,
+          "rmse": 0.015100948383858285
+        },
+        {
+          "name": "module_layers_1_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.7990198135375977,
+          "rmse": 0.016771759801099715
+        },
+        {
+          "name": "module_layers_1_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_1_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_2_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_2_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_2_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.3210792541503906,
+          "rmse": 0.015205558335976522
+        },
+        {
+          "name": "module_layers_2_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.3578238487243652,
+          "rmse": 0.013715595312227819
+        },
+        {
+          "name": "module_layers_2_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_2_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_2_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.4603234529495239,
+          "rmse": 0.006331977355002909
+        },
+        {
+          "name": "module_layers_2_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.7940082550048828,
+          "rmse": 0.02527464774666902
+        },
+        {
+          "name": "module_layers_2_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6680643558502197,
+          "rmse": 0.009432045147622473
+        },
+        {
+          "name": "module_layers_2_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_2_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_599_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 9.881729125976562,
+          "rmse": 0.8302776485140543
+        },
+        {
+          "name": "module_layers_2_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.2667393684387207,
+          "rmse": 0.009712781897041669
+        },
+        {
+          "name": "module_layers_2_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_2_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_2_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 2.342794895172119,
+          "rmse": 0.014370538682454408
+        },
+        {
+          "name": "const_252_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.16061162948608398,
+          "rmse": 0.00973460975711178
+        },
+        {
+          "name": "const_253_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_2_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.247626781463623,
+          "rmse": 0.01526761386844165
+        },
+        {
+          "name": "module_layers_2_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_2_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_2_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.9522366523742676,
+          "rmse": 0.015252843677134458
+        },
+        {
+          "name": "module_layers_2_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.8424015045166016,
+          "rmse": 0.0169379572495364
+        },
+        {
+          "name": "module_layers_2_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_2_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_3_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_3_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_3_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.1337080001831055,
+          "rmse": 0.01554966452331032
+        },
+        {
+          "name": "module_layers_3_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.3650155067443848,
+          "rmse": 0.01466331542511867
+        },
+        {
+          "name": "module_layers_3_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_3_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_3_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.4325523376464844,
+          "rmse": 0.006724697339843059
+        },
+        {
+          "name": "module_layers_3_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 3.531553268432617,
+          "rmse": 0.027066527714760848
+        },
+        {
+          "name": "module_layers_3_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6532731056213379,
+          "rmse": 0.009361948407552207
+        },
+        {
+          "name": "module_layers_3_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_3_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_762_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 12.980293273925781,
+          "rmse": 0.920938553645823
+        },
+        {
+          "name": "module_layers_3_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.2974591255187988,
+          "rmse": 0.009403131033773852
+        },
+        {
+          "name": "module_layers_3_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_3_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_3_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 2.2893447875976562,
+          "rmse": 0.014151209447493011
+        },
+        {
+          "name": "const_254_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.06766200065612793,
+          "rmse": 0.005215980874241213
+        },
+        {
+          "name": "const_255_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_3_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.3293585777282715,
+          "rmse": 0.015521442530064773
+        },
+        {
+          "name": "module_layers_3_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_3_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_3_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.6910452842712402,
+          "rmse": 0.015334538546834746
+        },
+        {
+          "name": "module_layers_3_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.6103954315185547,
+          "rmse": 0.017088817947849846
+        },
+        {
+          "name": "module_layers_3_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_3_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_4_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_4_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_4_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.413008213043213,
+          "rmse": 0.01569909812459801
+        },
+        {
+          "name": "module_layers_4_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.4628400802612305,
+          "rmse": 0.014974557344399895
+        },
+        {
+          "name": "module_layers_4_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_4_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_4_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.7337963581085205,
+          "rmse": 0.007256455672473067
+        },
+        {
+          "name": "module_layers_4_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 3.8865175247192383,
+          "rmse": 0.027555331696783925
+        },
+        {
+          "name": "module_layers_4_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.41835999488830566,
+          "rmse": 0.009233534965858875
+        },
+        {
+          "name": "module_layers_4_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_4_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_925_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 15.229583740234375,
+          "rmse": 0.8788384253542276
+        },
+        {
+          "name": "module_layers_4_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.9522449970245361,
+          "rmse": 0.00886583210520937
+        },
+        {
+          "name": "module_layers_4_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_4_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_4_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 2.369601249694824,
+          "rmse": 0.014461032924965337
+        },
+        {
+          "name": "const_256_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.040663182735443115,
+          "rmse": 0.004473148623032102
+        },
+        {
+          "name": "const_257_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_4_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.5761961936950684,
+          "rmse": 0.015411925642961158
+        },
+        {
+          "name": "module_layers_4_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_4_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_4_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.5225558280944824,
+          "rmse": 0.015049200971439119
+        },
+        {
+          "name": "module_layers_4_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 4.663678169250488,
+          "rmse": 0.01688182429645608
+        },
+        {
+          "name": "module_layers_4_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_4_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_5_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_5_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_5_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.508251667022705,
+          "rmse": 0.015246397697356211
+        },
+        {
+          "name": "module_layers_5_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.5738954544067383,
+          "rmse": 0.015517586170275021
+        },
+        {
+          "name": "module_layers_5_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_5_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_5_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5554354190826416,
+          "rmse": 0.007044468067285861
+        },
+        {
+          "name": "module_layers_5_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.543661117553711,
+          "rmse": 0.027759709503500145
+        },
+        {
+          "name": "module_layers_5_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.4509241580963135,
+          "rmse": 0.00884203071060821
+        },
+        {
+          "name": "module_layers_5_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_5_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_1088_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 19.56817626953125,
+          "rmse": 0.9927052742079604
+        },
+        {
+          "name": "module_layers_5_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6994497776031494,
+          "rmse": 0.008629774144109998
+        },
+        {
+          "name": "module_layers_5_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_5_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_5_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 2.4032325744628906,
+          "rmse": 0.01431105151898522
+        },
+        {
+          "name": "const_258_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.055986762046813965,
+          "rmse": 0.004468187637010154
+        },
+        {
+          "name": "const_259_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_5_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.1699037551879883,
+          "rmse": 0.01533893438804823
+        },
+        {
+          "name": "module_layers_5_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_5_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_5_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.5538172721862793,
+          "rmse": 0.01516380295860677
+        },
+        {
+          "name": "module_layers_5_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.160369396209717,
+          "rmse": 0.016810723215711913
+        },
+        {
+          "name": "module_layers_5_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_5_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_6_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_6_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_6_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.8774042129516602,
+          "rmse": 0.015160572518028532
+        },
+        {
+          "name": "module_layers_6_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.873016357421875,
+          "rmse": 0.01582841396702955
+        },
+        {
+          "name": "module_layers_6_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_6_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_6_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6948468685150146,
+          "rmse": 0.006731824523924124
+        },
+        {
+          "name": "module_layers_6_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 3.5083236694335938,
+          "rmse": 0.026816638017511163
+        },
+        {
+          "name": "module_layers_6_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.7509524822235107,
+          "rmse": 0.009240991066881355
+        },
+        {
+          "name": "module_layers_6_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_6_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_1251_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 19.532485961914062,
+          "rmse": 0.8815558695774187
+        },
+        {
+          "name": "module_layers_6_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5043215751647949,
+          "rmse": 0.00888755183268628
+        },
+        {
+          "name": "module_layers_6_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_6_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_6_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 2.534712314605713,
+          "rmse": 0.014269688341157825
+        },
+        {
+          "name": "const_260_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.06212425231933594,
+          "rmse": 0.00475715277910906
+        },
+        {
+          "name": "const_261_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_6_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.7881865501403809,
+          "rmse": 0.01526010735217287
+        },
+        {
+          "name": "module_layers_6_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_6_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_6_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 4.354998588562012,
+          "rmse": 0.015547117001384296
+        },
+        {
+          "name": "module_layers_6_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.8665823936462402,
+          "rmse": 0.01737524801023449
+        },
+        {
+          "name": "module_layers_6_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_6_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_7_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_7_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_7_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.247931957244873,
+          "rmse": 0.01526412128994708
+        },
+        {
+          "name": "module_layers_7_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.7603206634521484,
+          "rmse": 0.01565611600605815
+        },
+        {
+          "name": "module_layers_7_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_7_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_7_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.42498719692230225,
+          "rmse": 0.0066028236298165495
+        },
+        {
+          "name": "module_layers_7_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.168405532836914,
+          "rmse": 0.025562699278570356
+        },
+        {
+          "name": "module_layers_7_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5647478103637695,
+          "rmse": 0.008934978474302756
+        },
+        {
+          "name": "module_layers_7_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_7_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_1414_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 19.05859375,
+          "rmse": 0.8602779938911498
+        },
+        {
+          "name": "module_layers_7_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6360487937927246,
+          "rmse": 0.008697942089122074
+        },
+        {
+          "name": "module_layers_7_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_7_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_7_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 2.0650486946105957,
+          "rmse": 0.013735835887958719
+        },
+        {
+          "name": "const_262_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.03676745295524597,
+          "rmse": 0.003715026755289098
+        },
+        {
+          "name": "const_263_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_7_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.3420767784118652,
+          "rmse": 0.015026280238942038
+        },
+        {
+          "name": "module_layers_7_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_7_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_7_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.7591519355773926,
+          "rmse": 0.015290821333733877
+        },
+        {
+          "name": "module_layers_7_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.097815990447998,
+          "rmse": 0.017146843878302894
+        },
+        {
+          "name": "module_layers_7_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_7_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_8_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_8_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_8_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.8405942916870117,
+          "rmse": 0.015315267427264256
+        },
+        {
+          "name": "module_layers_8_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.0431551933288574,
+          "rmse": 0.015555087289133965
+        },
+        {
+          "name": "module_layers_8_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_8_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_8_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6662485599517822,
+          "rmse": 0.007239312480174788
+        },
+        {
+          "name": "module_layers_8_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 3.273451805114746,
+          "rmse": 0.028522031566783304
+        },
+        {
+          "name": "module_layers_8_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.7969286441802979,
+          "rmse": 0.009089715920887385
+        },
+        {
+          "name": "module_layers_8_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_8_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_1577_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 15.740692138671875,
+          "rmse": 0.8331002258631693
+        },
+        {
+          "name": "module_layers_8_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.9827489852905273,
+          "rmse": 0.008452010002998106
+        },
+        {
+          "name": "module_layers_8_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_8_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_8_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 1.618490219116211,
+          "rmse": 0.013380330793549413
+        },
+        {
+          "name": "const_264_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.07245379686355591,
+          "rmse": 0.004294002798881861
+        },
+        {
+          "name": "const_265_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_8_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.3992676734924316,
+          "rmse": 0.014869090907334332
+        },
+        {
+          "name": "module_layers_8_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_8_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_8_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.50014591217041,
+          "rmse": 0.01519546745192304
+        },
+        {
+          "name": "module_layers_8_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.295015335083008,
+          "rmse": 0.017427703203649596
+        },
+        {
+          "name": "module_layers_8_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_8_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_9_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_9_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_9_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.6593494415283203,
+          "rmse": 0.015826512789595373
+        },
+        {
+          "name": "module_layers_9_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.0123000144958496,
+          "rmse": 0.015122938566710459
+        },
+        {
+          "name": "module_layers_9_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_9_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_9_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5482385158538818,
+          "rmse": 0.00834510358243129
+        },
+        {
+          "name": "module_layers_9_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.321810722351074,
+          "rmse": 0.027097452126721697
+        },
+        {
+          "name": "module_layers_9_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6768882274627686,
+          "rmse": 0.00827973565979188
+        },
+        {
+          "name": "module_layers_9_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_9_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_1740_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 25.107192993164062,
+          "rmse": 0.9122880792613238
+        },
+        {
+          "name": "module_layers_9_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.033860445022583,
+          "rmse": 0.0083528864603716
+        },
+        {
+          "name": "module_layers_9_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_9_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_9_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 1.8845043182373047,
+          "rmse": 0.013351331237858737
+        },
+        {
+          "name": "const_266_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.05982649326324463,
+          "rmse": 0.004787408725274059
+        },
+        {
+          "name": "const_267_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_9_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.9115986824035645,
+          "rmse": 0.014927147558825855
+        },
+        {
+          "name": "module_layers_9_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_9_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_9_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.8881301879882812,
+          "rmse": 0.015934258793563753
+        },
+        {
+          "name": "module_layers_9_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.5475869178771973,
+          "rmse": 0.016645739259017578
+        },
+        {
+          "name": "module_layers_9_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_9_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_10_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_10_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_10_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.1927719116210938,
+          "rmse": 0.016522679191250396
+        },
+        {
+          "name": "module_layers_10_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.3953962326049805,
+          "rmse": 0.013863816663300775
+        },
+        {
+          "name": "module_layers_10_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_10_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_10_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.9997894763946533,
+          "rmse": 0.008545875469303512
+        },
+        {
+          "name": "module_layers_10_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.1352171897888184,
+          "rmse": 0.025665907982565517
+        },
+        {
+          "name": "module_layers_10_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5059810876846313,
+          "rmse": 0.008431723957194576
+        },
+        {
+          "name": "module_layers_10_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_10_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_1903_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 23.820327758789062,
+          "rmse": 0.960530619978366
+        },
+        {
+          "name": "module_layers_10_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5774146318435669,
+          "rmse": 0.008378509438526272
+        },
+        {
+          "name": "module_layers_10_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_10_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_10_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 0.7883620262145996,
+          "rmse": 0.013606910555291224
+        },
+        {
+          "name": "const_268_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.05162996053695679,
+          "rmse": 0.0038810456666839477
+        },
+        {
+          "name": "const_269_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_10_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.2159242630004883,
+          "rmse": 0.014542368628237797
+        },
+        {
+          "name": "module_layers_10_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_10_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_10_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.168163299560547,
+          "rmse": 0.016036498700893197
+        },
+        {
+          "name": "module_layers_10_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.9107604026794434,
+          "rmse": 0.01636294654877326
+        },
+        {
+          "name": "module_layers_10_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_10_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_11_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_11_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_11_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.558302402496338,
+          "rmse": 0.017062945951769496
+        },
+        {
+          "name": "module_layers_11_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.8860359191894531,
+          "rmse": 0.014442980854572691
+        },
+        {
+          "name": "module_layers_11_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_11_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_11_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.004023790359497,
+          "rmse": 0.00800470612310246
+        },
+        {
+          "name": "module_layers_11_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 3.3199915885925293,
+          "rmse": 0.022849811762941808
+        },
+        {
+          "name": "module_layers_11_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.4879438877105713,
+          "rmse": 0.008750093399839618
+        },
+        {
+          "name": "module_layers_11_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_11_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_2066_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 16.345809936523438,
+          "rmse": 1.0362711605464763
+        },
+        {
+          "name": "module_layers_11_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.8446762561798096,
+          "rmse": 0.009009921544659568
+        },
+        {
+          "name": "module_layers_11_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_11_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_11_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 2.814016819000244,
+          "rmse": 0.013794572295050992
+        },
+        {
+          "name": "const_270_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.04267829656600952,
+          "rmse": 0.004094177596690094
+        },
+        {
+          "name": "const_271_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_11_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.0211753845214844,
+          "rmse": 0.014782320301107599
+        },
+        {
+          "name": "module_layers_11_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_11_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_11_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.17197847366333,
+          "rmse": 0.016103452359351185
+        },
+        {
+          "name": "module_layers_11_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.7111997604370117,
+          "rmse": 0.016883608596759404
+        },
+        {
+          "name": "module_layers_11_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_11_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_12_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_12_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_12_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.6811366081237793,
+          "rmse": 0.017242747750500196
+        },
+        {
+          "name": "module_layers_12_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.4243526458740234,
+          "rmse": 0.01470083518082128
+        },
+        {
+          "name": "module_layers_12_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_12_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_12_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5248937606811523,
+          "rmse": 0.007718236091661506
+        },
+        {
+          "name": "module_layers_12_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.4399909973144531,
+          "rmse": 0.02227714357812434
+        },
+        {
+          "name": "module_layers_12_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.4034116268157959,
+          "rmse": 0.009545967261148503
+        },
+        {
+          "name": "module_layers_12_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_12_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_2229_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 16.381072998046875,
+          "rmse": 0.9940621204287454
+        },
+        {
+          "name": "module_layers_12_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.4582200050354004,
+          "rmse": 0.009807061180400789
+        },
+        {
+          "name": "module_layers_12_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_12_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_12_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 2.097012996673584,
+          "rmse": 0.014144108416838155
+        },
+        {
+          "name": "const_272_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.03722560405731201,
+          "rmse": 0.004223462814483805
+        },
+        {
+          "name": "const_273_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_12_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.1289680004119873,
+          "rmse": 0.015357489555976836
+        },
+        {
+          "name": "module_layers_12_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_12_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_12_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.69744873046875,
+          "rmse": 0.01563416722527312
+        },
+        {
+          "name": "module_layers_12_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.086885452270508,
+          "rmse": 0.017117576153696915
+        },
+        {
+          "name": "module_layers_12_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_12_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_13_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_13_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_13_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.1478848457336426,
+          "rmse": 0.017288393736393546
+        },
+        {
+          "name": "module_layers_13_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.9920086860656738,
+          "rmse": 0.015806227992293295
+        },
+        {
+          "name": "module_layers_13_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_13_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_13_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6622650623321533,
+          "rmse": 0.008427631079732496
+        },
+        {
+          "name": "module_layers_13_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.920912265777588,
+          "rmse": 0.027064106991077728
+        },
+        {
+          "name": "module_layers_13_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6679177284240723,
+          "rmse": 0.009434117803765739
+        },
+        {
+          "name": "module_layers_13_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_13_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_2392_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 8.281990051269531,
+          "rmse": 0.887700064506132
+        },
+        {
+          "name": "module_layers_13_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5962836742401123,
+          "rmse": 0.009341544049371731
+        },
+        {
+          "name": "module_layers_13_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_13_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_13_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 2.276639938354492,
+          "rmse": 0.014385839137400958
+        },
+        {
+          "name": "const_274_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.03795415163040161,
+          "rmse": 0.004494632717417806
+        },
+        {
+          "name": "const_275_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_13_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.505141258239746,
+          "rmse": 0.015558481892049243
+        },
+        {
+          "name": "module_layers_13_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_13_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_13_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.4164457321166992,
+          "rmse": 0.015662218626518922
+        },
+        {
+          "name": "module_layers_13_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.458754539489746,
+          "rmse": 0.01719767547936682
+        },
+        {
+          "name": "module_layers_13_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_13_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_14_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_14_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_14_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.7354631423950195,
+          "rmse": 0.017391149676447133
+        },
+        {
+          "name": "module_layers_14_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.570432662963867,
+          "rmse": 0.015788071009615993
+        },
+        {
+          "name": "module_layers_14_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_14_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_14_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.025111436843872,
+          "rmse": 0.008743622327973056
+        },
+        {
+          "name": "module_layers_14_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.676447868347168,
+          "rmse": 0.027486614182168925
+        },
+        {
+          "name": "module_layers_14_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.44026386737823486,
+          "rmse": 0.009279735522779593
+        },
+        {
+          "name": "module_layers_14_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_14_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_2555_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 14.695663452148438,
+          "rmse": 0.980741918772073
+        },
+        {
+          "name": "module_layers_14_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.7911500930786133,
+          "rmse": 0.009291485768428434
+        },
+        {
+          "name": "module_layers_14_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_14_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_14_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 2.7805519104003906,
+          "rmse": 0.014666444060320336
+        },
+        {
+          "name": "const_276_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.05669146776199341,
+          "rmse": 0.003989282908849349
+        },
+        {
+          "name": "const_277_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_14_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.2967991828918457,
+          "rmse": 0.015295895295134228
+        },
+        {
+          "name": "module_layers_14_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_14_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_14_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.5386123657226562,
+          "rmse": 0.01583657109528516
+        },
+        {
+          "name": "module_layers_14_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.9724879264831543,
+          "rmse": 0.016438316350807437
+        },
+        {
+          "name": "module_layers_14_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_14_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_15_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_15_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_15_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.2851152420043945,
+          "rmse": 0.016651847543652894
+        },
+        {
+          "name": "module_layers_15_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.0562968254089355,
+          "rmse": 0.015577193940037818
+        },
+        {
+          "name": "module_layers_15_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_15_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_15_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.9314520359039307,
+          "rmse": 0.008141521235098398
+        },
+        {
+          "name": "module_layers_15_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.5300769805908203,
+          "rmse": 0.02555124858661169
+        },
+        {
+          "name": "module_layers_15_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.4789595603942871,
+          "rmse": 0.008971295850549225
+        },
+        {
+          "name": "module_layers_15_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_15_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_2718_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 23.316818237304688,
+          "rmse": 0.9752801986496827
+        },
+        {
+          "name": "module_layers_15_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.36359333992004395,
+          "rmse": 0.008593117517332074
+        },
+        {
+          "name": "module_layers_15_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_15_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_15_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 1.604337215423584,
+          "rmse": 0.014476843588894221
+        },
+        {
+          "name": "const_278_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.0626596212387085,
+          "rmse": 0.0033526422636338186
+        },
+        {
+          "name": "const_279_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_15_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.581512451171875,
+          "rmse": 0.01543480234530821
+        },
+        {
+          "name": "module_layers_15_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_15_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_15_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.399570941925049,
+          "rmse": 0.015233997229276163
+        },
+        {
+          "name": "module_layers_15_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.209044933319092,
+          "rmse": 0.015810771242936107
+        },
+        {
+          "name": "module_layers_15_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_15_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_16_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_16_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_16_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.693140983581543,
+          "rmse": 0.016091072572329897
+        },
+        {
+          "name": "module_layers_16_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.430558204650879,
+          "rmse": 0.015214267676247619
+        },
+        {
+          "name": "module_layers_16_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_16_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_16_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.1241252422332764,
+          "rmse": 0.007812518613905242
+        },
+        {
+          "name": "module_layers_16_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.786193370819092,
+          "rmse": 0.024884875899095642
+        },
+        {
+          "name": "module_layers_16_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.0484373569488525,
+          "rmse": 0.009177817304822653
+        },
+        {
+          "name": "module_layers_16_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_16_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_2881_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 27.384994506835938,
+          "rmse": 0.9764524146232062
+        },
+        {
+          "name": "module_layers_16_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.349219799041748,
+          "rmse": 0.010104798431636579
+        },
+        {
+          "name": "module_layers_16_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_16_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_16_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 1.363980770111084,
+          "rmse": 0.014169485085677249
+        },
+        {
+          "name": "const_280_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.03862345218658447,
+          "rmse": 0.003839804242383912
+        },
+        {
+          "name": "const_281_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_16_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.4739899635314941,
+          "rmse": 0.016029814664452413
+        },
+        {
+          "name": "module_layers_16_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_16_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_16_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.4059977531433105,
+          "rmse": 0.01448167931806799
+        },
+        {
+          "name": "module_layers_16_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.4404287338256836,
+          "rmse": 0.014471678949175787
+        },
+        {
+          "name": "module_layers_16_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_16_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_17_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_17_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_17_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.6571154594421387,
+          "rmse": 0.015171078694242435
+        },
+        {
+          "name": "module_layers_17_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.985713005065918,
+          "rmse": 0.012532530785620813
+        },
+        {
+          "name": "module_layers_17_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_17_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_17_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5736856460571289,
+          "rmse": 0.007710108948071708
+        },
+        {
+          "name": "module_layers_17_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.3490238189697266,
+          "rmse": 0.02055867102619906
+        },
+        {
+          "name": "module_layers_17_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6818654537200928,
+          "rmse": 0.00874147774667998
+        },
+        {
+          "name": "module_layers_17_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_17_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_3044_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 38.38963317871094,
+          "rmse": 1.0105708559242839
+        },
+        {
+          "name": "module_layers_17_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5899820327758789,
+          "rmse": 0.00839766335466359
+        },
+        {
+          "name": "module_layers_17_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_17_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_17_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 1.6874518394470215,
+          "rmse": 0.014097268941018396
+        },
+        {
+          "name": "const_282_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.03696322441101074,
+          "rmse": 0.003521648766999031
+        },
+        {
+          "name": "const_283_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_17_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.051729679107666,
+          "rmse": 0.015691325138038087
+        },
+        {
+          "name": "module_layers_17_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_17_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_17_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.222395896911621,
+          "rmse": 0.014716818082051907
+        },
+        {
+          "name": "module_layers_17_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.7054176330566406,
+          "rmse": 0.013851831415948363
+        },
+        {
+          "name": "module_layers_17_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_17_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_18_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_18_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_18_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.8278565406799316,
+          "rmse": 0.01535554387702247
+        },
+        {
+          "name": "module_layers_18_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.6059675216674805,
+          "rmse": 0.012911662631379186
+        },
+        {
+          "name": "module_layers_18_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_18_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_18_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5418307781219482,
+          "rmse": 0.007764207416277226
+        },
+        {
+          "name": "module_layers_18_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.32559871673584,
+          "rmse": 0.025547447640806464
+        },
+        {
+          "name": "module_layers_18_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.7495267391204834,
+          "rmse": 0.009268465864816614
+        },
+        {
+          "name": "module_layers_18_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_18_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_3207_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 49.439117431640625,
+          "rmse": 1.0742934968241862
+        },
+        {
+          "name": "module_layers_18_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.7159042358398438,
+          "rmse": 0.009478982768413262
+        },
+        {
+          "name": "module_layers_18_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_18_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_18_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 1.7542576789855957,
+          "rmse": 0.014215456073945448
+        },
+        {
+          "name": "const_284_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.05413562059402466,
+          "rmse": 0.003761655115778487
+        },
+        {
+          "name": "const_285_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_18_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.7897205352783203,
+          "rmse": 0.015712590672606993
+        },
+        {
+          "name": "module_layers_18_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_18_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_18_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.7900238037109375,
+          "rmse": 0.01502561662620508
+        },
+        {
+          "name": "module_layers_18_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 3.2146053314208984,
+          "rmse": 0.015215054823056864
+        },
+        {
+          "name": "module_layers_18_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_18_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_19_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_19_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_19_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.0308427810668945,
+          "rmse": 0.01531540425711046
+        },
+        {
+          "name": "module_layers_19_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.4224658012390137,
+          "rmse": 0.013239310580760173
+        },
+        {
+          "name": "module_layers_19_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_19_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_19_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.9847266674041748,
+          "rmse": 0.00845054093833433
+        },
+        {
+          "name": "module_layers_19_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.2786316871643066,
+          "rmse": 0.02233027165304953
+        },
+        {
+          "name": "module_layers_19_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6769058704376221,
+          "rmse": 0.009613377557987933
+        },
+        {
+          "name": "module_layers_19_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_19_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_3370_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 23.439559936523438,
+          "rmse": 0.9905581223356145
+        },
+        {
+          "name": "module_layers_19_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.8643608093261719,
+          "rmse": 0.009591116775893608
+        },
+        {
+          "name": "module_layers_19_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_19_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_19_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 1.6322245597839355,
+          "rmse": 0.014039358279882813
+        },
+        {
+          "name": "const_286_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.051304519176483154,
+          "rmse": 0.004188039938354666
+        },
+        {
+          "name": "const_287_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_19_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.5298447608947754,
+          "rmse": 0.016221652637036843
+        },
+        {
+          "name": "module_layers_19_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_19_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_19_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.5865540504455566,
+          "rmse": 0.01471256207606466
+        },
+        {
+          "name": "module_layers_19_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.985614776611328,
+          "rmse": 0.015569718387981065
+        },
+        {
+          "name": "module_layers_19_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_19_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_20_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_20_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_20_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.7502598762512207,
+          "rmse": 0.014963585578772205
+        },
+        {
+          "name": "module_layers_20_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.051457405090332,
+          "rmse": 0.014311935943248116
+        },
+        {
+          "name": "module_layers_20_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_20_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_20_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5110552310943604,
+          "rmse": 0.008324875572124673
+        },
+        {
+          "name": "module_layers_20_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.4856271743774414,
+          "rmse": 0.0258967984210469
+        },
+        {
+          "name": "module_layers_20_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5605945587158203,
+          "rmse": 0.009312883460960887
+        },
+        {
+          "name": "module_layers_20_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_20_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_3533_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 22.383895874023438,
+          "rmse": 0.86629997517902
+        },
+        {
+          "name": "module_layers_20_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.5676145553588867,
+          "rmse": 0.009110767400185425
+        },
+        {
+          "name": "module_layers_20_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_20_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_20_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 2.381897449493408,
+          "rmse": 0.014073784537292007
+        },
+        {
+          "name": "const_288_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.07967638969421387,
+          "rmse": 0.004834202114857762
+        },
+        {
+          "name": "const_289_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_20_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.1330251693725586,
+          "rmse": 0.016746695075379993
+        },
+        {
+          "name": "module_layers_20_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_20_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_20_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.290921211242676,
+          "rmse": 0.014603911119642035
+        },
+        {
+          "name": "module_layers_20_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.602778434753418,
+          "rmse": 0.017556275970475144
+        },
+        {
+          "name": "module_layers_20_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_20_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_21_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_21_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_21_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.8937993049621582,
+          "rmse": 0.014921328222240586
+        },
+        {
+          "name": "module_layers_21_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 4.071809768676758,
+          "rmse": 0.01603466016934261
+        },
+        {
+          "name": "module_layers_21_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_21_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_21_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.710686445236206,
+          "rmse": 0.008302373322282343
+        },
+        {
+          "name": "module_layers_21_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.097200393676758,
+          "rmse": 0.026789660723261104
+        },
+        {
+          "name": "module_layers_21_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.7974846363067627,
+          "rmse": 0.009593154235130472
+        },
+        {
+          "name": "module_layers_21_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_21_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_3696_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 11.365982055664062,
+          "rmse": 0.8410840482870552
+        },
+        {
+          "name": "module_layers_21_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.0234084129333496,
+          "rmse": 0.00992034077186473
+        },
+        {
+          "name": "module_layers_21_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_21_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_21_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 1.6242389678955078,
+          "rmse": 0.014059638223691176
+        },
+        {
+          "name": "const_290_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.05240476131439209,
+          "rmse": 0.005036372301121362
+        },
+        {
+          "name": "const_291_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_21_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.0913543701171875,
+          "rmse": 0.016972371211332826
+        },
+        {
+          "name": "module_layers_21_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_21_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_21_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.983403205871582,
+          "rmse": 0.014590761500071122
+        },
+        {
+          "name": "module_layers_21_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.7123937606811523,
+          "rmse": 0.0204285315085168
+        },
+        {
+          "name": "module_layers_21_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_21_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_22_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_22_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_22_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.3296680450439453,
+          "rmse": 0.015265435539265404
+        },
+        {
+          "name": "module_layers_22_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.5476341247558594,
+          "rmse": 0.01533115076687092
+        },
+        {
+          "name": "module_layers_22_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_22_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_22_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.7424014806747437,
+          "rmse": 0.0077229986135510615
+        },
+        {
+          "name": "module_layers_22_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.3929271697998047,
+          "rmse": 0.026008062906863496
+        },
+        {
+          "name": "module_layers_22_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.6181197166442871,
+          "rmse": 0.009824337794912784
+        },
+        {
+          "name": "module_layers_22_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_22_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_3859_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 22.00920867919922,
+          "rmse": 0.7953930754248055
+        },
+        {
+          "name": "module_layers_22_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.0487022399902344,
+          "rmse": 0.011589326906607696
+        },
+        {
+          "name": "module_layers_22_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_22_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_22_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 1.9968018531799316,
+          "rmse": 0.014056576363811581
+        },
+        {
+          "name": "const_292_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.5033416748046875,
+          "rmse": 0.009376084904857812
+        },
+        {
+          "name": "const_293_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_22_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.7814035415649414,
+          "rmse": 0.019049964212196714
+        },
+        {
+          "name": "module_layers_22_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_22_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_22_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.570298194885254,
+          "rmse": 0.01619113937000133
+        },
+        {
+          "name": "module_layers_22_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 6.632488250732422,
+          "rmse": 0.02875397117229032
+        },
+        {
+          "name": "module_layers_22_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_22_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_23_norm_feed_forward1_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_23_norm_feed_forward1_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_23_feed_forward1_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.788173198699951,
+          "rmse": 0.014397902439460429
+        },
+        {
+          "name": "module_layers_23_feed_forward1_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.2190933227539062,
+          "rmse": 0.01844062292500248
+        },
+        {
+          "name": "module_layers_23_norm_self_att_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_23_norm_self_att_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_23_self_attn_linear_q_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.40250396728515625,
+          "rmse": 0.007484128652383693
+        },
+        {
+          "name": "module_layers_23_self_attn_linear_k_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.1084342002868652,
+          "rmse": 0.023433152560240204
+        },
+        {
+          "name": "module_layers_23_self_attn_linear_v_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 0.4637826681137085,
+          "rmse": 0.009858694692873798
+        },
+        {
+          "name": "module_layers_23_self_attn_pos_bias_u_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_23_self_attn_pos_bias_v_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "op_4022_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 384000,
+          "max_abs_error": 27.598342895507812,
+          "rmse": 0.726162297792288
+        },
+        {
+          "name": "module_layers_23_self_attn_linear_out_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 1.1438307762145996,
+          "rmse": 0.013430520315191456
+        },
+        {
+          "name": "module_layers_23_norm_conv_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_23_norm_conv_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_23_conv_pointwise_conv1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 2097152,
+          "max_abs_error": 1.8687572479248047,
+          "rmse": 0.01313323171948716
+        },
+        {
+          "name": "const_294_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 9216,
+          "max_abs_error": 0.07516062259674072,
+          "rmse": 0.006035265501018293
+        },
+        {
+          "name": "const_295_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_23_conv_pointwise_conv2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 1048576,
+          "max_abs_error": 2.061868667602539,
+          "rmse": 0.025459139314094267
+        },
+        {
+          "name": "module_layers_23_norm_feed_forward2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_23_norm_feed_forward2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_23_feed_forward2_linear1_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 1.6670303344726562,
+          "rmse": 0.012263852370795825
+        },
+        {
+          "name": "module_layers_23_feed_forward2_linear2_weight_to_fp16_palettized",
+          "encoding": "lut6",
+          "elements": 4194304,
+          "max_abs_error": 2.809575080871582,
+          "rmse": 0.019075971879686654
+        },
+        {
+          "name": "module_layers_23_norm_out_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        },
+        {
+          "name": "module_layers_23_norm_out_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 1024
+        }
+      ]
+    },
+    "Decoder": {
+      "graph_sha256": "8bfdcef9fb1b46a1ec2f3c1895c74ed90644a69105efda370e412a522bd5b353",
+      "graph_byte_identical": true,
+      "weights_sha256": "1362dfcaf9842acd4e93def86df0e5b69d58668c526b195c1a52f90c23c671ec",
+      "tensors": [
+        {
+          "name": "module_prediction_embed_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 5243520
+        },
+        {
+          "name": "concat_1_to_fp16",
+          "encoding": "fp16",
+          "elements": 1638400
+        },
+        {
+          "name": "concat_2_to_fp16",
+          "encoding": "fp16",
+          "elements": 1638400
+        },
+        {
+          "name": "concat_0_to_fp16",
+          "encoding": "fp16",
+          "elements": 2560
+        },
+        {
+          "name": "concat_4_to_fp16",
+          "encoding": "fp16",
+          "elements": 1638400
+        },
+        {
+          "name": "concat_5_to_fp16",
+          "encoding": "fp16",
+          "elements": 1638400
+        },
+        {
+          "name": "concat_3_to_fp16",
+          "encoding": "fp16",
+          "elements": 2560
+        }
+      ]
+    },
+    "JointDecisionv3": {
+      "graph_sha256": "c31044bcbcc2959ced2a59e8a0177b617aa359fa1ad613b57de5b63a430f9e31",
+      "graph_byte_identical": true,
+      "weights_sha256": "5c37dcf80d267159e63450c44c61aa3b421f9535e3d3d0914d7b705da51b596a",
+      "tensors": [
+        {
+          "name": "joint_module_enc_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 655360
+        },
+        {
+          "name": "joint_module_enc_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 640
+        },
+        {
+          "name": "joint_module_pred_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 409600
+        },
+        {
+          "name": "joint_module_pred_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 640
+        },
+        {
+          "name": "joint_module_joint_net_2_weight_to_fp16",
+          "encoding": "fp16",
+          "elements": 5246720
+        },
+        {
+          "name": "joint_module_joint_net_2_bias_to_fp16",
+          "encoding": "fp16",
+          "elements": 8198
+        }
+      ]
+    }
+  },
+  "source_tensors_used": 699,
+  "source_tensors_ignored": [
+    "encoder.layers.0.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.1.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.10.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.11.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.12.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.13.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.14.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.15.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.16.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.17.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.18.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.19.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.2.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.20.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.21.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.22.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.23.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.3.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.4.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.5.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.6.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.7.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.8.conv.batch_norm.num_batches_tracked",
+    "encoder.layers.9.conv.batch_norm.num_batches_tracked",
+    "preprocessor.featurizer.fb",
+    "preprocessor.featurizer.window"
+  ],
+  "status": "converted; accuracy and latency validation required"
+}

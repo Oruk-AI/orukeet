@@ -1,0 +1,23 @@
+{
+  "baseline": {
+    "files_verified": 34,
+    "bytes": 965876186,
+    "symlinks": 0,
+    "manifest_sha256": "8d91b680a25480a7524ae14fe7cdf7ef135d5f23a9744dc1377f78404e88197b",
+    "passed": true
+  },
+  "greedy": {
+    "files_verified": 35,
+    "bytes": 965872688,
+    "symlinks": 0,
+    "manifest_sha256": "58cbecf58c7f398df922e02d3dcd220dc058ffd55bb6aa8365d76cd4a0c2aef2",
+    "passed": true
+  },
+  "precision-experimental": {
+    "files_verified": 38,
+    "bytes": 1003611951,
+    "symlinks": 0,
+    "manifest_sha256": "5b1ecf0fad7573fe098ac756c890c4100183925f568e58276b2e975695dcf714",
+    "passed": true
+  }
+}

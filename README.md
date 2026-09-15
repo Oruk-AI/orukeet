@@ -39,6 +39,10 @@ through OpenWhispr’s existing sherpa-onnx runtime.
 
 [Follow the file-upload walkthrough](https://oruk.ai/guides/orukeet-local-transcription#openwhispr) for the exact settings and a public sample with its observed transcript. Audio Upload needs its own model selection even when Orukeet is active for dictation.
 
+For **Core ML / TapTalk integration**, see the [converter and Swift engine](export/coreml/README.md).
+It matches FluidAudio 0.15.5's Parakeet deployment, with a separately validated
+greedy-decoding optimization and [local latency/accuracy measurements](evidence/coreml-taptalk-20260915/README.md).
+
 ## Run speech recognition
 
 [Follow the local deployment tutorial](https://oruk.ai/guides/orukeet-local-transcription) for a fresh Python environment, a supplied recording, actual output and a reusable file runner. The tutorial includes the tested package version and artifact hashes.

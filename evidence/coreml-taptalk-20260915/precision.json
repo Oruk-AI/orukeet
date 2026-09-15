@@ -1,0 +1,201 @@
+{
+  "profile": "fp16-position-and-temporal",
+  "source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+  "graph_sha256": "0b7e6c404ed3d97590159227e08610a7e099bc3737a02ab784ea31ac193c8a06",
+  "changed": [
+    {
+      "name": "op_273_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_248_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_436_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_250_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_599_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_252_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_762_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_254_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_925_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_256_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_1088_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_258_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_1251_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_260_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_1414_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_262_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_1577_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_264_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_1740_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_266_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_1903_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_268_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_2066_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_270_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_2229_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_272_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_2392_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_274_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_2555_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_276_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_2718_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_278_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_2881_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_280_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_3044_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_282_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_3207_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_284_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_3370_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_286_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_3533_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_288_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_3696_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_290_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_3859_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_292_to_fp16_palettized",
+      "elements": 9216
+    },
+    {
+      "name": "op_4022_to_fp16_palettized",
+      "elements": 384000
+    },
+    {
+      "name": "const_294_to_fp16_palettized",
+      "elements": 9216
+    }
+  ],
+  "additional_blob_bytes": 18877504,
+  "status": "candidate; quality and latency validation required"
+}

@@ -1,0 +1,11 @@
+warning: 'fluidaudio': found 1 file(s) which are unhandled; explicitly declare them as resources or exclude from the target
+    /Users/nathanroll/Documents/orukeet-coreml/export/coreml/benchmark/.build/checkouts/FluidAudio/Sources/FluidAudio/ASR/Parakeet/Unified/benchmark.md
+[0/1] Planning build
+Building for production...
+[0/4] Write sources
+[2/4] Write swift-version--1AB21518FC5DEDBE.txt
+[4/5] Compiling OrukeetCoreML OrukeetEngine.swift
+[5/7] Compiling CoreMLBenchmark main.swift
+[5/7] Write Objects.LinkFileList
+[6/7] Linking CoreMLBenchmark
+Build complete! (2.98s)
