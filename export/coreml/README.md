@@ -38,6 +38,20 @@ did not reduce word-error counts on the held-out sample, so it is not the defaul
 
 See [measured results](../../evidence/coreml-taptalk-20260915/README.md).
 
+## Download the preview
+
+Portable model bundles are attached to the
+[Core ML TapTalk preview release](https://github.com/Oruk-AI/orukeet/releases/tag/coreml-taptalk-preview-20260915):
+
+- `orukeet-r3-coreml-greedy.zip` — recommended for ordinary greedy decoding.
+- `orukeet-r3-coreml-baseline.zip` — preserves the reference graphs and top-64 outputs.
+- `SHA256SUMS.txt` — archive checksums; each bundle also includes a per-file manifest.
+
+These archives contain `.mlpackage` files. Compile them on the destination Mac
+using `OrukeetLocalModels.compilePackages` below. The preview is separate from
+the stable Metal release; the precision experiment remains available through
+the conversion scripts and is not included in these downloads.
+
 ## Reproduce conversion
 
 Run from the repository root on Apple Silicon, macOS 14 or later. These commands
@@ -177,8 +191,8 @@ export/coreml/.venv/bin/python export/coreml/package.py \
 This resolves symlinks, includes all four `.mlpackage` components, the vocabulary,
 weight license, attribution, conversion receipts and per-file SHA-256 checksums.
 Add `--include-compiled` for a ready-to-run local cache. Compile the packages on
-other OS versions during installation. Artifacts remain local; no models have
-been uploaded or changes published to TapTalk or FluidAudio.
+other OS versions during installation. The public preview archives omit
+compiled caches. TapTalk and FluidAudio source are unchanged by this release.
 
 ## Sources and attribution
 

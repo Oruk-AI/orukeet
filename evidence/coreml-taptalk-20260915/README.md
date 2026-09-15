@@ -180,6 +180,9 @@ caches. Portable packages alone avoid that duplication.
 [Bundle checksum verification](package-verification.json) ·
 [Standalone-bundle inference smoke check](package-smoke.json)
 
-The conversion, validation, packaging, benchmarks, and Swift integration are
-local on branch `codex/taptalk-coreml-parity`. TapTalk and FluidAudio have not
-been changed remotely, and no model bundles have been uploaded.
+The portable baseline and greedy bundles are published separately in the
+[Core ML TapTalk preview release](https://github.com/Oruk-AI/orukeet/releases/tag/coreml-taptalk-preview-20260915),
+with archive checksums and per-file manifests. Those downloads omit the local
+compiled caches. The conversion, validation, packaging, benchmarks, and Swift
+integration are on branch `codex/taptalk-coreml-parity`. TapTalk and FluidAudio
+source are unchanged by this release.
