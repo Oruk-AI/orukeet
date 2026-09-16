@@ -40,12 +40,21 @@ See [measured results](../../evidence/coreml-taptalk-20260915/README.md).
 
 ## Download the preview
 
-Portable model bundles are attached to the
+Portable model bundles are available on
+[Hugging Face](https://huggingface.co/oruk/orukeet/tree/coreml-taptalk-preview-20260915/coreml)
+and attached to the
 [Core ML TapTalk preview release](https://github.com/Oruk-AI/orukeet/releases/tag/coreml-taptalk-preview-20260915):
 
 - `orukeet-r3-coreml-greedy.zip` — recommended for ordinary greedy decoding.
 - `orukeet-r3-coreml-baseline.zip` — preserves the reference graphs and top-64 outputs.
 - `SHA256SUMS.txt` — archive checksums; each bundle also includes a per-file manifest.
+
+Both hosts serve identical archives. The [Hugging Face guide](huggingface/README.md)
+includes direct URLs and a hash-checked Python download example. Use the
+`coreml-taptalk-preview-20260915` release tag when downloading from `oruk/orukeet`;
+the [publication receipt](../../evidence/coreml-taptalk-20260915/huggingface-publication.json)
+records the exact Hub commit for applications that pin revisions:
+`43142dd1897f9ddadcd70173fcb5ff45c08aa951`.
 
 These archives contain `.mlpackage` files. Compile them on the destination Mac
 using `OrukeetLocalModels.compilePackages` below. The preview is separate from
