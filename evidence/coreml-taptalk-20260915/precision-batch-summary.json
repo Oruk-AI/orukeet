@@ -1,0 +1,364 @@
+{
+  "mode": "batch",
+  "paced": false,
+  "encoder_units": "ane",
+  "baseline": "orukeet",
+  "fixtures": [
+    {
+      "model": "orukeet",
+      "audio": "lv_lv.source.wav",
+      "audio_sha256": "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "runs": 20,
+      "audio_seconds": 7.14,
+      "p50_ms": 64.9615625,
+      "p95_ms": 68.5997673,
+      "rtfx": 109.91114938160547,
+      "text_variants": 1,
+      "transcript": "Tas mums ir devis vilcienus, automa\u0161\u012bnas un daudz citas transportl\u012bdzek\u013cus.",
+      "p50_first_text_ms": null,
+      "p50_finalization_ms": null
+    },
+    {
+      "model": "orukeet",
+      "audio": "fr_fr.source.wav",
+      "audio_sha256": "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "runs": 20,
+      "audio_seconds": 9.42,
+      "p50_ms": 79.405625,
+      "p95_ms": 86.08432705000001,
+      "rtfx": 118.63139418649497,
+      "text_variants": 1,
+      "transcript": "Les voyageurs \u00e0 destination de pays o\u00f9 les taxes sont \u00e9lev\u00e9es peuvent parfois faire des \u00e9conomies consid\u00e9rables, en particulier sur des produits comme les boissons alcoolis\u00e9es ou le tabac.",
+      "p50_first_text_ms": null,
+      "p50_finalization_ms": null
+    },
+    {
+      "model": "orukeet",
+      "audio": "es_419.source.wav",
+      "audio_sha256": "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "runs": 20,
+      "audio_seconds": 7.68,
+      "p50_ms": 63.5204375,
+      "p95_ms": 65.47654105000001,
+      "rtfx": 120.90596825627972,
+      "text_variants": 1,
+      "transcript": "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, \u00bfcierto?",
+      "p50_first_text_ms": null,
+      "p50_finalization_ms": null
+    },
+    {
+      "model": "orukeet",
+      "audio": "jfk.wav",
+      "audio_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "runs": 20,
+      "audio_seconds": 11,
+      "p50_ms": 67.7657915,
+      "p95_ms": 69.84373685,
+      "rtfx": 162.32378839698197,
+      "text_variants": 1,
+      "transcript": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "p50_first_text_ms": null,
+      "p50_finalization_ms": null
+    },
+    {
+      "model": "orukeet-greedy",
+      "audio": "lv_lv.source.wav",
+      "audio_sha256": "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "runs": 20,
+      "audio_seconds": 7.14,
+      "p50_ms": 59.71508300000001,
+      "p95_ms": 61.269039899999996,
+      "rtfx": 119.56778156031365,
+      "text_variants": 1,
+      "transcript": "Tas mums ir devis vilcienus, automa\u0161\u012bnas un daudz citas transportl\u012bdzek\u013cus.",
+      "p50_first_text_ms": null,
+      "p50_finalization_ms": null
+    },
+    {
+      "model": "orukeet-greedy",
+      "audio": "fr_fr.source.wav",
+      "audio_sha256": "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "runs": 20,
+      "audio_seconds": 9.42,
+      "p50_ms": 71.3578335,
+      "p95_ms": 73.79654165000001,
+      "rtfx": 132.01073432253236,
+      "text_variants": 1,
+      "transcript": "Les voyageurs \u00e0 destination de pays o\u00f9 les taxes sont \u00e9lev\u00e9es peuvent parfois faire des \u00e9conomies consid\u00e9rables, en particulier sur des produits comme les boissons alcoolis\u00e9es ou le tabac.",
+      "p50_first_text_ms": null,
+      "p50_finalization_ms": null
+    },
+    {
+      "model": "orukeet-greedy",
+      "audio": "es_419.source.wav",
+      "audio_sha256": "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "runs": 20,
+      "audio_seconds": 7.68,
+      "p50_ms": 58.634354,
+      "p95_ms": 59.74786875,
+      "rtfx": 130.98123328859393,
+      "text_variants": 1,
+      "transcript": "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, \u00bfcierto?",
+      "p50_first_text_ms": null,
+      "p50_finalization_ms": null
+    },
+    {
+      "model": "orukeet-greedy",
+      "audio": "jfk.wav",
+      "audio_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "runs": 20,
+      "audio_seconds": 11,
+      "p50_ms": 62.372313000000005,
+      "p95_ms": 63.478533649999996,
+      "rtfx": 176.36030268750815,
+      "text_variants": 1,
+      "transcript": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "p50_first_text_ms": null,
+      "p50_finalization_ms": null
+    },
+    {
+      "model": "orukeet-precision",
+      "audio": "lv_lv.source.wav",
+      "audio_sha256": "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "runs": 20,
+      "audio_seconds": 7.14,
+      "p50_ms": 59.50191650000001,
+      "p95_ms": 62.00655065,
+      "rtfx": 119.99613491441069,
+      "text_variants": 1,
+      "transcript": "Tas mums ir devis vilcienus, automa\u0161\u012bnas un daudzus citas transportl\u012bdzek\u013cus.",
+      "p50_first_text_ms": null,
+      "p50_finalization_ms": null
+    },
+    {
+      "model": "orukeet-precision",
+      "audio": "fr_fr.source.wav",
+      "audio_sha256": "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "runs": 20,
+      "audio_seconds": 9.42,
+      "p50_ms": 71.443854,
+      "p95_ms": 74.3399003,
+      "rtfx": 131.85178951852177,
+      "text_variants": 1,
+      "transcript": "Les voyageurs \u00e0 destination de pays o\u00f9 les taxes sont \u00e9lev\u00e9es peuvent parfois faire des \u00e9conomies consid\u00e9rables, en particulier sur des produits comme les boissons alcoolis\u00e9es ou le tabac.",
+      "p50_first_text_ms": null,
+      "p50_finalization_ms": null
+    },
+    {
+      "model": "orukeet-precision",
+      "audio": "es_419.source.wav",
+      "audio_sha256": "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "runs": 20,
+      "audio_seconds": 7.68,
+      "p50_ms": 58.560500000000005,
+      "p95_ms": 60.590564900000004,
+      "rtfx": 131.14642122249637,
+      "text_variants": 1,
+      "transcript": "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, \u00bfcierto?",
+      "p50_first_text_ms": null,
+      "p50_finalization_ms": null
+    },
+    {
+      "model": "orukeet-precision",
+      "audio": "jfk.wav",
+      "audio_sha256": "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "runs": 20,
+      "audio_seconds": 11,
+      "p50_ms": 61.690436999999996,
+      "p95_ms": 63.866249700000004,
+      "rtfx": 178.309646274673,
+      "text_variants": 1,
+      "transcript": "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "p50_first_text_ms": null,
+      "p50_finalization_ms": null
+    }
+  ],
+  "comparisons": {
+    "orukeet-greedy": {
+      "paired_runs": 80,
+      "median_latency_ratio": 0.9108103675080881,
+      "bootstrap_95_interval": [
+        0.9050147946990494,
+        0.9151409559584489
+      ],
+      "text_mismatches": [],
+      "token_mismatches": []
+    },
+    "orukeet-precision": {
+      "paired_runs": 80,
+      "median_latency_ratio": 0.9095526924018978,
+      "bootstrap_95_interval": [
+        0.9031201679701834,
+        0.9169489055562874
+      ],
+      "text_mismatches": [
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          0
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          1
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          2
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          3
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          4
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          5
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          6
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          7
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          8
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          9
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          10
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          11
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          12
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          13
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          14
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          15
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          16
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          17
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          18
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          19
+        ]
+      ],
+      "token_mismatches": [
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          0
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          1
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          2
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          3
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          4
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          5
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          6
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          7
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          8
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          9
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          10
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          11
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          12
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          13
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          14
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          15
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          16
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          17
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          18
+        ],
+        [
+          "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+          19
+        ]
+      ]
+    }
+  },
+  "failures": [],
+  "thermal_states": [
+    0
+  ]
+}

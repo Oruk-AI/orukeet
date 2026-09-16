@@ -39,6 +39,10 @@ through OpenWhispr’s existing sherpa-onnx runtime.
 
 [Follow the file-upload walkthrough](https://oruk.ai/guides/orukeet-local-transcription#openwhispr) for the exact settings and a public sample with its observed transcript. Audio Upload needs its own model selection even when Orukeet is active for dictation.
 
+For **Core ML / TapTalk integration**, see the [converter and Swift engine](export/coreml/README.md).
+It matches FluidAudio 0.15.5's Parakeet deployment, with a separately validated
+greedy-decoding optimization and [local latency/accuracy measurements](evidence/coreml-taptalk-20260915/README.md).
+
 ## Run speech recognition
 
 [Follow the local deployment tutorial](https://oruk.ai/guides/orukeet-local-transcription) for a fresh Python environment, a supplied recording, actual output and a reusable file runner. The tutorial includes the tested package version and artifact hashes.
@@ -186,11 +190,21 @@ Code: MIT. Weights and fitted kernels: CC BY-SA 4.0, retaining NVIDIA's foundati
 ## Citation
 
 ```bibtex
-@article{roll2026orukeet,
-  title={Orukeet: Multilingual ASR with Frozen Gabor Kernels},
-  author={Roll, Nathan and Yi, Irene and Mar{\c{s}}an, B{\"u}{\c{s}}ra and Grenez, Vianney and Stein, Gabriel and Mrkaic, Momcilo and Padjin, Pavle and Zeljkovic, Vladimir and Graham, Calbert},
-  journal={arXiv preprint arXiv:2609.10054},
-  year={2026}
+@techreport{roll2026orukeet,
+  title = {{Orukeet}: Multilingual {ASR} with Frozen {Gabor} Kernels},
+  author = {Roll, Nathan and
+            Yi, Irene and
+            Mar{\c{s}}an, B{\"u}{\c{s}}ra and
+            Grenez, Vianney and
+            Stein, Gabriel and
+            Mrkaic, Momcilo and
+            Padjin, Pavle and
+            Zeljkovic, Vladimir and
+            Graham, Calbert},
+  institution = {Oruk AI},
+  year = {2026},
+  type = {Technical report},
+  url = {https://github.com/Oruk-AI/orukeet/blob/main/output/pdf/orukeet-technical-report.pdf}
 }
 ```
 

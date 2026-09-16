@@ -1,0 +1,2315 @@
+{
+  "chip" : "Apple M5 Max",
+  "concurrency" : 4,
+  "createdAt" : "2026-09-15T16:38:03Z",
+  "encoderUnits" : "ane",
+  "fluidAudioVersion" : "0.15.5",
+  "host" : "nathans-macbook-pro.local",
+  "measurements" : [
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.64708400000001,
+      "firstTextMs" : 63.32599999999999,
+      "model" : "parakeet",
+      "repetition" : 0,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.32599999999999,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.392584
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.227958,
+      "firstTextMs" : 62.8735,
+      "model" : "orukeet",
+      "repetition" : 0,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 62.8735,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 62.938250000000004
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 56.869334,
+      "firstTextMs" : 57.820875,
+      "model" : "orukeet-greedy",
+      "repetition" : 0,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 57.820875,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 57.873334
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 57.531333,
+      "firstTextMs" : 58.418375000000005,
+      "model" : "orukeet-greedy",
+      "repetition" : 1,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 58.418375000000005,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 58.485125
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.716415999999995,
+      "firstTextMs" : 63.43858300000001,
+      "model" : "orukeet",
+      "repetition" : 1,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.43858300000001,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.495416
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.512083,
+      "firstTextMs" : 63.16125,
+      "model" : "parakeet",
+      "repetition" : 1,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.16125,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.219333000000006
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.398500000000006,
+      "firstTextMs" : 63.107041,
+      "model" : "parakeet",
+      "repetition" : 2,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.107041,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.18104099999999
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 63.326834,
+      "firstTextMs" : 63.928957999999994,
+      "model" : "orukeet",
+      "repetition" : 2,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.928957999999994,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.988292
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 59.05825,
+      "firstTextMs" : 59.743708,
+      "model" : "orukeet-greedy",
+      "repetition" : 2,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 59.743708,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 59.796083
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 58.631792000000004,
+      "firstTextMs" : 59.354083,
+      "model" : "orukeet-greedy",
+      "repetition" : 3,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 59.354083,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 59.412833
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.404125,
+      "firstTextMs" : 63.179709,
+      "model" : "orukeet",
+      "repetition" : 3,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.179709,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.23504200000001
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.633875,
+      "firstTextMs" : 63.246625,
+      "model" : "parakeet",
+      "repetition" : 3,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.246625,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.302041
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.489833000000004,
+      "firstTextMs" : 63.380375,
+      "model" : "parakeet",
+      "repetition" : 4,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.380375,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.433291000000004
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 63.103916999999996,
+      "firstTextMs" : 63.758625,
+      "model" : "orukeet",
+      "repetition" : 4,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.758625,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.825584000000006
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 57.818083,
+      "firstTextMs" : 58.62425,
+      "model" : "orukeet-greedy",
+      "repetition" : 4,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 58.62425,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 58.679125
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 58.05225,
+      "firstTextMs" : 58.672542,
+      "model" : "orukeet-greedy",
+      "repetition" : 5,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 58.672542,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 58.721334
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.352292,
+      "firstTextMs" : 63.037542,
+      "model" : "orukeet",
+      "repetition" : 5,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.037542,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.093292
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.734750000000005,
+      "firstTextMs" : 63.528083,
+      "model" : "parakeet",
+      "repetition" : 5,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.528083,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.583875
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.318208,
+      "firstTextMs" : 63.012375,
+      "model" : "parakeet",
+      "repetition" : 6,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.012375,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.068708
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 64.577667,
+      "firstTextMs" : 65.32000000000001,
+      "model" : "orukeet",
+      "repetition" : 6,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 65.32000000000001,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 65.37720800000001
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 59.512,
+      "firstTextMs" : 60.215625,
+      "model" : "orukeet-greedy",
+      "repetition" : 6,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 60.215625,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 60.289708
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 60.208916,
+      "firstTextMs" : 60.980042,
+      "model" : "orukeet-greedy",
+      "repetition" : 7,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 60.980042,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 61.054708
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 63.796875,
+      "firstTextMs" : 64.520375,
+      "model" : "orukeet",
+      "repetition" : 7,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 64.520375,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 64.57350000000001
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.596084,
+      "firstTextMs" : 63.308417000000006,
+      "model" : "parakeet",
+      "repetition" : 7,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.308417000000006,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.364084
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.672375,
+      "firstTextMs" : 63.37049999999999,
+      "model" : "parakeet",
+      "repetition" : 8,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.37049999999999,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.42487500000001
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.455833000000005,
+      "firstTextMs" : 63.131625,
+      "model" : "orukeet",
+      "repetition" : 8,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 63.131625,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 63.192
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 57.403375,
+      "firstTextMs" : 58.1085,
+      "model" : "orukeet-greedy",
+      "repetition" : 8,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 58.1085,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 58.172083
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 58.471459,
+      "firstTextMs" : 59.225958000000006,
+      "model" : "orukeet-greedy",
+      "repetition" : 9,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 59.225958000000006,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 59.284375
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 61.909916,
+      "firstTextMs" : 62.488208,
+      "model" : "orukeet",
+      "repetition" : 9,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 62.488208,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 62.562540999999996
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/fixtures\/jfk.wav",
+      "audioSHA256" : "d7d4e74b8a333ed02186008bc109a1b1a19d16da668bd56e785d80d69a16a72f",
+      "audioSeconds" : 11,
+      "finalizationMs" : 62.275042,
+      "firstTextMs" : 62.89104199999999,
+      "model" : "parakeet",
+      "repetition" : 9,
+      "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : true,
+          "elapsedMs" : 62.89104199999999,
+          "text" : "And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country."
+        }
+      ],
+      "wallMs" : 62.954417
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 72.17504199999999,
+      "firstTextMs" : 72.707542,
+      "model" : "parakeet",
+      "repetition" : 0,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 72.707542,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 72.798667
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 75.085292,
+      "firstTextMs" : 75.95425,
+      "model" : "orukeet",
+      "repetition" : 0,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 75.95425,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 76.038083
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 67.03637499999999,
+      "firstTextMs" : 67.575791,
+      "model" : "orukeet-greedy",
+      "repetition" : 0,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 67.575791,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 67.65975
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 69.033625,
+      "firstTextMs" : 69.651125,
+      "model" : "orukeet-greedy",
+      "repetition" : 1,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 69.651125,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 69.736334
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 77.19870800000001,
+      "firstTextMs" : 77.902166,
+      "model" : "orukeet",
+      "repetition" : 1,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 77.902166,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 77.985208
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 75.617958,
+      "firstTextMs" : 76.240792,
+      "model" : "parakeet",
+      "repetition" : 1,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 76.240792,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 76.33045800000001
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 73.137125,
+      "firstTextMs" : 73.727125,
+      "model" : "parakeet",
+      "repetition" : 2,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 73.727125,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 73.81925
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 73.1055,
+      "firstTextMs" : 73.943458,
+      "model" : "orukeet",
+      "repetition" : 2,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 73.943458,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 74.040416
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 67.035792,
+      "firstTextMs" : 67.630792,
+      "model" : "orukeet-greedy",
+      "repetition" : 2,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 67.630792,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 67.72716700000001
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 65.867458,
+      "firstTextMs" : 66.47491699999999,
+      "model" : "orukeet-greedy",
+      "repetition" : 3,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 66.47491699999999,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 66.566875
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 72.613625,
+      "firstTextMs" : 73.257666,
+      "model" : "orukeet",
+      "repetition" : 3,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 73.257666,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 73.34433299999999
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 73.717,
+      "firstTextMs" : 74.35300000000001,
+      "model" : "parakeet",
+      "repetition" : 3,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 74.35300000000001,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 74.440708
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 73.705416,
+      "firstTextMs" : 74.354083,
+      "model" : "parakeet",
+      "repetition" : 4,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 74.354083,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 74.440583
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 72.859208,
+      "firstTextMs" : 73.436875,
+      "model" : "orukeet",
+      "repetition" : 4,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 73.436875,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 73.52520799999999
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 67.10325,
+      "firstTextMs" : 67.646875,
+      "model" : "orukeet-greedy",
+      "repetition" : 4,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 67.646875,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 67.73541700000001
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 67.672584,
+      "firstTextMs" : 68.25375,
+      "model" : "orukeet-greedy",
+      "repetition" : 5,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 68.25375,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 68.33749999999999
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 73.288208,
+      "firstTextMs" : 73.921458,
+      "model" : "orukeet",
+      "repetition" : 5,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 73.921458,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 74.006083
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 73.41425,
+      "firstTextMs" : 73.97791600000001,
+      "model" : "parakeet",
+      "repetition" : 5,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 73.97791600000001,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 74.07025
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 72.6255,
+      "firstTextMs" : 73.197375,
+      "model" : "parakeet",
+      "repetition" : 6,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 73.197375,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 73.301458
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 73.751334,
+      "firstTextMs" : 74.274583,
+      "model" : "orukeet",
+      "repetition" : 6,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 74.274583,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 74.363125
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 65.99475000000001,
+      "firstTextMs" : 66.568667,
+      "model" : "orukeet-greedy",
+      "repetition" : 6,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 66.568667,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 66.665875
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 66.04845900000001,
+      "firstTextMs" : 66.557958,
+      "model" : "orukeet-greedy",
+      "repetition" : 7,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 66.557958,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 66.649417
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 72.434917,
+      "firstTextMs" : 72.945083,
+      "model" : "orukeet",
+      "repetition" : 7,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 72.945083,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 73.04754199999999
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 73.02529200000001,
+      "firstTextMs" : 73.653375,
+      "model" : "parakeet",
+      "repetition" : 7,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 73.653375,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 73.74325
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 72.769584,
+      "firstTextMs" : 73.433584,
+      "model" : "parakeet",
+      "repetition" : 8,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 73.433584,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 73.522334
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 73.82604099999999,
+      "firstTextMs" : 74.449084,
+      "model" : "orukeet",
+      "repetition" : 8,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 74.449084,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 74.53524999999999
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 68.208375,
+      "firstTextMs" : 69.005,
+      "model" : "orukeet-greedy",
+      "repetition" : 8,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 69.005,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 69.102041
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 67.939666,
+      "firstTextMs" : 68.533666,
+      "model" : "orukeet-greedy",
+      "repetition" : 9,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 68.533666,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 68.619291
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 72.22575,
+      "firstTextMs" : 72.848625,
+      "model" : "orukeet",
+      "repetition" : 9,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 72.848625,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 72.94208300000001
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/fr_fr.source.wav",
+      "audioSHA256" : "84b9775ac39f437bfd565f5912942d1bde2237bded75473d98486499f200c990",
+      "audioSeconds" : 9.42,
+      "finalizationMs" : 72.662166,
+      "firstTextMs" : 73.236666,
+      "model" : "parakeet",
+      "repetition" : 9,
+      "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 73.236666,
+          "text" : "Les voyageurs à destination de pays où les taxes sont élevées peuvent parfois faire des économies considérables, en particulier sur des produits comme les boissons alcoolisées ou le tabac."
+        }
+      ],
+      "wallMs" : 73.342041
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 58.366458,
+      "firstTextMs" : 58.83525,
+      "model" : "parakeet",
+      "repetition" : 0,
+      "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.83525,
+          "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 58.888833
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 57.645375,
+      "firstTextMs" : 58.11425,
+      "model" : "orukeet",
+      "repetition" : 0,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.11425,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 58.163958
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 53.801042,
+      "firstTextMs" : 54.340209,
+      "model" : "orukeet-greedy",
+      "repetition" : 0,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 54.340209,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 54.386834
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 53.921041,
+      "firstTextMs" : 54.473124999999996,
+      "model" : "orukeet-greedy",
+      "repetition" : 1,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 54.473124999999996,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 54.528915999999995
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 57.926666000000004,
+      "firstTextMs" : 58.505,
+      "model" : "orukeet",
+      "repetition" : 1,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.505,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 58.555166
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 58.585917,
+      "firstTextMs" : 59.097708,
+      "model" : "parakeet",
+      "repetition" : 1,
+      "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 59.097708,
+          "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 59.150332999999996
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 57.685874999999996,
+      "firstTextMs" : 58.337291,
+      "model" : "parakeet",
+      "repetition" : 2,
+      "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.337291,
+          "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 58.398041
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 58.334958,
+      "firstTextMs" : 58.890041999999994,
+      "model" : "orukeet",
+      "repetition" : 2,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.890041999999994,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 58.946042
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 54.005083,
+      "firstTextMs" : 54.552375,
+      "model" : "orukeet-greedy",
+      "repetition" : 2,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 54.552375,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 54.6075
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 53.993625,
+      "firstTextMs" : 54.468416999999995,
+      "model" : "orukeet-greedy",
+      "repetition" : 3,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 54.468416999999995,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 54.522124999999996
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 58.270416999999995,
+      "firstTextMs" : 58.839625,
+      "model" : "orukeet",
+      "repetition" : 3,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.839625,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 58.889458999999995
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 58.299667,
+      "firstTextMs" : 58.834875000000004,
+      "model" : "parakeet",
+      "repetition" : 3,
+      "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.834875000000004,
+          "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 58.885959
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 58.929708,
+      "firstTextMs" : 59.397,
+      "model" : "parakeet",
+      "repetition" : 4,
+      "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 59.397,
+          "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 59.44925
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 58.021084,
+      "firstTextMs" : 58.479499999999994,
+      "model" : "orukeet",
+      "repetition" : 4,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.479499999999994,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 58.527750000000005
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 53.901708,
+      "firstTextMs" : 54.439665999999995,
+      "model" : "orukeet-greedy",
+      "repetition" : 4,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 54.439665999999995,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 54.492458
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 54.857000000000006,
+      "firstTextMs" : 55.440375,
+      "model" : "orukeet-greedy",
+      "repetition" : 5,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 55.440375,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 55.494084
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 57.897,
+      "firstTextMs" : 58.449833,
+      "model" : "orukeet",
+      "repetition" : 5,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.449833,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 58.508292000000004
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 58.741416,
+      "firstTextMs" : 59.27325,
+      "model" : "parakeet",
+      "repetition" : 5,
+      "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 59.27325,
+          "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 59.327208
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 57.973583000000005,
+      "firstTextMs" : 58.791458,
+      "model" : "parakeet",
+      "repetition" : 6,
+      "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.791458,
+          "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 58.845707999999995
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 57.863167,
+      "firstTextMs" : 58.433,
+      "model" : "orukeet",
+      "repetition" : 6,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.433,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 58.487792
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 53.912625,
+      "firstTextMs" : 54.471792,
+      "model" : "orukeet-greedy",
+      "repetition" : 6,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 54.471792,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 54.524333
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 54.291708,
+      "firstTextMs" : 54.742540999999996,
+      "model" : "orukeet-greedy",
+      "repetition" : 7,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 54.742540999999996,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 54.796666
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 58.324167,
+      "firstTextMs" : 58.883958,
+      "model" : "orukeet",
+      "repetition" : 7,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.883958,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 58.935042
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 59.405167,
+      "firstTextMs" : 59.896875,
+      "model" : "parakeet",
+      "repetition" : 7,
+      "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 59.896875,
+          "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 59.948709
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 60.674,
+      "firstTextMs" : 61.235959,
+      "model" : "parakeet",
+      "repetition" : 8,
+      "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 61.235959,
+          "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 61.287334
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 59.620041,
+      "firstTextMs" : 60.157791,
+      "model" : "orukeet",
+      "repetition" : 8,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 60.157791,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 60.218416
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 55.443625000000004,
+      "firstTextMs" : 55.988542,
+      "model" : "orukeet-greedy",
+      "repetition" : 8,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 55.988542,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 56.040833
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 54.767666999999996,
+      "firstTextMs" : 55.252417,
+      "model" : "orukeet-greedy",
+      "repetition" : 9,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 55.252417,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 55.303167
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 59.684708,
+      "firstTextMs" : 60.196875,
+      "model" : "orukeet",
+      "repetition" : 9,
+      "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 60.196875,
+          "text" : "Esto parece tener sentido, ya que en la Tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 60.247542
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/es_419.source.wav",
+      "audioSHA256" : "9821b0ec296bd5758677536fdad9a2b51225e637447567da04c803d2d6ac8780",
+      "audioSeconds" : 7.68,
+      "finalizationMs" : 58.718667,
+      "firstTextMs" : 59.226334,
+      "model" : "parakeet",
+      "repetition" : 9,
+      "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 59.226334,
+          "text" : "Esto parece tener sentido, ya que en la tierra no se percibe su movimiento, ¿cierto?"
+        }
+      ],
+      "wallMs" : 59.280667
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 57.757083,
+      "firstTextMs" : 58.308667,
+      "model" : "parakeet",
+      "repetition" : 0,
+      "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.308667,
+          "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 58.354000000000006
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 58.613375000000005,
+      "firstTextMs" : 59.108124999999994,
+      "model" : "orukeet",
+      "repetition" : 0,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 59.108124999999994,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 59.170167
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 54.635957999999995,
+      "firstTextMs" : 55.106584,
+      "model" : "orukeet-greedy",
+      "repetition" : 0,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 55.106584,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 55.211625
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 54.309917,
+      "firstTextMs" : 54.880542,
+      "model" : "orukeet-greedy",
+      "repetition" : 1,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 54.880542,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 54.92466700000001
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 59.657125,
+      "firstTextMs" : 60.1625,
+      "model" : "orukeet",
+      "repetition" : 1,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 60.1625,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 60.210583
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 58.489875,
+      "firstTextMs" : 58.926834,
+      "model" : "parakeet",
+      "repetition" : 1,
+      "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.926834,
+          "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 58.993959
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 58.064875,
+      "firstTextMs" : 58.590875000000004,
+      "model" : "parakeet",
+      "repetition" : 2,
+      "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.590875000000004,
+          "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 58.639292000000005
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 58.740292,
+      "firstTextMs" : 59.358624999999996,
+      "model" : "orukeet",
+      "repetition" : 2,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 59.358624999999996,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 59.403625
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 54.096875000000004,
+      "firstTextMs" : 54.584583,
+      "model" : "orukeet-greedy",
+      "repetition" : 2,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 54.584583,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 54.63425
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 53.8705,
+      "firstTextMs" : 54.361167,
+      "model" : "orukeet-greedy",
+      "repetition" : 3,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 54.361167,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 54.412292
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 58.328917000000004,
+      "firstTextMs" : 58.763208,
+      "model" : "orukeet",
+      "repetition" : 3,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.763208,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 58.816374999999994
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 57.9515,
+      "firstTextMs" : 58.412875,
+      "model" : "parakeet",
+      "repetition" : 3,
+      "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.412875,
+          "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 58.457417
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 57.704375,
+      "firstTextMs" : 58.238749999999996,
+      "model" : "parakeet",
+      "repetition" : 4,
+      "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.238749999999996,
+          "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 58.285542
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 59.458208,
+      "firstTextMs" : 60.020833,
+      "model" : "orukeet",
+      "repetition" : 4,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 60.020833,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 60.080957999999995
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 54.952667,
+      "firstTextMs" : 55.458833,
+      "model" : "orukeet-greedy",
+      "repetition" : 4,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 55.458833,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 55.505125
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 54.478333,
+      "firstTextMs" : 54.950958,
+      "model" : "orukeet-greedy",
+      "repetition" : 5,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 54.950958,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 54.996916
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 59.348833,
+      "firstTextMs" : 59.886500000000005,
+      "model" : "orukeet",
+      "repetition" : 5,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 59.886500000000005,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 59.9425
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 58.538417,
+      "firstTextMs" : 59.050917,
+      "model" : "parakeet",
+      "repetition" : 5,
+      "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 59.050917,
+          "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 59.099542
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 59.874125,
+      "firstTextMs" : 60.398374999999994,
+      "model" : "parakeet",
+      "repetition" : 6,
+      "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 60.398374999999994,
+          "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 60.442
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 59.642542,
+      "firstTextMs" : 60.225292,
+      "model" : "orukeet",
+      "repetition" : 6,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 60.225292,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 60.27375
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 54.410624999999996,
+      "firstTextMs" : 55.006916000000004,
+      "model" : "orukeet-greedy",
+      "repetition" : 6,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 55.006916000000004,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 55.051666
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 55.294167,
+      "firstTextMs" : 55.942375000000006,
+      "model" : "orukeet-greedy",
+      "repetition" : 7,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 55.942375000000006,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 55.9945
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 59.884958000000005,
+      "firstTextMs" : 60.393084,
+      "model" : "orukeet",
+      "repetition" : 7,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 60.393084,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 60.442417
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 59.730582999999996,
+      "firstTextMs" : 60.199709,
+      "model" : "parakeet",
+      "repetition" : 7,
+      "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 60.199709,
+          "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 60.244625000000006
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 59.395709,
+      "firstTextMs" : 59.9595,
+      "model" : "parakeet",
+      "repetition" : 8,
+      "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 59.9595,
+          "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 60.006084
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 59.4335,
+      "firstTextMs" : 60.031667,
+      "model" : "orukeet",
+      "repetition" : 8,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 60.031667,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 60.075417
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 54.177541000000005,
+      "firstTextMs" : 54.726667,
+      "model" : "orukeet-greedy",
+      "repetition" : 8,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 54.726667,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 54.76925
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 54.683125,
+      "firstTextMs" : 55.14979099999999,
+      "model" : "orukeet-greedy",
+      "repetition" : 9,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 55.14979099999999,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 55.193958
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 58.415707999999995,
+      "firstTextMs" : 58.868958,
+      "model" : "orukeet",
+      "repetition" : 9,
+      "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.868958,
+          "text" : "Tas mums ir devis vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 58.916833000000004
+    },
+    {
+      "audio" : "\/Users\/nathanroll\/Documents\/orukeet-coreml\/demos\/multilingual\/audio\/lv_lv.source.wav",
+      "audioSHA256" : "65e6d3902030682fd34a4950950b7a84541ed4d110572be73c3d3947f1fbcb8d",
+      "audioSeconds" : 7.14,
+      "finalizationMs" : 57.652,
+      "firstTextMs" : 58.115917,
+      "model" : "parakeet",
+      "repetition" : 9,
+      "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus.",
+      "thermalState" : 0,
+      "updates" : [
+        {
+          "confirmed" : false,
+          "elapsedMs" : 58.115917,
+          "text" : "Tas mums ir devas vilcienus, automašīnas un daudz citas transportlīdzekļus."
+        }
+      ],
+      "wallMs" : 58.160999999999994
+    }
+  ],
+  "memoryBytes" : 137438953472,
+  "mode" : "streaming",
+  "models" : [
+    {
+      "directory" : "\/Users\/nathanroll\/Documents\/orukeet-coreml-research\/parakeet",
+      "label" : "parakeet",
+      "loadMs" : 120.234208
+    },
+    {
+      "directory" : "\/Users\/nathanroll\/Documents\/orukeet-coreml-research\/orukeet-baseline",
+      "label" : "orukeet",
+      "loadMs" : 78.751167
+    },
+    {
+      "directory" : "\/Users\/nathanroll\/Documents\/orukeet-coreml-research\/orukeet-greedy",
+      "label" : "orukeet-greedy",
+      "loadMs" : 81.037291
+    }
+  ],
+  "os" : "Version 26.4.1 (Build 25E253)",
+  "paced" : false,
+  "processors" : 18,
+  "repetitions" : 10,
+  "schemaVersion" : 1,
+  "warmup" : 2
+}

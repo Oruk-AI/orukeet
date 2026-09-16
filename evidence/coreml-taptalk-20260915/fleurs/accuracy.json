@@ -1,0 +1,198 @@
+{
+  "corpus_sha256": "56fa48f96940a294a084d0d0065da451894b8b428606ba30e097cd4ee49dd587",
+  "source_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+  "sample_count": 64,
+  "scope": "Small regression sample; not the full published evaluation",
+  "scorer": "evaluation/standard_asr/scoring.py",
+  "models": {
+    "parakeet": {
+      "words": 1215,
+      "errors": 107,
+      "wer": 0.08806584362139917,
+      "languages": {
+        "en": {
+          "words": 155,
+          "errors": 7,
+          "utterances": 8
+        },
+        "fr": {
+          "words": 195,
+          "errors": 15,
+          "utterances": 8
+        },
+        "es": {
+          "words": 154,
+          "errors": 5,
+          "utterances": 8
+        },
+        "lv": {
+          "words": 113,
+          "errors": 44,
+          "utterances": 8
+        },
+        "de": {
+          "words": 182,
+          "errors": 4,
+          "utterances": 8
+        },
+        "it": {
+          "words": 158,
+          "errors": 19,
+          "utterances": 8
+        },
+        "uk": {
+          "words": 135,
+          "errors": 6,
+          "utterances": 8
+        },
+        "ru": {
+          "words": 123,
+          "errors": 7,
+          "utterances": 8
+        }
+      }
+    },
+    "orukeet": {
+      "words": 1215,
+      "errors": 99,
+      "wer": 0.08148148148148149,
+      "languages": {
+        "en": {
+          "words": 155,
+          "errors": 4,
+          "utterances": 8
+        },
+        "fr": {
+          "words": 195,
+          "errors": 14,
+          "utterances": 8
+        },
+        "es": {
+          "words": 154,
+          "errors": 5,
+          "utterances": 8
+        },
+        "lv": {
+          "words": 113,
+          "errors": 41,
+          "utterances": 8
+        },
+        "de": {
+          "words": 182,
+          "errors": 3,
+          "utterances": 8
+        },
+        "it": {
+          "words": 158,
+          "errors": 19,
+          "utterances": 8
+        },
+        "uk": {
+          "words": 135,
+          "errors": 6,
+          "utterances": 8
+        },
+        "ru": {
+          "words": 123,
+          "errors": 7,
+          "utterances": 8
+        }
+      }
+    },
+    "orukeet-greedy": {
+      "words": 1215,
+      "errors": 99,
+      "wer": 0.08148148148148149,
+      "languages": {
+        "en": {
+          "words": 155,
+          "errors": 4,
+          "utterances": 8
+        },
+        "fr": {
+          "words": 195,
+          "errors": 14,
+          "utterances": 8
+        },
+        "es": {
+          "words": 154,
+          "errors": 5,
+          "utterances": 8
+        },
+        "lv": {
+          "words": 113,
+          "errors": 41,
+          "utterances": 8
+        },
+        "de": {
+          "words": 182,
+          "errors": 3,
+          "utterances": 8
+        },
+        "it": {
+          "words": 158,
+          "errors": 19,
+          "utterances": 8
+        },
+        "uk": {
+          "words": 135,
+          "errors": 6,
+          "utterances": 8
+        },
+        "ru": {
+          "words": 123,
+          "errors": 7,
+          "utterances": 8
+        }
+      }
+    },
+    "orukeet-nemo": {
+      "words": 1215,
+      "errors": 92,
+      "wer": 0.0757201646090535,
+      "languages": {
+        "en": {
+          "words": 155,
+          "errors": 5,
+          "utterances": 8
+        },
+        "fr": {
+          "words": 195,
+          "errors": 11,
+          "utterances": 8
+        },
+        "es": {
+          "words": 154,
+          "errors": 4,
+          "utterances": 8
+        },
+        "lv": {
+          "words": 113,
+          "errors": 40,
+          "utterances": 8
+        },
+        "de": {
+          "words": 182,
+          "errors": 3,
+          "utterances": 8
+        },
+        "it": {
+          "words": 158,
+          "errors": 17,
+          "utterances": 8
+        },
+        "uk": {
+          "words": 135,
+          "errors": 5,
+          "utterances": 8
+        },
+        "ru": {
+          "words": 123,
+          "errors": 7,
+          "utterances": 8
+        }
+      }
+    }
+  },
+  "greedy_exact_text_match": true
+}

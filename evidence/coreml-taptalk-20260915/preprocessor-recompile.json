@@ -1,0 +1,10 @@
+[
+  {
+    "audio": "jfk.wav",
+    "outputs_byte_identical": true
+  },
+  {
+    "audio": "fr_fr.source.wav",
+    "outputs_byte_identical": true
+  }
+]

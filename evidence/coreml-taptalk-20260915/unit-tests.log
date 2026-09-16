@@ -1,0 +1,6 @@
+scikit-learn version 1.9.1 is not supported. Minimum required version: 0.17. Maximum required version: 1.5.1. Disabling scikit-learn conversion API.
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.007s
+
+OK

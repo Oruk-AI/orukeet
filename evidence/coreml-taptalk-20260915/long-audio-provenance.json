@@ -1,0 +1,11 @@
+{
+  "source_url": "https://raw.githubusercontent.com/FluidInference/mobius/89ffc37c9520677a7819d1bbad144cc7ace3a0b0/models/stt/parakeet-tdt-v3-0.6b/coreml/audio/yc_first_minute_16k.wav",
+  "sha256": "555404115420c8b4a77fcfacc450ecfc767211ca7b449a9dcb292b1734256103",
+  "bytes": 1920090,
+  "paced_clip": {
+    "source_start_seconds": 0,
+    "source_end_seconds": 29.95075,
+    "sha256": "10357a02e138780f9b19b1d93535ba344a160d50f0b7e115f81d19d539b5b043"
+  },
+  "duration_seconds": 29.95075
+}
