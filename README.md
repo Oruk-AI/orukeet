@@ -79,6 +79,9 @@ mono 16 kHz and split into bounded windows for long recordings. Existing users
 should upgrade the package and rerun `orukeet install` to regenerate their
 installation receipt with the new runtime.
 
+[Local OpenAI-compatible server](examples/local-server.md) keeps one model loaded
+for multipart uploads from curl, the OpenAI Python client or Emacs.
+
 [Usage and application workers](docs/usage.md) · [NeMo inference and fine-tuning](docs/gabor-source.md)
 
 To compile the runtime yourself, [build the Metal SDK from source](runtime/README.md).
