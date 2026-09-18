@@ -35,22 +35,21 @@ def main():
     args = parser.parse_args()
     path = ROOT/'CITATION.cff'
     record = yaml.safe_load(path.read_text(encoding='utf-8'))
-    preferred = dict(type='report', title=record['title'], authors=record['authors'],
-                     institution={'name': 'Oruk AI'}, year=2026,
-                     url='https://github.com/Oruk-AI/orukeet/blob/main/output/pdf/orukeet-technical-report.pdf')
+    preferred = dict(type='article', title=record['title'], authors=record['authors'],
+                     journal='arXiv preprint arXiv:2609.10054', year=2026,
+                     url='https://arxiv.org/abs/2609.10054')
     if args.check:
         assert record.get('preferred-citation') == preferred
     else:
-        record['message'] = 'If you use Orukeet, cite the technical report below and retain the NVIDIA Parakeet attribution.'
+        record['message'] = 'If you use Orukeet, cite the preprint below and retain the NVIDIA Parakeet attribution.'
         record['preferred-citation'] = preferred
         path.write_text(yaml.safe_dump(record, sort_keys=False, allow_unicode=True, width=100), encoding='utf-8')
     authors = ' and\n            '.join(latex(a['family-names'])+', '+latex(a['given-names']) for a in record['authors'])
-    bib = ('@techreport{roll2026orukeet,\n'
+    bib = ('@article{roll2026orukeet,\n'
            '  title = {{Orukeet}: Multilingual {ASR} with Frozen {Gabor} Kernels},\n'
            f'  author = {{{authors}}},\n'
-           '  institution = {Oruk AI},\n'
+           f'  journal = {{{preferred["journal"]}}},\n'
            '  year = {2026},\n'
-           '  type = {Technical report},\n'
            f'  url = {{{preferred["url"]}}}\n'
            '}\n')
     if args.check:

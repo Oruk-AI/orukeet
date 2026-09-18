@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: If you use Orukeet, cite the technical report below and retain the NVIDIA Parakeet attribution.
+message: If you use Orukeet, cite the preprint below and retain the NVIDIA Parakeet attribution.
 title: 'Orukeet: Multilingual ASR with Frozen Gabor Kernels'
 type: software
 authors: &id001
@@ -36,10 +36,9 @@ license: MIT
 abstract: 'A Parakeet-derived multilingual recognizer with 12,288 fitted, frozen temporal Gabor kernels.
   Code: MIT. Weights: CC BY-SA 4.0.'
 preferred-citation:
-  type: report
+  type: article
   title: 'Orukeet: Multilingual ASR with Frozen Gabor Kernels'
   authors: *id001
-  institution:
-    name: Oruk AI
+  journal: arXiv preprint arXiv:2609.10054
   year: 2026
-  url: https://github.com/Oruk-AI/orukeet/blob/main/output/pdf/orukeet-technical-report.pdf
+  url: https://arxiv.org/abs/2609.10054

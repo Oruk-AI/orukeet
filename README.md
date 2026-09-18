@@ -190,10 +190,19 @@ Code: MIT. Weights and fitted kernels: CC BY-SA 4.0, retaining NVIDIA's foundati
 
 ```bibtex
 @article{roll2026orukeet,
-  title={Orukeet: Multilingual ASR with Frozen Gabor Kernels},
-  author={Roll, Nathan and Yi, Irene and Mar{\c{s}}an, B{\"u}{\c{s}}ra and Grenez, Vianney and Stein, Gabriel and Mrkaic, Momcilo and Padjin, Pavle and Zeljkovic, Vladimir and Graham, Calbert},
-  journal={arXiv preprint arXiv:2609.10054},
-  year={2026}
+  title = {{Orukeet}: Multilingual {ASR} with Frozen {Gabor} Kernels},
+  author = {Roll, Nathan and
+            Yi, Irene and
+            Mar{\c{s}}an, B{\"u}{\c{s}}ra and
+            Grenez, Vianney and
+            Stein, Gabriel and
+            Mrkaic, Momcilo and
+            Padjin, Pavle and
+            Zeljkovic, Vladimir and
+            Graham, Calbert},
+  journal = {arXiv preprint arXiv:2609.10054},
+  year = {2026},
+  url = {https://arxiv.org/abs/2609.10054}
 }
 ```
 
