@@ -74,7 +74,7 @@ Code is MIT; weights and fitted kernels are CC BY-SA 4.0; metric records are CC 
 ## Citation
 
 ```bibtex
-@techreport{roll2026orukeet,
+@article{roll2026orukeet,
   title = {{Orukeet}: Multilingual {ASR} with Frozen {Gabor} Kernels},
   author = {Roll, Nathan and
             Yi, Irene and
@@ -85,10 +85,9 @@ Code is MIT; weights and fitted kernels are CC BY-SA 4.0; metric records are CC 
             Padjin, Pavle and
             Zeljkovic, Vladimir and
             Graham, Calbert},
-  institution = {Oruk AI},
+  journal = {arXiv preprint arXiv:2609.10054},
   year = {2026},
-  type = {Technical report},
-  url = {https://github.com/Oruk-AI/orukeet/blob/main/output/pdf/orukeet-technical-report.pdf}
+  url = {https://arxiv.org/abs/2609.10054}
 }
 ```
 
