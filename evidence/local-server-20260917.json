@@ -1,0 +1,125 @@
+{
+  "checked_at": "2026-09-18",
+  "purpose": "Local-server API and process-lifecycle validation; not an accuracy or speed benchmark",
+  "runtime": "orukeet 0.1.1 native Q8, CPU, Python 3.12 on Apple silicon macOS",
+  "model_sha256": "93ce19c6d8244acbfea980eeaf970531d4f216171578ef8e041dcc2d070a45bd",
+  "server_source_sha256": "59d06a1614392af9386391c4222bacf25dd2bc67ba599a1f49376134342adab3",
+  "sample_url": "https://oruk.ai/samples/oruk-quickstart.wav",
+  "sample_sha256": "fc25b0bd24fd7b6748ca9c6f6c2837df41873fe5dd680a54584e7b8c16b69140",
+  "expected_sample_text": "I am genuinely excited that this is finally working.",
+  "openai_sdk_version": "3.15.0",
+  "network_policy": "macOS sandbox-exec denied all outbound network operations for the server and child worker. A separate outbound TCP probe failed with PermissionError. Inbound localhost requests were allowed.",
+  "server_limits_for_test": {
+    "max_seconds": 5,
+    "max_requests": 2
+  },
+  "api_checks": [
+    {
+      "name": "health_before",
+      "passed": true
+    },
+    {
+      "name": "official_openai_sdk_json",
+      "passed": true
+    },
+    {
+      "name": "official_openai_sdk_text",
+      "passed": true
+    },
+    {
+      "name": "repeated_request",
+      "passed": true
+    },
+    {
+      "name": "sacha_emacs_fields",
+      "passed": true
+    },
+    {
+      "name": "whisper_model_alias",
+      "passed": true
+    },
+    {
+      "name": "silence",
+      "passed": true
+    },
+    {
+      "name": "format_flac",
+      "passed": true
+    },
+    {
+      "name": "format_mp3",
+      "passed": true
+    },
+    {
+      "name": "format_webm",
+      "passed": true
+    },
+    {
+      "name": "malformed_audio",
+      "passed": true
+    },
+    {
+      "name": "duration_limit",
+      "passed": true
+    },
+    {
+      "name": "forced_language_rejected",
+      "passed": true
+    },
+    {
+      "name": "prompt_rejected",
+      "passed": true
+    },
+    {
+      "name": "unsupported_response_format",
+      "passed": true
+    },
+    {
+      "name": "unsupported_streaming",
+      "passed": true
+    },
+    {
+      "name": "unknown_model",
+      "passed": true
+    },
+    {
+      "name": "browser_origin_rejected",
+      "passed": true
+    },
+    {
+      "name": "concurrent_jobs_bounded",
+      "passed": true
+    },
+    {
+      "name": "recovery_after_errors",
+      "passed": true
+    },
+    {
+      "name": "health_after",
+      "passed": true
+    }
+  ],
+  "model_loads": 1,
+  "persistent_worker_starts": 1,
+  "clean_shutdown": true,
+  "unit_tests": {
+    "focused_server_passed": 20,
+    "full_package_passed": 64,
+    "full_package_optional_model_skipped": 1,
+    "optional_model_test_separately_passed": 1,
+    "evaluation_contract_passed": 3
+  },
+  "additional_native_requests": {
+    "languages": [
+      "English",
+      "German",
+      "Spanish",
+      "French"
+    ],
+    "repeats_each": 2,
+    "silence_repeats": 2,
+    "all_http_200": true,
+    "repeated_text_stable": true
+  },
+  "limits": "Short fixture checks validate transport, stability and model reuse. They do not establish accuracy, throughput, or behavior under production multi-user load."
+}
