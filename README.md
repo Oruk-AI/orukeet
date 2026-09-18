@@ -39,6 +39,13 @@ through OpenWhispr’s existing sherpa-onnx runtime.
 
 [Follow the file-upload walkthrough](https://oruk.ai/guides/orukeet-local-transcription#openwhispr) for the exact settings and a public sample with its observed transcript. Audio Upload needs its own model selection even when Orukeet is active for dictation.
 
+[TapTalk 0.4.0](https://github.com/vakharwalad23/tap-talk/releases/tag/v0.4.0)
+is an open-source macOS dictation app with an Orukeet Core ML engine. Download
+Orukeet from its **Models** page; to switch between installed engines, use
+**Settings → Local model**. Orukeet transcribes completed recordings in this
+release; TapTalk's optional live typing uses Parakeet. See the
+[TapTalk repository](https://github.com/vakharwalad23/tap-talk) for setup and support.
+
 ## Run speech recognition
 
 [Follow the local deployment tutorial](https://oruk.ai/guides/orukeet-local-transcription) for a fresh Python environment, a supplied recording, actual output and a reusable file runner. The tutorial includes the tested package version and artifact hashes.
