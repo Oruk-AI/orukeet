@@ -9,6 +9,15 @@
         "revision" : "ddc95f4d03d5be12bf84eeb6e4bde5b724356d88",
         "version" : "0.15.5-orukeet.1"
       }
+    },
+    {
+      "identity" : "zipfoundation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/weichsel/ZIPFoundation.git",
+      "state" : {
+        "revision" : "22787ffb59de99e5dc1fbfe80b19c97a904ad48d",
+        "version" : "0.9.20"
+      }
     }
   ],
   "version" : 3

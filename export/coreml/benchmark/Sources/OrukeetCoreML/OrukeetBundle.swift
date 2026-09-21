@@ -1,9 +1,9 @@
 import CryptoKit
 import Foundation
 
-/// Immutable portable model identity for the app's existing download manager.
-/// Verify the downloaded ZIP, extract it, then compile its archiveRoot directory
-/// once with OrukeetLocalModels.compilePackages. No network access occurs here.
+/// Immutable portable model identity used by OrukeetModelStore. Applications
+/// with their own installer may verify the archive here before extraction and
+/// compilation. This descriptor itself never accesses the network.
 public struct OrukeetBundle: Sendable {
     public let url: URL
     public let bytes: Int64

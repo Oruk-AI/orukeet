@@ -1,5 +1,5 @@
 {
-  "originHash" : "0f822b9ff282756bfc82be371a7ed48c2fc51d8e361f55f2297ac44e462ceb8e",
+  "originHash" : "0882eaca39d95d7b463f22ddf2cffc50ab6a97778353ade0a7a25c5576741bc2",
   "pins" : [
     {
       "identity" : "fluidaudio",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "ddc95f4d03d5be12bf84eeb6e4bde5b724356d88",
         "version" : "0.15.5-orukeet.1"
+      }
+    },
+    {
+      "identity" : "zipfoundation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/weichsel/ZIPFoundation.git",
+      "state" : {
+        "revision" : "22787ffb59de99e5dc1fbfe80b19c97a904ad48d",
+        "version" : "0.9.20"
       }
     }
   ],

@@ -8,6 +8,7 @@ on:
       - 'Package.swift'
       - 'Package.resolved'
       - 'export/coreml/**'
+      - 'integrations/openwhispr/ios/Example/**'
       - '.github/workflows/coreml-ios.yml'
       - 'demos/fixtures/**'
       - 'demos/multilingual/audio/**'
@@ -16,6 +17,7 @@ on:
       - 'Package.swift'
       - 'Package.resolved'
       - 'export/coreml/**'
+      - 'integrations/openwhispr/ios/Example/**'
       - '.github/workflows/coreml-ios.yml'
       - 'demos/fixtures/**'
       - 'demos/multilingual/audio/**'
@@ -66,11 +68,22 @@ jobs:
             IPHONEOS_DEPLOYMENT_TARGET=17.0 \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO
+      - name: Compile the complete example app for iOS 17
+        run: |
+          xcodebuild build \
+            -project integrations/openwhispr/ios/Example/OrukeetExample.xcodeproj \
+            -scheme OrukeetExample \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath "$RUNNER_TEMP/orukeet-example-ios-build" \
+            IPHONEOS_DEPLOYMENT_TARGET=17.0 \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO
 
   simulator-runtime:
     name: Portable models on iOS Simulator
     runs-on: macos-15
-    timeout-minutes: 40
+    timeout-minutes: 55
     env:
       DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
       ORUKEET_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
@@ -129,6 +142,24 @@ jobs:
             ENABLE_TESTABILITY=YES \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO 2>&1 | tee "$ORUKEET_RUNTIME_EVIDENCE/xcodebuild.log"
+      - name: Install and transcribe through the complete iOS app
+        run: |
+          set -o pipefail
+          export TEST_RUNNER_ORUKEET_EXAMPLE_TEST_ARCHIVE="$ORUKEET_RUNTIME_ROOT/int8.zip"
+          export TEST_RUNNER_ORUKEET_EXAMPLE_TEST_FIXTURE="$GITHUB_WORKSPACE/demos/fixtures/jfk.wav"
+          export TEST_RUNNER_ORUKEET_EXAMPLE_TEST_REPORT="$ORUKEET_RUNTIME_EVIDENCE/example-app.json"
+          xcodebuild test \
+            -project integrations/openwhispr/ios/Example/OrukeetExample.xcodeproj \
+            -scheme OrukeetExample \
+            -configuration Release \
+            -destination "platform=iOS Simulator,id=$ORUKEET_SIMULATOR_UDID" \
+            -parallel-testing-enabled NO \
+            -only-testing:OrukeetExampleUITests \
+            -derivedDataPath "$RUNNER_TEMP/orukeet-example-simulator-build" \
+            -resultBundlePath "$RUNNER_TEMP/orukeet-example-simulator-tests.xcresult" \
+            IPHONEOS_DEPLOYMENT_TARGET=17.0 \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO 2>&1 | tee "$ORUKEET_RUNTIME_EVIDENCE/example-xcodebuild.log"
       - name: Require executed model checks and record provenance
         run: |
           python3 - <<'PY'
@@ -143,12 +174,23 @@ jobs:
                       'swift_archive_verification_passed'):
               assert report[key] is True, key
           assert len(report['fixture_results']) == 4
+          example = json.loads((root / 'example-app.json').read_text())
+          assert example['scope'] == 'iOS Simulator example app end-to-end', example
+          for key in ('all_assertions_passed', 'install_and_prepare_passed',
+                      'repeat_identical', 'offline_relaunch_passed'):
+              assert example[key] is True, key
+          assert 'country' in example['transcript'].lower(), example
           engine = pathlib.Path('export/coreml/benchmark/Sources/OrukeetCoreML/OrukeetEngine.swift')
           report.update({
               'head_sha': os.environ['ORUKEET_HEAD_SHA'],
               'checkout_sha': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
               'engine_source_sha256': hashlib.sha256(engine.read_bytes()).hexdigest(),
               'bundle_source_sha256': hashlib.sha256(engine.with_name('OrukeetBundle.swift').read_bytes()).hexdigest(),
+              'app_service_sources_sha256': {
+                  name: hashlib.sha256(engine.with_name(name).read_bytes()).hexdigest()
+                  for name in ('OrukeetAudio.swift', 'OrukeetModelStore.swift', 'OrukeetTranscriber.swift')
+              },
+              'example_app': example,
               'package_resolved': json.loads(pathlib.Path('Package.resolved').read_text()),
               'archive_verification': json.loads((root / 'archive-verification.json').read_text()),
               'simulator_setup': json.loads((root / 'simulator-setup.json').read_text()),

@@ -19,55 +19,76 @@ FluidAudio, switch that package reference to the **same URL and version in
 Orukeet's Package.swift**. Keep a single FluidAudio dependency in the graph;
 `import FluidAudio` and the existing APIs remain unchanged.
 
+## Run the complete iOS app
+
+Open [Example/OrukeetExample.xcodeproj](Example/OrukeetExample.xcodeproj), select
+the **OrukeetExample** scheme and an iPhone or simulator, then run. For a physical
+iPhone, select your development team in Signing & Capabilities first. The app
+downloads and installs the pinned model, prepares it, records microphone audio,
+and transcribes after Stop. It also imports existing audio files. See the
+[example instructions](Example/README.md) for the automated fixture test.
+
+The example contains the complete recording and model lifecycle, including
+microphone permission, cancellation, interruptions and background cleanup. It
+is a reference app ready to run from this checkout. OpenWhispr's mobile source
+was not available for a direct patch; its existing UI calls the same service
+shown below.
+
 ## Install once, warm once, reuse
 
-Use the app's existing download and ZIP extraction machinery with
-`OrukeetBundle.int8.url`. The descriptor pins the archive size and SHA-256.
-Verification, extraction and Core ML compilation belong in the installation
-worker, outside the main actor and transcription timer:
+Keep **one service** alive for successive recordings. `install()` handles the
+download, SHA-256 and size verification, safe ZIP extraction, destination-device
+Core ML compilation and atomic publication. The cache preserves vocabulary and
+license notices and is keyed by model identity, architecture and OS build.
+Downloaded model storage is excluded from backups.
+
+Call `prepare()` when selecting the model or opening the recorder, so loading
+and the first prediction finish before the user stops recording:
 
 ```swift
 import OrukeetCoreML
 
-let bundle = OrukeetBundle.int8
-try bundle.verifyArchive(at: downloadedZIP)
-// Existing ZIP extractor: extract downloadedZIP into extractionDirectory.
-let source = extractionDirectory.appendingPathComponent(bundle.archiveRoot)
-try OrukeetLocalModels.compilePackages(from: source, to: revisionCache)
+let transcriber = OrukeetTranscriber()
+try await transcriber.install() // First use downloads; later calls reuse cache.
+try await transcriber.prepare() // Idempotent until unload; discards warmup text.
+
+// After recording stops: preserve Chad's existing 16 kHz mono Float PCM path.
+let result = try await transcriber.transcribe(samples: mono16kSamples)
+// Use result.text in the app's existing transcript handling.
+
+// Or decode a completed CAF, WAV or M4A recording, including 44.1/48 kHz stereo:
+let fileResult = try await transcriber.transcribe(fileURL: recordingURL)
+
+// Release loaded models when leaving the recorder or under memory pressure.
+await transcriber.unload()
 ```
 
-Use a new revision-specific cache directory. Installation publishes all four
-compiled components atomically and preserves vocabulary, identity and license
-notices. It refuses to overwrite an existing cache. Compile portable
-`.mlpackage` files on the destination device; compiled caches are OS-specific.
+`OrukeetAudio` converts mono/stereo files to normalized 16 kHz mono PCM off the
+main actor. It drains the recording's final partial buffer, validates finite
+samples and observes cancellation. Applications with an existing PCM recorder
+can use `transcribe(samples:)` directly without another conversion.
 
-Keep **one engine** alive for successive recordings. Start preparation when the
-model is selected or the recorder opens, so graph loading and the first Core ML
-prediction finish before the user stops recording:
+`install(progress:)` reports the current phase and extraction fraction through
+a `@Sendable` callback; dispatch UI updates to the main actor. Downloading and
+compilation use indeterminate progress. `install(fromArchive:)` uses the same
+verified installer for an archive the app already owns, without deleting it.
+`installedDirectory()` checks the local receipt, sidecars and compiled file
+inventory without network access or rehashing all compiled weights. Invalid
+existing installations are reported and never silently overwritten.
 
-```swift
-let engine = OrukeetEngine(modelDirectory: revisionCache)
-try await engine.prepare() // Idempotent until unload; warmup text is discarded.
-
-// Recording has stopped; the existing capture path supplies Float PCM.
-let result = try await engine.transcribe(samples: mono16kSamples)
-insertTranscript(result.text)
-
-// Only when switching model or responding to memory pressure:
-await engine.unload()
-```
-
-`prepare()` and `transcribe()` run on the engine actor. Await preparation before
-submitting a recording, and serialize completed recordings through the app's
-queue. The engine rejects overlap with `busy`, creates fresh decoder state for
+`prepare()` and `transcribe()` run through the service actor. Await preparation
+before submitting a recording, and serialize recordings through the app's
+queue. The service rejects overlap with `busy`, creates fresh decoder state for
 every request, discards cancelled results, and defers unload until active work
-finishes. In-flight Core ML predictions can finish before cancellation is seen.
-Inference has no download or network fallback.
+finishes. Cancel and await the active task before retrying. In-flight Core ML
+compilation or prediction can finish before cancellation is seen. Preparation
+and inference never download; only an explicit `install()` may access the network.
 
-Input must be finite, normalized `[Float]` PCM at **16,000 Hz, one channel**, with
-at least 300 ms of audio. Divide Int16 by 32768 before passing it as Float.
-FluidAudio chunks long recordings automatically; pass the complete recording.
-The v3 vocabulary and decoder apply to English too; there is no v2 model switch.
+The samples API requires finite, normalized `[Float]` PCM at **16,000 Hz, one
+channel**, with at least 300 ms of audio. Divide Int16 by 32768 before passing it
+as Float. FluidAudio chunks long recordings automatically; pass the complete
+recording. The v3 vocabulary and decoder apply to English too; there is no v2
+model switch.
 
 ## Speed choices
 
@@ -102,6 +123,10 @@ accuracy benchmark. There is no separate Parakeet model in the app integration.
 [Validation evidence](../../../evidence/coreml-openwhispr-20260920/README.md)
 records the build, runtime and model checks. The CI compiles portable models and
 runs multilingual, long-recording and lifecycle checks inside iOS Simulator.
+It also builds the complete example app for iOS 17 and drives installation,
+preparation, repeated file transcription and a cold offline cache relaunch
+through its actual UI. Unit checks cover installer rollback, archive validation,
+audio conversion and service cancellation without model downloads.
 [Physical-device measurements](device-qualification.md) remain a deployment
 follow-up for the app's supported iPhones, including latency, RAM and thermals.
 
