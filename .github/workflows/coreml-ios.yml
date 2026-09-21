@@ -67,13 +67,15 @@ jobs:
     timeout-minutes: 40
     env:
       DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
-      ORUKEET_RUNTIME_ROOT: ${{ runner.temp }}/orukeet-ios-runtime
-      ORUKEET_RUNTIME_EVIDENCE: ${{ runner.temp }}/orukeet-ios-runtime-evidence
       ORUKEET_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
     defaults:
       run:
         shell: bash
     steps:
+      - name: Set runtime scratch paths
+        run: |
+          echo "ORUKEET_RUNTIME_ROOT=$RUNNER_TEMP/orukeet-ios-runtime" >> "$GITHUB_ENV"
+          echo "ORUKEET_RUNTIME_EVIDENCE=$RUNNER_TEMP/orukeet-ios-runtime-evidence" >> "$GITHUB_ENV"
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
