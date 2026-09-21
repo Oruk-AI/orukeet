@@ -33,7 +33,10 @@ struct OrukeetPortableRuntimeTests {
         try #require(AVAudioFramePosition(buffer.frameLength) == file.length)
         let channel = try #require(buffer.floatChannelData)[0]
         let samples = Array(UnsafeBufferPointer(start: channel, count: Int(buffer.frameLength)))
-        try #require(samples.allSatisfy(\.isFinite))
+        // Evaluate outside the macro: Swift 6.1 treats a key-path predicate
+        // forwarded through #require's generated closure as throwing.
+        let finiteSamples = samples.allSatisfy(\.isFinite)
+        try #require(finiteSamples)
         return Fixture(
             path: relativePath, samples: samples,
             sha256: SHA256.hash(data: try Data(contentsOf: url))
