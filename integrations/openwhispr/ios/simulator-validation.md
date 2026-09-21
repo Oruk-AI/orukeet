@@ -6,6 +6,11 @@ iOS 18.5 simulator on a GitHub-hosted macOS runner. It tests Core ML model
 compilation and inference inside the simulated iOS process, rather than loading
 a previously compiled Mac cache.
 
+The CI setup explicitly inventories the installed runtimes, creates an iPhone 16
+under the exact iOS 18.5 runtime, boots it, and selects its UDID. It does not rely
+on a preexisting named device. Setup fails with an inventory receipt if that
+runtime is absent; it never silently substitutes another iOS version.
+
 The job downloads the existing public greedy inference ZIP at Hugging Face
 revision `43142dd1897f9ddadcd70173fcb5ff45c08aa951` onto the ephemeral runner.
 It authenticates the pinned archive and all payload files before extraction.
@@ -36,6 +41,7 @@ export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPORT='/path/to/runtime.json'
 xcodebuild test -scheme OrukeetCoreMLBenchmark-Package -configuration Release \
   -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
   -parallel-testing-enabled NO -only-testing:OrukeetCoreMLTests \
+  ENABLE_TESTABILITY=YES \
   OTHER_SWIFT_FLAGS='$(inherited) -parse-as-library' \
   IPHONEOS_DEPLOYMENT_TARGET=17.0 CODE_SIGNING_ALLOWED=NO
 ```
@@ -44,6 +50,8 @@ The package-wide scheme includes its command-line benchmark, whose `@main`
 entry point needs `-parse-as-library` under Xcode's generated build settings.
 SwiftPM's ordinary `swift build` already supplies that flag. The library-only
 scheme remains appropriate for the separate generic iOS build.
+`ENABLE_TESTABILITY=YES` permits the unit suite's `@testable` imports in this
+Release test build; the separate iOS library build retains its ordinary settings.
 
 Xcode strips the [`TEST_RUNNER_` prefix](https://developer.apple.com/documentation/xcode/environment-variable-reference)
 when passing these variables to the test process. Simulator processes can access

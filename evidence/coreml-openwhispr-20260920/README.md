@@ -73,9 +73,16 @@ swift test --package-path export/coreml/benchmark --configuration release
 
 ## Qualification limits
 
+The [paired English16 diagnostic](english16/README.md) also completed all 32
+transcriptions at commit `541cf669e6da52c1e4e587f2ed3599d962c96555`. With the same
+343-word denominator, Parakeet v2 had 16 errors (4.66% WER) and Orukeet had 20
+(5.83%). This small reused set is a regression check, not general English
+qualification. The seventeen scorer/staging tests passed, and raw outputs and
+asset/runtime provenance are retained with the result.
+
 No physical iPhone, iOS model execution, app build, iPhone memory/jetsam measurement,
-thermal/battery measurement, matched English-v2 accuracy test or full 25-language
-accuracy qualification was completed by the checks above. OpenWhispr's mobile
+thermal/battery measurement or full 25-language accuracy qualification was
+completed by the checks above. OpenWhispr's mobile
 repository and its exact FluidAudio version were not available. Retain the
 existing English-v2 selection and expose Orukeet as an optional multilingual
 candidate until the [device protocol](../../integrations/openwhispr/ios/device-qualification.md)
