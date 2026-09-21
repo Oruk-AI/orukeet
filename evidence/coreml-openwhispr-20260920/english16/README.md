@@ -4,6 +4,9 @@
 completed all 32 transcriptions at source commit
 `541cf669e6da52c1e4e587f2ed3599d962c96555`. The PR merge checkout, exact runtime,
 toolchain and source hashes are in [provenance.json](provenance.json).
+The [repeat run](https://github.com/Oruk-AI/orukeet/actions/runs/35570838322)
+at `60cc07cab9d45f34a43939e4768a454ed3be1b55` produced identical raw text for all
+32 transcriptions and identical error counts; see [repeat verification](repeat-validation.json).
 
 | Model | Substitutions | Deletions | Insertions | Errors / reference words | WER |
 |---|---:|---:|---:|---:|---:|

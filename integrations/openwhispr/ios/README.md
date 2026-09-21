@@ -11,6 +11,10 @@ weights already exist. This change adds iOS 17 to the Swift package, a bounded
 batch engine and installation/input lifecycle checks. Local macOS inference is
 separate from iOS build and physical-device qualification. See the
 [validation record](../../../evidence/coreml-openwhispr-20260920/README.md).
+The portable bundle has also compiled and transcribed speech inside iOS 18.5
+Simulator, including four languages, a 33-second input and unload/reload checks.
+This establishes simulator runtime compatibility; physical-iPhone qualification
+and OpenWhispr's actual app target remain pending.
 
 ## Version and model contract
 

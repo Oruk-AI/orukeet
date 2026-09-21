@@ -1,5 +1,10 @@
 # iOS Simulator model-runtime check
 
+**Passed at source commit `65199e54f1509acc7ad9d5d3897813da7f2fabee` in
+[run 35571858702](https://github.com/Oruk-AI/orukeet/actions/runs/35571858702).**
+The [runtime receipt](../../../evidence/coreml-openwhispr-20260920/simulator-runtime.json)
+contains all four speech results and the passing long-form and lifecycle checks.
+
 The `Core ML iOS validation` workflow includes a separate runtime job in addition
 to the unsigned iOS library build. This job uses Xcode 16.4 and an iPhone 16 /
 iOS 18.5 simulator on a GitHub-hosted macOS runner. It tests Core ML model
@@ -32,7 +37,10 @@ passing workflow: the report gate fails. The test also requires the iOS simulato
 compilation environment, so a Mac-only execution cannot satisfy that gate.
 
 To reproduce using existing portable model files on an Xcode-equipped Mac, run
-from `export/coreml/benchmark` with absolute paths:
+from `export/coreml/benchmark` with absolute paths. This manual command assumes
+an iPhone 16 / iOS 18.5 simulator already exists in Xcode's Devices and Simulators
+window; create it there first if needed. The CI-only setup helper creates its own
+device and uses its UDID instead of this manual name-based destination.
 
 ```sh
 export TEST_RUNNER_ORUKEET_PORTABLE_TEST_MODELS='/path/to/orukeet-r3-coreml-greedy'

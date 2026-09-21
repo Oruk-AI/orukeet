@@ -73,6 +73,23 @@ swift test --package-path export/coreml/benchmark --configuration release
 
 ## Qualification limits
 
+The portable bundle also passed actual execution inside an iPhone 16 / iOS 18.5
+simulator in [CI run 35571858702](https://github.com/Oruk-AI/orukeet/actions/runs/35571858702)
+at source commit `65199e54f1509acc7ad9d5d3897813da7f2fabee`. All four models compiled
+inside the iOS process, with the vocabulary and attribution sidecars preserved.
+The public engine completed nine transcriptions: four language fixtures, an
+English repeat, 33-second repeated speech, its first 15 seconds, another English
+repeat, and an English request after unload/reload. The long result contained
+66 words versus 29 in the first window. Repeated English output matched exactly.
+
+The simulator run executed thirteen unit tests and the portable runtime test;
+the separate opt-in Mac model test was skipped (15 discovered tests total).
+The [runtime receipt](simulator-runtime.json) retains raw text, input and engine
+hashes, selected runtime/device identity, and every passing assertion. It omits
+unselected simulator inventories and repeated setup logs, recording the full CI
+receipt's SHA-256 so that the original artifact remains identifiable. Simulator
+timings are diagnostics, not physical-device performance measurements.
+
 The [paired English16 diagnostic](english16/README.md) also completed all 32
 transcriptions at commit `541cf669e6da52c1e4e587f2ed3599d962c96555`. With the same
 343-word denominator, Parakeet v2 had 16 errors (4.66% WER) and Orukeet had 20
@@ -80,7 +97,7 @@ transcriptions at commit `541cf669e6da52c1e4e587f2ed3599d962c96555`. With the sa
 qualification. The seventeen scorer/staging tests passed, and raw outputs and
 asset/runtime provenance are retained with the result.
 
-No physical iPhone, iOS model execution, app build, iPhone memory/jetsam measurement,
+No physical iPhone, OpenWhispr app build, iPhone memory/jetsam measurement,
 thermal/battery measurement or full 25-language accuracy qualification was
 completed by the checks above. OpenWhispr's mobile
 repository and its exact FluidAudio version were not available. Retain the
