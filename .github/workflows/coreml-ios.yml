@@ -7,10 +7,14 @@ on:
     paths:
       - 'export/coreml/**'
       - '.github/workflows/coreml-ios.yml'
+      - 'demos/fixtures/**'
+      - 'demos/multilingual/audio/**'
   pull_request:
     paths:
       - 'export/coreml/**'
       - '.github/workflows/coreml-ios.yml'
+      - 'demos/fixtures/**'
+      - 'demos/multilingual/audio/**'
 
 permissions:
   contents: read
@@ -104,8 +108,11 @@ jobs:
           export TEST_RUNNER_ORUKEET_PORTABLE_TEST_MODELS="$ORUKEET_RUNTIME_ROOT/orukeet-r3-coreml-greedy"
           export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPO="$GITHUB_WORKSPACE"
           export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPORT="$ORUKEET_RUNTIME_EVIDENCE/runtime.json"
+          # Multi-product Swift packages put test actions on the package scheme.
+          # The library-only scheme used for the device build has no test action.
+          xcodebuild -list -json > "$ORUKEET_RUNTIME_EVIDENCE/schemes.json"
           xcodebuild test \
-            -scheme OrukeetCoreML \
+            -scheme OrukeetCoreMLBenchmark-Package \
             -configuration Release \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
             -parallel-testing-enabled NO \
@@ -123,7 +130,8 @@ jobs:
           report = json.loads((root / 'runtime.json').read_text())
           assert report['scope'] == 'iOS Simulator runtime smoke', report
           for key in ('all_assertions_passed', 'long_exceeds_first_window',
-                      'repeat_after_multilingual_identical', 'post_reload_identical'):
+                      'repeat_after_multilingual_identical', 'repeat_after_long_identical',
+                      'post_reload_identical'):
               assert report[key] is True, key
           assert len(report['fixture_results']) == 4
           engine = pathlib.Path('export/coreml/benchmark/Sources/OrukeetCoreML/OrukeetEngine.swift')

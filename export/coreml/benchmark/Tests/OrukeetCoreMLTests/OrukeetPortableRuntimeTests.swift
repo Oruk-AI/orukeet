@@ -71,15 +71,17 @@ struct OrukeetPortableRuntimeTests {
         let requiredComponents = ["Preprocessor", "Encoder", "Decoder", "JointDecisionv3"]
         for component in requiredComponents {
             var isDirectory: ObjCBool = false
-            try #require(files.fileExists(
+            let componentExists = files.fileExists(
                 atPath: installed.appendingPathComponent("\(component).mlmodelc").path,
-                isDirectory: &isDirectory) && isDirectory.boolValue)
+                isDirectory: &isDirectory)
+            try #require(componentExists && isDirectory.boolValue)
         }
         let sidecars = ["parakeet_vocab.json", "bundle.json", "LICENSE-WEIGHTS", "NOTICE.md", "COREML-NOTICE.txt"]
         for sidecar in sidecars {
             let expected = try Data(contentsOf: source.appendingPathComponent(sidecar))
             try #require(!expected.isEmpty)
-            try #require(try Data(contentsOf: installed.appendingPathComponent(sidecar)) == expected,
+            let actual = try Data(contentsOf: installed.appendingPathComponent(sidecar))
+            try #require(actual == expected,
                          "Device-local installation must preserve vocabulary, identity and attribution")
         }
 

@@ -33,7 +33,7 @@ from `export/coreml/benchmark` with absolute paths:
 export TEST_RUNNER_ORUKEET_PORTABLE_TEST_MODELS='/path/to/orukeet-r3-coreml-greedy'
 export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPO='/path/to/orukeet-checkout'
 export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPORT='/path/to/runtime.json'
-xcodebuild test -scheme OrukeetCoreML -configuration Release \
+xcodebuild test -scheme OrukeetCoreMLBenchmark-Package -configuration Release \
   -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
   -parallel-testing-enabled NO -only-testing:OrukeetCoreMLTests \
   IPHONEOS_DEPLOYMENT_TARGET=17.0 CODE_SIGNING_ALLOWED=NO
