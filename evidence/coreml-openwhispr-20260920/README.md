@@ -30,11 +30,34 @@ calls, discards cancelled results and defers unload until an active call finishe
 Installation compiles into a sibling staging directory and moves a complete
 cache into a new revision-specific destination; failure preserves prior installs.
 
-The library builds with this Mac's Command Line Tools. The local toolchain has
-neither the iOS SDK nor the Testing/XCTest modules, so the canonical Swift test
-suite and iOS build are delegated to the committed Xcode CI workflow. Their
-results must be checked before accepting this candidate; no CI success is
-asserted by this initial record.
+The library builds with this Mac's Command Line Tools. Since the local toolchain
+has neither the iOS SDK nor Testing/XCTest, validation also ran on an Xcode
+runner. [CI run 35567347963](https://github.com/Oruk-AI/orukeet/actions/runs/35567347963)
+passed at commit `13db0b8f53907a46bae175e5aa5f9b427054b35c`:
+
+- Six Python bundle-verifier tests passed.
+- Thirteen Swift lifecycle/installation tests passed; the opt-in model test was
+  skipped because CI had no model files. Swift Testing's summary counts 14
+  discovered tests, including that skipped test.
+- Release compilation of `OrukeetCoreML` for `arm64-apple-ios17.0` succeeded with
+  Xcode 16.4, Swift 6.1.2 and the iPhoneOS 18.5 SDK, without code signing.
+
+The ordinary repository package checks also passed. A library build does not
+compile OpenWhispr's unavailable app target or execute the model on an iPhone.
+
+The [local real-engine smoke](engine-smoke.json) passed six calls against the
+existing greedy cache on macOS 26.4.1/arm64: short speech, repeat short, natural
+29.95075-second speech, short after long, the long recording's first 15 seconds,
+and short after unload/reload. Short text was identical across all lifecycle
+checks. Full long output had 113 words versus 60 for the first 15 seconds, with
+matching opening words and additional ending content. This checks execution
+past the first model window; it is not an accuracy score.
+
+That debug-build smoke measured 88.85 ms for 5.72 seconds of audio and 318.86 ms
+for 29.95075 seconds, excluding model load. Initial load took 18.11 seconds,
+reload took 91.21 ms, and whole-process peak RSS was 529,039,360 bytes. These are
+single-run diagnostics, not release latency or memory budgets. No claim about
+an iPhone follows from them. The retained source is in [host-smoke](host-smoke/).
 
 The opt-in real-model regression uses existing models and audio, without a
 download. Its environment variables are `ORUKEET_TEST_MODELS` (compiled model
@@ -50,7 +73,7 @@ swift test --package-path export/coreml/benchmark --configuration release
 
 ## Qualification limits
 
-No physical iPhone, iOS model execution, app build, memory/jetsam measurement,
+No physical iPhone, iOS model execution, app build, iPhone memory/jetsam measurement,
 thermal/battery measurement, matched English-v2 accuracy test or full 25-language
 accuracy qualification was completed by the checks above. OpenWhispr's mobile
 repository and its exact FluidAudio version were not available. Retain the

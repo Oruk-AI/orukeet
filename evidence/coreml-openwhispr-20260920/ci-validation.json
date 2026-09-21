@@ -1,0 +1,15 @@
+{
+  "ci_run": "https://github.com/Oruk-AI/orukeet/actions/runs/35567347963",
+  "commit": "13db0b8f53907a46bae175e5aa5f9b427054b35c",
+  "conclusion": "success",
+  "xcode": "16.4",
+  "swift": "6.1.2",
+  "sdk": "iPhoneOS18.5",
+  "target": "arm64-apple-ios17.0",
+  "python_tests_passed": 6,
+  "swift_tests_passed": 13,
+  "swift_tests_skipped": 1,
+  "ios_library_build": "succeeded",
+  "physical_device_test": false,
+  "log_sha256": "66c24d21d0e204c9c69c009c8d1310c38144a75e8dd9fbf4378b67dfbce46bae"
+}

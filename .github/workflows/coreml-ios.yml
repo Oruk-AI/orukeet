@@ -3,7 +3,7 @@ name: Core ML iOS compilation
 on:
   workflow_dispatch:
   push:
-    branches: [codex/openwhispr-ios-20260920]
+    branches: [main]
     paths:
       - 'export/coreml/**'
       - '.github/workflows/coreml-ios.yml'
