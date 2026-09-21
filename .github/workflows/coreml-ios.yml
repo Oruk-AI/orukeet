@@ -54,11 +54,11 @@ jobs:
         # runs synthetic/unit checks and does not download model weights.
         run: xcrun swift test --configuration release
       - name: Compile OrukeetCoreML for iOS 17
-        # SwiftPM creates a scheme per product. Build only the library so the
-        # macOS benchmark executable is not part of the iOS build graph.
+        # Xcode generates the root package scheme as Orukeet. The separate
+        # macOS benchmark package is not part of this iOS build graph.
         run: |
           xcodebuild build \
-            -scheme OrukeetCoreML \
+            -scheme Orukeet \
             -configuration Release \
             -destination 'generic/platform=iOS' \
             -derivedDataPath "$RUNNER_TEMP/orukeet-ios-build" \
@@ -118,7 +118,7 @@ jobs:
           # The root package exposes one library with its test target.
           xcodebuild -list -json > "$ORUKEET_RUNTIME_EVIDENCE/schemes.json"
           xcodebuild test \
-            -scheme OrukeetCoreML \
+            -scheme Orukeet \
             -configuration Release \
             -destination "platform=iOS Simulator,id=$ORUKEET_SIMULATOR_UDID" \
             -parallel-testing-enabled NO \

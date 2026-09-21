@@ -56,7 +56,7 @@ export TEST_RUNNER_ORUKEET_PORTABLE_TEST_MODELS='/path/to/orukeet-r3-coreml-int8
 export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPO='/path/to/orukeet-checkout'
 export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPORT='/path/to/runtime.json'
 xcodebuild -list
-xcodebuild test -scheme OrukeetCoreML -configuration Release \
+xcodebuild test -scheme Orukeet -configuration Release \
   -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
   -parallel-testing-enabled NO -only-testing:OrukeetCoreMLTests \
   ENABLE_TESTABILITY=YES \
