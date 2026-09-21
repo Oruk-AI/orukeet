@@ -26,6 +26,10 @@ class SetupError(RuntimeError):
     pass
 
 
+class ObservationTimeout(SetupError):
+    pass
+
+
 class SimulatorSetup:
     def __init__(self, arguments: argparse.Namespace):
         self.arguments = arguments
@@ -69,9 +73,22 @@ class SimulatorSetup:
                 arguments, check=False, capture_output=True, text=True, timeout=timeout,
             )
         except subprocess.TimeoutExpired as error:
-            entry.update({"status": "timed_out", "elapsed_seconds": time.monotonic() - started})
+            # TimeoutExpired may carry bytes even when run(text=True) was used.
+            stdout = error.stdout or ""
+            stderr = error.stderr or ""
+            if isinstance(stdout, bytes):
+                stdout = stdout.decode("utf-8", errors="replace")
+            if isinstance(stderr, bytes):
+                stderr = stderr.decode("utf-8", errors="replace")
+            entry.update({
+                "status": "timed_out",
+                "elapsed_seconds": time.monotonic() - started,
+                "stdout_tail": stdout[-16_000:],
+                "stderr_tail": stderr[-16_000:],
+                "output_truncated": len(stdout) > 16_000 or len(stderr) > 16_000,
+            })
             self.save()
-            raise SetupError(f"Command exceeded {timeout}s: {' '.join(arguments)}") from error
+            raise ObservationTimeout(f"Command exceeded {timeout}s: {' '.join(arguments)}") from error
         except OSError as error:
             entry.update({"status": "launch_failed", "error": str(error)})
             self.save()
@@ -92,7 +109,23 @@ class SimulatorSetup:
         return result.stdout
 
     def inventory(self, kind: str) -> dict:
-        output = self.command("xcrun", "simctl", "list", kind, "--json")
+        # On a cold hosted runner, inventory can take over a minute even after
+        # bootstatus succeeded. A list timeout does not mean the device stopped:
+        # observe the same state once more, without creating or rebooting anything.
+        for attempt in range(2):
+            try:
+                output = self.command("xcrun", "simctl", "list", kind, "--json", timeout=120)
+                break
+            except ObservationTimeout:
+                if attempt == 1:
+                    raise
+                self.report.setdefault("inventory_retries", []).append({
+                    "kind": kind,
+                    "reason": "read-only inventory timed out; observing the same simulator state again",
+                    "existing_udid": self.report.get("udid"),
+                })
+                self.save()
+                print(f"Simulator setup: re-observing {kind} after inventory timeout", file=sys.stderr, flush=True)
         try:
             result = json.loads(output)
         except json.JSONDecodeError as error:

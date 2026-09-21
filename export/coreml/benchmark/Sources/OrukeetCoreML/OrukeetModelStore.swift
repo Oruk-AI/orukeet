@@ -286,17 +286,19 @@ public actor OrukeetModelStore {
         for component in OrukeetLocalModels.componentNames {
             let model = directory.appendingPathComponent("\(component).mlmodelc", isDirectory: true)
             try requireDirectory(model)
-            var pending = [model]
+            // Foundation can enumerate /var URLs as /private/var. Carry relative
+            // names through traversal so receipts survive the staging rename.
+            var pending = [(model, "\(component).mlmodelc")]
             var fileCount = 0
-            while let parent = pending.popLast() {
+            while let (parent, relativeParent) = pending.popLast() {
                 try Task.checkCancellation()
                 for path in try FileManager.default.contentsOfDirectory(
                     at: parent, includingPropertiesForKeys: [.isDirectoryKey, .isRegularFileKey, .isSymbolicLinkKey, .fileSizeKey]) {
                     let values = try path.resourceValues(forKeys: [.isDirectoryKey, .isRegularFileKey, .isSymbolicLinkKey, .fileSizeKey])
                     guard values.isSymbolicLink != true else { throw StoreError.invalidInstallation("symbolic link in compiled model") }
-                    if values.isDirectory == true { pending.append(path) }
+                    let relative = relativeParent + "/" + path.lastPathComponent
+                    if values.isDirectory == true { pending.append((path, relative)) }
                     else if values.isRegularFile == true, let size = values.fileSize, size > 0 {
-                        let relative = String(path.path.dropFirst(directory.path.count + 1))
                         inventory[relative] = Int64(size)
                         fileCount += 1
                     } else { throw StoreError.invalidInstallation("invalid compiled model payload") }
