@@ -1,4 +1,4 @@
-name: Core ML iOS compilation
+name: Core ML iOS validation
 
 on:
   workflow_dispatch:
@@ -59,3 +59,91 @@ jobs:
             IPHONEOS_DEPLOYMENT_TARGET=17.0 \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO
+
+  simulator-runtime:
+    name: Portable models on iOS Simulator
+    needs: compile
+    runs-on: macos-15
+    timeout-minutes: 40
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
+      ORUKEET_RUNTIME_ROOT: ${{ runner.temp }}/orukeet-ios-runtime
+      ORUKEET_RUNTIME_EVIDENCE: ${{ runner.temp }}/orukeet-ios-runtime-evidence
+      ORUKEET_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Stage and authenticate the released portable inference bundle
+        # These are the already-public inference packages, downloaded only onto
+        # the ephemeral CI runner. No training checkpoint is fetched or created.
+        run: |
+          mkdir -p "$ORUKEET_RUNTIME_ROOT" "$ORUKEET_RUNTIME_EVIDENCE"
+          curl --fail --location --retry 3 --connect-timeout 30 --max-time 300 \
+            'https://huggingface.co/oruk/orukeet/resolve/43142dd1897f9ddadcd70173fcb5ff45c08aa951/coreml/orukeet-r3-coreml-greedy.zip?download=true' \
+            --output "$ORUKEET_RUNTIME_ROOT/greedy.zip"
+          python3 export/coreml/verify_bundle.py \
+            --archive "$ORUKEET_RUNTIME_ROOT/greedy.zip" \
+            --output "$ORUKEET_RUNTIME_EVIDENCE/archive-verification.json"
+          python3 - <<'PY'
+          import os, pathlib, zipfile
+          root = pathlib.Path(os.environ['ORUKEET_RUNTIME_ROOT'])
+          # Extraction follows successful authentication and path validation.
+          with zipfile.ZipFile(root / 'greedy.zip') as archive:
+              archive.extractall(root)
+          PY
+      - name: Compile packages and run actual inference in iOS Simulator
+        working-directory: export/coreml/benchmark
+        run: |
+          set -o pipefail
+          export TEST_RUNNER_ORUKEET_PORTABLE_TEST_MODELS="$ORUKEET_RUNTIME_ROOT/orukeet-r3-coreml-greedy"
+          export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPO="$GITHUB_WORKSPACE"
+          export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPORT="$ORUKEET_RUNTIME_EVIDENCE/runtime.json"
+          xcodebuild test \
+            -scheme OrukeetCoreML \
+            -configuration Release \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
+            -parallel-testing-enabled NO \
+            -only-testing:OrukeetCoreMLTests \
+            -derivedDataPath "$RUNNER_TEMP/orukeet-simulator-build" \
+            -resultBundlePath "$RUNNER_TEMP/orukeet-simulator-tests.xcresult" \
+            IPHONEOS_DEPLOYMENT_TARGET=17.0 \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO 2>&1 | tee "$ORUKEET_RUNTIME_EVIDENCE/xcodebuild.log"
+      - name: Require executed model checks and record provenance
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, subprocess
+          root = pathlib.Path(os.environ['ORUKEET_RUNTIME_EVIDENCE'])
+          report = json.loads((root / 'runtime.json').read_text())
+          assert report['scope'] == 'iOS Simulator runtime smoke', report
+          for key in ('all_assertions_passed', 'long_exceeds_first_window',
+                      'repeat_after_multilingual_identical', 'post_reload_identical'):
+              assert report[key] is True, key
+          assert len(report['fixture_results']) == 4
+          engine = pathlib.Path('export/coreml/benchmark/Sources/OrukeetCoreML/OrukeetEngine.swift')
+          report.update({
+              'head_sha': os.environ['ORUKEET_HEAD_SHA'],
+              'checkout_sha': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
+              'engine_source_sha256': hashlib.sha256(engine.read_bytes()).hexdigest(),
+              'archive_verification': json.loads((root / 'archive-verification.json').read_text()),
+              'ci_run': os.environ['GITHUB_SERVER_URL'] + '/' + os.environ['GITHUB_REPOSITORY']
+                        + '/actions/runs/' + os.environ['GITHUB_RUN_ID'],
+              'limitations': ['Simulator execution is not physical-iPhone qualification.',
+                             'Times are runtime diagnostics, not mobile performance measurements.',
+                             'Four reused speech fixtures are not an accuracy benchmark.'],
+          })
+          (root / 'runtime.json').write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n')
+          print('Portable models compiled and all inference/lifecycle checks executed in iOS Simulator.')
+          PY
+      - name: Preserve runtime evidence without weights
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: orukeet-ios-simulator-runtime
+          path: ${{ runner.temp }}/orukeet-ios-runtime-evidence/
+          if-no-files-found: warn
+          retention-days: 14
