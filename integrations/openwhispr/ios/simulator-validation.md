@@ -36,8 +36,14 @@ export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPORT='/path/to/runtime.json'
 xcodebuild test -scheme OrukeetCoreMLBenchmark-Package -configuration Release \
   -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
   -parallel-testing-enabled NO -only-testing:OrukeetCoreMLTests \
+  OTHER_SWIFT_FLAGS='$(inherited) -parse-as-library' \
   IPHONEOS_DEPLOYMENT_TARGET=17.0 CODE_SIGNING_ALLOWED=NO
 ```
+
+The package-wide scheme includes its command-line benchmark, whose `@main`
+entry point needs `-parse-as-library` under Xcode's generated build settings.
+SwiftPM's ordinary `swift build` already supplies that flag. The library-only
+scheme remains appropriate for the separate generic iOS build.
 
 Xcode strips the [`TEST_RUNNER_` prefix](https://developer.apple.com/documentation/xcode/environment-variable-reference)
 when passing these variables to the test process. Simulator processes can access

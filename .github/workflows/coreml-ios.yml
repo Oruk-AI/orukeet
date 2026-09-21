@@ -120,6 +120,7 @@ jobs:
             -derivedDataPath "$RUNNER_TEMP/orukeet-simulator-build" \
             -resultBundlePath "$RUNNER_TEMP/orukeet-simulator-tests.xcresult" \
             IPHONEOS_DEPLOYMENT_TARGET=17.0 \
+            OTHER_SWIFT_FLAGS='$(inherited) -parse-as-library' \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO 2>&1 | tee "$ORUKEET_RUNTIME_EVIDENCE/xcodebuild.log"
       - name: Require executed model checks and record provenance

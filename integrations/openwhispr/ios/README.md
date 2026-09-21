@@ -149,6 +149,12 @@ handoff. Keep OpenWhispr's English/multilingual selector and compare the current
 v2, v3 and Orukeet on the same English recordings with the same normalization.
 Published benchmark averages from different runtimes are not that comparison.
 
+A [paired English16 diagnostic](../../../evidence/coreml-openwhispr-20260920/english16/README.md)
+completed with the same FluidAudio version and identical audio: Parakeet v2 had
+16 errors / 343 reference words (4.66% WER), versus Orukeet's 20 / 343 (5.83%).
+These reused clips are too small a sample to establish general English accuracy,
+but support retaining the separate English selection while qualifying Orukeet.
+
 ## Before enabling by default on iPhone
 
 Run the [device qualification protocol](device-qualification.md) against the
