@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "OrukeetCoreMLBenchmark",
-    platforms: [.macOS(.v14)],
+    platforms: [.macOS(.v14), .iOS(.v17)],
     products: [
         .library(name: "OrukeetCoreML", targets: ["OrukeetCoreML"]),
         .executable(name: "CoreMLBenchmark", targets: ["CoreMLBenchmark"]),
@@ -13,6 +13,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "OrukeetCoreML", dependencies: [.product(name: "FluidAudio", package: "FluidAudio")]),
+        .testTarget(name: "OrukeetCoreMLTests", dependencies: ["OrukeetCoreML"]),
         .executableTarget(
             name: "CoreMLBenchmark",
             dependencies: ["OrukeetCoreML", .product(name: "FluidAudio", package: "FluidAudio")]

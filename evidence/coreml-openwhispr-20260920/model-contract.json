@@ -1,0 +1,228 @@
+{
+  "profile": "greedy",
+  "hf_revision": "43142dd1897f9ddadcd70173fcb5ff45c08aa951",
+  "inspection": "protobuf graph metadata only; no new checkpoint downloaded or tensor copy created",
+  "model_minimum_target": "iOS17 / CoreML7 based on specification; actual iPhone execution remains unqualified",
+  "models": {
+    "Preprocessor": {
+      "graph_sha256": "abc41e3d6c4f2d401ca445c85aa4884244eabed9bdec7b4ec7e60d691140cdfb",
+      "specification_version": 8,
+      "opsets": {
+        "main": [
+          "CoreML7"
+        ]
+      },
+      "inputs": [
+        {
+          "name": "audio_signal",
+          "shape": [
+            1,
+            240000
+          ],
+          "type": "float32"
+        },
+        {
+          "name": "audio_length",
+          "shape": [
+            1
+          ],
+          "type": "int32"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mel",
+          "shape": [
+            1,
+            128,
+            1501
+          ],
+          "type": "float32"
+        },
+        {
+          "name": "mel_length",
+          "shape": [
+            1
+          ],
+          "type": "int32"
+        }
+      ]
+    },
+    "Encoder": {
+      "graph_sha256": "cfec08b0fb04d25f7f61203e02571091e53d22fc85c47c5cc9699019d2ab0d2a",
+      "specification_version": 8,
+      "opsets": {
+        "main": [
+          "CoreML7"
+        ]
+      },
+      "inputs": [
+        {
+          "name": "mel",
+          "shape": [
+            1,
+            128,
+            1501
+          ],
+          "type": "float32"
+        },
+        {
+          "name": "mel_length",
+          "shape": [
+            1
+          ],
+          "type": "int32"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "encoder",
+          "shape": [
+            1,
+            1024,
+            188
+          ],
+          "type": "float32"
+        },
+        {
+          "name": "encoder_length",
+          "shape": [
+            1
+          ],
+          "type": "int32"
+        }
+      ]
+    },
+    "Decoder": {
+      "graph_sha256": "8bfdcef9fb1b46a1ec2f3c1895c74ed90644a69105efda370e412a522bd5b353",
+      "specification_version": 8,
+      "opsets": {
+        "main": [
+          "CoreML7"
+        ]
+      },
+      "inputs": [
+        {
+          "name": "targets",
+          "shape": [
+            1,
+            1
+          ],
+          "type": "int32"
+        },
+        {
+          "name": "target_length",
+          "shape": [
+            1
+          ],
+          "type": "int32"
+        },
+        {
+          "name": "h_in",
+          "shape": [
+            2,
+            1,
+            640
+          ],
+          "type": "float32"
+        },
+        {
+          "name": "c_in",
+          "shape": [
+            2,
+            1,
+            640
+          ],
+          "type": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "decoder",
+          "shape": [
+            1,
+            640,
+            1
+          ],
+          "type": "float32"
+        },
+        {
+          "name": "h_out",
+          "shape": [
+            2,
+            1,
+            640
+          ],
+          "type": "float32"
+        },
+        {
+          "name": "c_out",
+          "shape": [
+            2,
+            1,
+            640
+          ],
+          "type": "float32"
+        }
+      ]
+    },
+    "JointDecisionv3": {
+      "graph_sha256": "f43e1c735f387202ce486189d609eb83de3d8f808ba38386866134bd6ad6ee0b",
+      "specification_version": 8,
+      "opsets": {
+        "main": [
+          "CoreML7"
+        ]
+      },
+      "inputs": [
+        {
+          "name": "encoder_step",
+          "shape": [
+            1,
+            1024,
+            1
+          ],
+          "type": "float32"
+        },
+        {
+          "name": "decoder_step",
+          "shape": [
+            1,
+            640,
+            1
+          ],
+          "type": "float32"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "token_id",
+          "shape": [
+            1,
+            1,
+            1
+          ],
+          "type": "int32"
+        },
+        {
+          "name": "token_prob",
+          "shape": [
+            1,
+            1,
+            1
+          ],
+          "type": "float32"
+        },
+        {
+          "name": "duration",
+          "shape": [
+            1,
+            1,
+            1
+          ],
+          "type": "int32"
+        }
+      ]
+    }
+  }
+}

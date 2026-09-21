@@ -1,0 +1,61 @@
+name: Core ML iOS compilation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/openwhispr-ios-20260920]
+    paths:
+      - 'export/coreml/**'
+      - '.github/workflows/coreml-ios.yml'
+  pull_request:
+    paths:
+      - 'export/coreml/**'
+      - '.github/workflows/coreml-ios.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: coreml-ios-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  compile:
+    runs-on: macos-15
+    timeout-minutes: 30
+    env:
+      # Xcode 16.4 supplies Swift 6.1 and the iOS SDK. The minimum supported
+      # deployment version remains iOS 17; the build does not run on a device.
+      DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
+    defaults:
+      run:
+        shell: bash
+        working-directory: export/coreml/benchmark
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Record Apple toolchain
+        run: |
+          xcodebuild -version
+          xcrun swift --version
+          xcrun --sdk iphoneos --show-sdk-version
+      - name: Test bundle verifier
+        run: python3 -m unittest discover -s .. -p 'test_verify_bundle.py' -v
+      - name: Test Swift package on macOS
+        # Model-test environment variables are intentionally absent. This
+        # runs synthetic/unit checks and does not download model weights.
+        run: xcrun swift test --configuration release
+      - name: Compile OrukeetCoreML for iOS 17
+        # SwiftPM creates a scheme per product. Build only the library so the
+        # macOS benchmark executable is not part of the iOS build graph.
+        run: |
+          xcodebuild build \
+            -scheme OrukeetCoreML \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath "$RUNNER_TEMP/orukeet-ios-build" \
+            -resultBundlePath "$RUNNER_TEMP/orukeet-ios-build.xcresult" \
+            IPHONEOS_DEPLOYMENT_TARGET=17.0 \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO
