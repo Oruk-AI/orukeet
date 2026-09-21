@@ -7,19 +7,20 @@ final class OrukeetExampleUITests: XCTestCase {
         continueAfterFailure = false
         let environment = ProcessInfo.processInfo.environment
         let archive = try XCTUnwrap(environment["ORUKEET_EXAMPLE_TEST_ARCHIVE"],
-            "Set TEST_RUNNER_ORUKEET_EXAMPLE_TEST_ARCHIVE to the authenticated INT8 ZIP on the CI runner.")
+            "Set TEST_RUNNER_ORUKEET_EXAMPLE_TEST_ARCHIVE to the host ZIP path used by the model smoke test.")
         let fixture = try XCTUnwrap(environment["ORUKEET_EXAMPLE_TEST_FIXTURE"],
             "Set TEST_RUNNER_ORUKEET_EXAMPLE_TEST_FIXTURE to demos/fixtures/jfk.wav.")
         let reportPath = try XCTUnwrap(environment["ORUKEET_EXAMPLE_TEST_REPORT"],
             "Set TEST_RUNNER_ORUKEET_EXAMPLE_TEST_REPORT to the output JSON path on the CI runner.")
-        // Use a host scratch path beside the archive, outside both app containers
-        // and the uploaded evidence directory. Only this new UUID child is deleted.
+        // Use a host scratch path beside the low-level smoke test's archive,
+        // outside app containers and uploaded evidence. The app downloads its own
+        // archive through the public HTTPS installer; this path is not imported.
+        // Only this new UUID child is deleted.
         let installRoot = URL(fileURLWithPath: archive).deletingLastPathComponent()
             .appendingPathComponent("orukeet-ui-\(UUID().uuidString)")
         defer { try? FileManager.default.removeItem(at: installRoot) }
         let app = XCUIApplication()
         app.launchArguments = [
-            "--orukeet-archive", archive,
             "--orukeet-fixture", fixture,
             "--orukeet-test-root", installRoot.path,
         ]
@@ -69,6 +70,7 @@ final class OrukeetExampleUITests: XCTestCase {
 
         let report: [String: Any] = [
             "scope": "iOS Simulator example app end-to-end",
+            "installation_source": "pinned HTTPS download",
             "all_assertions_passed": true,
             "install_and_prepare_passed": true,
             "repeat_identical": true,

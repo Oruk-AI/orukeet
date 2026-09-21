@@ -57,8 +57,8 @@ final class PCMRecorder {
         }
     }
 
-    /// Transfers ownership of the completed file to the caller, which deletes it
-    /// after transcription. stop() closes the CAF before the SDK opens it.
+    /// Transfers ownership of the completed file to the caller, which retains it
+    /// through a failed transcription for retry. stop() closes the CAF first.
     func stop() throws -> URL {
         guard let recorder, let fileURL else { throw RecordingError.notRecording }
         recorder.stop()

@@ -14,7 +14,9 @@ audio files through the same SDK conversion and batch-transcription path.
 After installation, transcription works offline.
 
 The recorder requests microphone access and creates a temporary mono 16 kHz CAF.
-The completed file is deleted after transcription or cancellation. Imported
+The completed file is deleted after successful transcription or cancellation.
+If transcription fails, **Retry recording** reuses that audio; **Discard recording**,
+a new recording or backgrounding removes it. Imported
 files remain untouched, with security-scoped access retained until reading
 finishes. Microphone denial offers Settings or file import. An interruption or
 input-device change cancels the recording; backgrounding cancels work and
@@ -38,15 +40,19 @@ App integration and physical-device follow-up are described in the
 The checked-in UI test launches the actual app, taps installation, waits for
 preparation, and transcribes `demos/fixtures/jfk.wav` twice. It then relaunches
 without an archive argument, prepares the installed cache, and checks the same
-transcript again. It requires the real
-INT8 archive and asserts a nonempty JFK transcript and identical repeat output.
+transcript again. The first installation uses the public pinned HTTPS download,
+then the real INT8 verifier, extractor and compiler. The test asserts a nonempty
+JFK transcript and identical repeat output.
 It does not access a microphone or replace the model/installer with a mock.
-The ZIP remains on the ephemeral CI runner; the test creates an isolated install
-directory beside the host archive and removes it afterward. A required JSON
+The download remains on the ephemeral CI runner; the test creates an isolated
+install directory beside the low-level model test's archive and removes it
+afterward. The existing archive path only locates host scratch space; the app
+does not import it during this test. A required JSON
 receipt records installation, repeated transcription and offline relaunch.
 
-With the already-authenticated ZIP available on an Xcode-equipped machine, run
-from the repository root:
+With an Xcode-equipped machine and network access, run from the repository root.
+The archive environment variable locates a writable scratch directory used by
+the separate model test:
 
 ```sh
 export TEST_RUNNER_ORUKEET_EXAMPLE_TEST_ARCHIVE='/path/to/int8.zip'
@@ -60,8 +66,10 @@ xcodebuild test \
   CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
 ```
 
-The test forwards these paths through `--orukeet-archive`,
-`--orukeet-fixture` and `--orukeet-test-root` launch arguments. Without those
-arguments, the app uses its ordinary download flow and Application Support
-cache. Simulator results establish app wiring and runtime behavior; physical
+The test forwards the fixture and isolated cache directory through
+`--orukeet-fixture` and `--orukeet-test-root` launch arguments. For manual local
+debugging, `--orukeet-archive /path/to/int8.zip` optionally imports an existing
+archive through the same verifier and installer. Without arguments, the app
+uses its ordinary download flow and Application Support cache. Simulator
+results establish app wiring and runtime behavior; physical
 iPhone latency, memory and thermal measurements remain deployment follow-up.

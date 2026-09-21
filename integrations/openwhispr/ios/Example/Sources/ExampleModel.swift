@@ -15,6 +15,7 @@ final class ExampleModel: ObservableObject {
     @Published private(set) var completedRecordings = 0
     @Published private(set) var errorMessage: String?
     @Published private(set) var microphoneDenied = false
+    @Published private(set) var hasRetryableRecording = false
 
     private let transcriber: OrukeetTranscriber
     private let recorder = PCMRecorder()
@@ -24,6 +25,7 @@ final class ExampleModel: ObservableObject {
     private var restored = false
     private var releaseAfterOperation = false
     private var cancellationMessage = "Cancelled."
+    private var retainedRecording: URL?
 
     var isBusy: Bool { activity != .idle && activity != .recording }
     var canRecord: Bool { activity == .idle && isPrepared }
@@ -95,6 +97,7 @@ final class ExampleModel: ObservableObject {
 
     func startRecording() {
         guard canRecord else { return }
+        discardRetainedRecording()
         perform(.requestingPermission, status: "Opening microphone…") { [self] in
             try await recorder.start()
             try Task.checkCancellation()
@@ -108,7 +111,7 @@ final class ExampleModel: ObservableObject {
         do {
             let file = try recorder.stop()
             activity = .idle
-            transcribe(file, deleteWhenDone: true)
+            transcribe(file, ownedRecording: true)
         } catch {
             recorder.cancel()
             activity = .idle
@@ -116,28 +119,45 @@ final class ExampleModel: ObservableObject {
         }
     }
 
-    func transcribeImportedFile(_ file: URL) { transcribe(file, deleteWhenDone: false) }
+    func transcribeImportedFile(_ file: URL) { transcribe(file, ownedRecording: false) }
 
-    func transcribeTestFixture() {
-        if let testFixture { transcribe(testFixture, deleteWhenDone: false) }
+    func retryRecording() {
+        guard let retainedRecording, canRecord else { return }
+        transcribe(retainedRecording, ownedRecording: true)
     }
 
-    private func transcribe(_ file: URL, deleteWhenDone: Bool) {
+    func transcribeTestFixture() {
+        if let testFixture { transcribe(testFixture, ownedRecording: false) }
+    }
+
+    private func transcribe(_ file: URL, ownedRecording: Bool) {
         guard canRecord else {
-            if deleteWhenDone { try? FileManager.default.removeItem(at: file) }
+            if ownedRecording { try? FileManager.default.removeItem(at: file) }
             return
+        }
+        if ownedRecording {
+            if retainedRecording != file { discardRetainedRecording() }
+            retainedRecording = file
+            hasRetryableRecording = false
         }
         perform(.transcribing, status: "Transcribing on device…") { [self] in
             let scoped = file.startAccessingSecurityScopedResource()
             defer {
                 if scoped { file.stopAccessingSecurityScopedResource() }
-                if deleteWhenDone { try? FileManager.default.removeItem(at: file) }
             }
-            let result = try await transcriber.transcribe(fileURL: file)
-            try Task.checkCancellation()
-            transcript = result.text
-            completedRecordings += 1
-            status = result.text.isEmpty ? "No speech detected. Ready to record again." : "Transcription complete. Ready to record again."
+            do {
+                let result = try await transcriber.transcribe(fileURL: file)
+                try Task.checkCancellation()
+                transcript = result.text
+                completedRecordings += 1
+                if ownedRecording { discardRetainedRecording() }
+                status = result.text.isEmpty ? "No speech detected. Ready to record again." : "Transcription complete. Ready to record again."
+            } catch {
+                if ownedRecording && !Task.isCancelled && !(error is CancellationError) {
+                    hasRetryableRecording = true
+                }
+                throw error
+            }
         }
     }
 
@@ -151,6 +171,7 @@ final class ExampleModel: ObservableObject {
             status = "Cancelling…"
             operation.cancel()
         } else {
+            discardRetainedRecording()
             activity = .idle
             status = reason
             if releaseModels {
@@ -174,6 +195,12 @@ final class ExampleModel: ObservableObject {
         status = "Try again when ready."
     }
 
+    private func discardRetainedRecording() {
+        if let retainedRecording { try? FileManager.default.removeItem(at: retainedRecording) }
+        retainedRecording = nil
+        hasRetryableRecording = false
+    }
+
     private func perform(_ activity: Activity, status: String, body: @escaping @MainActor () async throws -> Void) {
         guard operation == nil, self.activity != .recording else { return }
         self.activity = activity
@@ -191,6 +218,9 @@ final class ExampleModel: ObservableObject {
                 if case PCMRecorder.RecordingError.microphoneDenied = error { microphoneDenied = true }
                 report(error)
             }
+            // Wait for file reading/inference to finish before deleting a
+            // cancelled recording. Failed imports never replace this owned file.
+            if Task.isCancelled { discardRetainedRecording() }
             if releaseAfterOperation {
                 await transcriber.unload()
                 isPrepared = false

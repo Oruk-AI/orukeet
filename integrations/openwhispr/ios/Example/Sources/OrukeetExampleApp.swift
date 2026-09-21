@@ -65,6 +65,16 @@ private struct RecorderView: View {
                             .disabled(!model.canRecord)
                             .accessibilityIdentifier("fixtureButton")
                     }
+                    if model.hasRetryableRecording {
+                        HStack {
+                            Button("Retry recording") { model.retryRecording() }
+                                .accessibilityIdentifier("retryRecordingButton")
+                            Button("Discard recording", role: .destructive) {
+                                model.cancel(reason: "Recording discarded.")
+                            }
+                        }
+                        .disabled(!model.canRecord)
+                    }
                     Divider()
                     Text("Transcript").font(.headline)
                     if model.transcript.isEmpty {

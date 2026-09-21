@@ -176,6 +176,7 @@ jobs:
           assert len(report['fixture_results']) == 4
           example = json.loads((root / 'example-app.json').read_text())
           assert example['scope'] == 'iOS Simulator example app end-to-end', example
+          assert example['installation_source'] == 'pinned HTTPS download', example
           for key in ('all_assertions_passed', 'install_and_prepare_passed',
                       'repeat_identical', 'offline_relaunch_passed'):
               assert example[key] is True, key

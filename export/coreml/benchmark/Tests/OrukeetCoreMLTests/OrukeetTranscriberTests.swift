@@ -6,10 +6,11 @@ private actor ServiceStore: OrukeetModelInstalling {
     var directory: URL?
     private(set) var downloads = 0
     private(set) var imports = 0
+    private(set) var checks = 0
     init(installed: Bool) {
         directory = installed ? URL(fileURLWithPath: "/service-test-models") : nil
     }
-    func installedDirectory() -> URL? { directory }
+    func installedDirectory() -> URL? { checks += 1; return directory }
     func install(progress: (@Sendable (OrukeetModelStore.State) -> Void)?) -> URL {
         downloads += 1
         directory = URL(fileURLWithPath: "/service-test-models")
@@ -95,6 +96,7 @@ struct OrukeetTranscriberTests {
         #expect(await backend.prepareCalls == 1)
         #expect(await backend.transcribeCalls == 2)
         #expect(await store.downloads == 1)
+        #expect(await store.checks == 1)
     }
 
     @Test func importedArchiveDoesNotUseDownloader() async throws {

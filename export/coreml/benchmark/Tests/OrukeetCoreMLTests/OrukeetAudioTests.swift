@@ -52,7 +52,8 @@ struct OrukeetAudioTests {
         #expect(result.count == 8_211)
         #expect(result[5] == 1 && result[6] == -1)
         #expect(result[8_210] == Float(8_210 % 31) / 64)
-        #expect(result.allSatisfy(\.isFinite))
+        let finite = result.allSatisfy(\.isFinite)
+        #expect(finite)
     }
 
     @Test(arguments: [44_100.0, 48_000.0])

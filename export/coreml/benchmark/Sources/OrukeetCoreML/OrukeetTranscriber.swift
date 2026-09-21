@@ -39,7 +39,6 @@ public actor OrukeetTranscriber {
     private let makeEngine: @Sendable (URL) -> any OrukeetServing
     private let readAudio: @Sendable (URL) async throws -> [Float]
     private var engine: (any OrukeetServing)?
-    private var engineDirectory: URL?
     private var isWorking = false
     private var unloadWhenIdle = false
 
@@ -155,13 +154,13 @@ public actor OrukeetTranscriber {
     }
 
     private func currentEngine() async throws -> any OrukeetServing {
+        // The service's model identity is immutable. Reuse its loaded engine
+        // without reparsing vocabulary or walking the disk cache per recording.
+        if let engine { return engine }
         let directory = try await requireInstalledDirectory()
         try Task.checkCancellation()
-        if let engine, engineDirectory == directory { return engine }
-        if let previous = engine { await previous.unload() }
         let current = makeEngine(directory)
         engine = current
-        engineDirectory = directory
         return current
     }
 
@@ -184,7 +183,6 @@ public actor OrukeetTranscriber {
         if unloadWhenIdle {
             let previous = engine
             engine = nil
-            engineDirectory = nil
             if let previous { await previous.unload() }
             unloadWhenIdle = false
         }
