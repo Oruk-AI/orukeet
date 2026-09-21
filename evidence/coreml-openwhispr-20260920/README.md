@@ -1,114 +1,67 @@
-# OpenWhispr iOS integration candidate
+# Orukeet iOS batch integration evidence
 
-This change adapts the existing Orukeet Core ML preview to OpenWhispr's on-device
-16 kHz mono, record-then-transcribe flow. It does not change the published model
-weights or establish physical-iPhone performance. The reference runtime remains
-FluidAudio 0.15.5 (`19600a485baa4998812e4654b70d2bab8f2c9949`).
+The current integration uses **Orukeet for English and all supported languages**,
+with an INT8 encoder, greedy decoding and the reviewed FluidAudio buffer fix.
+[App integration](../../integrations/openwhispr/ios/README.md) describes the
+root Swift package, install/verify/compile path and persistent warmed engine.
 
-## Completed artifact checks
+## Current draft
 
-- The existing greedy ZIP was read in place and authenticated against its pinned
-  SHA-256 `beccdc6f18c4b10527a764f6e3ab12e3e11b969220c0cee175b3bb7eaa94290e`.
-  All 18 payload files matched their recorded sizes and hashes. The vocabulary
-  contains exactly the canonical IDs 0–8191, and the portable bundle includes
-  all four graphs plus attribution. [Verification receipt](archive-verification.json).
-- Graph protobuf inspection found specification version 8 and the `CoreML7`
-  operation set in all four components. Input/output names, types, shapes and
-  graph hashes are preserved in [model-contract.json](model-contract.json).
-  These metadata are compatible with an iOS 17 deployment target; actual
-  compilation and execution are separate checks.
-- Six Python verifier regressions pass: valid bundle, changed weight payload,
-  unexpected payload, missing required license/component, wrong source identity
-  and unsafe path handling. The verifier never extracts weight files.
+- [INT8 archive verification](int8-archive-verification.json): immutable existing
+  portable archive, 554,985,744 bytes, SHA-256
+  `24df9ff76f00f86f9ae1fd601cbbcab1d1eac98c7e8107de67444a7858d88b8b`.
+  All 22 payload files match; no compiled cache is distributed.
+  [Upload receipt](int8-publication.json) verifies the remote LFS size/hash at
+  revision `419d7f79e290127e202a0f610509868d314743eb`; the asset is staged in a
+  [Hugging Face draft](https://huggingface.co/oruk/orukeet/discussions/2).
+- [INT8 graph contract](int8-model-contract.json): component descriptions,
+  graph hashes, specification versions and encoder quantization operations.
+- [Pinned runtime and safety checks](../../export/coreml/runtime/README.md):
+  narrow FluidAudio 0.15.5 backport, view-safe bulk tensor operations, source
+  patch, native array regression harness and focused XCTest checks.
+- [Release performance measurements](performance/README.md): original versus
+  optimized runtime on identical Orukeet weights/audio, including long inputs
+  and chunk-concurrency comparisons. Host measurements are not phone timings.
+- `.github/workflows/coreml-ios.yml` runs root-package unit tests, an arm64
+  iOS 17 build, and actual portable INT8 model compilation/inference inside
+  iOS 18.5 Simulator. The runtime step requires a JSON receipt proving all
+  language, long-recording and lifecycle checks executed.
 
-## Implementation and validation status
+Model assets are fetched only by ephemeral hosted CI for simulator validation.
+The local measurements reuse existing caches in place. No training checkpoint
+was created or downloaded on the Mac and no remote GPU was accessed.
 
-The Swift package declares iOS 17 and macOS 14. The engine validates finite
-16 kHz mono input of at least 300 ms before loading a model. It uses fresh decoder
-state per recording, defaults to one parallel batch chunk, rejects overlapping
-calls, discards cancelled results and defers unload until an active call finishes.
-Installation compiles into a sibling staging directory and moves a complete
-cache into a new revision-specific destination; failure preserves prior installs.
+## Historical baseline evidence
 
-The library builds with this Mac's Command Line Tools. Since the local toolchain
-has neither the iOS SDK nor Testing/XCTest, validation also ran on an Xcode
-runner. [CI run 35567347963](https://github.com/Oruk-AI/orukeet/actions/runs/35567347963)
-passed at commit `13db0b8f53907a46bae175e5aa5f9b427054b35c`:
+The following files predate the INT8/runtime change and describe the earlier
+LUT6/FP16 greedy bundle and unmodified FluidAudio 0.15.5. Their original hashes,
+versions and results remain intact; they are not relabeled as new validation:
 
-- Six Python bundle-verifier tests passed.
-- Thirteen Swift lifecycle/installation tests passed; the opt-in model test was
-  skipped because CI had no model files. Swift Testing's summary counts 14
-  discovered tests, including that skipped test.
-- Release compilation of `OrukeetCoreML` for `arm64-apple-ios17.0` succeeded with
-  Xcode 16.4, Swift 6.1.2 and the iPhoneOS 18.5 SDK, without code signing.
+- [Archive receipt](archive-verification.json) and [graph contract](model-contract.json).
+- [Host smoke](engine-smoke.json) and [reproducer](host-smoke/): repeated short
+  recordings, natural 29.95075-second speech, first-window comparison, unload
+  and reload. Full long text had 113 words versus 60 for the first 15 seconds.
+- [iOS Simulator receipt](simulator-runtime.json): four languages and nine
+  transcriptions; 33-second text continued beyond the first model window;
+  repeated English text remained identical across multilingual/long/reload calls.
+- [CI compilation receipt](ci-validation.json).
 
-The ordinary repository package checks also passed. A library build does not
-compile OpenWhispr's unavailable app target or execute the model on an iPhone.
+Earlier conversion research remains accessible at the immutable
+[TapTalk source revision](https://github.com/Oruk-AI/orukeet/tree/852c3e355f20a111a2ee39f76677bc0ba65147bf/evidence/coreml-taptalk-20260915).
 
-The [local real-engine smoke](engine-smoke.json) passed six calls against the
-existing greedy cache on macOS 26.4.1/arm64: short speech, repeat short, natural
-29.95075-second speech, short after long, the long recording's first 15 seconds,
-and short after unload/reload. Short text was identical across all lifecycle
-checks. Full long output had 113 words versus 60 for the first 15 seconds, with
-matching opening words and additional ending content. This checks execution
-past the first model window; it is not an accuracy score.
-
-That debug-build smoke measured 88.85 ms for 5.72 seconds of audio and 318.86 ms
-for 29.95075 seconds, excluding model load. Initial load took 18.11 seconds,
-reload took 91.21 ms, and whole-process peak RSS was 529,039,360 bytes. These are
-single-run diagnostics, not release latency or memory budgets. No claim about
-an iPhone follows from them. The retained source is in [host-smoke](host-smoke/).
-
-The opt-in real-model regression uses existing models and audio, without a
-download. Its environment variables are `ORUKEET_TEST_MODELS` (compiled model
-directory) and `ORUKEET_TEST_AUDIO` (a speech recording, mono 16 kHz WAV, at most
-15 seconds). It checks repeated independent recordings and a concatenated
-input longer than 30 seconds. That long input checks chunk execution and state
-reset, not natural long-form recognition quality.
+## Reproduce
 
 ```sh
 python3 -m unittest discover -s export/coreml -p 'test_verify_bundle.py' -v
-swift test --package-path export/coreml/benchmark --configuration release
+swift test --configuration release
 ```
 
-## Qualification limits
+[Simulator instructions](../../integrations/openwhispr/ios/simulator-validation.md)
+describe the hosted runtime job. The separate optional host test uses existing
+compiled models through `ORUKEET_TEST_MODELS` and a 16 kHz mono WAV through
+`ORUKEET_TEST_AUDIO`; it never downloads models.
 
-The portable bundle also passed actual execution inside an iPhone 16 / iOS 18.5
-simulator in [CI run 35571858702](https://github.com/Oruk-AI/orukeet/actions/runs/35571858702)
-at source commit `65199e54f1509acc7ad9d5d3897813da7f2fabee`. All four models compiled
-inside the iOS process, with the vocabulary and attribution sidecars preserved.
-The public engine completed nine transcriptions: four language fixtures, an
-English repeat, 33-second repeated speech, its first 15 seconds, another English
-repeat, and an English request after unload/reload. The long result contained
-66 words versus 29 in the first window. Repeated English output matched exactly.
-
-The simulator run executed thirteen unit tests and the portable runtime test;
-the separate opt-in Mac model test was skipped (15 discovered tests total).
-The [runtime receipt](simulator-runtime.json) retains raw text, input and engine
-hashes, selected runtime/device identity, and every passing assertion. It omits
-unselected simulator inventories and repeated setup logs, recording the full CI
-receipt's SHA-256 so that the original artifact remains identifiable. Simulator
-timings are diagnostics, not physical-device performance measurements.
-
-The [paired English16 diagnostic](english16/README.md) also completed all 32
-transcriptions at commit `541cf669e6da52c1e4e587f2ed3599d962c96555`. With the same
-343-word denominator, Parakeet v2 had 16 errors (4.66% WER) and Orukeet had 20
-(5.83%). This small reused set is a regression check, not general English
-qualification. The seventeen scorer/staging tests passed, and raw outputs and
-asset/runtime provenance are retained with the result.
-
-No physical iPhone, OpenWhispr app build, iPhone memory/jetsam measurement,
-thermal/battery measurement or full 25-language accuracy qualification was
-completed by the checks above. OpenWhispr's mobile
-repository and its exact FluidAudio version were not available. Retain the
-existing English-v2 selection and expose Orukeet as an optional multilingual
-candidate until the [device protocol](../../integrations/openwhispr/ios/device-qualification.md)
-passes against the actual app.
-
-The published encoder is LUT6/FP16 despite FluidAudio's historical `.int8`
-selection name. It is not the newer `.int8V2` linear INT8 artifact. The existing
-[TapTalk evidence](../coreml-taptalk-20260915/README.md) remains the source of prior
-Mac accuracy and performance results; none is relabeled as an iPhone result.
-
-No new training checkpoint was downloaded, created or copied on the Mac during
-this integration work. No remote GPU was accessed.
+This PR prepares a reusable integration package. The unavailable OpenWhispr
+mobile target and physical iPhones were not built/tested here. Phone latency,
+RAM/jetsam, thermals and battery measurements are listed in the
+[device follow-up](../../integrations/openwhispr/ios/device-qualification.md).

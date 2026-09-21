@@ -1,0 +1,55 @@
+{
+  "clips": 400,
+  "languages": {
+    "bg": 16,
+    "cs": 16,
+    "da": 16,
+    "de": 16,
+    "el": 16,
+    "en": 16,
+    "es": 16,
+    "et": 16,
+    "fi": 16,
+    "fr": 16,
+    "hr": 16,
+    "hu": 16,
+    "it": 16,
+    "lt": 16,
+    "lv": 16,
+    "mt": 16,
+    "nl": 16,
+    "pl": 16,
+    "pt": 16,
+    "ro": 16,
+    "ru": 16,
+    "sk": 16,
+    "sl": 16,
+    "sv": 16,
+    "uk": 16
+  },
+  "runtime_commits": {
+    "original": "19600a485baa4998812e4654b70d2bab8f2c9949",
+    "optimized": "75377a8a824abcd84946d80f3c2279ed25b13dbc"
+  },
+  "model_profile": "int8sym-encoder-only",
+  "transcript_mismatches": 0,
+  "differences": [],
+  "manifest_sha256": "dfcd5351a1126608dfc84b2644987ea6529f81e4182c03db036306ac36de4f1e",
+  "dataset": "google/fleurs",
+  "dataset_revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+  "scope": "Fixed-model runtime parity only. Corpus previously used for precision research; not a fresh accuracy holdout.",
+  "batch_concurrency": 1,
+  "encoder_requested_compute_units": "cpuAndNeuralEngine",
+  "engine_source_sha256": "8e26acfed4f739728889a152bc4fc1f35e7a7d1b499f42560599bf0fda19cd5d",
+  "model_cache_integrity_sha256": "0e6ec627d0da501ef0eeac2512ce486a3ab2c63a493d4dd2ae4446442e0b597f",
+  "result_sha256": {
+    "original": "6168c11329e07229fc6236b58580b393e7569c7adbb2252ce8c8cd2546781d54",
+    "optimized": "1e83c72a5681dce3b7b7a95d52fca0594738b050191b89a84ff84cb4f9a7cca1"
+  },
+  "binary_sha256": {
+    "original": "64f036b357960ddb91a6f055769b84998dab25331dd1e3caee6b27a85ce9e2e5",
+    "optimized": "202dfd10c58e4cba274d2f5dbfd1e69b741a15bac3c8be74e70bea11bdc5c8b2"
+  },
+  "per_clip_receipt_sha256": "8c203f42a5de7aa94438058afada6732272a761eaac418bb2958ea55b060d778",
+  "raw_result_storage": "Private scratch parity-results/. Exact transcript hashes are published per clip."
+}

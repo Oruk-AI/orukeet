@@ -1,13 +1,13 @@
 {
-  "originHash" : "bc95dbe021ca02fe1b46c33b85c32493ee18979f01cff91b89ee841c47364af2",
+  "originHash" : "7ec8d46e41056fb021545e198943fe90f983c95ca37b6b2ef77c67efd173fd12",
   "pins" : [
     {
       "identity" : "fluidaudio",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/FluidInference/FluidAudio.git",
+      "location" : "https://github.com/Oruk-AI/FluidAudio.git",
       "state" : {
-        "revision" : "19600a485baa4998812e4654b70d2bab8f2c9949",
-        "version" : "0.15.5"
+        "revision" : "ddc95f4d03d5be12bf84eeb6e4bde5b724356d88",
+        "version" : "0.15.5-orukeet.1"
       }
     }
   ],

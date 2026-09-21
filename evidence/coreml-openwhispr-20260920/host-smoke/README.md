@@ -1,8 +1,10 @@
+> The checked-in engine-smoke.json is historical, from unmodified FluidAudio 0.15.5. Running this updated reproducer uses the current package dependency.
+
 # Reproduce the macOS engine lifecycle smoke
 
 This standalone package retains the runner used for [`../engine-smoke.json`](../engine-smoke.json), with its machine-specific model/audio/output paths replaced by positional arguments and its package dependency made relative. The inference sequence and assertions are unchanged. It is outside the shipping Swift package and contains no models or audio.
 
-Requirements: Apple Silicon Mac, macOS 14+, Swift 6+, an existing **compiled greedy Orukeet bundle** suitable for that Mac, and two existing 16 kHz mono WAV fixtures. The short fixture must decode to 0.3–15 seconds. The long fixture must contain speech beyond 15 seconds. This runner loads local models; it does not download weights. SwiftPM resolves the shipping package's pinned FluidAudio 0.15.5 dependency.
+Requirements: Apple Silicon Mac, macOS 14+, Swift 6+, an existing **compiled Orukeet bundle (greedy or INT8)** suitable for that Mac, and two existing 16 kHz mono WAV fixtures. The short fixture must decode to 0.3–15 seconds. The long fixture must contain speech beyond 15 seconds. This runner loads local models; it does not download weights. SwiftPM resolves the shipping package's pinned FluidAudio 0.15.5-orukeet.1 dependency.
 
 From the repository root, set paths to existing files, then run:
 
@@ -29,7 +31,7 @@ report.update({
     'verified_at_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
     'build_configuration': 'debug',
     'architecture': platform.machine(),
-    'fluid_audio_version': '0.15.5',
+    'fluid_audio_version': '0.15.5-orukeet.1',
     'encoder_compute_units': 'cpuAndNeuralEngine',
     'short_audio_sha256': hashlib.sha256(short_audio.read_bytes()).hexdigest(),
     'long_audio_sha256': hashlib.sha256(long_audio.read_bytes()).hexdigest(),

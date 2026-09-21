@@ -1,0 +1,158 @@
+{
+  "published": {
+    "files": {
+      "Preprocessor.mlmodelc/analytics/coremldata.bin": {
+        "bytes": 243,
+        "sha256": "c9beeb989c8d66f8be11df59bc6df277ec76cee404f6865b46243835ef562f6d"
+      },
+      "Preprocessor.mlmodelc/coremldata.bin": {
+        "bytes": 486,
+        "sha256": "dbde3f2300842c1fd51ef3ff948a0bcffe65ffd2dca10707f2509f32c1d65b1d"
+      },
+      "Preprocessor.mlmodelc/metadata.json": {
+        "bytes": 2841,
+        "sha256": "2a98699e22d279dd37fa1d238aeb1c6db1df0d6fad687775324157689d8f3acf"
+      },
+      "Preprocessor.mlmodelc/model.mil": {
+        "bytes": 28181,
+        "sha256": "4b8518a956450fec57f06c2a21bdffc26973f7f1fa6842fb38fe917f896b6b93"
+      },
+      "Preprocessor.mlmodelc/weights/weight.bin": {
+        "bytes": 491072,
+        "sha256": "129b76e3aeafa8afa3ea76d995b964b145fe83700d579f6ff42c4c38fa0968ea"
+      },
+      "Encoder.mlmodelc/analytics/coremldata.bin": {
+        "bytes": 243,
+        "sha256": "42e638870d73f26b332918a3496ce36793fbb413a81cbd3d16ba01328637a105"
+      },
+      "Encoder.mlmodelc/coremldata.bin": {
+        "bytes": 485,
+        "sha256": "355e1cef5017fd20da1445fb15a6fc4085832ec570f7611c571fcc39d8d31d6a"
+      },
+      "Encoder.mlmodelc/model.mil": {
+        "bytes": 959767,
+        "sha256": "1d55750d2852e365a799c3a8586f3ac0d39bf22a14adfc764726243d44b01a91"
+      },
+      "Encoder.mlmodelc/weights/weight.bin": {
+        "bytes": 445187200,
+        "sha256": "e1d0b032dbfd879a01d8d4e5cd61d91828ba2d189e711407456dfcc30d699376"
+      },
+      "Decoder.mlmodelc/analytics/coremldata.bin": {
+        "bytes": 243,
+        "sha256": "4238c4e81ecd0dc94bd7dfbb60f7e2cc824107c1ffe0387b8607b72833dba350"
+      },
+      "Decoder.mlmodelc/coremldata.bin": {
+        "bytes": 554,
+        "sha256": "c004e99f54d45da9eb4231681d5b5c75254585105ef6b22f014caa88ec3c2742"
+      },
+      "Decoder.mlmodelc/model.mil": {
+        "bytes": 13108,
+        "sha256": "9d9beb4c19ce5ecd9cf656bf80534c6e2d7054c24108225e06d4f3e9cbe9471c"
+      },
+      "Decoder.mlmodelc/weights/weight.bin": {
+        "bytes": 23604992,
+        "sha256": "1362dfcaf9842acd4e93def86df0e5b69d58668c526b195c1a52f90c23c671ec"
+      },
+      "JointDecisionv3.mlmodelc/analytics/coremldata.bin": {
+        "bytes": 243,
+        "sha256": "00074792f980b4627eb3252977d417295a9786bccfe1201e14349223b8975a0a"
+      },
+      "JointDecisionv3.mlmodelc/coremldata.bin": {
+        "bytes": 464,
+        "sha256": "8e3aef1ea7bf1ed7211d24fbf491da9f3995c576241e53809e834eabe404676a"
+      },
+      "JointDecisionv3.mlmodelc/model.mil": {
+        "bytes": 9721,
+        "sha256": "aa3add471c8944df49a9b468f06f87e809fd0236adb1112d5e32127dfbe0d606"
+      },
+      "JointDecisionv3.mlmodelc/weights/weight.bin": {
+        "bytes": 12642764,
+        "sha256": "5c37dcf80d267159e63450c44c61aa3b421f9535e3d3d0914d7b705da51b596a"
+      },
+      "parakeet_vocab.json": {
+        "bytes": 151122,
+        "sha256": "7ec60e05f1b24480736ec0eed40900f4626bce1fa9a60fd700ec7e2a59198735"
+      }
+    },
+    "total_bytes": 483093729,
+    "file_count": 18
+  },
+  "int8": {
+    "files": {
+      "Preprocessor.mlmodelc/analytics/coremldata.bin": {
+        "bytes": 243,
+        "sha256": "c9beeb989c8d66f8be11df59bc6df277ec76cee404f6865b46243835ef562f6d"
+      },
+      "Preprocessor.mlmodelc/coremldata.bin": {
+        "bytes": 486,
+        "sha256": "dbde3f2300842c1fd51ef3ff948a0bcffe65ffd2dca10707f2509f32c1d65b1d"
+      },
+      "Preprocessor.mlmodelc/metadata.json": {
+        "bytes": 2841,
+        "sha256": "2a98699e22d279dd37fa1d238aeb1c6db1df0d6fad687775324157689d8f3acf"
+      },
+      "Preprocessor.mlmodelc/model.mil": {
+        "bytes": 28181,
+        "sha256": "4b8518a956450fec57f06c2a21bdffc26973f7f1fa6842fb38fe917f896b6b93"
+      },
+      "Preprocessor.mlmodelc/weights/weight.bin": {
+        "bytes": 491072,
+        "sha256": "129b76e3aeafa8afa3ea76d995b964b145fe83700d579f6ff42c4c38fa0968ea"
+      },
+      "Encoder.mlmodelc/analytics/coremldata.bin": {
+        "bytes": 243,
+        "sha256": "f0fa988384527f6477410627b190a78bb2d18bf91019bd157b6312d527ffcba8"
+      },
+      "Encoder.mlmodelc/coremldata.bin": {
+        "bytes": 478,
+        "sha256": "a7fbe7b4f90103c74222fc279f82329f504cf7bb292d8a86314f249223428e95"
+      },
+      "Encoder.mlmodelc/model.mil": {
+        "bytes": 1002651,
+        "sha256": "52c3c15fac77205a69f332f1a0f85dc3b45c410d9d4f276558584e5c4ae572e5"
+      },
+      "Encoder.mlmodelc/weights/weight.bin": {
+        "bytes": 594211328,
+        "sha256": "7c3aa75d323fed4b0b13126b221859aac2d1933da4aa070deb111603a9e23447"
+      },
+      "Decoder.mlmodelc/analytics/coremldata.bin": {
+        "bytes": 243,
+        "sha256": "4238c4e81ecd0dc94bd7dfbb60f7e2cc824107c1ffe0387b8607b72833dba350"
+      },
+      "Decoder.mlmodelc/coremldata.bin": {
+        "bytes": 554,
+        "sha256": "c004e99f54d45da9eb4231681d5b5c75254585105ef6b22f014caa88ec3c2742"
+      },
+      "Decoder.mlmodelc/model.mil": {
+        "bytes": 13108,
+        "sha256": "9d9beb4c19ce5ecd9cf656bf80534c6e2d7054c24108225e06d4f3e9cbe9471c"
+      },
+      "Decoder.mlmodelc/weights/weight.bin": {
+        "bytes": 23604992,
+        "sha256": "1362dfcaf9842acd4e93def86df0e5b69d58668c526b195c1a52f90c23c671ec"
+      },
+      "JointDecisionv3.mlmodelc/analytics/coremldata.bin": {
+        "bytes": 243,
+        "sha256": "00074792f980b4627eb3252977d417295a9786bccfe1201e14349223b8975a0a"
+      },
+      "JointDecisionv3.mlmodelc/coremldata.bin": {
+        "bytes": 464,
+        "sha256": "8e3aef1ea7bf1ed7211d24fbf491da9f3995c576241e53809e834eabe404676a"
+      },
+      "JointDecisionv3.mlmodelc/model.mil": {
+        "bytes": 9721,
+        "sha256": "aa3add471c8944df49a9b468f06f87e809fd0236adb1112d5e32127dfbe0d606"
+      },
+      "JointDecisionv3.mlmodelc/weights/weight.bin": {
+        "bytes": 12642764,
+        "sha256": "5c37dcf80d267159e63450c44c61aa3b421f9535e3d3d0914d7b705da51b596a"
+      },
+      "parakeet_vocab.json": {
+        "bytes": 151122,
+        "sha256": "7ec60e05f1b24480736ec0eed40900f4626bce1fa9a60fd700ec7e2a59198735"
+      }
+    },
+    "total_bytes": 632160734,
+    "file_count": 18
+  }
+}

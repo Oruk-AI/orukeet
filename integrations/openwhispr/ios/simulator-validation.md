@@ -1,9 +1,15 @@
 # iOS Simulator model-runtime check
 
-**Passed at source commit `65199e54f1509acc7ad9d5d3897813da7f2fabee` in
-[run 35571858702](https://github.com/Oruk-AI/orukeet/actions/runs/35571858702).**
-The [runtime receipt](../../../evidence/coreml-openwhispr-20260920/simulator-runtime.json)
-contains all four speech results and the passing long-form and lifecycle checks.
+The workflow checks the root `OrukeetCoreML` package with the same Orukeet INT8
+bundle used for English and multilingual recordings. Consult the
+[validation record](../../../evidence/coreml-openwhispr-20260920/README.md) for the
+source revision, runtime pin and model identity covered by each completed run.
+
+The earlier [run 35571858702](https://github.com/Oruk-AI/orukeet/actions/runs/35571858702)
+passed at source commit `65199e54f1509acc7ad9d5d3897813da7f2fabee`. Its
+[runtime receipt](../../../evidence/coreml-openwhispr-20260920/simulator-runtime.json)
+covers the prior LUT6 bundle and runtime. It does not establish that the new
+INT8 bundle, buffer backport or preparation API passed.
 
 The `Core ML iOS validation` workflow includes a separate runtime job in addition
 to the unsigned iOS library build. This job uses Xcode 16.4 and an iPhone 16 /
@@ -16,18 +22,19 @@ under the exact iOS 18.5 runtime, boots it, and selects its UDID. It does not re
 on a preexisting named device. Setup fails with an inventory receipt if that
 runtime is absent; it never silently substitutes another iOS version.
 
-The job downloads the existing public greedy inference ZIP at Hugging Face
-revision `43142dd1897f9ddadcd70173fcb5ff45c08aa951` onto the ephemeral runner.
+The job downloads the portable INT8 inference ZIP at the immutable Hugging Face
+revision recorded in the workflow and `OrukeetBundle.int8` onto the ephemeral runner.
 It authenticates the pinned archive and all payload files before extraction.
 It does not download a NeMo/training checkpoint, create new trained weights, or
 copy model files back to a developer's computer. Uploaded evidence contains only
 the archive receipt, runtime JSON and test log.
 
-`OrukeetPortableRuntimeTests` compiles all four portable model components inside
-the iOS test process using the public installer. It then uses the public engine
+`OrukeetPortableRuntimeTests` verifies the ZIP again with the public Swift archive
+verifier and compiles all four portable model components inside the iOS test
+process using the public installer. It calls `prepare()` before using the public engine
 to transcribe the repository's English JFK, French, Spanish and Latvian WAV
 fixtures. It checks independent recording state, a repeated 33-second English
-input, and unload/reload behavior. The existing audio provenance and licenses
+input, and unload/reload with preparation. The existing audio provenance and licenses
 remain under `demos/fixtures` and `demos/multilingual`.
 
 Success requires both `xcodebuild test` success and a complete runtime report
@@ -37,27 +44,27 @@ passing workflow: the report gate fails. The test also requires the iOS simulato
 compilation environment, so a Mac-only execution cannot satisfy that gate.
 
 To reproduce using existing portable model files on an Xcode-equipped Mac, run
-from `export/coreml/benchmark` with absolute paths. This manual command assumes
+from the repository root with absolute paths. Keep the authenticated archive as
+`int8.zip` beside its extracted `orukeet-r3-coreml-int8sym-encoder-only-experimental-20260920`
+directory: the test requires both. This manual command assumes
 an iPhone 16 / iOS 18.5 simulator already exists in Xcode's Devices and Simulators
 window; create it there first if needed. The CI-only setup helper creates its own
 device and uses its UDID instead of this manual name-based destination.
 
 ```sh
-export TEST_RUNNER_ORUKEET_PORTABLE_TEST_MODELS='/path/to/orukeet-r3-coreml-greedy'
+export TEST_RUNNER_ORUKEET_PORTABLE_TEST_MODELS='/path/to/orukeet-r3-coreml-int8sym-encoder-only-experimental-20260920'
 export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPO='/path/to/orukeet-checkout'
 export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPORT='/path/to/runtime.json'
-xcodebuild test -scheme OrukeetCoreMLBenchmark-Package -configuration Release \
+xcodebuild -list
+xcodebuild test -scheme OrukeetCoreML -configuration Release \
   -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
   -parallel-testing-enabled NO -only-testing:OrukeetCoreMLTests \
   ENABLE_TESTABILITY=YES \
-  OTHER_SWIFT_FLAGS='$(inherited) -parse-as-library' \
   IPHONEOS_DEPLOYMENT_TARGET=17.0 CODE_SIGNING_ALLOWED=NO
 ```
 
-The package-wide scheme includes its command-line benchmark, whose `@main`
-entry point needs `-parse-as-library` under Xcode's generated build settings.
-SwiftPM's ordinary `swift build` already supplies that flag. The library-only
-scheme remains appropriate for the separate generic iOS build.
+The root package contains the library and its tests. The macOS command-line
+benchmark lives in a separate nested package and is outside this iOS build graph.
 `ENABLE_TESTABILITY=YES` permits the unit suite's `@testable` imports in this
 Release test build; the separate iOS library build retains its ordinary settings.
 
@@ -73,4 +80,4 @@ measure physical iPhone performance, memory headroom, Neural Engine execution,
 battery use, minimum-iOS-17 runtime behavior, or full multilingual accuracy.
 The simulated device name is not the host hardware. Its timing diagnostics must
 not be quoted as iPhone latency. OpenWhispr's actual app and the
-[physical-device protocol](device-qualification.md) remain separate gates.
+[physical-device protocol](device-qualification.md) are deployment follow-ups.

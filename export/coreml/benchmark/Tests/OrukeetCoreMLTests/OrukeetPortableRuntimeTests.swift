@@ -64,6 +64,9 @@ struct OrukeetPortableRuntimeTests {
         try files.createDirectory(at: temporary, withIntermediateDirectories: false)
         defer { try? files.removeItem(at: temporary) }
         let installed = temporary.appendingPathComponent("installed", isDirectory: true)
+        // Exercise the same streaming verifier the app uses, before installation.
+        let archive = source.deletingLastPathComponent().appendingPathComponent("int8.zip")
+        try OrukeetBundle.int8.verifyArchive(at: archive)
 
         let beforeCompile = Date()
         try OrukeetLocalModels.compilePackages(from: source, to: installed)
@@ -94,10 +97,15 @@ struct OrukeetPortableRuntimeTests {
         let fixtures = try fixturePaths.map { try fixture(at: $0, in: repository) }
         let english = try #require(fixtures.first)
         try #require(english.samples.count <= 240_000)
-        let engine = OrukeetEngine(modelDirectory: installed, batchConcurrency: 1)
+        let engine = OrukeetEngine(modelDirectory: installed)
         let beforeLoad = Date()
         try await engine.ensureLoaded()
         let loadMs = Date().timeIntervalSince(beforeLoad) * 1_000
+
+        let beforePrepare = Date()
+        try await engine.prepare()
+        let prepareMs = Date().timeIntervalSince(beforePrepare) * 1_000
+        try await engine.prepare() // Repeated app preparation is idempotent.
 
         var fixtureResults: [[String: Any]] = []
         var firstEnglish = ""
@@ -144,6 +152,7 @@ struct OrukeetPortableRuntimeTests {
         let beforeReload = Date()
         try await engine.ensureLoaded()
         let reloadMs = Date().timeIntervalSince(beforeReload) * 1_000
+        try await engine.prepare()
         let reloaded = try await engine.transcribe(samples: english.samples)
         try #require(reloaded.text == firstEnglish)
         await engine.unload()
@@ -161,14 +170,17 @@ struct OrukeetPortableRuntimeTests {
             "system_version": device.2,
             "runtime_version": ProcessInfo.processInfo.operatingSystemVersionString,
             "simulator_model_identifier": environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "unavailable",
-            "fluid_audio_version": "0.15.5",
+            "fluid_audio_version": "0.15.5-orukeet.1",
             "requested_encoder_compute_units": "cpuAndNeuralEngine",
             "compute_placement": "Not measured; requested compute units do not prove Neural Engine execution",
-            "batch_concurrency": 1,
+            "batch_concurrency": 4,
             "compiled_components": requiredComponents,
             "preserved_sidecars": sidecars,
             "compile_ms_diagnostic": compileMs,
             "load_ms_diagnostic": loadMs,
+            "prepare_ms_diagnostic": prepareMs,
+            "warmup_and_reload_completed": true,
+            "swift_archive_verification_passed": true,
             "reload_ms_diagnostic": reloadMs,
             "fixture_results": fixtureResults,
             "repeat_after_multilingual_identical": afterMultilingual.text == firstEnglish,

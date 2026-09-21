@@ -1,173 +1,116 @@
-# OpenWhispr iOS: Orukeet batch transcription
+# Orukeet in OpenWhispr iOS
 
-This integration preserves OpenWhispr's record-then-transcribe flow: mono
-16 kHz floating-point PCM goes into FluidAudio/Core ML on the device. Orukeet r3
-is a v3 multilingual model, including English. Start with it as an optional
-multilingual selection; retain Parakeet v2 for English until a paired evaluation
-on OpenWhispr recordings justifies changing that selection.
+Use **one Orukeet r3 model for English and multilingual recordings**, with an
+INT8 encoder and greedy TDT decoding. This preserves Chad's existing flow:
+record 16 kHz mono PCM, then transcribe locally with FluidAudio and Core ML.
+The deployment target is iOS 17; the Swift package also supports macOS 14.
 
-**Status: integration candidate, not an iPhone-qualified release.** The portable
-weights already exist. This change adds iOS 17 to the Swift package, a bounded
-batch engine and installation/input lifecycle checks. Local macOS inference is
-separate from iOS build and physical-device qualification. See the
-[validation record](../../../evidence/coreml-openwhispr-20260920/README.md).
-The portable bundle has also compiled and transcribed speech inside iOS 18.5
-Simulator, including four languages, a 33-second input and unload/reload checks.
-This establishes simulator runtime compatibility; physical-iPhone qualification
-and OpenWhispr's actual app target remain pending.
+## Add the package
 
-## Version and model contract
+Add `https://github.com/Oruk-AI/orukeet.git` in Xcode, select the draft branch
+`codex/openwhispr-ios-20260920`, and link **OrukeetCoreML** to the app target.
+The repository root is a Swift package; no local checkout or converter is needed.
+Pin the reviewed commit when adopting the draft.
 
-| Item | Candidate |
-|---|---|
-| Swift package | Local package `export/coreml/benchmark`; library product `OrukeetCoreML` |
-| Runtime | FluidAudio **0.15.5**, revision `19600a485baa4998812e4654b70d2bab8f2c9949` |
-| Platform declaration | iOS 17+, macOS 14+; Swift 6 |
-| Model lineage | Orukeet r3, Parakeet TDT 0.6B v3 architecture |
-| Audio | 16,000 Hz, one channel, normalized finite `[Float]` PCM (approximately −1…1); at least 300 ms |
-| Decoder | v3; 8,192 vocabulary entries; fresh decoder state per recording |
-| Default placement | Preprocessor CPU; encoder/decoder/joint CPU + Neural Engine |
-| Batch concurrency | One chunk at a time by default; qualify memory before raising it |
-| Portable graphs | Core ML specification 8 / CoreML7; fixed 15-second model windows |
-| Long recordings | FluidAudio's batch chunking; do not truncate to one model window |
+The package uses Oruk's small FluidAudio 0.15.5 backport of the
+[buffer optimization](../../../export/coreml/runtime/README.md), including the
+shared/strided-view correctness fix. If the app already directly depends on
+FluidAudio, switch that package reference to the **same URL and version in
+Orukeet's Package.swift**. Keep a single FluidAudio dependency in the graph;
+`import FluidAudio` and the existing APIs remain unchanged.
 
-The runtime version is the existing tested reference, **not a claim about
-OpenWhispr's current pin**. Its iOS repository/version was not available during
-preparation. Reconcile its `Package.resolved` before merging an app integration.
-Do not add a second incompatible FluidAudio version to an existing application.
+## Install once, warm once, reuse
 
-## Download and verify
-
-Use the immutable Hugging Face revision
-`43142dd1897f9ddadcd70173fcb5ff45c08aa951`:
-
-| Profile | Download bytes | SHA-256 |
-|---|---:|---|
-| [Greedy](https://huggingface.co/oruk/orukeet/resolve/43142dd1897f9ddadcd70173fcb5ff45c08aa951/coreml/orukeet-r3-coreml-greedy.zip?download=true) | 466,579,943 | `beccdc6f18c4b10527a764f6e3ab12e3e11b969220c0cee175b3bb7eaa94290e` |
-| [Baseline](https://huggingface.co/oruk/orukeet/resolve/43142dd1897f9ddadcd70173fcb5ff45c08aa951/coreml/orukeet-r3-coreml-baseline.zip?download=true) | 466,579,851 | `b2a6efc4ed3280c860f29b3e2e2ea242ade14c6482c94f1c8d3e8551d5edb626` |
-
-For ordinary unconditioned batch decoding use **greedy**. Use **baseline** if the
-application needs top-K outputs for language hints or vocabulary reranking.
-The wrapper's batch API performs unconditioned decoding. Both archives contain
-the same Orukeet encoder weights and full v3 vocabulary; they are not separate
-English and multilingual models.
-
-Verify the archive before extraction (run from the repository root):
-
-```sh
-python3 export/coreml/verify_bundle.py \
-  --archive /path/to/orukeet-r3-coreml-greedy.zip --profile greedy
-```
-
-The verifier authenticates the archive against the pinned SHA-256, checks every
-manifest payload, rejects unsafe/unlisted entries, and validates the vocabulary.
-It reads the archive without extracting another weight copy. In the app, pin the
-same archive hash in the download manager and verify it before extraction. Treat
-`bundle.json` as integrity metadata, not a substitute for the trusted archive hash.
-
-Each extracted archive has a single `orukeet-r3-coreml-<profile>/` root containing:
-
-```text
-Preprocessor.mlpackage/
-Encoder.mlpackage/
-Decoder.mlpackage/
-JointDecisionv3.mlpackage/
-parakeet_vocab.json
-bundle.json
-LICENSE-WEIGHTS
-NOTICE.md
-COREML-NOTICE.txt
-```
-
-Compile portable `.mlpackage` files on the destination device. Do not ship this
-Mac's `.mlmodelc` cache to iOS. Keep model downloads and compilation outside the
-recording/transcription timer, and retain the manifest and attribution alongside
-the installed cache. Allow disk space for the download, extracted packages and
-compiled cache during installation; the ZIP size is not peak disk or RAM usage.
-
-## App integration
-
-Add the repository's `export/coreml/benchmark` directory as a local Swift package
-in Xcode and link the `OrukeetCoreML` library to the iOS target. The repository
-root is a Python/native package, so adding its root URL as a Swift package will
-not work. Preserve the package's pinned FluidAudio dependency while validating.
+Use the app's existing download and ZIP extraction machinery with
+`OrukeetBundle.int8.url`. The descriptor pins the archive size and SHA-256.
+Verification, extraction and Core ML compilation belong in the installation
+worker, outside the main actor and transcription timer:
 
 ```swift
-import Foundation
 import OrukeetCoreML
 
-// Installer context, off the main actor. `downloadedBundle` is the verified,
-// extracted archive root. Use a NEW revision-specific destination directory.
-try OrukeetLocalModels.compilePackages(
-    from: downloadedBundle,
-    to: installedCache
-)
+let bundle = OrukeetBundle.int8
+try bundle.verifyArchive(at: downloadedZIP)
+// Existing ZIP extractor: extract downloadedZIP into extractionDirectory.
+let source = extractionDirectory.appendingPathComponent(bundle.archiveRoot)
+try OrukeetLocalModels.compilePackages(from: source, to: revisionCache)
+```
 
-// Keep one engine alive between completed recordings.
-let engine = OrukeetEngine(modelDirectory: installedCache)
-try await engine.ensureLoaded()
+Use a new revision-specific cache directory. Installation publishes all four
+compiled components atomically and preserves vocabulary, identity and license
+notices. It refuses to overwrite an existing cache. Compile portable
+`.mlpackage` files on the destination device; compiled caches are OS-specific.
 
-// The existing capture/resampler must supply normalized 16 kHz mono PCM.
-// Divide Int16 samples by 32768; merely casting Int16 to Float is not normalization.
-let output = try await engine.transcribe(samples: mono16kSamples)
-print(output.text)
+Keep **one engine** alive for successive recordings. Start preparation when the
+model is selected or the recorder opens, so graph loading and the first Core ML
+prediction finish before the user stops recording:
 
-// Release the model when switching away or handling memory pressure.
+```swift
+let engine = OrukeetEngine(modelDirectory: revisionCache)
+try await engine.prepare() // Idempotent until unload; warmup text is discarded.
+
+// Recording has stopped; the existing capture path supplies Float PCM.
+let result = try await engine.transcribe(samples: mono16kSamples)
+insertTranscript(result.text)
+
+// Only when switching model or responding to memory pressure:
 await engine.unload()
 ```
 
-`compilePackages` publishes a complete new cache directory or fails without
-leaving a partial installation. It refuses an existing destination. To upgrade,
-install to a new revision-specific path and switch the app's saved selection
-after success. Keep the previous installed version until the switch succeeds.
+`prepare()` and `transcribe()` run on the engine actor. Await preparation before
+submitting a recording, and serialize completed recordings through the app's
+queue. The engine rejects overlap with `busy`, creates fresh decoder state for
+every request, discards cancelled results, and defers unload until active work
+finishes. In-flight Core ML predictions can finish before cancellation is seen.
+Inference has no download or network fallback.
 
-The engine rejects invalid input before loading models. It creates fresh decoder
-state for each recording and rejects overlapping transcriptions with a busy
-error. Serialize completed recordings in the app's queue; don't silently drop
-one. Cancellation checks prevent returning a cancelled result, but an in-flight
-Core ML operation is not guaranteed to stop immediately. Wait for completion
-before starting the next request. There is no network request in the engine.
+Input must be finite, normalized `[Float]` PCM at **16,000 Hz, one channel**, with
+at least 300 ms of audio. Divide Int16 by 32768 before passing it as Float.
+FluidAudio chunks long recordings automatically; pass the complete recording.
+The v3 vocabulary and decoder apply to English too; there is no v2 model switch.
 
-Newer FluidAudio versions provide `AsrModels.loadLocal(from:version:)`; upstream
-documents [Orukeet local loading](https://github.com/FluidInference/FluidAudio/blob/5343241cd8a7576890e50925dec666bafc89d324/Documentation/Orukeet.md).
-If OpenWhispr uses that API, follow its exact version's contract. The standard
-NVIDIA download/load helpers can select Parakeet cache directories; do not use
-them to load Orukeet or overwrite an existing NVIDIA model cache.
+## Speed choices
 
-## Precision and English selection
+- Greedy joint exports only the decisions needed by unconditioned transcription.
+- Bulk tensor fill/copy replaces per-element Swift/Core ML calls while preserving
+  view boundaries and overlapping-copy semantics.
+- Loading, compilation and warmup happen once; warmed models remain resident.
+- The default encoder/decoder/joint placement is CPU + Neural Engine; preprocessing
+  runs on CPU. `encoderComputeUnits` permits app-side device profiling.
+- Long recordings use up to **four concurrent chunks**, matching FluidAudio's
+  default. Set `batchConcurrency: 2` or `1` if the app needs lower peak working
+  memory. The performance record compares all three settings.
 
-FluidAudio's historical `.int8` setting refers to `Encoder.mlmodelc`, whose
-published v3 weights actually use mixed 6-bit LUT palettes and FP16. Orukeet's
-published preview matches that conversion. Current upstream also has a distinct
-`.int8V2` / `Encoder_v2.mlmodelc` linear INT8 option. These are different artifact
-contracts; confirm which OpenWhispr loads before describing them as identical.
+See [reproducible performance results](../../../evidence/coreml-openwhispr-20260920/performance/README.md).
+Mac timings identify runtime improvements; they are not iPhone latency claims.
 
-A true symmetric INT8 Orukeet encoder exists as an experimental candidate.
-Existing subset tests show mixed per-language results, including English and
-wrong-script regressions. It must pass broader accuracy and target-device checks
-before promotion. It is not part of these downloads, and its results do not
-establish superiority to English Parakeet v2.
+## Model identity and validation
 
-There is no separately trained/released v2-derived English Orukeet model in this
-handoff. Keep OpenWhispr's English/multilingual selector and compare the current
-v2, v3 and Orukeet on the same English recordings with the same normalization.
-Published benchmark averages from different runtimes are not that comparison.
+The immutable download is **554,985,744 bytes**, with SHA-256
+`24df9ff76f00f86f9ae1fd601cbbcab1d1eac98c7e8107de67444a7858d88b8b`.
+It contains a true symmetric per-channel INT8 weight-quantized Orukeet encoder,
+the original preprocessor, FP16 decoder/joint components and the complete 8,192-token v3 vocabulary. Activations
+are not claimed to be INT8. This differs from FluidAudio's historical `.int8`
+selection, which used mixed LUT6/FP16 encoder weights.
 
-A [paired English16 diagnostic](../../../evidence/coreml-openwhispr-20260920/english16/README.md)
-completed with the same FluidAudio version and identical audio: Parakeet v2 had
-16 errors / 343 reference words (4.66% WER), versus Orukeet's 20 / 343 (5.83%).
-These reused clips are too small a sample to establish general English accuracy,
-but support retaining the separate English selection while qualifying Orukeet.
+The archive retains its original experimental filename and provenance. Its
+400-clip, 25-language diagnostic yielded 1,072 errors / 7,650 fixed reference
+words versus 1,112 for the earlier Orukeet LUT6 export. Individual clips can
+regress, including a documented Slovenian script error; this is not a full
+accuracy benchmark. There is no separate Parakeet model in the app integration.
 
-## Before enabling by default on iPhone
+[Validation evidence](../../../evidence/coreml-openwhispr-20260920/README.md)
+records the build, runtime and model checks. The CI compiles portable models and
+runs multilingual, long-recording and lifecycle checks inside iOS Simulator.
+[Physical-device measurements](device-qualification.md) remain a deployment
+follow-up for the app's supported iPhones, including latency, RAM and thermals.
 
-Run the [device qualification protocol](device-qualification.md) against the
-actual app dependency version and supported devices. It covers successful and
-interrupted installs, short and long recordings, repeated/cancelled requests,
-multilingual/script regressions, peak memory, thermal behavior and English-v2
-accuracy. Build success alone does not establish acceptable on-device memory,
-latency, battery use or recognition quality.
+For a development-machine artifact audit without extracting weights:
 
-Modified weights retain CC BY-SA 4.0 and NVIDIA attribution. The bundle includes
-`LICENSE-WEIGHTS`, `NOTICE.md` and `COREML-NOTICE.txt`; distribute them with the
-models. The integration code is MIT and FluidAudio is Apache-2.0.
+```sh
+python3 export/coreml/verify_bundle.py --profile int8 --archive /path/to/model.zip
+```
+
+Ship `LICENSE-WEIGHTS`, `NOTICE.md` and `COREML-NOTICE.txt` with the model.
+Modified weights retain CC BY-SA 4.0 and upstream NVIDIA attribution;
+integration code is MIT and FluidAudio is Apache-2.0.

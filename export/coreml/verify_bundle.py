@@ -87,18 +87,18 @@ def verify(path, profile):
     if actual_hash != entry["sha256"]:
         raise ValueError("Archive SHA-256 does not match the pinned release")
     with zipfile.ZipFile(path) as archive:
-        count = verify_contents(archive, entry["archive_root"], profile)
+        count = verify_contents(archive, entry["archive_root"], entry.get("manifest_profile", profile))
     return {"status": "verified", "profile": profile, "archive_sha256": actual_hash,
             "archive_bytes": path.stat().st_size, "verified_payload_files": count,
             "source_sha256": SOURCE_SHA256, "fluid_audio_version": "0.15.5",
-            "hf_revision": "43142dd1897f9ddadcd70173fcb5ff45c08aa951",
+            "hf_revision": entry["hf_revision"],
             "qualification": "Artifact integrity only; not an iOS device qualification"}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--archive", required=True, type=Path)
-    parser.add_argument("--profile", choices=("greedy", "baseline"), default="greedy")
+    parser.add_argument("--profile", choices=("greedy", "baseline", "int8"), default="greedy")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     report = json.dumps(verify(args.archive, args.profile), indent=2) + "\n"

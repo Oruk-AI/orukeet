@@ -136,6 +136,44 @@ struct OrukeetEngineTests {
         #expect(await backend.calls == 1)
     }
 
+    @Test func prepareWarmsOnceAndPreservesFreshRecordingAdmission() async throws {
+        let backend = SuspendedTranscriber()
+        let engine = OrukeetEngine(transcriber: backend)
+        let warmup = Task { try await engine.prepare() }
+        await backend.waitUntilStarted()
+        await #expect(throws: OrukeetModelError.busy) {
+            try await engine.transcribe(samples: recording)
+        }
+        await backend.finish()
+        try await warmup.value
+        try await engine.prepare()
+        #expect(await backend.calls == 1)
+        #expect(try await engine.transcribe(samples: recording).text == "recording")
+        #expect(await backend.calls == 2)
+        await engine.unload()
+        await #expect(throws: OrukeetModelError.missingComponent("/unused-test-models/parakeet_vocab.json")) {
+            try await engine.prepare()
+        }
+    }
+
+    @Test func unloadDuringPreparationDoesNotLeaveEngineMarkedReady() async throws {
+        let backend = SuspendedTranscriber()
+        let engine = OrukeetEngine(transcriber: backend)
+        let warmup = Task { try await engine.prepare() }
+        await backend.waitUntilStarted()
+        await engine.unload()
+        // Keep the warming manager alive until its active prediction completes.
+        try await engine.ensureLoaded()
+        await #expect(throws: OrukeetModelError.busy) { try await engine.prepare() }
+        await backend.finish()
+        try await warmup.value
+        // A fresh preparation must reload, not return through a stale ready flag.
+        await #expect(throws: OrukeetModelError.missingComponent("/unused-test-models/parakeet_vocab.json")) {
+            try await engine.prepare()
+        }
+        #expect(await backend.calls == 1)
+    }
+
     @Test func inferenceFailureReleasesAdmission() async throws {
         let engine = OrukeetEngine(transcriber: FailOnceTranscriber())
         await #expect(throws: DeliberateFailure.self) { try await engine.transcribe(samples: recording) }

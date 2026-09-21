@@ -1,0 +1,15 @@
+{
+  "originHash" : "0f822b9ff282756bfc82be371a7ed48c2fc51d8e361f55f2297ac44e462ceb8e",
+  "pins" : [
+    {
+      "identity" : "fluidaudio",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Oruk-AI/FluidAudio.git",
+      "state" : {
+        "revision" : "ddc95f4d03d5be12bf84eeb6e4bde5b724356d88",
+        "version" : "0.15.5-orukeet.1"
+      }
+    }
+  ],
+  "version" : 3
+}

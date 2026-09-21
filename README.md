@@ -39,9 +39,14 @@ through OpenWhispr’s existing sherpa-onnx runtime.
 
 [Follow the file-upload walkthrough](https://oruk.ai/guides/orukeet-local-transcription#openwhispr) for the exact settings and a public sample with its observed transcript. Audio Upload needs its own model selection even when Orukeet is active for dictation.
 
-For **Core ML / TapTalk integration**, see the [converter and Swift engine](export/coreml/README.md).
-It matches FluidAudio 0.15.5's Parakeet deployment, with a separately validated
-greedy-decoding optimization and [local latency/accuracy measurements](evidence/coreml-taptalk-20260915/README.md).
+[TapTalk 0.4.0](https://github.com/vakharwalad23/tap-talk/releases/tag/v0.4.0)
+is an open-source macOS dictation app with an Orukeet Core ML engine. Download
+Orukeet from its **Models** page; to switch between installed engines, use
+**Settings → Local model**. Orukeet transcribes completed recordings in this
+release; TapTalk's optional live typing uses Parakeet. See the
+[TapTalk repository](https://github.com/vakharwalad23/tap-talk) for setup and support.
+
+For iOS apps using FluidAudio/Core ML, use the [Orukeet batch integration](integrations/openwhispr/ios/README.md) for English and all 25 supported languages. The Swift package loads the portable Orukeet model and transcribes completed 16 kHz mono recordings locally.
 
 ## Run speech recognition
 
@@ -82,6 +87,9 @@ A persistent worker keeps the model loaded across files. Input is decoded to
 mono 16 kHz and split into bounded windows for long recordings. Existing users
 should upgrade the package and rerun `orukeet install` to regenerate their
 installation receipt with the new runtime.
+
+[Local OpenAI-compatible server](examples/local-server.md) keeps one model loaded
+for multipart uploads from curl, the OpenAI Python client or Emacs.
 
 [Usage and application workers](docs/usage.md) · [NeMo inference and fine-tuning](docs/gabor-source.md)
 
@@ -190,7 +198,7 @@ Code: MIT. Weights and fitted kernels: CC BY-SA 4.0, retaining NVIDIA's foundati
 ## Citation
 
 ```bibtex
-@techreport{roll2026orukeet,
+@article{roll2026orukeet,
   title = {{Orukeet}: Multilingual {ASR} with Frozen {Gabor} Kernels},
   author = {Roll, Nathan and
             Yi, Irene and
@@ -201,10 +209,9 @@ Code: MIT. Weights and fitted kernels: CC BY-SA 4.0, retaining NVIDIA's foundati
             Padjin, Pavle and
             Zeljkovic, Vladimir and
             Graham, Calbert},
-  institution = {Oruk AI},
+  journal = {arXiv preprint arXiv:2609.10054},
   year = {2026},
-  type = {Technical report},
-  url = {https://github.com/Oruk-AI/orukeet/blob/main/output/pdf/orukeet-technical-report.pdf}
+  url = {https://arxiv.org/abs/2609.10054}
 }
 ```
 

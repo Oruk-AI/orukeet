@@ -1,0 +1,689 @@
+{
+  "complete_process_runs": 14,
+  "total_calls_including_warmups": 684,
+  "summaries": [
+    {
+      "label": "concurrency-optimized-int8-c1-ane",
+      "fixture": "natural-long",
+      "audio_seconds": 29.95075,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        190.9435,
+        184.55875
+      ],
+      "wall_mean_of_round_medians_ms": 187.751125,
+      "processing_round_median_ms": [
+        190.63806533813477,
+        184.26096439361572
+      ],
+      "processing_mean_of_round_medians_ms": 187.44951486587524,
+      "pooled_wall_median_ms": 187.237271,
+      "pooled_wall_p95_ms": 195.1560772,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "In the last seven days, we've signed the same number of contracts as we signed in the Hall of Q4. There is clear, tangible value being driven by these products, and it's only going to get better and quickly. Ultimately, you've got to be very passionate about what you're building. You've got to have that perseverance. And if that sounds good to you, then then build a startup. If something logically makes sense, you should probably continue doing that thing, right? And not let anything stop you. And I think like the consistency that we've noticed of founders that we've some of that we've invested in or"
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "concurrency-optimized-int8-c2-ane",
+      "fixture": "natural-long",
+      "audio_seconds": 29.95075,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        123.604167,
+        124.294708
+      ],
+      "wall_mean_of_round_medians_ms": 123.9494375,
+      "processing_round_median_ms": [
+        123.30305576324463,
+        123.97897243499756
+      ],
+      "processing_mean_of_round_medians_ms": 123.6410140991211,
+      "pooled_wall_median_ms": 123.711896,
+      "pooled_wall_p95_ms": 129.71205015,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "In the last seven days, we've signed the same number of contracts as we signed in the Hall of Q4. There is clear, tangible value being driven by these products, and it's only going to get better and quickly. Ultimately, you've got to be very passionate about what you're building. You've got to have that perseverance. And if that sounds good to you, then then build a startup. If something logically makes sense, you should probably continue doing that thing, right? And not let anything stop you. And I think like the consistency that we've noticed of founders that we've some of that we've invested in or"
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "concurrency-optimized-int8-c4-ane",
+      "fixture": "natural-long",
+      "audio_seconds": 29.95075,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        107.103375,
+        120.6845
+      ],
+      "wall_mean_of_round_medians_ms": 113.89393749999999,
+      "processing_round_median_ms": [
+        106.75907135009766,
+        120.3770637512207
+      ],
+      "processing_mean_of_round_medians_ms": 113.56806755065918,
+      "pooled_wall_median_ms": 113.2833335,
+      "pooled_wall_p95_ms": 125.87525829999998,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "In the last seven days, we've signed the same number of contracts as we signed in the Hall of Q4. There is clear, tangible value being driven by these products, and it's only going to get better and quickly. Ultimately, you've got to be very passionate about what you're building. You've got to have that perseverance. And if that sounds good to you, then then build a startup. If something logically makes sense, you should probably continue doing that thing, right? And not let anything stop you. And I think like the consistency that we've noticed of founders that we've some of that we've invested in or"
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-optimized-int8-c1-ane",
+      "fixture": "english",
+      "audio_seconds": 4.32,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        39.063041,
+        38.717375
+      ],
+      "wall_mean_of_round_medians_ms": 38.890208,
+      "processing_round_median_ms": [
+        38.94495964050293,
+        38.39099407196045
+      ],
+      "processing_mean_of_round_medians_ms": 38.66797685623169,
+      "pooled_wall_median_ms": 38.8975205,
+      "pooled_wall_p95_ms": 41.544516599999994,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "Many people don't think about them as dinosaurs because they have feathers and can fly."
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-optimized-int8-c1-ane",
+      "fixture": "italian",
+      "audio_seconds": 14.34,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        55.814583,
+        53.467542
+      ],
+      "wall_mean_of_round_medians_ms": 54.641062500000004,
+      "processing_round_median_ms": [
+        55.62400817871094,
+        53.289055824279785
+      ],
+      "processing_mean_of_round_medians_ms": 54.45653200149536,
+      "pooled_wall_median_ms": 53.7739585,
+      "pooled_wall_p95_ms": 58.4523022,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "Se avete visto il film Il mistero dei Templari, potreste pensare che sul retro della dichiarazione di indipendenza sia disegnata una mappa del tesoro."
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-optimized-int8-c1-ane",
+      "fixture": "natural-long",
+      "audio_seconds": 29.95075,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        192.207292,
+        188.425792
+      ],
+      "wall_mean_of_round_medians_ms": 190.316542,
+      "processing_round_median_ms": [
+        191.84494018554688,
+        188.10498714447021
+      ],
+      "processing_mean_of_round_medians_ms": 189.97496366500854,
+      "pooled_wall_median_ms": 190.1484375,
+      "pooled_wall_p95_ms": 200.44994985,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "In the last seven days, we've signed the same number of contracts as we signed in the Hall of Q4. There is clear, tangible value being driven by these products, and it's only going to get better and quickly. Ultimately, you've got to be very passionate about what you're building. You've got to have that perseverance. And if that sounds good to you, then then build a startup. If something logically makes sense, you should probably continue doing that thing, right? And not let anything stop you. And I think like the consistency that we've noticed of founders that we've some of that we've invested in or"
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-optimized-int8-c1-ane",
+      "fixture": "russian",
+      "audio_seconds": 7.92,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        50.41125,
+        51.99325
+      ],
+      "wall_mean_of_round_medians_ms": 51.20225000000001,
+      "processing_round_median_ms": [
+        50.24898052215576,
+        51.82301998138428
+      ],
+      "processing_mean_of_round_medians_ms": 51.03600025177002,
+      "pooled_wall_median_ms": 51.8081045,
+      "pooled_wall_p95_ms": 54.297166849999996,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "\u0412 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b\u0445 \u043c\u0435\u0441\u0442\u0430\u0445 \u0420\u0438\u043c\u0430 \u0431\u044b\u043b\u0438 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u044b \u0431\u043e\u043b\u044c\u0448\u0438\u0435 \u0442\u0435\u043b\u0435\u0432\u0438\u0437\u0438\u043e\u043d\u043d\u044b\u0435 \u044d\u043a\u0440\u0430\u043d\u044b, \u0441 \u043f\u043e\u043c\u043e\u0449\u044c\u044e \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u043b\u044e\u0434\u0438 \u043c\u043e\u0433\u043b\u0438 \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0442\u044c \u0437\u0430 \u0446\u0435\u0440\u0435\u043c\u043e\u043d\u0438\u0435\u0439."
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-optimized-published-c1-ane",
+      "fixture": "english",
+      "audio_seconds": 4.32,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        39.181083,
+        39.139708
+      ],
+      "wall_mean_of_round_medians_ms": 39.1603955,
+      "processing_round_median_ms": [
+        39.059996604919434,
+        38.95699977874756
+      ],
+      "processing_mean_of_round_medians_ms": 39.008498191833496,
+      "pooled_wall_median_ms": 39.166520500000004,
+      "pooled_wall_p95_ms": 42.5945045,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "Many people don't think about them as dinosaurs because they have feathers and can fly."
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-optimized-published-c1-ane",
+      "fixture": "italian",
+      "audio_seconds": 14.34,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        56.891541,
+        54.527125
+      ],
+      "wall_mean_of_round_medians_ms": 55.709333,
+      "processing_round_median_ms": [
+        56.66005611419678,
+        54.34703826904297
+      ],
+      "processing_mean_of_round_medians_ms": 55.50354719161987,
+      "pooled_wall_median_ms": 54.8523955,
+      "pooled_wall_p95_ms": 62.05672514999999,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "Se avete visto il film Il mistero dei Templari, potreste pensare che il sul retro della Dichiarazione di Indipendenza sia disegnato una mappa del tesoro."
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-optimized-published-c1-ane",
+      "fixture": "natural-long",
+      "audio_seconds": 29.95075,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        194.114,
+        189.737167
+      ],
+      "wall_mean_of_round_medians_ms": 191.92558350000002,
+      "processing_round_median_ms": [
+        193.74597072601318,
+        189.3770694732666
+      ],
+      "processing_mean_of_round_medians_ms": 191.5615200996399,
+      "pooled_wall_median_ms": 191.48475000000002,
+      "pooled_wall_p95_ms": 203.572533,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "In the last seven days, we've signed the same number of contracts as we signed in the Hall of Q4. There is clear, tangible value being driven by these products, and it's only gonna get better and quickly. Ultimately, you've got to be very passionate about what you're building. You've got to have that perseverance. And if that sounds good to you, then build a startup. If something logically makes sense, you should probably continue doing that thing, right? And not let anything stop you. And I think like the consistency that we've noticed of founders that we've some of that we've invested in or"
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-optimized-published-c1-ane",
+      "fixture": "russian",
+      "audio_seconds": 7.92,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        51.56225,
+        50.963084
+      ],
+      "wall_mean_of_round_medians_ms": 51.262667,
+      "processing_round_median_ms": [
+        51.393985748291016,
+        50.81605911254883
+      ],
+      "processing_mean_of_round_medians_ms": 51.10502243041992,
+      "pooled_wall_median_ms": 51.3326455,
+      "pooled_wall_p95_ms": 55.91741045,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "\u0412 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b\u0445 \u043c\u0435\u0441\u0442\u0430\u0445 \u0420\u0438\u043c\u0430 \u0431\u044b\u043b\u0438 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u044b \u0431\u043e\u043b\u044c\u0448\u0438\u0435 \u0442\u0435\u043b\u0435\u0432\u0438\u0437\u0438\u043e\u043d\u043d\u044b\u0435 \u044d\u043a\u0440\u0430\u043d\u044b, \u0441 \u043f\u043e\u043c\u043e\u0449\u044c\u044e \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u043b\u044e\u0434\u0438 \u043c\u043e\u0433\u043b\u0438 \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0442\u044c \u0437\u0430 \u0446\u0435\u0440\u0435\u043c\u043e\u043d\u0438\u0435\u0439."
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-original-int8-c1-ane",
+      "fixture": "english",
+      "audio_seconds": 4.32,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        54.916625,
+        53.721459
+      ],
+      "wall_mean_of_round_medians_ms": 54.319042,
+      "processing_round_median_ms": [
+        54.60405349731445,
+        53.38907241821289
+      ],
+      "processing_mean_of_round_medians_ms": 53.99656295776367,
+      "pooled_wall_median_ms": 54.228792,
+      "pooled_wall_p95_ms": 57.79624724999999,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "Many people don't think about them as dinosaurs because they have feathers and can fly."
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-original-int8-c1-ane",
+      "fixture": "italian",
+      "audio_seconds": 14.34,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        71.586833,
+        70.660959
+      ],
+      "wall_mean_of_round_medians_ms": 71.123896,
+      "processing_round_median_ms": [
+        71.22492790222168,
+        70.3120231628418
+      ],
+      "processing_mean_of_round_medians_ms": 70.76847553253174,
+      "pooled_wall_median_ms": 71.03479200000001,
+      "pooled_wall_p95_ms": 76.21648764999999,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "Se avete visto il film Il mistero dei Templari, potreste pensare che sul retro della dichiarazione di indipendenza sia disegnata una mappa del tesoro."
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-original-int8-c1-ane",
+      "fixture": "natural-long",
+      "audio_seconds": 29.95075,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        243.662,
+        237.601042
+      ],
+      "wall_mean_of_round_medians_ms": 240.63152100000002,
+      "processing_round_median_ms": [
+        243.1570291519165,
+        237.10107803344727
+      ],
+      "processing_mean_of_round_medians_ms": 240.12905359268188,
+      "pooled_wall_median_ms": 240.307417,
+      "pooled_wall_p95_ms": 252.83292065,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "In the last seven days, we've signed the same number of contracts as we signed in the Hall of Q4. There is clear, tangible value being driven by these products, and it's only going to get better and quickly. Ultimately, you've got to be very passionate about what you're building. You've got to have that perseverance. And if that sounds good to you, then then build a startup. If something logically makes sense, you should probably continue doing that thing, right? And not let anything stop you. And I think like the consistency that we've noticed of founders that we've some of that we've invested in or"
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-original-int8-c1-ane",
+      "fixture": "russian",
+      "audio_seconds": 7.92,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        68.848917,
+        67.064084
+      ],
+      "wall_mean_of_round_medians_ms": 67.9565005,
+      "processing_round_median_ms": [
+        68.5269832611084,
+        66.71297550201416
+      ],
+      "processing_mean_of_round_medians_ms": 67.61997938156128,
+      "pooled_wall_median_ms": 67.6065205,
+      "pooled_wall_p95_ms": 73.57083764999999,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "\u0412 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b\u0445 \u043c\u0435\u0441\u0442\u0430\u0445 \u0420\u0438\u043c\u0430 \u0431\u044b\u043b\u0438 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u044b \u0431\u043e\u043b\u044c\u0448\u0438\u0435 \u0442\u0435\u043b\u0435\u0432\u0438\u0437\u0438\u043e\u043d\u043d\u044b\u0435 \u044d\u043a\u0440\u0430\u043d\u044b, \u0441 \u043f\u043e\u043c\u043e\u0449\u044c\u044e \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u043b\u044e\u0434\u0438 \u043c\u043e\u0433\u043b\u0438 \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0442\u044c \u0437\u0430 \u0446\u0435\u0440\u0435\u043c\u043e\u043d\u0438\u0435\u0439."
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-original-published-c1-ane",
+      "fixture": "english",
+      "audio_seconds": 4.32,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        53.308041,
+        53.981667
+      ],
+      "wall_mean_of_round_medians_ms": 53.644854,
+      "processing_round_median_ms": [
+        53.02393436431885,
+        53.65598201751709
+      ],
+      "processing_mean_of_round_medians_ms": 53.33995819091797,
+      "pooled_wall_median_ms": 53.518,
+      "pooled_wall_p95_ms": 57.37600799999999,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "Many people don't think about them as dinosaurs because they have feathers and can fly."
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-original-published-c1-ane",
+      "fixture": "italian",
+      "audio_seconds": 14.34,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        69.309292,
+        70.023917
+      ],
+      "wall_mean_of_round_medians_ms": 69.6666045,
+      "processing_round_median_ms": [
+        68.97306442260742,
+        69.59903240203857
+      ],
+      "processing_mean_of_round_medians_ms": 69.286048412323,
+      "pooled_wall_median_ms": 69.7417915,
+      "pooled_wall_p95_ms": 75.58604619999998,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "Se avete visto il film Il mistero dei Templari, potreste pensare che il sul retro della Dichiarazione di Indipendenza sia disegnato una mappa del tesoro."
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-original-published-c1-ane",
+      "fixture": "natural-long",
+      "audio_seconds": 29.95075,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        234.628875,
+        235.116917
+      ],
+      "wall_mean_of_round_medians_ms": 234.872896,
+      "processing_round_median_ms": [
+        234.13002490997314,
+        234.64298248291016
+      ],
+      "processing_mean_of_round_medians_ms": 234.38650369644165,
+      "pooled_wall_median_ms": 234.872896,
+      "pooled_wall_p95_ms": 259.91933559999995,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "In the last seven days, we've signed the same number of contracts as we signed in the Hall of Q4. There is clear, tangible value being driven by these products, and it's only gonna get better and quickly. Ultimately, you've got to be very passionate about what you're building. You've got to have that perseverance. And if that sounds good to you, then build a startup. If something logically makes sense, you should probably continue doing that thing, right? And not let anything stop you. And I think like the consistency that we've noticed of founders that we've some of that we've invested in or"
+      ],
+      "thermal_states": [
+        0
+      ]
+    },
+    {
+      "label": "main-original-published-c1-ane",
+      "fixture": "russian",
+      "audio_seconds": 7.92,
+      "timed_calls": 30,
+      "warmup_calls": 6,
+      "wall_round_median_ms": [
+        65.761209,
+        65.917792
+      ],
+      "wall_mean_of_round_medians_ms": 65.8395005,
+      "processing_round_median_ms": [
+        65.38403034210205,
+        65.55092334747314
+      ],
+      "processing_mean_of_round_medians_ms": 65.4674768447876,
+      "pooled_wall_median_ms": 65.8395005,
+      "pooled_wall_p95_ms": 73.68989564999998,
+      "unique_transcripts_including_warmups": 1,
+      "transcripts": [
+        "\u0412 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b\u0445 \u043c\u0435\u0441\u0442\u0430\u0445 \u0420\u0438\u043c\u0430 \u0431\u044b\u043b\u0438 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u044b \u0431\u043e\u043b\u044c\u0448\u0438\u0435 \u0442\u0435\u043b\u0435\u0432\u0438\u0437\u0438\u043e\u043d\u043d\u044b\u0435 \u044d\u043a\u0440\u0430\u043d\u044b, \u0441 \u043f\u043e\u043c\u043e\u0449\u044c\u044e \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u043b\u044e\u0434\u0438 \u043c\u043e\u0433\u043b\u0438 \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0442\u044c \u0437\u0430 \u0446\u0435\u0440\u0435\u043c\u043e\u043d\u0438\u0435\u0439."
+      ],
+      "thermal_states": [
+        0
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "kind": "runtime",
+      "baseline": "main-original-published-c1-ane",
+      "candidate": "main-optimized-published-c1-ane",
+      "compared_calls_including_warmups": 144,
+      "transcript_mismatch_count": 0,
+      "mismatches": [],
+      "wall_comparison": [
+        {
+          "fixture": "english",
+          "baseline_ms": 53.644854,
+          "candidate_ms": 39.1603955,
+          "reduction_percent": 27.000648561742757
+        },
+        {
+          "fixture": "italian",
+          "baseline_ms": 69.6666045,
+          "candidate_ms": 55.709333,
+          "reduction_percent": 20.034378882352456
+        },
+        {
+          "fixture": "natural-long",
+          "baseline_ms": 234.872896,
+          "candidate_ms": 191.92558350000002,
+          "reduction_percent": 18.28534208561893
+        },
+        {
+          "fixture": "russian",
+          "baseline_ms": 65.8395005,
+          "candidate_ms": 51.262667,
+          "reduction_percent": 22.139951532590985
+        }
+      ]
+    },
+    {
+      "kind": "runtime",
+      "baseline": "main-original-int8-c1-ane",
+      "candidate": "main-optimized-int8-c1-ane",
+      "compared_calls_including_warmups": 144,
+      "transcript_mismatch_count": 0,
+      "mismatches": [],
+      "wall_comparison": [
+        {
+          "fixture": "english",
+          "baseline_ms": 54.319042,
+          "candidate_ms": 38.890208,
+          "reduction_percent": 28.40409814296798
+        },
+        {
+          "fixture": "italian",
+          "baseline_ms": 71.123896,
+          "candidate_ms": 54.641062500000004,
+          "reduction_percent": 23.17481806677182
+        },
+        {
+          "fixture": "natural-long",
+          "baseline_ms": 240.63152100000002,
+          "candidate_ms": 190.316542,
+          "reduction_percent": 20.90955448849946
+        },
+        {
+          "fixture": "russian",
+          "baseline_ms": 67.9565005,
+          "candidate_ms": 51.20225000000001,
+          "reduction_percent": 24.654375043929754
+        }
+      ]
+    },
+    {
+      "kind": "chunk_concurrency",
+      "baseline": "concurrency-optimized-int8-c1-ane",
+      "candidate": "concurrency-optimized-int8-c2-ane",
+      "compared_calls_including_warmups": 36,
+      "transcript_mismatch_count": 0,
+      "mismatches": [],
+      "wall_comparison": [
+        {
+          "fixture": "natural-long",
+          "baseline_ms": 187.751125,
+          "candidate_ms": 123.9494375,
+          "reduction_percent": 33.982053369853304
+        }
+      ]
+    },
+    {
+      "kind": "chunk_concurrency",
+      "baseline": "concurrency-optimized-int8-c1-ane",
+      "candidate": "concurrency-optimized-int8-c4-ane",
+      "compared_calls_including_warmups": 36,
+      "transcript_mismatch_count": 0,
+      "mismatches": [],
+      "wall_comparison": [
+        {
+          "fixture": "natural-long",
+          "baseline_ms": 187.751125,
+          "candidate_ms": 113.89393749999999,
+          "reduction_percent": 39.33781355504527
+        }
+      ]
+    }
+  ],
+  "process_memory": [
+    {
+      "label": "concurrency-optimized-int8-c1-ane",
+      "round": 0,
+      "peak_rss_bytes": 103809024,
+      "load_ms": 160.628292
+    },
+    {
+      "label": "concurrency-optimized-int8-c1-ane",
+      "round": 1,
+      "peak_rss_bytes": 106627072,
+      "load_ms": 126.532917
+    },
+    {
+      "label": "concurrency-optimized-int8-c2-ane",
+      "round": 0,
+      "peak_rss_bytes": 149602304,
+      "load_ms": 125.174625
+    },
+    {
+      "label": "concurrency-optimized-int8-c2-ane",
+      "round": 1,
+      "peak_rss_bytes": 148324352,
+      "load_ms": 124.893708
+    },
+    {
+      "label": "concurrency-optimized-int8-c4-ane",
+      "round": 0,
+      "peak_rss_bytes": 186793984,
+      "load_ms": 126.55225
+    },
+    {
+      "label": "concurrency-optimized-int8-c4-ane",
+      "round": 1,
+      "peak_rss_bytes": 188628992,
+      "load_ms": 128.811209
+    },
+    {
+      "label": "main-optimized-int8-c1-ane",
+      "round": 0,
+      "peak_rss_bytes": 106987520,
+      "load_ms": 130.660292
+    },
+    {
+      "label": "main-optimized-int8-c1-ane",
+      "round": 1,
+      "peak_rss_bytes": 109150208,
+      "load_ms": 127.524791
+    },
+    {
+      "label": "main-optimized-published-c1-ane",
+      "round": 0,
+      "peak_rss_bytes": 107577344,
+      "load_ms": 120.984166
+    },
+    {
+      "label": "main-optimized-published-c1-ane",
+      "round": 1,
+      "peak_rss_bytes": 110526464,
+      "load_ms": 124.091958
+    },
+    {
+      "label": "main-original-int8-c1-ane",
+      "round": 0,
+      "peak_rss_bytes": 680869888,
+      "load_ms": 9951.656625
+    },
+    {
+      "label": "main-original-int8-c1-ane",
+      "round": 1,
+      "peak_rss_bytes": 109182976,
+      "load_ms": 127.404375
+    },
+    {
+      "label": "main-original-published-c1-ane",
+      "round": 0,
+      "peak_rss_bytes": 530137088,
+      "load_ms": 13678.363542
+    },
+    {
+      "label": "main-original-published-c1-ane",
+      "round": 1,
+      "peak_rss_bytes": 110821376,
+      "load_ms": 120.016375
+    }
+  ],
+  "statistics": "Performance comparisons use the mean of two round medians; each round contains 15 timed repetitions after three warmups per fixture. Separate pooled median/p95 are descriptive. No confidence-interval or iPhone claim."
+}

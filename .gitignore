@@ -28,3 +28,10 @@ installation.json
 !/demos/multilingual/audio/es_419.playback.wav
 !/demos/multilingual/audio/lv_lv.source.wav
 !/demos/multilingual/audio/lv_lv.playback.wav
+
+# SwiftPM / Xcode local products
+.build/
+.swiftpm/
+
+# Compact per-clip proof for the published runtime comparison.
+!/evidence/coreml-openwhispr-20260920/performance/parity/per-clip.jsonl

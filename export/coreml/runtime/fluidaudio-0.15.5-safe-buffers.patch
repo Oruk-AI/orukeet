@@ -1,0 +1,345 @@
+diff --git a/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDecoderState.swift b/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDecoderState.swift
+index b89de500..87573baf 100644
+--- a/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDecoderState.swift
++++ b/Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDecoderState.swift
+@@ -96,15 +96,81 @@ public struct TdtDecoderState: Sendable {
+ }
+ 
+ extension MLMultiArray {
++    private var scalarByteCount: Int? {
++        switch dataType {
++        case .float16: return MemoryLayout<Float16>.stride
++        case .float32: return MemoryLayout<Float>.stride
++        case .float64: return MemoryLayout<Double>.stride
++        case .int32: return MemoryLayout<Int32>.stride
++        default: return nil
++        }
++    }
++
++    private func hasContiguousElements(strides: [Int]) -> Bool {
++        guard strides.count == shape.count else { return false }
++        var expected = 1
++        for dimension in shape.indices.reversed() {
++            let size = shape[dimension].intValue
++            guard size > 0, size == 1 || strides[dimension] == expected else { return false }
++            expected *= size
++        }
++        return true
++    }
++
++    /// Fills logical elements, preserving storage outside a strided or padded view.
+     func resetData(to value: NSNumber) {
++        let filled = withUnsafeMutableBytes { bytes, storageStrides -> Bool in
++            guard hasContiguousElements(strides: storageStrides), let scalarBytes = scalarByteCount,
++                count * scalarBytes <= bytes.count, let base = bytes.baseAddress
++            else {
++                return false
++            }
++            let elements = UnsafeMutableRawBufferPointer(start: base, count: count * scalarBytes)
++            if value == 0 {
++                memset(base, 0, elements.count)
++                return true
++            }
++            switch dataType {
++            case .float32:
++                elements.bindMemory(to: Float.self).update(repeating: value.floatValue)
++            case .float64:
++                elements.bindMemory(to: Double.self).update(repeating: value.doubleValue)
++            case .int32:
++                elements.bindMemory(to: Int32.self).update(repeating: value.int32Value)
++            default:
++                return false
++            }
++            return true
++        }
++        if filled { return }
+         for i in 0..<count {
+             self[i] = value
+         }
+     }
+ 
++    /// Copies logical elements; contiguous arrays use memmove and other layouts snapshot values
++    /// before writing so overlapping views remain safe without copying their padding.
+     func copyData(from source: MLMultiArray) {
++        if self === source { return }
++        let copied = withUnsafeMutableBytes { destination, destinationStrides -> Bool in
++            source.withUnsafeBytes { origin -> Bool in
++                guard dataType == source.dataType, shape == source.shape,
++                    hasContiguousElements(strides: destinationStrides),
++                    source.hasContiguousElements(strides: source.strides.map { $0.intValue }),
++                    let scalarBytes = scalarByteCount,
++                    count * scalarBytes <= destination.count, count * scalarBytes <= origin.count,
++                    let to = destination.baseAddress, let from = origin.baseAddress
++                else {
++                    return false
++                }
++                memmove(to, from, count * scalarBytes)
++                return true
++            }
++        }
++        if copied { return }
++        let values = (0..<count).map { source[$0] }
+         for i in 0..<count {
+-            self[i] = source[i]
++            self[i] = values[i]
+         }
+     }
+ }
+diff --git a/Tests/FluidAudioTests/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDecoderStateV3Tests.swift b/Tests/FluidAudioTests/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDecoderStateV3Tests.swift
+index 9bb0173a..be840af6 100644
+--- a/Tests/FluidAudioTests/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDecoderStateV3Tests.swift
++++ b/Tests/FluidAudioTests/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDecoderStateV3Tests.swift
+@@ -183,6 +183,28 @@ final class TdtDecoderStateV3Tests: XCTestCase {
+         verifyArrayHasValue(array, value: 3.14)
+     }
+ 
++    func testMLMultiArrayResetDataInt32Value() throws {
++        let array = try MLMultiArray(shape: [4, 6], dataType: .int32)
++
++        array.resetData(to: 7)
++
++        for i in 0..<array.count {
++            XCTAssertEqual(array[i].intValue, 7, "Array should hold 7 at index \(i)")
++        }
++    }
++
++    func testMLMultiArrayResetDataFloat16Value() throws {
++        let array = try MLMultiArray(shape: [3, 5], dataType: .float16)
++
++        array.resetData(to: 1.5)
++        for i in 0..<array.count {
++            XCTAssertEqual(array[i].floatValue, 1.5, "Array should hold 1.5 at index \(i)")
++        }
++
++        array.resetData(to: 0)
++        verifyArrayIsZero(array)
++    }
++
+     func testMLMultiArrayResetDataNonFloat() throws {
+         let array = try MLMultiArray(shape: [5, 3], dataType: .int32)
+ 
+@@ -214,6 +236,165 @@ final class TdtDecoderStateV3Tests: XCTestCase {
+         verifyArraysEqual(destArray, sourceArray)
+     }
+ 
++    func testMLMultiArrayCopyDataLargeArray() throws {
++        let shape: [NSNumber] = [1, NSNumber(value: ASRConstants.maxModelSamples)]
++        let sourceArray = try MLMultiArray(shape: shape, dataType: .float32)
++        let destArray = try MLMultiArray(shape: shape, dataType: .float32)
++        sourceArray.resetData(to: 3)
++        destArray.resetData(to: -1)
++
++        destArray.copyData(from: sourceArray)
++
++        XCTAssertTrue((0..<destArray.count).allSatisfy { destArray[$0].floatValue == 3 })
++    }
++
++    func testMLMultiArrayCopyDataAcrossStrideLayouts() throws {
++        // A plain array and an ANE-aligned array of the same shape have different strides;
++        // the copy must still land every element.
++        let shape: [NSNumber] = [10, 10]
++        let sourceArray = try ANEMemoryUtils.createAlignedArray(shape: shape, dataType: .float32)
++        let destArray = try MLMultiArray(shape: shape, dataType: .float32)
++        XCTAssertNotEqual(sourceArray.strides, destArray.strides)
++
++        for i in 0..<sourceArray.count {
++            sourceArray[i] = NSNumber(value: Float(i) + 0.5)
++        }
++
++        destArray.copyData(from: sourceArray)
++
++        for i in 0..<destArray.count {
++            XCTAssertEqual(destArray[i].floatValue, Float(i) + 0.5, "Element \(i) should match the source")
++        }
++    }
++
++    func testMLMultiArrayCopyDataBetweenOverlappingViews() throws {
++        // Exercise both overlap directions and every supported scalar width.
++        for dataType: MLMultiArrayDataType in [.float16, .float32, .float64, .int32] {
++            for (sourceOffset, destinationOffset) in [(0, 16), (16, 0)] {
++                let backing = try ANEMemoryUtils.createAlignedArray(shape: [1, 96], dataType: dataType)
++                for i in 0..<backing.count { backing[i] = NSNumber(value: i) }
++                let sourceView = try ANEMemoryUtils.createZeroCopyView(
++                    from: backing, offset: sourceOffset, shape: [1, 64], strides: [64, 1])
++                let destinationView = try ANEMemoryUtils.createZeroCopyView(
++                    from: backing, offset: destinationOffset, shape: [1, 64], strides: [64, 1])
++
++                withExtendedLifetime(backing) {
++                    destinationView.copyData(from: sourceView)
++                    for i in 0..<backing.count {
++                        let expected = (destinationOffset..<(destinationOffset + 64)).contains(i)
++                            ? sourceOffset + i - destinationOffset : i
++                        XCTAssertEqual(backing[i].intValue, expected)
++                    }
++                }
++            }
++        }
++    }
++
++    func testMLMultiArrayResetPreservesContiguousViewNeighbors() throws {
++        for dataType: MLMultiArrayDataType in [.float16, .float32, .float64, .int32] {
++            let backing = try ANEMemoryUtils.createAlignedArray(shape: [1, 32], dataType: dataType)
++            // The singleton dimension's stride includes storage beyond the four logical elements.
++            let view = try ANEMemoryUtils.createZeroCopyView(
++                from: backing, offset: 4, shape: [1, 4], strides: [16, 1])
++            withExtendedLifetime(backing) {
++                view.withUnsafeBytes { bytes in
++                    XCTAssertGreaterThan(bytes.count, view.count * ANEMemoryUtils.getElementSize(for: dataType))
++                }
++                for value: NSNumber in [0, 7] {
++                    for i in 0..<backing.count { backing[i] = NSNumber(value: i + 1) }
++                    view.resetData(to: value)
++                    for i in 0..<backing.count {
++                        let expected = (4..<8).contains(i) ? value.intValue : i + 1
++                        XCTAssertEqual(backing[i].intValue, expected)
++                    }
++                }
++            }
++        }
++    }
++
++    func testMLMultiArrayCopyPreservesContiguousViewNeighbors() throws {
++        for dataType: MLMultiArrayDataType in [.float16, .float32, .float64, .int32] {
++            let source = try ANEMemoryUtils.createAlignedArray(shape: [1, 32], dataType: dataType)
++            let destination = try ANEMemoryUtils.createAlignedArray(shape: [1, 32], dataType: dataType)
++            for i in 0..<32 {
++                source[i] = NSNumber(value: i + 1)
++                destination[i] = NSNumber(value: i + 100)
++            }
++            let sourceView = try ANEMemoryUtils.createZeroCopyView(
++                from: source, offset: 4, shape: [1, 4], strides: [16, 1])
++            let destinationView = try ANEMemoryUtils.createZeroCopyView(
++                from: destination, offset: 4, shape: [1, 4], strides: [16, 1])
++            withExtendedLifetime((source, destination)) {
++                destinationView.copyData(from: sourceView)
++                for i in 0..<32 {
++                    XCTAssertEqual(source[i].intValue, i + 1)
++                    XCTAssertEqual(destination[i].intValue, (4..<8).contains(i) ? i + 1 : i + 100)
++                }
++            }
++        }
++    }
++
++    func testMLMultiArrayResetPreservesStridedViewNeighbors() throws {
++        let backing = try ANEMemoryUtils.createAlignedArray(shape: [1, 8], dataType: .float32)
++        let view = try ANEMemoryUtils.createZeroCopyView(
++            from: backing, offset: 0, shape: [2, 2], strides: [4, 1])
++        withExtendedLifetime(backing) {
++            for value: NSNumber in [0, 7] {
++                for i in 0..<8 { backing[i] = NSNumber(value: Float(i + 1)) }
++                view.resetData(to: value)
++                for i in [0, 1, 4, 5] { XCTAssertEqual(backing[i], value) }
++                for i in [2, 3, 6, 7] { XCTAssertEqual(backing[i].floatValue, Float(i + 1)) }
++            }
++        }
++    }
++
++    func testMLMultiArrayCopyPreservesStridedViewNeighbors() throws {
++        let source = try ANEMemoryUtils.createAlignedArray(shape: [1, 8], dataType: .float32)
++        let destination = try ANEMemoryUtils.createAlignedArray(shape: [1, 8], dataType: .float32)
++        for i in 0..<8 {
++            source[i] = NSNumber(value: Float(i + 1))
++            destination[i] = NSNumber(value: Float(i + 100))
++        }
++        let sourceView = try ANEMemoryUtils.createZeroCopyView(
++            from: source, offset: 0, shape: [2, 2], strides: [4, 1])
++        let destinationView = try ANEMemoryUtils.createZeroCopyView(
++            from: destination, offset: 0, shape: [2, 2], strides: [4, 1])
++        withExtendedLifetime((source, destination)) {
++            destinationView.copyData(from: sourceView)
++            for i in [0, 1, 4, 5] { XCTAssertEqual(destination[i].floatValue, Float(i + 1)) }
++            for i in [2, 3, 6, 7] { XCTAssertEqual(destination[i].floatValue, Float(i + 100)) }
++        }
++    }
++
++    func testMLMultiArrayCopySnapshotsOverlappingDifferentLayouts() throws {
++        let backing = try ANEMemoryUtils.createAlignedArray(shape: [1, 8], dataType: .float32)
++        for i in 0..<8 { backing[i] = NSNumber(value: Float(i)) }
++        let source = try ANEMemoryUtils.createZeroCopyView(
++            from: backing, offset: 0, shape: [2, 2], strides: [4, 1])
++        let destination = try ANEMemoryUtils.createZeroCopyView(
++            from: backing, offset: 1, shape: [2, 2], strides: [3, 1])
++        withExtendedLifetime(backing) {
++            destination.copyData(from: source)
++            for (i, expected) in [Float(0), 1, 4, 5].enumerated() {
++                XCTAssertEqual(destination[i].floatValue, expected)
++            }
++            for i in [0, 3, 6, 7] { XCTAssertEqual(backing[i].floatValue, Float(i)) }
++        }
++    }
++
++    func testMLMultiArrayCopyDataFromItselfLeavesValues() throws {
++        let array = try MLMultiArray(shape: [2, 1, 640], dataType: .float32)
++        for i in 0..<array.count {
++            array[i] = NSNumber(value: Float(i) * 0.5)
++        }
++
++        array.copyData(from: array)
++
++        for i in stride(from: 0, to: array.count, by: 97) {
++            XCTAssertEqual(array[i].floatValue, Float(i) * 0.5, "Element \(i) should be unchanged")
++        }
++    }
++
+     func testMLMultiArrayCopyDataNonFloat() throws {
+         let sourceArray = try MLMultiArray(shape: [2, 3], dataType: .int32)
+         let destArray = try MLMultiArray(shape: [2, 3], dataType: .int32)
+diff --git a/Tests/FluidAudioTests/Shared/MLArrayCacheTests.swift b/Tests/FluidAudioTests/Shared/MLArrayCacheTests.swift
+index 09673423..4cb9e770 100644
+--- a/Tests/FluidAudioTests/Shared/MLArrayCacheTests.swift
++++ b/Tests/FluidAudioTests/Shared/MLArrayCacheTests.swift
+@@ -204,6 +204,54 @@ final class MLArrayCacheTests: XCTestCase {
+ 
+     // Removed performance test - can cause timing issues
+ 
++    // MARK: - Reset Correctness
++
++    func testReturnArrayResetsPreprocessorBuffer() async throws {
++        let shape: [NSNumber] = [1, NSNumber(value: ASRConstants.maxModelSamples)]
++        let array = try await cache.getArray(shape: shape, dataType: .float32)
++        array.resetData(to: 3)
++
++        await cache.returnArray(array)
++        let cachedArray = try await cache.getArray(shape: shape, dataType: .float32)
++
++        XCTAssertTrue(cachedArray === array)
++        XCTAssertTrue((0..<cachedArray.count).allSatisfy { cachedArray[$0].floatValue == 0 })
++    }
++
++    func testReturnArrayResetsPaddedStrideArray() async throws {
++        // Poison the entire backing storage. Reset must visit every logical element and leave
++        // non-element storage unchanged, because the same helper also handles zero-copy views.
++        let shape: [NSNumber] = [10, 10]
++        let array = try await cache.getArray(shape: shape, dataType: .float32)
++        let paddingSentinel: Float = -17
++        array.withUnsafeMutableBytes { bytes, _ in
++            bytes.bindMemory(to: Float.self).update(repeating: paddingSentinel)
++        }
++        for i in 0..<array.count {
++            array[i] = NSNumber(value: Float(i) + 1)
++        }
++
++        await cache.returnArray(array)
++        let cachedArray = try await cache.getArray(shape: shape, dataType: .float32)
++
++        XCTAssertTrue(cachedArray === array)
++        for i in 0..<cachedArray.count {
++            XCTAssertEqual(cachedArray[i].floatValue, 0.0, "Element \(i) should be zero")
++        }
++        cachedArray.withUnsafeBytes { bytes in
++            let values = bytes.bindMemory(to: Float.self)
++            XCTAssertGreaterThan(values.count, cachedArray.count, "The aligned layout should carry padding")
++            let strides = cachedArray.strides.map { $0.intValue }
++            let logicalOffsets = Set((0..<10).flatMap { row in
++                (0..<10).map { column in row * strides[0] + column * strides[1] }
++            })
++            for i in values.indices {
++                let expected: Float = logicalOffsets.contains(i) ? 0 : paddingSentinel
++                XCTAssertEqual(values[i], expected, "Unexpected storage value at offset \(i)")
++            }
++        }
++    }
++
+     // MARK: - Global Cache Tests
+ 
+     func testSharedCacheInstance() async throws {

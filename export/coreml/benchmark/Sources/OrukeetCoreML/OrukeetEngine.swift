@@ -162,8 +162,7 @@ private struct FluidAudioBatchTranscriber: OrukeetBatchTranscribing {
 /// responsibility. One active recording per engine is permitted; overlapping calls
 /// throw `OrukeetModelError.busy`. Cancel the calling Task to cancel transcription.
 /// Core ML work already executing may finish before cancellation is observed.
-/// The greedy bundle supports unconditioned decoding. Use the baseline bundle
-/// when integrating language hints or top-K vocabulary reranking.
+/// This batch API uses unconditioned greedy decoding for every language.
 public actor OrukeetEngine {
     private let modelDirectory: URL
     private let encoderComputeUnits: MLComputeUnits
@@ -172,13 +171,14 @@ public actor OrukeetEngine {
     private var transcriber: (any OrukeetBatchTranscribing)?
     private var isTranscribing = false
     private var unloadWhenIdle = false
+    private var isPrepared = false
 
-    /// One long-form chunk at a time limits mobile working memory. Applications
-    /// may increase this after profiling their supported devices.
+    /// Match FluidAudio's bounded four-chunk batch default for throughput.
+    /// Applications can lower this to two or one to reduce working memory.
     public init(
         modelDirectory: URL,
         encoderComputeUnits: MLComputeUnits = .cpuAndNeuralEngine,
-        batchConcurrency: Int = 1
+        batchConcurrency: Int = 4
     ) {
         self.modelDirectory = modelDirectory
         self.encoderComputeUnits = encoderComputeUnits
@@ -203,6 +203,18 @@ public actor OrukeetEngine {
             manager: AsrManager(config: ASRConfig(parallelChunkConcurrency: batchConcurrency), models: loaded))
     }
 
+    /// Load and run one silent batch before the first completed recording, for
+    /// example while the app opens its recorder. Keeps Core ML's prediction path
+    /// warm; subsequent calls do no work until unload. The warmup uses fresh TDT
+    /// state and never contributes text to a user recording.
+    public func prepare() async throws {
+        try Task.checkCancellation()
+        guard !isPrepared else { return }
+        _ = try await transcribe(samples: [Float](repeating: 0, count: 4_800))
+        // An unload requested during warmup wins over retaining the ready flag.
+        isPrepared = transcriber != nil
+    }
+
     /// Release models when idle. During transcription, release is deferred until
     /// that request finishes (or observes cancellation); it never replaces an
     /// active manager with a second one.
@@ -214,6 +226,7 @@ public actor OrukeetEngine {
         transcriber = nil
         models = nil
         unloadWhenIdle = false
+        isPrepared = false
     }
 
     public struct Output: Sendable {
