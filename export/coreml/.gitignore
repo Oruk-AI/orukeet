@@ -1,0 +1,6 @@
+.venv/
+benchmark/.build/
+benchmark/.swiftpm/
+artifacts/
+*.mlpackage/
+*.mlmodelc/

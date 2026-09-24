@@ -6,3 +6,7 @@
 integrations/openwhispr/*.patch text eol=lf
 # Preserve unified-diff context lines and the locked patch bytes on every OS.
 runtime/**/*.patch text eol=lf whitespace=-blank-at-eol
+
+# Keep reproducible generated measurement receipts collapsed in code review.
+evidence/coreml-openwhispr-20260920/**/*.json linguist-generated=true
+evidence/coreml-openwhispr-20260920/**/*.jsonl linguist-generated=true

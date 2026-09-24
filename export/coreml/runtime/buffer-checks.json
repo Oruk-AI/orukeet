@@ -1,0 +1,27 @@
+{
+  "assertions": 240662,
+  "cases": [
+    "dense fill/copy/self-copy MLMultiArrayDataType(rawValue: 65552)",
+    "dense fill/copy/self-copy MLMultiArrayDataType(rawValue: 65568)",
+    "dense fill/copy/self-copy MLMultiArrayDataType(rawValue: 65600)",
+    "dense fill/copy/self-copy MLMultiArrayDataType(rawValue: 131104)",
+    "contiguous singleton view preserves trailing storage",
+    "strided fill/copy preserves gaps and tails",
+    "contiguous overlap forward and reverse",
+    "different-layout overlap snapshots forward and reverse",
+    "different datatype logical conversion",
+    "complete 240000-element preprocessor reset"
+  ],
+  "status": "passed",
+  "production_source": "Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDecoderState.swift",
+  "production_source_sha256": "e7c8b2ceaa0d2b00e6c884b8bc918e7700abb849f60e86e8fa14d3275820c157",
+  "scope": "Native macOS Core ML arrays; no model loading or iOS device execution",
+  "swift_version": "Apple Swift version 6.2.4 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)\nTarget: arm64-apple-macosx26.0",
+  "runtime_revision": "e94c930fb2651351080b25d5a388b6fb8c2ca483",
+  "build": "swift build -c release --target FluidAudio --jobs 4 passed",
+  "negative_control": {
+    "runtime": "unpatched FluidAudio 0.15.5",
+    "exit_code": 1,
+    "expected_failure": true
+  }
+}

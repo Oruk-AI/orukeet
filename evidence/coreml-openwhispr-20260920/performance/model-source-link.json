@@ -1,0 +1,42 @@
+{
+  "profile": "int8sym-encoder-only-experimental",
+  "portable_bundle_manifest_sha256": "dde7419a8e8a82f0a0098fb3dc051dc7ea095ffd5156d386f1da04efa9cad42a",
+  "portable_archive_name": "orukeet-r3-coreml-int8sym-encoder-only-experimental-20260920-deflated.zip",
+  "portable_archive_sha256": "24df9ff76f00f86f9ae1fd601cbbcab1d1eac98c7e8107de67444a7858d88b8b",
+  "compiled_cache_receipt_sha256": "0e6ec627d0da501ef0eeac2512ce486a3ab2c63a493d4dd2ae4446442e0b597f",
+  "components": [
+    {
+      "component": "Encoder",
+      "portable_graph_sha256": "bf29fc2cde15c33deefc9302fd5d888a3b67b641ff371ed61c87a85b3690b00f",
+      "portable_and_compiled_weight_sha256": "7c3aa75d323fed4b0b13126b221859aac2d1933da4aa070deb111603a9e23447",
+      "compiled_mil_sha256": "52c3c15fac77205a69f332f1a0f85dc3b45c410d9d4f276558584e5c4ae572e5",
+      "portable_and_compiled_weights_identical": true
+    },
+    {
+      "component": "Preprocessor",
+      "portable_graph_sha256": "abc41e3d6c4f2d401ca445c85aa4884244eabed9bdec7b4ec7e60d691140cdfb",
+      "portable_and_compiled_weight_sha256": "129b76e3aeafa8afa3ea76d995b964b145fe83700d579f6ff42c4c38fa0968ea",
+      "compiled_mil_sha256": "4b8518a956450fec57f06c2a21bdffc26973f7f1fa6842fb38fe917f896b6b93",
+      "portable_and_compiled_weights_identical": true
+    },
+    {
+      "component": "Decoder",
+      "portable_graph_sha256": "8bfdcef9fb1b46a1ec2f3c1895c74ed90644a69105efda370e412a522bd5b353",
+      "portable_and_compiled_weight_sha256": "1362dfcaf9842acd4e93def86df0e5b69d58668c526b195c1a52f90c23c671ec",
+      "compiled_mil_sha256": "9d9beb4c19ce5ecd9cf656bf80534c6e2d7054c24108225e06d4f3e9cbe9471c",
+      "portable_and_compiled_weights_identical": true
+    },
+    {
+      "component": "JointDecisionv3",
+      "portable_graph_sha256": "f43e1c735f387202ce486189d609eb83de3d8f808ba38386866134bd6ad6ee0b",
+      "portable_and_compiled_weight_sha256": "5c37dcf80d267159e63450c44c61aa3b421f9535e3d3d0914d7b705da51b596a",
+      "compiled_mil_sha256": "aa3add471c8944df49a9b468f06f87e809fd0236adb1112d5e32127dfbe0d606",
+      "portable_and_compiled_weights_identical": true
+    }
+  ],
+  "vocabulary_sha256": "7ec60e05f1b24480736ec0eed40900f4626bce1fa9a60fd700ec7e2a59198735",
+  "lab_revision": "422d19553903bb02a5f25c31071dbf0381a77f41",
+  "converter_revision": "4040a39f760290bb1d43a72dc82e5894f27b0f5c",
+  "compiled_encoder_origin_metadata_sha256": "c6da8da07c41be037e1b12d59a7f3315c0970fa1526160b4e37b3a73e3d527b4",
+  "verification": "Existing portable source files verified against bundle manifest. Each compiled component weight file and vocabulary byte-identical to portable release files. Compiled MIL differs from protobuf source graph by representation; the existing compiled-cache origin metadata identifies encoder source graph bf29fc2cde15c33deefc9302fd5d888a3b67b641ff371ed61c87a85b3690b00f. No model copies or recompilation performed."
+}

@@ -1,0 +1,219 @@
+name: Core ML iOS validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'Package.swift'
+      - 'Package.resolved'
+      - 'export/coreml/**'
+      - 'integrations/openwhispr/ios/Example/**'
+      - '.github/workflows/coreml-ios.yml'
+      - 'demos/fixtures/**'
+      - 'demos/multilingual/audio/**'
+  pull_request:
+    paths:
+      - 'Package.swift'
+      - 'Package.resolved'
+      - 'export/coreml/**'
+      - 'integrations/openwhispr/ios/Example/**'
+      - '.github/workflows/coreml-ios.yml'
+      - 'demos/fixtures/**'
+      - 'demos/multilingual/audio/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: coreml-ios-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  compile:
+    runs-on: macos-15
+    timeout-minutes: 30
+    env:
+      # Xcode 16.4 supplies Swift 6.1 and the iOS SDK. The minimum supported
+      # deployment version remains iOS 17; the build does not run on a device.
+      DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Record Apple toolchain
+        run: |
+          xcodebuild -version
+          xcrun swift --version
+          xcrun --sdk iphoneos --show-sdk-version
+      - name: Test bundle verifier
+        run: python3 -m unittest discover -s export/coreml -p 'test_verify_bundle.py' -v
+      - name: Check bounded checksum memory with a model-sized synthetic file
+        run: python3 export/coreml/check_checksum_memory.py
+      - name: Test Swift package on macOS
+        # Model-test environment variables are intentionally absent. This
+        # runs synthetic/unit checks and does not download model weights.
+        run: xcrun swift test --configuration release
+      - name: Compile OrukeetCoreML for iOS 17
+        if: ${{ !cancelled() }}
+        # Xcode generates the root package scheme as Orukeet. The separate
+        # macOS benchmark package is not part of this iOS build graph.
+        run: |
+          xcodebuild build \
+            -scheme Orukeet \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath "$RUNNER_TEMP/orukeet-ios-build" \
+            -resultBundlePath "$RUNNER_TEMP/orukeet-ios-build.xcresult" \
+            IPHONEOS_DEPLOYMENT_TARGET=17.0 \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO
+      - name: Compile the complete example app for iOS 17
+        if: ${{ !cancelled() }}
+        run: |
+          xcodebuild build \
+            -project integrations/openwhispr/ios/Example/OrukeetExample.xcodeproj \
+            -scheme OrukeetExample \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath "$RUNNER_TEMP/orukeet-example-ios-build" \
+            IPHONEOS_DEPLOYMENT_TARGET=17.0 \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO
+
+  simulator-runtime:
+    name: Portable models on iOS Simulator
+    runs-on: macos-15
+    timeout-minutes: 55
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
+      ORUKEET_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Set runtime scratch paths
+        run: |
+          echo "ORUKEET_RUNTIME_ROOT=$RUNNER_TEMP/orukeet-ios-runtime" >> "$GITHUB_ENV"
+          echo "ORUKEET_RUNTIME_EVIDENCE=$RUNNER_TEMP/orukeet-ios-runtime-evidence" >> "$GITHUB_ENV"
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Create and boot the pinned iOS Simulator
+        run: |
+          ORUKEET_SIMULATOR_UDID=$(python3 export/coreml/ci_simulator.py \
+            --report "$ORUKEET_RUNTIME_EVIDENCE/simulator-setup.json")
+          echo "ORUKEET_SIMULATOR_UDID=$ORUKEET_SIMULATOR_UDID" >> "$GITHUB_ENV"
+      - name: Stage and authenticate the released portable inference bundle
+        # Setup selects a freshly booted device by UDID in the previous step.
+        # These are portable inference packages staged for this draft, downloaded onto
+        # the ephemeral CI runner. No training checkpoint is fetched or created.
+        run: |
+          mkdir -p "$ORUKEET_RUNTIME_ROOT" "$ORUKEET_RUNTIME_EVIDENCE"
+          curl --fail --location --retry 3 --connect-timeout 30 --max-time 300 \
+            'https://huggingface.co/oruk/orukeet/resolve/419d7f79e290127e202a0f610509868d314743eb/coreml/orukeet-r3-coreml-int8sym-encoder-only-experimental-20260920-deflated.zip?download=true' \
+            --output "$ORUKEET_RUNTIME_ROOT/int8.zip"
+          python3 export/coreml/verify_bundle.py \
+            --archive "$ORUKEET_RUNTIME_ROOT/int8.zip" --profile int8 \
+            --output "$ORUKEET_RUNTIME_EVIDENCE/archive-verification.json"
+          python3 - <<'PY'
+          import os, pathlib, zipfile
+          root = pathlib.Path(os.environ['ORUKEET_RUNTIME_ROOT'])
+          # Extraction follows successful authentication and path validation.
+          with zipfile.ZipFile(root / 'int8.zip') as archive:
+              archive.extractall(root)
+          PY
+      - name: Compile packages and run actual inference in iOS Simulator
+        run: |
+          set -o pipefail
+          export TEST_RUNNER_ORUKEET_PORTABLE_TEST_MODELS="$ORUKEET_RUNTIME_ROOT/orukeet-r3-coreml-int8sym-encoder-only-experimental-20260920"
+          export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPO="$GITHUB_WORKSPACE"
+          export TEST_RUNNER_ORUKEET_PORTABLE_TEST_REPORT="$ORUKEET_RUNTIME_EVIDENCE/runtime.json"
+          # The root package exposes one library with its test target.
+          xcodebuild -list -json > "$ORUKEET_RUNTIME_EVIDENCE/schemes.json"
+          xcodebuild test \
+            -scheme Orukeet \
+            -configuration Release \
+            -destination "platform=iOS Simulator,id=$ORUKEET_SIMULATOR_UDID" \
+            -parallel-testing-enabled NO \
+            -only-testing:OrukeetCoreMLTests \
+            -derivedDataPath "$RUNNER_TEMP/orukeet-simulator-build" \
+            -resultBundlePath "$RUNNER_TEMP/orukeet-simulator-tests.xcresult" \
+            IPHONEOS_DEPLOYMENT_TARGET=17.0 \
+            ENABLE_TESTABILITY=YES \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO 2>&1 | tee "$ORUKEET_RUNTIME_EVIDENCE/xcodebuild.log"
+      - name: Install and transcribe through the complete iOS app
+        run: |
+          set -o pipefail
+          export TEST_RUNNER_ORUKEET_EXAMPLE_TEST_ARCHIVE="$ORUKEET_RUNTIME_ROOT/int8.zip"
+          export TEST_RUNNER_ORUKEET_EXAMPLE_TEST_FIXTURE="$GITHUB_WORKSPACE/demos/fixtures/jfk.wav"
+          export TEST_RUNNER_ORUKEET_EXAMPLE_TEST_REPORT="$ORUKEET_RUNTIME_EVIDENCE/example-app.json"
+          xcodebuild test \
+            -project integrations/openwhispr/ios/Example/OrukeetExample.xcodeproj \
+            -scheme OrukeetExample \
+            -configuration Release \
+            -destination "platform=iOS Simulator,id=$ORUKEET_SIMULATOR_UDID" \
+            -parallel-testing-enabled NO \
+            -only-testing:OrukeetExampleUITests \
+            -derivedDataPath "$RUNNER_TEMP/orukeet-example-simulator-build" \
+            -resultBundlePath "$RUNNER_TEMP/orukeet-example-simulator-tests.xcresult" \
+            IPHONEOS_DEPLOYMENT_TARGET=17.0 \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO 2>&1 | tee "$ORUKEET_RUNTIME_EVIDENCE/example-xcodebuild.log"
+      - name: Require executed model checks and record provenance
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, pathlib, subprocess
+          root = pathlib.Path(os.environ['ORUKEET_RUNTIME_EVIDENCE'])
+          report = json.loads((root / 'runtime.json').read_text())
+          assert report['scope'] == 'iOS Simulator runtime smoke', report
+          assert report['system_version'] == '18.5', report['system_version']
+          for key in ('all_assertions_passed', 'long_exceeds_first_window',
+                      'repeat_after_multilingual_identical', 'repeat_after_long_identical',
+                      'post_reload_identical', 'warmup_and_reload_completed',
+                      'swift_archive_verification_passed'):
+              assert report[key] is True, key
+          assert len(report['fixture_results']) == 4
+          example = json.loads((root / 'example-app.json').read_text())
+          assert example['scope'] == 'iOS Simulator example app end-to-end', example
+          assert example['installation_source'] == 'pinned HTTPS download', example
+          for key in ('all_assertions_passed', 'install_and_prepare_passed',
+                      'repeat_identical', 'offline_relaunch_passed',
+                      'offline_os_cache_rebuild_passed'):
+              assert example[key] is True, key
+          assert 'country' in example['transcript'].lower(), example
+          engine = pathlib.Path('export/coreml/benchmark/Sources/OrukeetCoreML/OrukeetEngine.swift')
+          report.update({
+              'head_sha': os.environ['ORUKEET_HEAD_SHA'],
+              'checkout_sha': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
+              'engine_source_sha256': hashlib.sha256(engine.read_bytes()).hexdigest(),
+              'bundle_source_sha256': hashlib.sha256(engine.with_name('OrukeetBundle.swift').read_bytes()).hexdigest(),
+              'app_service_sources_sha256': {
+                  name: hashlib.sha256(engine.with_name(name).read_bytes()).hexdigest()
+                  for name in ('OrukeetAudio.swift', 'OrukeetModelStore.swift', 'OrukeetTranscriber.swift')
+              },
+              'example_app': example,
+              'package_resolved': json.loads(pathlib.Path('Package.resolved').read_text()),
+              'archive_verification': json.loads((root / 'archive-verification.json').read_text()),
+              'simulator_setup': json.loads((root / 'simulator-setup.json').read_text()),
+              'ci_run': os.environ['GITHUB_SERVER_URL'] + '/' + os.environ['GITHUB_REPOSITORY']
+                        + '/actions/runs/' + os.environ['GITHUB_RUN_ID'],
+              'limitations': ['Simulator execution is not physical-iPhone qualification.',
+                             'Times are runtime diagnostics, not mobile performance measurements.',
+                             'Four reused speech fixtures are not an accuracy benchmark.'],
+          })
+          (root / 'runtime.json').write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n')
+          print('Portable models compiled and all inference/lifecycle checks executed in iOS Simulator.')
+          PY
+      - name: Preserve runtime evidence without weights
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: orukeet-ios-simulator-runtime
+          path: ${{ runner.temp }}/orukeet-ios-runtime-evidence/
+          if-no-files-found: warn
+          retention-days: 14

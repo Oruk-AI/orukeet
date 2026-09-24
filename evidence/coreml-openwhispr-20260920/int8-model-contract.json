@@ -1,0 +1,413 @@
+{
+  "archive_sha256": "24df9ff76f00f86f9ae1fd601cbbcab1d1eac98c7e8107de67444a7858d88b8b",
+  "profile": "int8sym-encoder-only-experimental",
+  "components": {
+    "Preprocessor": {
+      "model_sha256": "abc41e3d6c4f2d401ca445c85aa4884244eabed9bdec7b4ec7e60d691140cdfb",
+      "specification_version": 8,
+      "description": {
+        "input": [
+          {
+            "name": "audio_signal",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1",
+                  "240000"
+                ],
+                "dataType": "FLOAT32"
+              }
+            }
+          },
+          {
+            "name": "audio_length",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1"
+                ],
+                "dataType": "INT32"
+              }
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "mel",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1",
+                  "128",
+                  "1501"
+                ],
+                "dataType": "FLOAT32"
+              }
+            }
+          },
+          {
+            "name": "mel_length",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1"
+                ],
+                "dataType": "INT32"
+              }
+            }
+          }
+        ],
+        "metadata": {
+          "shortDescription": "int8-linear quantized - preprocessor",
+          "author": "Fluid Inference",
+          "userDefined": {
+            "com.github.apple.coremltools.source": "torch==2.7.0",
+            "com.github.apple.coremltools.source_dialect": "TorchScript",
+            "com.github.apple.coremltools.version": "9.0b1",
+            "com.github.apple.coremltools.conversion_date": "2025-09-19"
+          }
+        }
+      },
+      "operation_counts": {
+        "const": 64,
+        "add": 4,
+        "sub": 4,
+        "floor_div": 1,
+        "cast": 5,
+        "slice_by_index": 3,
+        "expand_dims": 8,
+        "mul": 1,
+        "concat": 1,
+        "reshape": 2,
+        "pad": 1,
+        "constexpr_affine_dequantize": 4,
+        "conv": 2,
+        "stack": 1,
+        "pow": 2,
+        "reduce_sum": 4,
+        "matmul": 1,
+        "log": 1,
+        "less": 1,
+        "tile": 1,
+        "select": 3,
+        "real_div": 3,
+        "sqrt": 1,
+        "greater_equal": 1
+      }
+    },
+    "Encoder": {
+      "model_sha256": "bf29fc2cde15c33deefc9302fd5d888a3b67b641ff371ed61c87a85b3690b00f",
+      "specification_version": 8,
+      "description": {
+        "input": [
+          {
+            "name": "mel",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1",
+                  "128",
+                  "1501"
+                ],
+                "dataType": "FLOAT32"
+              }
+            }
+          },
+          {
+            "name": "mel_length",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1"
+                ],
+                "dataType": "INT32"
+              }
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "encoder",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1",
+                  "1024",
+                  "188"
+                ],
+                "dataType": "FLOAT32"
+              }
+            }
+          },
+          {
+            "name": "encoder_length",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1"
+                ],
+                "dataType": "INT32"
+              }
+            }
+          }
+        ],
+        "metadata": {
+          "shortDescription": "Parakeet encoder (15 s window)",
+          "author": "Fluid Inference",
+          "userDefined": {
+            "com.github.apple.coremltools.source": "torch==2.7.0",
+            "com.github.apple.coremltools.source_dialect": "TorchScript",
+            "com.github.apple.coremltools.version": "9.0b1",
+            "com.github.apple.coremltools.conversion_date": "2026-09-20"
+          }
+        }
+      },
+      "operation_counts": {
+        "const": 1719,
+        "cast": 4,
+        "add": 174,
+        "mul": 99,
+        "floor": 3,
+        "transpose": 172,
+        "expand_dims": 5,
+        "constexpr_affine_dequantize": 294,
+        "conv": 77,
+        "relu": 3,
+        "reshape": 145,
+        "linear": 193,
+        "less": 1,
+        "tile": 1,
+        "logical_and": 2,
+        "logical_not": 2,
+        "layer_norm": 120,
+        "silu": 72,
+        "matmul": 72,
+        "pad": 48,
+        "slice_by_index": 48,
+        "select": 72,
+        "softmax": 24,
+        "split": 24,
+        "sigmoid": 24
+      }
+    },
+    "Decoder": {
+      "model_sha256": "8bfdcef9fb1b46a1ec2f3c1895c74ed90644a69105efda370e412a522bd5b353",
+      "specification_version": 8,
+      "description": {
+        "input": [
+          {
+            "name": "targets",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1",
+                  "1"
+                ],
+                "dataType": "INT32"
+              }
+            }
+          },
+          {
+            "name": "target_length",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1"
+                ],
+                "dataType": "INT32"
+              }
+            }
+          },
+          {
+            "name": "h_in",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "2",
+                  "1",
+                  "640"
+                ],
+                "dataType": "FLOAT32"
+              }
+            }
+          },
+          {
+            "name": "c_in",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "2",
+                  "1",
+                  "640"
+                ],
+                "dataType": "FLOAT32"
+              }
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "decoder",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1",
+                  "640",
+                  "1"
+                ],
+                "dataType": "FLOAT32"
+              }
+            }
+          },
+          {
+            "name": "h_out",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "2",
+                  "1",
+                  "640"
+                ],
+                "dataType": "FLOAT32"
+              }
+            }
+          },
+          {
+            "name": "c_out",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "2",
+                  "1",
+                  "640"
+                ],
+                "dataType": "FLOAT32"
+              }
+            }
+          }
+        ],
+        "metadata": {
+          "shortDescription": "Parakeet decoder (RNNT prediction network)",
+          "author": "Fluid Inference",
+          "userDefined": {
+            "com.github.apple.coremltools.conversion_date": "2025-09-19",
+            "com.github.apple.coremltools.source_dialect": "TorchScript",
+            "com.github.apple.coremltools.version": "9.0b1",
+            "com.github.apple.coremltools.source": "torch==2.7.0"
+          }
+        }
+      },
+      "operation_counts": {
+        "const": 42,
+        "cast": 8,
+        "greater_equal": 1,
+        "add": 1,
+        "select": 1,
+        "gather": 1,
+        "split": 2,
+        "squeeze": 4,
+        "transpose": 2,
+        "lstm": 2,
+        "stack": 2,
+        "identity": 1
+      }
+    },
+    "JointDecisionv3": {
+      "model_sha256": "f43e1c735f387202ce486189d609eb83de3d8f808ba38386866134bd6ad6ee0b",
+      "specification_version": 8,
+      "description": {
+        "input": [
+          {
+            "name": "encoder_step",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1",
+                  "1024",
+                  "1"
+                ],
+                "dataType": "FLOAT32"
+              }
+            }
+          },
+          {
+            "name": "decoder_step",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1",
+                  "640",
+                  "1"
+                ],
+                "dataType": "FLOAT32"
+              }
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "token_id",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1",
+                  "1",
+                  "1"
+                ],
+                "dataType": "INT32"
+              }
+            }
+          },
+          {
+            "name": "token_prob",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1",
+                  "1",
+                  "1"
+                ],
+                "dataType": "FLOAT32"
+              }
+            }
+          },
+          {
+            "name": "duration",
+            "type": {
+              "multiArrayType": {
+                "shape": [
+                  "1",
+                  "1",
+                  "1"
+                ],
+                "dataType": "INT32"
+              }
+            }
+          }
+        ],
+        "metadata": {
+          "userDefined": {
+            "com.github.apple.coremltools.conversion_date": "2026-04-11",
+            "com.github.apple.coremltools.source_dialect": "TorchScript",
+            "com.github.apple.coremltools.version": "9.0b1",
+            "com.github.apple.coremltools.source": "torch==2.7.0"
+          }
+        }
+      },
+      "operation_counts": {
+        "const": 31,
+        "cast": 4,
+        "transpose": 2,
+        "linear": 3,
+        "expand_dims": 3,
+        "add": 1,
+        "relu": 1,
+        "slice_by_index": 2,
+        "reduce_argmax": 2,
+        "softmax": 1,
+        "gather_along_axis": 1,
+        "squeeze": 1
+      }
+    }
+  }
+}

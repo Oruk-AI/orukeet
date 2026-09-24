@@ -1,0 +1,35 @@
+{
+  "upstream_repository": "https://github.com/FluidInference/FluidAudio.git",
+  "base_version": "0.15.5",
+  "base_revision": "19600a485baa4998812e4654b70d2bab8f2c9949",
+  "patched_revision": "e94c930fb2651351080b25d5a388b6fb8c2ca483",
+  "patch_sha256": "5cc7ad0b4d4784b4a9b839631b79768df68c48acc4646663715cbc1c6b556394",
+  "production_file": "Sources/FluidAudio/ASR/Parakeet/SlidingWindow/TDT/Decoder/TdtDecoderState.swift",
+  "production_source_sha256": "e7c8b2ceaa0d2b00e6c884b8bc918e7700abb849f60e86e8fa14d3275820c157",
+  "upstream_checked_at_utc": "2026-09-21T14:58:52.313601+00:00",
+  "upstream_pr": "https://github.com/FluidInference/FluidAudio/pull/941",
+  "upstream_pr_state": "open; not merged",
+  "upstream_pr_head": "9a3b03b2cd938736f8be61dad31bcd6f52428fd7",
+  "upstream_main": "5343241cd8a7576890e50925dec666bafc89d324",
+  "upstream_latest_tag": "v0.15.8",
+  "upstream_latest_tag_revision": "87a39dfe4068fef0f1c69bfe704b2b3ef4fbc5bc",
+  "qualification": "Native Core ML array tests and library release build; runtime benchmarking recorded separately.",
+  "fork_repository": "https://github.com/Oruk-AI/FluidAudio.git",
+  "published_revision": "ddc95f4d03d5be12bf84eeb6e4bde5b724356d88",
+  "runtime_change_revision": "e94c930fb2651351080b25d5a388b6fb8c2ca483",
+  "safety_workflow": {
+    "url": "https://github.com/Oruk-AI/FluidAudio/actions/runs/35616517354",
+    "status": "completed",
+    "configuration": "debug",
+    "previous_attempt": {
+      "url": "https://github.com/Oruk-AI/FluidAudio/actions/runs/35616127258",
+      "conclusion": "failure",
+      "reason": "Upstream test sources depend on DEBUG-only hooks and cannot compile in release configuration."
+    },
+    "conclusion": "success",
+    "xctest_tests": 41,
+    "xctest_failures": 0,
+    "native_assertions": 240662
+  },
+  "published_tag": "0.15.5-orukeet.1"
+}

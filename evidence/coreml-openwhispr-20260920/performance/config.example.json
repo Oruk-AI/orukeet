@@ -1,0 +1,41 @@
+{
+  "scratch": "/absolute/path/to/source-only-benchmark-scratch",
+  "runtimes": {
+    "original": "/absolute/path/to/FluidAudio-at-19600a4",
+    "optimized": "/absolute/path/to/FluidAudio-at-75377a8"
+  },
+  "models": {
+    "published": "/absolute/path/to/existing-published-greedy-compiled-cache",
+    "int8": "/absolute/path/to/existing-int8-encoder-only-compiled-cache"
+  },
+  "fixtures": [
+    {
+      "id": "english",
+      "path": "/absolute/path/to/existing-audio/en_us-10233995782544396174.wav",
+      "sha256": "bfa2f3fb72a05cbcb7c0000a460435f2d0eedca7c5cc90f01aacc89127df7f63"
+    },
+    {
+      "id": "russian",
+      "path": "/absolute/path/to/existing-audio/ru_ru-10011799110630615565.wav",
+      "sha256": "d327393251ecdea82bf7b09be85715b068b4ab1fabd2709be698ede923646a72"
+    },
+    {
+      "id": "italian",
+      "path": "/absolute/path/to/existing-audio/it_it-10159398106668856572.wav",
+      "sha256": "3204509de9931b6ee1a364ba9592212dc1e0f474ab7e7ca208899f694ebd9f76"
+    },
+    {
+      "id": "natural-long",
+      "path": "/absolute/path/to/existing-audio/yc-first-30s.wav",
+      "sha256": "10357a02e138780f9b19b1d93535ba344a160d50f0b7e115f81d19d539b5b043"
+    }
+  ],
+  "model_source": {
+    "r3_checkpoint_sha256": "031c8ddab4845aeced904a7cde8e8aa57993b2e344716cf83a545b079c473b56",
+    "published_archive_sha256": "beccdc6f18c4b10527a764f6e3ab12e3e11b969220c0cee175b3bb7eaa94290e",
+    "published_hf_revision": "43142dd1897f9ddadcd70173fcb5ff45c08aa951",
+    "int8_encoder_graph_sha256": "bf29fc2cde15c33deefc9302fd5d888a3b67b641ff371ed61c87a85b3690b00f",
+    "int8_encoder_weight_sha256": "7c3aa75d323fed4b0b13126b221859aac2d1933da4aa070deb111603a9e23447"
+  },
+  "engine_snapshot_head": "7687ca04bd5c07980a9769d2c727ef1dca8eeb4c"
+}

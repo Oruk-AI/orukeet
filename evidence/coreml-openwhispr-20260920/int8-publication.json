@@ -1,0 +1,12 @@
+{
+  "repo_id": "oruk/orukeet",
+  "revision": "419d7f79e290127e202a0f610509868d314743eb",
+  "pr_url": "https://huggingface.co/oruk/orukeet/discussions/2",
+  "pr_revision": "refs/pr/2",
+  "commit_url": "https://huggingface.co/oruk/orukeet/commit/419d7f79e290127e202a0f610509868d314743eb",
+  "filename": "orukeet-r3-coreml-int8sym-encoder-only-experimental-20260920-deflated.zip",
+  "bytes": 554985744,
+  "sha256": "24df9ff76f00f86f9ae1fd601cbbcab1d1eac98c7e8107de67444a7858d88b8b",
+  "remote_lfs_sha256": "24df9ff76f00f86f9ae1fd601cbbcab1d1eac98c7e8107de67444a7858d88b8b",
+  "remote_bytes": 554985744
+}

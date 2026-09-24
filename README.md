@@ -46,6 +46,8 @@ Orukeet from its **Models** page; to switch between installed engines, use
 release; TapTalk's optional live typing uses Parakeet. See the
 [TapTalk repository](https://github.com/vakharwalad23/tap-talk) for setup and support.
 
+For iOS apps using FluidAudio/Core ML, use the [Orukeet batch integration](integrations/openwhispr/ios/README.md) for English and all 25 supported languages. The Swift package loads the portable Orukeet model and transcribes completed 16 kHz mono recordings locally.
+
 ## Run speech recognition
 
 [Follow the local deployment tutorial](https://oruk.ai/guides/orukeet-local-transcription) for a fresh Python environment, a supplied recording, actual output and a reusable file runner. The tutorial includes the tested package version and artifact hashes.
