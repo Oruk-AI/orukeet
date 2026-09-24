@@ -7,10 +7,10 @@ The deployment target is iOS 17; the Swift package also supports macOS 14.
 
 ## Add the package
 
-Add `https://github.com/Oruk-AI/orukeet.git` in Xcode, select the draft branch
-`codex/openwhispr-ios-20260920`, and link **OrukeetCoreML** to the app target.
+Add `https://github.com/Oruk-AI/orukeet.git` in Xcode, select the integration preview
+tag `v0.1.2-coreml.1`, and link **OrukeetCoreML** to the app target.
 The repository root is a Swift package; no local checkout or converter is needed.
-Pin the reviewed commit when adopting the draft.
+The tag pins reviewed SDK commit `6c37c587fabcef8b0e932584fbf22a79fcb9d89e`.
 
 The package uses Oruk's small FluidAudio 0.15.5 backport of the
 [buffer optimization](../../../export/coreml/runtime/README.md), including the
@@ -30,9 +30,9 @@ and transcribes after Stop. It also imports existing audio files. See the
 
 The example contains the complete recording and model lifecycle, including
 microphone permission, cancellation, interruptions and background cleanup. It
-is a reference app ready to run from this checkout. OpenWhispr's mobile source
-was not available for a direct patch; its existing UI calls the same service
-shown below.
+is a reference app ready to run from this checkout. The direct OpenWhispr mobile
+integration is tracked in [PR #2342](https://github.com/OpenWhispr/openwhispr/pull/2342).
+This example remains a standalone reference for the SDK service shown below.
 
 ## Install once, warm once, reuse
 
@@ -83,7 +83,7 @@ directory and remove its obsolete siblings **after** successful recovery.
 Failed or cancelled recompilation leaves the prior source available for retry.
 Invalid current-OS installations are reported and never silently overwritten.
 
-The retained ZIP adds **554,985,744 bytes** to installed storage (roughly 1.16 GB
+The retained ZIP adds **554,985,744 bytes** to installed storage (roughly 1.19 GB
 including the compiled models; actual Core ML output varies by device/OS).
 First-install peak space is the caller's ZIP plus the larger of
 `extracted + compiled` and `retained ZIP + compiled`. Extracted packages are
@@ -136,11 +136,18 @@ the original preprocessor, FP16 decoder/joint components and the complete 8,192-
 are not claimed to be INT8. This differs from FluidAudio's historical `.int8`
 selection, which used mixed LUT6/FP16 encoder weights.
 
-The archive retains its original experimental filename and provenance. Its
-400-clip, 25-language diagnostic yielded 1,072 errors / 7,650 fixed reference
-words versus 1,112 for the earlier Orukeet LUT6 export. Individual clips can
-regress, including a documented Slovenian script error; this is not a full
-accuracy benchmark. There is no separate Parakeet model in the app integration.
+The archive retains its original experimental filename and provenance. The
+September 24 full FLEURS evaluation attempted all **20,146 test recordings in
+25 languages**, including recordings longer than 15 seconds. Fixed-reference
+WER was **13.6403% INT8 / 14.2656% LUT6**; the latter includes two administrative-pause
+timeouts retained in the primary score. See the
+[qualification report](https://huggingface.co/oruk/orukeet/blob/b3421ca5ec4d3b0ad3c6d0bc58be4e2fbf5dc61f/coreml/QUALIFICATION-20260924.md)
+for interruption controls, per-language results and methods. Slovenian outputs
+still contain Cyrillic in **23/834 INT8 and 20/834 LUT6** cases. This evaluation
+covers the SDK Engine/Audio path; it does not by itself qualify OpenWhispr's
+separate `AsrManager` integration. Full evaluation is complete; recognition
+acceptance and physical iPhone qualification remain open. There is no separate
+Parakeet model in this SDK integration.
 
 [Validation evidence](../../../evidence/coreml-openwhispr-20260920/README.md)
 records the build, runtime and model checks. The CI compiles portable models and

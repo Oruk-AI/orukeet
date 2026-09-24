@@ -12,8 +12,8 @@ root Swift package, install/verify/compile path and persistent warmed engine.
   `24df9ff76f00f86f9ae1fd601cbbcab1d1eac98c7e8107de67444a7858d88b8b`.
   All 22 payload files match; no compiled cache is distributed.
   [Upload receipt](int8-publication.json) verifies the remote LFS size/hash at
-  revision `419d7f79e290127e202a0f610509868d314743eb`; the asset is staged in a
-  [Hugging Face draft](https://huggingface.co/oruk/orukeet/discussions/2).
+  revision `419d7f79e290127e202a0f610509868d314743eb`; the same asset is now
+  [published on Hugging Face main](https://huggingface.co/oruk/orukeet/tree/main/coreml).
 - [INT8 graph contract](int8-model-contract.json): component descriptions,
   graph hashes, specification versions and encoder quantization operations.
 - [Pinned runtime and safety checks](../../export/coreml/runtime/README.md):
@@ -22,6 +22,11 @@ root Swift package, install/verify/compile path and persistent warmed engine.
 - [Release performance measurements](performance/README.md): original versus
   optimized runtime on identical Orukeet weights/audio, including long inputs
   and chunk-concurrency comparisons. Host measurements are not phone timings.
+- [Full 25-language FLEURS conversion evaluation](https://huggingface.co/oruk/orukeet/blob/b3421ca5ec4d3b0ad3c6d0bc58be4e2fbf5dc61f/coreml/QUALIFICATION-20260924.md):
+  20,146 recordings per artifact through the SDK Engine/Audio path, fixed-reference
+  WER/CER, independent arithmetic audit and explicit administrative-interruption
+  accounting. Known Slovenian script failures remain; this is not physical-device
+  acceptance or an end-to-end consumer-app accuracy run.
 - `.github/workflows/coreml-ios.yml` runs root-package unit tests, an arm64
   iOS 17 build, and actual portable INT8 model compilation/inference inside
   iOS 18.5 Simulator. The runtime step requires a JSON receipt proving all
@@ -61,7 +66,8 @@ describe the hosted runtime job. The separate optional host test uses existing
 compiled models through `ORUKEET_TEST_MODELS` and a 16 kHz mono WAV through
 `ORUKEET_TEST_AUDIO`; it never downloads models.
 
-This PR prepares a reusable integration package. The unavailable OpenWhispr
-mobile target and physical iPhones were not built/tested here. Phone latency,
+This PR validates the reusable SDK. The separate OpenWhispr mobile target is
+tracked in [PR #2342](https://github.com/OpenWhispr/openwhispr/pull/2342);
+physical-iPhone validation remains outstanding. Phone latency,
 RAM/jetsam, thermals and battery measurements are listed in the
 [device follow-up](../../integrations/openwhispr/ios/device-qualification.md).
