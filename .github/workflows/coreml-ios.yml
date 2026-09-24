@@ -51,6 +51,8 @@ jobs:
           xcrun --sdk iphoneos --show-sdk-version
       - name: Test bundle verifier
         run: python3 -m unittest discover -s export/coreml -p 'test_verify_bundle.py' -v
+      - name: Check bounded checksum memory with a model-sized synthetic file
+        run: python3 export/coreml/check_checksum_memory.py
       - name: Test Swift package on macOS
         # Model-test environment variables are intentionally absent. This
         # runs synthetic/unit checks and does not download model weights.

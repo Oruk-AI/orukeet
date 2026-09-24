@@ -38,8 +38,10 @@ shown below.
 
 Keep **one service** alive for successive recordings. `install()` handles the
 download, SHA-256 and size verification, safe ZIP extraction, destination-device
-Core ML compilation and atomic publication. The cache preserves vocabulary and
-license notices and is keyed by model identity, architecture and OS build.
+Core ML compilation and atomic publication. Compiled models are keyed by model
+identity, architecture and OS build. Each installation preserves vocabulary,
+license notices and an authenticated copy of the portable ZIP. On an OS update,
+the SDK recompiles from that local ZIP instead of downloading the model again.
 Downloaded model storage is excluded from backups.
 
 Call `prepare()` when selecting the model or opening the recorder, so loading
@@ -73,8 +75,28 @@ a `@Sendable` callback; dispatch UI updates to the main actor. Downloading and
 compilation use indeterminate progress. `install(fromArchive:)` uses the same
 verified installer for an archive the app already owns, without deleting it.
 `installedDirectory()` checks the local receipt, sidecars and compiled file
-inventory without network access or rehashing all compiled weights. Invalid
-existing installations are reported and never silently overwritten.
+inventory without network access or rehashing all compiled weights. After an OS
+update it can reauthenticate, extract and compile the retained ZIP before
+returning; keep this call off the main actor and show preparation UI if needed.
+The result remains a single complete directory: app cleanup can keep that
+directory and remove its obsolete siblings **after** successful recovery.
+Failed or cancelled recompilation leaves the prior source available for retry.
+Invalid current-OS installations are reported and never silently overwritten.
+
+The retained ZIP adds **554,985,744 bytes** to installed storage (roughly 1.16 GB
+including the compiled models; actual Core ML output varies by device/OS).
+First-install peak space is the caller's ZIP plus the larger of
+`extracted + compiled` and `retained ZIP + compiled`. Extracted packages are
+removed before the ZIP is retained. An OS rebuild needs that same larger amount
+of **additional free space**, while keeping the previous complete installation
+until the new one is ready. SHA-256 uses a drained autorelease pool per 1 MiB
+chunk, so Foundation does not retain a model-sized chain of read buffers.
+
+Caches made with the old SDK have no portable source. They remain usable on
+their original OS. Calling `install(fromArchive:)` while the original ZIP is
+still available backfills source without recompiling. If both that ZIP and any
+retained source are absent, the first migration requires a fresh download;
+compiled models cannot reconstruct a portable `.mlpackage` archive.
 
 `prepare()` and `transcribe()` run through the service actor. Await preparation
 before submitting a recording, and serialize recordings through the app's

@@ -3,8 +3,9 @@ import Foundation
 import ZIPFoundation
 
 /// Downloads, authenticates and installs Orukeet once, then reuses it offline.
-/// A cache is specific to the archive, platform and OS build. Installation never
-/// replaces an existing directory or deletes a caller-provided archive.
+/// Compiled models are specific to the archive, platform and OS build. Each
+/// installation retains its portable archive, so an OS update recompiles locally
+/// without downloading again. Caller-provided archives are never removed.
 public actor OrukeetModelStore {
     public struct State: Sendable, Equatable {
         public enum Phase: String, Sendable {
@@ -49,6 +50,7 @@ public actor OrukeetModelStore {
     private let compile: Compiler
     private var installing = false
     private static let receiptName = "orukeet-installation.json"
+    private static let sourceArchiveName = "orukeet-source.zip"
     private static let sidecars = ["parakeet_vocab.json", "bundle.json", "LICENSE-WEIGHTS", "NOTICE.md", "COREML-NOTICE.txt"]
 
     /// A custom root must be a dedicated model-cache directory. Model caches are
@@ -76,14 +78,34 @@ public actor OrukeetModelStore {
     }
 
     /// Returns a structurally validated, identity-matched installation without
-    /// accessing the network. Invalid cache metadata or structure is reported,
-    /// not replaced. Compiled file sizes are checked without rehashing weights.
+    /// accessing the network. After an OS update this may compile the retained
+    /// portable archive before returning. Current-OS checks only inspect metadata
+    /// and file sizes; they do not hash or reload model weights.
     public func installedDirectory() throws -> URL? {
+        try cachedDirectory(recoverPreviousOS: !installing, progress: nil)
+    }
+
+    private func cachedDirectory(recoverPreviousOS: Bool,
+                                 progress: (@Sendable (State) -> Void)?) throws -> URL? {
         try Task.checkCancellation()
         let directory = try destination()
-        guard try Self.exists(directory) else { return nil }
-        try validateInstallation(directory)
-        return directory
+        if try Self.exists(directory) {
+            try validateInstallation(directory, expectedCacheKey: cacheKey)
+            return directory
+        }
+        guard recoverPreviousOS else { return nil }
+        // No await or network operation here. A second process/store can win the
+        // atomic publication, but a failed or cancelled rebuild leaves the prior
+        // source intact for another offline attempt.
+        var verificationFailure: OrukeetBundle.VerificationError?
+        for archive in try previousSourceArchives() {
+            do { return try installArchive(archive, ownedArchive: false, progress: progress) }
+            catch let error as OrukeetBundle.VerificationError { verificationFailure = error }
+        }
+        if let verificationFailure {
+            throw StoreError.invalidInstallation("retained portable archive: \(verificationFailure)")
+        }
+        return nil
     }
 
     /// Download the pinned public archive when no valid local cache exists.
@@ -112,7 +134,13 @@ public actor OrukeetModelStore {
         var resourceValues = URLResourceValues()
         resourceValues.isExcludedFromBackup = true
         try root.setResourceValues(resourceValues)
-        if let installed = try installedDirectory() {
+        if let installed = try cachedDirectory(recoverPreviousOS: true, progress: progress) {
+            // Older SDKs did not retain portable source. When the caller still
+            // has its ZIP, upgrade that installation in place for future OS
+            // updates without recompiling or modifying the caller's file.
+            if let suppliedArchive, try !Self.exists(installed.appendingPathComponent(Self.sourceArchiveName)) {
+                try retainSource(in: installed, from: suppliedArchive, move: false)
+            }
             progress?(State(phase: .ready, fraction: 1))
             return installed
         }
@@ -134,45 +162,114 @@ public actor OrukeetModelStore {
                 archive = workspace.appendingPathComponent("download.zip")
                 try files.moveItem(at: temporary, to: archive)
             }
-            progress?(State(phase: .verifying))
-            try bundle.verifyArchive(at: archive)
-            let extracted = workspace.appendingPathComponent("extracted", isDirectory: true)
-            progress?(State(phase: .extracting, fraction: 0))
-            try Self.extract(archive, into: extracted, archiveRoot: bundle.archiveRoot, progress: progress)
-            let source = extracted.appendingPathComponent(bundle.archiveRoot, isDirectory: true)
-            // Attribution is mandatory in this pinned portable distribution.
-            _ = try Self.sidecarHashes(in: source)
-            let compiled = workspace.appendingPathComponent("compiled", isDirectory: true)
-            progress?(State(phase: .compiling))
-            try Task.checkCancellation()
-            try compile(source, compiled)
-            try Task.checkCancellation()
-            let receipt = Receipt(formatVersion: 1, archiveSHA256: bundle.sha256,
-                                  archiveBytes: bundle.bytes, cacheKey: cacheKey,
-                                  archiveURL: bundle.url.absoluteString,
-                                  installedAt: ISO8601DateFormatter().string(from: Date()),
-                                  sidecarSHA256: try Self.sidecarHashes(in: compiled),
-                                  compiledFiles: try Self.componentInventory(in: compiled))
-            try JSONEncoder().encode(receipt).write(
-                to: compiled.appendingPathComponent(Self.receiptName), options: .atomic)
-            try validateInstallation(compiled)
-            try Task.checkCancellation()
-            let destination = try destination()
-            do {
-                try files.moveItem(at: compiled, to: destination)
-            } catch {
-                // A second store may have completed the identical transaction.
-                // Reuse its verified result; never remove or replace it.
-                guard let winner = try installedDirectory() else { throw error }
-                progress?(State(phase: .ready, fraction: 1))
-                return winner
-            }
-            progress?(State(phase: .ready, fraction: 1))
-            return destination
+            return try installArchive(archive, ownedArchive: suppliedArchive == nil, progress: progress)
         } catch {
             if Task.isCancelled { throw CancellationError() }
             throw error
         }
+    }
+
+    private func installArchive(_ archive: URL, ownedArchive: Bool,
+                                progress: (@Sendable (State) -> Void)?) throws -> URL {
+        let files = FileManager.default
+        let workspace = try rootDirectory().appendingPathComponent(".orukeet-work-\(UUID().uuidString)", isDirectory: true)
+        try files.createDirectory(at: workspace, withIntermediateDirectories: false)
+        defer { try? files.removeItem(at: workspace) }
+        progress?(State(phase: .verifying))
+        try bundle.verifyArchive(at: archive)
+        let extracted = workspace.appendingPathComponent("extracted", isDirectory: true)
+        progress?(State(phase: .extracting, fraction: 0))
+        try Self.extract(archive, into: extracted, archiveRoot: bundle.archiveRoot, progress: progress)
+        let source = extracted.appendingPathComponent(bundle.archiveRoot, isDirectory: true)
+        _ = try Self.sidecarHashes(in: source)
+        let compiled = workspace.appendingPathComponent("compiled", isDirectory: true)
+        progress?(State(phase: .compiling))
+        try Task.checkCancellation()
+        try compile(source, compiled)
+        try Task.checkCancellation()
+        // Release extracted source before retaining a caller-owned ZIP, so its
+        // copy does not add another archive to peak extraction/compilation space.
+        try files.removeItem(at: extracted)
+        try retainSource(in: compiled, from: archive, move: ownedArchive)
+        try validateInstallation(compiled, expectedCacheKey: cacheKey)
+        try Task.checkCancellation()
+        let destination = try destination()
+        do {
+            try files.moveItem(at: compiled, to: destination)
+        } catch {
+            // A second store may have completed the identical transaction.
+            // Reuse its verified result; never remove or replace it.
+            guard try Self.exists(destination) else { throw error }
+            try validateInstallation(destination, expectedCacheKey: cacheKey)
+        }
+        progress?(State(phase: .ready, fraction: 1))
+        return destination
+    }
+
+    private func retainSource(in directory: URL, from archive: URL, move: Bool) throws {
+        let files = FileManager.default
+        let retained = directory.appendingPathComponent(Self.sourceArchiveName)
+        if try !Self.exists(retained) {
+            // Stage outside a published legacy cache. If the app is killed while
+            // backfilling, its normal abandoned-workspace cleanup can reclaim the
+            // partial ZIP without discarding an otherwise usable installation.
+            let workspace = try rootDirectory().appendingPathComponent(".orukeet-work-\(UUID().uuidString)", isDirectory: true)
+            try files.createDirectory(at: workspace, withIntermediateDirectories: false)
+            defer { try? files.removeItem(at: workspace) }
+            let staging = workspace.appendingPathComponent(Self.sourceArchiveName)
+            if move { try files.moveItem(at: archive, to: staging) }
+            else { try files.copyItem(at: archive, to: staging) }
+            // Verify the actual retained bytes, not a caller-owned path that
+            // could have changed during extraction and compilation.
+            try bundle.verifyArchive(at: staging)
+            try Task.checkCancellation()
+            do { try files.moveItem(at: staging, to: retained) }
+            catch {
+                guard try Self.exists(retained) else { throw error }
+                try bundle.verifyArchive(at: retained)
+            }
+        } else {
+            try bundle.verifyArchive(at: retained)
+        }
+        let receipt = Receipt(formatVersion: 2, archiveSHA256: bundle.sha256,
+                              archiveBytes: bundle.bytes, cacheKey: cacheKey,
+                              archiveURL: bundle.url.absoluteString,
+                              installedAt: ISO8601DateFormatter().string(from: Date()),
+                              sidecarSHA256: try Self.sidecarHashes(in: directory),
+                              compiledFiles: try Self.componentInventory(in: directory))
+        try JSONEncoder().encode(receipt).write(
+            to: directory.appendingPathComponent(Self.receiptName), options: .atomic)
+    }
+
+    private func previousSourceArchives() throws -> [URL] {
+        let root = try rootDirectory()
+        guard try Self.exists(root) else { return [] }
+        try Self.requireDirectory(root)
+        let prefix = "int8-\(bundle.sha256)-"
+        let candidates = try FileManager.default.contentsOfDirectory(at: root, includingPropertiesForKeys: nil)
+            .filter { $0.lastPathComponent.hasPrefix(prefix) }
+            .sorted { $0.lastPathComponent < $1.lastPathComponent }
+        var archives: [URL] = []
+        for directory in candidates {
+            try Task.checkCancellation()
+            guard String(directory.lastPathComponent.dropFirst(prefix.count)) != cacheKey else { continue }
+            do {
+                try Self.requireDirectory(directory)
+                let archive = directory.appendingPathComponent(Self.sourceArchiveName)
+                guard try Self.exists(archive) else { continue } // Legacy v1 cache.
+                try Self.requireRegularFile(archive, maximumBytes: Int(bundle.bytes))
+                // Source authentication happens before extraction. The old
+                // compiled cache may itself be damaged or incompatible; its
+                // receipt/compiled files are not needed to recover a pinned ZIP.
+                archives.append(archive)
+            } catch is CancellationError {
+                throw CancellationError()
+            } catch {
+                // An incomplete old cache must not hide a complete source.
+                continue
+            }
+        }
+        return archives
     }
 
     private static func downloadArchive(_ session: URLSession, _ url: URL) async throws -> (URL, URLResponse) {
@@ -222,18 +319,25 @@ public actor OrukeetModelStore {
         let compiledFiles: [String: Int64]
     }
 
-    private func validateInstallation(_ directory: URL) throws {
+    private func validateInstallation(_ directory: URL, expectedCacheKey: String) throws {
         do {
             try Self.requireDirectory(directory)
             let path = directory.appendingPathComponent(Self.receiptName)
             try Self.requireRegularFile(path, maximumBytes: 1_048_576)
             let receipt = try JSONDecoder().decode(Receipt.self, from: Data(contentsOf: path))
-            guard receipt.formatVersion == 1, receipt.archiveSHA256 == bundle.sha256,
-                  receipt.archiveBytes == bundle.bytes, receipt.cacheKey == cacheKey,
+            guard [1, 2].contains(receipt.formatVersion), receipt.archiveSHA256 == bundle.sha256,
+                  receipt.archiveBytes == bundle.bytes, receipt.cacheKey == expectedCacheKey,
                   receipt.archiveURL == bundle.url.absoluteString,
                   receipt.sidecarSHA256 == (try Self.sidecarHashes(in: directory)),
                   receipt.compiledFiles == (try Self.componentInventory(in: directory)) else {
                 throw StoreError.invalidInstallation("receipt or component mismatch")
+            }
+            if receipt.formatVersion == 2 {
+                let archive = directory.appendingPathComponent(Self.sourceArchiveName)
+                try Self.requireRegularFile(archive, maximumBytes: Int(bundle.bytes))
+                guard try archive.resourceValues(forKeys: [.fileSizeKey]).fileSize == Int(bundle.bytes) else {
+                    throw StoreError.invalidInstallation("portable archive size mismatch")
+                }
             }
             _ = try OrukeetLocalModels.vocabulary(in: directory)
         } catch is CancellationError {

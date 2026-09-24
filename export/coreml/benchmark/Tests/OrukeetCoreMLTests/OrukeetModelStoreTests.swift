@@ -252,15 +252,117 @@ struct OrukeetModelStoreTests {
         }
     }
 
-    @Test func osCacheKeysKeepExistingInstallationsSeparate() async throws {
+    @Test func osUpdateRecompilesRetainedArchiveOfflineAndKeepsInstallationsSeparate() async throws {
         let f = try fixture()
         defer { try? FileManager.default.removeItem(at: f.root) }
         let old = try await store(f, cacheKey: "previous-os").install(fromArchive: f.archive)
+        try FileManager.default.removeItem(at: f.archive)
         let nextStore = store(f, cacheKey: "new-os")
-        #expect(try await nextStore.installedDirectory() == nil)
-        let next = try await nextStore.install(fromArchive: f.archive)
+        let next = try #require(await nextStore.installedDirectory())
         #expect(old != next)
         #expect(FileManager.default.fileExists(atPath: old.path))
+        #expect(try await nextStore.install() == next)
+        try f.bundle.verifyArchive(at: next.appendingPathComponent("orukeet-source.zip"))
+        // OpenWhispr removes every sibling except the returned directory. The
+        // retained source must therefore live inside that directory.
+        try FileManager.default.removeItem(at: old)
+        // A previous OS's compiled files need not be usable: the pinned source
+        // ZIP, authenticated again before extraction, is the recovery authority.
+        try FileManager.default.removeItem(at: next.appendingPathComponent("Encoder.mlmodelc"))
+        try FileManager.default.removeItem(at: next.appendingPathComponent("orukeet-installation.json"))
+        let third = try #require(await store(f, cacheKey: "another-os").installedDirectory())
+        #expect(third != next)
+    }
+
+    @Test func legacyCurrentOSCacheCanBeBackfilledWithoutCompilation() async throws {
+        let f = try fixture()
+        defer { try? FileManager.default.removeItem(at: f.root) }
+        let installed = try await store(f).install(fromArchive: f.archive)
+        try FileManager.default.removeItem(at: installed.appendingPathComponent("orukeet-source.zip"))
+        let receipt = installed.appendingPathComponent("orukeet-installation.json")
+        var metadata = try #require(JSONSerialization.jsonObject(with: Data(contentsOf: receipt)) as? [String: Any])
+        metadata["formatVersion"] = 1
+        try JSONSerialization.data(withJSONObject: metadata).write(to: receipt)
+        let legacy = store(f, compile: { _, _ in throw StoreTestFailure.compilation })
+        #expect(try await legacy.installedDirectory() == installed)
+        // Old binaries stored no source; we must not pretend their compiled
+        // output belongs to another OS or fabricate a successful migration.
+        #expect(try await store(f, cacheKey: "new-os").installedDirectory() == nil)
+        #expect(try await legacy.install(fromArchive: f.archive) == installed)
+        try FileManager.default.removeItem(at: f.archive)
+        #expect(try await store(f, cacheKey: "new-os").installedDirectory() != nil)
+    }
+
+    @Test func failedOSRecompilationKeepsSourceForOfflineRetry() async throws {
+        let f = try fixture()
+        defer { try? FileManager.default.removeItem(at: f.root) }
+        let old = try await store(f, cacheKey: "previous-os").install(fromArchive: f.archive)
+        try FileManager.default.removeItem(at: f.archive)
+        let broken = store(f, cacheKey: "new-os", compile: { _, _ in throw StoreTestFailure.compilation })
+        await #expect(throws: StoreTestFailure.compilation) { try await broken.installedDirectory() }
+        #expect(try FileManager.default.contentsOfDirectory(atPath: f.cache.path) == [old.lastPathComponent])
+        try f.bundle.verifyArchive(at: old.appendingPathComponent("orukeet-source.zip"))
+        #expect(try await store(f, cacheKey: "new-os").install() != old)
+    }
+
+    @Test func cancelledOSRecompilationPreservesOnlyPriorCompleteInstallation() async throws {
+        let f = try fixture()
+        defer { try? FileManager.default.removeItem(at: f.root) }
+        let old = try await store(f, cacheKey: "previous-os").install(fromArchive: f.archive)
+        try FileManager.default.removeItem(at: f.archive)
+        let task = Task {
+            try await store(f, cacheKey: "new-os").install { state in
+                if state.phase == .compiling { withUnsafeCurrentTask { $0?.cancel() } }
+            }
+        }
+        await #expect(throws: CancellationError.self) { try await task.value }
+        #expect(try FileManager.default.contentsOfDirectory(atPath: f.cache.path) == [old.lastPathComponent])
+        #expect(try await store(f, cacheKey: "new-os").installedDirectory() != nil)
+    }
+
+    @Test func changedRetainedArchiveIsRejectedBeforeOSRecompilation() async throws {
+        let f = try fixture()
+        defer { try? FileManager.default.removeItem(at: f.root) }
+        let old = try await store(f, cacheKey: "previous-os").install(fromArchive: f.archive)
+        let archive = old.appendingPathComponent("orukeet-source.zip")
+        var bytes = try Data(contentsOf: archive)
+        bytes[0] ^= 1
+        try bytes.write(to: archive)
+        let next = store(f, cacheKey: "new-os", compile: { _, _ in
+            Issue.record("Compilation must not run before retained archive authentication")
+            throw StoreTestFailure.compilation
+        })
+        await #expect(throws: OrukeetModelStore.StoreError.self) { try await next.installedDirectory() }
+        #expect(try FileManager.default.contentsOfDirectory(atPath: f.cache.path) == [old.lastPathComponent])
+    }
+
+    @Test func damagedPriorSourceDoesNotHideAnotherAuthenticatedCopy() async throws {
+        let f = try fixture()
+        defer { try? FileManager.default.removeItem(at: f.root) }
+        let first = try await store(f, cacheKey: "aaa-old-os").install(fromArchive: f.archive)
+        _ = try await store(f, cacheKey: "bbb-old-os").install()
+        let archive = first.appendingPathComponent("orukeet-source.zip")
+        var bytes = try Data(contentsOf: archive)
+        bytes[0] ^= 1
+        try bytes.write(to: archive)
+        try FileManager.default.removeItem(at: f.archive)
+        #expect(try await store(f, cacheKey: "new-os").installedDirectory() != nil)
+    }
+
+    @Test func interruptedAndInvalidPriorCachesDoNotHideValidPortableSource() async throws {
+        let f = try fixture()
+        defer { try? FileManager.default.removeItem(at: f.root) }
+        _ = try await store(f, cacheKey: "previous-os").install(fromArchive: f.archive)
+        for name in [".orukeet-work-interrupted", "int8-\(f.bundle.sha256)-aaa-invalid"] {
+            let incomplete = f.cache.appendingPathComponent(name)
+            try FileManager.default.createDirectory(at: incomplete, withIntermediateDirectories: false)
+            try Data("partial".utf8).write(to: incomplete.appendingPathComponent("partial"))
+        }
+        try FileManager.default.removeItem(at: f.archive)
+        let phases = StoreProgressLog()
+        _ = try await store(f, cacheKey: "new-os").install { phases.append($0) }
+        #expect(phases.phases.contains(.compiling))
+        #expect(!phases.phases.contains(.downloading))
     }
 
     @Test func unsafeArchiveEntriesAreRejectedBeforeExtraction() async throws {

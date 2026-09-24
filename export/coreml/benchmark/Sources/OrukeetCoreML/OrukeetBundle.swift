@@ -31,14 +31,19 @@ public struct OrukeetBundle: Sendable {
         defer { try? stream.close() }
         var hasher = SHA256()
         var actualBytes: Int64 = 0
-        while let chunk = try stream.read(upToCount: 1_048_576), !chunk.isEmpty {
+        // FileHandle's NSData bridge may autorelease each read. Drain it per
+        // chunk: releasing only after the loop retains an entire model archive
+        // on some Apple Foundation versions, despite the 1 MiB read size.
+        while try autoreleasepool(invoking: {
             try Task.checkCancellation()
+            guard let chunk = try stream.read(upToCount: 1_048_576), !chunk.isEmpty else { return false }
             actualBytes += Int64(chunk.count)
             guard actualBytes <= bytes else {
                 throw VerificationError.wrongSize(expected: bytes, actual: actualBytes)
             }
             hasher.update(data: chunk)
-        }
+            return true
+        }) {}
         guard actualBytes == bytes else {
             throw VerificationError.wrongSize(expected: bytes, actual: actualBytes)
         }

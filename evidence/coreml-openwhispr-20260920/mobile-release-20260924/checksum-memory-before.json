@@ -1,0 +1,11 @@
+{
+  "archive_bytes": 554985744,
+  "checksum_verified": true,
+  "peak_rss_bytes": 563576832,
+  "verification_seconds": 0.41477204172406346,
+  "source_sha256": "27375fd8b67dc6cd7fe81c7cb833222306834433206e644f22f80653855a4658",
+  "max_rss_bytes": 134217728,
+  "scope": "macOS checksum memory regression; synthetic zeros, no model weights",
+  "system": "macOS-26.4.1-arm64-arm-64bit-Mach-O",
+  "passed": false
+}
