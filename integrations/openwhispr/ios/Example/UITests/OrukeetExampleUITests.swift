@@ -68,6 +68,36 @@ final class OrukeetExampleUITests: XCTestCase {
         XCTAssertEqual(relaunched, first, "Offline relaunch must reuse the installed model.")
         app.terminate()
 
+        // Simulate an OS cache-key change while retaining the real downloaded
+        // portable archive. Remove the old encoder so passing requires actual
+        // local recompilation, not accidentally loading a stale compiled model.
+        let files = FileManager.default
+        let installations = try files.contentsOfDirectory(at: installRoot, includingPropertiesForKeys: nil)
+            .filter { $0.lastPathComponent.hasPrefix("int8-") }
+        XCTAssertEqual(installations.count, 1)
+        let original = try XCTUnwrap(installations.first)
+        let receiptURL = original.appendingPathComponent("orukeet-installation.json")
+        var receipt = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: receiptURL)) as? [String: Any])
+        let archiveSHA = try XCTUnwrap(receipt["archiveSHA256"] as? String)
+        XCTAssertEqual(receipt["formatVersion"] as? Int, 2)
+        XCTAssertTrue(files.fileExists(atPath: original.appendingPathComponent("orukeet-source.zip").path))
+        receipt["cacheKey"] = "simulated-previous-os"
+        try JSONSerialization.data(withJSONObject: receipt).write(to: receiptURL, options: .atomic)
+        let previous = installRoot.appendingPathComponent("int8-\(archiveSHA)-simulated-previous-os")
+        try files.moveItem(at: original, to: previous)
+        try files.removeItem(at: previous.appendingPathComponent("Encoder.mlmodelc"))
+        app.launch()
+        waitUntilEnabled(app.buttons["recordButton"], timeout: 600)
+        XCTAssertFalse(app.buttons["installButton"].exists)
+        XCTAssertFalse(app.staticTexts["errorMessage"].exists)
+        app.buttons["fixtureButton"].tap()
+        waitForCompletedCount(1, app: app)
+        let afterOSUpdate = app.staticTexts["transcriptText"].label
+        XCTAssertEqual(afterOSUpdate, first, "OS cache migration must rebuild offline without changing the transcript.")
+        XCTAssertTrue(files.fileExists(atPath: original.appendingPathComponent("Encoder.mlmodelc").path))
+        XCTAssertTrue(files.fileExists(atPath: original.appendingPathComponent("orukeet-source.zip").path))
+        app.terminate()
+
         let report: [String: Any] = [
             "scope": "iOS Simulator example app end-to-end",
             "installation_source": "pinned HTTPS download",
@@ -75,9 +105,11 @@ final class OrukeetExampleUITests: XCTestCase {
             "install_and_prepare_passed": true,
             "repeat_identical": true,
             "offline_relaunch_passed": true,
+            "offline_os_cache_rebuild_passed": true,
             "fixture_path": fixture,
             "transcript": first,
             "offline_relaunch_transcript": relaunched,
+            "offline_os_cache_rebuild_transcript": afterOSUpdate,
             "recorded_at": ISO8601DateFormatter().string(from: Date()),
             "limitations": [
                 "Uses a real audio fixture instead of microphone capture",

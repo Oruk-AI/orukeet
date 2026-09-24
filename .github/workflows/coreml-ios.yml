@@ -182,7 +182,8 @@ jobs:
           assert example['scope'] == 'iOS Simulator example app end-to-end', example
           assert example['installation_source'] == 'pinned HTTPS download', example
           for key in ('all_assertions_passed', 'install_and_prepare_passed',
-                      'repeat_identical', 'offline_relaunch_passed'):
+                      'repeat_identical', 'offline_relaunch_passed',
+                      'offline_os_cache_rebuild_passed'):
               assert example[key] is True, key
           assert 'country' in example['transcript'].lower(), example
           engine = pathlib.Path('export/coreml/benchmark/Sources/OrukeetCoreML/OrukeetEngine.swift')
