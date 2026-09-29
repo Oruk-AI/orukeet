@@ -46,6 +46,15 @@ Orukeet from its **Models** page; to switch between installed engines, use
 release; TapTalk's optional live typing uses Parakeet. See the
 [TapTalk repository](https://github.com/vakharwalad23/tap-talk) for setup and support.
 
+[hyprwhspr](https://github.com/goodroot/hyprwhspr) is an open-source Linux
+dictation app with optional Orukeet support through its ONNX backend. Support
+is available on `main`, ahead of the next release. Select **Parakeet → Orukeet**
+during setup, or run `hyprwhspr setup auto --backend onnx-asr --model orukeet`.
+Model files are downloaded from a pinned revision on Hugging Face and verified
+before local transcription. See its
+[configuration guide](https://github.com/goodroot/hyprwhspr/blob/main/docs/CONFIGURATION.md#parakeet)
+for setup.
+
 ## Run speech recognition
 
 [Follow the local deployment tutorial](https://oruk.ai/guides/orukeet-local-transcription) for a fresh Python environment, a supplied recording, actual output and a reusable file runner. The tutorial includes the tested package version and artifact hashes.
