@@ -5,6 +5,8 @@ transcription tool, a media pipeline, a background job or an interactive
 application. The current package accepts local audio files; your application
 owns uploads, storage, scheduling and user access.
 
+For the separate English hosted preview, start with the [Python API recipe](https://oruk.ai/guides/orukeet-python-transcription), [browser record-and-upload recipe](https://oruk.ai/guides/orukeet-browser-dictation), or [speaker-diarization recipe](https://oruk.ai/guides/orukeet-transcription-diarization). Those workflows use an Oruk account, API key and subscription allowance. The local package documented below runs the downloaded 25-language model on your own hardware and does not include hosted emotion or diarization tasks. [Hosted example source and outputs](https://github.com/Oruk-AI/speech-api-examples).
+
 ## Choose an artifact
 
 | Artifact | Use | Runtime |

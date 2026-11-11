@@ -30,6 +30,18 @@ Use Orukeet for recordings, media, batch transcription, server workers and inter
 
 [Model card](MODEL_CARD.md) · [Weights](https://huggingface.co/oruk/orukeet) · [Technical report](output/pdf/orukeet-technical-report.pdf) · [Orukeet at oruk.ai](https://oruk.ai/models/orukeet?utm_source=github&utm_medium=readme&utm_campaign=orukeet) · [Oruk speech-to-text API](https://oruk.ai/speech-to-text-api?utm_source=github&utm_medium=readme&utm_campaign=orukeet)
 
+## Hosted English API — a separate service
+
+The downloads in this repository recognize 25 languages locally after installation, without an Oruk account. They do not include the hosted API's optional emotion or speaker-diarization tasks. Their language coverage, inference runtimes and benchmark results should not be attributed to the hosted endpoint.
+
+[Hosted Orukeet](https://oruk.ai/models/orukeet) is an English transcription API in preview: at most 60 seconds per utterance and 4 MiB for the complete multipart upload. It returns final transcripts, not incremental word hypotheses. Hosted use requires an active Oruk account, API access and a key; new accounts choose a subscription. Base transcription and optional tasks use the plan's separate Orukeet allowance at the [published task rates](https://oruk.ai/pricing#orukeet).
+
+- [Python transcription](https://oruk.ai/guides/orukeet-python-transcription): install, download the sample and inspect the saved JSON output.
+- [Browser dictation](https://oruk.ai/guides/orukeet-browser-dictation): record, stop and upload through a local backend that keeps the API key private. This example does not stream partial words.
+- [Transcription with diarization](https://oruk.ai/guides/orukeet-transcription-diarization): add speaker turns with their transcript and timestamps.
+
+The [public speech API examples](https://github.com/Oruk-AI/speech-api-examples) include the runnable source and sample outputs. These are hosted-service integrations, not new local-model benchmarks.
+
 ## Use Orukeet in a desktop app
 
 [OpenWhispr 1.10.0](https://github.com/OpenWhispr/openwhispr/releases/tag/v1.10.0)
@@ -133,7 +145,7 @@ Both models decode identical recordings with NeMo greedy-batch TDT, FP32 weights
 | Accents/domains pooled, 47 splits | 12,006 | 16.72% | **15.25%** |
 | Accents/domains English, 20 splits | 5,120 | 9.51% | **8.84%** |
 
-Orukeet improves 25 of 27 complete LibriSpeech/FLEURS splits and 36 of 47 accent/domain splits, including all 20 English accent/domain splits. The accent/domain sample contains 256 recordings per split and all 230 Lesbos recordings; the preceding adaptation includes 6,118 sampled recordings. Read speech and accents/domains have separate pooled results. Every recording contributes to the scores.
+Orukeet improves 25 of 27 complete LibriSpeech/FLEURS splits and 36 of 47 accent/domain splits, including all 20 English accent/domain splits. The accent/domain sample contains 256 recordings per split and all 230 Lesbos recordings; the preceding FT-4035 continuation trained on 223,452 recordings across 24 selected partitions (371.47 hours); the 6,118 examples previously reported were a sampled follow-up fit diagnostic. Read speech and accents/domains have separate pooled results. Every recording contributes to the scores.
 
 [All 74 paired WER/CER scores and edit counts](docs/current-checkpoint-benchmarks.md) · [Methods](docs/technical-report.md) · [Technical report](output/pdf/orukeet-technical-report.pdf)
 
