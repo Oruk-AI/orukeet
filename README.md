@@ -28,7 +28,7 @@ Orukeet outperforms Parakeet on **61 of 74 tested splits**, including LibriSpeec
 
 Use Orukeet for recordings, media, batch transcription, server workers and interactive applications. NeMo, ONNX INT8, native Q8 and native F16 all derive from the same **r3 release checkpoint** (`031c8ddab484`).
 
-[Model card](MODEL_CARD.md) · [Weights](https://huggingface.co/oruk/orukeet) · [Technical report](output/pdf/orukeet-technical-report.pdf)
+[Model card](MODEL_CARD.md) · [Weights](https://huggingface.co/oruk/orukeet) · [Technical report](output/pdf/orukeet-technical-report.pdf) · [Orukeet at oruk.ai](https://oruk.ai/models/orukeet?utm_source=github&utm_medium=readme&utm_campaign=orukeet) · [Oruk speech-to-text API](https://oruk.ai/speech-to-text-api?utm_source=github&utm_medium=readme&utm_campaign=orukeet)
 
 ## Use Orukeet in a desktop app
 
@@ -195,9 +195,25 @@ Q8 and F16 pass real transcription and protocol checks on Apple silicon with Met
 
 [Artifact catalog](src/orukeet/artifacts.json) · [Native conversion and validation](evidence/r3-promotion-20260908/)
 
+## Questions and bugs
+
+Reproducible transcription or runtime bugs go to [GitHub issues](https://github.com/Oruk-AI/orukeet/issues/new/choose); include the model SHA-256, OS/architecture, runtime/device and input format. Model-level questions (languages, accuracy, fine-tuning, licensing, packaging Orukeet in an app) go to [GitHub Discussions](https://github.com/Oruk-AI/orukeet/discussions). Orukeet detects the language itself: the weights and the native API have no language-forcing or vocabulary-biasing input, and the native response returns `language: null`. Hosted Orukeet on oruk.ai transcribes English only. Security reports: [SECURITY.md](SECURITY.md).
+
+## Crediting Orukeet
+
+If you ship, repackage, benchmark or write about Orukeet, credit it by name and origin. Copy and paste:
+
+> Orukeet by Oruk, built on Parakeet-TDT v3; weights on Hugging Face; CC BY-SA 4.0. https://oruk.ai/models/orukeet
+
+```markdown
+[Orukeet](https://oruk.ai/models/orukeet) by [Oruk](https://oruk.ai), built on NVIDIA Parakeet-TDT v3; weights on [Hugging Face](https://huggingface.co/oruk/orukeet) under CC BY-SA 4.0.
+```
+
+Redistributed weights keep NVIDIA's Parakeet attribution and the CC BY-SA 4.0 notice ([NOTICE.md](NOTICE.md)). For papers, use the citation below.
+
 ## License and attribution
 
-Code: MIT. Weights and fitted kernels: CC BY-SA 4.0, retaining NVIDIA's foundation attribution. Transcript-free metric records: CC BY 4.0. Dataset audio is obtained from its original providers under their terms.
+Code is MIT ([LICENSE](LICENSE)); weights and fitted kernels are CC BY-SA 4.0 ([LICENSE-WEIGHTS](LICENSE-WEIGHTS)), retaining NVIDIA's foundation attribution. Transcript-free metric records: CC BY 4.0. Dataset audio is obtained from its original providers under their terms.
 
 [Data provenance](docs/data-and-licenses.md) · [Attribution](NOTICE.md)
 

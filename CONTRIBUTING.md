@@ -26,7 +26,10 @@ Keep measured results immutable. Add a new receipt for a new experiment and
 explain selection exposure. Changes to text normalization, membership or
 clustering need a new evaluation identity, not an overwritten score.
 
-Submit a reproducible issue or a focused pull request. Do not attach private
+Submit a reproducible issue or a focused pull request. Questions that are not
+bugs (languages, accuracy, fine-tuning, licensing, packaging) belong in
+[GitHub Discussions](https://github.com/Oruk-AI/orukeet/discussions); report
+security problems privately as described in [SECURITY.md](SECURITY.md). Do not attach private
 speech or credentials. Negative results are useful; keep data selection and
 measurement scope explicit.
 
