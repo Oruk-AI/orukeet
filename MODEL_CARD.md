@@ -111,6 +111,10 @@ Q8 and F16 pass real transcription and protocol checks on Apple silicon with Met
 
 [Artifact catalog](src/orukeet/artifacts.json) · [Native conversion and validation](evidence/r3-promotion-20260908/)
 
+## Hosted API
+
+Oruk also serves Orukeet as a hosted English transcription endpoint (preview) at [oruk.ai/models/orukeet](https://oruk.ai/models/orukeet?utm_source=github&utm_medium=readme&utm_campaign=orukeet); it needs an Oruk API key. Limits per the [OpenAPI contract](https://oruk.ai/openapi.json?utm_source=github&utm_medium=readme&utm_campaign=orukeet): English only; at most 60 seconds of audio per request; 4 MiB for the complete multipart request; no word timestamps (speaker-turn times only when diarization is enabled); usage draws from the plan's separate Orukeet allowance at $0.027 per audio hour. Hosted adds no install or GPU, plus optional emotion scores and speaker diarization on the same request. The local, open-weights path covers 25 languages and runs offline.
+
 ## Questions and bugs
 
 Reproducible transcription or runtime bugs go to [GitHub issues](https://github.com/Oruk-AI/orukeet/issues/new/choose); include the model SHA-256, OS/architecture, runtime/device and input format. Model-level questions (languages, accuracy, fine-tuning, licensing, packaging Orukeet in an app) go to [GitHub Discussions](https://github.com/Oruk-AI/orukeet/discussions). Orukeet detects the language itself: the weights and the native API have no language-forcing or vocabulary-biasing input, and the native response returns `language: null`. Hosted Orukeet on oruk.ai transcribes English only. Security reports: [SECURITY.md](SECURITY.md).
