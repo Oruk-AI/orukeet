@@ -1,10 +1,25 @@
 # Changelog
 
-## 0.1.1 — unreleased
+## Unreleased
+
+- Add a "Crediting Orukeet" attribution block, a "Questions and bugs" pointer and oruk.ai links to the README and model card; date the entries below from the published release tags.
+- Add SECURITY.md and issue-chooser contact links; enable GitHub Discussions for model-level questions.
+
+## 0.1.2-coreml.1 — 2026-09-24 (pre-release)
+
+- Tag the reviewed OpenWhispr iOS Core ML integration SDK from draft PR #10: an opt-in iOS 17+ / macOS 14+ preview on FluidAudio/Core ML with 16 kHz mono, record-then-transcribe audio.
+- Retain the authenticated portable archive so compiled models rebuild locally after an OS update; bound SHA-256 verification memory.
+- Pin the 554,985,744-byte INT8 Core ML archive on Hugging Face and complete the paired 25-language FLEURS qualification (INT8 WER 13.64%, LUT6 14.27%). Model weights are unchanged and the preview is not the recommended default.
+
+## coreml-taptalk-preview-20260915 — 2026-09-15 (pre-release)
+
+- Publish portable Orukeet r3 Core ML bundles (greedy and baseline) for TapTalk's FluidAudio 0.15.5 runtime, with SHA-256 checksums, per-bundle manifests and the CC BY-SA 4.0 weight license. Conversion code and evidence are in PR #6.
+
+## 0.1.1 — 2026-09-11
 
 - Build and package the optimized Metal SDK from pinned sources and patches in this repository.
 - Point Apple silicon runtime installation at the Orukeet-hosted SDK release, with a pinned archive hash.
-- Keep the r3 model weights and CPU, CUDA, and Vulkan runtime selections unchanged.
+- Keep the r3 model weights and CPU, CUDA, and Vulkan runtime selections unchanged. The GitHub release does not publish a package to PyPI.
 
 ## 0.1.0 — 2026-09-09
 

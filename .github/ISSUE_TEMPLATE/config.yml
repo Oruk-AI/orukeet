@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Model questions and downstream packaging
+    url: https://github.com/Oruk-AI/orukeet/discussions
+    about: Languages, accuracy, fine-tuning, licensing and how an app should credit or ship Orukeet.
+  - name: Orukeet at oruk.ai
+    url: https://oruk.ai/models/orukeet?utm_source=github&utm_medium=issue-chooser&utm_campaign=orukeet
+    about: Model page, local transcription guide and the weights license.
+  - name: Security report
+    url: https://oruk.ai/security
+    about: Report vulnerabilities privately; see SECURITY.md.
