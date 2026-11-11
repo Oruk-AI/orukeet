@@ -31,3 +31,17 @@ def test_multilingual_json_survives_legacy_windows_stdout(monkeypatch):
     output.flush()
     assert json.loads(stream.getvalue().decode('utf-8'))['text'] == 'Привіт, світе.'
     output.detach()
+
+
+def test_transcribe_hint_goes_to_stderr_only(monkeypatch, capsys):
+    from contextlib import nullcontext
+    class Model:
+        def transcribe(self, path):
+            return {'text': 'hello', 'segments': [], 'language': None}
+    monkeypatch.setattr(cli, 'Orukeet', lambda *a, **k: nullcontext(Model()))
+    monkeypatch.setattr(sys, 'argv', ['orukeet', 'transcribe', 'a.wav', 'b.wav', '--model', 'model.gguf', '--runtime', '.'])
+    cli.main()
+    captured = capsys.readouterr()
+    receipts = [json.loads(line) for line in captured.out.splitlines()]
+    assert [r['file'] for r in receipts] == ['a.wav', 'b.wav']
+    assert captured.err.count('https://oruk.ai/models/orukeet?utm_source=cli&utm_medium=stderr&utm_campaign=orukeet') == 1

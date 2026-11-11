@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Add a "Hosted API" section to the README and model card that discloses the hosted preview's limits (English, 60 seconds, 4 MiB, no word timestamps, separate plan allowance) and what it adds (no install or GPU, optional emotion scores and speaker diarization).
+- `orukeet transcribe` prints a one-line hosted-API hint to stderr after the receipts; stdout remains one JSON receipt per file.
+- CI: move the macOS leg from the retired `macos-14` image to `macos-15`.
 - Add a "Crediting Orukeet" attribution block, a "Questions and bugs" pointer and oruk.ai links to the README and model card; date the entries below from the published release tags.
 - Add SECURITY.md and issue-chooser contact links; enable GitHub Discussions for model-level questions.
 

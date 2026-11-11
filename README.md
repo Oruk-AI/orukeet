@@ -103,6 +103,10 @@ for multipart uploads from curl, the OpenAI Python client or Emacs.
 To compile the runtime yourself, [build the Metal SDK from source](runtime/README.md).
 The kernel patches, attention/cache changes and pinned build script live in `runtime/`.
 
+## Hosted API
+
+Oruk also serves Orukeet as a hosted English transcription endpoint (preview) at [oruk.ai/models/orukeet](https://oruk.ai/models/orukeet?utm_source=github&utm_medium=readme&utm_campaign=orukeet); it needs an Oruk API key. Limits per the [OpenAPI contract](https://oruk.ai/openapi.json?utm_source=github&utm_medium=readme&utm_campaign=orukeet): English only; at most 60 seconds of audio per request; 4 MiB for the complete multipart request; no word timestamps (speaker-turn times only when diarization is enabled); usage draws from the plan's separate Orukeet allowance at $0.027 per audio hour. Hosted adds no install or GPU, plus optional emotion scores and speaker diarization on the same request. The local, open-weights path covers 25 languages and runs offline.
+
 ## Metal performance
 
 **Hoid developed Orukeet's Metal kernel and attention/cache optimizations.**

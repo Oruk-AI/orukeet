@@ -6,6 +6,9 @@ from pathlib import Path
 from .install import fetch, install_runtime, resolve_device
 from .model import Orukeet
 
+HOSTED_HINT = ('Hosted English Orukeet with emotion and diarization: '
+               'https://oruk.ai/models/orukeet?utm_source=cli&utm_medium=stderr&utm_campaign=orukeet')
+
 
 def main():
     if hasattr(sys.stdout, "reconfigure"):
@@ -41,3 +44,4 @@ def main():
         with Orukeet(args.model, args.runtime, args.device, expected_sha256=args.sha256) as model:
             for path in args.audio:
                 print(json.dumps(dict(file=str(path), **model.transcribe(path)), ensure_ascii=False))
+        print(HOSTED_HINT, file=sys.stderr)
