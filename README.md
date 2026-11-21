@@ -30,6 +30,8 @@ Use Orukeet for recordings, media, batch transcription, server workers and inter
 
 [Model card](MODEL_CARD.md) · [Weights](https://huggingface.co/oruk/orukeet) · [Technical report](output/pdf/orukeet-technical-report.pdf) · [Orukeet at oruk.ai](https://oruk.ai/models/orukeet?utm_source=github&utm_medium=readme&utm_campaign=orukeet) · [Oruk speech-to-text API](https://oruk.ai/speech-to-text-api?utm_source=github&utm_medium=readme&utm_campaign=orukeet)
 
+For hosted transcription, the [Orukeet hosted model](https://oruk.ai/models/orukeet) and [API quickstart](https://oruk.ai/docs/quickstart) cover supported audio and a complete request. To explore what a transcript leaves out, read [what paralinguistics measures](https://oruk.ai/what-is-paralinguistics), try the [voice emotion analyzer](https://oruk.ai/tools/voice-emotion-analyzer), or use the [speech emotion recognition API](https://oruk.ai/speech-emotion-recognition-api) to analyze recorded speech.
+
 ## Hosted English API — a separate service
 
 The downloads in this repository recognize 25 languages locally after installation, without an Oruk account. They do not include the hosted API's optional emotion or speaker-diarization tasks. Their language coverage, inference runtimes and benchmark results should not be attributed to the hosted endpoint.
